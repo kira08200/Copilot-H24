@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v5";
+const CACHE_NAME = "copilote-bourse-pwa-v6";
 const ASSETS = [
   "./",
   "./index.html",

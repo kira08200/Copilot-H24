@@ -989,30 +989,30 @@
 
   var STORAGE_KEY = "copilote_bourse_live_v3";
 
-  // 22 positions avec double mapping (Yahoo + Stooq) et prix unitaire de référence EUR
+  // 22 positions avec mapping TradingView H24, Yahoo/Stooq et prix unitaire de référence EUR
   var defaultPositions = [
-    { id: "ai_pea", account: "PEA", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (PEA Fortuneo • 110 titres)", baseVal: 21020.00, cost: 17737.14, fixedQty: 110, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
-    { id: "amd", account: "TR", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 132.50, name: "AMD", baseVal: 9431.09, cost: 2360.09, fixedQty: null, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+7 071 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
-    { id: "nvda", account: "TR", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 134.80, name: "NVIDIA", baseVal: 6706.52, cost: 4725.52, fixedQty: null, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA. Avec AMD, ce duo pèse environ 32 % de votre patrimoine global : bon équilibre, inutile de renforcer." },
-    { id: "sp500", account: "TR", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 575.40, name: "S&P 500 EUR (Acc)", baseVal: 3150.65, cost: 2337.99, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
-    { id: "enr", account: "TR", ticker: "ENR.DE", stooq: "enr.de", currency: "EUR", refPriceEUR: 48.90, name: "Siemens Energy", baseVal: 2488.25, cost: 1510.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
-    { id: "blk", account: "TR", ticker: "BLK", stooq: "blk.us", currency: "USD", refPriceEUR: 965.00, name: "BlackRock", baseVal: 1980.66, cost: 1630.19, fixedQty: null, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
-    { id: "xiaomi", account: "TR", ticker: "1810.HK", stooq: "1810.hk", currency: "HKD", refPriceEUR: 3.35, name: "Xiaomi", baseVal: 1721.04, cost: 2095.19, fixedQty: null, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
-    { id: "msft", account: "TR", ticker: "MSFT", stooq: "msft.us", currency: "USD", refPriceEUR: 392.00, name: "Microsoft", baseVal: 1354.49, cost: 1180.00, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
-    { id: "mstr", account: "TR", ticker: "MSTR", stooq: "mstr.us", currency: "USD", refPriceEUR: 315.00, name: "Strategy A (MicroStrategy)", baseVal: 1057.52, cost: 2979.52, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
-    { id: "dro", account: "TR", ticker: "DRO.AX", stooq: "dro.au", currency: "AUD", refPriceEUR: 0.56, name: "DroneShield", baseVal: 386.21, cost: 1398.21, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Ne pèse plus que ~0,7 % de votre patrimoine. Laissez de côté sans remettre un euro." },
-    { id: "xdew", account: "TR", ticker: "XDEW.DE", stooq: "xdew.de", currency: "EUR", refPriceEUR: 92.40, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.51, cost: 239.72, fixedQty: null, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
-    { id: "gold", account: "TR", ticker: "PPFB.DE", stooq: "ppfb.de", currency: "EUR", refPriceEUR: 49.80, name: "Physical Gold USD (Acc)", baseVal: 301.15, cost: 319.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
-    { id: "aapl", account: "TR", ticker: "AAPL", stooq: "aapl.us", currency: "USD", refPriceEUR: 212.00, name: "Apple", baseVal: 220.46, cost: 119.96, fixedQty: null, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
-    { id: "byd", account: "TR", ticker: "1211.HK", stooq: "1211.hk", currency: "HKD", refPriceEUR: 32.10, name: "BYD", baseVal: 210.95, cost: 300.00, fixedQty: null, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
-    { id: "amzn", account: "TR", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 194.50, name: "Amazon.com", baseVal: 150.92, cost: 109.99, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
-    { id: "qcom", account: "TR", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 152.00, name: "Qualcomm", baseVal: 149.36, cost: 145.98, fixedQty: null, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
-    { id: "ai_tr", account: "TR", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (Trade Republic)", baseVal: 49.31, cost: 41.07, fixedQty: null, pole: "pilier", tag: "hold", action: "Doublon PEA (49 €)", why: "Vous détenez déjà 110 actions sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
-    { id: "msci1", account: "TR", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 104.20, name: "Core MSCI World USD (Acc) #1", baseVal: 46.50, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "Doublon ETF Monde", why: "Vous avez deux lignes identiques MSCI World : regroupez vos futurs achats sur une seule." },
-    { id: "msci2", account: "TR", ticker: "XDWD.DE", stooq: "xdwd.de", currency: "EUR", refPriceEUR: 112.80, name: "Core MSCI World USD (Acc) #2", baseVal: 36.45, cost: 20.00, fixedQty: null, pole: "etf", tag: "hold", action: "Doublon ETF Monde", why: "Même ETF que la ligne précédente." },
-    { id: "ko", account: "TR", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 58.20, name: "Coca-Cola", baseVal: 28.87, cost: 19.98, fixedQty: null, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide mais montant symbolique." },
-    { id: "googl", account: "TR", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 164.00, name: "Alphabet (A)", baseVal: 23.13, cost: 9.99, fixedQty: null, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "Plus de +130 % sur 10 € investis ! C'est la moins chère des grandes valeurs IA : mérite d'être renforcée." },
-    { id: "sfc", account: "TR", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 18.40, name: "SFC Energy", baseVal: 15.95, cost: 20.00, fixedQty: null, pole: "spec", tag: "stop", action: "Poussière (~16 €)", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
+    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (PEA Fortuneo • 110 titres)", baseVal: 21020.00, cost: 17737.14, fixedQty: 110, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
+    { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 132.50, name: "AMD", baseVal: 9431.09, cost: 2360.09, fixedQty: null, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+7 071 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
+    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 134.80, name: "NVIDIA", baseVal: 6706.52, cost: 4725.52, fixedQty: null, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA. Avec AMD, ce duo pèse environ 32 % de votre patrimoine global : bon équilibre, inutile de renforcer." },
+    { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 575.40, name: "S&P 500 EUR (Acc)", baseVal: 3150.65, cost: 2337.99, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
+    { id: "enr", account: "TR", tv: "XETR:ENR", ticker: "ENR.DE", stooq: "enr.de", currency: "EUR", refPriceEUR: 48.90, name: "Siemens Energy", baseVal: 2488.25, cost: 1510.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
+    { id: "blk", account: "TR", tv: "NYSE:BLK", ticker: "BLK", stooq: "blk.us", currency: "USD", refPriceEUR: 965.00, name: "BlackRock", baseVal: 1980.66, cost: 1630.19, fixedQty: null, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
+    { id: "xiaomi", account: "TR", tv: "HKEX:1810", ticker: "1810.HK", stooq: "1810.hk", currency: "HKD", refPriceEUR: 3.35, name: "Xiaomi", baseVal: 1721.04, cost: 2095.19, fixedQty: null, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
+    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", ticker: "MSFT", stooq: "msft.us", currency: "USD", refPriceEUR: 392.00, name: "Microsoft", baseVal: 1354.49, cost: 1180.00, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
+    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", ticker: "MSTR", stooq: "mstr.us", currency: "USD", refPriceEUR: 315.00, name: "Strategy A (MicroStrategy)", baseVal: 1057.52, cost: 2979.52, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
+    { id: "dro", account: "TR", tv: "ASX:DRO", ticker: "DRO.AX", stooq: "dro.au", currency: "AUD", refPriceEUR: 0.56, name: "DroneShield", baseVal: 386.21, cost: 1398.21, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Ne pèse plus que ~0,7 % de votre patrimoine. Laissez de côté sans remettre un euro." },
+    { id: "xdew", account: "TR", tv: "XETR:XDEW", ticker: "XDEW.DE", stooq: "xdew.de", currency: "EUR", refPriceEUR: 92.40, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.51, cost: 239.72, fixedQty: null, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
+    { id: "gold", account: "TR", tv: "XETR:PPFB", ticker: "PPFB.DE", stooq: "ppfb.de", currency: "EUR", refPriceEUR: 49.80, name: "Physical Gold USD (Acc)", baseVal: 301.15, cost: 319.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
+    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", ticker: "AAPL", stooq: "aapl.us", currency: "USD", refPriceEUR: 212.00, name: "Apple", baseVal: 220.46, cost: 119.96, fixedQty: null, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
+    { id: "byd", account: "TR", tv: "HKEX:1211", ticker: "1211.HK", stooq: "1211.hk", currency: "HKD", refPriceEUR: 32.10, name: "BYD", baseVal: 210.95, cost: 300.00, fixedQty: null, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
+    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 194.50, name: "Amazon.com", baseVal: 150.92, cost: 109.99, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
+    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 152.00, name: "Qualcomm", baseVal: 149.36, cost: 145.98, fixedQty: null, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
+    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (Trade Republic)", baseVal: 49.31, cost: 41.07, fixedQty: null, pole: "pilier", tag: "hold", action: "Doublon PEA (49 €)", why: "Vous détenez déjà 110 actions sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 104.20, name: "Core MSCI World USD (Acc) #1", baseVal: 46.50, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "Doublon ETF Monde", why: "Vous avez deux lignes identiques MSCI World : regroupez vos futurs achats sur une seule." },
+    { id: "msci2", account: "TR", tv: "XETR:XDWD", ticker: "XDWD.DE", stooq: "xdwd.de", currency: "EUR", refPriceEUR: 112.80, name: "Core MSCI World USD (Acc) #2", baseVal: 36.45, cost: 20.00, fixedQty: null, pole: "etf", tag: "hold", action: "Doublon ETF Monde", why: "Même ETF que la ligne précédente." },
+    { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 58.20, name: "Coca-Cola", baseVal: 28.87, cost: 19.98, fixedQty: null, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide mais montant symbolique." },
+    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 164.00, name: "Alphabet (A)", baseVal: 23.13, cost: 9.99, fixedQty: null, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "Plus de +130 % sur 10 € investis ! C'est la moins chère des grandes valeurs IA : mérite d'être renforcée." },
+    { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 18.40, name: "SFC Energy", baseVal: 15.95, cost: 20.00, fixedQty: null, pole: "spec", tag: "stop", action: "Poussière (~16 €)", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
   ];
 
   var savedData = {};
@@ -1026,6 +1026,7 @@
     return {
       id: p.id,
       account: p.account,
+      tv: p.tv,
       ticker: p.ticker,
       stooq: p.stooq,
       currency: p.currency,
@@ -1036,6 +1037,7 @@
       qty: typeof s.qty === "number" ? s.qty : p.fixedQty,
       livePriceEUR: typeof s.livePriceEUR === "number" ? s.livePriceEUR : null,
       dayPct: typeof s.dayPct === "number" ? s.dayPct : null,
+      marketSession: s.marketSession || null,
       isLive: !!s.isLive,
       pole: p.pole,
       tag: p.tag,
@@ -1095,7 +1097,7 @@
     donePrios: {},
     lastSync: savedData.lastSync || null,
     liveCount: 0,
-    nextRefreshSec: 15,
+    nextRefreshSec: 10,
     isSyncing: false,
     editingId: null,
     alertLogs: initialLogs
@@ -1111,6 +1113,7 @@
           cost: p.cost,
           livePriceEUR: p.livePriceEUR,
           dayPct: p.dayPct,
+          marketSession: p.marketSession,
           isLive: p.isLive
         };
       }
@@ -1456,7 +1459,7 @@
 
       var displayPrice = p.livePriceEUR !== null ? p.livePriceEUR : p.refPriceEUR;
       var dotCls = p.isLive ? "live-tag" : "live-tag ref";
-      var labelPrefix = p.isLive ? "Cours Live : " : "Cours réf. : ";
+      var labelPrefix = p.isLive ? (p.marketSession || "Cours Live") + " : " : "Cours réf. : ";
       var priceText = "<span class='" + dotCls + "'></span>" + labelPrefix + "<span class='q-price'>" + fmtEuro(displayPrice) + "</span>";
 
       var dayHtml = "";
@@ -1650,26 +1653,30 @@
     }
   }
 
-  // --- MOTEUR MULTI-SOURCES ANTI-BLOCAGE POUR ACTUALISER 22/22 LIGNES ---
-  function fetchTextTimeout(url, ms) {
+  // --- MOTEUR H24 ULTRA-RAPIDE (1 REQUETE CORS NATIVE < 0.3s, ZERO PROXY BLOQUANT) ---
+  function fetchJsonTimeout(url, options, ms) {
     return new Promise(function(resolve, reject) {
       var done = false;
+      var ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
       var timer = setTimeout(function() {
         if (!done) {
           done = true;
+          if (ctrl) { try { ctrl.abort(); } catch (e) {} }
           reject(new Error("timeout"));
         }
       }, ms);
-      fetch(url)
+      var fetchOpts = options ? Object.assign({}, options) : {};
+      if (ctrl) fetchOpts.signal = ctrl.signal;
+      fetch(url, fetchOpts)
         .then(function(res) {
           if (!res.ok) throw new Error("HTTP " + res.status);
-          return res.text();
+          return res.json();
         })
-        .then(function(txt) {
+        .then(function(data) {
           if (!done) {
             done = true;
             clearTimeout(timer);
-            resolve(txt);
+            resolve(data);
           }
         })
         .catch(function(err) {
@@ -1682,118 +1689,100 @@
     });
   }
 
-  // 1. Taux de change officiels BCE (CORS natif, ultra-rapide)
-  function fetchFxRates() {
-    return fetchTextTimeout("https://api.frankfurter.app/latest?from=EUR&to=USD,HKD,AUD", 5000)
-      .then(function(txt) {
-        var json = JSON.parse(txt);
+  function getZoneClock(tz) {
+    try {
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: tz,
+        weekday: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+      }).formatToParts(new Date());
+      var map = {};
+      for (var i = 0; i < parts.length; i++) {
+        map[parts[i].type] = parts[i].value;
+      }
+      var hh = parseInt(map.hour, 10) % 24;
+      var mm = parseInt(map.minute, 10);
+      var wd = map.weekday;
+      var isWeekday = wd !== "Sat" && wd !== "Sun";
+      return { isWeekday: isWeekday, mins: hh * 60 + mm };
+    } catch (e) {
+      return { isWeekday: true, mins: 720 };
+    }
+  }
+
+  function getExchangePhase(tvSymbol) {
+    if (tvSymbol.indexOf("NASDAQ:") === 0 || tvSymbol.indexOf("NYSE:") === 0) {
+      var ny = getZoneClock("America/New_York");
+      if (ny.isWeekday && ny.mins >= 240 && ny.mins < 570) return "pre";
+      if (ny.isWeekday && ny.mins >= 570 && ny.mins < 960) return "regular";
+      return "post";
+    }
+    if (tvSymbol.indexOf("EURONEXT:") === 0 || tvSymbol.indexOf("XETR:") === 0) {
+      var eu = getZoneClock("Europe/Berlin");
+      if (eu.isWeekday && eu.mins >= 480 && eu.mins < 540) return "pre";
+      if (eu.isWeekday && eu.mins >= 540 && eu.mins < 1055) return "regular";
+      return "post";
+    }
+    return "regular";
+  }
+
+  function fetchFxFallback() {
+    return fetchJsonTimeout("https://open.er-api.com/v6/latest/EUR", { cache: "no-store" }, 4000)
+      .then(function(json) {
         if (json && json.rates) {
           return {
-            USD: json.rates.USD || 1.08,
-            HKD: json.rates.HKD || 8.42,
-            AUD: json.rates.AUD || 1.65
+            USD: json.rates.USD || 1.09,
+            HKD: json.rates.HKD || 8.55,
+            AUD: json.rates.AUD || 1.63
           };
         }
-        return { USD: 1.08, HKD: 8.42, AUD: 1.65 };
+        return { USD: 1.09, HKD: 8.55, AUD: 1.63 };
       })
       .catch(function() {
-        return { USD: 1.08, HKD: 8.42, AUD: 1.65 };
+        return { USD: 1.09, HKD: 8.55, AUD: 1.63 };
       });
   }
 
-  // 2. Stooq Batch CSV (recupere 11 tickers en 1 seule requete!)
-  function fetchStooqBatch(stooqSymbols) {
-    var target = "https://stooq.com/q/l/?s=" + stooqSymbols.join("+") + "&f=sd2t2ohlcv&e=csv";
-    var proxies = [
-      { url: "https://api.allorigins.win/get?url=" + encodeURIComponent(target), wrapped: true },
-      { url: "https://corsproxy.io/?" + encodeURIComponent(target), wrapped: false },
-      { url: "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(target), wrapped: false }
+  function fetchTradingViewH24Batch() {
+    var tickers = [
+      "FX_IDC:EURUSD",
+      "FX_IDC:EURHKD",
+      "FX_IDC:EURAUD"
     ];
-
-    function parseCsv(csvText) {
-      var res = {};
-      if (!csvText) return res;
-      var lines = csvText.trim().split(/\r?\n/);
-      for (var i = 0; i < lines.length; i++) {
-        var cols = lines[i].split(",");
-        if (cols.length < 7) continue;
-        var sym = cols[0].trim().toLowerCase();
-        var open = parseFloat(cols[3]);
-        var close = parseFloat(cols[6]);
-        if (!isNaN(close) && close > 0) {
-          var dayPct = (!isNaN(open) && open > 0) ? ((close - open) / open) * 100 : 0;
-          res[sym] = { price: close, dayPct: dayPct };
-        }
+    for (var i = 0; i < positions.length; i++) {
+      if (tickers.indexOf(positions[i].tv) === -1) {
+        tickers.push(positions[i].tv);
       }
-      return res;
     }
+    var payload = JSON.stringify({
+      symbols: { tickers: tickers, query: { types: [] } },
+      columns: [
+        "name",
+        "close",
+        "change",
+        "currency",
+        "premarket_close",
+        "premarket_change",
+        "postmarket_close",
+        "postmarket_change"
+      ]
+    });
 
-    function tryIdx(idx) {
-      if (idx >= proxies.length) return Promise.resolve({});
-      var p = proxies[idx];
-      return fetchTextTimeout(p.url, 6500)
-        .then(function(txt) {
-          var raw = txt;
-          if (p.wrapped) {
-            var obj = JSON.parse(txt);
-            raw = obj && obj.contents ? obj.contents : "";
-          }
-          var parsed = parseCsv(raw);
-          if (Object.keys(parsed).length > 0) {
-            return parsed;
-          }
-          return tryIdx(idx + 1);
-        })
-        .catch(function() {
-          return tryIdx(idx + 1);
-        });
-    }
-
-    return tryIdx(0);
+    return fetchJsonTimeout(
+      "https://scanner.tradingview.com/global/scan",
+      {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: payload,
+        cache: "no-store"
+      },
+      4500
+    );
   }
 
-  // 3. Yahoo Finance individuel avec rotation query1 / query2 et proxies decales
-  function fetchYahooSingle(symbol, slotIndex) {
-    var host = (slotIndex % 2 === 0) ? "query1.finance.yahoo.com" : "query2.finance.yahoo.com";
-    var target = "https://" + host + "/v8/finance/chart/" + encodeURIComponent(symbol) + "?interval=1d&range=2d";
-    var proxies = [
-      { url: "https://api.allorigins.win/get?url=" + encodeURIComponent(target), wrapped: true },
-      { url: "https://api.codetabs.com/v1/proxy?quest=" + encodeURIComponent(target), wrapped: false },
-      { url: "https://corsproxy.io/?" + encodeURIComponent(target), wrapped: false }
-    ];
-
-    function tryP(idx) {
-      if (idx >= proxies.length) return Promise.resolve(null);
-      var p = proxies[idx];
-      return fetchTextTimeout(p.url, 6500)
-        .then(function(txt) {
-          var raw = txt;
-          if (p.wrapped) {
-            var obj = JSON.parse(txt);
-            raw = obj && obj.contents ? obj.contents : "";
-          }
-          var json = JSON.parse(raw);
-          if (json && json.chart && json.chart.result && json.chart.result[0] && json.chart.result[0].meta) {
-            var meta = json.chart.result[0].meta;
-            var price = meta.regularMarketPrice;
-            var prev = meta.chartPreviousClose || meta.previousClose || price;
-            var currency = meta.currency || "EUR";
-            if (typeof price === "number" && price > 0) {
-              var dayPct = prev > 0 ? ((price - prev) / prev) * 100 : 0;
-              return { price: price, currency: currency, dayPct: dayPct };
-            }
-          }
-          return tryP(idx + 1);
-        })
-        .catch(function() {
-          return tryP(idx + 1);
-        });
-    }
-
-    return tryP(0);
-  }
-
-  function applyQuoteToPosition(p, rawPrice, currency, dayPct, fx) {
+  function applyQuoteToPosition(p, rawPrice, currency, dayPct, sessionLabel, fx) {
     var priceEUR = rawPrice;
     if (currency === "USD") priceEUR = rawPrice / fx.USD;
     else if (currency === "HKD") priceEUR = rawPrice / fx.HKD;
@@ -1804,7 +1793,8 @@
         p.qty = p.baseVal / priceEUR;
       }
       p.livePriceEUR = priceEUR;
-      p.dayPct = dayPct;
+      p.dayPct = typeof dayPct === "number" ? dayPct : 0;
+      p.marketSession = sessionLabel || "Cours Live";
       p.isLive = true;
       return true;
     }
@@ -1818,80 +1808,111 @@
     var dot = document.getElementById("liveDot");
     var badge = document.getElementById("liveSyncBadge");
     if (dot) dot.classList.add("syncing");
-    if (badge) badge.textContent = "Synchro...";
+    if (badge) badge.textContent = "Synchro H24...";
 
-    var batch1 = ["ai.fr", "amd.us", "nvda.us", "blk.us", "msft.us", "mstr.us", "dro.au", "aapl.us", "amzn.us", "qcom.us"];
-    var batch2 = ["sxr8.de", "enr.de", "1810.hk", "xdew.de", "ppfb.de", "1211.hk", "eunl.de", "xdwd.de", "ko.us", "googl.us", "f3c.de"];
-
-    fetchFxRates().then(function(fx) {
-      return Promise.all([
-        fetchStooqBatch(batch1),
-        fetchStooqBatch(batch2)
-      ]).then(function(batches) {
-        var stooqMap = Object.assign({}, batches[0], batches[1]);
-        var missingTickers = [];
-
-        for (var i = 0; i < positions.length; i++) {
-          var p = positions[i];
-          var sq = stooqMap[p.stooq];
-          if (sq && sq.price > 0) {
-            applyQuoteToPosition(p, sq.price, p.currency, sq.dayPct, fx);
-          } else if (missingTickers.indexOf(p.ticker) === -1) {
-            missingTickers.push(p.ticker);
+    fetchTradingViewH24Batch()
+      .then(function(resp) {
+        var rows = (resp && Array.isArray(resp.data)) ? resp.data : [];
+        var map = {};
+        for (var i = 0; i < rows.length; i++) {
+          if (rows[i] && rows[i].s && Array.isArray(rows[i].d)) {
+            map[rows[i].s] = rows[i].d;
           }
         }
 
-        // Mise a jour progressive immediate des lignes deja recues
+        var usdRow = map["FX_IDC:EURUSD"];
+        var hkdRow = map["FX_IDC:EURHKD"];
+        var audRow = map["FX_IDC:EURAUD"];
+        var fx = {
+          USD: usdRow && typeof usdRow[1] === "number" && usdRow[1] > 0 ? usdRow[1] : 0,
+          HKD: hkdRow && typeof hkdRow[1] === "number" && hkdRow[1] > 0 ? hkdRow[1] : 0,
+          AUD: audRow && typeof audRow[1] === "number" && audRow[1] > 0 ? audRow[1] : 0
+        };
+
+        var fxPromise = (fx.USD > 0 && fx.HKD > 0 && fx.AUD > 0)
+          ? Promise.resolve(fx)
+          : fetchFxFallback().then(function(fb) {
+              return {
+                USD: fx.USD > 0 ? fx.USD : fb.USD,
+                HKD: fx.HKD > 0 ? fx.HKD : fb.HKD,
+                AUD: fx.AUD > 0 ? fx.AUD : fb.AUD
+              };
+            });
+
+        return fxPromise.then(function(finalFx) {
+          for (var j = 0; j < positions.length; j++) {
+            var p = positions[j];
+            var d = map[p.tv];
+            if (!d) continue;
+
+            var close = d[1];
+            var change = d[2];
+            var ccy = d[3] || p.currency;
+            var preClose = d[4];
+            var preChg = d[5];
+            var postClose = d[6];
+            var postChg = d[7];
+
+            var phase = getExchangePhase(p.tv);
+            var chosenPrice = null;
+            var chosenChg = 0;
+            var sessionLabel = "Cours Live";
+
+            if (phase === "pre" && typeof preClose === "number" && preClose > 0) {
+              chosenPrice = preClose;
+              chosenChg = typeof preChg === "number" ? preChg : 0;
+              sessionLabel = "Pré-marché";
+            } else if (phase === "post" && typeof postClose === "number" && postClose > 0) {
+              chosenPrice = postClose;
+              chosenChg = typeof postChg === "number" ? postChg : 0;
+              sessionLabel = "Après-bourse";
+            } else if (typeof close === "number" && close > 0) {
+              chosenPrice = close;
+              chosenChg = typeof change === "number" ? change : 0;
+              sessionLabel = "Cours Live";
+            }
+
+            if (chosenPrice !== null) {
+              applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
+            }
+          }
+          return finalFx;
+        });
+      })
+      .then(function(finalFx) {
+        state.isSyncing = false;
+        state.nextRefreshSec = 10;
+        if (dot) dot.classList.remove("syncing");
+
+        var tot = computeTotals();
+        var dtStr = formatDateTimeNow();
+        state.lastSync = dtStr;
+        persistState();
         renderAll(true);
 
-        // Completer toute ligne manquante via Yahoo Finance en file decalee (3 par 3)
-        var idx = 0;
-        function processNextChunk() {
-          if (idx >= missingTickers.length) {
-            return Promise.resolve();
-          }
-          var chunk = missingTickers.slice(idx, idx + 3);
-          idx += 3;
-          return Promise.all(chunk.map(function(sym, cIdx) {
-            return fetchYahooSingle(sym, idx + cIdx).then(function(yq) {
-              if (yq && yq.price > 0) {
-                for (var k = 0; k < positions.length; k++) {
-                  if (positions[k].ticker === sym) {
-                    applyQuoteToPosition(positions[k], yq.price, yq.currency, yq.dayPct, fx);
-                  }
-                }
-              }
-            });
-          })).then(function() {
-            renderAll(false);
-            return new Promise(function(r) { setTimeout(r, 250); });
-          }).then(processNextChunk);
+        if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/22";
+        var fxTag = finalFx && finalFx.USD ? (" • EUR/USD " + finalFx.USD.toFixed(4).replace(".", ",")) : "";
+        document.getElementById("clockTxt").textContent =
+          "H24 Direct (" + tot.liveCount + "/22) • Maj " + dtStr.split(" • ")[1] + fxTag + " (" + state.nextRefreshSec + "s)";
+
+        if (manualTrigger) {
+          showToast("✅ " + tot.liveCount + "/22 lignes actualisées en direct !");
         }
-
-        return processNextChunk();
+      })
+      .catch(function() {
+        state.isSyncing = false;
+        state.nextRefreshSec = 10;
+        if (dot) dot.classList.remove("syncing");
+        var tot = computeTotals();
+        if (badge) badge.textContent = tot.liveCount > 0 ? ("H24 • " + tot.liveCount + "/22") : "Hors ligne";
+        document.getElementById("clockTxt").textContent =
+          tot.liveCount > 0
+            ? ("Dernier cours (" + tot.liveCount + "/22) • Nouvel essai dans 10s")
+            : "Flux temporairement indisponible • Nouvel essai dans 10s";
+        if (manualTrigger) {
+          showToast("⚠️ Connexion momentanément lente, nouvel essai dans 10s");
+        }
       });
-    }).then(function() {
-      state.isSyncing = false;
-      state.nextRefreshSec = 15;
-      if (dot) dot.classList.remove("syncing");
-
-      var tot = computeTotals();
-      var dtStr = formatDateTimeNow();
-      state.lastSync = dtStr;
-      persistState();
-      renderAll(true);
-
-      if (badge) badge.textContent = "Cours Live • " + tot.liveCount + "/22";
-      document.getElementById("clockTxt").textContent = "En direct (" + tot.liveCount + "/22) • Maj " + dtStr.split(" • ")[1] + " (suivante 15s)";
-
-      if (manualTrigger) {
-        showToast("✅ " + tot.liveCount + "/22 lignes actualisées au cours du marché !");
-      }
-    }).catch(function() {
-      state.isSyncing = false;
-      state.nextRefreshSec = 15;
-      if (dot) dot.classList.remove("syncing");
-    });
   }
 
   function openEditModal(posId) {
@@ -2072,7 +2093,7 @@
     }
   });
 
-  // Compte a rebours seconde par seconde + synchro auto toutes les 15 secondes
+  // Compte a rebours seconde par seconde + synchro H24 auto toutes les 10 secondes
   setInterval(function() {
     updateMarketSessions();
     if (!state.isSyncing) {
@@ -2081,10 +2102,16 @@
         syncLiveQuotes(false);
       } else if (state.lastSync) {
         var timePart = state.lastSync.split(" • ")[1] || state.lastSync;
-        document.getElementById("clockTxt").textContent = "En direct (" + state.liveCount + "/22) • Maj " + timePart + " (suivante " + state.nextRefreshSec + "s)";
+        document.getElementById("clockTxt").textContent = "H24 Direct (" + state.liveCount + "/22) • Maj " + timePart + " (suivante " + state.nextRefreshSec + "s)";
       }
     }
   }, 1000);
+
+  document.addEventListener("visibilitychange", function() {
+    if (!document.hidden && !state.isSyncing) {
+      syncLiveQuotes(false);
+    }
+  });
 
   renderAll(false);
   renderPriorities();
