@@ -1,4 +1,5 @@
 import datetime
+import email.utils
 import hashlib
 import html
 import json
@@ -201,6 +202,13 @@ def fetch_essential_news():
                     continue
 
                 uid = hashlib.sha256(norm.encode("utf-8")).hexdigest()[:16]
+                pub_ts = 0
+                try:
+                    if pub_date:
+                        pub_ts = int(email.utils.parsedate_to_datetime(pub_date).timestamp())
+                except Exception:
+                    pub_ts = 0
+
                 relevance = feed["priority"] * 5 + stock_score + (6 if has_essential_kw else 0)
                 candidates.append(
                     {
@@ -210,6 +218,7 @@ def fetch_essential_news():
                         "title": title,
                         "source": source,
                         "pubDate": pub_date,
+                        "pubTs": pub_ts,
                         "link": link,
                         "_score": relevance,
                     }
@@ -217,11 +226,12 @@ def fetch_essential_news():
         except Exception as exc:
             print(f"[WARN] RSS error ({feed['theme']}): {exc}")
 
-    candidates.sort(key=lambda x: x["_score"], reverse=True)
+    candidates.sort(key=lambda x: (x["_score"], x.get("pubTs", 0)), reverse=True)
     top_items = []
     for c in candidates[:6]:
         c.pop("_score", None)
         top_items.append(c)
+    top_items.sort(key=lambda x: x.get("pubTs", 0), reverse=True)
     return top_items
 
 

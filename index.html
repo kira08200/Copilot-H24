@@ -2026,6 +2026,11 @@
     }
 
     if (items.length > 0) {
+      items = items.slice().sort(function(a, b) {
+        var ta = typeof a.pubTs === "number" && a.pubTs > 0 ? a.pubTs * 1000 : (Date.parse(a.pubDate || "") || 0);
+        var tb = typeof b.pubTs === "number" && b.pubTs > 0 ? b.pubTs * 1000 : (Date.parse(b.pubDate || "") || 0);
+        return tb - ta;
+      });
       var rowsHtml = "";
       for (var i = 0; i < items.length; i++) {
         var it = items[i];
