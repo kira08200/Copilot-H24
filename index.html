@@ -939,18 +939,6 @@
       <div class="market-grid" id="marketSessionsGrid"></div>
       <div id="eventsList"></div>
     </div>
-
-    <div class="card">
-      <div class="card-title">
-        <span>🔔 Journal d'Alertes Actualités</span>
-        <div style="display:flex;gap:6px;flex-shrink:0;">
-          <button type="button" class="pill-btn btn-compact" id="btnEnablePush">🔔 Activer</button>
-          <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester</button>
-        </div>
-      </div>
-      <div class="sub">Historique horodaté des alertes d'actualités et catalyseurs majeurs (sans alertes de variations de cours) :</div>
-      <div id="alertLogsList"></div>
-    </div>
   </div>
 </div>
 
@@ -1112,6 +1100,7 @@
     nextRefreshSec: 10,
     isSyncing: false,
     editingId: null,
+    activeTab: savedData.activeTab || "cockpit",
     notifiedNews: savedData.notifiedNews || {},
     alertLogs: initialLogs
   };
@@ -1133,6 +1122,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         positions: map,
         lastSync: state.lastSync,
+        activeTab: state.activeTab,
         notifiedNews: state.notifiedNews,
         alertLogs: state.alertLogs.slice(0, 15)
       }));
@@ -1907,17 +1897,30 @@
     container.innerHTML = html;
   }
 
-  function switchTab(tabId) {
+  function switchTab(tabId, skipSave) {
+    var target = document.getElementById("tab-" + tabId);
+    if (!target) {
+      tabId = "cockpit";
+      target = document.getElementById("tab-cockpit");
+    }
     var secs = document.querySelectorAll(".section");
     for (var i = 0; i < secs.length; i++) {
       secs[i].classList.remove("active");
     }
-    var target = document.getElementById("tab-" + tabId);
     if (target) target.classList.add("active");
 
     var navs = document.querySelectorAll("#bottomNav .nav-btn");
     for (var j = 0; j < navs.length; j++) {
       navs[j].classList.toggle("active", navs[j].getAttribute("data-tab") === tabId);
+    }
+    state.activeTab = tabId;
+    if (!skipSave) {
+      persistState();
+      try {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, "", "#" + tabId);
+        }
+      } catch (e) {}
     }
   }
 
@@ -2393,6 +2396,10 @@
   });
 
   setInterval(fetchDeepNews, 300000);
+
+  var hashTab = (window.location.hash || "").replace("#", "");
+  var initialTab = document.getElementById("tab-" + hashTab) ? hashTab : (state.activeTab || "cockpit");
+  switchTab(initialTab, true);
 
   renderAll(false);
   renderPriorities();
