@@ -1149,7 +1149,7 @@
     showToast("✅ Application installée sur votre écran d'accueil !");
   });
 
-  if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) {
+  if ((window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || /CopiloteH24APK/i.test(navigator.userAgent || "")) {
     if (installBtn) installBtn.style.display = "none";
   }
 
@@ -2561,7 +2561,13 @@
         deferredPrompt = null;
       });
     } else {
-      showToast("Menu Chrome ⋮ en haut à droite → « Installer l'application »");
+      showToast("📥 Téléchargement de Copilote-H24.apk...");
+      var a = document.createElement("a");
+      a.href = "./Copilote-H24.apk";
+      a.download = "Copilote-H24.apk";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
   }
 
