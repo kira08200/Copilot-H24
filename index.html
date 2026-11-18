@@ -1013,9 +1013,9 @@
       <div class="sub">Testez comment adapter vos achats selon le climat économique mondial :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:62%"></div></div>
       <div class="pill-row" id="regimeRow">
-        <button type="button" class="pill-btn" data-score="25">🌪️ Catastrophe</button>
-        <button type="button" class="pill-btn active" data-score="62">⚖️ Climat Actuel</button>
-        <button type="button" class="pill-btn" data-score="85">☀️ Bienveillance</button>
+        <button type="button" class="pill-btn" data-mode="sim" data-score="25">🌪️ Catastrophe</button>
+        <button type="button" class="pill-btn active" data-mode="live" data-score="62">⚖️ Climat Actuel (Live)</button>
+        <button type="button" class="pill-btn" data-mode="sim" data-score="85">☀️ Bienveillance</button>
       </div>
       <div id="regimeAdvice" class="rec-item"></div>
     </div>
@@ -1580,25 +1580,92 @@
     showToast("Prédiction ajustée : " + label);
   }
 
-  function setRegime(score, silent) {
+  function computeLiveRegime() {
+    var liveCnt = 0, greenCnt = 0;
+    var daySum = 0, m1Sum = 0, m1Cnt = 0, recSum = 0, recCnt = 0;
+    var spDay = null, msciDay = null;
+
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (p.isLive && typeof p.dayPct === "number") {
+        liveCnt++;
+        if (p.dayPct >= 0) greenCnt++;
+        daySum += p.dayPct;
+        if (p.id === "sp500") spDay = p.dayPct;
+        if (p.id === "msci2") msciDay = p.dayPct;
+      }
+      if (typeof p.perf1M === "number") {
+        m1Sum += p.perf1M;
+        m1Cnt++;
+      }
+      if (typeof p.recAll === "number") {
+        recSum += p.recAll;
+        recCnt++;
+      }
+    }
+
+    if (liveCnt === 0) {
+      return { score: 62, detail: "En attente de la synchronisation boursière..." };
+    }
+
+    var breadthRatio = greenCnt / liveCnt; // 0..1
+    var avgDay = daySum / liveCnt;
+    var benchDay = spDay !== null ? spDay : (msciDay !== null ? msciDay : avgDay);
+    var avgM1 = m1Cnt > 0 ? (m1Sum / m1Cnt) : 0;
+    var avgRec = recCnt > 0 ? (recSum / recCnt) : 0;
+
+    var raw = 50
+      + (breadthRatio - 0.5) * 32
+      + Math.max(-16, Math.min(16, benchDay * 7))
+      + Math.max(-14, Math.min(14, avgM1 * 1.4))
+      + Math.max(-10, Math.min(10, avgRec * 18));
+
+    var score = Math.round(Math.max(12, Math.min(95, raw)));
+    var spTxt = benchDay !== null ? ((benchDay >= 0 ? "+" : "") + benchDay.toFixed(2) + " %") : "0,00 %";
+    var m1Txt = (avgM1 >= 0 ? "+" : "") + avgM1.toFixed(1) + " %";
+    var detail = "Calculé en direct : " + greenCnt + "/" + liveCnt + " lignes dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt;
+    return { score: score, detail: detail };
+  }
+
+  function setRegime(score, silent, mode) {
+    if (mode) state.regimeMode = mode;
+    if (!state.regimeMode) state.regimeMode = "live";
+
+    var liveInfo = computeLiveRegime();
+    state.liveRegimeScore = liveInfo.score;
+    state.liveRegimeDetail = liveInfo.detail;
+
+    if (state.regimeMode === "live") {
+      score = state.liveRegimeScore;
+    }
     state.regime = score;
+
     var btns = document.querySelectorAll("#regimeRow .pill-btn");
     for (var i = 0; i < btns.length; i++) {
+      var bMode = btns[i].getAttribute("data-mode");
       var btnScore = parseInt(btns[i].getAttribute("data-score"), 10);
-      btns[i].classList.toggle("active", btnScore === score);
+      if (state.regimeMode === "live") {
+        btns[i].classList.toggle("active", bMode === "live");
+      } else {
+        btns[i].classList.toggle("active", bMode === "sim" && btnScore === score);
+      }
     }
     document.getElementById("regimeBar").style.width = score + "%";
-    document.getElementById("regimeBadge").textContent = "Score : " + score + "/100";
+    var badgeEl = document.getElementById("regimeBadge");
+    badgeEl.textContent = (state.regimeMode === "live" ? "Live : " : "Simulé : ") + score + "/100";
+    badgeEl.className = "badge " + (score <= 35 ? "b-red" : (score <= 68 ? "b-amber" : "b-green"));
+
+    var liveLine = "<div style='font-size:0.76rem;color:var(--blue);margin-top:4px;font-weight:600;'>📡 " + liveInfo.detail + "</div>";
     var box = document.getElementById("regimeAdvice");
     if (score <= 35) {
-      box.innerHTML = "<strong>🌪️ Mode Catastrophe / Crise (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Quand la géopolitique ou l'inflation dérape : coupez tout achat sur la Tech volatile. Orientez <strong>100% de vos achats</strong> vers <strong>S&amp;P 500 Equal Weight</strong>, <strong>Physical Gold</strong> et votre <strong>PEA Air Liquide</strong>.</p>";
+      box.innerHTML = "<strong>🌪️ Mode Catastrophe / Tension (Score " + score + "/100)</strong>" + liveLine + "<p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Marché sous pression : coupez tout achat sur la Tech volatile. Orientez <strong>100% de vos achats</strong> vers <strong>S&amp;P 500 Equal Weight</strong>, <strong>Physical Gold</strong> et votre <strong>PEA Air Liquide</strong>.</p>";
     } else if (score <= 68) {
-      box.innerHTML = "<strong>⚖️ Climat Mixte &amp; Sélectif (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Marché partagé entre la puissance de l'IA et la prudence sur les taux US. Renforcez les valeurs sous-pondérées de qualité : <strong>Microsoft</strong>, <strong>Alphabet (A)</strong> et <strong>S&amp;P 500 Equal Weight</strong>.</p>";
+      box.innerHTML = "<strong>⚖️ Climat Mixte &amp; Sélectif (Score " + score + "/100)</strong>" + liveLine + "<p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Marché équilibré ou sélectif : renforcez en priorité vos valeurs sous-pondérées de qualité (<strong>Microsoft</strong>, <strong>Alphabet (A)</strong> et <strong>S&amp;P 500 Equal Weight</strong>).</p>";
     } else {
-      box.innerHTML = "<strong>☀️ Mode Bienveillance / Accélération (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Baisse des taux + euphorie technologique : renforcez <strong>Microsoft, Alphabet, S&amp;P 500 EUR et BYD</strong> pour capter le cycle long terme.</p>";
+      box.innerHTML = "<strong>☀️ Mode Bienveillance / Accélération (Score " + score + "/100)</strong>" + liveLine + "<p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Momentum haussier mondial : renforcez <strong>Microsoft, Alphabet, S&amp;P 500 EUR et BYD</strong> pour capter le cycle long terme.</p>";
     }
     renderInvest();
-    if (!silent) showToast("Météo mondiale : " + score + "/100");
+    if (!silent) showToast((state.regimeMode === "live" ? "Météo Live : " : "Simulation météo : ") + score + "/100");
   }
 
   function computeTargetPoles(regime) {
@@ -2370,6 +2437,9 @@
         var dtStr = formatDateTimeNow();
         state.lastSync = dtStr;
         persistState();
+        if (!state.regimeMode || state.regimeMode === "live") {
+          setRegime(0, true, "live");
+        }
         renderAll(true);
 
         if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/22";
@@ -2547,7 +2617,8 @@
     }
     var regBtn = e.target.closest("#regimeRow .pill-btn");
     if (regBtn) {
-      setRegime(parseInt(regBtn.getAttribute("data-score"), 10));
+      var rMode = regBtn.getAttribute("data-mode") || "sim";
+      setRegime(parseInt(regBtn.getAttribute("data-score"), 10), false, rMode);
       return;
     }
     var filBtn = e.target.closest("#filterRow .pill-btn");
