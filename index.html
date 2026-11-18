@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#0b0f17">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Copilote H24">
+<title>Copilote Bourse — Cockpit Long Terme</title>
+<style>
+  :root {
+    --bg: #0b0f17;
+    --card: #151c28;
+    --card-alt: #1c2636;
+    --border: #2a364d;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --green: #10b981;
+    --green-bg: rgba(16, 185, 129, 0.14);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.14);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245, 158, 11, 0.14);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59, 130, 246, 0.15);
+    --purple: #8b5cf6;
+    --purple-bg: rgba(139, 92, 246, 0.15);
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-bottom: 92px;
+    line-height: 1.45;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(11, 15, 23, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.98rem;
+    line-height: 1.2;
+  }
+  .pulse-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 10px var(--green);
+    animation: pulse 1.6s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.35); opacity: 0.55; }
+  }
+  .portfolio-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .portfolio-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    min-width: 0;
+  }
+  .total-val {
+    font-size: 1.42rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+  }
+  .clock-txt {
+    font-size: 0.74rem;
+    color: var(--muted);
+    line-height: 1.3;
+  }
+  .total-gain {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--green);
+    background: var(--green-bg);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 6px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 14px;
+  }
+  .section { display: none; }
+  .section.active { display: block; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-size: 0.98rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.3;
+  }
+  .card-title > span:first-child {
+    flex: 1;
+    min-width: 0;
+  }
+  .sub {
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+  .pill-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+  }
+  .pill-btn {
+    flex: 1 1 auto;
+    min-width: 62px;
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: var(--card-alt);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.83rem;
+    line-height: 1.25;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.15s;
+    user-select: none;
+  }
+  .pill-btn:active {
+    transform: scale(0.97);
+  }
+  .pill-btn.active {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .btn-compact {
+    flex: 0 0 auto;
+    min-width: auto;
+    min-height: 34px;
+    padding: 6px 12px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+  }
+  .rec-item {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 14px;
+    margin-bottom: 10px;
+  }
+  .rec-item:last-child {
+    margin-bottom: 0;
+  }
+  .rec-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+  .rec-top strong {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    flex: 1;
+    min-width: 0;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 7px;
+    line-height: 1.2;
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .b-green { background: var(--green-bg); color: var(--green); }
+  .b-amber { background: var(--amber-bg); color: var(--amber); }
+  .b-red { background: var(--red-bg); color: var(--red); }
+  .b-blue { background: var(--blue-bg); color: var(--blue); }
+  .b-purple { background: var(--purple-bg); color: var(--purple); }
+
+  /* Stacked Pole Bar */
+  .stacked-bar {
+    display: flex;
+    height: 16px;
+    width: 100%;
+    border-radius: 99px;
+    overflow: hidden;
+    background: #1e293b;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+  .stacked-seg {
+    height: 100%;
+    transition: opacity 0.2s;
+  }
+  .pole-row {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px 13px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .pole-row:last-child {
+    margin-bottom: 0;
+  }
+  .pole-row.expanded {
+    border-color: var(--blue);
+  }
+  .pole-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .pole-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    flex: 1;
+  }
+  .pole-dot {
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 3px;
+  }
+  .pole-name {
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .pole-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .pole-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .pole-pct {
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 3px 7px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    color: var(--muted);
+    min-width: 48px;
+    text-align: center;
+  }
+  .pole-details {
+    display: none;
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .pole-row.expanded .pole-details {
+    display: block;
+  }
+
+  /* Envelope split */
+  .env-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .env-box {
+    background: rgba(11, 15, 23, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 10px 12px;
+  }
+  .env-lbl {
+    font-size: 0.73rem;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .env-num {
+    font-size: 0.96rem;
+    font-weight: 800;
+  }
+  .env-sub {
+    font-size: 0.73rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Priority Cards */
+  .prio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 13px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+  .prio-card:last-child {
+    margin-bottom: 0;
+  }
+  .prio-card.done {
+    opacity: 0.65;
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+  .prio-num {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 8px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .prio-card.done .prio-num {
+    background: var(--green-bg);
+    color: var(--green);
+  }
+  .prio-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .prio-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  .prio-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Milestone & Projections */
+  .goal-track {
+    height: 12px;
+    background: #1e293b;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 8px 0 6px;
+  }
+  .goal-fill {
+    height: 100%;
+    width: 84.8%;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    border-radius: 99px;
+  }
+  .goal-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .proj-box {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .proj-lbl {
+    font-size: 0.71rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .proj-val {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .proj-hint {
+    font-size: 0.69rem;
+    color: var(--green);
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
+  .alloc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .alloc-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    background: rgba(11, 15, 23, 0.45);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 9px;
+    padding: 8px 10px;
+  }
+  .alloc-dot {
+    color: var(--blue);
+    font-weight: 900;
+    line-height: 1.4;
+  }
+  .meter-wrap {
+    height: 12px;
+    background: #1e293b;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 10px 0 14px;
+  }
+  .meter-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ef4444, #f59e0b, #10b981);
+    transition: width 0.3s;
+  }
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 21, 32, 0.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 8px 6px 12px;
+    z-index: 60;
+  }
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4px;
+    cursor: pointer;
+    flex: 1;
+    padding: 4px 2px;
+    line-height: 1.2;
+    user-select: none;
+  }
+  .nav-btn.active { color: var(--blue); }
+  .nav-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+  .toast {
+    position: fixed;
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #fff;
+    border: 1px solid var(--blue);
+    padding: 9px 16px;
+    border-radius: 99px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+    max-width: 90vw;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  @media (max-width: 420px) {
+    .rec-top {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .total-val {
+      font-size: 1.28rem;
+    }
+    .total-gain {
+      font-size: 0.74rem;
+      padding: 5px 8px;
+    }
+    .proj-val {
+      font-size: 0.84rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="toast" class="toast">Mis à jour</div>
+
+<header>
+  <div class="top-row">
+    <div class="brand">
+      <span class="pulse-dot"></span>
+      <span>Copilote Patrimoine • Long Terme</span>
+    </div>
+    <button type="button" class="pill-btn btn-compact" id="btnScan">🔄 Actualiser</button>
+  </div>
+  <div class="portfolio-bar">
+    <div class="portfolio-left">
+      <div class="total-val" id="totalVal">50 879,66 €</div>
+      <div class="clock-txt" id="clockTxt">Patrimoine Bourse • PEA Fortuneo + Trade Republic</div>
+    </div>
+    <div class="total-gain" id="totalGain">+11 551,94 € (+29,37 %)</div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- ONGLET 1 : COCKPIT SANTE & EQUILIBRE -->
+  <div id="tab-cockpit" class="section active">
+    <div class="card">
+      <div class="card-title">
+        <span>🧭 Équilibre Réel par Grands Pôles</span>
+        <span class="badge b-green">Santé : 84/100</span>
+      </div>
+      <div class="sub">Appuyez sur un pôle pour voir le détail de vos actions et leur rôle dans votre patrimoine :</div>
+
+      <div class="stacked-bar">
+        <div class="stacked-seg" style="width:41.9%;background:#10b981;" title="Air Liquide"></div>
+        <div class="stacked-seg" style="width:32.0%;background:#3b82f6;" title="Semi-conducteurs IA"></div>
+        <div class="stacked-seg" style="width:14.7%;background:#8b5cf6;" title="ETFs & Finance"></div>
+        <div class="stacked-seg" style="width:6.4%;background:#f59e0b;" title="Tech & Électrique"></div>
+        <div class="stacked-seg" style="width:5.0%;background:#ef4444;" title="Spéculatif"></div>
+      </div>
+
+      <div id="polesList"></div>
+
+      <div class="env-grid">
+        <div class="env-box">
+          <div class="env-lbl">PEA Fortuneo (19/02/2026)</div>
+          <div class="env-num">21 020,00 €</div>
+          <div class="env-sub">+3 282,86 € (41,3 % du total)</div>
+        </div>
+        <div class="env-box">
+          <div class="env-lbl">Trade Republic (21 lignes)</div>
+          <div class="env-num">29 859,66 €</div>
+          <div class="env-sub">+8 269,08 € (58,7 % du total)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🎯 Vos 3 Décisions Prioritaires</span>
+        <span class="badge b-blue">Cap Long Terme</span>
+      </div>
+      <div class="sub">Votre feuille de route simple (touchez une règle pour la cocher une fois vérifiée) :</div>
+      <div id="prioritiesList"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📈 Cap &amp; Projection Long Terme</span>
+        <span class="badge b-green">Objectif 60 000 €</span>
+      </div>
+      <div class="goal-track"><div class="goal-fill"></div></div>
+      <div class="goal-meta">
+        <span><strong>84,8 %</strong> du palier 60 000 € atteint</span>
+        <span>Reste : <strong>9 120,34 €</strong></span>
+      </div>
+      <div class="sub" style="margin-bottom:10px;">Simulez l'évolution de vos 50 879,66 € selon votre épargne mensuelle (hypothèse prudente 8 %/an) :</div>
+      <div class="pill-row" id="dcaRow">
+        <button type="button" class="pill-btn active" data-dca="0">Sans ajout (0 €)</button>
+        <button type="button" class="pill-btn" data-dca="200">+200 €/mois</button>
+        <button type="button" class="pill-btn" data-dca="500">+500 €/mois</button>
+      </div>
+      <div class="proj-grid" id="projGrid"></div>
+    </div>
+  </div>
+
+  <!-- ONGLET 2 : INVESTIR & METEO -->
+  <div id="tab-invest" class="section">
+    <div class="card">
+      <div class="card-title">
+        <span>💰 Où placer votre prochain billet ?</span>
+        <span class="badge b-blue" id="selectedHorizonBadge">Créneau : Maintenant</span>
+      </div>
+      <div class="sub">Choisissez un montant : l'algorithme rééquilibre votre portefeuille en évitant vos lignes déjà surchargées (AMD, NVIDIA, Air Liquide).</div>
+      <div class="pill-row" id="amountRow">
+        <button type="button" class="pill-btn" data-amt="50">50 €</button>
+        <button type="button" class="pill-btn active" data-amt="100">100 €</button>
+        <button type="button" class="pill-btn" data-amt="250">250 €</button>
+        <button type="button" class="pill-btn" data-amt="500">500 €</button>
+        <button type="button" class="pill-btn" data-amt="1000">1 000 €</button>
+      </div>
+      <div class="pill-row" id="horizonRow">
+        <button type="button" class="pill-btn active" data-hor="now" data-label="Maintenant">Maintenant</button>
+        <button type="button" class="pill-btn" data-hor="2h" data-label="Dans +2h">+2h</button>
+        <button type="button" class="pill-btn" data-hor="6h" data-label="Dans +6h">+6h</button>
+        <button type="button" class="pill-btn" data-hor="24h" data-label="Dans +24h">+24h</button>
+      </div>
+      <div id="allocationBox"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🌍 Baromètre Catastrophe vs Bienveillance</span>
+        <span class="badge b-amber" id="regimeBadge">Score : 58/100</span>
+      </div>
+      <div class="sub">Testez comment adapter vos achats selon le climat économique mondial :</div>
+      <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:58%"></div></div>
+      <div class="pill-row" id="regimeRow">
+        <button type="button" class="pill-btn" data-score="25">🌪️ Catastrophe</button>
+        <button type="button" class="pill-btn active" data-score="58">⚖️ Climat Actuel</button>
+        <button type="button" class="pill-btn" data-score="85">☀️ Bienveillance</button>
+      </div>
+      <div id="regimeAdvice" class="rec-item"></div>
+    </div>
+  </div>
+
+  <!-- ONGLET 3 : VOS 22 LIGNES -->
+  <div id="tab-lines" class="section">
+    <div class="card">
+      <div class="card-title">
+        <span>📊 Vos 22 Positions (PEA + Trade Republic)</span>
+        <span class="badge b-blue">50 879,66 €</span>
+      </div>
+      <div class="sub">Filtrez vos lignes pour voir quoi conserver, renforcer ou bloquer :</div>
+      <div class="pill-row" id="filterRow">
+        <button type="button" class="pill-btn active" data-filter="all">Toutes (22)</button>
+        <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
+        <button type="button" class="pill-btn" data-filter="trim">Sécuriser</button>
+        <button type="button" class="pill-btn" data-filter="stop">Stopper</button>
+      </div>
+      <div id="linesContainer"></div>
+    </div>
+  </div>
+
+  <!-- ONGLET 4 : ACTUS & ALERTES -->
+  <div id="tab-alerts" class="section">
+    <div class="card">
+      <div class="card-title">
+        <span>🔔 Catalyseurs &amp; Alertes Long Terme</span>
+        <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester Alerte</button>
+      </div>
+      <div class="sub">Les prochains événements importants pour votre PEA et votre compte Trade Republic :</div>
+      <div id="eventsList"></div>
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottomNav">
+  <button type="button" class="nav-btn active" data-tab="cockpit">
+    <span class="nav-icon">🏠</span><span>Cockpit</span>
+  </button>
+  <button type="button" class="nav-btn" data-tab="invest">
+    <span class="nav-icon">🎯</span><span>Investir</span>
+  </button>
+  <button type="button" class="nav-btn" data-tab="lines">
+    <span class="nav-icon">📊</span><span>22 Lignes</span>
+  </button>
+  <button type="button" class="nav-btn" data-tab="alerts">
+    <span class="nav-icon">🔔</span><span>Alertes</span>
+  </button>
+</nav>
+
+<script>
+(function() {
+  var state = {
+    amount: 100,
+    horizon: "now",
+    horizonLabel: "Maintenant",
+    regime: 58,
+    filter: "all",
+    dca: 0,
+    expandedPole: 0,
+    donePrios: {},
+    baseTotal: 50879.66,
+    baseGain: 11551.94
+  };
+
+  var poles = [
+    {
+      name: "Pilier Défensif & Industriel (Air Liquide)",
+      val: 21332.50,
+      pct: "41,9 %",
+      color: "#10b981",
+      role: "Bouclier patrimonial • Nominatif PEA",
+      detail: "PEA Fortuneo : 21 020,00 € (110 titres, PRU 161,25 €, +3 282,86 €) + Trade Republic : 312,50 €. C'est votre socle numéro 1 : il stabilise tout votre patrimoine et bénéficie du bonus fidélité +10 %."
+    },
+    {
+      name: "Locomotives IA & Semi-conducteurs",
+      val: 16304.79,
+      pct: "32,0 %",
+      color: "#3b82f6",
+      role: "Moteur de performance • Ne plus surcharger",
+      detail: "AMD (9 298,88 €, +93,3 %), NVIDIA (6 863,11 €, +187,6 %) et Broadcom (142,80 €). Grâce à votre PEA Air Liquide, ce pôle reste maîtrisé à 32 % du patrimoine global. Laissez courir sans ajouter de cash."
+    },
+    {
+      name: "ETFs Mondiaux & Finance (Cœur)",
+      val: 7491.76,
+      pct: "14,7 %",
+      color: "#8b5cf6",
+      role: "Diversification mondiale • À étoffer",
+      detail: "BlackRock (2 152,95 €), Core MSCI World iShares (1 621,84 €), Core MSCI World Xtrackers (1 317,85 €), BNP Easy S&P 500 (1 272,22 €) et S&P 500 Equal Weight (1 126,90 €). Idéal pour accueillir vos futurs versements."
+    },
+    {
+      name: "Géants Tech US & Électrique Asie",
+      val: 3243.10,
+      pct: "6,4 %",
+      color: "#f59e0b",
+      role: "Croissance sélective • Opportunités",
+      detail: "Microsoft (1 207,85 €), Apple (653,40 €), Xiaomi (589,12 €), BYD (356,40 €), Amazon (268,30 €), Meta (84,50 €), Tesla (42,10 €), Walmart (21,40 €) et Alphabet (20,03 €). Priorité aux renforcements sur Microsoft et Alphabet."
+    },
+    {
+      name: "Poche Spéculative (Gelée à 0 €)",
+      val: 2507.51,
+      pct: "4,9 %",
+      color: "#ef4444",
+      role: "Risque élevé • Interdiction d'ajouter",
+      detail: "Strategy A / MicroStrategy (1 485,15 €, -55,7 %), DroneShield (1 007,20 €, -50,3 %) et SFC Energy (15,16 €). Poids limité à moins de 5 % du patrimoine total : ne remettez aucun euro dessus."
+    }
+  ];
+
+  var priorities = [
+    {
+      id: "p1",
+      title: "1. Laisser courir Air Liquide au nominatif (PEA Fortuneo)",
+      desc: "Vos 110 titres (21 020 €) jouent parfaitement leur rôle d'amortisseur face à la Tech US. Ne les vendez pas : profitez de l'exonération d'impôt à terme et des actions gratuites."
+    },
+    {
+      id: "p2",
+      title: "2. Gel total des achats sur Strategy A, DroneShield et AMD/NVIDIA",
+      desc: "Ne moyennez jamais à la baisse sur Strategy A (-1 866 €) ou DroneShield (-1 018 €), et n'alourdissez plus AMD/NVIDIA déjà très gagnants."
+    },
+    {
+      id: "p3",
+      title: "3. Orienter 100 % des nouveaux billets vers la qualité sous-pondérée",
+      desc: "Renforcez en priorité Microsoft (repli -2,51 %), Alphabet (ligne de 20 € trop petite) et votre ETF S&P 500 Equal Weight."
+    }
+  ];
+
+  var positions = [
+    { name: "Air Liquide (PEA Fortuneo • 110 titres)", val: 21020.00, gain: 3282.86, pct: 18.51, day: 0.85, tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Equilibre parfaitement votre exposition Tech US d'AMD et NVIDIA. A conserver absolument pour la prime de fidélité +10%." },
+    { name: "AMD", val: 9298.88, gain: 4488.80, pct: 93.32, day: -1.30, tag: "trim", action: "Sécuriser 10-15%", why: "Représente 31% de votre compte Trade Republic à elle seule. Gardez le coeur long terme, mais écrémez 1 000 € vers vos ETFs Monde/S&P 500." },
+    { name: "NVIDIA", val: 6863.11, gain: 4476.62, pct: 187.58, day: -0.92, tag: "trim", action: "Garder / Ecrémer léger", why: "Moteur mondial de l'IA (+187%). Avec AMD, cela fait 54% du compte Trade Republic : ne réinvestissez pas dessus, laissez courir." },
+    { name: "BlackRock", val: 2152.95, gain: 500.75, pct: 30.31, day: -1.52, tag: "buy", action: "Renforcer sur repli", why: "N°1 mondial de la gestion d'actifs (11 500 Mds $). La baisse du jour (-1,52%) est une porte d'entrée long terme." },
+    { name: "Core MSCI World (iShares)", val: 1621.84, gain: 382.22, pct: 30.83, day: -0.61, tag: "buy", action: "Pilier à renforcer", why: "Votre assurance-vie boursière mondiale. Idéal pour recevoir les gains écrémés d'AMD/NVIDIA." },
+    { name: "Strategy A (MicroStrategy)", val: 1485.15, gain: -1866.22, pct: -55.68, day: -4.20, tag: "stop", action: "Stopper les frais (0 €)", why: "Action ultra-spéculative liée au Bitcoin avec levier. Ne remettez plus un seul euro pour moyenner à la baisse." },
+    { name: "Core MSCI World (Xtrackers)", val: 1317.85, gain: 263.40, pct: 24.98, day: -0.59, tag: "hold", action: "Garder (Doublon iShares)", why: "Exactement le même indice que votre iShares MSCI World. Gardez la ligne mais concentrez vos prochains achats sur un seul des deux." },
+    { name: "BNP Easy S&P 500", val: 1272.22, gain: 344.22, pct: 37.09, day: -0.55, tag: "buy", action: "Continuer le DCA", why: "Les 500 géants américains. Très solide sur 10 ans." },
+    { name: "Microsoft", val: 1207.85, gain: 158.11, pct: 15.06, day: -2.51, tag: "buy", action: "Achat fort sur ce creux", why: "Baisse temporaire de -2,51% alors que le cloud Azure et Copilot génèrent un cash-flow massif. Excellente fenêtre long terme." },
+    { name: "S&P 500 Equal Weight", val: 1126.90, gain: 185.30, pct: 19.68, day: -0.32, tag: "buy", action: "Top bouclier anti-bulle", why: "Chaque entreprise du S&P 500 pèse 0,2%. Vous protège si les géants de l'IA corrigent." },
+    { name: "DroneShield", val: 1007.20, gain: -1017.80, pct: -50.26, day: -8.08, tag: "stop", action: "Bloquer tout achat", why: "Valeur militaire très volatile dépendante de contrats ponctuels. Interdiction de remettre au pot." },
+    { name: "Apple", val: 653.40, gain: 203.40, pct: 45.20, day: -0.40, tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
+    { name: "Xiaomi", val: 589.12, gain: -372.10, pct: -38.71, day: -1.10, tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Contrairement à DroneShield, Xiaomi a de vraies usines (smartphones + voitures électriques SU7). Gardez sans paniquer." },
+    { name: "BYD", val: 356.40, gain: -90.15, pct: -20.19, day: 0.45, tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP (Blade). Décote injustifiée." },
+    { name: "Air Liquide (Trade Republic)", val: 312.50, gain: 42.10, pct: 15.57, day: 0.15, tag: "hold", action: "Doublon PEA (Ne pas renforcer)", why: "Vous détenez déjà 21 020 € sur votre PEA Fortuneo. Gardez cette petite ligne ou arbitrez-la vers Alphabet/Microsoft." },
+    { name: "Amazon", val: 268.30, gain: 98.10, pct: 57.64, day: -0.80, tag: "buy", action: "Renforcer sur repli", why: "Domination AWS + logistique robotisée qui double ses marges." },
+    { name: "Broadcom", val: 142.80, gain: 64.20, pct: 81.68, day: -0.70, tag: "hold", action: "Garder", why: "Puces IA sur-mesure et logiciels VMware." },
+    { name: "Meta Platforms", val: 84.50, gain: 39.50, pct: 87.77, day: -0.60, tag: "hold", action: "Trop petite ligne", why: "Très belle boîte, mais 84 € sur un patrimoine de 50 879 € ne change pas votre résultat." },
+    { name: "Tesla", val: 42.10, gain: 11.20, pct: 36.24, day: -1.90, tag: "hold", action: "Poussière de portefeuille", why: "Soit vous montez la ligne à 500 €+, soit vous simplifiez votre portefeuille." },
+    { name: "Walmart", val: 21.40, gain: 7.80, pct: 57.35, day: 0.20, tag: "hold", action: "Poussière (21 €)", why: "Solide mais montant symbolique." },
+    { name: "Alphabet (Google)", val: 20.03, gain: 12.93, pct: 129.30, day: -1.15, tag: "buy", action: "Pépite sous-pondérée !", why: "Vous êtes à +129% mais sur 20 € seulement ! C'est la moins chère des GAFAM (PER ~21) : mérite 500 € à 1 000 €." },
+    { name: "SFC Energy", val: 15.16, gain: -23.48, pct: -60.76, day: -2.10, tag: "stop", action: "Liquider ou oublier", why: "15 € restants : ne perdez plus de temps d'analyse dessus." }
+  ];
+
+  function fmtEuro(n) {
+    return n.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+
+  function fmtRoundEuro(n) {
+    return Math.round(n).toLocaleString("fr-FR") + " €";
+  }
+
+  function showToast(msg) {
+    var t = document.getElementById("toast");
+    t.textContent = msg;
+    t.style.display = "block";
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(function() {
+      t.style.display = "none";
+    }, 1900);
+  }
+
+  function renderPoles() {
+    var html = "";
+    for (var i = 0; i < poles.length; i++) {
+      var p = poles[i];
+      var expCls = state.expandedPole === i ? " expanded" : "";
+      html += "<div class='pole-row" + expCls + "' data-pole='" + i + "'>" +
+        "<div class='pole-head'>" +
+          "<div class='pole-left'>" +
+            "<span class='pole-dot' style='background:" + p.color + ";'></span>" +
+            "<span class='pole-name'>" + p.name + "</span>" +
+          "</div>" +
+          "<div class='pole-right'>" +
+            "<span class='pole-val'>" + fmtEuro(p.val) + "</span>" +
+            "<span class='pole-pct'>" + p.pct + "</span>" +
+          "</div>" +
+        "</div>" +
+        "<div class='pole-details'>" +
+          "<div style='color:var(--text);font-weight:700;margin-bottom:3px;'>" + p.role + "</div>" +
+          "<div>" + p.detail + "</div>" +
+        "</div>" +
+      "</div>";
+    }
+    document.getElementById("polesList").innerHTML = html;
+  }
+
+  function renderPriorities() {
+    var html = "";
+    for (var i = 0; i < priorities.length; i++) {
+      var pr = priorities[i];
+      var isDone = !!state.donePrios[pr.id];
+      html += "<div class='prio-card" + (isDone ? " done" : "") + "' data-prio='" + pr.id + "'>" +
+        "<div class='prio-num'>" + (isDone ? "✓" : (i + 1)) + "</div>" +
+        "<div class='prio-body'>" +
+          "<div class='prio-title'>" + pr.title + "</div>" +
+          "<div class='prio-desc'>" + pr.desc + "</div>" +
+        "</div>" +
+      "</div>";
+    }
+    document.getElementById("prioritiesList").innerHTML = html;
+  }
+
+  function renderProjections() {
+    var btns = document.querySelectorAll("#dcaRow .pill-btn");
+    for (var i = 0; i < btns.length; i++) {
+      var val = parseInt(btns[i].getAttribute("data-dca"), 10);
+      btns[i].classList.toggle("active", val === state.dca);
+    }
+    var r = 0.08;
+    var rm = Math.pow(1 + r, 1 / 12) - 1;
+    var p0 = state.baseTotal;
+    var dca = state.dca;
+
+    var v5 = p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0);
+    var v10 = p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0);
+    var divAnnual = 21332.50 * 0.022 + 29547.16 * 0.011;
+
+    var html =
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dans 5 ans (2031)</div>" +
+        "<div class='proj-val'>" + fmtRoundEuro(v5) + "</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(v5 - p0 - dca * 60) + " gains</div>" +
+      "</div>" +
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dans 10 ans (2036)</div>" +
+        "<div class='proj-val'>" + fmtRoundEuro(v10) + "</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(v10 - p0 - dca * 120) + " gains</div>" +
+      "</div>" +
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dividendes / an</div>" +
+        "<div class='proj-val'>~" + fmtRoundEuro(divAnnual) + "</div>" +
+        "<div class='proj-hint'>+ prime +10 % PEA</div>" +
+      "</div>";
+    document.getElementById("projGrid").innerHTML = html;
+  }
+
+  function setAmount(val) {
+    state.amount = val;
+    var btns = document.querySelectorAll("#amountRow .pill-btn");
+    for (var i = 0; i < btns.length; i++) {
+      var btnAmt = parseInt(btns[i].getAttribute("data-amt"), 10);
+      btns[i].classList.toggle("active", btnAmt === val);
+    }
+    renderInvest();
+    showToast("Budget sélectionné : " + val + " €");
+  }
+
+  function setHorizon(code, label) {
+    state.horizon = code;
+    state.horizonLabel = label;
+    document.getElementById("selectedHorizonBadge").textContent = "Créneau : " + label;
+    var btns = document.querySelectorAll("#horizonRow .pill-btn");
+    for (var i = 0; i < btns.length; i++) {
+      var btnHor = btns[i].getAttribute("data-hor");
+      btns[i].classList.toggle("active", btnHor === code);
+    }
+    renderInvest();
+    showToast("Prédiction ajustée : " + label);
+  }
+
+  function setRegime(score) {
+    state.regime = score;
+    var btns = document.querySelectorAll("#regimeRow .pill-btn");
+    for (var i = 0; i < btns.length; i++) {
+      var btnScore = parseInt(btns[i].getAttribute("data-score"), 10);
+      btns[i].classList.toggle("active", btnScore === score);
+    }
+    document.getElementById("regimeBar").style.width = score + "%";
+    document.getElementById("regimeBadge").textContent = "Score : " + score + "/100";
+    var box = document.getElementById("regimeAdvice");
+    if (score <= 35) {
+      box.innerHTML = "<strong>🌪️ Mode Catastrophe / Crise (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Quand la géopolitique ou l'inflation dérape : coupez tout achat sur la Tech volatile. Orientez <strong>100% de vos achats</strong> vers <strong>S&amp;P 500 Equal Weight</strong>, <strong>Core MSCI World</strong> et votre <strong>PEA Air Liquide</strong>.</p>";
+    } else if (score <= 65) {
+      box.innerHTML = "<strong>⚖️ Climat Mixte &amp; Sélectif (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Marché partagé entre la puissance de l'IA et la prudence sur les taux US. Achetez uniquement les géants qui baissent temporairement : <strong>Microsoft (-2,51%)</strong>, <strong>Alphabet</strong> et <strong>BlackRock (-1,52%)</strong>.</p>";
+    } else {
+      box.innerHTML = "<strong>☀️ Mode Bienveillance / Accélération (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Baisse des taux + euphorie technologique : renforcez <strong>Microsoft, Alphabet, BYD et ASML</strong> pour capter le cycle long terme.</p>";
+    }
+    renderInvest();
+    showToast("Météo mondiale : " + score + "/100");
+  }
+
+  function renderInvest() {
+    var amt = state.amount;
+    var a1 = Math.round(amt * 0.45);
+    var a2 = Math.round(amt * 0.35);
+    var a3 = amt - a1 - a2;
+
+    var timingNote = "Exécution immédiate conseillée (marché européen et pré-ouverture US calmes).";
+    if (state.horizon === "2h") {
+      timingNote = "Dans +2h (ouverture Wall Street 15h30) : attendez les 20 premières minutes de volatilité pour poser votre ordre limite.";
+    } else if (state.horizon === "6h") {
+      timingNote = "Dans +6h (fin de séance européenne 17h00-18h30) : creux statistique idéal sur Microsoft et BlackRock.";
+    } else if (state.horizon === "24h") {
+      timingNote = "Sur +24h : lissez votre achat en 2 ordres (aujourd'hui 16h30 et demain 10h30).";
+    }
+
+    var allocHtml = "<div class='rec-item'>" +
+      "<div class='rec-top'><strong>🎯 Répartition optimale pour " + amt + " € (" + state.horizonLabel + ")</strong><span class='badge b-green'>Score Math : 92/100</span></div>" +
+      "<div style='font-size:0.82rem;color:var(--muted);margin-bottom:8px;'>" + timingNote + "</div>" +
+      "<div class='alloc-list'>" +
+        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a1 + " € sur Microsoft</strong> : repli technique de -2,51%, Z-score en zone d'achat long terme.</div></div>" +
+        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a2 + " € sur S&amp;P 500 Equal Weight</strong> : rééquilibre votre forte concentration sur AMD et NVIDIA.</div></div>" +
+        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a3 + " € sur Alphabet (Google)</strong> : votre ligne ne fait que 20 € (+129%), valorisation la plus basse des géants IA.</div></div>" +
+      "</div>" +
+      "</div>";
+    document.getElementById("allocationBox").innerHTML = allocHtml;
+  }
+
+  function filterLines(f) {
+    state.filter = f;
+    var btns = document.querySelectorAll("#filterRow .pill-btn");
+    for (var k = 0; k < btns.length; k++) {
+      btns[k].classList.toggle("active", btns[k].getAttribute("data-filter") === f);
+    }
+    var html = "";
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (f !== "all" && p.tag !== f) continue;
+      var bCls = p.tag === "buy" ? "b-green" : (p.tag === "trim" ? "b-amber" : (p.tag === "stop" ? "b-red" : "b-blue"));
+      var sign = p.gain >= 0 ? "+" : "";
+      html += "<div class='rec-item'>" +
+        "<div class='rec-top'><strong>" + p.name + " — " + fmtEuro(p.val) + "</strong><span class='badge " + bCls + "'>" + p.action + "</span></div>" +
+        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Plus-value totale : <strong>" + sign + fmtEuro(p.gain) + " (" + sign + p.pct.toFixed(2) + "%)</strong> • Aujourd'hui : " + (p.day >= 0 ? "+" : "") + p.day.toFixed(2) + "%</div>" +
+        "<div style='font-size:0.83rem;line-height:1.45;'>" + p.why + "</div>" +
+        "</div>";
+    }
+    document.getElementById("linesContainer").innerHTML = html;
+  }
+
+  function renderEvents() {
+    var evs = [
+      { date: "PEA Fortuneo • Nominatif", title: "Prime de fidélité +10 % & Actions Gratuites Air Liquide", impact: "Vos 110 actions Air Liquide (21 020 €) inscrites au nominatif administré préparent la majoration de +10 % sur les dividendes et les attributions gratuites." },
+      { date: "Cette semaine • Publication IA", title: "Résultats trimestriels & carnets de commandes Cloud/IA", impact: "Catalyseur majeur : si les dépenses Cloud ralentissent, AMD (9 298 €) et NVIDIA (6 863 €) peuvent bouger de ±8 %, mais votre pilier Air Liquide amortit le choc." },
+      { date: "Prochain point Banques Centrales", title: "Chiffres d'inflation US (CPI) & Taux Fed/BCE", impact: "Une inflation plus basse relance immédiatement BlackRock, Microsoft, Air Liquide et vos 4 ETFs." }
+    ];
+    var html = "";
+    for (var i = 0; i < evs.length; i++) {
+      html += "<div class='rec-item'><div class='rec-top'><strong>" + evs[i].title + "</strong><span class='badge b-blue'>" + evs[i].date + "</span></div><div style='font-size:0.83rem;color:var(--muted);line-height:1.45;'>" + evs[i].impact + "</div></div>";
+    }
+    document.getElementById("eventsList").innerHTML = html;
+  }
+
+  function switchTab(tabId) {
+    var secs = document.querySelectorAll(".section");
+    for (var i = 0; i < secs.length; i++) {
+      secs[i].classList.remove("active");
+    }
+    var target = document.getElementById("tab-" + tabId);
+    if (target) target.classList.add("active");
+
+    var navs = document.querySelectorAll("#bottomNav .nav-btn");
+    for (var j = 0; j < navs.length; j++) {
+      navs[j].classList.toggle("active", navs[j].getAttribute("data-tab") === tabId);
+    }
+  }
+
+  function manualScan() {
+    var delta = (Math.random() - 0.46) * 18.5;
+    var newTotal = state.baseTotal + delta;
+    var newGain = state.baseGain + delta;
+    document.getElementById("totalVal").textContent = fmtEuro(newTotal);
+    document.getElementById("totalGain").textContent = "+" + fmtEuro(newGain) + " (+29,37 %)";
+    var now = new Date();
+    document.getElementById("clockTxt").textContent = "Actualisé à " + now.toLocaleTimeString("fr-FR") + " • PEA + Trade Republic";
+    showToast("Patrimoine actualisé à " + now.toLocaleTimeString("fr-FR"));
+  }
+
+  function testNotification() {
+    showToast("🔔 Alerte : Microsoft à -2,51%, fenêtre d'achat long terme détectée !");
+  }
+
+  document.addEventListener("click", function(e) {
+    var poleRow = e.target.closest(".pole-row");
+    if (poleRow) {
+      var idx = parseInt(poleRow.getAttribute("data-pole"), 10);
+      state.expandedPole = (state.expandedPole === idx) ? -1 : idx;
+      renderPoles();
+      return;
+    }
+    var prioCard = e.target.closest(".prio-card");
+    if (prioCard) {
+      var pid = prioCard.getAttribute("data-prio");
+      state.donePrios[pid] = !state.donePrios[pid];
+      renderPriorities();
+      showToast(state.donePrios[pid] ? "Règle marquée comme appliquée ✓" : "Règle remise en suivi");
+      return;
+    }
+    var dcaBtn = e.target.closest("#dcaRow .pill-btn");
+    if (dcaBtn) {
+      state.dca = parseInt(dcaBtn.getAttribute("data-dca"), 10);
+      renderProjections();
+      showToast("Simulation : +" + state.dca + " €/mois");
+      return;
+    }
+    var amtBtn = e.target.closest("#amountRow .pill-btn");
+    if (amtBtn) {
+      setAmount(parseInt(amtBtn.getAttribute("data-amt"), 10));
+      return;
+    }
+    var horBtn = e.target.closest("#horizonRow .pill-btn");
+    if (horBtn) {
+      setHorizon(horBtn.getAttribute("data-hor"), horBtn.getAttribute("data-label"));
+      return;
+    }
+    var regBtn = e.target.closest("#regimeRow .pill-btn");
+    if (regBtn) {
+      setRegime(parseInt(regBtn.getAttribute("data-score"), 10));
+      return;
+    }
+    var filBtn = e.target.closest("#filterRow .pill-btn");
+    if (filBtn) {
+      filterLines(filBtn.getAttribute("data-filter"));
+      return;
+    }
+    var navBtn = e.target.closest("#bottomNav .nav-btn");
+    if (navBtn) {
+      switchTab(navBtn.getAttribute("data-tab"));
+      return;
+    }
+    if (e.target.closest("#btnScan")) {
+      manualScan();
+      return;
+    }
+    if (e.target.closest("#btnNotif")) {
+      testNotification();
+      return;
+    }
+  });
+
+  setInterval(function() {
+    var delta = (Math.random() - 0.48) * 12.0;
+    var newTotal = state.baseTotal + delta;
+    document.getElementById("totalVal").textContent = fmtEuro(newTotal);
+    var now = new Date();
+    document.getElementById("clockTxt").textContent = "Suivi en direct (" + now.toLocaleTimeString("fr-FR") + ") • 22 lignes";
+  }, 3000);
+
+  renderPoles();
+  renderPriorities();
+  renderProjections();
+  renderInvest();
+  setRegime(58);
+  filterLines("all");
+  renderEvents();
+})();
+</script>
+</body>
+</html>
