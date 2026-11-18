@@ -932,13 +932,13 @@
 
     <div class="card">
       <div class="card-title">
-        <span>🔔 Journal d'Alertes Horodatées</span>
+        <span>🔔 Journal d'Alertes Actualités</span>
         <div style="display:flex;gap:6px;flex-shrink:0;">
           <button type="button" class="pill-btn btn-compact" id="btnEnablePush">🔔 Activer</button>
           <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester</button>
         </div>
       </div>
-      <div class="sub">Historique horodaté (date et heure exactes) des variations et alertes détectées sur vos lignes :</div>
+      <div class="sub">Historique horodaté des alertes d'actualités et catalyseurs majeurs (sans alertes de variations de cours) :</div>
       <div id="alertLogsList"></div>
     </div>
   </div>
@@ -1102,7 +1102,7 @@
     nextRefreshSec: 10,
     isSyncing: false,
     editingId: null,
-    notifiedMoves: {},
+    notifiedNews: savedData.notifiedNews || {},
     alertLogs: initialLogs
   };
 
@@ -1123,6 +1123,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         positions: map,
         lastSync: state.lastSync,
+        notifiedNews: state.notifiedNews,
         alertLogs: state.alertLogs.slice(0, 15)
       }));
     } catch (e) {}
@@ -1654,69 +1655,88 @@
     return "Dans " + days + " jours";
   }
 
-  function renderEvents() {
-    var evs = [
-      {
-        dateLabel: "Mer. 18/11/2026 • 22h20 (Paris)",
-        iso: "2026-11-18T22:20:00",
-        tag: "Semi-conducteurs IA",
-        tagCls: "b-purple",
-        title: "Publication Trimestrielle NVIDIA & Flux Semi-conducteurs",
-        impact: "Impact direct sur vos 16 137 € d'AMD et NVIDIA. Réaction immédiate attendue en après-bourse US dès 22h20 puis à l'ouverture européenne demain à 09h00."
-      },
-      {
-        dateLabel: "Jeu. 19/11/2026 • 15h30 (Paris)",
-        iso: "2026-11-19T15:30:00",
-        tag: "Ouverture US",
-        tagCls: "b-green",
-        title: "Ouverture Wall Street — Réajustement Tech & IA",
-        impact: "Surveillez Microsoft (1 354 €), Alphabet (23 €) et votre S&P 500 Equal Weight (358 €) : attendez 15h50 pour placer un éventuel ordre limite."
-      },
-      {
-        dateLabel: "Ven. 27/11/2026 • 14h30 (Paris)",
-        iso: "2026-11-27T14:30:00",
-        tag: "Macro US",
-        tagCls: "b-amber",
-        title: "Indice d'Inflation PCE Core US (Indicateur favori de la Fed)",
-        impact: "Un ralentissement de l'inflation soutient directement BlackRock (1 980 €), vos ETFs S&P 500 / MSCI World et votre poche Or physique."
-      },
-      {
-        dateLabel: "Jeu. 10/12/2026 • 14h30 (Paris)",
-        iso: "2026-12-10T14:30:00",
-        tag: "Inflation CPI",
-        tagCls: "b-amber",
-        title: "Chiffres officiels de l'Inflation Américaine (CPI Novembre)",
-        impact: "Rendez-vous mensuel majeur à 14h30 précises : détermine la trajectoire des taux américains avant la réunion de la Fed."
-      },
-      {
-        dateLabel: "Mer. 16/12/2026 • 20h00 (Paris)",
-        iso: "2026-12-16T20:00:00",
-        tag: "Banque Centrale US",
-        tagCls: "b-blue",
-        title: "Décision des Taux Directeurs de la Fed (FOMC) & Conférence 20h30",
-        impact: "Forte volatilité attendue entre 20h00 et 21h15 sur le Dollar (EUR/USD) et l'ensemble de vos valeurs américaines."
-      },
-      {
-        dateLabel: "Jeu. 17/12/2026 • 14h15 (Paris)",
-        iso: "2026-12-17T14:15:00",
-        tag: "Banque Centrale EU",
-        tagCls: "b-blue",
-        title: "Décision des Taux de la BCE (Francfort) & Conférence 14h45",
-        impact: "Influence directement vos valeurs européennes (Air Liquide, Siemens Energy) et la parité Euro/Dollar."
-      },
-      {
-        dateLabel: "Jeu. 31/12/2026 • 17h30 (Paris)",
-        iso: "2026-12-31T17:30:00",
-        tag: "PEA Fortuneo",
-        tagCls: "b-green",
-        title: "Clôture Annuelle Nominatif Administré Air Liquide (PEA)",
-        impact: "Vos actions Air Liquide (21 266,26 €) doivent être inscrites au nominatif avant le 31/12/2026 à 17h30 pour valider l'année fiscale en cours vers la prime de fidélité +10 %."
-      }
-    ];
+  var newsEvents = [
+    {
+      dateLabel: "Mer. 18/11/2026 • 22h20 (Paris)",
+      iso: "2026-11-18T22:20:00",
+      tag: "Semi-conducteurs IA",
+      tagCls: "b-purple",
+      title: "Publication Trimestrielle NVIDIA & Flux Semi-conducteurs",
+      impact: "Impact direct sur vos 16 137 € d'AMD et NVIDIA. Réaction immédiate attendue en après-bourse US dès 22h20 puis à l'ouverture européenne demain à 09h00."
+    },
+    {
+      dateLabel: "Jeu. 19/11/2026 • 15h30 (Paris)",
+      iso: "2026-11-19T15:30:00",
+      tag: "Ouverture US",
+      tagCls: "b-green",
+      title: "Ouverture Wall Street — Réajustement Tech & IA",
+      impact: "Surveillez Microsoft (1 354 €), Alphabet (23 €) et votre S&P 500 Equal Weight (358 €) : attendez 15h50 pour placer un éventuel ordre limite."
+    },
+    {
+      dateLabel: "Ven. 27/11/2026 • 14h30 (Paris)",
+      iso: "2026-11-27T14:30:00",
+      tag: "Macro US",
+      tagCls: "b-amber",
+      title: "Indice d'Inflation PCE Core US (Indicateur favori de la Fed)",
+      impact: "Un ralentissement de l'inflation soutient directement BlackRock (1 980 €), vos ETFs S&P 500 / MSCI World et votre poche Or physique."
+    },
+    {
+      dateLabel: "Jeu. 10/12/2026 • 14h30 (Paris)",
+      iso: "2026-12-10T14:30:00",
+      tag: "Inflation CPI",
+      tagCls: "b-amber",
+      title: "Chiffres officiels de l'Inflation Américaine (CPI Novembre)",
+      impact: "Rendez-vous mensuel majeur à 14h30 précises : détermine la trajectoire des taux américains avant la réunion de la Fed."
+    },
+    {
+      dateLabel: "Mer. 16/12/2026 • 20h00 (Paris)",
+      iso: "2026-12-16T20:00:00",
+      tag: "Banque Centrale US",
+      tagCls: "b-blue",
+      title: "Décision des Taux Directeurs de la Fed (FOMC) & Conférence 20h30",
+      impact: "Forte volatilité attendue entre 20h00 et 21h15 sur le Dollar (EUR/USD) et l'ensemble de vos valeurs américaines."
+    },
+    {
+      dateLabel: "Jeu. 17/12/2026 • 14h15 (Paris)",
+      iso: "2026-12-17T14:15:00",
+      tag: "Banque Centrale EU",
+      tagCls: "b-blue",
+      title: "Décision des Taux de la BCE (Francfort) & Conférence 14h45",
+      impact: "Influence directement vos valeurs européennes (Air Liquide, Siemens Energy) et la parité Euro/Dollar."
+    },
+    {
+      dateLabel: "Jeu. 31/12/2026 • 17h30 (Paris)",
+      iso: "2026-12-31T17:30:00",
+      tag: "PEA Fortuneo",
+      tagCls: "b-green",
+      title: "Clôture Annuelle Nominatif Administré Air Liquide (PEA)",
+      impact: "Vos actions Air Liquide (21 266,26 €) doivent être inscrites au nominatif avant le 31/12/2026 à 17h30 pour valider l'année fiscale en cours vers la prime de fidélité +10 %."
+    }
+  ];
 
+  function checkNewsAlerts() {
+    var nowMs = Date.now();
+    for (var i = 0; i < newsEvents.length; i++) {
+      var ev = newsEvents[i];
+      var evMs = new Date(ev.iso).getTime();
+      var diffMs = evMs - nowMs;
+      if (diffMs <= 30 * 60000 && diffMs >= -15 * 60000 && !state.notifiedNews[ev.iso]) {
+        state.notifiedNews[ev.iso] = true;
+        pushAlertLog(
+          "Actualité imminente : " + ev.title,
+          ev.dateLabel + " — " + ev.impact,
+          ev.tag,
+          ev.tagCls,
+          true
+        );
+      }
+    }
+  }
+
+  function renderEvents() {
     var html = "";
-    for (var i = 0; i < evs.length; i++) {
-      var ev = evs[i];
+    for (var i = 0; i < newsEvents.length; i++) {
+      var ev = newsEvents[i];
       var rel = getRelativeLabel(ev.iso);
       html += "<div class='rec-item'>" +
         "<div class='ev-meta-row'>" +
@@ -1728,6 +1748,7 @@
       "</div>";
     }
     document.getElementById("eventsList").innerHTML = html;
+    checkNewsAlerts();
   }
 
   function renderAlertLogs() {
@@ -1997,18 +2018,6 @@
               p.perfW = typeof d[11] === "number" ? d[11] : null;
               p.perf1M = typeof d[12] === "number" ? d[12] : null;
               applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
-
-              if (Math.abs(chosenChg) >= 3 && !state.notifiedMoves[p.id]) {
-                state.notifiedMoves[p.id] = true;
-                var mvSign = chosenChg >= 0 ? "+" : "";
-                pushAlertLog(
-                  "Mouvement fort : " + p.name + " (" + mvSign + chosenChg.toFixed(2) + " %)",
-                  "Variation détectée en " + sessionLabel + " (" + fmtEuro(p.livePriceEUR || chosenPrice) + ").",
-                  chosenChg >= 0 ? "Hausse >= 3%" : "Baisse >= 3%",
-                  chosenChg >= 0 ? "b-green" : "b-red",
-                  true
-                );
-              }
             }
           }
           return finalFx;
@@ -2111,10 +2120,10 @@
     }
     Notification.requestPermission().then(function(perm) {
       if (perm === "granted") {
-        showToast("🔔 Notifications activées !");
+        showToast("🔔 Notifications d'actualités activées !");
         pushAlertLog(
-          "Notifications Push activées sur cet appareil",
-          "Vous recevrez les alertes horodatées en direct lors des variations de cours.",
+          "Notifications d'actualités activées",
+          "Vous recevrez uniquement les alertes d'actualités et catalyseurs majeurs (sans alertes de cours).",
           "Système Actif",
           "b-green",
           true
@@ -2128,13 +2137,13 @@
   function testNotification() {
     var dt = formatDateTimeNow();
     pushAlertLog(
-      "Test d'alerte : Microsoft & Alphabet (A) en zone de renforcement",
-      "Signal détecté sur vos lignes sous-pondérées. Vérifiez votre budget d'investissement dans l'onglet Investir.",
-      "Test Horodaté",
-      "b-green",
+      "Actualité : Catalyseur Semi-conducteurs & Macro US",
+      "Alerte d'actualité importante sur vos positions (sans alerte de variation de cours).",
+      "Actualité",
+      "b-blue",
       true
     );
-    showToast("🔔 Alerte enregistrée le " + dt);
+    showToast("🔔 Alerte d'actualité enregistrée le " + dt);
   }
 
   function triggerInstall() {
@@ -2231,6 +2240,7 @@
   // Compte a rebours seconde par seconde + synchro H24 auto toutes les 10 secondes
   setInterval(function() {
     updateMarketSessions();
+    checkNewsAlerts();
     if (!state.isSyncing) {
       state.nextRefreshSec--;
       if (state.nextRefreshSec <= 0) {
