@@ -1003,6 +1003,8 @@
         <button type="button" class="pill-btn" data-hor="7d" data-label="Dans +1 semaine">+1 semaine</button>
       </div>
       <div id="allocationBox"></div>
+      <button type="button" class="pill-btn" id="btnDiscover" style="width:100%;margin-top:10px;border-color:rgba(139,92,246,0.45);background:rgba(139,92,246,0.14);color:var(--purple);">✨ Proposer une nouvelle ligne (hors portefeuille)</button>
+      <div id="discoveryBox" style="margin-top:10px;display:none;"></div>
     </div>
 
     <div class="card">
@@ -1263,8 +1265,29 @@
     editingId: null,
     activeTab: savedData.activeTab || "cockpit",
     notifiedNews: savedData.notifiedNews || {},
+    discoveryResults: [],
+    discoveryIdx: 0,
+    discoveryUpdatedAt: 0,
+    discoveryLoading: false,
     alertLogs: initialLogs
   };
+
+  var DISCOVERY_POOL = [
+    { tv: "EURONEXT:SU", ticker: "SU.PA", name: "Schneider Electric", pole: "pilier", pea: true, currency: "EUR", sector: "Électrification & Data Centers", thesis: "Leader mondial de l'énergie et des réseaux électriques pour data centers, complémentaire d'Air Liquide sur PEA." },
+    { tv: "EURONEXT:SAN", ticker: "SAN.PA", name: "Sanofi", pole: "pilier", pea: true, currency: "EUR", sector: "Santé / Pharma", thesis: "Secteur santé totalement absent de votre portefeuille : offre un profil défensif et un dividende régulier éligible PEA." },
+    { tv: "EURONEXT:MC", ticker: "MC.PA", name: "LVMH", pole: "pilier", pea: true, currency: "EUR", sector: "Luxe Mondial", thesis: "Exposition au luxe européen sur PEA sans dépendance aux semi-conducteurs US." },
+    { tv: "EURONEXT:TTE", ticker: "TTE.PA", name: "TotalEnergies", pole: "pilier", pea: true, currency: "EUR", sector: "Énergie & Dividende", thesis: "Couverture contre les chocs énergétiques avec rendement élevé sur PEA." },
+    { tv: "XETR:MEUD", ticker: "MEUD.DE", name: "STOXX Europe 600 (Acc)", pole: "etf", pea: false, currency: "EUR", sector: "ETF Europe (600 titres)", thesis: "Dilue votre forte exposition aux actions américaines en couvrant 600 grandes entreprises européennes." },
+    { tv: "XETR:IS3N", ticker: "IS3N.DE", name: "Core MSCI EM IMI (Acc)", pole: "etf", pea: false, currency: "EUR", sector: "ETF Marchés Émergents", thesis: "Complète vos ETFs S&P 500 et MSCI World avec l'Inde, Taïwan, la Corée et le Brésil." },
+    { tv: "NYSE:BRK.B", ticker: "BRK.B", name: "Berkshire Hathaway B", pole: "etf", pea: false, currency: "USD", sector: "Conglomérat Défensif", thesis: "Réserve de trésorerie massive et activités réelles (assurance, rail, énergie) très résilientes en marché volatil." },
+    { tv: "NYSE:V", ticker: "V", name: "Visa", pole: "etf", pea: false, currency: "USD", sector: "Paiements Mondiaux", thesis: "Infrastructure mondiale des paiements à marges élevées, peu sensible aux coûts industriels." },
+    { tv: "NYSE:JPM", ticker: "JPM", name: "JPMorgan Chase", pole: "etf", pea: false, currency: "USD", sector: "Banque Leader US", thesis: "Exposition bancaire de premier plan qui complète BlackRock dans votre pôle Finance." },
+    { tv: "NYSE:LLY", ticker: "LLY", name: "Eli Lilly", pole: "pilier", pea: false, currency: "USD", sector: "Santé / Innovation", thesis: "Moteur de croissance santé (métabolisme/oncologie) décorrélé du cycle des semi-conducteurs." },
+    { tv: "NASDAQ:COST", ticker: "COST", name: "Costco Wholesale", pole: "pilier", pea: false, currency: "USD", sector: "Distribution Résiliente", thesis: "Modèle par abonnement très régulier qui amortit la volatilité du portefeuille." },
+    { tv: "NASDAQ:CRWD", ticker: "CRWD", name: "CrowdStrike", pole: "tech", pea: false, currency: "USD", sector: "Cybersécurité IA", thesis: "Thématique cybersécurité absente de vos lignes tech (Microsoft/Alphabet/Apple)." },
+    { tv: "EURONEXT:ASML", ticker: "ASML.AS", name: "ASML Holding", pole: "ia", pea: true, currency: "EUR", sector: "Lithographie EUV", thesis: "Fournisseur critique de l'équipement semi-conducteurs en Europe, éligible PEA." },
+    { tv: "NASDAQ:AVGO", ticker: "AVGO", name: "Broadcom", pole: "ia", pea: false, currency: "USD", sector: "Réseaux IA & Logiciels", thesis: "Complète AMD/NVIDIA sur la connectivité IA et les logiciels d'infrastructure." }
+  ];
 
   function persistState() {
     try {
@@ -1617,6 +1640,10 @@
       btns[i].classList.toggle("active", btnAmt === val);
     }
     renderInvest();
+    var dBox = document.getElementById("discoveryBox");
+    if (dBox && dBox.style.display !== "none" && state.discoveryResults.length > 0) {
+      renderDiscoveryBox();
+    }
     showToast("Budget sélectionné : " + val + " €");
   }
 
@@ -1782,6 +1809,250 @@
       "<div class='alloc-list'>" + rowsHtml + "</div>" +
       "</div>";
     document.getElementById("allocationBox").innerHTML = allocHtml;
+  }
+
+  function scoreDiscoveryItem(item, marketData, fxUsd, tot) {
+    var close = marketData.close;
+    var ccy = marketData.currency || item.currency;
+    var priceEUR = ccy === "USD" ? (close / fxUsd) : close;
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var targets = computeTargetPoles(state.regime);
+    var curPoleShare = (tot.poleSums[item.pole] || 0) / totalVal;
+    var poleGap = targets[item.pole] - curPoleShare;
+    var iaShare = (tot.poleSums.ia || 0) / totalVal;
+
+    var peaCount = 0;
+    var peaVal = 0;
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].account === "PEA") {
+        peaCount++;
+        peaVal += getPosMetrics(positions[i]).val;
+      }
+    }
+
+    var score = 62;
+    score += Math.max(-15, Math.min(24, poleGap * 150));
+    if (item.pole === "ia" && iaShare > 0.22) score -= 28;
+    if (item.pea && peaCount <= 1) score += 9;
+    if (state.regime <= 40 && (item.pole === "pilier" || item.pole === "etf")) score += 7;
+    if (state.regime <= 40 && item.pole === "tech") score -= 8;
+
+    var rsi = marketData.rsi;
+    var perf1M = marketData.perf1M;
+    var recAll = marketData.recAll;
+    var divYield = marketData.divYield;
+
+    if (typeof rsi === "number") {
+      if (rsi >= 30 && rsi <= 56) score += 8;
+      else if (rsi > 72) score -= 8;
+    }
+    if (typeof perf1M === "number" && perf1M >= -15 && perf1M < 0) score += 5;
+    if (typeof recAll === "number" && recAll > 0) score += recAll * 6;
+    if (typeof divYield === "number" && divYield >= 2) score += 3;
+
+    var fitScore = Math.round(Math.max(55, Math.min(98, score)));
+
+    var poleLabels = {
+      pilier: "Pilier Défensif & Industrie",
+      etf: "ETFs & Finance",
+      tech: "Tech & Croissance",
+      ia: "IA & Semi-conducteurs"
+    };
+    var reasons = [];
+    var curPct = (curPoleShare * 100).toFixed(1).replace(".", ",");
+    var tgtPct = (targets[item.pole] * 100).toFixed(1).replace(".", ",");
+    if (poleGap > 0.01) {
+      reasons.push("renforce votre pôle " + (poleLabels[item.pole] || item.pole) + " actuellement sous la cible (" + curPct + " % vs " + tgtPct + " %)");
+    } else if (item.pole !== "ia" && iaShare > 0.22) {
+      reasons.push("réduit votre concentration sur les semi-conducteurs IA (actuellement à " + (iaShare * 100).toFixed(1).replace(".", ",") + " %)");
+    }
+    if (item.pea && peaCount <= 1) {
+      reasons.push("diversifie votre PEA Fortuneo qui ne contient qu'Air Liquide (" + fmtEuro(peaVal) + ")");
+    }
+    if (typeof perf1M === "number" && perf1M < 0) {
+      reasons.push("point d'entrée après un repli de " + perf1M.toFixed(1).replace(".", ",") + " % sur 1 mois");
+    }
+    if (reasons.length === 0) {
+      reasons.push("complète votre pôle " + (poleLabels[item.pole] || item.pole) + " (" + curPct + " % du patrimoine)");
+    }
+    var whyFit = "Pertinence en direct : " + reasons.join(" • ") + ".";
+
+    return {
+      tv: item.tv,
+      ticker: item.ticker,
+      name: item.name,
+      pole: item.pole,
+      pea: item.pea,
+      sector: item.sector,
+      thesis: item.thesis,
+      priceEUR: priceEUR,
+      dayPct: marketData.dayPct,
+      rsi: rsi,
+      recAll: recAll,
+      pe: marketData.pe,
+      perf1M: perf1M,
+      divYield: divYield,
+      fitScore: fitScore,
+      whyFit: whyFit
+    };
+  }
+
+  function renderDiscoveryBox() {
+    var box = document.getElementById("discoveryBox");
+    if (!box) return;
+    var list = state.discoveryResults;
+    if (!list || list.length === 0) {
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>Aucune nouvelle suggestion disponible pour le moment.</div></div>";
+      return;
+    }
+    if (state.discoveryIdx >= list.length || state.discoveryIdx < 0) state.discoveryIdx = 0;
+    var cur = list[state.discoveryIdx];
+
+    var dayHtml = "";
+    if (typeof cur.dayPct === "number") {
+      var dCls = cur.dayPct >= 0 ? "q-day-pos" : "q-day-neg";
+      var dSign = cur.dayPct >= 0 ? "+" : "";
+      dayHtml = " • Jour : <span class='" + dCls + "'>" + dSign + cur.dayPct.toFixed(2) + " %</span>";
+    }
+    var extraMetrics = [];
+    if (typeof cur.perf1M === "number") {
+      extraMetrics.push("1M : " + (cur.perf1M >= 0 ? "+" : "") + cur.perf1M.toFixed(1) + "%");
+    }
+    if (typeof cur.pe === "number" && cur.pe > 0) {
+      extraMetrics.push("PER : " + cur.pe.toFixed(1) + "x");
+    }
+    if (typeof cur.divYield === "number" && cur.divYield >= 0.5) {
+      extraMetrics.push("Div : " + cur.divYield.toFixed(2) + "%");
+    }
+    var metricsLine = extraMetrics.length > 0 ? (" • " + extraMetrics.join(" • ")) : "";
+
+    var estQty = cur.priceEUR > 0 ? (state.amount / cur.priceEUR) : 0;
+    var qtyTxt = estQty >= 1 ? estQty.toFixed(2) : estQty.toFixed(4);
+    var eligBadge = cur.pea
+      ? "<span class='badge b-green' style='font-size:0.68rem;padding:2px 7px;'>Éligible PEA &amp; TR</span>"
+      : "<span class='badge b-blue' style='font-size:0.68rem;padding:2px 7px;'>Trade Republic</span>";
+    var scoreCls = cur.fitScore >= 78 ? "b-green" : (cur.fitScore >= 65 ? "b-blue" : "b-amber");
+
+    box.innerHTML =
+      "<div class='rec-item' style='border-color:rgba(139,92,246,0.45);background:rgba(139,92,246,0.07);'>" +
+        "<div class='rec-top'><strong>✨ Idée #" + (state.discoveryIdx + 1) + "/" + list.length + " : " + escHtml(cur.name) + " (" + escHtml(cur.ticker) + ")</strong><span class='badge " + scoreCls + "'>Fit : " + cur.fitScore + "/100</span></div>" +
+        "<div style='display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;'>" +
+          eligBadge +
+          "<span style='font-size:0.77rem;color:var(--muted);font-weight:600;'>• " + escHtml(cur.sector) + "</span>" +
+        "</div>" +
+        "<div class='quote-strip'>" +
+          "<div class='quote-left'><span class='live-tag'></span>Cours Live : <span class='q-price'>" + fmtEuro(cur.priceEUR) + "</span>" + dayHtml + metricsLine + "</div>" +
+        "</div>" +
+        "<div style='font-size:0.8rem;color:var(--green);font-weight:700;margin-bottom:6px;'>Avec votre budget de " + state.amount + " € → ~" + qtyTxt + " part(s)</div>" +
+        "<div style='font-size:0.82rem;color:var(--text);line-height:1.45;margin-bottom:4px;'>" + escHtml(cur.whyFit) + "</div>" +
+        "<div style='font-size:0.79rem;color:var(--muted);line-height:1.4;margin-bottom:10px;'>" + escHtml(cur.thesis) + "</div>" +
+        "<div class='pill-row' style='margin-bottom:0;'>" +
+          "<button type='button' class='pill-btn btn-compact' id='btnDiscoverNext' style='flex:1;'>🔄 Autre idée (" + (state.discoveryIdx + 1) + "/" + list.length + ")</button>" +
+          "<button type='button' class='pill-btn btn-compact' id='btnDiscoverClose'>✕ Masquer</button>" +
+        "</div>" +
+      "</div>";
+  }
+
+  function runDiscoveryScan(forceRefresh) {
+    var box = document.getElementById("discoveryBox");
+    if (!box) return;
+    box.style.display = "block";
+
+    var owned = {};
+    for (var i = 0; i < positions.length; i++) {
+      owned[positions[i].tv] = true;
+    }
+    var pool = [];
+    for (var j = 0; j < DISCOVERY_POOL.length; j++) {
+      if (!owned[DISCOVERY_POOL[j].tv]) pool.push(DISCOVERY_POOL[j]);
+    }
+    if (pool.length === 0) {
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>Vous détenez déjà tous les actifs de l'univers suivi.</div></div>";
+      return;
+    }
+
+    if (!forceRefresh && state.discoveryResults.length > 0 && (Date.now() - state.discoveryUpdatedAt < 60000)) {
+      renderDiscoveryBox();
+      return;
+    }
+    if (state.discoveryLoading) return;
+    state.discoveryLoading = true;
+    box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>🔎 Analyse en direct de " + pool.length + " idées complémentaires...</div></div>";
+
+    var tickers = ["FX_IDC:EURUSD"];
+    for (var k = 0; k < pool.length; k++) tickers.push(pool[k].tv);
+
+    var payload = JSON.stringify({
+      symbols: { tickers: tickers, query: { types: [] } },
+      columns: [
+        "name",
+        "close",
+        "change",
+        "currency",
+        "RSI",
+        "Recommend.All",
+        "price_earnings_ttm",
+        "Perf.1M",
+        "dividend_yield_recent"
+      ]
+    });
+
+    fetchJsonTimeout(
+      "https://scanner.tradingview.com/global/scan",
+      {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: payload,
+        cache: "no-store"
+      },
+      4500
+    )
+      .then(function(resp) {
+        state.discoveryLoading = false;
+        var rows = (resp && Array.isArray(resp.data)) ? resp.data : [];
+        var map = {};
+        for (var r = 0; r < rows.length; r++) {
+          if (rows[r] && rows[r].s && Array.isArray(rows[r].d)) {
+            map[rows[r].s] = rows[r].d;
+          }
+        }
+        var fxRow = map["FX_IDC:EURUSD"];
+        var fxUsd = fxRow && typeof fxRow[1] === "number" && fxRow[1] > 0 ? fxRow[1] : 1.09;
+        var tot = computeTotals();
+        var scored = [];
+
+        for (var pIdx = 0; pIdx < pool.length; pIdx++) {
+          var item = pool[pIdx];
+          var d = map[item.tv];
+          if (!d || typeof d[1] !== "number" || d[1] <= 0) continue;
+          var mData = {
+            close: d[1],
+            dayPct: typeof d[2] === "number" ? d[2] : null,
+            currency: d[3] || item.currency,
+            rsi: typeof d[4] === "number" ? d[4] : null,
+            recAll: typeof d[5] === "number" ? d[5] : null,
+            pe: typeof d[6] === "number" ? d[6] : null,
+            perf1M: typeof d[7] === "number" ? d[7] : null,
+            divYield: typeof d[8] === "number" ? d[8] : null
+          };
+          scored.push(scoreDiscoveryItem(item, mData, fxUsd, tot));
+        }
+
+        if (scored.length === 0) {
+          box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);margin-bottom:8px;'>Impossible de récupérer les cours en direct pour le moment.</div><button type='button' class='pill-btn btn-compact' id='btnDiscoverRetry'>🔄 Réessayer</button></div>";
+          return;
+        }
+
+        scored.sort(function(a, b) { return b.fitScore - a.fitScore; });
+        state.discoveryResults = scored;
+        state.discoveryIdx = 0;
+        state.discoveryUpdatedAt = Date.now();
+        renderDiscoveryBox();
+      })
+      .catch(function() {
+        state.discoveryLoading = false;
+        box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);margin-bottom:8px;'>Connexion momentanément indisponible pour analyser de nouvelles idées.</div><button type='button' class='pill-btn btn-compact' id='btnDiscoverRetry'>🔄 Réessayer</button></div>";
+      });
   }
 
   function renderLines(tot) {
@@ -2646,6 +2917,22 @@
     var horBtn = e.target.closest("#horizonRow .pill-btn");
     if (horBtn) {
       setHorizon(horBtn.getAttribute("data-hor"), horBtn.getAttribute("data-label"));
+      return;
+    }
+    if (e.target.closest("#btnDiscover") || e.target.closest("#btnDiscoverRetry")) {
+      runDiscoveryScan(true);
+      return;
+    }
+    if (e.target.closest("#btnDiscoverNext")) {
+      if (state.discoveryResults.length > 0) {
+        state.discoveryIdx = (state.discoveryIdx + 1) % state.discoveryResults.length;
+        renderDiscoveryBox();
+      }
+      return;
+    }
+    if (e.target.closest("#btnDiscoverClose")) {
+      var dBox = document.getElementById("discoveryBox");
+      if (dBox) dBox.style.display = "none";
       return;
     }
     var filBtn = e.target.closest("#filterRow .pill-btn");

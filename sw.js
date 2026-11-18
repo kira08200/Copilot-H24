@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v21";
+const CACHE_NAME = "copilote-bourse-pwa-v22";
 const ASSETS = [
   "./",
   "./index.html",
@@ -34,7 +34,7 @@ self.addEventListener("fetch", function(event) {
     return;
   }
   event.respondWith(
-    fetch(event.request)
+    fetch(event.request, { cache: "no-cache" })
       .then(function(response) {
         var copy = response.clone();
         caches.open(CACHE_NAME).then(function(cache) {
