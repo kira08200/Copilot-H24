@@ -322,6 +322,127 @@
     font-weight: 700;
     color: var(--amber);
   }
+  .earn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+  .earn-box {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 9px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .earn-box.soon {
+    border-color: rgba(245, 158, 11, 0.5);
+    background: rgba(245, 158, 11, 0.07);
+  }
+  .earn-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+  }
+  .earn-name {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--text);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .earn-weight {
+    font-size: 0.68rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .earn-btm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    margin-top: 2px;
+  }
+  .earn-date {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--blue);
+  }
+  .earn-days {
+    font-size: 0.68rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.07);
+    color: var(--muted);
+  }
+  .earn-box.soon .earn-days {
+    background: var(--amber-bg);
+    color: var(--amber);
+  }
+  .news-group {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .news-row {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .news-row:last-child {
+    border-bottom: none;
+  }
+  .news-row-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .news-src {
+    font-size: 0.71rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .news-title-link {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    line-height: 1.35;
+  }
+  .macro-row {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 10px 12px;
+    margin-bottom: 7px;
+    cursor: pointer;
+  }
+  .macro-row:last-child {
+    margin-bottom: 0;
+  }
+  .macro-row.expanded {
+    border-color: var(--blue);
+  }
+  .macro-details {
+    display: none;
+    margin-top: 7px;
+    padding-top: 7px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.79rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .macro-row.expanded .macro-details {
+    display: block;
+  }
 
   /* Live quote pill inside line card */
   .quote-strip {
@@ -920,23 +1041,42 @@
 
   <!-- ONGLET 4 : ACTUS & ALERTES DATEES -->
   <div id="tab-alerts" class="section">
-    <div class="card">
+    <div class="card" style="padding:12px 14px;">
+      <div class="card-title" style="margin-bottom:8px;">
+        <span>🌍 Places Boursières &amp; Radar</span>
+        <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
+      </div>
+      <div class="market-grid" id="marketSessionsGrid" style="margin-bottom:10px;"></div>
+      <div class="pill-row" id="alertFilterRow" style="margin-bottom:0;">
+        <button type="button" class="pill-btn btn-compact active" data-afilter="all">Tout voir</button>
+        <button type="button" class="pill-btn btn-compact" data-afilter="news">⚡ Actus</button>
+        <button type="button" class="pill-btn btn-compact" data-afilter="earnings">📊 Chiffres</button>
+        <button type="button" class="pill-btn btn-compact" data-afilter="macro">🏛️ Macro</button>
+      </div>
+    </div>
+
+    <div class="card" id="alertCardNews">
       <div class="card-title">
-        <span>📅 Prochains Chiffres &amp; Actu Essentielle</span>
+        <span>⚡ L'Actu Essentielle sur Vos Lignes</span>
         <span class="badge b-green" id="deepNewsBadge">Flux Live</span>
       </div>
-      <div class="sub">Uniquement les prochaines publications de résultats de vos lignes et l'actualité essentielle (mis à jour toutes les 2h) :</div>
-      <div id="deepAnalysisBox"></div>
+      <div id="majorMovesBox"></div>
       <div id="liveNewsList"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="alertCardEarnings">
       <div class="card-title">
-        <span>📅 Calendrier des Catalyseurs (Heure de Paris)</span>
-        <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
+        <span>📊 Prochains Chiffres à Annoncer</span>
+        <span class="badge b-purple">Résultats</span>
       </div>
-      <div class="sub">Dates et heures précises des événements susceptibles de faire bouger vos 22 positions :</div>
-      <div class="market-grid" id="marketSessionsGrid"></div>
+      <div id="deepAnalysisBox"></div>
+    </div>
+
+    <div class="card" id="alertCardMacro">
+      <div class="card-title">
+        <span>🏛️ Grands Rendez-vous Macro &amp; PEA</span>
+        <span class="badge b-amber">Touchez pour détail</span>
+      </div>
       <div id="eventsList"></div>
     </div>
   </div>
@@ -1740,17 +1880,19 @@
   }
 
   function renderEvents() {
+    if (typeof state.expandedMacro !== "number") state.expandedMacro = 0;
     var html = "";
     for (var i = 0; i < newsEvents.length; i++) {
       var ev = newsEvents[i];
       var rel = getRelativeLabel(ev.iso);
-      html += "<div class='rec-item'>" +
-        "<div class='ev-meta-row'>" +
+      var expCls = state.expandedMacro === i ? " expanded" : "";
+      html += "<div class='macro-row" + expCls + "' data-macro='" + i + "'>" +
+        "<div class='ev-meta-row' style='margin-bottom:3px;'>" +
           "<span class='ev-datetime'>🗓️ " + ev.dateLabel + "</span>" +
           "<span class='ev-countdown'>⏳ " + rel + "</span>" +
         "</div>" +
-        "<div class='rec-top' style='margin-top:4px;'><strong>" + ev.title + "</strong><span class='badge " + ev.tagCls + "'>" + ev.tag + "</span></div>" +
-        "<div style='font-size:0.83rem;color:var(--muted);line-height:1.45;'>" + ev.impact + "</div>" +
+        "<div class='rec-top' style='margin-bottom:0;'><strong style='font-size:0.84rem;'>" + ev.title + "</strong><span class='badge " + ev.tagCls + "'>" + ev.tag + "</span></div>" +
+        "<div class='macro-details'>" + ev.impact + "</div>" +
       "</div>";
     }
     document.getElementById("eventsList").innerHTML = html;
@@ -1765,15 +1907,27 @@
       .replace(/"/g, "&quot;");
   }
 
+  function formatNewsShortDate(rawDate) {
+    if (!rawDate) return "";
+    var d = new Date(rawDate);
+    if (isNaN(d.getTime())) return rawDate.slice(0, 16);
+    var dd = String(d.getDate()).padStart(2, "0");
+    var mm = String(d.getMonth() + 1).padStart(2, "0");
+    var hh = String(d.getHours()).padStart(2, "0");
+    var min = String(d.getMinutes()).padStart(2, "0");
+    return dd + "/" + mm + " • " + hh + "h" + min;
+  }
+
   function renderDeepNews(data) {
     var box = document.getElementById("deepAnalysisBox");
+    var movesBox = document.getElementById("majorMovesBox");
     var list = document.getElementById("liveNewsList");
     var badge = document.getElementById("deepNewsBadge");
     if (!box || !list) return;
 
     if (!data || (!data.items && !data.upcomingEarnings)) {
-      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>En attente du prochain scan GitHub Actions...</div></div>";
-      list.innerHTML = "";
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>En attente du prochain scan GitHub Actions...</div></div>";
+      list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>En attente des actualités...</div></div>";
       return;
     }
 
@@ -1792,11 +1946,11 @@
       }
     }
 
-    var boxHtml = "";
+    var topHtml = "";
     if (data.aiBrief) {
-      boxHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);'>" +
+      topHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);margin-bottom:10px;'>" +
         "<div class='rec-top'><strong>📌 L'Essentiel sur Vos Lignes</strong><span class='badge b-green'>Résumé</span></div>" +
-        "<div style='font-size:0.83rem;line-height:1.5;white-space:pre-line;'>" + escHtml(data.aiBrief) + "</div>" +
+        "<div style='font-size:0.81rem;line-height:1.45;white-space:pre-line;'>" + escHtml(data.aiBrief) + "</div>" +
       "</div>";
     }
 
@@ -1826,18 +1980,30 @@
           }
         }
       }
-      boxHtml += "<div class='rec-item' style='border-color:rgba(245,158,11,0.35);'>" +
+      topHtml += "<div class='rec-item' style='border-color:rgba(245,158,11,0.35);margin-bottom:10px;'>" +
         "<div class='rec-top'><strong>⚠️ Gros Mouvements du Jour (≤ -5 % / ≥ +7 %)</strong><span class='badge b-amber'>Impact</span></div>" +
         "<div class='alloc-list'>" + mRows + "</div>" +
       "</div>";
     }
+    if (movesBox) movesBox.innerHTML = topHtml;
 
     if (earnings.length > 0) {
-      var eRows = "";
+      var eCells = "";
       for (var eIdx = 0; eIdx < earnings.length; eIdx++) {
         var er = earnings[eIdx];
-        var dLabel = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("Dans " + er.daysLeft + " jours"));
-        eRows += "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + escHtml(er.name) + "</strong> (" + escHtml(er.weight || "") + ") : le <strong>" + escHtml(er.dateStr) + "</strong> (" + dLabel + ")</div></div>";
+        var dLabel = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("J-" + er.daysLeft));
+        var soonCls = er.daysLeft <= 7 ? " soon" : "";
+        var shortW = String(er.weight || "").replace(" (PEA)", "");
+        eCells += "<div class='earn-box" + soonCls + "'>" +
+          "<div class='earn-top'>" +
+            "<span class='earn-name'>" + escHtml(er.name) + "</span>" +
+            "<span class='earn-weight'>" + escHtml(shortW) + "</span>" +
+          "</div>" +
+          "<div class='earn-btm'>" +
+            "<span class='earn-date'>📅 " + escHtml(er.dateStr) + "</span>" +
+            "<span class='earn-days'>" + dLabel + "</span>" +
+          "</div>" +
+        "</div>";
 
         if (er.daysLeft <= 2 && er.id && !state.notifiedNews["earn_" + er.id]) {
           state.notifiedNews["earn_" + er.id] = true;
@@ -1854,43 +2020,45 @@
           }
         }
       }
-      boxHtml += "<div class='rec-item'>" +
-        "<div class='rec-top'><strong>📊 Prochains Chiffres à Annoncer</strong><span class='badge b-purple'>Résultats</span></div>" +
-        "<div class='alloc-list'>" + eRows + "</div>" +
-      "</div>";
+      box.innerHTML = "<div class='earn-grid'>" + eCells + "</div>";
+    } else {
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune date de résultats à proximité.</div></div>";
     }
-    box.innerHTML = boxHtml;
 
-    var itemsHtml = "";
-    for (var i = 0; i < items.length; i++) {
-      var it = items[i];
-      var safeLink = (it.link && /^https?:\/\//i.test(it.link)) ? escHtml(it.link) : "#";
-      var dtTxt = it.pubDate ? it.pubDate.replace(/\s*\+\d{4}$/, "") : "";
-      itemsHtml += "<div class='rec-item'>" +
-        "<div class='ev-meta-row'>" +
-          "<span class='ev-datetime'>📰 " + escHtml(it.source || "Marchés") + (dtTxt ? " • " + escHtml(dtTxt) : "") + "</span>" +
-          "<span class='badge " + escHtml(it.tagCls || "b-blue") + "'>" + escHtml(it.theme || "Essentiel") + "</span>" +
-        "</div>" +
-        "<div style='font-size:0.88rem;font-weight:700;margin:4px 0;'><a href='" + safeLink + "' target='_blank' rel='noopener noreferrer' style='color:var(--text);text-decoration:none;'>" + escHtml(it.title) + " ↗</a></div>" +
-      "</div>";
+    if (items.length > 0) {
+      var rowsHtml = "";
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var safeLink = (it.link && /^https?:\/\//i.test(it.link)) ? escHtml(it.link) : "#";
+        var shortDt = formatNewsShortDate(it.pubDate);
+        rowsHtml += "<div class='news-row'>" +
+          "<div class='news-row-top'>" +
+            "<span class='badge " + escHtml(it.tagCls || "b-blue") + "' style='font-size:0.68rem;padding:2px 7px;'>" + escHtml(it.theme || "Essentiel") + "</span>" +
+            "<span class='news-src'>" + escHtml(it.source || "Marchés") + (shortDt ? " • " + escHtml(shortDt) : "") + "</span>" +
+          "</div>" +
+          "<a href='" + safeLink + "' target='_blank' rel='noopener noreferrer' class='news-title-link'>" + escHtml(it.title) + " ↗</a>" +
+        "</div>";
 
-      if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
-        state.notifiedNews["news_" + it.id] = true;
-        seenNewNews = true;
-        if (notifyCount < 2) {
-          notifyCount++;
-          pushAlertLog(
-            "Actu " + (it.theme || "Portefeuille") + " : " + it.title,
-            (it.source || "Source"),
-            it.theme || "Essentiel",
-            it.tagCls || "b-blue",
-            true
-          );
+        if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
+          state.notifiedNews["news_" + it.id] = true;
+          seenNewNews = true;
+          if (notifyCount < 2) {
+            notifyCount++;
+            pushAlertLog(
+              "Actu " + (it.theme || "Portefeuille") + " : " + it.title,
+              (it.source || "Source"),
+              it.theme || "Essentiel",
+              it.tagCls || "b-blue",
+              true
+            );
+          }
         }
       }
+      list.innerHTML = "<div class='news-group'>" + rowsHtml + "</div>";
+    } else {
+      list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
     }
     if (seenNewNews) persistState();
-    list.innerHTML = itemsHtml;
   }
 
   function fetchDeepNews() {
@@ -2381,6 +2549,28 @@
     if (filBtn) {
       state.filter = filBtn.getAttribute("data-filter");
       renderLines();
+      return;
+    }
+    var afilBtn = e.target.closest("#alertFilterRow .pill-btn");
+    if (afilBtn) {
+      var af = afilBtn.getAttribute("data-afilter");
+      var abtns = document.querySelectorAll("#alertFilterRow .pill-btn");
+      for (var ai = 0; ai < abtns.length; ai++) {
+        abtns[ai].classList.toggle("active", abtns[ai].getAttribute("data-afilter") === af);
+      }
+      var cNews = document.getElementById("alertCardNews");
+      var cEarn = document.getElementById("alertCardEarnings");
+      var cMacro = document.getElementById("alertCardMacro");
+      if (cNews) cNews.style.display = (af === "all" || af === "news") ? "block" : "none";
+      if (cEarn) cEarn.style.display = (af === "all" || af === "earnings") ? "block" : "none";
+      if (cMacro) cMacro.style.display = (af === "all" || af === "macro") ? "block" : "none";
+      return;
+    }
+    var macroRow = e.target.closest(".macro-row");
+    if (macroRow) {
+      var mIdx = parseInt(macroRow.getAttribute("data-macro"), 10);
+      state.expandedMacro = (state.expandedMacro === mIdx) ? -1 : mIdx;
+      renderEvents();
       return;
     }
     var navBtn = e.target.closest("#bottomNav .nav-btn");
