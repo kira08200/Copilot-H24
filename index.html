@@ -878,6 +878,8 @@
         <button type="button" class="pill-btn" data-hor="2h" data-label="Dans +2h">+2h</button>
         <button type="button" class="pill-btn" data-hor="6h" data-label="Dans +6h">+6h</button>
         <button type="button" class="pill-btn" data-hor="24h" data-label="Dans +24h">+24h</button>
+        <button type="button" class="pill-btn" data-hor="3d" data-label="Dans +3 jours">+3 jours</button>
+        <button type="button" class="pill-btn" data-hor="7d" data-label="Dans +1 semaine">+1 semaine</button>
       </div>
       <div id="allocationBox"></div>
     </div>
@@ -1100,6 +1102,7 @@
     nextRefreshSec: 10,
     isSyncing: false,
     editingId: null,
+    notifiedMoves: {},
     alertLogs: initialLogs
   };
 
@@ -1141,12 +1144,26 @@
     renderAlertLogs();
 
     if (sendSystemNotif && "Notification" in window && Notification.permission === "granted") {
-      try {
-        new Notification(title, {
-          body: entry.timestamp + " — " + desc,
-          icon: "./icon-192.png"
-        });
-      } catch (e) {}
+      var notifOpts = {
+        body: entry.timestamp + " — " + desc,
+        icon: "./icon-192.png",
+        badge: "./icon-192.png",
+        tag: "copilote-alert-" + Date.now()
+      };
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.ready
+          .then(function(reg) {
+            if (reg && reg.showNotification) {
+              return reg.showNotification(title, notifOpts);
+            }
+            new Notification(title, notifOpts);
+          })
+          .catch(function() {
+            try { new Notification(title, notifOpts); } catch (e) {}
+          });
+      } else {
+        try { new Notification(title, notifOpts); } catch (e) {}
+      }
     }
   }
 
@@ -1259,6 +1276,7 @@
 
     renderPoles(tot);
     renderProjections(tot);
+    renderInvest(tot);
     renderLines();
   }
 
@@ -1416,29 +1434,104 @@
     showToast("Météo mondiale : " + score + "/100");
   }
 
-  function renderInvest() {
-    var amt = state.amount;
-    var a1 = Math.round(amt * 0.45);
-    var a2 = Math.round(amt * 0.35);
-    var a3 = amt - a1 - a2;
+  function computeTargetPoles(regime) {
+    if (regime <= 35) return { pilier: 0.45, etf: 0.30, tech: 0.13, ia: 0.10, spec: 0.02 };
+    if (regime > 68) return { pilier: 0.35, etf: 0.25, tech: 0.22, ia: 0.16, spec: 0.02 };
+    return { pilier: 0.40, etf: 0.24, tech: 0.18, ia: 0.16, spec: 0.02 };
+  }
 
-    var timingNote = "Exécution immédiate conseillée (marché européen et pré-ouverture US calmes).";
+  function renderInvest(tot) {
+    if (!tot) tot = computeTotals();
+    var amt = state.amount;
+    var targets = computeTargetPoles(state.regime);
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+
+    var candidates = [];
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (p.tag === "stop" || p.tag === "trim") continue;
+      if (state.regime <= 35 && (p.pole === "tech" || p.pole === "ia")) continue;
+      if (p.tag !== "buy" && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
+      if (p.id === "msci2") continue;
+
+      var curPoleShare = (tot.poleSums[p.pole] || 0) / totalVal;
+      var poleGap = targets[p.pole] - curPoleShare;
+      var posShare = getPosMetrics(p).val / totalVal;
+      var rsiScore = typeof p.rsi === "number" ? Math.max(0, (60 - p.rsi) / 25) : 0.4;
+      var dipScore = typeof p.perf1M === "number" && p.perf1M < 0 ? Math.min(1, Math.abs(p.perf1M) / 10) : 0;
+      var score = (poleGap * 12) + Math.max(0, 0.06 - posShare) * 15 + rsiScore * 1.4 + dipScore * 1.1;
+      if (p.id === "msft" || p.id === "xdew" || p.id === "googl") score += 0.8;
+      candidates.push({ pos: p, score: score, posShare: posShare });
+    }
+    candidates.sort(function(a, b) { return b.score - a.score; });
+    var top3 = candidates.slice(0, 3);
+    if (top3.length < 3) {
+      top3 = [
+        { pos: positions[7], score: 3 },
+        { pos: positions[10], score: 2.5 },
+        { pos: positions[20], score: 2 }
+      ];
+    }
+
+    var w1 = 0.45, w2 = 0.35, w3 = 0.20;
+    var a1 = Math.round(amt * w1);
+    var a2 = Math.round(amt * w2);
+    var a3 = amt - a1 - a2;
+    var allocAmounts = [a1, a2, a3];
+
+    var imbBefore = 0;
+    var postSums = Object.assign({}, tot.poleSums);
+    for (var k = 0; k < top3.length; k++) {
+      var pk = top3[k].pos.pole;
+      postSums[pk] = (postSums[pk] || 0) + allocAmounts[k];
+    }
+    var postTotal = totalVal + amt;
+    var imbAfter = 0;
+    var poleKeys = ["pilier", "ia", "etf", "tech", "spec"];
+    for (var m = 0; m < poleKeys.length; m++) {
+      var key = poleKeys[m];
+      imbBefore += Math.abs(((tot.poleSums[key] || 0) / totalVal) - targets[key]);
+      imbAfter += Math.abs(((postSums[key] || 0) / postTotal) - targets[key]);
+    }
+    var reductionRatio = imbBefore > 0 ? Math.max(0, (imbBefore - imbAfter) / imbBefore) : 0;
+    var avgRsi = 0, rsiCnt = 0;
+    for (var r = 0; r < top3.length; r++) {
+      if (typeof top3[r].pos.rsi === "number") {
+        avgRsi += top3[r].pos.rsi;
+        rsiCnt++;
+      }
+    }
+    var rsiBonus = rsiCnt > 0 ? Math.max(0, Math.min(18, (68 - (avgRsi / rsiCnt)) * 0.6)) : 10;
+    var mathScore = Math.round(Math.max(58, Math.min(99, 68 + reductionRatio * 750 + rsiBonus)));
+
+    var timingNote = "Exécution immédiate conseillée (ordre limite légèrement sous le dernier cours).";
     if (state.horizon === "2h") {
-      timingNote = "Dans +2h (ouverture Wall Street 15h30) : attendez les 20 premières minutes de volatilité pour poser votre ordre limite.";
+      timingNote = "Dans +2h : laissez passer les 20 premières minutes d'ouverture US (15h30-15h50) avant de poser votre ordre limite.";
     } else if (state.horizon === "6h") {
-      timingNote = "Dans +6h (fin de séance européenne 17h00-18h30) : creux statistique idéal sur Microsoft et S&P 500 Equal Weight.";
+      timingNote = "Dans +6h : profitez du recoupement / clôture européenne pour limiter le spread sur vos ETF et valeurs US.";
     } else if (state.horizon === "24h") {
-      timingNote = "Sur +24h : lissez votre achat en 2 ordres (aujourd'hui 16h30 et demain 10h30).";
+      timingNote = "Sur +24h : fractionnez en 2 ordres limites espacés (un aujourd'hui, un demain matin après ouverture XETRA).";
+    } else if (state.horizon === "3d") {
+      timingNote = "Sur +3 jours : découpez en 2 à 3 tranches avec des ordres limites -1 % / -2 % pour capter les replis intraday.";
+    } else if (state.horizon === "7d") {
+      timingNote = "Sur +1 semaine : lissez l'achat en 3 versements (J+1, J+3, J+6) pour neutraliser la volatilité hebdomadaire.";
+    }
+
+    var rowsHtml = "";
+    for (var x = 0; x < top3.length; x++) {
+      var tp = top3[x].pos;
+      var metricsTag = [];
+      if (typeof tp.rsi === "number") metricsTag.push("RSI " + tp.rsi.toFixed(0));
+      if (typeof tp.perf1M === "number") metricsTag.push("1M " + (tp.perf1M >= 0 ? "+" : "") + tp.perf1M.toFixed(1) + "%");
+      var extraTxt = metricsTag.length > 0 ? " (" + metricsTag.join(" • ") + ")" : "";
+      rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + allocAmounts[x] + " € sur " + tp.name + "</strong>" + extraTxt + " : " + tp.action + ".</div></div>";
     }
 
     var allocHtml = "<div class='rec-item'>" +
-      "<div class='rec-top'><strong>🎯 Répartition optimale pour " + amt + " € (" + state.horizonLabel + ")</strong><span class='badge b-green'>Score Math : 94/100</span></div>" +
+      "<div class='rec-top'><strong>🎯 Répartition optimale pour " + amt + " € (" + state.horizonLabel + ")</strong><span class='badge b-green'>Score Math : " + mathScore + "/100</span></div>" +
+      "<div style='font-size:0.78rem;color:var(--green);margin-bottom:6px;'>Calcul réel : réduction du déséquilibre des pôles (" + (imbBefore * 100).toFixed(1) + " % → " + (imbAfter * 100).toFixed(1) + " %) + timing RSI + météo " + state.regime + "/100.</div>" +
       "<div style='font-size:0.82rem;color:var(--muted);margin-bottom:8px;'>" + timingNote + "</div>" +
-      "<div class='alloc-list'>" +
-        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a1 + " € sur Microsoft</strong> : pilier logiciel/IA, renforce votre pôle Tech de qualité.</div></div>" +
-        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a2 + " € sur S&amp;P 500 Equal Weight</strong> : parfait contre-poids à AMD et NVIDIA.</div></div>" +
-        "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + a3 + " € sur Alphabet (A)</strong> : ligne très sous-pondérée avec la valorisation la plus attractive des GAFAM.</div></div>" +
-      "</div>" +
+      "<div class='alloc-list'>" + rowsHtml + "</div>" +
       "</div>";
     document.getElementById("allocationBox").innerHTML = allocHtml;
   }
@@ -1472,13 +1565,33 @@
       var estQty = p.qty !== null ? p.qty : (displayPrice > 0 ? m.val / displayPrice : 0);
       var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3)) + " parts") : "";
 
+      var techParts = [];
+      if (typeof p.rsi === "number") {
+        var rsiTag = p.rsi < 35 ? " (Survendu)" : (p.rsi > 70 ? " (Surchauffe)" : "");
+        techParts.push("RSI 14j : " + p.rsi.toFixed(0) + rsiTag);
+      }
+      if (typeof p.perf1M === "number") {
+        techParts.push("1M : " + (p.perf1M >= 0 ? "+" : "") + p.perf1M.toFixed(1) + "%");
+      }
+      if (typeof p.pe === "number" && p.pe > 0) {
+        techParts.push("PER : " + p.pe.toFixed(1) + "x");
+      }
+      if (typeof p.recAll === "number") {
+        var recTxt = p.recAll >= 0.35 ? "Achat fort" : (p.recAll >= 0.1 ? "Achat" : (p.recAll <= -0.35 ? "Vente forte" : (p.recAll <= -0.1 ? "Vente" : "Neutre")));
+        techParts.push("Tech : " + recTxt);
+      }
+      var techHtml = techParts.length > 0
+        ? "<div style='font-size:0.75rem;color:var(--blue);margin-bottom:6px;line-height:1.35;'>" + techParts.join(" • ") + "</div>"
+        : "";
+
       html += "<div class='rec-item'>" +
         "<div class='rec-top'><strong>" + p.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + p.action + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
           "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
         "</div>" +
-        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong></div>" +
+        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:4px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong></div>" +
+        techHtml +
         "<div style='font-size:0.83rem;line-height:1.45;'>" + p.why + "</div>" +
         "</div>";
     }
@@ -1766,7 +1879,12 @@
         "premarket_close",
         "premarket_change",
         "postmarket_close",
-        "postmarket_change"
+        "postmarket_change",
+        "RSI",
+        "Recommend.All",
+        "price_earnings_ttm",
+        "Perf.W",
+        "Perf.1M"
       ]
     });
 
@@ -1873,7 +1991,24 @@
             }
 
             if (chosenPrice !== null) {
+              p.rsi = typeof d[8] === "number" ? d[8] : null;
+              p.recAll = typeof d[9] === "number" ? d[9] : null;
+              p.pe = typeof d[10] === "number" ? d[10] : null;
+              p.perfW = typeof d[11] === "number" ? d[11] : null;
+              p.perf1M = typeof d[12] === "number" ? d[12] : null;
               applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
+
+              if (Math.abs(chosenChg) >= 3 && !state.notifiedMoves[p.id]) {
+                state.notifiedMoves[p.id] = true;
+                var mvSign = chosenChg >= 0 ? "+" : "";
+                pushAlertLog(
+                  "Mouvement fort : " + p.name + " (" + mvSign + chosenChg.toFixed(2) + " %)",
+                  "Variation détectée en " + sessionLabel + " (" + fmtEuro(p.livePriceEUR || chosenPrice) + ").",
+                  chosenChg >= 0 ? "Hausse >= 3%" : "Baisse >= 3%",
+                  chosenChg >= 0 ? "b-green" : "b-red",
+                  true
+                );
+              }
             }
           }
           return finalFx;
