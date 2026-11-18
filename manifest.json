@@ -1,7 +1,7 @@
 {
-  "name": "Copilote Bourse — Cours & Alertes",
+  "name": "Copilote Bourse — Cours Direct 22/22",
   "short_name": "Copilote H24",
-  "description": "Cockpit patrimonial long terme Trade Republic et PEA Fortuneo avec cours en direct et alertes datées",
+  "description": "Cockpit patrimonial long terme Trade Republic et PEA Fortuneo avec cours boursiers en direct sur 22 lignes",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
