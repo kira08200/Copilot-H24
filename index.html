@@ -1041,22 +1041,7 @@
         <span>💰 Où placer votre prochain billet ?</span>
         <span class="badge b-blue" id="selectedHorizonBadge">Créneau : Maintenant</span>
       </div>
-      <div class="sub">Choisissez ou saisissez un montant et une durée : l'algorithme sélectionne et pondère en direct vos 3 lignes les plus pertinentes selon le retard de chaque pôle, le poids actuel et le climat boursier.</div>
-      <div class="pill-row" id="amountRow">
-        <button type="button" class="pill-btn" data-amt="50">50 €</button>
-        <button type="button" class="pill-btn active" data-amt="100">100 €</button>
-        <button type="button" class="pill-btn" data-amt="250">250 €</button>
-        <button type="button" class="pill-btn" data-amt="500">500 €</button>
-        <button type="button" class="pill-btn" data-amt="1000">1 000 €</button>
-      </div>
-      <div class="pill-row" id="horizonRow">
-        <button type="button" class="pill-btn active" data-hor="now" data-label="Maintenant" data-hval="0" data-hunit="h">Maintenant</button>
-        <button type="button" class="pill-btn" data-hor="2h" data-label="Dans +2h" data-hval="2" data-hunit="h">+2h</button>
-        <button type="button" class="pill-btn" data-hor="6h" data-label="Dans +6h" data-hval="6" data-hunit="h">+6h</button>
-        <button type="button" class="pill-btn" data-hor="24h" data-label="Dans +24h" data-hval="24" data-hunit="h">+24h</button>
-        <button type="button" class="pill-btn" data-hor="3d" data-label="Dans +3 jours" data-hval="3" data-hunit="d">+3 jours</button>
-        <button type="button" class="pill-btn" data-hor="7d" data-label="Dans +1 semaine" data-hval="1" data-hunit="w">+1 semaine</button>
-      </div>
+      <div class="sub">Saisissez un montant et une durée : l'algorithme sélectionne et pondère en direct vos 3 lignes les plus pertinentes selon le retard de chaque pôle, le poids actuel et le climat boursier.</div>
       <div class="custom-inputs-grid">
         <div class="custom-input-box">
           <label class="custom-input-lbl" for="customAmountInput">Montant libre</label>
@@ -1748,11 +1733,6 @@
   }
 
   function syncInvestControlsFromState() {
-    var btns = document.querySelectorAll("#amountRow .pill-btn");
-    for (var i = 0; i < btns.length; i++) {
-      var btnAmt = parseFloat(btns[i].getAttribute("data-amt"));
-      btns[i].classList.toggle("active", Math.abs(btnAmt - state.amount) < 0.005);
-    }
     var amtInp = document.getElementById("customAmountInput");
     if (amtInp && document.activeElement !== amtInp) {
       amtInp.value = Math.abs(state.amount - Math.round(state.amount)) < 0.005
@@ -1763,13 +1743,6 @@
     var badge = document.getElementById("selectedHorizonBadge");
     if (badge) badge.textContent = "Créneau : " + state.horizonLabel;
 
-    var hBtns = document.querySelectorAll("#horizonRow .pill-btn");
-    for (var j = 0; j < hBtns.length; j++) {
-      var bVal = parseFloat(hBtns[j].getAttribute("data-hval") || "0");
-      var bUnit = hBtns[j].getAttribute("data-hunit") || "h";
-      var bHours = horizonToHours(bVal, bUnit);
-      hBtns[j].classList.toggle("active", Math.abs(bHours - state.horizonHours) < 0.01);
-    }
     var hInp = document.getElementById("customHorVal");
     if (hInp && document.activeElement !== hInp) {
       hInp.value = String(Math.round(state.horizonVal * 10) / 10);
@@ -1820,17 +1793,8 @@
     var cleanUnit = ["h", "d", "w", "m"].indexOf(unit) >= 0 ? unit : "h";
     var hours = horizonToHours(cleanVal, cleanUnit);
     var label = formatCustomHorizonLabel(cleanVal, cleanUnit);
-    var matchedCode = "custom";
-    var hBtns = document.querySelectorAll("#horizonRow .pill-btn");
-    for (var i = 0; i < hBtns.length; i++) {
-      var bVal = parseFloat(hBtns[i].getAttribute("data-hval") || "0");
-      var bUnit = hBtns[i].getAttribute("data-hunit") || "h";
-      if (Math.abs(horizonToHours(bVal, bUnit) - hours) < 0.01) {
-        matchedCode = hBtns[i].getAttribute("data-hor") || "custom";
-        break;
-      }
-    }
-    setHorizon(matchedCode, label, cleanVal, cleanUnit, noToast);
+    var code = hours <= 0 ? "now" : "custom";
+    setHorizon(code, label, cleanVal, cleanUnit, noToast);
   }
 
   function computeLiveRegime() {
@@ -3158,21 +3122,6 @@
       state.dca = parseInt(dcaBtn.getAttribute("data-dca"), 10);
       renderProjections();
       showToast("Simulation : +" + state.dca + " €/mois");
-      return;
-    }
-    var amtBtn = e.target.closest("#amountRow .pill-btn");
-    if (amtBtn) {
-      setAmount(parseFloat(amtBtn.getAttribute("data-amt")));
-      return;
-    }
-    var horBtn = e.target.closest("#horizonRow .pill-btn");
-    if (horBtn) {
-      setHorizon(
-        horBtn.getAttribute("data-hor"),
-        horBtn.getAttribute("data-label"),
-        parseFloat(horBtn.getAttribute("data-hval") || "0"),
-        horBtn.getAttribute("data-hunit") || "h"
-      );
       return;
     }
     if (e.target.closest("#btnDiscover") || e.target.closest("#btnDiscoverRetry")) {
