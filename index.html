@@ -4,9 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="theme-color" content="#0b0f17">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Copilote H24">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+<link rel="apple-touch-icon" href="./icon-192.png">
 <title>Copilote Bourse — Cockpit Long Terme</title>
 <style>
   :root {
@@ -53,15 +57,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
   .brand {
     display: flex;
     align-items: center;
     gap: 8px;
     font-weight: 800;
-    font-size: 0.98rem;
+    font-size: 0.95rem;
     line-height: 1.2;
+    min-width: 0;
+  }
+  .brand span:last-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
   }
   .pulse-dot {
     width: 10px;
@@ -192,9 +208,14 @@
     flex: 0 0 auto;
     min-width: auto;
     min-height: 34px;
-    padding: 6px 12px;
-    font-size: 0.76rem;
+    padding: 6px 11px;
+    font-size: 0.75rem;
     white-space: nowrap;
+  }
+  .btn-install {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
   }
   .rec-item {
     background: var(--card-alt);
@@ -575,9 +596,12 @@
   <div class="top-row">
     <div class="brand">
       <span class="pulse-dot"></span>
-      <span>Copilote Patrimoine • Long Terme</span>
+      <span>Copilote Patrimoine</span>
     </div>
-    <button type="button" class="pill-btn btn-compact" id="btnScan">🔄 Actualiser</button>
+    <div class="header-actions">
+      <button type="button" class="pill-btn btn-compact btn-install" id="btnInstall">📲 Installer App</button>
+      <button type="button" class="pill-btn btn-compact" id="btnScan">🔄 Actualiser</button>
+    </div>
   </div>
   <div class="portfolio-bar">
     <div class="portfolio-left">
@@ -739,6 +763,38 @@
 
 <script>
 (function() {
+  // Enregistrement du Service Worker PWA
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function() {
+      navigator.serviceWorker.register("./sw.js").catch(function() {});
+    });
+  }
+
+  // Gestion du bouton d'installation native PWA (beforeinstallprompt)
+  var deferredPrompt = null;
+  var installBtn = document.getElementById("btnInstall");
+
+  window.addEventListener("beforeinstallprompt", function(e) {
+    e.preventDefault();
+    deferredPrompt = e;
+    if (installBtn) {
+      installBtn.style.display = "inline-flex";
+      installBtn.textContent = "📲 Installer l'App";
+    }
+  });
+
+  window.addEventListener("appinstalled", function() {
+    deferredPrompt = null;
+    if (installBtn) {
+      installBtn.style.display = "none";
+    }
+    showToast("✅ Application installée sur votre écran d'accueil !");
+  });
+
+  if (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) {
+    if (installBtn) installBtn.style.display = "none";
+  }
+
   var state = {
     amount: 100,
     horizon: "now",
@@ -853,7 +909,7 @@
     clearTimeout(window._toastTimer);
     window._toastTimer = setTimeout(function() {
       t.style.display = "none";
-    }, 1900);
+    }, 2600);
   }
 
   function renderPoles() {
@@ -1066,7 +1122,22 @@
     showToast("🔔 Alerte : Microsoft à -2,51%, fenêtre d'achat long terme détectée !");
   }
 
+  function triggerInstall() {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function() {
+        deferredPrompt = null;
+      });
+    } else {
+      showToast("Menu Chrome ⋮ en haut à droite → « Installer l'application »");
+    }
+  }
+
   document.addEventListener("click", function(e) {
+    if (e.target.closest("#btnInstall")) {
+      triggerInstall();
+      return;
+    }
     var poleRow = e.target.closest(".pole-row");
     if (poleRow) {
       var idx = parseInt(poleRow.getAttribute("data-pole"), 10);
