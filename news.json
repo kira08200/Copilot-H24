@@ -1,7 +1,173 @@
 {
-  "updatedAt": null,
-  "upcomingEarnings": [],
+  "updatedAt": "2026-11-18T17:28:55Z",
+  "upcomingEarnings": [
+    {
+      "id": "earn_HKEX:1810_20261124",
+      "tv": "HKEX:1810",
+      "name": "Xiaomi",
+      "weight": "3,4 %",
+      "timestamp": 1795521600,
+      "dateStr": "24/11/2026",
+      "daysLeft": 5
+    },
+    {
+      "id": "earn_NYSE:BLK_20270121",
+      "tv": "NYSE:BLK",
+      "name": "BlackRock",
+      "weight": "3,9 %",
+      "timestamp": 1800532800,
+      "dateStr": "21/01/2027",
+      "daysLeft": 63
+    },
+    {
+      "id": "earn_NASDAQ:MSFT_20270126",
+      "tv": "NASDAQ:MSFT",
+      "name": "Microsoft",
+      "weight": "2,7 %",
+      "timestamp": 1800964800,
+      "dateStr": "26/01/2027",
+      "daysLeft": 68
+    },
+    {
+      "id": "earn_NASDAQ:AMD_20270202",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "timestamp": 1801569600,
+      "dateStr": "02/02/2027",
+      "daysLeft": 75
+    },
+    {
+      "id": "earn_NASDAQ:GOOGL_20270202",
+      "tv": "NASDAQ:GOOGL",
+      "name": "Alphabet (A)",
+      "weight": "0,1 %",
+      "timestamp": 1801569600,
+      "dateStr": "02/02/2027",
+      "daysLeft": 75
+    },
+    {
+      "id": "earn_NASDAQ:QCOM_20270203",
+      "tv": "NASDAQ:QCOM",
+      "name": "Qualcomm",
+      "weight": "0,3 %",
+      "timestamp": 1801656000,
+      "dateStr": "03/02/2027",
+      "daysLeft": 76
+    },
+    {
+      "id": "earn_NASDAQ:AAPL_20270204",
+      "tv": "NASDAQ:AAPL",
+      "name": "Apple",
+      "weight": "0,4 %",
+      "timestamp": 1801742400,
+      "dateStr": "04/02/2027",
+      "daysLeft": 77
+    },
+    {
+      "id": "earn_NASDAQ:AMZN_20270204",
+      "tv": "NASDAQ:AMZN",
+      "name": "Amazon",
+      "weight": "0,3 %",
+      "timestamp": 1801742400,
+      "dateStr": "04/02/2027",
+      "daysLeft": 77
+    },
+    {
+      "id": "earn_NASDAQ:MSTR_20270210",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "timestamp": 1802260800,
+      "dateStr": "10/02/2027",
+      "daysLeft": 83
+    },
+    {
+      "id": "earn_XETR:ENR_20270211",
+      "tv": "XETR:ENR",
+      "name": "Siemens Energy",
+      "weight": "4,8 %",
+      "timestamp": 1802347200,
+      "dateStr": "11/02/2027",
+      "daysLeft": 84
+    }
+  ],
+  "majorMoves": [
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261118",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -5.23,
+      "price": 91.45,
+      "currency": "USD",
+      "kind": "drop"
+    }
+  ],
   "aiBrief": "",
-  "items": [],
-  "notifiedIds": []
+  "items": [
+    {
+      "id": "dedcc14de930057f",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia, en plein tumulte, prévoit des résultats supérieurs aux attentes au T4 - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Wed, 18 Nov 2026 07:10:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxNZGh4aTAxSGdTS1JqY1JkUi1mTXJFNWlCSy1uTkZCN0M5WXEyZnp6MnM2SER0eGtDMTFucVR5R2JGMzNjME1VZEtKTXJIVmRPV2dzUlJIN0duQjBzeFUtd2hBc2Q3VEZyY0N6T2xXYUJSbG02UVRKMXFEWGYxYWJSLW4xeVhPRExjWnd5cnlSLTNzNzRPUzcxd2hkTmRuVFNMYlZqVGN3T0o4cHNiU2tKVXlqOF85bWNxS0xQZ0k2YkFyeXlKTVBSallnWk92WHBBamxqUWR0YUY1SzA1YXRMOE5sUU1BMUNO0gHuAUFVX3lxTE14WUU0eGJrRm5WNlM3N1A3NGZsdlpCd09QMkxUWlhBQno5ZUJJcUdQb2ZUQWs2SmdzdTJ0Nm5nWl9UaFZDNzQzZlBqX3d6anFWREZhdGpGLVVETjR2NUI5V3ZoSTlCTC16RlIyLS13UlVETklCTmpPU1B4OTctRmZuSHE4MlZEZUF2M3F6T1NtZFMzc3VvWGx4eWF4ZmFFOUN3ZlhrbjdieTNOV0hZYUdBd3A3WmdpMjF4dXRyaWVNcUktWDFCU2ZfeTVLMnI2N1d1YXk0WHZ4Vy1WMFdBc0t0Rzl2bWY3T2VxZ0MwYUE?oc=5"
+    },
+    {
+      "id": "8b3902a13a7f2c63",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia impressionne avec ses résultats mais encore des inquiétudes autour de la succession de Huang - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Wed, 18 Nov 2026 13:21:00 GMT",
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNV0Y2S0RkaGVRcGZaWHpzMm1JSXdpTEVRTURSRHBqb283UEtRal96b0xCbUVTNDNXNExMb2prLURJdUlrRnhvZ1Z0aDh5U3FCbFNId1JOUWxXcFk2bXN5bFpndVpUcWFTSG14aW9IY3FfTldIamtfaXloT040Zm4yQUI1SE5NQlQ2T1ZQaEI2eFZLVi1Hd1hrb3JSYXcxVzRfc3kzamxjTFBTZVBZbkxlbmgtQmpHYTJjUUJMX0QzYk55TGtZSGc5cWh0MlFyVGl1LXFDRzF3ZjBUXzI2Z2d2U25CWVViTmVIMmloTW5yUnNyWXhWNWk2MUJYU0pkeXM3eFE?oc=5"
+    },
+    {
+      "id": "565630cef6af5273",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Bourses: le secteur technologique se maintient après les résultats de Nvidia - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Wed, 18 Nov 2026 15:39:36 GMT",
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQemQ5MmtNQVFKVHkwLXdqTnpyYTI1YnRWcFFDcTFVSW1zNWlybUhkVlM1ZllIcDhTcW5pSHNwdlowRlVxRDBXZnVFZVJzNVBKS1loektUaWQyLTlqR2dKYV9uUFR0Y1pFVGY3U05lcEswbHJfUGxUOEF2c19IV014SlJNRjZmellZTkNXeThpejdnYWhsX2NHMS02V18xOGF2aTlsSENTY0M0dl9KTjZfYXY0RUZvdGFyZmFUNVdLN3ppM3JObkRXd0tMWk1QRHBjSUE?oc=5"
+    },
+    {
+      "id": "1156910560a6670c",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street sans grande conviction après les résultats de Nvidia - France 24",
+      "source": "France 24",
+      "pubDate": "Wed, 18 Nov 2026 15:23:34 GMT",
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQm93X195RnJ5eDZCSEtFRWRDQURKWHdNYkdFX2Y5U3RwbGd0R2U4eWV0Z3IwSmRQRlZ3eV94bTdVQUhnSkFXRlpwSUZjcHFrclg4alFsNFJxVnhsZmhpTTVORWtaRlpodWt4ME5MMTgyRmNMRk1EUEljbkh4ZkFzY1lFR09UUXdwSzktMXR4blFlTWZiZ3Q5RnFya1pYR0EyYm5ESUFMVENDRzYwZllwVzVCeXk2UXp1ekFXRTJpR0JHRWtWWGc?oc=5"
+    },
+    {
+      "id": "573c434258f0595e",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia publie des résultats trimestriels supérieurs aux attentes - ChannelNews",
+      "source": "ChannelNews",
+      "pubDate": "Wed, 18 Nov 2026 14:20:26 GMT",
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
+    },
+    {
+      "id": "e5a8e3334b54b581",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Résultats de NVIDIA : des prévisions rassurantes et une action toujours bon marché - Morningstar",
+      "source": "Morningstar",
+      "pubDate": "Wed, 18 Nov 2026 15:58:40 GMT",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
+    }
+  ],
+  "notifiedIds": [
+    "move_drop_NASDAQ:MSTR_20261118",
+    "dedcc14de930057f",
+    "8b3902a13a7f2c63",
+    "565630cef6af5273",
+    "1156910560a6670c",
+    "573c434258f0595e",
+    "e5a8e3334b54b581"
+  ]
 }
