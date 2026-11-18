@@ -1,14 +1,7 @@
 {
   "updatedAt": null,
-  "count": 0,
-  "deepAnalysis": {
-    "highlights": [
-      "En attente de la première exécution de la GitHub Action (onglet Actions → Run workflow)."
-    ],
-    "aiBrief": "",
-    "oversoldCount": 0,
-    "belowSma200Count": 0
-  },
+  "upcomingEarnings": [],
+  "aiBrief": "",
   "items": [],
   "notifiedIds": []
 }

@@ -4,70 +4,66 @@ import html
 import json
 import os
 import re
-import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NEWS_FILE = os.path.join(BASE_DIR, "news.json")
-
 USER_AGENT = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
 
-RSS_QUERIES = [
+# Positions individuelles triées par importance dans le portefeuille
+STOCKS = [
+    {"tv": "EURONEXT:AI", "name": "Air Liquide", "weight": "41,8 % (PEA)", "keywords": ["air liquide"]},
+    {"tv": "NASDAQ:AMD", "name": "AMD", "weight": "18,4 %", "keywords": ["amd", "advanced micro devices"]},
+    {"tv": "NASDAQ:NVDA", "name": "NVIDIA", "weight": "13,0 %", "keywords": ["nvidia"]},
+    {"tv": "XETR:ENR", "name": "Siemens Energy", "weight": "4,8 %", "keywords": ["siemens energy"]},
+    {"tv": "NYSE:BLK", "name": "BlackRock", "weight": "3,9 %", "keywords": ["blackrock"]},
+    {"tv": "HKEX:1810", "name": "Xiaomi", "weight": "3,4 %", "keywords": ["xiaomi"]},
+    {"tv": "NASDAQ:MSFT", "name": "Microsoft", "weight": "2,7 %", "keywords": ["microsoft"]},
+    {"tv": "NASDAQ:MSTR", "name": "Strategy A", "weight": "2,0 %", "keywords": ["microstrategy", "strategy"]},
+    {"tv": "ASX:DRO", "name": "DroneShield", "weight": "0,8 %", "keywords": ["droneshield"]},
+    {"tv": "NASDAQ:AAPL", "name": "Apple", "weight": "0,4 %", "keywords": ["apple"]},
+    {"tv": "HKEX:1211", "name": "BYD", "weight": "0,4 %", "keywords": ["byd"]},
+    {"tv": "NASDAQ:AMZN", "name": "Amazon", "weight": "0,3 %", "keywords": ["amazon"]},
+    {"tv": "NASDAQ:QCOM", "name": "Qualcomm", "weight": "0,3 %", "keywords": ["qualcomm"]},
+    {"tv": "NYSE:KO", "name": "Coca-Cola", "weight": "0,1 %", "keywords": ["coca-cola", "coca cola"]},
+    {"tv": "NASDAQ:GOOGL", "name": "Alphabet (A)", "weight": "0,1 %", "keywords": ["alphabet", "google"]},
+    {"tv": "XETR:F3C", "name": "SFC Energy", "weight": "0,03 %", "keywords": ["sfc energy"]},
+]
+
+RSS_FEEDS = [
     {
-        "theme": "Semi-conducteurs IA",
+        "theme": "Cœur Portefeuille (Air Liquide / IA)",
         "tagCls": "b-purple",
-        "tickers": ["NVDA", "AMD", "QCOM"],
-        "url": "https://news.google.com/rss/search?q=NVIDIA+OR+AMD+OR+Qualcomm+bourse+OR+earnings+OR+AI&hl=fr&gl=FR&ceid=FR:fr",
+        "priority": 3,
+        "url": "https://news.google.com/rss/search?q=(%22Air+Liquide%22+OR+NVIDIA+OR+AMD+OR+%22Siemens+Energy%22)+(r%C3%A9sultats+OR+chiffres+OR+trimestriel+OR+pr%C3%A9visions+OR+contrat+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
-        "theme": "Big Tech & Cloud US",
+        "theme": "Big Tech & ETF (MSFT / GOOGL / BLK)",
         "tagCls": "b-blue",
-        "tickers": ["MSFT", "GOOGL", "AAPL", "AMZN", "BLK"],
-        "url": "https://news.google.com/rss/search?q=Microsoft+OR+Alphabet+OR+Apple+OR+Amazon+OR+BlackRock+bourse&hl=fr&gl=FR&ceid=FR:fr",
+        "priority": 2,
+        "url": "https://news.google.com/rss/search?q=(Microsoft+OR+Alphabet+OR+BlackRock+OR+Apple+OR+Amazon)+(r%C3%A9sultats+OR+chiffres+OR+IA+OR+earnings+OR+guidance)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
-        "theme": "Industrie & Énergie EU",
-        "tagCls": "b-green",
-        "tickers": ["AI.PA", "ENR.DE", "F3C.DE"],
-        "url": "https://news.google.com/rss/search?q=%22Air+Liquide%22+OR+%22Siemens+Energy%22+bourse+OR+r%C3%A9sultats&hl=fr&gl=FR&ceid=FR:fr",
-    },
-    {
-        "theme": "Macro, Fed, BCE & Or",
+        "theme": "Macro, Fed, BCE & Inflation",
         "tagCls": "b-amber",
-        "tickers": ["SXR8", "XDEW", "EUNL", "PPFB"],
-        "url": "https://news.google.com/rss/search?q=Fed+OR+BCE+OR+inflation+OR+%22S%26P+500%22+OR+or+march%C3%A9s&hl=fr&gl=FR&ceid=FR:fr",
+        "priority": 2,
+        "url": "https://news.google.com/rss/search?q=(Fed+OR+BCE+OR+inflation+OR+%22taux+directeurs%22+OR+%22S%26P+500%22)+(d%C3%A9cision+OR+chiffres+OR+CPI+OR+PCE)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
-        "theme": "Asie, VE & Spéculatif",
-        "tagCls": "b-red",
-        "tickers": ["1810.HK", "1211.HK", "MSTR", "DRO"],
-        "url": "https://news.google.com/rss/search?q=Xiaomi+OR+BYD+OR+MicroStrategy+OR+DroneShield+action+bourse&hl=fr&gl=FR&ceid=FR:fr",
+        "theme": "Asie & Spéculatif (Xiaomi / BYD / MSTR)",
+        "tagCls": "b-green",
+        "priority": 1,
+        "url": "https://news.google.com/rss/search?q=(Xiaomi+OR+BYD+OR+MicroStrategy+OR+DroneShield)+(r%C3%A9sultats+OR+chiffres+OR+ventes+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
 ]
 
-PORTFOLIO_TV_SYMBOLS = [
-    {"tv": "EURONEXT:AI", "name": "Air Liquide", "pole": "pilier"},
-    {"tv": "NASDAQ:AMD", "name": "AMD", "pole": "ia"},
-    {"tv": "NASDAQ:NVDA", "name": "NVIDIA", "pole": "ia"},
-    {"tv": "XETR:SXR8", "name": "S&P 500 EUR", "pole": "etf"},
-    {"tv": "XETR:ENR", "name": "Siemens Energy", "pole": "pilier"},
-    {"tv": "NYSE:BLK", "name": "BlackRock", "pole": "etf"},
-    {"tv": "HKEX:1810", "name": "Xiaomi", "pole": "tech"},
-    {"tv": "NASDAQ:MSFT", "name": "Microsoft", "pole": "tech"},
-    {"tv": "NASDAQ:MSTR", "name": "Strategy A", "pole": "spec"},
-    {"tv": "ASX:DRO", "name": "DroneShield", "pole": "spec"},
-    {"tv": "XETR:XDEW", "name": "S&P 500 Equal Weight", "pole": "etf"},
-    {"tv": "XETR:PPFB", "name": "Physical Gold", "pole": "pilier"},
-    {"tv": "NASDAQ:AAPL", "name": "Apple", "pole": "tech"},
-    {"tv": "HKEX:1211", "name": "BYD", "pole": "tech"},
-    {"tv": "NASDAQ:AMZN", "name": "Amazon", "pole": "tech"},
-    {"tv": "NASDAQ:QCOM", "name": "Qualcomm", "pole": "ia"},
-    {"tv": "XETR:EUNL", "name": "Core MSCI World", "pole": "etf"},
-    {"tv": "NYSE:KO", "name": "Coca-Cola", "pole": "pilier"},
-    {"tv": "NASDAQ:GOOGL", "name": "Alphabet (A)", "pole": "tech"},
-    {"tv": "XETR:F3C", "name": "SFC Energy", "pole": "spec"},
+ESSENTIAL_WORDS = [
+    "résultat", "resultats", "résultats", "chiffre", "trimestr", "bénéfice",
+    "prévision", "guidance", "dividende", "contrat", "rachat", "acquisition",
+    "taux", "fed", "bce", "inflation", "cpi", "pce", "earnings", "revenue",
+    "forecast", "outlook", "profit", "beat", "miss", "livraison", "ventes",
 ]
 
 
@@ -76,63 +72,15 @@ def clean_html(raw_text):
         return ""
     text = html.unescape(raw_text)
     text = re.sub(r"<[^>]+>", " ", text)
-    text = re.sub(r"\s+", " ", text).strip()
-    return text
+    return re.sub(r"\s+", " ", text).strip()
 
 
-def fetch_rss_feed(cfg):
-    items = []
-    req = urllib.request.Request(cfg["url"], headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as resp:
-            xml_bytes = resp.read()
-        root = ET.fromstring(xml_bytes)
-        for item in root.findall("./channel/item")[:5]:
-            title = clean_html(item.findtext("title") or "")
-            link = (item.findtext("link") or "").strip()
-            pub_date = (item.findtext("pubDate") or "").strip()
-            source_el = item.find("source")
-            source_name = clean_html(source_el.text) if source_el is not None and source_el.text else "Actualité Marché"
-            desc = clean_html(item.findtext("description") or "")
-            if not title or not link:
-                continue
-            uid = hashlib.sha256((title.lower() + "|" + cfg["theme"]).encode("utf-8")).hexdigest()[:16]
-            items.append(
-                {
-                    "id": uid,
-                    "theme": cfg["theme"],
-                    "tagCls": cfg["tagCls"],
-                    "tickers": cfg["tickers"],
-                    "title": title,
-                    "source": source_name,
-                    "pubDate": pub_date,
-                    "summary": desc[:260] if desc and desc != title else "",
-                    "link": link,
-                }
-            )
-    except Exception as exc:
-        print(f"[WARN] RSS error ({cfg['theme']}): {exc}")
-    return items
-
-
-def fetch_tv_deep_metrics():
-    tickers = [x["tv"] for x in PORTFOLIO_TV_SYMBOLS]
+def fetch_upcoming_earnings():
+    tickers = [s["tv"] for s in STOCKS]
     payload = json.dumps(
         {
             "symbols": {"tickers": tickers, "query": {"types": []}},
-            "columns": [
-                "name",
-                "close",
-                "RSI",
-                "Recommend.All",
-                "price_earnings_ttm",
-                "Perf.W",
-                "Perf.1M",
-                "Perf.3M",
-                "Perf.YTD",
-                "SMA50",
-                "SMA200",
-            ],
+            "columns": ["name", "earnings_release_next_date", "earnings_release_date"],
         }
     ).encode("utf-8")
     req = urllib.request.Request(
@@ -141,109 +89,130 @@ def fetch_tv_deep_metrics():
         headers={"Content-Type": "text/plain;charset=UTF-8", "User-Agent": USER_AGENT},
         method="POST",
     )
-    meta_by_tv = {x["tv"]: x for x in PORTFOLIO_TV_SYMBOLS}
-    results = []
+    stock_by_tv = {s["tv"]: s for s in STOCKS}
+    now_ts = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
+    upcoming = []
+
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
             data = json.loads(resp.read().decode("utf-8"))
         for row in data.get("data", []):
             tv = row.get("s")
             d = row.get("d") or []
-            if tv not in meta_by_tv or len(d) < 11:
+            if tv not in stock_by_tv or len(d) < 3:
                 continue
-            info = meta_by_tv[tv]
-            results.append(
-                {
-                    "tv": tv,
-                    "name": info["name"],
-                    "pole": info["pole"],
-                    "close": d[1],
-                    "rsi": d[2],
-                    "recAll": d[3],
-                    "pe": d[4],
-                    "perfW": d[5],
-                    "perf1M": d[6],
-                    "perf3M": d[7],
-                    "perfYTD": d[8],
-                    "sma50": d[9],
-                    "sma200": d[10],
-                }
-            )
+            info = stock_by_tv[tv]
+            next_ts = d[1]
+            last_ts = d[2]
+
+            target_ts = None
+            is_upcoming = True
+            if isinstance(next_ts, (int, float)) and next_ts > now_ts - 86400:
+                target_ts = int(next_ts)
+            elif isinstance(last_ts, (int, float)) and last_ts > now_ts - 86400:
+                target_ts = int(last_ts)
+
+            if target_ts:
+                dt = datetime.datetime.fromtimestamp(target_ts, tz=datetime.timezone.utc)
+                days_left = int((target_ts - now_ts) // 86400)
+                upcoming.append(
+                    {
+                        "id": f"earn_{tv}_{dt.strftime('%Y%m%d')}",
+                        "tv": tv,
+                        "name": info["name"],
+                        "weight": info["weight"],
+                        "timestamp": target_ts,
+                        "dateStr": dt.strftime("%d/%m/%Y"),
+                        "daysLeft": max(0, days_left),
+                        "isUpcoming": is_upcoming,
+                    }
+                )
+        upcoming.sort(key=lambda x: x["timestamp"])
     except Exception as exc:
-        print(f"[WARN] TradingView metrics error: {exc}")
-    return results
+        print(f"[WARN] TradingView earnings error: {exc}")
+
+    return upcoming[:10]
 
 
-def build_deep_analysis(metrics, news_items):
-    oversold = []
-    overbought = []
-    below_sma200 = []
-    strong_buy = []
-    perf_list = []
-
-    for m in metrics:
-        rsi = m.get("rsi")
-        close = m.get("close")
-        sma200 = m.get("sma200")
-        rec = m.get("recAll")
-        p1m = m.get("perf1M")
-        if isinstance(rsi, (int, float)):
-            if rsi < 38:
-                oversold.append(f"{m['name']} (RSI {rsi:.0f})")
-            elif rsi > 68:
-                overbought.append(f"{m['name']} (RSI {rsi:.0f})")
-        if isinstance(close, (int, float)) and isinstance(sma200, (int, float)) and sma200 > 0 and close < sma200:
-            below_sma200.append(m["name"])
-        if isinstance(rec, (int, float)) and rec >= 0.35:
-            strong_buy.append(m["name"])
-        if isinstance(p1m, (int, float)):
-            perf_list.append((p1m, m["name"]))
-
-    perf_list.sort(key=lambda x: x[0])
-    laggards = [f"{n} ({v:+.1f}%)" for v, n in perf_list[:3]]
-    leaders = [f"{n} ({v:+.1f}%)" for v, n in reversed(perf_list[-3:])]
-
-    sections = []
-    if leaders:
-        sections.append("Leaders 1 mois : " + ", ".join(leaders) + ".")
-    if laggards:
-        sections.append("Lignes en repli 1 mois : " + ", ".join(laggards) + ".")
-    if oversold:
-        sections.append("Zone de survente technique (RSI < 38) : " + ", ".join(oversold) + ".")
-    if overbought:
-        sections.append("Zone tendue (RSI > 68, éviter de surcharger) : " + ", ".join(overbought) + ".")
-    if below_sma200:
-        sections.append("Sous moyenne mobile 200j (tendance de fond fragile) : " + ", ".join(below_sma200) + ".")
-    if strong_buy:
-        sections.append("Momentum haussier validé (signal technique fort) : " + ", ".join(strong_buy) + ".")
-
-    ai_brief = maybe_generate_gemini_brief(metrics, news_items)
-
-    return {
-        "highlights": sections,
-        "aiBrief": ai_brief,
-        "oversoldCount": len(oversold),
-        "belowSma200Count": len(below_sma200),
-    }
+def match_stock_tag(text_lower):
+    matched = []
+    score = 0
+    for idx, st in enumerate(STOCKS):
+        if any(kw in text_lower for kw in st["keywords"]):
+            matched.append(st["name"])
+            score += max(1, 16 - idx)
+    return matched, score
 
 
-def maybe_generate_gemini_brief(metrics, news_items):
+def fetch_essential_news():
+    candidates = []
+    seen = set()
+
+    for feed in RSS_FEEDS:
+        req = urllib.request.Request(feed["url"], headers={"User-Agent": USER_AGENT})
+        try:
+            with urllib.request.urlopen(req, timeout=15) as resp:
+                xml_bytes = resp.read()
+            root = ET.fromstring(xml_bytes)
+            for item in root.findall("./channel/item")[:8]:
+                title = clean_html(item.findtext("title") or "")
+                link = (item.findtext("link") or "").strip()
+                pub_date = (item.findtext("pubDate") or "").strip()
+                source_el = item.find("source")
+                source = clean_html(source_el.text) if source_el is not None and source_el.text else "Marchés"
+                if not title or not link:
+                    continue
+
+                norm = re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+                if norm in seen:
+                    continue
+                seen.add(norm)
+
+                t_lower = title.lower()
+                matched_stocks, stock_score = match_stock_tag(t_lower)
+                has_essential_kw = any(w in t_lower for w in ESSENTIAL_WORDS)
+
+                # Ne garder que ce qui touche directement vos lignes ou la macro essentielle
+                if not matched_stocks and feed["theme"] != "Macro, Fed, BCE & Inflation":
+                    continue
+                if not has_essential_kw and stock_score < 10:
+                    continue
+
+                uid = hashlib.sha256(norm.encode("utf-8")).hexdigest()[:16]
+                relevance = feed["priority"] * 5 + stock_score + (6 if has_essential_kw else 0)
+                candidates.append(
+                    {
+                        "id": uid,
+                        "theme": ", ".join(matched_stocks[:2]) if matched_stocks else feed["theme"],
+                        "tagCls": feed["tagCls"],
+                        "title": title,
+                        "source": source,
+                        "pubDate": pub_date,
+                        "link": link,
+                        "_score": relevance,
+                    }
+                )
+        except Exception as exc:
+            print(f"[WARN] RSS error ({feed['theme']}): {exc}")
+
+    candidates.sort(key=lambda x: x["_score"], reverse=True)
+    top_items = []
+    for c in candidates[:6]:
+        c.pop("_score", None)
+        top_items.append(c)
+    return top_items
+
+
+def maybe_generate_gemini_brief(earnings, news_items):
     api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not api_key or not news_items:
+    if not api_key or (not earnings and not news_items):
         return ""
-    headlines = "\n".join([f"- [{n['theme']}] {n['title']} ({n['source']})" for n in news_items[:12]])
-    tech_lines = "\n".join(
-        [
-            f"- {m['name']}: RSI={m['rsi']:.1f} | 1M={m['perf1M']:+.1f}% | PE={m['pe']}"
-            for m in metrics
-            if isinstance(m.get("rsi"), (int, float)) and isinstance(m.get("perf1M"), (int, float))
-        ][:15]
-    )
+    earn_txt = "\n".join([f"- {e['name']} ({e['weight']}): publication le {e['dateStr']} (dans {e['daysLeft']}j)" for e in earnings[:6]])
+    news_txt = "\n".join([f"- [{n['theme']}] {n['title']} ({n['source']})" for n in news_items[:6]])
     prompt = (
-        "Tu es analyste financier senior. Rédige une synthèse profonde et factuelle en français (max 120 mots, 3 puces claires) "
-        "pour un portefeuille investi sur Air Liquide, AMD, NVIDIA, Microsoft, Alphabet, S&P 500, Siemens Energy, BlackRock, Xiaomi et BYD.\n"
-        f"Actualités du jour:\n{headlines}\n\nMétriques techniques:\n{tech_lines}\n"
-        "Concentre-toi sur les risques macro, catalyseurs sectoriels et points de vigilance long terme sans inventer de chiffres."
+        "Résume en français (maximum 3 puces très concises, sans jargon technique comme RSI ou moyennes mobiles) "
+        "uniquement l'essentiel des prochains chiffres attendus et actualités clés pour ce portefeuille :\n"
+        f"Prochains résultats:\n{earn_txt}\n\nActualités essentielles:\n{news_txt}"
     )
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={urllib.parse.quote(api_key)}"
     body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode("utf-8")
@@ -253,17 +222,13 @@ def maybe_generate_gemini_brief(metrics, news_items):
             out = json.loads(resp.read().decode("utf-8"))
         return out["candidates"][0]["content"]["parts"][0]["text"].strip()
     except Exception as exc:
-        print(f"[WARN] Gemini synthesis skipped: {exc}")
+        print(f"[WARN] Gemini brief skipped: {exc}")
         return ""
 
 
 def send_ntfy_alert(topic, title, message, click_url=""):
     url = f"https://ntfy.sh/{urllib.parse.quote(topic)}"
-    headers = {
-        "Title": title.encode("utf-8"),
-        "Priority": "default",
-        "Tags": "newspaper,chart_with_upwards_trend",
-    }
+    headers = {"Title": title.encode("utf-8"), "Priority": "default", "Tags": "newspaper"}
     if click_url:
         headers["Click"] = click_url
     req = urllib.request.Request(url, data=message.encode("utf-8"), headers=headers, method="POST")
@@ -281,12 +246,12 @@ def send_telegram_alert(bot_token, chat_id, text):
 
 def load_existing():
     if not os.path.exists(NEWS_FILE):
-        return {"notifiedIds": [], "items": []}
+        return {"notifiedIds": []}
     try:
         with open(NEWS_FILE, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception:
-        return {"notifiedIds": [], "items": []}
+        return {"notifiedIds": []}
 
 
 def main():
@@ -294,58 +259,72 @@ def main():
     notified_ids = list(prev.get("notifiedIds") or [])
     notified_set = set(notified_ids)
 
-    all_items = []
-    seen_ids = set()
-    for cfg in RSS_QUERIES:
-        for item in fetch_rss_feed(cfg):
-            if item["id"] not in seen_ids:
-                seen_ids.add(item["id"])
-                all_items.append(item)
-
-    metrics = fetch_tv_deep_metrics()
-    deep_analysis = build_deep_analysis(metrics, all_items)
-
-    now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    new_items = [it for it in all_items if it["id"] not in notified_set]
+    upcoming_earnings = fetch_upcoming_earnings()
+    essential_news = fetch_essential_news()
+    ai_brief = maybe_generate_gemini_brief(upcoming_earnings, essential_news)
 
     ntfy_topic = os.environ.get("NTFY_TOPIC", "").strip()
     tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
 
-    # Envoyer au maximum 3 nouvelles alertes d'actualités par exécution (jamais sur les variations de cours)
-    if new_items:
-        for item in new_items[:3]:
-            push_title = f"[{item['theme']}] {item['source']}"
-            push_body = item["title"]
-            if ntfy_topic:
-                try:
-                    send_ntfy_alert(ntfy_topic, push_title, push_body, item["link"])
-                    print(f"[INFO] ntfy sent: {item['title']}")
-                except Exception as exc:
-                    print(f"[WARN] ntfy failed: {exc}")
-            if tg_token and tg_chat:
-                try:
-                    send_telegram_alert(tg_token, tg_chat, f"📰 {push_title}\n{push_body}\n{item['link']}")
-                    print(f"[INFO] Telegram sent: {item['title']}")
-                except Exception as exc:
-                    print(f"[WARN] Telegram failed: {exc}")
+    alerts_to_send = []
 
-        for item in new_items:
-            notified_ids.append(item["id"])
-        notified_ids = notified_ids[-150:]
+    # 1. Alerte si une de vos lignes publie ses chiffres dans les prochaines 48h
+    for e in upcoming_earnings:
+        if e["daysLeft"] <= 2 and e["id"] not in notified_set:
+            alerts_to_send.append(
+                {
+                    "id": e["id"],
+                    "title": f"Chiffres à venir : {e['name']}",
+                    "body": f"Publication des résultats prévue le {e['dateStr']} ({e['weight']} du portefeuille).",
+                    "link": "",
+                }
+            )
 
+    # 2. Alerte sur les nouvelles actualités essentielles liées à vos lignes (max 2 par cycle)
+    for item in essential_news:
+        if item["id"] not in notified_set:
+            alerts_to_send.append(
+                {
+                    "id": item["id"],
+                    "title": f"[{item['theme']}] {item['source']}",
+                    "body": item["title"],
+                    "link": item["link"],
+                }
+            )
+
+    for al in alerts_to_send[:2]:
+        if ntfy_topic:
+            try:
+                send_ntfy_alert(ntfy_topic, al["title"], al["body"], al["link"])
+                print(f"[INFO] ntfy sent: {al['title']}")
+            except Exception as exc:
+                print(f"[WARN] ntfy failed: {exc}")
+        if tg_token and tg_chat:
+            try:
+                txt = f"📰 {al['title']}\n{al['body']}" + (f"\n{al['link']}" if al["link"] else "")
+                send_telegram_alert(tg_token, tg_chat, txt)
+                print(f"[INFO] Telegram sent: {al['title']}")
+            except Exception as exc:
+                print(f"[WARN] Telegram failed: {exc}")
+
+    for al in alerts_to_send:
+        notified_ids.append(al["id"])
+    notified_ids = notified_ids[-150:]
+
+    now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {
         "updatedAt": now_iso,
-        "count": len(all_items),
-        "deepAnalysis": deep_analysis,
-        "items": all_items[:20],
+        "upcomingEarnings": upcoming_earnings,
+        "aiBrief": ai_brief,
+        "items": essential_news,
         "notifiedIds": notified_ids,
     }
 
     with open(NEWS_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"[OK] Saved {len(all_items)} news items ({len(new_items)} new) at {now_iso}")
+    print(f"[OK] Saved {len(upcoming_earnings)} upcoming earnings & {len(essential_news)} essential news at {now_iso}")
 
 
 if __name__ == "__main__":

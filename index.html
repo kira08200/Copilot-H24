@@ -922,10 +922,10 @@
   <div id="tab-alerts" class="section">
     <div class="card">
       <div class="card-title">
-        <span>🧠 Analyse Profonde &amp; Actualités Marchés</span>
+        <span>📅 Prochains Chiffres &amp; Actu Essentielle</span>
         <span class="badge b-green" id="deepNewsBadge">Flux Live</span>
       </div>
-      <div class="sub">Synthèse technique/macro (RSI, SMA200, PER) et actualités filtrées automatiquement toutes les 2h par GitHub Actions :</div>
+      <div class="sub">Uniquement les prochaines publications de résultats de vos lignes et l'actualité essentielle (mis à jour toutes les 2h) :</div>
       <div id="deepAnalysisBox"></div>
       <div id="liveNewsList"></div>
     </div>
@@ -1576,33 +1576,13 @@
       var estQty = p.qty !== null ? p.qty : (displayPrice > 0 ? m.val / displayPrice : 0);
       var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3)) + " parts") : "";
 
-      var techParts = [];
-      if (typeof p.rsi === "number") {
-        var rsiTag = p.rsi < 35 ? " (Survendu)" : (p.rsi > 70 ? " (Surchauffe)" : "");
-        techParts.push("RSI 14j : " + p.rsi.toFixed(0) + rsiTag);
-      }
-      if (typeof p.perf1M === "number") {
-        techParts.push("1M : " + (p.perf1M >= 0 ? "+" : "") + p.perf1M.toFixed(1) + "%");
-      }
-      if (typeof p.pe === "number" && p.pe > 0) {
-        techParts.push("PER : " + p.pe.toFixed(1) + "x");
-      }
-      if (typeof p.recAll === "number") {
-        var recTxt = p.recAll >= 0.35 ? "Achat fort" : (p.recAll >= 0.1 ? "Achat" : (p.recAll <= -0.35 ? "Vente forte" : (p.recAll <= -0.1 ? "Vente" : "Neutre")));
-        techParts.push("Tech : " + recTxt);
-      }
-      var techHtml = techParts.length > 0
-        ? "<div style='font-size:0.75rem;color:var(--blue);margin-bottom:6px;line-height:1.35;'>" + techParts.join(" • ") + "</div>"
-        : "";
-
       html += "<div class='rec-item'>" +
         "<div class='rec-top'><strong>" + p.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + p.action + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
           "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
         "</div>" +
-        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:4px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong></div>" +
-        techHtml +
+        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong></div>" +
         "<div style='font-size:0.83rem;line-height:1.45;'>" + p.why + "</div>" +
         "</div>";
     }
@@ -1775,47 +1755,67 @@
     var badge = document.getElementById("deepNewsBadge");
     if (!box || !list) return;
 
-    if (!data || (!data.items && !data.deepAnalysis)) {
-      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>En attente du premier scan GitHub Actions...</div></div>";
+    if (!data || (!data.items && !data.upcomingEarnings)) {
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>En attente du prochain scan GitHub Actions...</div></div>";
       list.innerHTML = "";
       return;
     }
+
+    var earnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
+    var items = Array.isArray(data.items) ? data.items : [];
 
     if (badge) {
       if (data.updatedAt) {
         var d = new Date(data.updatedAt);
         var hh = String(d.getHours()).padStart(2, "0");
         var mm = String(d.getMinutes()).padStart(2, "0");
-        badge.textContent = "Maj " + hh + "h" + mm + " • " + (data.items ? data.items.length : 0) + " actus";
+        badge.textContent = "Maj " + hh + "h" + mm + " • " + items.length + " actus";
       } else {
         badge.textContent = "En attente Action";
       }
     }
 
-    var da = data.deepAnalysis || {};
-    var analysisHtml = "";
-    if (da.aiBrief) {
-      analysisHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);'>" +
-        "<div class='rec-top'><strong>🤖 Synthèse Macro &amp; Portefeuille</strong><span class='badge b-green'>Analyse Profonde</span></div>" +
-        "<div style='font-size:0.83rem;line-height:1.5;white-space:pre-line;'>" + escHtml(da.aiBrief) + "</div>" +
+    var boxHtml = "";
+    if (data.aiBrief) {
+      boxHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);'>" +
+        "<div class='rec-top'><strong>📌 L'Essentiel sur Vos Lignes</strong><span class='badge b-green'>Résumé</span></div>" +
+        "<div style='font-size:0.83rem;line-height:1.5;white-space:pre-line;'>" + escHtml(data.aiBrief) + "</div>" +
       "</div>";
     }
-    if (Array.isArray(da.highlights) && da.highlights.length > 0) {
-      var hRows = "";
-      for (var h = 0; h < da.highlights.length; h++) {
-        hRows += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" + escHtml(da.highlights[h]) + "</div></div>";
-      }
-      analysisHtml += "<div class='rec-item'>" +
-        "<div class='rec-top'><strong>📊 Scanner Technique &amp; Fondamental (22 lignes)</strong><span class='badge b-blue'>RSI • SMA200</span></div>" +
-        "<div class='alloc-list'>" + hRows + "</div>" +
-      "</div>";
-    }
-    box.innerHTML = analysisHtml;
 
-    var items = Array.isArray(data.items) ? data.items : [];
-    var itemsHtml = "";
-    var notifyCount = 0;
     var seenNewNews = false;
+    var notifyCount = 0;
+
+    if (earnings.length > 0) {
+      var eRows = "";
+      for (var eIdx = 0; eIdx < earnings.length; eIdx++) {
+        var er = earnings[eIdx];
+        var dLabel = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("Dans " + er.daysLeft + " jours"));
+        eRows += "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + escHtml(er.name) + "</strong> (" + escHtml(er.weight || "") + ") : le <strong>" + escHtml(er.dateStr) + "</strong> (" + dLabel + ")</div></div>";
+
+        if (er.daysLeft <= 2 && er.id && !state.notifiedNews["earn_" + er.id]) {
+          state.notifiedNews["earn_" + er.id] = true;
+          seenNewNews = true;
+          if (notifyCount < 2) {
+            notifyCount++;
+            pushAlertLog(
+              "Chiffres à venir : " + er.name,
+              "Publication prévue le " + er.dateStr + " (" + dLabel + ").",
+              "Résultats",
+              "b-purple",
+              true
+            );
+          }
+        }
+      }
+      boxHtml += "<div class='rec-item'>" +
+        "<div class='rec-top'><strong>📊 Prochains Chiffres à Annoncer</strong><span class='badge b-purple'>Résultats</span></div>" +
+        "<div class='alloc-list'>" + eRows + "</div>" +
+      "</div>";
+    }
+    box.innerHTML = boxHtml;
+
+    var itemsHtml = "";
     for (var i = 0; i < items.length; i++) {
       var it = items[i];
       var safeLink = (it.link && /^https?:\/\//i.test(it.link)) ? escHtml(it.link) : "#";
@@ -1823,10 +1823,9 @@
       itemsHtml += "<div class='rec-item'>" +
         "<div class='ev-meta-row'>" +
           "<span class='ev-datetime'>📰 " + escHtml(it.source || "Marchés") + (dtTxt ? " • " + escHtml(dtTxt) : "") + "</span>" +
-          "<span class='badge " + escHtml(it.tagCls || "b-blue") + "'>" + escHtml(it.theme || "Actualité") + "</span>" +
+          "<span class='badge " + escHtml(it.tagCls || "b-blue") + "'>" + escHtml(it.theme || "Essentiel") + "</span>" +
         "</div>" +
         "<div style='font-size:0.88rem;font-weight:700;margin:4px 0;'><a href='" + safeLink + "' target='_blank' rel='noopener noreferrer' style='color:var(--text);text-decoration:none;'>" + escHtml(it.title) + " ↗</a></div>" +
-        (it.summary ? "<div style='font-size:0.81rem;color:var(--muted);line-height:1.45;'>" + escHtml(it.summary) + "</div>" : "") +
       "</div>";
 
       if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
@@ -1835,9 +1834,9 @@
         if (notifyCount < 2) {
           notifyCount++;
           pushAlertLog(
-            "Actu " + (it.theme || "Marchés") + " : " + it.title,
-            (it.source || "Source") + (it.summary ? " — " + it.summary : ""),
-            it.theme || "Actualité",
+            "Actu " + (it.theme || "Portefeuille") + " : " + it.title,
+            (it.source || "Source"),
+            it.theme || "Essentiel",
             it.tagCls || "b-blue",
             true
           );
