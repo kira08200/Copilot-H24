@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Copilote H24">
-<title>Copilote Bourse H24 — Trade Republic &amp; PEA</title>
+<title>Copilote Bourse — Cockpit Long Terme</title>
 <style>
   :root {
     --bg: #0b0f17;
@@ -24,6 +24,8 @@
     --amber-bg: rgba(245, 158, 11, 0.14);
     --blue: #3b82f6;
     --blue-bg: rgba(59, 130, 246, 0.15);
+    --purple: #8b5cf6;
+    --purple-bg: rgba(139, 92, 246, 0.15);
   }
   * {
     box-sizing: border-box;
@@ -91,7 +93,7 @@
     min-width: 0;
   }
   .total-val {
-    font-size: 1.4rem;
+    font-size: 1.42rem;
     font-weight: 800;
     letter-spacing: -0.4px;
     line-height: 1.2;
@@ -234,6 +236,229 @@
   .b-amber { background: var(--amber-bg); color: var(--amber); }
   .b-red { background: var(--red-bg); color: var(--red); }
   .b-blue { background: var(--blue-bg); color: var(--blue); }
+  .b-purple { background: var(--purple-bg); color: var(--purple); }
+
+  /* Stacked Pole Bar */
+  .stacked-bar {
+    display: flex;
+    height: 16px;
+    width: 100%;
+    border-radius: 99px;
+    overflow: hidden;
+    background: #1e293b;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+  .stacked-seg {
+    height: 100%;
+    transition: opacity 0.2s;
+  }
+  .pole-row {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px 13px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s;
+  }
+  .pole-row:last-child {
+    margin-bottom: 0;
+  }
+  .pole-row.expanded {
+    border-color: var(--blue);
+  }
+  .pole-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .pole-left {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+    flex: 1;
+  }
+  .pole-dot {
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border-radius: 3px;
+  }
+  .pole-name {
+    font-size: 0.86rem;
+    font-weight: 700;
+    line-height: 1.25;
+  }
+  .pole-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+  .pole-val {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .pole-pct {
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 3px 7px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.07);
+    color: var(--muted);
+    min-width: 48px;
+    text-align: center;
+  }
+  .pole-details {
+    display: none;
+    margin-top: 9px;
+    padding-top: 9px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .pole-row.expanded .pole-details {
+    display: block;
+  }
+
+  /* Envelope split */
+  .env-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .env-box {
+    background: rgba(11, 15, 23, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 10px 12px;
+  }
+  .env-lbl {
+    font-size: 0.73rem;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+  .env-num {
+    font-size: 0.96rem;
+    font-weight: 800;
+  }
+  .env-sub {
+    font-size: 0.73rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: 2px;
+  }
+
+  /* Priority Cards */
+  .prio-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 13px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+  .prio-card:last-child {
+    margin-bottom: 0;
+  }
+  .prio-card.done {
+    opacity: 0.65;
+    border-color: rgba(16, 185, 129, 0.35);
+  }
+  .prio-num {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 8px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    font-weight: 800;
+    font-size: 0.82rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+  .prio-card.done .prio-num {
+    background: var(--green-bg);
+    color: var(--green);
+  }
+  .prio-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .prio-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+    line-height: 1.3;
+  }
+  .prio-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* Milestone & Projections */
+  .goal-track {
+    height: 12px;
+    background: #1e293b;
+    border-radius: 99px;
+    overflow: hidden;
+    margin: 8px 0 6px;
+  }
+  .goal-fill {
+    height: 100%;
+    width: 84.8%;
+    background: linear-gradient(90deg, var(--blue), var(--green));
+    border-radius: 99px;
+  }
+  .goal-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.76rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .proj-box {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    padding: 10px 8px;
+    text-align: center;
+  }
+  .proj-lbl {
+    font-size: 0.71rem;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .proj-val {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--text);
+  }
+  .proj-hint {
+    font-size: 0.69rem;
+    color: var(--green);
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
   .alloc-list {
     display: flex;
     flex-direction: column;
@@ -336,6 +561,9 @@
       font-size: 0.74rem;
       padding: 5px 8px;
     }
+    .proj-val {
+      font-size: 0.84rem;
+    }
   }
 </style>
 </head>
@@ -347,37 +575,90 @@
   <div class="top-row">
     <div class="brand">
       <span class="pulse-dot"></span>
-      <span>Copilote H24 • Long Terme</span>
+      <span>Copilote Patrimoine • Long Terme</span>
     </div>
-    <button type="button" class="pill-btn btn-compact" id="btnScan">🔄 Scanner</button>
+    <button type="button" class="pill-btn btn-compact" id="btnScan">🔄 Actualiser</button>
   </div>
   <div class="portfolio-bar">
     <div class="portfolio-left">
       <div class="total-val" id="totalVal">50 879,66 €</div>
-      <div class="clock-txt" id="clockTxt">Flux H24 actif • Trade Republic + PEA Fortuneo</div>
+      <div class="clock-txt" id="clockTxt">Patrimoine Bourse • PEA Fortuneo + Trade Republic</div>
     </div>
     <div class="total-gain" id="totalGain">+11 551,94 € (+29,37 %)</div>
   </div>
 </header>
 
 <div class="container">
-  <!-- ONGLET 1 : RADAR H24 -->
-  <div id="tab-radar" class="section active">
+  <!-- ONGLET 1 : COCKPIT SANTE & EQUILIBRE -->
+  <div id="tab-cockpit" class="section active">
     <div class="card">
       <div class="card-title">
-        <span>⚡ Fenêtres horaires &amp; Prédictions H24</span>
-        <span class="badge b-green">Long terme</span>
+        <span>🧭 Équilibre Réel par Grands Pôles</span>
+        <span class="badge b-green">Santé : 84/100</span>
       </div>
-      <div class="sub">Opportunités calculées pour renforcer à bon prix sans surpayer :</div>
-      <div id="opportunitiesList"></div>
+      <div class="sub">Appuyez sur un pôle pour voir le détail de vos actions et leur rôle dans votre patrimoine :</div>
+
+      <div class="stacked-bar">
+        <div class="stacked-seg" style="width:41.9%;background:#10b981;" title="Air Liquide"></div>
+        <div class="stacked-seg" style="width:32.0%;background:#3b82f6;" title="Semi-conducteurs IA"></div>
+        <div class="stacked-seg" style="width:14.7%;background:#8b5cf6;" title="ETFs & Finance"></div>
+        <div class="stacked-seg" style="width:6.4%;background:#f59e0b;" title="Tech & Électrique"></div>
+        <div class="stacked-seg" style="width:5.0%;background:#ef4444;" title="Spéculatif"></div>
+      </div>
+
+      <div id="polesList"></div>
+
+      <div class="env-grid">
+        <div class="env-box">
+          <div class="env-lbl">PEA Fortuneo (19/02/2026)</div>
+          <div class="env-num">21 020,00 €</div>
+          <div class="env-sub">+3 282,86 € (41,3 % du total)</div>
+        </div>
+        <div class="env-box">
+          <div class="env-lbl">Trade Republic (21 lignes)</div>
+          <div class="env-num">29 859,66 €</div>
+          <div class="env-sub">+8 269,08 € (58,7 % du total)</div>
+        </div>
+      </div>
     </div>
 
     <div class="card">
       <div class="card-title">
-        <span>💰 Combien voulez-vous investir ?</span>
+        <span>🎯 Vos 3 Décisions Prioritaires</span>
+        <span class="badge b-blue">Cap Long Terme</span>
+      </div>
+      <div class="sub">Votre feuille de route simple (touchez une règle pour la cocher une fois vérifiée) :</div>
+      <div id="prioritiesList"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>📈 Cap &amp; Projection Long Terme</span>
+        <span class="badge b-green">Objectif 60 000 €</span>
+      </div>
+      <div class="goal-track"><div class="goal-fill"></div></div>
+      <div class="goal-meta">
+        <span><strong>84,8 %</strong> du palier 60 000 € atteint</span>
+        <span>Reste : <strong>9 120,34 €</strong></span>
+      </div>
+      <div class="sub" style="margin-bottom:10px;">Simulez l'évolution de vos 50 879,66 € selon votre épargne mensuelle (hypothèse prudente 8 %/an) :</div>
+      <div class="pill-row" id="dcaRow">
+        <button type="button" class="pill-btn active" data-dca="0">Sans ajout (0 €)</button>
+        <button type="button" class="pill-btn" data-dca="200">+200 €/mois</button>
+        <button type="button" class="pill-btn" data-dca="500">+500 €/mois</button>
+      </div>
+      <div class="proj-grid" id="projGrid"></div>
+    </div>
+  </div>
+
+  <!-- ONGLET 2 : INVESTIR & METEO -->
+  <div id="tab-invest" class="section">
+    <div class="card">
+      <div class="card-title">
+        <span>💰 Où placer votre prochain billet ?</span>
         <span class="badge b-blue" id="selectedHorizonBadge">Créneau : Maintenant</span>
       </div>
-      <div class="sub">Cliquez sur un montant et un horizon : les formules mathématiques (retour à la moyenne, décote DCF et météo mondiale) calculent où mettre votre billet.</div>
+      <div class="sub">Choisissez un montant : l'algorithme rééquilibre votre portefeuille en évitant vos lignes déjà surchargées (AMD, NVIDIA, Air Liquide).</div>
       <div class="pill-row" id="amountRow">
         <button type="button" class="pill-btn" data-amt="50">50 €</button>
         <button type="button" class="pill-btn active" data-amt="100">100 €</button>
@@ -393,16 +674,13 @@
       </div>
       <div id="allocationBox"></div>
     </div>
-  </div>
 
-  <!-- ONGLET 2 : METEO CATASTROPHE VS BIENVEILLANCE -->
-  <div id="tab-meteo" class="section">
     <div class="card">
       <div class="card-title">
         <span>🌍 Baromètre Catastrophe vs Bienveillance</span>
         <span class="badge b-amber" id="regimeBadge">Score : 58/100</span>
       </div>
-      <div class="sub">Croisement automatique : Tensions géopolitiques, Taux Banques Centrales, Croissance IA et VIX (peur du marché).</div>
+      <div class="sub">Testez comment adapter vos achats selon le climat économique mondial :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:58%"></div></div>
       <div class="pill-row" id="regimeRow">
         <button type="button" class="pill-btn" data-score="25">🌪️ Catastrophe</button>
@@ -417,10 +695,10 @@
   <div id="tab-lines" class="section">
     <div class="card">
       <div class="card-title">
-        <span>📊 Vos 22 Positions (TR + PEA Fortuneo)</span>
+        <span>📊 Vos 22 Positions (PEA + Trade Republic)</span>
         <span class="badge b-blue">50 879,66 €</span>
       </div>
-      <div class="sub">Filtrez vos lignes pour voir quoi garder, renforcer ou stopper :</div>
+      <div class="sub">Filtrez vos lignes pour voir quoi conserver, renforcer ou bloquer :</div>
       <div class="pill-row" id="filterRow">
         <button type="button" class="pill-btn active" data-filter="all">Toutes (22)</button>
         <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
@@ -431,31 +709,31 @@
     </div>
   </div>
 
-  <!-- ONGLET 4 : ALERTES & FUTURES INFOS -->
+  <!-- ONGLET 4 : ACTUS & ALERTES -->
   <div id="tab-alerts" class="section">
     <div class="card">
       <div class="card-title">
-        <span>🔔 Futures Infos &amp; Alertes Explosives</span>
+        <span>🔔 Catalyseurs &amp; Alertes Long Terme</span>
         <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester Alerte</button>
       </div>
-      <div class="sub">Les prochains catalyseurs qui vont faire bouger votre portefeuille :</div>
+      <div class="sub">Les prochains événements importants pour votre PEA et votre compte Trade Republic :</div>
       <div id="eventsList"></div>
     </div>
   </div>
 </div>
 
 <nav class="bottom-nav" id="bottomNav">
-  <button type="button" class="nav-btn active" data-tab="radar">
-    <span class="nav-icon">⚡</span><span>Investir H24</span>
+  <button type="button" class="nav-btn active" data-tab="cockpit">
+    <span class="nav-icon">🏠</span><span>Cockpit</span>
   </button>
-  <button type="button" class="nav-btn" data-tab="meteo">
-    <span class="nav-icon">🌍</span><span>Météo Monde</span>
+  <button type="button" class="nav-btn" data-tab="invest">
+    <span class="nav-icon">🎯</span><span>Investir</span>
   </button>
   <button type="button" class="nav-btn" data-tab="lines">
     <span class="nav-icon">📊</span><span>22 Lignes</span>
   </button>
   <button type="button" class="nav-btn" data-tab="alerts">
-    <span class="nav-icon">🔔</span><span>Futures Infos</span>
+    <span class="nav-icon">🔔</span><span>Alertes</span>
   </button>
 </nav>
 
@@ -467,9 +745,73 @@
     horizonLabel: "Maintenant",
     regime: 58,
     filter: "all",
+    dca: 0,
+    expandedPole: 0,
+    donePrios: {},
     baseTotal: 50879.66,
     baseGain: 11551.94
   };
+
+  var poles = [
+    {
+      name: "Pilier Défensif & Industriel (Air Liquide)",
+      val: 21332.50,
+      pct: "41,9 %",
+      color: "#10b981",
+      role: "Bouclier patrimonial • Nominatif PEA",
+      detail: "PEA Fortuneo : 21 020,00 € (110 titres, PRU 161,25 €, +3 282,86 €) + Trade Republic : 312,50 €. C'est votre socle numéro 1 : il stabilise tout votre patrimoine et bénéficie du bonus fidélité +10 %."
+    },
+    {
+      name: "Locomotives IA & Semi-conducteurs",
+      val: 16304.79,
+      pct: "32,0 %",
+      color: "#3b82f6",
+      role: "Moteur de performance • Ne plus surcharger",
+      detail: "AMD (9 298,88 €, +93,3 %), NVIDIA (6 863,11 €, +187,6 %) et Broadcom (142,80 €). Grâce à votre PEA Air Liquide, ce pôle reste maîtrisé à 32 % du patrimoine global. Laissez courir sans ajouter de cash."
+    },
+    {
+      name: "ETFs Mondiaux & Finance (Cœur)",
+      val: 7491.76,
+      pct: "14,7 %",
+      color: "#8b5cf6",
+      role: "Diversification mondiale • À étoffer",
+      detail: "BlackRock (2 152,95 €), Core MSCI World iShares (1 621,84 €), Core MSCI World Xtrackers (1 317,85 €), BNP Easy S&P 500 (1 272,22 €) et S&P 500 Equal Weight (1 126,90 €). Idéal pour accueillir vos futurs versements."
+    },
+    {
+      name: "Géants Tech US & Électrique Asie",
+      val: 3243.10,
+      pct: "6,4 %",
+      color: "#f59e0b",
+      role: "Croissance sélective • Opportunités",
+      detail: "Microsoft (1 207,85 €), Apple (653,40 €), Xiaomi (589,12 €), BYD (356,40 €), Amazon (268,30 €), Meta (84,50 €), Tesla (42,10 €), Walmart (21,40 €) et Alphabet (20,03 €). Priorité aux renforcements sur Microsoft et Alphabet."
+    },
+    {
+      name: "Poche Spéculative (Gelée à 0 €)",
+      val: 2507.51,
+      pct: "4,9 %",
+      color: "#ef4444",
+      role: "Risque élevé • Interdiction d'ajouter",
+      detail: "Strategy A / MicroStrategy (1 485,15 €, -55,7 %), DroneShield (1 007,20 €, -50,3 %) et SFC Energy (15,16 €). Poids limité à moins de 5 % du patrimoine total : ne remettez aucun euro dessus."
+    }
+  ];
+
+  var priorities = [
+    {
+      id: "p1",
+      title: "1. Laisser courir Air Liquide au nominatif (PEA Fortuneo)",
+      desc: "Vos 110 titres (21 020 €) jouent parfaitement leur rôle d'amortisseur face à la Tech US. Ne les vendez pas : profitez de l'exonération d'impôt à terme et des actions gratuites."
+    },
+    {
+      id: "p2",
+      title: "2. Gel total des achats sur Strategy A, DroneShield et AMD/NVIDIA",
+      desc: "Ne moyennez jamais à la baisse sur Strategy A (-1 866 €) ou DroneShield (-1 018 €), et n'alourdissez plus AMD/NVIDIA déjà très gagnants."
+    },
+    {
+      id: "p3",
+      title: "3. Orienter 100 % des nouveaux billets vers la qualité sous-pondérée",
+      desc: "Renforcez en priorité Microsoft (repli -2,51 %), Alphabet (ligne de 20 € trop petite) et votre ETF S&P 500 Equal Weight."
+    }
+  ];
 
   var positions = [
     { name: "Air Liquide (PEA Fortuneo • 110 titres)", val: 21020.00, gain: 3282.86, pct: 18.51, day: 0.85, tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Equilibre parfaitement votre exposition Tech US d'AMD et NVIDIA. A conserver absolument pour la prime de fidélité +10%." },
@@ -480,7 +822,7 @@
     { name: "Strategy A (MicroStrategy)", val: 1485.15, gain: -1866.22, pct: -55.68, day: -4.20, tag: "stop", action: "Stopper les frais (0 €)", why: "Action ultra-spéculative liée au Bitcoin avec levier. Ne remettez plus un seul euro pour moyenner à la baisse." },
     { name: "Core MSCI World (Xtrackers)", val: 1317.85, gain: 263.40, pct: 24.98, day: -0.59, tag: "hold", action: "Garder (Doublon iShares)", why: "Exactement le même indice que votre iShares MSCI World. Gardez la ligne mais concentrez vos prochains achats sur un seul des deux." },
     { name: "BNP Easy S&P 500", val: 1272.22, gain: 344.22, pct: 37.09, day: -0.55, tag: "buy", action: "Continuer le DCA", why: "Les 500 géants américains. Très solide sur 10 ans." },
-    { name: "Microsoft", val: 1207.85, gain: 158.11, pct: 15.06, day: -2.51, tag: "buy", action: "Achat fort sur ce creux", why: "Baisse temporaire de -2,51% alors que le cloud Azure et Copilot génèrent un cash-flow massif. Excellente fenêtre H24." },
+    { name: "Microsoft", val: 1207.85, gain: 158.11, pct: 15.06, day: -2.51, tag: "buy", action: "Achat fort sur ce creux", why: "Baisse temporaire de -2,51% alors que le cloud Azure et Copilot génèrent un cash-flow massif. Excellente fenêtre long terme." },
     { name: "S&P 500 Equal Weight", val: 1126.90, gain: 185.30, pct: 19.68, day: -0.32, tag: "buy", action: "Top bouclier anti-bulle", why: "Chaque entreprise du S&P 500 pèse 0,2%. Vous protège si les géants de l'IA corrigent." },
     { name: "DroneShield", val: 1007.20, gain: -1017.80, pct: -50.26, day: -8.08, tag: "stop", action: "Bloquer tout achat", why: "Valeur militaire très volatile dépendante de contrats ponctuels. Interdiction de remettre au pot." },
     { name: "Apple", val: 653.40, gain: 203.40, pct: 45.20, day: -0.40, tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
@@ -500,6 +842,10 @@
     return n.toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
   }
 
+  function fmtRoundEuro(n) {
+    return Math.round(n).toLocaleString("fr-FR") + " €";
+  }
+
   function showToast(msg) {
     var t = document.getElementById("toast");
     t.textContent = msg;
@@ -510,6 +856,81 @@
     }, 1900);
   }
 
+  function renderPoles() {
+    var html = "";
+    for (var i = 0; i < poles.length; i++) {
+      var p = poles[i];
+      var expCls = state.expandedPole === i ? " expanded" : "";
+      html += "<div class='pole-row" + expCls + "' data-pole='" + i + "'>" +
+        "<div class='pole-head'>" +
+          "<div class='pole-left'>" +
+            "<span class='pole-dot' style='background:" + p.color + ";'></span>" +
+            "<span class='pole-name'>" + p.name + "</span>" +
+          "</div>" +
+          "<div class='pole-right'>" +
+            "<span class='pole-val'>" + fmtEuro(p.val) + "</span>" +
+            "<span class='pole-pct'>" + p.pct + "</span>" +
+          "</div>" +
+        "</div>" +
+        "<div class='pole-details'>" +
+          "<div style='color:var(--text);font-weight:700;margin-bottom:3px;'>" + p.role + "</div>" +
+          "<div>" + p.detail + "</div>" +
+        "</div>" +
+      "</div>";
+    }
+    document.getElementById("polesList").innerHTML = html;
+  }
+
+  function renderPriorities() {
+    var html = "";
+    for (var i = 0; i < priorities.length; i++) {
+      var pr = priorities[i];
+      var isDone = !!state.donePrios[pr.id];
+      html += "<div class='prio-card" + (isDone ? " done" : "") + "' data-prio='" + pr.id + "'>" +
+        "<div class='prio-num'>" + (isDone ? "✓" : (i + 1)) + "</div>" +
+        "<div class='prio-body'>" +
+          "<div class='prio-title'>" + pr.title + "</div>" +
+          "<div class='prio-desc'>" + pr.desc + "</div>" +
+        "</div>" +
+      "</div>";
+    }
+    document.getElementById("prioritiesList").innerHTML = html;
+  }
+
+  function renderProjections() {
+    var btns = document.querySelectorAll("#dcaRow .pill-btn");
+    for (var i = 0; i < btns.length; i++) {
+      var val = parseInt(btns[i].getAttribute("data-dca"), 10);
+      btns[i].classList.toggle("active", val === state.dca);
+    }
+    var r = 0.08;
+    var rm = Math.pow(1 + r, 1 / 12) - 1;
+    var p0 = state.baseTotal;
+    var dca = state.dca;
+
+    var v5 = p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0);
+    var v10 = p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0);
+    var divAnnual = 21332.50 * 0.022 + 29547.16 * 0.011;
+
+    var html =
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dans 5 ans (2031)</div>" +
+        "<div class='proj-val'>" + fmtRoundEuro(v5) + "</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(v5 - p0 - dca * 60) + " gains</div>" +
+      "</div>" +
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dans 10 ans (2036)</div>" +
+        "<div class='proj-val'>" + fmtRoundEuro(v10) + "</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(v10 - p0 - dca * 120) + " gains</div>" +
+      "</div>" +
+      "<div class='proj-box'>" +
+        "<div class='proj-lbl'>Dividendes / an</div>" +
+        "<div class='proj-val'>~" + fmtRoundEuro(divAnnual) + "</div>" +
+        "<div class='proj-hint'>+ prime +10 % PEA</div>" +
+      "</div>";
+    document.getElementById("projGrid").innerHTML = html;
+  }
+
   function setAmount(val) {
     state.amount = val;
     var btns = document.querySelectorAll("#amountRow .pill-btn");
@@ -517,7 +938,7 @@
       var btnAmt = parseInt(btns[i].getAttribute("data-amt"), 10);
       btns[i].classList.toggle("active", btnAmt === val);
     }
-    renderRadar();
+    renderInvest();
     showToast("Budget sélectionné : " + val + " €");
   }
 
@@ -530,7 +951,7 @@
       var btnHor = btns[i].getAttribute("data-hor");
       btns[i].classList.toggle("active", btnHor === code);
     }
-    renderRadar();
+    renderInvest();
     showToast("Prédiction ajustée : " + label);
   }
 
@@ -551,11 +972,11 @@
     } else {
       box.innerHTML = "<strong>☀️ Mode Bienveillance / Accélération (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Baisse des taux + euphorie technologique : renforcez <strong>Microsoft, Alphabet, BYD et ASML</strong> pour capter le cycle long terme.</p>";
     }
-    renderRadar();
+    renderInvest();
     showToast("Météo mondiale : " + score + "/100");
   }
 
-  function renderRadar() {
+  function renderInvest() {
     var amt = state.amount;
     var a1 = Math.round(amt * 0.45);
     var a2 = Math.round(amt * 0.35);
@@ -580,18 +1001,6 @@
       "</div>" +
       "</div>";
     document.getElementById("allocationBox").innerHTML = allocHtml;
-
-    var opps = [
-      { title: "Microsoft (Dans votre portefeuille)", badge: "Fenêtre immédiate (-2,51%)", cls: "b-green", desc: "Décote horaire exagérée. Potentiel estimé à 12 mois : +16% à +22%." },
-      { title: "Alphabet / Google (Ligne de 20 € à étoffer)", badge: "Sous-pondérée", cls: "b-blue", desc: "Vous gagnez +129% mais sur 20 € seulement. Renforcer entre 16h00 et 17h30." },
-      { title: "S&P 500 Equal Weight (Complément PEA Air Liquide)", badge: "Bouclier anti-bulle", cls: "b-amber", desc: "Complète vos 21 020 € d'Air Liquide (PEA) pour protéger vos gains sur AMD + NVIDIA." },
-      { title: "Nouvelle Pépite hors portefeuille : ASML ou Schneider Electric", badge: "Eligible PEA", cls: "b-blue", desc: "Monopole des machines de gravure IA (ASML) et électrification des data centers (Schneider), logeables dans votre PEA Fortuneo." }
-    ];
-    var oppHtml = "";
-    for (var i = 0; i < opps.length; i++) {
-      oppHtml += "<div class='rec-item'><div class='rec-top'><strong>" + opps[i].title + "</strong><span class='badge " + opps[i].cls + "'>" + opps[i].badge + "</span></div><div style='font-size:0.82rem;color:var(--muted);line-height:1.45;'>" + opps[i].desc + "</div></div>";
-    }
-    document.getElementById("opportunitiesList").innerHTML = oppHtml;
   }
 
   function filterLines(f) {
@@ -617,8 +1026,8 @@
 
   function renderEvents() {
     var evs = [
-      { date: "Aujourd'hui • 15h30 - 17h30", title: "Ouverture US & Flux semi-conducteurs", impact: "Impact direct sur AMD (9 298 €) et NVIDIA (6 863 €) : surveillez sans acheter au plus haut." },
-      { date: "Cette semaine • Publication IA", title: "Résultats trimestriels & carnets de commandes Cloud/IA", impact: "Catalyseur majeur : si les dépenses Cloud ralentissent, AMD/NVIDIA peuvent bouger de ±8% en 2h." },
+      { date: "PEA Fortuneo • Nominatif", title: "Prime de fidélité +10 % & Actions Gratuites Air Liquide", impact: "Vos 110 actions Air Liquide (21 020 €) inscrites au nominatif administré préparent la majoration de +10 % sur les dividendes et les attributions gratuites." },
+      { date: "Cette semaine • Publication IA", title: "Résultats trimestriels & carnets de commandes Cloud/IA", impact: "Catalyseur majeur : si les dépenses Cloud ralentissent, AMD (9 298 €) et NVIDIA (6 863 €) peuvent bouger de ±8 %, mais votre pilier Air Liquide amortit le choc." },
       { date: "Prochain point Banques Centrales", title: "Chiffres d'inflation US (CPI) & Taux Fed/BCE", impact: "Une inflation plus basse relance immédiatement BlackRock, Microsoft, Air Liquide et vos 4 ETFs." }
     ];
     var html = "";
@@ -649,8 +1058,8 @@
     document.getElementById("totalVal").textContent = fmtEuro(newTotal);
     document.getElementById("totalGain").textContent = "+" + fmtEuro(newGain) + " (+29,37 %)";
     var now = new Date();
-    document.getElementById("clockTxt").textContent = "Actualisé à " + now.toLocaleTimeString("fr-FR") + " • 22 lignes";
-    showToast("Scan H24 effectué à " + now.toLocaleTimeString("fr-FR"));
+    document.getElementById("clockTxt").textContent = "Actualisé à " + now.toLocaleTimeString("fr-FR") + " • PEA + Trade Republic";
+    showToast("Patrimoine actualisé à " + now.toLocaleTimeString("fr-FR"));
   }
 
   function testNotification() {
@@ -658,6 +1067,28 @@
   }
 
   document.addEventListener("click", function(e) {
+    var poleRow = e.target.closest(".pole-row");
+    if (poleRow) {
+      var idx = parseInt(poleRow.getAttribute("data-pole"), 10);
+      state.expandedPole = (state.expandedPole === idx) ? -1 : idx;
+      renderPoles();
+      return;
+    }
+    var prioCard = e.target.closest(".prio-card");
+    if (prioCard) {
+      var pid = prioCard.getAttribute("data-prio");
+      state.donePrios[pid] = !state.donePrios[pid];
+      renderPriorities();
+      showToast(state.donePrios[pid] ? "Règle marquée comme appliquée ✓" : "Règle remise en suivi");
+      return;
+    }
+    var dcaBtn = e.target.closest("#dcaRow .pill-btn");
+    if (dcaBtn) {
+      state.dca = parseInt(dcaBtn.getAttribute("data-dca"), 10);
+      renderProjections();
+      showToast("Simulation : +" + state.dca + " €/mois");
+      return;
+    }
     var amtBtn = e.target.closest("#amountRow .pill-btn");
     if (amtBtn) {
       setAmount(parseInt(amtBtn.getAttribute("data-amt"), 10));
@@ -698,10 +1129,13 @@
     var newTotal = state.baseTotal + delta;
     document.getElementById("totalVal").textContent = fmtEuro(newTotal);
     var now = new Date();
-    document.getElementById("clockTxt").textContent = "Flux H24 en direct (" + now.toLocaleTimeString("fr-FR") + ") • 22 lignes";
-  }, 2500);
+    document.getElementById("clockTxt").textContent = "Suivi en direct (" + now.toLocaleTimeString("fr-FR") + ") • 22 lignes";
+  }, 3000);
 
-  renderRadar();
+  renderPoles();
+  renderPriorities();
+  renderProjections();
+  renderInvest();
   setRegime(58);
   filterLines("all");
   renderEvents();
