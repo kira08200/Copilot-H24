@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T18:49:22Z",
+  "updatedAt": "2026-11-18T20:49:54Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -92,7 +92,18 @@
       "daysLeft": 84
     }
   ],
-  "majorMoves": [],
+  "majorMoves": [
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261118",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -5.74,
+      "price": 90.96,
+      "currency": "USD",
+      "kind": "drop"
+    }
+  ],
   "aiBrief": "",
   "items": [
     {
