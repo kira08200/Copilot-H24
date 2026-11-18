@@ -788,10 +788,10 @@
   </div>
   <div class="portfolio-bar">
     <div class="portfolio-left">
-      <div class="total-val" id="totalVal">50 887,99 €</div>
+      <div class="total-val" id="totalVal">51 134,25 €</div>
       <div class="clock-txt" id="clockTxt">Connexion au flux boursier mondial...</div>
     </div>
-    <div class="total-gain" id="totalGain">+11 560,37 € (+29,40 %)</div>
+    <div class="total-gain" id="totalGain">+11 411,77 € (+28,73 %)</div>
   </div>
 </header>
 
@@ -817,14 +817,14 @@
 
       <div class="env-grid">
         <div class="env-box">
-          <div class="env-lbl">PEA Fortuneo (110 Air Liquide)</div>
-          <div class="env-num" id="peaTotalVal">21 020,00 €</div>
-          <div class="env-sub" id="peaTotalGain">+3 282,86 € (41,3 % du total)</div>
+          <div class="env-lbl">PEA Fortuneo (Air Liquide)</div>
+          <div class="env-num" id="peaTotalVal">21 266,26 €</div>
+          <div class="env-sub" id="peaTotalGain">+3 134,26 € (41,6 % du total)</div>
         </div>
         <div class="env-box">
           <div class="env-lbl">Trade Republic (21 lignes)</div>
           <div class="env-num" id="trTotalVal">29 867,99 €</div>
-          <div class="env-sub" id="trTotalGain">+8 277,51 € (58,7 % du total)</div>
+          <div class="env-sub" id="trTotalGain">+8 277,51 € (58,4 % du total)</div>
         </div>
       </div>
     </div>
@@ -903,7 +903,7 @@
     <div class="card">
       <div class="card-title">
         <span>📊 Vos 22 Positions (Cours en Direct)</span>
-        <span class="badge b-blue" id="linesTotalBadge">50 887,99 €</span>
+        <span class="badge b-blue" id="linesTotalBadge">51 134,25 €</span>
       </div>
       <div class="sub">Toutes vos 22 positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
       <div class="pill-row" id="filterRow">
@@ -987,11 +987,11 @@
     if (installBtn) installBtn.style.display = "none";
   }
 
-  var STORAGE_KEY = "copilote_bourse_live_v3";
+  var STORAGE_KEY = "copilote_bourse_live_v4";
 
   // 22 positions avec mapping TradingView H24, Yahoo/Stooq et prix unitaire de référence EUR
   var defaultPositions = [
-    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (PEA Fortuneo • 110 titres)", baseVal: 21020.00, cost: 17737.14, fixedQty: 110, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
+    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 190.14, name: "Air Liquide (PEA Fortuneo)", baseVal: 21266.26, cost: 18132.00, fixedQty: null, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale sur PEA Fortuneo (21 266,26 € pour 18 132,00 € investis, +3 134,26 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
     { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 132.50, name: "AMD", baseVal: 9431.09, cost: 2360.09, fixedQty: null, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+7 071 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
     { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 134.80, name: "NVIDIA", baseVal: 6706.52, cost: 4725.52, fixedQty: null, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA. Avec AMD, ce duo pèse environ 32 % de votre patrimoine global : bon équilibre, inutile de renforcer." },
     { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 575.40, name: "S&P 500 EUR (Acc)", baseVal: 3150.65, cost: 2337.99, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
@@ -1081,7 +1081,7 @@
           timestamp: "18/11/2026 à 16h29",
           badge: "Relevé Synchronisé",
           badgeCls: "b-blue",
-          title: "Consolidation PEA Fortuneo (21 020 €) + Trade Republic (29 868 €)",
+          title: "Consolidation PEA Fortuneo (21 266,26 €) + Trade Republic (29 868 €)",
           desc: "Patrimoine total calibré sur vos 22 positions exactes. Pilier défensif majoritaire à 46,9 %."
         }
       ];
@@ -1306,7 +1306,7 @@
     {
       id: "p1",
       title: "1. Laisser courir Air Liquide (PEA) et Siemens Energy",
-      desc: "Vos 110 titres Air Liquide au nominatif et Siemens Energy forment un socle industriel et énergétique majeur. Conservez-les sans toucher."
+      desc: "Votre position Air Liquide au nominatif et Siemens Energy forment un socle industriel et énergétique majeur. Conservez-les sans toucher."
     },
     {
       id: "p2",
@@ -1596,8 +1596,8 @@
         iso: "2026-12-31T17:30:00",
         tag: "PEA Fortuneo",
         tagCls: "b-green",
-        title: "Clôture Annuelle Nominatif Administré Air Liquide (110 titres)",
-        impact: "Vos 110 actions Air Liquide (21 020 €) doivent être inscrites au nominatif avant le 31/12/2026 à 17h30 pour valider l'année fiscale en cours vers la prime de fidélité +10 %."
+        title: "Clôture Annuelle Nominatif Administré Air Liquide (PEA)",
+        impact: "Vos actions Air Liquide (21 266,26 €) doivent être inscrites au nominatif avant le 31/12/2026 à 17h30 pour valider l'année fiscale en cours vers la prime de fidélité +10 %."
       }
     ];
 
