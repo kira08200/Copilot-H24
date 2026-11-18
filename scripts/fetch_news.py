@@ -64,6 +64,8 @@ ESSENTIAL_WORDS = [
     "prévision", "guidance", "dividende", "contrat", "rachat", "acquisition",
     "taux", "fed", "bce", "inflation", "cpi", "pce", "earnings", "revenue",
     "forecast", "outlook", "profit", "beat", "miss", "livraison", "ventes",
+    "chute", "plonge", "dévisse", "envole", "bondit", "record", "alerte",
+    "warning", "partenariat", "sanction", "droits de douane", "opa",
 ]
 
 
@@ -75,12 +77,12 @@ def clean_html(raw_text):
     return re.sub(r"\s+", " ", text).strip()
 
 
-def fetch_upcoming_earnings():
+def fetch_earnings_and_shocks():
     tickers = [s["tv"] for s in STOCKS]
     payload = json.dumps(
         {
             "symbols": {"tickers": tickers, "query": {"types": []}},
-            "columns": ["name", "earnings_release_next_date", "earnings_release_date"],
+            "columns": ["name", "earnings_release_next_date", "earnings_release_date", "change", "close", "currency"],
         }
     ).encode("utf-8")
     req = urllib.request.Request(
@@ -90,8 +92,11 @@ def fetch_upcoming_earnings():
         method="POST",
     )
     stock_by_tv = {s["tv"]: s for s in STOCKS}
-    now_ts = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
+    now_dt = datetime.datetime.now(datetime.timezone.utc)
+    now_ts = int(now_dt.timestamp())
+    today_key = now_dt.strftime("%Y%m%d")
     upcoming = []
+    major_moves = []
 
     try:
         with urllib.request.urlopen(req, timeout=15) as resp:
@@ -99,14 +104,31 @@ def fetch_upcoming_earnings():
         for row in data.get("data", []):
             tv = row.get("s")
             d = row.get("d") or []
-            if tv not in stock_by_tv or len(d) < 3:
+            if tv not in stock_by_tv or len(d) < 6:
                 continue
             info = stock_by_tv[tv]
             next_ts = d[1]
             last_ts = d[2]
+            chg = d[3]
+            close_px = d[4]
+            ccy = d[5] or ""
+
+            if isinstance(chg, (int, float)) and (chg <= -5.0 or chg >= 7.0):
+                kind = "drop" if chg <= -5.0 else "jump"
+                major_moves.append(
+                    {
+                        "id": f"move_{kind}_{tv}_{today_key}",
+                        "tv": tv,
+                        "name": info["name"],
+                        "weight": info["weight"],
+                        "changePct": round(chg, 2),
+                        "price": close_px,
+                        "currency": ccy,
+                        "kind": kind,
+                    }
+                )
 
             target_ts = None
-            is_upcoming = True
             if isinstance(next_ts, (int, float)) and next_ts > now_ts - 86400:
                 target_ts = int(next_ts)
             elif isinstance(last_ts, (int, float)) and last_ts > now_ts - 86400:
@@ -124,14 +146,14 @@ def fetch_upcoming_earnings():
                         "timestamp": target_ts,
                         "dateStr": dt.strftime("%d/%m/%Y"),
                         "daysLeft": max(0, days_left),
-                        "isUpcoming": is_upcoming,
                     }
                 )
         upcoming.sort(key=lambda x: x["timestamp"])
+        major_moves.sort(key=lambda x: abs(x["changePct"]), reverse=True)
     except Exception as exc:
-        print(f"[WARN] TradingView earnings error: {exc}")
+        print(f"[WARN] TradingView earnings/shocks error: {exc}")
 
-    return upcoming[:10]
+    return upcoming[:10], major_moves[:6]
 
 
 def match_stock_tag(text_lower):
@@ -259,7 +281,7 @@ def main():
     notified_ids = list(prev.get("notifiedIds") or [])
     notified_set = set(notified_ids)
 
-    upcoming_earnings = fetch_upcoming_earnings()
+    upcoming_earnings, major_moves = fetch_earnings_and_shocks()
     essential_news = fetch_essential_news()
     ai_brief = maybe_generate_gemini_brief(upcoming_earnings, essential_news)
 
@@ -269,7 +291,20 @@ def main():
 
     alerts_to_send = []
 
-    # 1. Alerte si une de vos lignes publie ses chiffres dans les prochaines 48h
+    # 1. Alerte si grosse chute (<= -5%) ou forte envolée (>= +7%) sur une ligne
+    for mv in major_moves:
+        if mv["id"] not in notified_set:
+            icon = "📉 Grosse chute" if mv["kind"] == "drop" else "🚀 Forte hausse"
+            alerts_to_send.append(
+                {
+                    "id": mv["id"],
+                    "title": f"{icon} : {mv['name']} ({mv['changePct']:+.1f} %)",
+                    "body": f"Mouvement fort sur votre ligne ({mv['weight']}). Cours actuel : {mv['price']} {mv['currency']}.",
+                    "link": "",
+                }
+            )
+
+    # 2. Alerte si une de vos lignes publie ses chiffres dans les prochaines 48h
     for e in upcoming_earnings:
         if e["daysLeft"] <= 2 and e["id"] not in notified_set:
             alerts_to_send.append(
@@ -281,7 +316,7 @@ def main():
                 }
             )
 
-    # 2. Alerte sur les nouvelles actualités essentielles liées à vos lignes (max 2 par cycle)
+    # 3. Alerte sur les nouvelles actualités essentielles liées à vos lignes (max 2 par cycle)
     for item in essential_news:
         if item["id"] not in notified_set:
             alerts_to_send.append(
@@ -316,6 +351,7 @@ def main():
     output = {
         "updatedAt": now_iso,
         "upcomingEarnings": upcoming_earnings,
+        "majorMoves": major_moves,
         "aiBrief": ai_brief,
         "items": essential_news,
         "notifiedIds": notified_ids,
@@ -324,7 +360,7 @@ def main():
     with open(NEWS_FILE, "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print(f"[OK] Saved {len(upcoming_earnings)} upcoming earnings & {len(essential_news)} essential news at {now_iso}")
+    print(f"[OK] Saved {len(upcoming_earnings)} earnings, {len(major_moves)} major moves, {len(essential_news)} news at {now_iso}")
 
 
 if __name__ == "__main__":

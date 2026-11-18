@@ -1762,6 +1762,7 @@
     }
 
     var earnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
+    var majorMoves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
     var items = Array.isArray(data.items) ? data.items : [];
 
     if (badge) {
@@ -1785,6 +1786,35 @@
 
     var seenNewNews = false;
     var notifyCount = 0;
+
+    if (majorMoves.length > 0) {
+      var mRows = "";
+      for (var mIdx = 0; mIdx < majorMoves.length; mIdx++) {
+        var mv = majorMoves[mIdx];
+        var mvCls = mv.kind === "drop" ? "q-day-neg" : "q-day-pos";
+        var mvSign = mv.changePct >= 0 ? "+" : "";
+        mRows += "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + escHtml(mv.name) + "</strong> (<span class='" + mvCls + "'>" + mvSign + mv.changePct.toFixed(2) + " %</span>) • " + escHtml(mv.weight || "") + "</div></div>";
+
+        if (mv.id && !state.notifiedNews["mv_" + mv.id]) {
+          state.notifiedNews["mv_" + mv.id] = true;
+          seenNewNews = true;
+          if (notifyCount < 2) {
+            notifyCount++;
+            pushAlertLog(
+              (mv.kind === "drop" ? "Grosse chute : " : "Forte hausse : ") + mv.name + " (" + mvSign + mv.changePct.toFixed(1) + " %)",
+              "Mouvement majeur détecté sur votre ligne (" + (mv.weight || "") + ").",
+              mv.kind === "drop" ? "Grosse chute" : "Forte hausse",
+              mv.kind === "drop" ? "b-red" : "b-green",
+              true
+            );
+          }
+        }
+      }
+      boxHtml += "<div class='rec-item' style='border-color:rgba(245,158,11,0.35);'>" +
+        "<div class='rec-top'><strong>⚠️ Gros Mouvements du Jour (≤ -5 % / ≥ +7 %)</strong><span class='badge b-amber'>Impact</span></div>" +
+        "<div class='alloc-list'>" + mRows + "</div>" +
+      "</div>";
+    }
 
     if (earnings.length > 0) {
       var eRows = "";
