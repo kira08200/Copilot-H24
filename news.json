@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T20:49:54Z",
+  "updatedAt": "2026-11-18T22:47:09Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,14 +98,24 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -5.74,
-      "price": 90.96,
+      "changePct": -6.4,
+      "price": 90.32,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "aiBrief": "",
   "items": [
+    {
+      "id": "c61e4f5e9a1eea52",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street reste fébrile malgré les solides résultats de Nvidia - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Wed, 18 Nov 2026 21:07:16 GMT",
+      "pubTs": 1795036036,
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPT19jWDRMY0xBMEZoZUFkTW1pVEVrRlhlMmMzUW16TUtPSFJQZ3hqV25jcWlGdUZhdkxSRlE1TGE5RTNKWmRYaTBCbm96RjNmanprQnc1WHNXRElmM1J0RncxdjQ5RzBLQUlobVk2VjJzc2FMNTdKdDcxSDM5aFA1bDF5SjRGdlREcG82YVhWSUxEOWQ4UEpHcEhDSVYyaGxoZU9nNkFFb0dyUmN0MmNjVVRva2FQbHFjVEFlcEhwOXRDOGc?oc=5"
+    },
     {
       "id": "a0badcdeb18c8334",
       "theme": "NVIDIA",
@@ -125,16 +135,6 @@
       "pubDate": "Wed, 18 Nov 2026 15:58:40 GMT",
       "pubTs": 1795017520,
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
-    },
-    {
-      "id": "565630cef6af5273",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Bourses: le secteur technologique se maintient après les résultats de Nvidia - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 18 Nov 2026 15:39:36 GMT",
-      "pubTs": 1795016376,
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQemQ5MmtNQVFKVHkwLXdqTnpyYTI1YnRWcFFDcTFVSW1zNWlybUhkVlM1ZllIcDhTcW5pSHNwdlowRlVxRDBXZnVFZVJzNVBKS1loektUaWQyLTlqR2dKYV9uUFR0Y1pFVGY3U05lcEswbHJfUGxUOEF2c19IV014SlJNRjZmellZTkNXeThpejdnYWhsX2NHMS02V18xOGF2aTlsSENTY0M0dl9KTjZfYXY0RUZvdGFyZmFUNVdLN3ppM3JObkRXd0tMWk1QRHBjSUE?oc=5"
     },
     {
       "id": "1156910560a6670c",
@@ -175,6 +175,7 @@
     "1156910560a6670c",
     "573c434258f0595e",
     "e5a8e3334b54b581",
-    "a0badcdeb18c8334"
+    "a0badcdeb18c8334",
+    "c61e4f5e9a1eea52"
   ]
 }
