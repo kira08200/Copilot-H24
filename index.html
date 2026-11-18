@@ -856,6 +856,65 @@
   @media (max-width: 420px) {
     .custom-inputs-grid { grid-template-columns: 1fr; }
   }
+  .quant-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin: 8px 0 9px;
+  }
+  .quant-cell {
+    background: rgba(15, 23, 42, 0.65);
+    border: 1px solid rgba(56, 189, 248, 0.16);
+    border-radius: 8px;
+    padding: 6px 8px;
+  }
+  .quant-lbl {
+    font-size: 0.63rem;
+    color: var(--muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25px;
+  }
+  .quant-val {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--text);
+    margin-top: 2px;
+    line-height: 1.25;
+  }
+  .alloc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .alloc-chip {
+    font-size: 0.69rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--muted);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+  }
+  .alloc-chip.good {
+    background: rgba(34, 197, 94, 0.12);
+    color: var(--green);
+    border-color: rgba(34, 197, 94, 0.25);
+  }
+  .alloc-chip.info {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--blue);
+    border-color: rgba(56, 189, 248, 0.25);
+  }
+  .alloc-chip.warn {
+    background: rgba(245, 158, 11, 0.12);
+    color: var(--amber);
+    border-color: rgba(245, 158, 11, 0.25);
+  }
+  @media (max-width: 460px) {
+    .quant-strip { grid-template-columns: 1fr; }
+  }
 
   .bottom-nav {
     position: fixed;
@@ -1247,6 +1306,7 @@
 
   var positions = defaultPositions.map(function(p) {
     var s = (savedData.positions && savedData.positions[p.id]) || {};
+    var t = s.tech || {};
     return {
       id: p.id,
       account: p.account,
@@ -1263,6 +1323,27 @@
       dayPct: typeof s.dayPct === "number" ? s.dayPct : null,
       marketSession: s.marketSession || null,
       isLive: !!s.isLive,
+      rsi: typeof t.rsi === "number" ? t.rsi : null,
+      rsi1h: typeof t.rsi1h === "number" ? t.rsi1h : null,
+      rsi4h: typeof t.rsi4h === "number" ? t.rsi4h : null,
+      rsi1w: typeof t.rsi1w === "number" ? t.rsi1w : null,
+      recAll: typeof t.recAll === "number" ? t.recAll : null,
+      rec1h: typeof t.rec1h === "number" ? t.rec1h : null,
+      rec4h: typeof t.rec4h === "number" ? t.rec4h : null,
+      rec1w: typeof t.rec1w === "number" ? t.rec1w : null,
+      volD: typeof t.volD === "number" ? t.volD : null,
+      volW: typeof t.volW === "number" ? t.volW : null,
+      volM: typeof t.volM === "number" ? t.volM : null,
+      atrPct: typeof t.atrPct === "number" ? t.atrPct : null,
+      distSma20: typeof t.distSma20 === "number" ? t.distSma20 : null,
+      distSma50: typeof t.distSma50 === "number" ? t.distSma50 : null,
+      distSma200: typeof t.distSma200 === "number" ? t.distSma200 : null,
+      perfW: typeof t.perfW === "number" ? t.perfW : null,
+      perf1M: typeof t.perf1M === "number" ? t.perf1M : null,
+      perf3M: typeof t.perf3M === "number" ? t.perf3M : null,
+      perf6M: typeof t.perf6M === "number" ? t.perf6M : null,
+      perfY: typeof t.perfY === "number" ? t.perfY : null,
+      beta1Y: typeof t.beta1Y === "number" ? t.beta1Y : null,
       pole: p.pole,
       tag: p.tag,
       action: p.action,
@@ -1367,7 +1448,30 @@
           livePriceEUR: p.livePriceEUR,
           dayPct: p.dayPct,
           marketSession: p.marketSession,
-          isLive: p.isLive
+          isLive: p.isLive,
+          tech: {
+            rsi: p.rsi,
+            rsi1h: p.rsi1h,
+            rsi4h: p.rsi4h,
+            rsi1w: p.rsi1w,
+            recAll: p.recAll,
+            rec1h: p.rec1h,
+            rec4h: p.rec4h,
+            rec1w: p.rec1w,
+            volD: p.volD,
+            volW: p.volW,
+            volM: p.volM,
+            atrPct: p.atrPct,
+            distSma20: p.distSma20,
+            distSma50: p.distSma50,
+            distSma200: p.distSma200,
+            perfW: p.perfW,
+            perf1M: p.perf1M,
+            perf3M: p.perf3M,
+            perf6M: p.perf6M,
+            perfY: p.perfY,
+            beta1Y: p.beta1Y
+          }
         };
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
@@ -1588,21 +1692,235 @@
     return 0;
   }
 
-  function computeTargetPoles(regime) {
-    var t = Math.max(0, Math.min(1, (regime - 20) / 65)); // 0 (défensif) -> 1 (offensif)
+  function getHorizonProfile(hours) {
+    var h = (typeof hours === "number" && isFinite(hours)) ? Math.max(0, hours) : 0;
+    var tradingDays;
+    if (h <= 0) {
+      tradingDays = 0.25;
+    } else if (h <= 24) {
+      tradingDays = Math.min(1.2, Math.max(0.25, h / 6.5));
+    } else {
+      tradingDays = Math.max(1, (h / 24) * (5 / 7));
+    }
+
+    if (h <= 6) {
+      return {
+        hours: h,
+        bucket: "intraday",
+        tfName: "1H",
+        modeLabel: "Tactique Intraday",
+        smaName: "MM20",
+        tradingDays: tradingDays,
+        wPole: 8.5,
+        wPos: 13.5,
+        wRsi: 2.3,
+        wDip: 1.9,
+        wRec: 0.85,
+        wTrend: 0.25,
+        wSession: 0.60,
+        wVolPen: 0.22
+      };
+    }
+    if (h <= 72) {
+      return {
+        hours: h,
+        bucket: "swing",
+        tfName: "4H",
+        modeLabel: "Swing Court Terme",
+        smaName: "MM50",
+        tradingDays: tradingDays,
+        wPole: 11.0,
+        wPos: 16.0,
+        wRsi: 1.85,
+        wDip: 1.55,
+        wRec: 0.75,
+        wTrend: 0.50,
+        wSession: h <= 24 ? 0.25 : 0,
+        wVolPen: 0.16
+      };
+    }
+    if (h <= 720) {
+      return {
+        hours: h,
+        bucket: "medium",
+        tfName: "1J",
+        modeLabel: "Accumulation Moyen Terme",
+        smaName: "MM50",
+        tradingDays: tradingDays,
+        wPole: 14.0,
+        wPos: 18.5,
+        wRsi: 1.25,
+        wDip: 1.20,
+        wRec: 0.65,
+        wTrend: 0.90,
+        wSession: 0,
+        wVolPen: 0.12
+      };
+    }
     return {
-      pilier: 0.45 - t * 0.10,
-      etf: 0.30 - t * 0.05,
-      tech: 0.13 + t * 0.09,
-      ia: 0.10 + t * 0.06,
+      hours: h,
+      bucket: "long",
+      tfName: "1S",
+      modeLabel: "Structurel DCA",
+      smaName: "MM200",
+      tradingDays: tradingDays,
+      wPole: 18.5,
+      wPos: 21.5,
+      wRsi: 0.65,
+      wDip: 0.75,
+      wRec: 0.60,
+      wTrend: 1.45,
+      wSession: 0,
+      wVolPen: 0.22
+    };
+  }
+
+  function computeTargetPoles(regime, horizonHours) {
+    var t = Math.max(0, Math.min(1, (regime - 20) / 65)); // 0 (défensif) -> 1 (offensif)
+    var h = (typeof horizonHours === "number" && isFinite(horizonHours)) ? Math.max(0, horizonHours) : 0;
+    var lt = Math.max(0, Math.min(1, (h - 720) / 3600)); // 0 <= 1 mois -> 1 >= 6 mois
+    return {
+      pilier: 0.45 - t * 0.10 + lt * 0.02,
+      etf: 0.30 - t * 0.05 + lt * 0.04,
+      tech: 0.13 + t * 0.09 - lt * 0.04,
+      ia: 0.10 + t * 0.06 - lt * 0.02,
       spec: 0.02
     };
   }
 
-  function getTopCandidates(tot) {
-    if (!tot) tot = computeTotals();
-    var targets = computeTargetPoles(state.regime);
+  function analyzePositionForHorizon(p, tot, targets, profile, targetDate) {
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var curPoleShare = (tot.poleSums[p.pole] || 0) / totalVal;
+    var poleGap = targets[p.pole] - curPoleShare;
+    var posShare = getPosMetrics(p).val / totalVal;
+    var unitPriceEUR = (typeof p.livePriceEUR === "number" && p.livePriceEUR > 0) ? p.livePriceEUR : (p.refPriceEUR || 0);
+
+    var rsiVal = null;
+    var recVal = null;
+    var smaDist = null;
+    var dailyVol = null;
+    var dipMetric = 0;
+    var trendScore = 0;
+
+    if (profile.bucket === "intraday") {
+      rsiVal = typeof p.rsi1h === "number" ? p.rsi1h : (typeof p.rsi === "number" ? p.rsi : null);
+      recVal = typeof p.rec1h === "number" ? p.rec1h : (typeof p.recAll === "number" ? p.recAll : null);
+      smaDist = typeof p.distSma20 === "number" ? p.distSma20 : null;
+      dailyVol = typeof p.volD === "number" ? p.volD : (typeof p.atrPct === "number" ? p.atrPct * 0.65 : 1.4);
+      var dayDip = (typeof p.dayPct === "number" && p.dayPct < 0) ? Math.min(1.0, Math.abs(p.dayPct) / 2.5) : 0;
+      var sma20Dip = (typeof smaDist === "number" && smaDist < 0) ? Math.min(1.0, Math.abs(smaDist) / 4.0) : 0;
+      dipMetric = dayDip * 0.65 + sma20Dip * 0.55;
+      trendScore = (typeof p.perfW === "number" && p.perfW > -6 && p.perfW < 6) ? 0.25 : 0;
+    } else if (profile.bucket === "swing") {
+      rsiVal = typeof p.rsi4h === "number" ? p.rsi4h : (typeof p.rsi === "number" ? p.rsi : null);
+      recVal = typeof p.rec4h === "number" ? p.rec4h : (typeof p.recAll === "number" ? p.recAll : null);
+      if (typeof p.distSma20 === "number" && typeof p.distSma50 === "number") {
+        smaDist = (p.distSma20 + p.distSma50) / 2;
+      } else {
+        smaDist = typeof p.distSma50 === "number" ? p.distSma50 : (typeof p.distSma20 === "number" ? p.distSma20 : null);
+      }
+      dailyVol = (typeof p.volD === "number" && typeof p.volW === "number")
+        ? (p.volD * 0.6 + p.volW * 0.4)
+        : (typeof p.volD === "number" ? p.volD : 1.4);
+      var wDip = (typeof p.perfW === "number" && p.perfW < 0) ? Math.min(1.2, Math.abs(p.perfW) / 5.0) : 0;
+      var s50Dip = (typeof smaDist === "number" && smaDist < 0) ? Math.min(1.0, Math.abs(smaDist) / 6.0) : 0;
+      dipMetric = wDip * 0.65 + s50Dip * 0.55;
+      trendScore = (typeof p.distSma200 === "number" && p.distSma200 > 0) ? 0.35 : 0.1;
+    } else if (profile.bucket === "medium") {
+      rsiVal = typeof p.rsi === "number" ? p.rsi : null;
+      recVal = typeof p.recAll === "number" ? p.recAll : null;
+      smaDist = typeof p.distSma50 === "number" ? p.distSma50 : (typeof p.distSma20 === "number" ? p.distSma20 : null);
+      dailyVol = (typeof p.volD === "number" && typeof p.volM === "number")
+        ? (p.volD * 0.5 + p.volM * 0.5)
+        : (typeof p.volW === "number" ? p.volW : (typeof p.volD === "number" ? p.volD : 1.4));
+      var mDip = (typeof p.perf1M === "number" && p.perf1M < 0) ? Math.min(1.2, Math.abs(p.perf1M) / 10.0) : 0;
+      var smDip = (typeof smaDist === "number" && smaDist < 0) ? Math.min(1.0, Math.abs(smaDist) / 8.0) : 0;
+      dipMetric = mDip * 0.7 + smDip * 0.45;
+      var perf3Bonus = (typeof p.perf3M === "number" && p.perf3M > 0) ? Math.min(0.45, p.perf3M / 25) : 0;
+      var coreMedBonus = (p.pole === "etf" || p.pole === "pilier") ? 0.25 : 0;
+      trendScore = perf3Bonus + coreMedBonus;
+    } else {
+      rsiVal = typeof p.rsi1w === "number" ? p.rsi1w : (typeof p.rsi === "number" ? p.rsi : null);
+      recVal = typeof p.rec1w === "number" ? p.rec1w : (typeof p.recAll === "number" ? p.recAll : null);
+      smaDist = typeof p.distSma200 === "number" ? p.distSma200 : (typeof p.distSma50 === "number" ? p.distSma50 : null);
+      dailyVol = (typeof p.volD === "number" && typeof p.volM === "number")
+        ? (p.volD * 0.35 + p.volM * 0.65)
+        : (typeof p.volM === "number" ? p.volM : (typeof p.volD === "number" ? p.volD : 1.4));
+      var d200Dip = (typeof smaDist === "number" && smaDist < 0) ? Math.min(1.2, Math.abs(smaDist) / 15.0) : 0;
+      var perf3Dip = (typeof p.perf3M === "number" && p.perf3M < 0) ? Math.min(0.8, Math.abs(p.perf3M) / 18.0) : 0;
+      dipMetric = d200Dip * 0.75 + perf3Dip * 0.4;
+      var betaBonus = (typeof p.beta1Y === "number" && p.beta1Y > 0) ? Math.max(-0.2, Math.min(0.6, (1.15 - p.beta1Y) * 0.7)) : 0.15;
+      var secTrend = (typeof p.perfY === "number" && p.perfY > 0) ? Math.min(0.45, p.perfY / 40) : 0;
+      var coreLongBonus = (p.pole === "etf" || p.pole === "pilier") ? 0.55 : 0;
+      trendScore = betaBonus + secTrend + coreLongBonus;
+    }
+
+    if (!isFinite(dailyVol) || dailyVol <= 0.15) dailyVol = 1.4;
+    var atrPct = (typeof p.atrPct === "number" && isFinite(p.atrPct) && p.atrPct > 0.1) ? p.atrPct : (dailyVol * 1.35);
+    var horizonSigma = Math.min(45, dailyVol * Math.sqrt(profile.tradingDays));
+
+    var rsiFactor = (typeof rsiVal === "number" && rsiVal < 38) ? 0.65 : ((typeof rsiVal === "number" && rsiVal > 65) ? 1.25 : 1.0);
+    var limitDiscountPct;
+    if (profile.hours <= 0) {
+      limitDiscountPct = Math.max(0.2, Math.min(1.2, atrPct * 0.18 * rsiFactor));
+    } else if (profile.hours <= 6) {
+      limitDiscountPct = Math.max(0.35, Math.min(2.0, atrPct * 0.35 * rsiFactor));
+    } else if (profile.hours <= 72) {
+      limitDiscountPct = Math.max(0.6, Math.min(3.5, horizonSigma * 0.45 * rsiFactor));
+    } else if (profile.hours <= 720) {
+      limitDiscountPct = Math.max(0.8, Math.min(5.0, horizonSigma * 0.35 * rsiFactor));
+    } else {
+      limitDiscountPct = Math.max(0.8, Math.min(4.0, atrPct * 0.55 * rsiFactor));
+    }
+    var limitPriceEUR = unitPriceEUR > 0 ? unitPriceEUR * (1 - limitDiscountPct / 100) : 0;
+
+    var phase = getExchangePhaseAt(p.tv, targetDate);
+    var sessionBonus = 0;
+    if (profile.wSession > 0) {
+      if (phase === "regular") sessionBonus = profile.wSession;
+      else if (phase === "pre") sessionBonus = profile.wSession * 0.2;
+      else sessionBonus = -profile.wSession * 0.35;
+    }
+
+    var rsiScore = typeof rsiVal === "number" ? Math.max(-0.4, Math.min(1.6, (60 - rsiVal) / 22)) : 0.35;
+    var recScore = typeof recVal === "number" ? Math.max(-0.5, Math.min(0.8, recVal * 0.7)) : 0;
+    var volPenalty = Math.max(0, dailyVol - 2.2) * profile.wVolPen;
+
+    var score = Math.max(
+      0.2,
+      (poleGap * profile.wPole) +
+      (Math.max(0, 0.065 - posShare) * profile.wPos) +
+      (rsiScore * profile.wRsi) +
+      (dipMetric * profile.wDip) +
+      (recScore * profile.wRec) +
+      (trendScore * profile.wTrend) +
+      sessionBonus -
+      volPenalty
+    );
+
+    return {
+      pos: p,
+      score: score,
+      posShare: posShare,
+      unitPriceEUR: unitPriceEUR,
+      rsiVal: rsiVal,
+      recVal: recVal,
+      smaDist: smaDist,
+      dailyVol: dailyVol,
+      atrPct: atrPct,
+      horizonSigma: horizonSigma,
+      limitDiscountPct: limitDiscountPct,
+      limitPriceEUR: limitPriceEUR,
+      phase: phase
+    };
+  }
+
+  function getTopCandidates(tot, horizonHours) {
+    if (!tot) tot = computeTotals();
+    var h = (typeof horizonHours === "number" && isFinite(horizonHours)) ? horizonHours : state.horizonHours;
+    var profile = getHorizonProfile(h);
+    var targets = computeTargetPoles(state.regime, h);
+    var targetDate = new Date(Date.now() + profile.hours * 3600000);
     var candidates = [];
 
     for (var i = 0; i < positions.length; i++) {
@@ -1612,14 +1930,7 @@
       if (p.tag !== "buy" && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
       if (p.id === "msci2") continue;
 
-      var curPoleShare = (tot.poleSums[p.pole] || 0) / totalVal;
-      var poleGap = targets[p.pole] - curPoleShare;
-      var posShare = getPosMetrics(p).val / totalVal;
-      var rsiScore = typeof p.rsi === "number" ? Math.max(0, (62 - p.rsi) / 25) : 0.4;
-      var dipScore = typeof p.perf1M === "number" && p.perf1M < 0 ? Math.min(1.2, Math.abs(p.perf1M) / 10) : 0;
-      var recScore = typeof p.recAll === "number" && p.recAll > 0 ? p.recAll * 0.6 : 0;
-      var score = Math.max(0.2, (poleGap * 12) + Math.max(0, 0.065 - posShare) * 18 + rsiScore * 1.3 + dipScore * 1.1 + recScore);
-      candidates.push({ pos: p, score: score, posShare: posShare });
+      candidates.push(analyzePositionForHorizon(p, tot, targets, profile, targetDate));
     }
     candidates.sort(function(a, b) { return b.score - a.score; });
     return candidates.slice(0, 3);
@@ -1633,7 +1944,7 @@
     var iaVal = findPosVal("amd") + findPosVal("nvda");
     var iaPct = ((iaVal / totalVal) * 100).toFixed(1).replace(".", ",");
     var specVal = findPosVal("mstr") + findPosVal("dro") + findPosVal("sfc");
-    var top3 = getTopCandidates(tot);
+    var top3 = getTopCandidates(tot, 168);
     var topNames = top3.map(function(c) { return c.pos.name; }).join(", ");
 
     var dynamicPrios = [
@@ -1858,7 +2169,7 @@
     }
 
     var tot = computeTotals();
-    var top3 = getTopCandidates(tot);
+    var top3 = getTopCandidates(tot, 168);
     var topNames = top3.map(function(c) { return "<strong>" + c.pos.name + "</strong>"; }).join(", ");
     var liveLine = "<div style='font-size:0.76rem;color:var(--blue);margin-top:4px;font-weight:600;'>📡 " + liveInfo.detail + "</div>";
     var box = document.getElementById("regimeAdvice");
@@ -1869,14 +2180,22 @@
     }
   }
 
+  function formatShortPhase(phase) {
+    if (phase === "regular") return "Ouvert";
+    if (phase === "pre") return "Pré";
+    return "Fermé";
+  }
+
   function renderInvest(tot) {
     if (!tot) tot = computeTotals();
     var rawAmt = (typeof state.amount === "number" && isFinite(state.amount) && state.amount >= 1) ? state.amount : 1;
     var useCents = Math.abs(rawAmt - Math.round(rawAmt)) >= 0.005;
     var amt = useCents ? Math.round(rawAmt * 100) / 100 : Math.round(rawAmt);
-    var targets = computeTargetPoles(state.regime);
+    var h = (typeof state.horizonHours === "number" && isFinite(state.horizonHours)) ? Math.max(0, state.horizonHours) : 0;
+    var profile = getHorizonProfile(h);
+    var targets = computeTargetPoles(state.regime, h);
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
-    var top3 = getTopCandidates(tot);
+    var top3 = getTopCandidates(tot, h);
     if (top3.length === 0) return;
 
     var scoreSum = 0;
@@ -1901,9 +2220,19 @@
 
     var imbBefore = 0;
     var postSums = Object.assign({}, tot.poleSums);
+    var avgSigma = 0, avgLimitDisc = 0, avgRsi = 0, rsiWeight = 0, openWeight = 0;
     for (var k = 0; k < top3.length; k++) {
-      var pk = top3[k].pos.pole;
+      var c = top3[k];
+      var w = allocAmounts[k] / (amt || 1);
+      var pk = c.pos.pole;
       postSums[pk] = (postSums[pk] || 0) + allocAmounts[k];
+      avgSigma += c.horizonSigma * w;
+      avgLimitDisc += c.limitDiscountPct * w;
+      if (typeof c.rsiVal === "number") {
+        avgRsi += c.rsiVal * w;
+        rsiWeight += w;
+      }
+      if (c.phase === "regular") openWeight += w;
     }
     var postTotal = totalVal + amt;
     var imbAfter = 0;
@@ -1914,65 +2243,120 @@
       imbAfter += Math.abs(((postSums[key] || 0) / postTotal) - targets[key]);
     }
     var reductionRatio = imbBefore > 0 ? Math.max(0, (imbBefore - imbAfter) / imbBefore) : 0;
-    var avgRsi = 0, rsiCnt = 0;
-    for (var r = 0; r < top3.length; r++) {
-      if (typeof top3[r].pos.rsi === "number") {
-        avgRsi += top3[r].pos.rsi;
-        rsiCnt++;
-      }
-    }
-    var rsiBonus = rsiCnt > 0 ? Math.max(0, Math.min(18, (68 - (avgRsi / rsiCnt)) * 0.6)) : 8;
-    var mathScore = Math.round(Math.max(55, Math.min(99, 66 + reductionRatio * 750 + rsiBonus)));
+    var effRsi = rsiWeight > 0 ? (avgRsi / rsiWeight) : 50;
+    var rsiBonus = Math.max(0, Math.min(18, (66 - effRsi) * 0.55));
+    var horBonus = h <= 24 ? (openWeight * 5) : Math.min(6, Math.log10(Math.max(1, profile.tradingDays)) * 2.8);
+    var mathScore = Math.round(Math.max(55, Math.min(99, 64 + reductionRatio * 750 + rsiBonus + horBonus)));
 
-    var h = (typeof state.horizonHours === "number" && isFinite(state.horizonHours)) ? Math.max(0, state.horizonHours) : 0;
     var horTxt = (state.horizonLabel || "Maintenant").replace(/^Dans\s+/, "");
+    var targetDate = new Date(Date.now() + h * 3600000);
+    var euPhase = getExchangePhaseAt("XETR:SXR8", targetDate);
+    var usPhase = getExchangePhaseAt("NASDAQ:MSFT", targetDate);
+    var sigmaTxt = "±" + avgSigma.toFixed(1).replace(".", ",") + " %";
+    var discTxt = "-" + avgLimitDisc.toFixed(1).replace(".", ",") + " %";
+
+    var tranches = 1;
+    var execLabel = "Ordre limite unique";
     var timingNote = "";
+
     if (h <= 0) {
+      tranches = 1;
+      execLabel = "EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase);
       if (amt < 30) {
-        timingNote = "Exécution immédiate conseillée : pour " + fmtBudget(amt) + ", privilégiez un ordre limite unique (sans micro-fractionner) légèrement sous le dernier cours.";
+        timingNote = "Analyse " + profile.tfName + " immédiate : pour " + fmtBudget(amt) + ", passez un ordre limite unique (" + discTxt + " calibré sur l'ATR) pour éviter le micro-fractionnement.";
+      } else if (openWeight >= 0.5) {
+        timingNote = "Analyse " + profile.tfName + " : marchés principaux ouverts, volatilité intraday estimée " + sigmaTxt + ". Ordre limite conseillé autour de " + discTxt + " sous le dernier cours.";
       } else {
-        timingNote = "Exécution immédiate conseillée (ordre limite légèrement sous le dernier cours pour optimiser le prix de revient).";
+        timingNote = "Analyse " + profile.tfName + " : carnets actuellement en pré/hors séance (" + execLabel + "). Posez un ordre limite strict (" + discTxt + ") pour éviter les spreads élargis.";
       }
     } else if (amt < 25) {
-      timingNote = "Horizon " + horTxt + " : avec " + fmtBudget(amt) + ", posez un ordre limite unique à -1 % / -2 % pour capter un repli sans multiplier les mini-ordres.";
+      tranches = 1;
+      execLabel = "1 ordre ciblé (" + discTxt + ")";
+      timingNote = "Analyse " + profile.tfName + " (" + horTxt + ", amplitude " + sigmaTxt + ") : avec " + fmtBudget(amt) + ", placez un seul ordre limite vers " + discTxt + " sans découper en mini-ordres.";
     } else if (h <= 6) {
-      if (h <= 2.5) {
-        timingNote = "Échéance courte (" + horTxt + ") : laissez passer les pics de volatilité d'ouverture avant de poser votre ordre limite sous le dernier cours.";
-      } else {
-        timingNote = "Échéance " + horTxt + " : profitez du recoupement des carnets Europe / US pour limiter le spread sur vos ordres limites.";
-      }
-    } else if (h <= 36) {
-      if (amt < 150) {
-        timingNote = "Horizon " + horTxt + " : placez un ordre limite -0,5 % / -1 % dès ce soir ou à l'ouverture demain pour capter un meilleur point d'entrée.";
-      } else {
-        timingNote = "Sur " + horTxt + " : fractionnez " + fmtBudget(amt) + " en 2 ordres limites espacés (un aujourd'hui, un demain matin après ouverture XETRA).";
-      }
-    } else if (h <= 168) {
-      var tranches = amt >= 500 ? 3 : 2;
-      timingNote = "Horizon " + horTxt + " : découpez " + fmtBudget(amt) + " en " + tranches + " tranches avec des ordres limites (-1 % / -2 %) pour capter les replis intraday.";
+      tranches = (amt >= 1500 && avgSigma >= 1.5) ? 2 : 1;
+      execLabel = "EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase);
+      timingNote = "Analyse " + profile.tfName + " à " + horTxt + " (amplitude attendue " + sigmaTxt + ") : " +
+        (tranches > 1 ? ("fractionnez en 2 ordres limites (~" + fmtBudget(amt / 2) + ")") : "posez un ordre limite calibré sur l'ATR (" + discTxt + ")") +
+        " • Statut projeté des bourses : " + execLabel + ".";
+    } else if (h <= 72) {
+      tranches = amt < 150 ? 1 : ((avgSigma >= 2.5 || amt >= 600) ? 3 : 2);
+      execLabel = h <= 48
+        ? ("EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase))
+        : (tranches + " tranches (~" + fmtBudget(amt / tranches) + ")");
+      timingNote = "Analyse Swing " + profile.tfName + " sur " + horTxt + " (enveloppe 1σ : " + sigmaTxt + ") : " +
+        (tranches === 1
+          ? ("un ordre limite ciblé autour de " + discTxt + " pour capter un repli vers la " + profile.smaName + ".")
+          : ("découpez " + fmtBudget(amt) + " en " + tranches + " ordres limites (~" + fmtBudget(amt / tranches) + ") étagés autour de " + discTxt + " selon l'ATR de chaque titre."));
     } else if (h <= 720) {
-      var hebdo = Math.max(2, Math.min(4, Math.round(h / 168)));
-      var perWeek = amt / hebdo;
-      timingNote = "Horizon " + horTxt + " : lissez " + fmtBudget(amt) + " en " + hebdo + " versements hebdomadaires (~" + fmtBudget(perWeek) + "/sem.) pour neutraliser la volatilité.";
+      var rawHebdo = Math.max(2, Math.min(4, Math.round(h / 168)));
+      tranches = Math.max(1, Math.min(rawHebdo, Math.floor(amt / 25)));
+      execLabel = tranches > 1 ? (tranches + " × ~" + fmtBudget(amt / tranches) + "/sem.") : ("1 ordre limite (" + discTxt + ")");
+      timingNote = "Analyse Journalière " + profile.tfName + " sur " + horTxt + " (~" + Math.round(profile.tradingDays) + " j. de bourse, volatilité 1σ " + sigmaTxt + ") : " +
+        (tranches > 1
+          ? ("lissez en " + tranches + " tranches hebdomadaires de ~" + fmtBudget(amt / tranches) + " (limites calibrées vers " + discTxt + ").")
+          : ("un ordre limite calibré vers " + discTxt + " sur repli."));
     } else {
-      var mois = Math.max(2, Math.min(24, Math.round(h / 720)));
-      var perMonth = amt / mois;
-      timingNote = "Horizon long (" + horTxt + ") : programmez " + mois + " mensualités DCA (~" + fmtBudget(perMonth) + "/mois) en laissant l'algorithme réorienter chaque tranche selon le baromètre.";
+      var rawMois = Math.max(2, Math.min(24, Math.round(h / 720)));
+      tranches = Math.max(1, Math.min(rawMois, Math.floor(amt / 25)));
+      execLabel = tranches > 1 ? (tranches + " × ~" + fmtBudget(amt / tranches) + "/mois") : ("1 ordre limite (" + discTxt + ")");
+      timingNote = "Analyse Hebdo " + profile.tfName + " long terme (" + horTxt + ", amplitude 1σ estimée " + sigmaTxt + ") : priorité au rééquilibrage structurel vers vos pôles/ETF en retard, avec " +
+        (tranches > 1
+          ? (tranches + " mensualités DCA de ~" + fmtBudget(amt / tranches) + "/mois.")
+          : ("un ordre limite d'entrée vers " + discTxt + "."));
     }
+
+    var quantStripHtml =
+      "<div class='quant-strip'>" +
+        "<div class='quant-cell'><div class='quant-lbl'>Unité analysée</div><div class='quant-val'>" + profile.tfName + " • " + profile.modeLabel + "</div></div>" +
+        "<div class='quant-cell'><div class='quant-lbl'>Amplitude 1σ (" + horTxt + ")</div><div class='quant-val'>" + sigmaTxt + " (RSI " + profile.tfName + " : " + Math.round(effRsi) + ")</div></div>" +
+        "<div class='quant-cell'><div class='quant-lbl'>" + (h <= 48 ? "Marchés à l'échéance" : "Cadence calculée") + "</div><div class='quant-val'>" + execLabel + "</div></div>" +
+      "</div>";
 
     var rowsHtml = "";
     for (var x = 0; x < top3.length; x++) {
       if (allocAmounts[x] <= 0) continue;
-      var tp = top3[x].pos;
+      var item = top3[x];
+      var tp = item.pos;
       var wPct = Math.round((allocAmounts[x] / (amt || 1)) * 100);
       var posWeight = ((getPosMetrics(tp).val / totalVal) * 100).toFixed(1).replace(".", ",");
-      rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div><strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + tp.name + "</strong> (poids actuel " + posWeight + " %) : " + tp.action + ".</div></div>";
+
+      var chips = [];
+      if (typeof item.rsiVal === "number") {
+        var rCls = item.rsiVal <= 42 ? " good" : (item.rsiVal >= 68 ? " warn" : "");
+        chips.push("<span class='alloc-chip" + rCls + "'>RSI " + profile.tfName + " : " + Math.round(item.rsiVal) + "</span>");
+      }
+      if (typeof item.smaDist === "number") {
+        var sCls = item.smaDist <= -1 ? " good" : "";
+        chips.push("<span class='alloc-chip" + sCls + "'>" + (item.smaDist >= 0 ? "+" : "") + item.smaDist.toFixed(1).replace(".", ",") + " % vs " + profile.smaName + "</span>");
+      }
+      if (item.limitPriceEUR > 0) {
+        chips.push("<span class='alloc-chip info'>Limite ~" + fmtEuro(item.limitPriceEUR) + " (-" + item.limitDiscountPct.toFixed(1).replace(".", ",") + " %)</span>");
+      }
+      if (item.unitPriceEUR > 0) {
+        var estQty = allocAmounts[x] / item.unitPriceEUR;
+        var qtyTxt = (estQty >= 1 ? estQty.toFixed(2) : estQty.toFixed(3)).replace(".", ",");
+        chips.push("<span class='alloc-chip'>~" + qtyTxt + " part(s)</span>");
+      }
+      if (h <= 24) {
+        var phIcon = item.phase === "regular" ? "🟢 Ouvert" : (item.phase === "pre" ? "🟡 Pré-marché" : "⚪ Hors séance");
+        var phCls = item.phase === "regular" ? " good" : (item.phase === "pre" ? " warn" : "");
+        chips.push("<span class='alloc-chip" + phCls + "'>" + phIcon + "</span>");
+      } else if (h > 720 && typeof tp.beta1Y === "number" && tp.beta1Y > 0) {
+        chips.push("<span class='alloc-chip'>β " + tp.beta1Y.toFixed(2).replace(".", ",") + "</span>");
+      }
+
+      rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" +
+        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + tp.name + "</strong> (poids " + posWeight + " %) : " + tp.action + "." +
+        "<div class='alloc-meta'>" + chips.join("") + "</div>" +
+      "</div></div>";
     }
 
     var allocHtml = "<div class='rec-item'>" +
       "<div class='rec-top'><strong>🎯 Répartition optimale pour " + fmtBudget(amt) + " (" + state.horizonLabel + ")</strong><span class='badge b-green'>Score Math : " + mathScore + "/100</span></div>" +
-      "<div style='font-size:0.78rem;color:var(--green);margin-bottom:6px;'>Calcul en direct : déséquilibre des pôles " + (imbBefore * 100).toFixed(1) + " % → " + (imbAfter * 100).toFixed(1) + " % • Baromètre " + state.regime + "/100.</div>" +
-      "<div style='font-size:0.82rem;color:var(--muted);margin-bottom:8px;'>" + timingNote + "</div>" +
+      "<div style='font-size:0.78rem;color:var(--green);margin-bottom:4px;'>Calcul multi-horizon : déséquilibre des pôles " + (imbBefore * 100).toFixed(1).replace(".", ",") + " % → " + (imbAfter * 100).toFixed(1).replace(".", ",") + " % • Baromètre " + state.regime + "/100.</div>" +
+      quantStripHtml +
+      "<div style='font-size:0.81rem;color:var(--muted);margin-bottom:8px;line-height:1.42;'>" + timingNote + "</div>" +
       "<div class='alloc-list'>" + rowsHtml + "</div>" +
       "</div>";
     document.getElementById("allocationBox").innerHTML = allocHtml;
@@ -1983,7 +2367,7 @@
     var ccy = marketData.currency || item.currency;
     var priceEUR = ccy === "USD" ? (close / fxUsd) : close;
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
-    var targets = computeTargetPoles(state.regime);
+    var targets = computeTargetPoles(state.regime, state.horizonHours);
     var curPoleShare = (tot.poleSums[item.pole] || 0) / totalVal;
     var poleGap = targets[item.pole] - curPoleShare;
     var iaShare = (tot.poleSums.ia || 0) / totalVal;
@@ -2743,15 +3127,16 @@
     });
   }
 
-  function getZoneClock(tz) {
+  function getZoneClock(tz, dateObj) {
     try {
+      var refDate = dateObj instanceof Date ? dateObj : new Date();
       var parts = new Intl.DateTimeFormat("en-US", {
         timeZone: tz,
         weekday: "short",
         hour: "2-digit",
         minute: "2-digit",
         hour12: false
-      }).formatToParts(new Date());
+      }).formatToParts(refDate);
       var map = {};
       for (var i = 0; i < parts.length; i++) {
         map[parts[i].type] = parts[i].value;
@@ -2766,20 +3151,35 @@
     }
   }
 
-  function getExchangePhase(tvSymbol) {
+  function getExchangePhaseAt(tvSymbol, dateObj) {
+    if (!tvSymbol) return "regular";
     if (tvSymbol.indexOf("NASDAQ:") === 0 || tvSymbol.indexOf("NYSE:") === 0) {
-      var ny = getZoneClock("America/New_York");
+      var ny = getZoneClock("America/New_York", dateObj);
       if (ny.isWeekday && ny.mins >= 240 && ny.mins < 570) return "pre";
       if (ny.isWeekday && ny.mins >= 570 && ny.mins < 960) return "regular";
       return "post";
     }
     if (tvSymbol.indexOf("EURONEXT:") === 0 || tvSymbol.indexOf("XETR:") === 0) {
-      var eu = getZoneClock("Europe/Berlin");
+      var eu = getZoneClock("Europe/Berlin", dateObj);
       if (eu.isWeekday && eu.mins >= 480 && eu.mins < 540) return "pre";
       if (eu.isWeekday && eu.mins >= 540 && eu.mins < 1055) return "regular";
       return "post";
     }
+    if (tvSymbol.indexOf("HKEX:") === 0) {
+      var hk = getZoneClock("Asia/Hong_Kong", dateObj);
+      if (hk.isWeekday && hk.mins >= 570 && hk.mins < 960) return "regular";
+      return "post";
+    }
+    if (tvSymbol.indexOf("ASX:") === 0) {
+      var au = getZoneClock("Australia/Sydney", dateObj);
+      if (au.isWeekday && au.mins >= 600 && au.mins < 960) return "regular";
+      return "post";
+    }
     return "regular";
+  }
+
+  function getExchangePhase(tvSymbol) {
+    return getExchangePhaseAt(tvSymbol, new Date());
   }
 
   function fetchFxFallback() {
@@ -2825,7 +3225,24 @@
         "Recommend.All",
         "price_earnings_ttm",
         "Perf.W",
-        "Perf.1M"
+        "Perf.1M",
+        "RSI|60",
+        "RSI|240",
+        "RSI|1W",
+        "Recommend.All|60",
+        "Recommend.All|240",
+        "Recommend.All|1W",
+        "Volatility.D",
+        "Volatility.W",
+        "Volatility.M",
+        "ATR",
+        "SMA20",
+        "SMA50",
+        "SMA200",
+        "Perf.3M",
+        "Perf.6M",
+        "Perf.Y",
+        "beta_1_year"
       ]
     });
 
@@ -2932,11 +3349,29 @@
             }
 
             if (chosenPrice !== null) {
+              var refClose = (typeof close === "number" && close > 0) ? close : chosenPrice;
               p.rsi = typeof d[8] === "number" ? d[8] : null;
               p.recAll = typeof d[9] === "number" ? d[9] : null;
               p.pe = typeof d[10] === "number" ? d[10] : null;
               p.perfW = typeof d[11] === "number" ? d[11] : null;
               p.perf1M = typeof d[12] === "number" ? d[12] : null;
+              p.rsi1h = typeof d[13] === "number" ? d[13] : null;
+              p.rsi4h = typeof d[14] === "number" ? d[14] : null;
+              p.rsi1w = typeof d[15] === "number" ? d[15] : null;
+              p.rec1h = typeof d[16] === "number" ? d[16] : null;
+              p.rec4h = typeof d[17] === "number" ? d[17] : null;
+              p.rec1w = typeof d[18] === "number" ? d[18] : null;
+              p.volD = typeof d[19] === "number" ? d[19] : null;
+              p.volW = typeof d[20] === "number" ? d[20] : null;
+              p.volM = typeof d[21] === "number" ? d[21] : null;
+              p.atrPct = (typeof d[22] === "number" && refClose > 0) ? (d[22] / refClose) * 100 : null;
+              p.distSma20 = (typeof d[23] === "number" && d[23] > 0 && refClose > 0) ? ((refClose - d[23]) / d[23]) * 100 : null;
+              p.distSma50 = (typeof d[24] === "number" && d[24] > 0 && refClose > 0) ? ((refClose - d[24]) / d[24]) * 100 : null;
+              p.distSma200 = (typeof d[25] === "number" && d[25] > 0 && refClose > 0) ? ((refClose - d[25]) / d[25]) * 100 : null;
+              p.perf3M = typeof d[26] === "number" ? d[26] : null;
+              p.perf6M = typeof d[27] === "number" ? d[27] : null;
+              p.perfY = typeof d[28] === "number" ? d[28] : null;
+              p.beta1Y = typeof d[29] === "number" ? d[29] : null;
               applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
             }
           }
