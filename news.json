@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T22:47:09Z",
+  "updatedAt": "2026-11-18T23:37:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -107,6 +107,16 @@
   "aiBrief": "",
   "items": [
     {
+      "id": "703b8e7f9d727b10",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street en ordre dispersé après Nvidia et les \"minutes\" de la Fed - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Wed, 18 Nov 2026 21:32:50 GMT",
+      "pubTs": 1795037570,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQcnZUelNfdms1WFJpdEUtWWZaT0RUWXI5QnpaNU5BTHF6bXBjQTdmRGVZUlVjSDR5eFdNWDg5MUtaWWdBaUdLNmdwSG1DYXNQWUVWU3dBWEp5NENnV0RMR3JLd2Y4Q1ZVYi1OY0ZqbGJvWlFOUncwT2NsT1Y5eTBoRXd2ZjhzRF9UakppaXhwZG5KYzJJUWxHZWlVeWNoeE9QWWR4djg0anQwSzR3WEVnYVNkN3BfVFlvUm81TDVzN1RBdnhpRnZLYXhnX3VOSnQ4b18tSlA1UQ?oc=5"
+    },
+    {
       "id": "c61e4f5e9a1eea52",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -115,6 +125,16 @@
       "pubDate": "Wed, 18 Nov 2026 21:07:16 GMT",
       "pubTs": 1795036036,
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPT19jWDRMY0xBMEZoZUFkTW1pVEVrRlhlMmMzUW16TUtPSFJQZ3hqV25jcWlGdUZhdkxSRlE1TGE5RTNKWmRYaTBCbm96RjNmanprQnc1WHNXRElmM1J0RncxdjQ5RzBLQUlobVk2VjJzc2FMNTdKdDcxSDM5aFA1bDF5SjRGdlREcG82YVhWSUxEOWQ4UEpHcEhDSVYyaGxoZU9nNkFFb0dyUmN0MmNjVVRva2FQbHFjVEFlcEhwOXRDOGc?oc=5"
+    },
+    {
+      "id": "dae8b827e8834c4d",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     },
     {
       "id": "a0badcdeb18c8334",
@@ -127,16 +147,6 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQb19iMTNSQnNnVkNEMGVMZkU3cWdPN040Y1RGOFhkdlZ0VWJQZDcyU2lNQUZDc3lEWjlVWlJDMDhVS01FemFOR05XQ0VHX08tYmZfSTZneTFudTVGbkxNOF9wS2FGWkRTRUloMWJndGVkczBlSDFEa1dsd0RHOVA0aGRKcktLSXVCVWhsRGZUS2swbWhaaThBa21ZS0xVVE9KdnZuOXlCSFRMZjMtWDJsdER1OU9GWGxXbGFFUzNxSFltNWNkQThDRVRWWWZzbWdMTlpRbkJfeHBpVzh2bTVUQWpENkRLUVJXUWt4cF9wSWxOdw?oc=5"
     },
     {
-      "id": "e5a8e3334b54b581",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Résultats de NVIDIA : des prévisions rassurantes et une action toujours bon marché - Morningstar",
-      "source": "Morningstar",
-      "pubDate": "Wed, 18 Nov 2026 15:58:40 GMT",
-      "pubTs": 1795017520,
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
-    },
-    {
       "id": "1156910560a6670c",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -147,24 +157,14 @@
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQm93X195RnJ5eDZCSEtFRWRDQURKWHdNYkdFX2Y5U3RwbGd0R2U4eWV0Z3IwSmRQRlZ3eV94bTdVQUhnSkFXRlpwSUZjcHFrclg4alFsNFJxVnhsZmhpTTVORWtaRlpodWt4ME5MMTgyRmNMRk1EUEljbkh4ZkFzY1lFR09UUXdwSzktMXR4blFlTWZiZ3Q5RnFya1pYR0EyYm5ESUFMVENDRzYwZllwVzVCeXk2UXp1ekFXRTJpR0JHRWtWWGc?oc=5"
     },
     {
-      "id": "573c434258f0595e",
+      "id": "fef0c782d8ef4894",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Nvidia publie des résultats trimestriels supérieurs aux attentes - ChannelNews",
-      "source": "ChannelNews",
-      "pubDate": "Wed, 18 Nov 2026 14:20:26 GMT",
-      "pubTs": 1795011626,
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
-    },
-    {
-      "id": "8b3902a13a7f2c63",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia impressionne avec ses résultats mais encore des inquiétudes autour de la succession de Huang - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Wed, 18 Nov 2026 13:21:00 GMT",
-      "pubTs": 1795008060,
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNV0Y2S0RkaGVRcGZaWHpzMm1JSXdpTEVRTURSRHBqb283UEtRal96b0xCbUVTNDNXNExMb2prLURJdUlrRnhvZ1Z0aDh5U3FCbFNId1JOUWxXcFk2bXN5bFpndVpUcWFTSG14aW9IY3FfTldIamtfaXloT040Zm4yQUI1SE5NQlQ2T1ZQaEI2eFZLVi1Hd1hrb3JSYXcxVzRfc3kzamxjTFBTZVBZbkxlbmgtQmpHYTJjUUJMX0QzYk55TGtZSGc5cWh0MlFyVGl1LXFDRzF3ZjBUXzI2Z2d2U25CWVViTmVIMmloTW5yUnNyWXhWNWk2MUJYU0pkeXM3eFE?oc=5"
+      "title": "NVIDIA: notre analyse des résultats - Morningstar",
+      "source": "Morningstar",
+      "pubDate": "Wed, 18 Nov 2026 09:23:48 GMT",
+      "pubTs": 1794993828,
+      "link": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVFFnd1RaMFl5LXYzampfTkdoZ1JMNW9lV2dTSnVIdnJOSXJuNnpyWnJtM3g2aU5DU2xKNWRMSGdIMG5MUHJxMTlGZGs1ZmxKZFFPTlpUdnozempIRFMzdm5EOHhxT18yUDVJQm4wTHdHc29TTUVvOVNYdHh1Q3FSVw?oc=5"
     }
   ],
   "notifiedIds": [
@@ -176,6 +176,9 @@
     "573c434258f0595e",
     "e5a8e3334b54b581",
     "a0badcdeb18c8334",
-    "c61e4f5e9a1eea52"
+    "c61e4f5e9a1eea52",
+    "703b8e7f9d727b10",
+    "dae8b827e8834c4d",
+    "fef0c782d8ef4894"
   ]
 }
