@@ -1,14 +1,360 @@
 {
-  "updatedAt": null,
-  "count": 0,
+  "updatedAt": "2026-11-18T17:20:57Z",
+  "count": 25,
   "deepAnalysis": {
     "highlights": [
-      "En attente de la première exécution de la GitHub Action (onglet Actions → Run workflow)."
+      "Leaders 1 mois : Air Liquide (+10.3%), Xiaomi (+9.8%), Coca-Cola (+6.1%).",
+      "Lignes en repli 1 mois : Strategy A (-33.9%), DroneShield (-32.2%), NVIDIA (-30.2%).",
+      "Zone de survente technique (RSI < 38) : NVIDIA (RSI 21), Strategy A (RSI 25), DroneShield (RSI 24), Physical Gold (RSI 33), BYD (RSI 31), Alphabet (A) (RSI 34).",
+      "Sous moyenne mobile 200j (tendance de fond fragile) : NVIDIA, Siemens Energy, Strategy A, DroneShield, Physical Gold, BYD, Qualcomm, Alphabet (A), SFC Energy.",
+      "Momentum haussier validé (signal technique fort) : Xiaomi, Apple, Amazon, Coca-Cola."
     ],
     "aiBrief": "",
-    "oversoldCount": 0,
-    "belowSma200Count": 0
+    "oversoldCount": 6,
+    "belowSma200Count": 9
   },
-  "items": [],
-  "notifiedIds": []
+  "items": [
+    {
+      "id": "1a2f1e628f9d8dee",
+      "theme": "Semi-conducteurs IA",
+      "tagCls": "b-purple",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "QCOM"
+      ],
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Mon, 16 Nov 2026 08:00:00 GMT",
+      "summary": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
+    {
+      "id": "a6af22e0f1b766d5",
+      "theme": "Semi-conducteurs IA",
+      "tagCls": "b-purple",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "QCOM"
+      ],
+      "title": "Nvidia s'oppose à un retour de Huang et affiche une forme éclatante - Bourse Direct",
+      "source": "Bourse Direct",
+      "pubDate": "Wed, 18 Nov 2026 06:16:00 GMT",
+      "summary": "Nvidia s'oppose à un retour de Huang et affiche une forme éclatante Bourse Direct",
+      "link": "https://news.google.com/rss/articles/CBMimwJBVV95cUxONmtQZkNIeHhlWktHNkRLSjdlZ1FZRzFzeVFtOHJHaDdkNHA1SXM4MU1VZ1VlN2FySjExUldKWFl1SmNnb25ZQmVWdEFDTXRCT0xkaUJRRUpGV0kyaTZHdnYxUWk1VDRMZlBjVnlRaFdYclMzTHk4QzZ0WHgycUtOQ05ZTFlldjRQeTU2WF8yeTBiQXE1NVdKRkxUSjNyNjdZeGlmYnZyc3g5Z2ZodExSSW9TTHpoVUtFRUhpeE9ONXN5MlhuT1JjMzZ1VldDcFJqcjB5cERXckthdXJJVUdfamlxQjJ3bldLYWFIVWdXbnRTSVMzR3ZvNUY4aXBVQldlSDBrbmZ0ZTFDVnktb19ISW5tNkpQTXJXRTNB?oc=5"
+    },
+    {
+      "id": "a2a9fbcb529f14c3",
+      "theme": "Semi-conducteurs IA",
+      "tagCls": "b-purple",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "QCOM"
+      ],
+      "title": "Nvidia, c'est OK. Place à Anthropic - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Wed, 18 Nov 2026 06:36:18 GMT",
+      "summary": "Nvidia, c'est OK. Place à Anthropic Zonebourse",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOam5Ed2RXQnBVbjZseHRaeTg0eFFQMUJ1VDZIaTM3R0NqeG44S0U5aVVuWFZsMUlGWFp1LTEtUjNGWVVfbkpmSGpnTFRYTm1HU3FjUGdMMGhlMTVlRlZ4blJfMENxdU1zd09EbEw0bTNYU1ZrTXdlejdUSnJaOXNzeFlkbmIyTVl1UF94TW1SMXFZOVRMbFR2RDVn?oc=5"
+    },
+    {
+      "id": "a276d2983ccaf1ae",
+      "theme": "Semi-conducteurs IA",
+      "tagCls": "b-purple",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "QCOM"
+      ],
+      "title": "Wall Street en repli avant les résultats de Nvidia - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 17 Nov 2026 21:31:37 GMT",
+      "summary": "Wall Street en repli avant les résultats de Nvidia Investir Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPRmFGbmtSUG00RWVic2hKT1pidGwtSzdkQmtQREQ1YkJsVWFRdW5ia003MVRyanM3a2tUMlRtUlpNekdRTmxYTk00SDdORVpzNmpMTE9Gdk0xaTFtZ3VaWEsyUzVwcHFWNXkzcGhrdG5nT2JNc0Q2T09tTVlRS2NCWHZST2JScVNnaWY2Qk5UMnNFUEJwdUFFVV9oUkdod0J4cG96R19oZm8xOVlRclNFMTQ0bkFVTjk4ajZEeWNrTVc?oc=5"
+    },
+    {
+      "id": "93bddb49740aef31",
+      "theme": "Semi-conducteurs IA",
+      "tagCls": "b-purple",
+      "tickers": [
+        "NVDA",
+        "AMD",
+        "QCOM"
+      ],
+      "title": "Introduction en Bourse d’Anthropic : bulle IA, Nvidia, politique américaine… « Vrai test » ou pari trop risqué - Le Parisien",
+      "source": "Le Parisien",
+      "pubDate": "Wed, 18 Nov 2026 15:59:25 GMT",
+      "summary": "Introduction en Bourse d’Anthropic : bulle IA, Nvidia, politique américaine… « Vrai test » ou pari trop risqué Le Parisien",
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOc1VfU3N2UVljLWNBRUxGNE9Yc0c0LWQ1YnUydjBjcnNBbVBoSGFXTGhoQmEyTkE3VVBfc2tJcVc1dUl1ZGtuT1ctbHlVQ2pRbzZacWFqQU1hcExWNjFnX2pETjUtQ2tPTzBKTXlQQThWVkljUWtsMlFzNkpHSlUxSk43anFuS2JWS1Fva3RvdkdKWUFIRDhlY0FDRFg2OFFLNFN2alVpZFBkYkJhWTNiZXdTVktXZWVxbEJwOTZsUERVMHNXU2thX3NOU2VJRVJRNDd4YndTeEJoVklhSkpqUVp4Mjk5RG9MRkgzcV8zVEl1NDdMRlFiZlMzYl8tM21ubzZicW1LaTg?oc=5"
+    },
+    {
+      "id": "ec494de0705c5b55",
+      "theme": "Big Tech & Cloud US",
+      "tagCls": "b-blue",
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "AAPL",
+        "AMZN",
+        "BLK"
+      ],
+      "title": "AMAZON.COM Cours Action AMZN, Cotation Bourse NASDAQ - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Mon, 16 Nov 2026 08:00:00 GMT",
+      "summary": "AMAZON.COM Cours Action AMZN, Cotation Bourse NASDAQ Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE94Nnc2TWJmZFRROXl6dnUtckhKRmJoSjUtdGZKODFrSTc1dUFmdWZHa2VWaHFhbHZEN1Z1dk5YeFh1ZW8xdDA3VlJlcFZ2SEk?oc=5"
+    },
+    {
+      "id": "f998b5a4df0bb616",
+      "theme": "Big Tech & Cloud US",
+      "tagCls": "b-blue",
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "AAPL",
+        "AMZN",
+        "BLK"
+      ],
+      "title": "APPLE Cours Action AAPL, Cotation Bourse NASDAQ - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Mon, 16 Nov 2026 08:00:00 GMT",
+      "summary": "APPLE Cours Action AAPL, Cotation Bourse NASDAQ Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5CNEk1My1WQlM4QzdlX0c3NW9LUnVTa2dCSzQ1S0Z4dHI3MjdhSzA1UTBSSWotOUhwNXJXV2Q4SFBQc0ZkSDJ6UG9rWU9ZcDA?oc=5"
+    },
+    {
+      "id": "cbd5261df019898b",
+      "theme": "Big Tech & Cloud US",
+      "tagCls": "b-blue",
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "AAPL",
+        "AMZN",
+        "BLK"
+      ],
+      "title": "Chute spectaculaire de l’action Alphabet à la Bourse de New York - Courrier international",
+      "source": "Courrier international",
+      "pubDate": "Fri, 30 Oct 2026 07:00:00 GMT",
+      "summary": "Chute spectaculaire de l’action Alphabet à la Bourse de New York Courrier international",
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPampvcHNLWmp6VWxmSFBqazI4WFd5ZkpXWUVtb1YwalF6d0Y2WW5CcUlLZ3Y3NDg5ZVlrcWlVbFlWWUhIQm5MdElweF9tb2lQQWI2YUpJR1hHZXdVdmRBTTlyTEdkTXNYZnduNzlWSnk2UVgwcVpYRTB3Q0xnWVRUMDBOV1ZpZmlRVEs4eEdXWjBmM1lKRjdnVHdlTkJ5RUNRVjVIVm5qeDkwNnhSaWdXdjhLbVRlOXc3RW0zamkzTQ?oc=5"
+    },
+    {
+      "id": "2ee35771d0e274b1",
+      "theme": "Big Tech & Cloud US",
+      "tagCls": "b-blue",
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "AAPL",
+        "AMZN",
+        "BLK"
+      ],
+      "title": "Pourquoi Microsoft a reculé en Bourse aujourd’hui (-4%) - Netpublic.fr",
+      "source": "Netpublic.fr",
+      "pubDate": "Tue, 17 Nov 2026 21:30:00 GMT",
+      "summary": "Pourquoi Microsoft a reculé en Bourse aujourd’hui (-4%) Netpublic.fr",
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQQVlvaG9Ld2RubmZUUy1LOGUwd0VQNnNBQmQxcUdDVzBFOWpPbjFxUmFmYkY1dTNjZjRyTFE0aERtMmo1ZmpuVml1NjZOYTRUdE9vNzRkN3E2TGhSMzhlSTNwNlVtSTJqN243Qk02OEVKNURSVTlrSC1OMUhUNHFlRWZwTFgtakFiRXZvR2VXZUg0c0M5ZHNhQ3hB?oc=5"
+    },
+    {
+      "id": "a95cee99ef08e5a0",
+      "theme": "Big Tech & Cloud US",
+      "tagCls": "b-blue",
+      "tickers": [
+        "MSFT",
+        "GOOGL",
+        "AAPL",
+        "AMZN",
+        "BLK"
+      ],
+      "title": "Amazon et Google devraient détenir ensemble près de 30 % d'Anthropic après son introduction en bourse, bien que qualifiée de « test sans précédent de la crédulité des investisseurs » - Developpez.com",
+      "source": "Developpez.com",
+      "pubDate": "Wed, 18 Nov 2026 04:08:00 GMT",
+      "summary": "Amazon et Google devraient détenir ensemble près de 30 % d'Anthropic après son introduction en bourse, bien que qualifiée de « test sans précédent de la crédulité des investisseurs » Developpez.com",
+      "link": "https://news.google.com/rss/articles/CBMi5AJBVV95cUxQTjREeGVuRWlCcmQ2WF9fWEpSTVFjVFRhUGZPZEhGZGlJbDVKdW5UX1owYjdaaTB4UjI2cm90VHhmTXl1WVZ3UDVJQWxndTRwbjFUbV9CRnJGaUZLZWtncFlBRTg2SHlUbklFS2lGb0c2LWdXN3E3ZHhROVJsY0NtNFh5NkpmYVlwZmIyYnRCUW9wRDRUU29Zck1wU3hyZVZXUnVsbzZuRTBUT2hjVlNYZDRFRFp2WDVTZUhZNE9td0dsOUdvVUZ3NVVZZjlIbV9JTFRRMHV0bzV4cC1MUlBDSDFpZEN1MEdhRXFYVFNQdXJnZVVQZnhUMjRSV2xQYzI4VmlJN1RLVmZiNjc2VWhVN0J3NF8yZTFrYno5SFk4MTNwb3FPNnpQUmtDeDZCWUF3dEhQUjAtS1YyMlZXYjBnSC1NVVpZc3BYVUs2WE9rUGFlaVpMaUZJZG9CQ2gyNDBLNWtIc9IB6gJBVV95cUxORmQ0Wmc3b2xoWVpZa1F3NXRaVTQ3X0cwWGNrYzVUU3hHVEo5a3M0VWNYQmdndXoxNEpNdmI2VEYzNlk1WkMtNHk1N29GbzVISEgwMzB5dUtFMDNGUlhTOGtCVkQ0aXY5RHJ0RGl6enVuQy02TFpwUmQ2UnJsSWlxbnk4VlkwQWdELTBHWHhyREtpUUl5TWZEaWZzUFloQ2FIbWowRl9naWk5TkNVMWFBcVgtdmVZUXNVSHlYcGFXcERaVXlRWkZSWmFTcVEyV1VydWplXzhpY3N3bkFxemtGVHlHWk1tX01fcUkybVNIb1QxSFVwYThKT3RfRWktY1BoR296THppT1BuaGE4ZHViQnk1bjlTVUtxNmhpWkRtTzFicGJseFYyWmIxdU82UDRQMG9tXzloM1Z3ajlxT1RXRHFQeXlnVGRubnJtbWZYZTdqOVJRdG5DNFdteHJzRUhXNDlrbzRlMTBkdw?oc=5"
+    },
+    {
+      "id": "91b1cfa71aa84983",
+      "theme": "Industrie & Énergie EU",
+      "tagCls": "b-green",
+      "tickers": [
+        "AI.PA",
+        "ENR.DE",
+        "F3C.DE"
+      ],
+      "title": "Air Liquide : notre analyse des résultats - Morningstar",
+      "source": "Morningstar",
+      "pubDate": "Fri, 30 Oct 2026 07:00:00 GMT",
+      "summary": "Air Liquide : notre analyse des résultats Morningstar",
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOQ3YxMHhvVEYxQ1g5TmNtSUJxdTVUSW9raHFMYURId0JPZ2FOcUZOa0tYUTd6eEZUOExCbFgwVk96YVRtQm9hSm54Y09WV2hFazJXTlozcFlzUWZwcVhSR1lGcGFMS01wdmNEV1FzUEFBaVdGRUFobDFCdFNydGVNUGlQMTEzVmc?oc=5"
+    },
+    {
+      "id": "3c71444ca2c56f94",
+      "theme": "Industrie & Énergie EU",
+      "tagCls": "b-green",
+      "tickers": [
+        "AI.PA",
+        "ENR.DE",
+        "F3C.DE"
+      ],
+      "title": "Siemens Energy, le géant allemand qui défie les craintes des marchés sur l'intelligence artificielle - Les Echos",
+      "source": "Les Echos",
+      "pubDate": "Fri, 13 Nov 2026 05:10:09 GMT",
+      "summary": "Siemens Energy, le géant allemand qui défie les craintes des marchés sur l'intelligence artificielle Les Echos",
+      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxPSGZxbnZmM0Z1RTI0SFdsbE9JR2xoVFFDQkpscFZuMEc4aldEeHJQSHlEZy1uWnVvYWdCNmFuV1ktbG9WbHIyUVl1WmQxOWRDN2J0ZWZRUEZfT1BNOVR4UndQTThjNHppNjVyNTlLRGhtOHB4OVhiVy1pR3RJT2Rpc3ZDLWhrOFp1dGdHMWlwb01pT000S1VMREU4R2NhRWdaa2pmMlZkQUVubE1PYzZuMnhTUTE4b0p3bUZ2YVI3ckxjMDVFTW1vN1hVWjR2ZDJHaXV6R25EVDZXaHN3eEoySDEtLWZPYTVqVmp6Nmo5OGFyTEhhZ1JuaGwyRWltZ0dh?oc=5"
+    },
+    {
+      "id": "e7ac7cfccc82b922",
+      "theme": "Industrie & Énergie EU",
+      "tagCls": "b-green",
+      "tickers": [
+        "AI.PA",
+        "ENR.DE",
+        "F3C.DE"
+      ],
+      "title": "Résultats T3 2026 : Air Liquide accélère, porté par des ventes en croissance et le lancement de son plan stratégique - Air Liquide",
+      "source": "Air Liquide",
+      "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+      "summary": "Résultats T3 2026 : Air Liquide accélère, porté par des ventes en croissance et le lancement de son plan stratégique Air Liquide",
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPX3RqQVZsT09sVUNIeHo2T1Q3MDVmSEVERW1HTTQ2bjhDdjZ5eEFVRmEyd1JWTGkyYWpYQnRqNjhpdGdyMF9BOTZDQUlWUFFXanF3SUZUUmxiSlNIa1JYUkVtMTVyME13M1U5UnNFU3hhRDJXSU5PeEY2MHM2UGFrbTFTYzE3QXUtbkprYkFuSFl5aklJYlk2UlhEWUpLZmhPaE1wNHB3NGtSM1ZWMVVHSDZWOUdURW1NLVZkYzBaX19GdS1XMFpoSnczMDRBNDdDdnZVb0JIS2JKemVtVUQwT2VJRTFyOFI0MDQwVE56TzQzUU5ma2NTNkFaUnY1N3pHNkhIQg?oc=5"
+    },
+    {
+      "id": "daf863538ba492ad",
+      "theme": "Industrie & Énergie EU",
+      "tagCls": "b-green",
+      "tickers": [
+        "AI.PA",
+        "ENR.DE",
+        "F3C.DE"
+      ],
+      "title": "Les résultats d'Air liquide en 1 chiffre - Saxo",
+      "source": "Saxo",
+      "pubDate": "Thu, 29 Oct 2026 13:00:00 GMT",
+      "summary": "Les résultats d'Air liquide en 1 chiffre Saxo",
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxQTlpWbzQtTDVQWGE5U3BFMVBPUlRGLTJSaVNXbUlZYXZ2X2MyTGdvTlV2MGtIckt5RXRUZHZVajBhWjJRU0Yxalc0eUZDcl9Ham9CQlVfTmlfSzQ5UFF4dXZmRThmZEFXZUFTVUhzaklIZW9mWEZidDN4NlRySndLWVhrWTZheUZ6aDVmUGFoQnk?oc=5"
+    },
+    {
+      "id": "5cca54e2e5b5408e",
+      "theme": "Industrie & Énergie EU",
+      "tagCls": "b-green",
+      "tickers": [
+        "AI.PA",
+        "ENR.DE",
+        "F3C.DE"
+      ],
+      "title": "Air Liquide monte en Bourse après son nouveau plan stratégique - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Mon, 05 Oct 2026 07:00:00 GMT",
+      "summary": "Air Liquide monte en Bourse après son nouveau plan stratégique Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVTYxSEQ3dzlTc2dUeWJUUFZvWDZoRFNIWEFlQTF4ckdpYWpGWUJTeWszbGF0RF96Rm8tUHh5d1JFT2dpVkQ1ejNJbHpkOTlkN3V6SFJqQzEzdXFPMFIxcVcyZEgxTGNodUtRejlEa2Jfb1lQRHJHTDJseEM0eGVmTl8tY3Z6NWNsWXF1R0xhTWhiWFZxVkJORGtHUVMtalFVcW10MGE2RmY0ZGNVRHczYnlIaGJnOGp5cGVNWnZ6ZmNvcmJvVXFtYnRWbklFT3RCbHBtZUlaTdIB3AFBVV95cUxNeWs4UlVEUUN3UzFRa0lmR0NNR3FQb1FEd1Q3U1ZGbHh1SEgwRTV1LTJVTlJONGk3Y29QaDZ0ell5VXJKdVBpV05jUlA5SG9HS0tqcTU2eC1NMEI2R3hwWmx3Ym1xVGxPNmZPNmRtMjZBb25jOHhfOG9sMHBRZnhTSzF2SkdsNVEwTDVZbUJEZ2VfWmQ3UnlMUnkweFRqX0VJZ3JHTWZxem9sbU90VjJaMjVjRDZzbGV4NHRiSWtYbmluTUxPMEpoVWJlYkVHWTl5VnJaN1hWb2hHUFRM?oc=5"
+    },
+    {
+      "id": "ac6e3480001d22f1",
+      "theme": "Macro, Fed, BCE & Or",
+      "tagCls": "b-amber",
+      "tickers": [
+        "SXR8",
+        "XDEW",
+        "EUNL",
+        "PPFB"
+      ],
+      "title": "Finances publiques : la BCE compte sur les marchés pour recadrer la France - Le Revenu",
+      "source": "Le Revenu",
+      "pubDate": "Wed, 18 Nov 2026 11:05:00 GMT",
+      "summary": "Finances publiques : la BCE compte sur les marchés pour recadrer la France Le Revenu",
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPSnBaQWdMRWpYQjB2NmRZbUVILXp2emo2aWtQR3k5aEFmbGRTR1FuWTRkUTEtNEMxM1VYdzIwc0xxM1dXQU15LWhKdG9ONWM3elVrUjJkdEpYZzBYX1E2RExyN2RmLWRwU3M4OWZheUdPOTB1VVdmWWxRZUN5YV9wb0FZV2FvUTRSc1g1dHpmTUFYaWcxaWt5ZVBfSHNQZGlBekZ2bFRiZnk0bUVDaHhwdUh0Mk4?oc=5"
+    },
+    {
+      "id": "bffa0d582acad287",
+      "theme": "Macro, Fed, BCE & Or",
+      "tagCls": "b-amber",
+      "tickers": [
+        "SXR8",
+        "XDEW",
+        "EUNL",
+        "PPFB"
+      ],
+      "title": "BCE: Les marchés devraient contribuer à inciter la France à faire preuve de rigueur budgétaire - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Wed, 18 Nov 2026 10:33:53 GMT",
+      "summary": "BCE: Les marchés devraient contribuer à inciter la France à faire preuve de rigueur budgétaire Boursorama",
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxQUld0aWlOMXFRb1VXemd6UjdPa0phN1VNeGpzWkdzRnphNnNsbWJzMVM5Mkk0TkpoOERIRDdObG9TbGxZbGNoYkhHQklXU1RXZ3p2NGZ3cXhLa1FrZHRycmdfRlk3T1dpbkVMU0NyTVg5LW1XRTF4ZjZpWE42ZWVHWUhlb1BQMDdYNndnN2FwOXdwT2xqeE5Ic1dHbUJHbFA1VWJ2Q2RMSXdSb0tFbWZWOWNldUhydGFfUWIzRWtlWGZsLUZaX2JIVkx4Zk93QTFqd0hEOEhuYnZhUjJlUnh2TjhDNkpnNjVJWF9IbFljS1dyc0xJNU9uNGZ5eFJFS05pSl9xdWJtdnkya01VeG9fQVlKWdIBmAJBVV95cUxPVXBfVUxQeWktb1NVN1RnTTBFdmRCd0VrWE1ENjh4ZENzNndzSWJndWd5NlJwRzRqRFFpOEk1ejNkQTJTMHAyUEgzTGJCZmJGenBBSDRKbXpMMzQ2S25LOFBKVExUaFItYmplSU4wc2c4Rm1UcXExRzV4cTlPbWJBaHB1YXVBSXFhXzBRVEFub19ybDA2MExWR0I2Q3VpSExaa0dRUVVIYmp4anlvc0JhdW1SMFZUN2NJRGhiZV9qLWRuVTFLdlBlVXhkVG1ja1JBb09IN1lpOGc0b2hld3NtTG81d2RUazJQeXJCaEJUSlIzUlB2bDhmQ1RtYUYtX2dtNmhNaE1ET2Z1LVhKT25lMEJhckt5SVdu?oc=5"
+    },
+    {
+      "id": "cafaa4dc9157202b",
+      "theme": "Macro, Fed, BCE & Or",
+      "tagCls": "b-amber",
+      "tickers": [
+        "SXR8",
+        "XDEW",
+        "EUNL",
+        "PPFB"
+      ],
+      "title": "Tech : résultat record de Nvidia, IPO d’Anthropic, vers un rebond ? - Club Patrimoine",
+      "source": "Club Patrimoine",
+      "pubDate": "Wed, 18 Nov 2026 10:06:02 GMT",
+      "summary": "Tech : résultat record de Nvidia, IPO d’Anthropic, vers un rebond ? Club Patrimoine",
+      "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE95MlF4Qkw3R2l4bkZ2ZVRuanVMSTJaRUl4ZC02MHJfLXcxcjg0ZXU0Z29hSEtnWjJYb2xnYkhOS2FCZ2RVYmxkdm13NlRranBoXzlXZ3g2NXV3bDVsOW5PdTNQRTVRRC1XZXV1YUU5SG0?oc=5"
+    },
+    {
+      "id": "aa7fff3ea5e42089",
+      "theme": "Macro, Fed, BCE & Or",
+      "tagCls": "b-amber",
+      "tickers": [
+        "SXR8",
+        "XDEW",
+        "EUNL",
+        "PPFB"
+      ],
+      "title": "BCE-Les marchés devraient contribuer à inciter la France à faire preuve de rigueur budgétaire - TradingView",
+      "source": "TradingView",
+      "pubDate": "Wed, 18 Nov 2026 10:05:24 GMT",
+      "summary": "BCE-Les marchés devraient contribuer à inciter la France à faire preuve de rigueur budgétaire TradingView",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE11OWxVLW5YTnRlaDRZVm1MNEZKMkVRaUM0bDVDNzU4OElxVTIzemwyMW9yN2JrMHoxb0VBek1LUkVPbC1WdDRDMW9WMGZfZ3IzRkFFNkRPUU9YVFN3S3poa29XNlVISzJkZGFWSUlJcEVtVlRHUU5n?oc=5"
+    },
+    {
+      "id": "0f080f939de5a935",
+      "theme": "Macro, Fed, BCE & Or",
+      "tagCls": "b-amber",
+      "tickers": [
+        "SXR8",
+        "XDEW",
+        "EUNL",
+        "PPFB"
+      ],
+      "title": "Calendrier économique : inflation européenne et données sur le marché immobilier américain - XTB.com",
+      "source": "XTB.com",
+      "pubDate": "Wed, 18 Nov 2026 10:07:00 GMT",
+      "summary": "Calendrier économique : inflation européenne et données sur le marché immobilier américain XTB.com",
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPWC1SOFZEWGZFdFl6ZHlGMUFOODNOSUVTWmtyMGM4NzcxTFc0SE9UbDZVUDFFaEpQOGtTVExEd3g2MXowRTZ6X3BTRDFuRFJvRnV2VFNMQkxyVl9YXzVoemtDNjJjaHJjdFBHVl92azVjV3NuczVKQzJIbUtDcUtBakw4WWY2NlBxc1prQlhVMmdzLVQ5dEkwSWcycERRSFVQbnlmVHNZS2hwZUU1N1E4TkNQbmR0VUJINWZ4a3Nuck1HOUdHVTRB?oc=5"
+    }
+  ],
+  "notifiedIds": [
+    "1a2f1e628f9d8dee",
+    "a6af22e0f1b766d5",
+    "a2a9fbcb529f14c3",
+    "a276d2983ccaf1ae",
+    "93bddb49740aef31",
+    "ec494de0705c5b55",
+    "f998b5a4df0bb616",
+    "cbd5261df019898b",
+    "2ee35771d0e274b1",
+    "a95cee99ef08e5a0",
+    "91b1cfa71aa84983",
+    "3c71444ca2c56f94",
+    "e7ac7cfccc82b922",
+    "daf863538ba492ad",
+    "5cca54e2e5b5408e",
+    "ac6e3480001d22f1",
+    "bffa0d582acad287",
+    "cafaa4dc9157202b",
+    "aa7fff3ea5e42089",
+    "0f080f939de5a935",
+    "ec4e84f12d674d23",
+    "a230e6f602d5d275",
+    "cc51dbe2bc541c67",
+    "76fd7b47f7a54ea3",
+    "8ad2858292f71420"
+  ]
 }
