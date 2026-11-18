@@ -11,7 +11,7 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>Copilote Bourse — Cours en Direct</title>
+<title>Copilote Bourse — Cours &amp; Alertes</title>
 <style>
   :root {
     --bg: #0b0f17;
@@ -262,6 +262,62 @@
   .b-red { background: var(--red-bg); color: var(--red); }
   .b-blue { background: var(--blue-bg); color: var(--blue); }
   .b-purple { background: var(--purple-bg); color: var(--purple); }
+
+  /* Market hours bar in Alerts */
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .mkt-box {
+    background: rgba(11, 15, 23, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 9px;
+    text-align: center;
+  }
+  .mkt-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .mkt-hours {
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin: 2px 0 4px;
+  }
+  .mkt-status {
+    display: inline-block;
+    font-size: 0.66rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+  .ev-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .ev-datetime {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    color: var(--blue);
+    background: var(--blue-bg);
+    padding: 4px 9px;
+    border-radius: 7px;
+  }
+  .ev-countdown {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--amber);
+  }
 
   /* Live quote pill inside line card */
   .quote-strip {
@@ -844,15 +900,28 @@
     </div>
   </div>
 
-  <!-- ONGLET 4 : ACTUS & ALERTES -->
+  <!-- ONGLET 4 : ACTUS & ALERTES DATEES -->
   <div id="tab-alerts" class="section">
     <div class="card">
       <div class="card-title">
-        <span>🔔 Catalyseurs &amp; Alertes Long Terme</span>
-        <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester Alerte</button>
+        <span>📅 Calendrier des Catalyseurs (Heure de Paris)</span>
+        <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
       </div>
-      <div class="sub">Les prochains événements importants pour votre PEA et votre compte Trade Republic :</div>
+      <div class="sub">Dates et heures précises des événements susceptibles de faire bouger vos 22 positions :</div>
+      <div class="market-grid" id="marketSessionsGrid"></div>
       <div id="eventsList"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        <span>🔔 Journal d'Alertes Horodatées</span>
+        <div style="display:flex;gap:6px;flex-shrink:0;">
+          <button type="button" class="pill-btn btn-compact" id="btnEnablePush">🔔 Activer</button>
+          <button type="button" class="pill-btn btn-compact" id="btnNotif">Tester</button>
+        </div>
+      </div>
+      <div class="sub">Historique horodaté (date et heure exactes) des variations et alertes détectées sur vos lignes :</div>
+      <div id="alertLogsList"></div>
     </div>
   </div>
 </div>
@@ -902,9 +971,8 @@
     if (installBtn) installBtn.style.display = "none";
   }
 
-  var STORAGE_KEY = "copilote_bourse_live_v1";
+  var STORAGE_KEY = "copilote_bourse_live_v2";
 
-  // 22 positions exactes avec ticker boursier réel pour actualisation automatique au cours
   var defaultPositions = [
     { id: "ai_pea", account: "PEA", ticker: "AI.PA", name: "Air Liquide (PEA Fortuneo • 110 titres)", baseVal: 21020.00, cost: 17737.14, fixedQty: 110, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale (110 actions au nominatif administré, PRU 161,25 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
     { id: "amd", account: "TR", ticker: "AMD", name: "AMD", baseVal: 9431.09, cost: 2360.09, fixedQty: null, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+7 071 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
@@ -955,6 +1023,61 @@
     };
   });
 
+  function formatDateTimeNow() {
+    var now = new Date();
+    var dd = String(now.getDate()).padStart(2, "0");
+    var mm = String(now.getMonth() + 1).padStart(2, "0");
+    var yyyy = now.getFullYear();
+    var hh = String(now.getHours()).padStart(2, "0");
+    var min = String(now.getMinutes()).padStart(2, "0");
+    var ss = String(now.getSeconds()).padStart(2, "0");
+    return dd + "/" + mm + "/" + yyyy + " • " + hh + ":" + min + ":" + ss;
+  }
+
+  function formatShortDateTimeNow() {
+    var now = new Date();
+    var dd = String(now.getDate()).padStart(2, "0");
+    var mm = String(now.getMonth() + 1).padStart(2, "0");
+    var yyyy = now.getFullYear();
+    var hh = String(now.getHours()).padStart(2, "0");
+    var min = String(now.getMinutes()).padStart(2, "0");
+    return dd + "/" + mm + "/" + yyyy + " à " + hh + "h" + min;
+  }
+
+  var initialLogs = Array.isArray(savedData.alertLogs) && savedData.alertLogs.length > 0
+    ? savedData.alertLogs
+    : [
+        {
+          timestamp: formatShortDateTimeNow(),
+          badge: "Opportunité Long Terme",
+          badgeCls: "b-green",
+          title: "Alphabet (A) & Microsoft sous-pondérées",
+          desc: "Alphabet (+131,5 % depuis l'achat) ne pèse que 23,13 € et Microsoft 1 354,49 €. Lignes prioritaires pour vos prochains versements."
+        },
+        {
+          timestamp: "18/11/2026 à 16h29",
+          badge: "Relevé Synchronisé",
+          badgeCls: "b-blue",
+          title: "Consolidation PEA Fortuneo (21 020 €) + Trade Republic (29 868 €)",
+          desc: "Patrimoine total calibré sur vos 22 positions exactes. Pilier défensif majoritaire à 46,9 %."
+        }
+      ];
+
+  var state = {
+    amount: 100,
+    horizon: "now",
+    horizonLabel: "Maintenant",
+    regime: 62,
+    filter: "all",
+    dca: 0,
+    expandedPole: 0,
+    donePrios: {},
+    lastSync: savedData.lastSync || null,
+    isSyncing: false,
+    editingId: null,
+    alertLogs: initialLogs
+  };
+
   function persistState() {
     try {
       var map = {};
@@ -969,24 +1092,36 @@
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         positions: map,
-        lastSync: state.lastSync
+        lastSync: state.lastSync,
+        alertLogs: state.alertLogs.slice(0, 15)
       }));
     } catch (e) {}
   }
 
-  var state = {
-    amount: 100,
-    horizon: "now",
-    horizonLabel: "Maintenant",
-    regime: 62,
-    filter: "all",
-    dca: 0,
-    expandedPole: 0,
-    donePrios: {},
-    lastSync: savedData.lastSync || null,
-    isSyncing: false,
-    editingId: null
-  };
+  function pushAlertLog(title, desc, badge, badgeCls, sendSystemNotif) {
+    var entry = {
+      timestamp: formatDateTimeNow(),
+      badge: badge || "Alerte Marché",
+      badgeCls: badgeCls || "b-blue",
+      title: title,
+      desc: desc
+    };
+    state.alertLogs.unshift(entry);
+    if (state.alertLogs.length > 15) {
+      state.alertLogs.pop();
+    }
+    persistState();
+    renderAlertLogs();
+
+    if (sendSystemNotif && "Notification" in window && Notification.permission === "granted") {
+      try {
+        new Notification(title, {
+          body: entry.timestamp + " — " + desc,
+          icon: "./icon-192.png"
+        });
+      } catch (e) {}
+    }
+  }
 
   function getPosMetrics(p) {
     var val = p.baseVal;
@@ -1052,7 +1187,7 @@
     clearTimeout(window._toastTimer);
     window._toastTimer = setTimeout(function() {
       t.style.display = "none";
-    }, 2600);
+    }, 2800);
   }
 
   function renderAll() {
@@ -1064,7 +1199,6 @@
     var linesBadge = document.getElementById("linesTotalBadge");
     if (linesBadge) linesBadge.textContent = fmtEuro(tot.totalVal);
 
-    // PEA vs TR boxes
     var peaShare = tot.totalVal > 0 ? ((tot.peaVal / tot.totalVal) * 100).toFixed(1) : "0.0";
     var trShare = tot.totalVal > 0 ? ((tot.trVal / tot.totalVal) * 100).toFixed(1) : "0.0";
     document.getElementById("peaTotalVal").textContent = fmtEuro(tot.peaVal);
@@ -1072,7 +1206,6 @@
     document.getElementById("trTotalVal").textContent = fmtEuro(tot.trVal);
     document.getElementById("trTotalGain").textContent = (tot.trGain >= 0 ? "+" : "") + fmtEuro(tot.trGain) + " (" + trShare + " % du total)";
 
-    // Goal 60k
     var goal = 60000;
     var goalPct = Math.min(100, (tot.totalVal / goal) * 100);
     var goalRem = Math.max(0, goal - tot.totalVal);
@@ -1306,17 +1439,161 @@
     document.getElementById("linesContainer").innerHTML = html;
   }
 
+  function updateMarketSessions() {
+    var now = new Date();
+    var clockEl = document.getElementById("liveParisClock");
+    if (clockEl) {
+      clockEl.textContent = formatDateTimeNow();
+    }
+
+    var day = now.getDay(); // 0 = Dim, 6 = Sam
+    var mins = now.getHours() * 60 + now.getMinutes();
+    var isWeekday = day >= 1 && day <= 5;
+
+    // Euronext Paris: 09:00 - 17:30 (540 - 1050)
+    var euOpen = isWeekday && mins >= 540 && mins < 1050;
+    // Wall Street (Paris time): 15:30 - 22:00 (930 - 1320)
+    var usOpen = isWeekday && mins >= 930 && mins < 1320;
+    // Hong Kong (Paris time): 02:30 - 09:00 (150 - 540)
+    var hkOpen = isWeekday && mins >= 150 && mins < 540;
+
+    var grid = document.getElementById("marketSessionsGrid");
+    if (grid) {
+      grid.innerHTML =
+        "<div class='mkt-box'>" +
+          "<div class='mkt-name'>🇪🇺 Euronext Paris</div>" +
+          "<div class='mkt-hours'>09h00 – 17h30</div>" +
+          "<span class='mkt-status " + (euOpen ? "b-green" : "b-red") + "'>" + (euOpen ? "OUVERT" : "FERMÉ") + "</span>" +
+        "</div>" +
+        "<div class='mkt-box'>" +
+          "<div class='mkt-name'>🇺🇸 Wall Street</div>" +
+          "<div class='mkt-hours'>15h30 – 22h00</div>" +
+          "<span class='mkt-status " + (usOpen ? "b-green" : "b-red") + "'>" + (usOpen ? "OUVERT" : "FERMÉ") + "</span>" +
+        "</div>" +
+        "<div class='mkt-box'>" +
+          "<div class='mkt-name'>🇭🇰 Hong Kong</div>" +
+          "<div class='mkt-hours'>02h30 – 09h00</div>" +
+          "<span class='mkt-status " + (hkOpen ? "b-green" : "b-red") + "'>" + (hkOpen ? "OUVERT" : "FERMÉ") + "</span>" +
+        "</div>";
+    }
+  }
+
+  function getRelativeLabel(isoDateStr) {
+    var target = new Date(isoDateStr);
+    var now = new Date();
+    var diffMs = target.getTime() - now.getTime();
+    if (diffMs <= 0) {
+      return "En cours / Passé";
+    }
+    var totalHours = Math.floor(diffMs / 3600000);
+    var days = Math.floor(totalHours / 24);
+    var remHours = totalHours % 24;
+    if (days === 0) {
+      var remMins = Math.floor((diffMs % 3600000) / 60000);
+      return "Dans " + remHours + "h " + remMins + "min";
+    }
+    if (days === 1) {
+      return "Demain (dans 1j " + remHours + "h)";
+    }
+    return "Dans " + days + " jours";
+  }
+
   function renderEvents() {
     var evs = [
-      { date: "PEA Fortuneo • Nominatif", title: "Prime de fidélité +10 % & Actions Gratuites Air Liquide", impact: "Vos 110 actions Air Liquide inscrites au nominatif administré préparent la majoration de +10 % sur les dividendes et les attributions gratuites." },
-      { date: "Énergie & IA • Suivi", title: "Siemens Energy & Semi-conducteurs (AMD / NVIDIA)", impact: "Siemens Energy profite directement des besoins électriques des data centers IA et équilibre vos gains spectaculaires sur AMD et NVIDIA." },
-      { date: "Prochain point Banques Centrales", title: "Chiffres d'inflation US (CPI) & Taux Fed/BCE", impact: "Une inflation maîtrisée soutient à la fois vos ETFs S&P 500 / MSCI World, BlackRock, Microsoft et votre poche Or physique." }
+      {
+        dateLabel: "Mer. 18/11/2026 • 22h20 (Paris)",
+        iso: "2026-11-18T22:20:00",
+        tag: "Semi-conducteurs IA",
+        tagCls: "b-purple",
+        title: "Publication Trimestrielle NVIDIA & Flux Semi-conducteurs",
+        impact: "Impact direct sur vos 16 137 € d'AMD et NVIDIA. Réaction immédiate attendue en après-bourse US dès 22h20 puis à l'ouverture européenne demain à 09h00."
+      },
+      {
+        dateLabel: "Jeu. 19/11/2026 • 15h30 (Paris)",
+        iso: "2026-11-19T15:30:00",
+        tag: "Ouverture US",
+        tagCls: "b-green",
+        title: "Ouverture Wall Street — Réajustement Tech & IA",
+        impact: "Surveillez Microsoft (1 354 €), Alphabet (23 €) et votre S&P 500 Equal Weight (358 €) : attendez 15h50 pour placer un éventuel ordre limite."
+      },
+      {
+        dateLabel: "Ven. 27/11/2026 • 14h30 (Paris)",
+        iso: "2026-11-27T14:30:00",
+        tag: "Macro US",
+        tagCls: "b-amber",
+        title: "Indice d'Inflation PCE Core US (Indicateur favori de la Fed)",
+        impact: "Un ralentissement de l'inflation soutient directement BlackRock (1 980 €), vos ETFs S&P 500 / MSCI World et votre poche Or physique."
+      },
+      {
+        dateLabel: "Jeu. 10/12/2026 • 14h30 (Paris)",
+        iso: "2026-12-10T14:30:00",
+        tag: "Inflation CPI",
+        tagCls: "b-amber",
+        title: "Chiffres officiels de l'Inflation Américaine (CPI Novembre)",
+        impact: "Rendez-vous mensuel majeur à 14h30 précises : détermine la trajectoire des taux américains avant la réunion de la Fed."
+      },
+      {
+        dateLabel: "Mer. 16/12/2026 • 20h00 (Paris)",
+        iso: "2026-12-16T20:00:00",
+        tag: "Banque Centrale US",
+        tagCls: "b-blue",
+        title: "Décision des Taux Directeurs de la Fed (FOMC) & Conférence 20h30",
+        impact: "Forte volatilité attendue entre 20h00 et 21h15 sur le Dollar (EUR/USD) et l'ensemble de vos valeurs américaines."
+      },
+      {
+        dateLabel: "Jeu. 17/12/2026 • 14h15 (Paris)",
+        iso: "2026-12-17T14:15:00",
+        tag: "Banque Centrale EU",
+        tagCls: "b-blue",
+        title: "Décision des Taux de la BCE (Francfort) & Conférence 14h45",
+        impact: "Influence directement vos valeurs européennes (Air Liquide, Siemens Energy) et la parité Euro/Dollar."
+      },
+      {
+        dateLabel: "Jeu. 31/12/2026 • 17h30 (Paris)",
+        iso: "2026-12-31T17:30:00",
+        tag: "PEA Fortuneo",
+        tagCls: "b-green",
+        title: "Clôture Annuelle Nominatif Administré Air Liquide (110 titres)",
+        impact: "Vos 110 actions Air Liquide (21 020 €) doivent être inscrites au nominatif avant le 31/12/2026 à 17h30 pour valider l'année fiscale en cours vers la prime de fidélité +10 %."
+      }
     ];
+
     var html = "";
     for (var i = 0; i < evs.length; i++) {
-      html += "<div class='rec-item'><div class='rec-top'><strong>" + evs[i].title + "</strong><span class='badge b-blue'>" + evs[i].date + "</span></div><div style='font-size:0.83rem;color:var(--muted);line-height:1.45;'>" + evs[i].impact + "</div></div>";
+      var ev = evs[i];
+      var rel = getRelativeLabel(ev.iso);
+      html += "<div class='rec-item'>" +
+        "<div class='ev-meta-row'>" +
+          "<span class='ev-datetime'>🗓️ " + ev.dateLabel + "</span>" +
+          "<span class='ev-countdown'>⏳ " + rel + "</span>" +
+        "</div>" +
+        "<div class='rec-top' style='margin-top:4px;'><strong>" + ev.title + "</strong><span class='badge " + ev.tagCls + "'>" + ev.tag + "</span></div>" +
+        "<div style='font-size:0.83rem;color:var(--muted);line-height:1.45;'>" + ev.impact + "</div>" +
+      "</div>";
     }
     document.getElementById("eventsList").innerHTML = html;
+  }
+
+  function renderAlertLogs() {
+    var container = document.getElementById("alertLogsList");
+    if (!container) return;
+    if (state.alertLogs.length === 0) {
+      container.innerHTML = "<div class='rec-item'><div style='font-size:0.83rem;color:var(--muted);'>Aucune alerte enregistrée pour le moment.</div></div>";
+      return;
+    }
+    var html = "";
+    for (var i = 0; i < state.alertLogs.length; i++) {
+      var lg = state.alertLogs[i];
+      html += "<div class='rec-item'>" +
+        "<div class='ev-meta-row'>" +
+          "<span class='ev-datetime'>🕒 " + lg.timestamp + "</span>" +
+          "<span class='badge " + lg.badgeCls + "'>" + lg.badge + "</span>" +
+        "</div>" +
+        "<div style='font-size:0.88rem;font-weight:700;margin:4px 0;'>" + lg.title + "</div>" +
+        "<div style='font-size:0.82rem;color:var(--muted);line-height:1.45;'>" + lg.desc + "</div>" +
+      "</div>";
+    }
+    container.innerHTML = html;
   }
 
   function switchTab(tabId) {
@@ -1333,7 +1610,6 @@
     }
   }
 
-  // --- MOTEUR DE RECUPERATION DES COURS BOURSIERS EN DIRECT ---
   function fetchWithTimeout(url, ms) {
     return new Promise(function(resolve, reject) {
       var done = false;
@@ -1407,7 +1683,6 @@
     if (badge) badge.textContent = "Synchro cours...";
     document.getElementById("clockTxt").textContent = "Actualisation des cours boursiers en cours...";
 
-    // Collect unique tickers + FX rates
     var symbolSet = { "EURUSD=X": true, "EURHKD=X": true, "EURAUD=X": true };
     for (var i = 0; i < positions.length; i++) {
       symbolSet[positions[i].ticker] = true;
@@ -1431,6 +1706,8 @@
       var fxAUD = (map["EURAUD=X"] && map["EURAUD=X"].price) ? map["EURAUD=X"].price : 1.65;
 
       var updatedCount = 0;
+      var notableMove = null;
+
       for (var j = 0; j < positions.length; j++) {
         var p = positions[j];
         var q = map[p.ticker];
@@ -1442,35 +1719,47 @@
         else if (q.currency === "AUD") priceEUR = q.price / fxAUD;
 
         if (priceEUR > 0) {
-          // Calibrate fractional shares once from exact screenshot value if not yet set
           if (p.qty === null) {
             p.qty = p.baseVal / priceEUR;
           }
           p.livePriceEUR = priceEUR;
           p.dayPct = q.dayPct;
           updatedCount++;
+
+          if (Math.abs(q.dayPct) >= 2.0 && (!notableMove || Math.abs(q.dayPct) > Math.abs(notableMove.dayPct))) {
+            notableMove = { name: p.name, dayPct: q.dayPct, priceEUR: priceEUR };
+          }
         }
       }
 
       state.isSyncing = false;
       if (dot) dot.classList.remove("syncing");
 
-      var now = new Date();
-      var timeStr = now.toLocaleTimeString("fr-FR");
+      var dtStr = formatDateTimeNow();
 
       if (updatedCount > 0) {
-        state.lastSync = timeStr;
+        state.lastSync = dtStr;
         persistState();
         renderAll();
         if (badge) badge.textContent = "Cours Live • " + updatedCount + "/22";
-        document.getElementById("clockTxt").textContent = "Cours boursiers actualisés à " + timeStr + " (" + updatedCount + "/22 lignes)";
+        document.getElementById("clockTxt").textContent = "Cours actualisés le " + dtStr + " (" + updatedCount + "/22)";
         if (manualTrigger) {
-          showToast("✅ " + updatedCount + "/22 lignes actualisées au cours du marché !");
+          showToast("✅ " + updatedCount + "/22 lignes actualisées (" + dtStr + ")");
+          if (notableMove) {
+            var mSign = notableMove.dayPct >= 0 ? "+" : "";
+            pushAlertLog(
+              "Mouvement fort : " + notableMove.name + " (" + mSign + notableMove.dayPct.toFixed(2) + " %)",
+              "Cours relevé à " + fmtEuro(notableMove.priceEUR) + " lors de votre synchronisation manuelle.",
+              notableMove.dayPct >= 0 ? "Hausse > 2%" : "Repli > 2%",
+              notableMove.dayPct >= 0 ? "b-green" : "b-amber",
+              true
+            );
+          }
         }
       } else {
         if (badge) badge.textContent = "Hors-ligne / Cache";
         document.getElementById("clockTxt").textContent = state.lastSync
-          ? "Derniers cours connus (" + state.lastSync + ") • Réessai auto"
+          ? "Derniers cours : " + state.lastSync
           : "Mode hors-ligne • Valeurs de référence affichées";
         if (manualTrigger) {
           showToast("⚠️ Réseau occupé, nouvel essai dans quelques secondes");
@@ -1510,10 +1799,12 @@
       showToast("Veuillez saisir des valeurs valides");
       return;
     }
+    var updatedName = "";
     for (var i = 0; i < positions.length; i++) {
       if (positions[i].id === state.editingId) {
         positions[i].qty = newQty;
         positions[i].cost = newCost;
+        updatedName = positions[i].name;
         if (positions[i].livePriceEUR === null) {
           positions[i].baseVal = newQty > 0 ? positions[i].baseVal : 0;
         }
@@ -1523,11 +1814,47 @@
     persistState();
     renderAll();
     closeEditModal();
+    pushAlertLog(
+      "Mise à jour manuelle : " + updatedName,
+      "Quantité ajustée à " + newQty + " parts pour " + fmtEuro(newCost) + " investis.",
+      "Portefeuille Modifié",
+      "b-blue",
+      false
+    );
     showToast("✅ Position enregistrée et recalculée au cours !");
   }
 
+  function enablePushNotifications() {
+    if (!("Notification" in window)) {
+      showToast("Notifications système non supportées sur ce navigateur");
+      return;
+    }
+    Notification.requestPermission().then(function(perm) {
+      if (perm === "granted") {
+        showToast("🔔 Notifications activées !");
+        pushAlertLog(
+          "Notifications Push activées sur cet appareil",
+          "Vous recevrez les alertes horodatées en direct lors des variations de cours.",
+          "Système Actif",
+          "b-green",
+          true
+        );
+      } else {
+        showToast("⚠️ Autorisez les notifications dans les réglages du navigateur");
+      }
+    });
+  }
+
   function testNotification() {
-    showToast("🔔 Alerte : Vos 22 lignes suivent désormais les cours boursiers en direct !");
+    var dt = formatDateTimeNow();
+    pushAlertLog(
+      "Test d'alerte : Microsoft & Alphabet (A) en zone de renforcement",
+      "Signal détecté sur vos lignes sous-pondérées. Vérifiez votre budget d'investissement dans l'onglet Investir.",
+      "Test Horodaté",
+      "b-green",
+      true
+    );
+    showToast("🔔 Alerte enregistrée le " + dt);
   }
 
   function triggerInstall() {
@@ -1611,22 +1938,32 @@
       syncLiveQuotes(true);
       return;
     }
+    if (e.target.closest("#btnEnablePush")) {
+      enablePushNotifications();
+      return;
+    }
     if (e.target.closest("#btnNotif")) {
       testNotification();
       return;
     }
   });
 
-  // Actualisation automatique toutes les 60 secondes selon les cours boursiers
+  // Actualisation automatique toutes les 60s des cours + horloge/statut marchés chaque seconde
   setInterval(function() {
     syncLiveQuotes(false);
   }, 60000);
+
+  setInterval(function() {
+    updateMarketSessions();
+  }, 1000);
 
   renderAll();
   renderPriorities();
   renderInvest();
   setRegime(62);
+  updateMarketSessions();
   renderEvents();
+  renderAlertLogs();
   syncLiveQuotes(false);
 })();
 </script>
