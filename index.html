@@ -856,65 +856,6 @@
   @media (max-width: 420px) {
     .custom-inputs-grid { grid-template-columns: 1fr; }
   }
-  .quant-strip {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
-    margin: 8px 0 9px;
-  }
-  .quant-cell {
-    background: rgba(15, 23, 42, 0.65);
-    border: 1px solid rgba(56, 189, 248, 0.16);
-    border-radius: 8px;
-    padding: 6px 8px;
-  }
-  .quant-lbl {
-    font-size: 0.63rem;
-    color: var(--muted);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.25px;
-  }
-  .quant-val {
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: var(--text);
-    margin-top: 2px;
-    line-height: 1.25;
-  }
-  .alloc-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: 4px;
-  }
-  .alloc-chip {
-    font-size: 0.69rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 5px;
-    background: rgba(148, 163, 184, 0.12);
-    color: var(--muted);
-    border: 1px solid rgba(148, 163, 184, 0.18);
-  }
-  .alloc-chip.good {
-    background: rgba(34, 197, 94, 0.12);
-    color: var(--green);
-    border-color: rgba(34, 197, 94, 0.25);
-  }
-  .alloc-chip.info {
-    background: rgba(56, 189, 248, 0.12);
-    color: var(--blue);
-    border-color: rgba(56, 189, 248, 0.25);
-  }
-  .alloc-chip.warn {
-    background: rgba(245, 158, 11, 0.12);
-    color: var(--amber);
-    border-color: rgba(245, 158, 11, 0.25);
-  }
-  @media (max-width: 460px) {
-    .quant-strip { grid-template-columns: 1fr; }
-  }
 
   .bottom-nav {
     position: fixed;
@@ -2180,12 +2121,6 @@
     }
   }
 
-  function formatShortPhase(phase) {
-    if (phase === "regular") return "Ouvert";
-    if (phase === "pre") return "Pré";
-    return "Fermé";
-  }
-
   function renderInvest(tot) {
     if (!tot) tot = computeTotals();
     var rawAmt = (typeof state.amount === "number" && isFinite(state.amount) && state.amount >= 1) ? state.amount : 1;
@@ -2220,14 +2155,13 @@
 
     var imbBefore = 0;
     var postSums = Object.assign({}, tot.poleSums);
-    var avgSigma = 0, avgLimitDisc = 0, avgRsi = 0, rsiWeight = 0, openWeight = 0;
+    var avgSigma = 0, avgRsi = 0, rsiWeight = 0, openWeight = 0;
     for (var k = 0; k < top3.length; k++) {
       var c = top3[k];
       var w = allocAmounts[k] / (amt || 1);
       var pk = c.pos.pole;
       postSums[pk] = (postSums[pk] || 0) + allocAmounts[k];
       avgSigma += c.horizonSigma * w;
-      avgLimitDisc += c.limitDiscountPct * w;
       if (typeof c.rsiVal === "number") {
         avgRsi += c.rsiVal * w;
         rsiWeight += w;
@@ -2249,113 +2183,55 @@
     var mathScore = Math.round(Math.max(55, Math.min(99, 64 + reductionRatio * 750 + rsiBonus + horBonus)));
 
     var horTxt = (state.horizonLabel || "Maintenant").replace(/^Dans\s+/, "");
-    var targetDate = new Date(Date.now() + h * 3600000);
-    var euPhase = getExchangePhaseAt("XETR:SXR8", targetDate);
-    var usPhase = getExchangePhaseAt("NASDAQ:MSFT", targetDate);
-    var sigmaTxt = "±" + avgSigma.toFixed(1).replace(".", ",") + " %";
-    var discTxt = "-" + avgLimitDisc.toFixed(1).replace(".", ",") + " %";
-
     var tranches = 1;
-    var execLabel = "Ordre limite unique";
     var timingNote = "";
 
     if (h <= 0) {
-      tranches = 1;
-      execLabel = "EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase);
       if (amt < 30) {
-        timingNote = "Analyse " + profile.tfName + " immédiate : pour " + fmtBudget(amt) + ", passez un ordre limite unique (" + discTxt + " calibré sur l'ATR) pour éviter le micro-fractionnement.";
+        timingNote = "Exécution immédiate conseillée : passez un ordre limite unique pour éviter de trop découper ce montant.";
       } else if (openWeight >= 0.5) {
-        timingNote = "Analyse " + profile.tfName + " : marchés principaux ouverts, volatilité intraday estimée " + sigmaTxt + ". Ordre limite conseillé autour de " + discTxt + " sous le dernier cours.";
+        timingNote = "Exécution immédiate conseillée : les marchés visés sont ouverts, posez un ordre limite légèrement sous le cours actuel.";
       } else {
-        timingNote = "Analyse " + profile.tfName + " : carnets actuellement en pré/hors séance (" + execLabel + "). Posez un ordre limite strict (" + discTxt + ") pour éviter les spreads élargis.";
+        timingNote = "Marchés actuellement hors séance : posez un ordre limite légèrement sous le cours pour sécuriser votre prix d'achat à l'ouverture.";
       }
     } else if (amt < 25) {
-      tranches = 1;
-      execLabel = "1 ordre ciblé (" + discTxt + ")";
-      timingNote = "Analyse " + profile.tfName + " (" + horTxt + ", amplitude " + sigmaTxt + ") : avec " + fmtBudget(amt) + ", placez un seul ordre limite vers " + discTxt + " sans découper en mini-ordres.";
+      timingNote = "Sur " + horTxt + " : privilégiez un ordre limite unique sur repli plutôt que plusieurs petits ordres.";
     } else if (h <= 6) {
       tranches = (amt >= 1500 && avgSigma >= 1.5) ? 2 : 1;
-      execLabel = "EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase);
-      timingNote = "Analyse " + profile.tfName + " à " + horTxt + " (amplitude attendue " + sigmaTxt + ") : " +
-        (tranches > 1 ? ("fractionnez en 2 ordres limites (~" + fmtBudget(amt / 2) + ")") : "posez un ordre limite calibré sur l'ATR (" + discTxt + ")") +
-        " • Statut projeté des bourses : " + execLabel + ".";
+      timingNote = tranches > 1
+        ? ("Dans " + horTxt + " : fractionnez en 2 ordres limites (~" + fmtBudget(amt / 2) + ") pour lisser votre point d'entrée.")
+        : ("Dans " + horTxt + " : placez un ordre limite légèrement sous le cours pour profiter d'un meilleur point d'entrée.");
     } else if (h <= 72) {
       tranches = amt < 150 ? 1 : ((avgSigma >= 2.5 || amt >= 600) ? 3 : 2);
-      execLabel = h <= 48
-        ? ("EU " + formatShortPhase(euPhase) + " • US " + formatShortPhase(usPhase))
-        : (tranches + " tranches (~" + fmtBudget(amt / tranches) + ")");
-      timingNote = "Analyse Swing " + profile.tfName + " sur " + horTxt + " (enveloppe 1σ : " + sigmaTxt + ") : " +
-        (tranches === 1
-          ? ("un ordre limite ciblé autour de " + discTxt + " pour capter un repli vers la " + profile.smaName + ".")
-          : ("découpez " + fmtBudget(amt) + " en " + tranches + " ordres limites (~" + fmtBudget(amt / tranches) + ") étagés autour de " + discTxt + " selon l'ATR de chaque titre."));
+      timingNote = tranches === 1
+        ? ("Sur " + horTxt + " : placez un ordre limite ciblé pour profiter d'un éventuel repli.")
+        : ("Sur " + horTxt + " : découpez " + fmtBudget(amt) + " en " + tranches + " ordres limites (~" + fmtBudget(amt / tranches) + ") pour lisser votre entrée.");
     } else if (h <= 720) {
       var rawHebdo = Math.max(2, Math.min(4, Math.round(h / 168)));
       tranches = Math.max(1, Math.min(rawHebdo, Math.floor(amt / 25)));
-      execLabel = tranches > 1 ? (tranches + " × ~" + fmtBudget(amt / tranches) + "/sem.") : ("1 ordre limite (" + discTxt + ")");
-      timingNote = "Analyse Journalière " + profile.tfName + " sur " + horTxt + " (~" + Math.round(profile.tradingDays) + " j. de bourse, volatilité 1σ " + sigmaTxt + ") : " +
-        (tranches > 1
-          ? ("lissez en " + tranches + " tranches hebdomadaires de ~" + fmtBudget(amt / tranches) + " (limites calibrées vers " + discTxt + ").")
-          : ("un ordre limite calibré vers " + discTxt + " sur repli."));
+      timingNote = tranches > 1
+        ? ("Sur " + horTxt + " : étalez votre achat en " + tranches + " versements hebdomadaires de ~" + fmtBudget(amt / tranches) + ".")
+        : ("Sur " + horTxt + " : placez un ordre limite ciblé sur repli.");
     } else {
       var rawMois = Math.max(2, Math.min(24, Math.round(h / 720)));
       tranches = Math.max(1, Math.min(rawMois, Math.floor(amt / 25)));
-      execLabel = tranches > 1 ? (tranches + " × ~" + fmtBudget(amt / tranches) + "/mois") : ("1 ordre limite (" + discTxt + ")");
-      timingNote = "Analyse Hebdo " + profile.tfName + " long terme (" + horTxt + ", amplitude 1σ estimée " + sigmaTxt + ") : priorité au rééquilibrage structurel vers vos pôles/ETF en retard, avec " +
-        (tranches > 1
-          ? (tranches + " mensualités DCA de ~" + fmtBudget(amt / tranches) + "/mois.")
-          : ("un ordre limite d'entrée vers " + discTxt + "."));
+      timingNote = tranches > 1
+        ? ("Sur " + horTxt + " : programmez " + tranches + " versements mensuels de ~" + fmtBudget(amt / tranches) + "/mois pour lisser votre investissement.")
+        : ("Sur " + horTxt + " : privilégiez une entrée progressive par ordre limite.");
     }
-
-    var quantStripHtml =
-      "<div class='quant-strip'>" +
-        "<div class='quant-cell'><div class='quant-lbl'>Unité analysée</div><div class='quant-val'>" + profile.tfName + " • " + profile.modeLabel + "</div></div>" +
-        "<div class='quant-cell'><div class='quant-lbl'>Amplitude 1σ (" + horTxt + ")</div><div class='quant-val'>" + sigmaTxt + " (RSI " + profile.tfName + " : " + Math.round(effRsi) + ")</div></div>" +
-        "<div class='quant-cell'><div class='quant-lbl'>" + (h <= 48 ? "Marchés à l'échéance" : "Cadence calculée") + "</div><div class='quant-val'>" + execLabel + "</div></div>" +
-      "</div>";
 
     var rowsHtml = "";
     for (var x = 0; x < top3.length; x++) {
       if (allocAmounts[x] <= 0) continue;
-      var item = top3[x];
-      var tp = item.pos;
+      var tp = top3[x].pos;
       var wPct = Math.round((allocAmounts[x] / (amt || 1)) * 100);
-      var posWeight = ((getPosMetrics(tp).val / totalVal) * 100).toFixed(1).replace(".", ",");
-
-      var chips = [];
-      if (typeof item.rsiVal === "number") {
-        var rCls = item.rsiVal <= 42 ? " good" : (item.rsiVal >= 68 ? " warn" : "");
-        chips.push("<span class='alloc-chip" + rCls + "'>RSI " + profile.tfName + " : " + Math.round(item.rsiVal) + "</span>");
-      }
-      if (typeof item.smaDist === "number") {
-        var sCls = item.smaDist <= -1 ? " good" : "";
-        chips.push("<span class='alloc-chip" + sCls + "'>" + (item.smaDist >= 0 ? "+" : "") + item.smaDist.toFixed(1).replace(".", ",") + " % vs " + profile.smaName + "</span>");
-      }
-      if (item.limitPriceEUR > 0) {
-        chips.push("<span class='alloc-chip info'>Limite ~" + fmtEuro(item.limitPriceEUR) + " (-" + item.limitDiscountPct.toFixed(1).replace(".", ",") + " %)</span>");
-      }
-      if (item.unitPriceEUR > 0) {
-        var estQty = allocAmounts[x] / item.unitPriceEUR;
-        var qtyTxt = (estQty >= 1 ? estQty.toFixed(2) : estQty.toFixed(3)).replace(".", ",");
-        chips.push("<span class='alloc-chip'>~" + qtyTxt + " part(s)</span>");
-      }
-      if (h <= 24) {
-        var phIcon = item.phase === "regular" ? "🟢 Ouvert" : (item.phase === "pre" ? "🟡 Pré-marché" : "⚪ Hors séance");
-        var phCls = item.phase === "regular" ? " good" : (item.phase === "pre" ? " warn" : "");
-        chips.push("<span class='alloc-chip" + phCls + "'>" + phIcon + "</span>");
-      } else if (h > 720 && typeof tp.beta1Y === "number" && tp.beta1Y > 0) {
-        chips.push("<span class='alloc-chip'>β " + tp.beta1Y.toFixed(2).replace(".", ",") + "</span>");
-      }
-
       rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" +
-        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + tp.name + "</strong> (poids " + posWeight + " %) : " + tp.action + "." +
-        "<div class='alloc-meta'>" + chips.join("") + "</div>" +
+        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + tp.name + "</strong> : " + tp.action + "." +
       "</div></div>";
     }
 
     var allocHtml = "<div class='rec-item'>" +
-      "<div class='rec-top'><strong>🎯 Répartition optimale pour " + fmtBudget(amt) + " (" + state.horizonLabel + ")</strong><span class='badge b-green'>Score Math : " + mathScore + "/100</span></div>" +
-      "<div style='font-size:0.78rem;color:var(--green);margin-bottom:4px;'>Calcul multi-horizon : déséquilibre des pôles " + (imbBefore * 100).toFixed(1).replace(".", ",") + " % → " + (imbAfter * 100).toFixed(1).replace(".", ",") + " % • Baromètre " + state.regime + "/100.</div>" +
-      quantStripHtml +
+      "<div class='rec-top'><strong>🎯 Répartition conseillée pour " + fmtBudget(amt) + " (" + state.horizonLabel + ")</strong><span class='badge b-green'>Pertinence : " + mathScore + "/100</span></div>" +
       "<div style='font-size:0.81rem;color:var(--muted);margin-bottom:8px;line-height:1.42;'>" + timingNote + "</div>" +
       "<div class='alloc-list'>" + rowsHtml + "</div>" +
       "</div>";
