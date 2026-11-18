@@ -788,10 +788,10 @@
   </div>
   <div class="portfolio-bar">
     <div class="portfolio-left">
-      <div class="total-val" id="totalVal">51 134,25 €</div>
+      <div class="total-val" id="totalVal">50 855,86 €</div>
       <div class="clock-txt" id="clockTxt">Connexion au flux boursier mondial...</div>
     </div>
-    <div class="total-gain" id="totalGain">+11 411,77 € (+28,73 %)</div>
+    <div class="total-gain" id="totalGain">+11 133,40 € (+28,03 %)</div>
   </div>
 </header>
 
@@ -819,12 +819,12 @@
         <div class="env-box">
           <div class="env-lbl">PEA Fortuneo (Air Liquide)</div>
           <div class="env-num" id="peaTotalVal">21 266,26 €</div>
-          <div class="env-sub" id="peaTotalGain">+3 134,26 € (41,6 % du total)</div>
+          <div class="env-sub" id="peaTotalGain">+3 134,26 € (41,8 % du total)</div>
         </div>
         <div class="env-box">
           <div class="env-lbl">Trade Republic (21 lignes)</div>
-          <div class="env-num" id="trTotalVal">29 867,99 €</div>
-          <div class="env-sub" id="trTotalGain">+8 277,51 € (58,4 % du total)</div>
+          <div class="env-num" id="trTotalVal">29 589,60 €</div>
+          <div class="env-sub" id="trTotalGain">+7 999,14 € (58,2 % du total)</div>
         </div>
       </div>
     </div>
@@ -903,7 +903,7 @@
     <div class="card">
       <div class="card-title">
         <span>📊 Vos 22 Positions (Cours en Direct)</span>
-        <span class="badge b-blue" id="linesTotalBadge">51 134,25 €</span>
+        <span class="badge b-blue" id="linesTotalBadge">50 855,86 €</span>
       </div>
       <div class="sub">Toutes vos 22 positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
       <div class="pill-row" id="filterRow">
@@ -987,32 +987,32 @@
     if (installBtn) installBtn.style.display = "none";
   }
 
-  var STORAGE_KEY = "copilote_bourse_live_v4";
+  var STORAGE_KEY = "copilote_bourse_live_v5";
 
   // 22 positions avec mapping TradingView H24, Yahoo/Stooq et prix unitaire de référence EUR
   var defaultPositions = [
     { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 190.14, name: "Air Liquide (PEA Fortuneo)", baseVal: 21266.26, cost: 18132.00, fixedQty: null, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale sur PEA Fortuneo (21 266,26 € pour 18 132,00 € investis, +3 134,26 €). Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
-    { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 132.50, name: "AMD", baseVal: 9431.09, cost: 2360.09, fixedQty: null, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+7 071 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
-    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 134.80, name: "NVIDIA", baseVal: 6706.52, cost: 4725.52, fixedQty: null, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA. Avec AMD, ce duo pèse environ 32 % de votre patrimoine global : bon équilibre, inutile de renforcer." },
-    { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 575.40, name: "S&P 500 EUR (Acc)", baseVal: 3150.65, cost: 2337.99, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
-    { id: "enr", account: "TR", tv: "XETR:ENR", ticker: "ENR.DE", stooq: "enr.de", currency: "EUR", refPriceEUR: 48.90, name: "Siemens Energy", baseVal: 2488.25, cost: 1510.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
-    { id: "blk", account: "TR", tv: "NYSE:BLK", ticker: "BLK", stooq: "blk.us", currency: "USD", refPriceEUR: 965.00, name: "BlackRock", baseVal: 1980.66, cost: 1630.19, fixedQty: null, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
-    { id: "xiaomi", account: "TR", tv: "HKEX:1810", ticker: "1810.HK", stooq: "1810.hk", currency: "HKD", refPriceEUR: 3.35, name: "Xiaomi", baseVal: 1721.04, cost: 2095.19, fixedQty: null, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
-    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", ticker: "MSFT", stooq: "msft.us", currency: "USD", refPriceEUR: 392.00, name: "Microsoft", baseVal: 1354.49, cost: 1180.00, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
-    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", ticker: "MSTR", stooq: "mstr.us", currency: "USD", refPriceEUR: 315.00, name: "Strategy A (MicroStrategy)", baseVal: 1057.52, cost: 2979.52, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
-    { id: "dro", account: "TR", tv: "ASX:DRO", ticker: "DRO.AX", stooq: "dro.au", currency: "AUD", refPriceEUR: 0.56, name: "DroneShield", baseVal: 386.21, cost: 1398.21, fixedQty: null, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Ne pèse plus que ~0,7 % de votre patrimoine. Laissez de côté sans remettre un euro." },
-    { id: "xdew", account: "TR", tv: "XETR:XDEW", ticker: "XDEW.DE", stooq: "xdew.de", currency: "EUR", refPriceEUR: 92.40, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.51, cost: 239.72, fixedQty: null, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
-    { id: "gold", account: "TR", tv: "XETR:PPFB", ticker: "PPFB.DE", stooq: "ppfb.de", currency: "EUR", refPriceEUR: 49.80, name: "Physical Gold USD (Acc)", baseVal: 301.15, cost: 319.93, fixedQty: null, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
-    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", ticker: "AAPL", stooq: "aapl.us", currency: "USD", refPriceEUR: 212.00, name: "Apple", baseVal: 220.46, cost: 119.96, fixedQty: null, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
-    { id: "byd", account: "TR", tv: "HKEX:1211", ticker: "1211.HK", stooq: "1211.hk", currency: "HKD", refPriceEUR: 32.10, name: "BYD", baseVal: 210.95, cost: 300.00, fixedQty: null, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
-    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 194.50, name: "Amazon.com", baseVal: 150.92, cost: 109.99, fixedQty: null, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
-    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 152.00, name: "Qualcomm", baseVal: 149.36, cost: 145.98, fixedQty: null, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
-    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 191.09, name: "Air Liquide (Trade Republic)", baseVal: 49.31, cost: 41.07, fixedQty: null, pole: "pilier", tag: "hold", action: "Doublon PEA (49 €)", why: "Vous détenez déjà 110 actions sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
-    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 104.20, name: "Core MSCI World USD (Acc) #1", baseVal: 46.50, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "Doublon ETF Monde", why: "Vous avez deux lignes identiques MSCI World : regroupez vos futurs achats sur une seule." },
-    { id: "msci2", account: "TR", tv: "XETR:XDWD", ticker: "XDWD.DE", stooq: "xdwd.de", currency: "EUR", refPriceEUR: 112.80, name: "Core MSCI World USD (Acc) #2", baseVal: 36.45, cost: 20.00, fixedQty: null, pole: "etf", tag: "hold", action: "Doublon ETF Monde", why: "Même ETF que la ligne précédente." },
-    { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 58.20, name: "Coca-Cola", baseVal: 28.87, cost: 19.98, fixedQty: null, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide mais montant symbolique." },
-    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 164.00, name: "Alphabet (A)", baseVal: 23.13, cost: 9.99, fixedQty: null, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "Plus de +130 % sur 10 € investis ! C'est la moins chère des grandes valeurs IA : mérite d'être renforcée." },
-    { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 18.40, name: "SFC Energy", baseVal: 15.95, cost: 20.00, fixedQty: null, pole: "spec", tag: "stop", action: "Poussière (~16 €)", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
+    { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 462.55, name: "AMD", baseVal: 9336.23, cost: 2360.09, fixedQty: 20.184252, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Gain exceptionnel (+6 976 € au relevé). Représente environ 31 % de Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
+    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 138.54, name: "NVIDIA", baseVal: 6613.90, cost: 4725.52, fixedQty: 47.740036, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA. Avec AMD, ce duo pèse environ 31 % de votre patrimoine global : bon équilibre, inutile de renforcer." },
+    { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 133.36, name: "S&P 500 EUR (Acc)", baseVal: 3138.06, cost: 2337.98, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
+    { id: "enr", account: "TR", tv: "XETR:ENR", ticker: "ENR.DE", stooq: "enr.de", currency: "EUR", refPriceEUR: 126.46, name: "Siemens Energy", baseVal: 2449.13, cost: 1510.93, fixedQty: 19.366807, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
+    { id: "blk", account: "TR", tv: "NYSE:BLK", ticker: "BLK", stooq: "blk.us", currency: "USD", refPriceEUR: 1070.00, name: "BlackRock", baseVal: 1979.74, cost: 1630.19, fixedQty: 1.85022, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
+    { id: "xiaomi", account: "TR", tv: "HKEX:1810", ticker: "1810.HK", stooq: "1810.hk", currency: "HKD", refPriceEUR: 3.38, name: "Xiaomi", baseVal: 1717.48, cost: 2095.18, fixedQty: 507.530309, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
+    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", ticker: "MSFT", stooq: "msft.us", currency: "USD", refPriceEUR: 458.15, name: "Microsoft", baseVal: 1350.07, cost: 1180.00, fixedQty: 2.94679, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
+    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", ticker: "MSTR", stooq: "mstr.us", currency: "USD", refPriceEUR: 82.89, name: "Strategy A (MicroStrategy)", baseVal: 1036.02, cost: 2979.52, fixedQty: 12.498771, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
+    { id: "dro", account: "TR", tv: "ASX:DRO", ticker: "DRO.AX", stooq: "dro.au", currency: "AUD", refPriceEUR: 0.62, name: "DroneShield", baseVal: 381.92, cost: 1398.21, fixedQty: 613.421916, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Ne pèse plus que ~0,7 % de votre patrimoine. Laissez de côté sans remettre un euro." },
+    { id: "xdew", account: "TR", tv: "XETR:XDEW", ticker: "XDEW.DE", stooq: "xdew.de", currency: "EUR", refPriceEUR: 109.62, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.05, cost: 239.72, fixedQty: 3.2663, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
+    { id: "gold", account: "TR", tv: "XETR:PPFB", ticker: "PPFB.DE", stooq: "ppfb.de", currency: "EUR", refPriceEUR: 66.11, name: "Physical Gold USD (Acc)", baseVal: 299.84, cost: 319.93, fixedQty: 4.53541, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
+    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", ticker: "AAPL", stooq: "aapl.us", currency: "USD", refPriceEUR: 320.89, name: "Apple", baseVal: 219.80, cost: 119.96, fixedQty: 0.684964, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
+    { id: "byd", account: "TR", tv: "HKEX:1211", ticker: "1211.HK", stooq: "1211.hk", currency: "HKD", refPriceEUR: 7.40, name: "BYD", baseVal: 211.93, cost: 300.00, fixedQty: 28.634791, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
+    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 240.29, name: "Amazon.com", baseVal: 150.45, cost: 109.99, fixedQty: 0.626113, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
+    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 147.64, name: "Qualcomm", baseVal: 147.64, cost: 145.98, fixedQty: 1, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
+    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 189.48, name: "Air Liquide (Trade Republic)", baseVal: 49.01, cost: 41.07, fixedQty: 0.258649, pole: "pilier", tag: "hold", action: "Doublon PEA (49 €)", why: "Vous détenez déjà votre gros pilier sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 159.50, name: "Core MSCI World USD (Acc) #1", baseVal: 46.29, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "Doublon ETF Monde", why: "Vous avez deux lignes identiques MSCI World : regroupez vos futurs achats sur une seule." },
+    { id: "msci2", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 127.01, name: "Core MSCI World USD (Acc) #2", baseVal: 36.30, cost: 20.00, fixedQty: 0.2858, pole: "etf", tag: "hold", action: "Doublon ETF Monde", why: "Même ETF que la ligne précédente." },
+    { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 89.47, name: "Coca-Cola", baseVal: 29.07, cost: 19.98, fixedQty: 0.3249, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide mais montant symbolique." },
+    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 255.62, name: "Alphabet (A)", baseVal: 22.98, cost: 9.99, fixedQty: 0.0899, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "Plus de +130 % sur 10 € investis ! C'est la moins chère des grandes valeurs IA : mérite d'être renforcée." },
+    { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 17.84, name: "SFC Energy", baseVal: 15.69, cost: 20.00, fixedQty: 0.8794, pole: "spec", tag: "stop", action: "Poussière (~16 €)", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
   ];
 
   var savedData = {};
