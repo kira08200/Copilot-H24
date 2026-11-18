@@ -922,6 +922,16 @@
   <div id="tab-alerts" class="section">
     <div class="card">
       <div class="card-title">
+        <span>🧠 Analyse Profonde &amp; Actualités Marchés</span>
+        <span class="badge b-green" id="deepNewsBadge">Flux Live</span>
+      </div>
+      <div class="sub">Synthèse technique/macro (RSI, SMA200, PER) et actualités filtrées automatiquement toutes les 2h par GitHub Actions :</div>
+      <div id="deepAnalysisBox"></div>
+      <div id="liveNewsList"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
         <span>📅 Calendrier des Catalyseurs (Heure de Paris)</span>
         <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
       </div>
@@ -1751,6 +1761,101 @@
     checkNewsAlerts();
   }
 
+  function escHtml(str) {
+    return String(str || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function renderDeepNews(data) {
+    var box = document.getElementById("deepAnalysisBox");
+    var list = document.getElementById("liveNewsList");
+    var badge = document.getElementById("deepNewsBadge");
+    if (!box || !list) return;
+
+    if (!data || (!data.items && !data.deepAnalysis)) {
+      box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>En attente du premier scan GitHub Actions...</div></div>";
+      list.innerHTML = "";
+      return;
+    }
+
+    if (badge) {
+      if (data.updatedAt) {
+        var d = new Date(data.updatedAt);
+        var hh = String(d.getHours()).padStart(2, "0");
+        var mm = String(d.getMinutes()).padStart(2, "0");
+        badge.textContent = "Maj " + hh + "h" + mm + " • " + (data.items ? data.items.length : 0) + " actus";
+      } else {
+        badge.textContent = "En attente Action";
+      }
+    }
+
+    var da = data.deepAnalysis || {};
+    var analysisHtml = "";
+    if (da.aiBrief) {
+      analysisHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);'>" +
+        "<div class='rec-top'><strong>🤖 Synthèse Macro &amp; Portefeuille</strong><span class='badge b-green'>Analyse Profonde</span></div>" +
+        "<div style='font-size:0.83rem;line-height:1.5;white-space:pre-line;'>" + escHtml(da.aiBrief) + "</div>" +
+      "</div>";
+    }
+    if (Array.isArray(da.highlights) && da.highlights.length > 0) {
+      var hRows = "";
+      for (var h = 0; h < da.highlights.length; h++) {
+        hRows += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" + escHtml(da.highlights[h]) + "</div></div>";
+      }
+      analysisHtml += "<div class='rec-item'>" +
+        "<div class='rec-top'><strong>📊 Scanner Technique &amp; Fondamental (22 lignes)</strong><span class='badge b-blue'>RSI • SMA200</span></div>" +
+        "<div class='alloc-list'>" + hRows + "</div>" +
+      "</div>";
+    }
+    box.innerHTML = analysisHtml;
+
+    var items = Array.isArray(data.items) ? data.items : [];
+    var itemsHtml = "";
+    var notifyCount = 0;
+    var seenNewNews = false;
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      var safeLink = (it.link && /^https?:\/\//i.test(it.link)) ? escHtml(it.link) : "#";
+      var dtTxt = it.pubDate ? it.pubDate.replace(/\s*\+\d{4}$/, "") : "";
+      itemsHtml += "<div class='rec-item'>" +
+        "<div class='ev-meta-row'>" +
+          "<span class='ev-datetime'>📰 " + escHtml(it.source || "Marchés") + (dtTxt ? " • " + escHtml(dtTxt) : "") + "</span>" +
+          "<span class='badge " + escHtml(it.tagCls || "b-blue") + "'>" + escHtml(it.theme || "Actualité") + "</span>" +
+        "</div>" +
+        "<div style='font-size:0.88rem;font-weight:700;margin:4px 0;'><a href='" + safeLink + "' target='_blank' rel='noopener noreferrer' style='color:var(--text);text-decoration:none;'>" + escHtml(it.title) + " ↗</a></div>" +
+        (it.summary ? "<div style='font-size:0.81rem;color:var(--muted);line-height:1.45;'>" + escHtml(it.summary) + "</div>" : "") +
+      "</div>";
+
+      if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
+        state.notifiedNews["news_" + it.id] = true;
+        seenNewNews = true;
+        if (notifyCount < 2) {
+          notifyCount++;
+          pushAlertLog(
+            "Actu " + (it.theme || "Marchés") + " : " + it.title,
+            (it.source || "Source") + (it.summary ? " — " + it.summary : ""),
+            it.theme || "Actualité",
+            it.tagCls || "b-blue",
+            true
+          );
+        }
+      }
+    }
+    if (seenNewNews) persistState();
+    list.innerHTML = itemsHtml;
+  }
+
+  function fetchDeepNews() {
+    fetchJsonTimeout("./news.json?t=" + Date.now(), { cache: "no-store" }, 4000)
+      .then(function(data) {
+        renderDeepNews(data);
+      })
+      .catch(function() {});
+  }
+
   function renderAlertLogs() {
     var container = document.getElementById("alertLogsList");
     if (!container) return;
@@ -2258,6 +2363,8 @@
     }
   });
 
+  setInterval(fetchDeepNews, 300000);
+
   renderAll(false);
   renderPriorities();
   renderInvest();
@@ -2265,6 +2372,7 @@
   updateMarketSessions();
   renderEvents();
   renderAlertLogs();
+  fetchDeepNews();
   syncLiveQuotes(false);
 })();
 </script>
