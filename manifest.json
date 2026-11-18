@@ -1,7 +1,7 @@
 {
-  "name": "Copilote Bourse — Cockpit Long Terme",
+  "name": "Copilote Bourse — Cours en Direct",
   "short_name": "Copilote H24",
-  "description": "Cockpit patrimonial long terme Trade Republic et PEA Fortuneo",
+  "description": "Cockpit patrimonial long terme Trade Republic et PEA Fortuneo avec cours boursiers en direct",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

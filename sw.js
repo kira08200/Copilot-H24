@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v2";
+const CACHE_NAME = "copilote-bourse-pwa-v3";
 const ASSETS = [
   "./",
   "./index.html",
@@ -29,6 +29,10 @@ self.addEventListener("activate", function(event) {
 
 self.addEventListener("fetch", function(event) {
   if (event.request.method !== "GET") return;
+  var reqUrl = new URL(event.request.url);
+  if (reqUrl.origin !== self.location.origin) {
+    return;
+  }
   event.respondWith(
     fetch(event.request)
       .then(function(response) {
