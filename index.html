@@ -959,6 +959,32 @@
 
 <script>
 (function() {
+  var TAB_KEY = "copilote_active_tab";
+  function readSavedTab() {
+    var h = (window.location.hash || "").replace("#", "");
+    if (h && document.getElementById("tab-" + h)) return h;
+    try {
+      var s = sessionStorage.getItem(TAB_KEY);
+      if (s && document.getElementById("tab-" + s)) return s;
+    } catch (e) {}
+    try {
+      var l = localStorage.getItem(TAB_KEY);
+      if (l && document.getElementById("tab-" + l)) return l;
+    } catch (e) {}
+    return null;
+  }
+  var earlyTab = readSavedTab();
+  if (earlyTab) {
+    var earlySecs = document.querySelectorAll(".section");
+    for (var ei = 0; ei < earlySecs.length; ei++) earlySecs[ei].classList.remove("active");
+    var earlyTarget = document.getElementById("tab-" + earlyTab);
+    if (earlyTarget) earlyTarget.classList.add("active");
+    var earlyNavs = document.querySelectorAll("#bottomNav .nav-btn");
+    for (var ej = 0; ej < earlyNavs.length; ej++) {
+      earlyNavs[ej].classList.toggle("active", earlyNavs[ej].getAttribute("data-tab") === earlyTab);
+    }
+  }
+
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
       navigator.serviceWorker.register("./sw.js").catch(function() {});
@@ -1414,7 +1440,7 @@
     showToast("Prédiction ajustée : " + label);
   }
 
-  function setRegime(score) {
+  function setRegime(score, silent) {
     state.regime = score;
     var btns = document.querySelectorAll("#regimeRow .pill-btn");
     for (var i = 0; i < btns.length; i++) {
@@ -1432,7 +1458,7 @@
       box.innerHTML = "<strong>☀️ Mode Bienveillance / Accélération (Score " + score + "/100)</strong><p style='font-size:0.84rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Baisse des taux + euphorie technologique : renforcez <strong>Microsoft, Alphabet, S&amp;P 500 EUR et BYD</strong> pour capter le cycle long terme.</p>";
     }
     renderInvest();
-    showToast("Météo mondiale : " + score + "/100");
+    if (!silent) showToast("Météo mondiale : " + score + "/100");
   }
 
   function computeTargetPoles(regime) {
@@ -1915,6 +1941,8 @@
     }
     state.activeTab = tabId;
     if (!skipSave) {
+      try { sessionStorage.setItem(TAB_KEY, tabId); } catch (e) {}
+      try { localStorage.setItem(TAB_KEY, tabId); } catch (e) {}
       persistState();
       try {
         if (window.history && window.history.replaceState) {
@@ -2397,14 +2425,13 @@
 
   setInterval(fetchDeepNews, 300000);
 
-  var hashTab = (window.location.hash || "").replace("#", "");
-  var initialTab = document.getElementById("tab-" + hashTab) ? hashTab : (state.activeTab || "cockpit");
+  var initialTab = earlyTab || state.activeTab || "cockpit";
   switchTab(initialTab, true);
 
   renderAll(false);
   renderPriorities();
   renderInvest();
-  setRegime(62);
+  setRegime(62, true);
   updateMarketSessions();
   renderEvents();
   renderAlertLogs();
