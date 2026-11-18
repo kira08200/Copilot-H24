@@ -293,7 +293,13 @@ def main():
 
     upcoming_earnings, major_moves = fetch_earnings_and_shocks()
     essential_news = fetch_essential_news()
-    ai_brief = maybe_generate_gemini_brief(upcoming_earnings, essential_news)
+
+    prev_sig = (
+        [it.get("id") for it in (prev.get("items") or [])],
+        [m.get("id") for m in (prev.get("majorMoves") or [])],
+        [e.get("id") for e in (prev.get("upcomingEarnings") or [])],
+        list(prev.get("notifiedIds") or []),
+    )
 
     ntfy_topic = os.environ.get("NTFY_TOPIC", "").strip()
     tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
@@ -356,6 +362,19 @@ def main():
     for al in alerts_to_send:
         notified_ids.append(al["id"])
     notified_ids = notified_ids[-150:]
+
+    new_sig = (
+        [it.get("id") for it in essential_news],
+        [m.get("id") for m in major_moves],
+        [e.get("id") for e in upcoming_earnings],
+        notified_ids,
+    )
+
+    if prev.get("updatedAt") and new_sig == prev_sig:
+        print("[OK] No news changes; skipping news.json update.")
+        return
+
+    ai_brief = maybe_generate_gemini_brief(upcoming_earnings, essential_news) if (not prev.get("updatedAt") or new_sig[:3] != prev_sig[:3]) else (prev.get("aiBrief") or "")
 
     now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {

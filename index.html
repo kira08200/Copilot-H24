@@ -1055,7 +1055,7 @@
     <div class="card" id="alertCardNews">
       <div class="card-title">
         <span>⚡ L'Actu Essentielle sur Vos Lignes</span>
-        <span class="badge b-green" id="deepNewsBadge">Flux Live</span>
+        <span class="badge b-green" id="deepNewsBadge" style="cursor:pointer;" title="Actualiser les actualités">🔄 Flux 5m</span>
       </div>
       <div id="majorMovesBox"></div>
       <div id="liveNewsList"></div>
@@ -1269,6 +1269,7 @@
     discoveryIdx: 0,
     discoveryUpdatedAt: 0,
     discoveryLoading: false,
+    lastNewsData: null,
     alertLogs: initialLogs
   };
 
@@ -2292,6 +2293,8 @@
     var badge = document.getElementById("deepNewsBadge");
     if (!box || !list) return;
 
+    if (data) state.lastNewsData = data;
+
     if (!data || (!data.items && !data.upcomingEarnings)) {
       box.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>En attente du prochain scan GitHub Actions...</div></div>";
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>En attente des actualités...</div></div>";
@@ -2299,17 +2302,45 @@
     }
 
     var earnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
-    var majorMoves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
+    var remoteMoves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
     var items = Array.isArray(data.items) ? data.items : [];
+
+    var movesByTv = {};
+    for (var lm = 0; lm < positions.length; lm++) {
+      var lp = positions[lm];
+      if (lp.isLive && typeof lp.dayPct === "number" && (lp.dayPct <= -5 || lp.dayPct >= 7)) {
+        var lKind = lp.dayPct <= -5 ? "drop" : "jump";
+        if (!movesByTv[lp.tv]) {
+          var lNow = new Date();
+          var lKey = lNow.getFullYear() + String(lNow.getMonth() + 1).padStart(2, "0") + String(lNow.getDate()).padStart(2, "0");
+          movesByTv[lp.tv] = {
+            id: "move_" + lKind + "_" + lp.tv + "_" + lKey,
+            tv: lp.tv,
+            name: lp.name,
+            weight: getLiveWeightByTv(lp.tv),
+            changePct: lp.dayPct,
+            kind: lKind
+          };
+        }
+      }
+    }
+    for (var rm = 0; rm < remoteMoves.length; rm++) {
+      var rMv = remoteMoves[rm];
+      if (rMv && rMv.tv && !movesByTv[rMv.tv]) {
+        movesByTv[rMv.tv] = rMv;
+      }
+    }
+    var majorMoves = Object.keys(movesByTv).map(function(k) { return movesByTv[k]; });
+    majorMoves.sort(function(a, b) { return Math.abs(b.changePct || 0) - Math.abs(a.changePct || 0); });
 
     if (badge) {
       if (data.updatedAt) {
         var d = new Date(data.updatedAt);
         var hh = String(d.getHours()).padStart(2, "0");
         var mm = String(d.getMinutes()).padStart(2, "0");
-        badge.textContent = "Maj " + hh + "h" + mm + " • " + items.length + " actus";
+        badge.textContent = "🔄 Maj " + hh + "h" + mm + " • " + items.length + " actus (5m)";
       } else {
-        badge.textContent = "En attente Action";
+        badge.textContent = "🔄 En attente (5m)";
       }
     }
 
@@ -2434,12 +2465,29 @@
     if (seenNewNews) persistState();
   }
 
-  function fetchDeepNews() {
-    fetchJsonTimeout("./news.json?t=" + Date.now(), { cache: "no-store" }, 4000)
-      .then(function(data) {
-        renderDeepNews(data);
-      })
-      .catch(function() {});
+  function fetchDeepNews(manualTrigger) {
+    var ts = Date.now();
+    var pRaw = fetchJsonTimeout("https://raw.githubusercontent.com/kira08200/Copilot-H24/main/news.json?t=" + ts, { cache: "no-store" }, 4500).catch(function() { return null; });
+    var pLocal = fetchJsonTimeout("./news.json?t=" + ts, { cache: "no-store" }, 4000).catch(function() { return null; });
+    Promise.all([pRaw, pLocal]).then(function(res) {
+      var best = null;
+      var bestTs = -1;
+      for (var i = 0; i < res.length; i++) {
+        var item = res[i];
+        if (!item) continue;
+        var itemTs = item.updatedAt ? (Date.parse(item.updatedAt) || 0) : 0;
+        if (!best || itemTs > bestTs) {
+          best = item;
+          bestTs = itemTs;
+        }
+      }
+      if (best) {
+        renderDeepNews(best);
+      }
+      if (manualTrigger) {
+        showToast("📰 Actualités vérifiées (" + (best && Array.isArray(best.items) ? best.items.length : 0) + " actus)");
+      }
+    }).catch(function() {});
   }
 
   function renderAlertLogs() {
@@ -2739,6 +2787,7 @@
         state.lastSync = dtStr;
         persistState();
         renderAll(true);
+        if (state.lastNewsData) renderDeepNews(state.lastNewsData);
 
         if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/22";
         var fxTag = finalFx && finalFx.USD ? (" • EUR/USD " + finalFx.USD.toFixed(4).replace(".", ",")) : "";
@@ -2970,6 +3019,11 @@
     }
     if (e.target.closest("#btnScan")) {
       syncLiveQuotes(true);
+      fetchDeepNews(false);
+      return;
+    }
+    if (e.target.closest("#deepNewsBadge")) {
+      fetchDeepNews(true);
       return;
     }
     if (e.target.closest("#btnEnablePush")) {
@@ -2998,12 +3052,13 @@
   }, 1000);
 
   document.addEventListener("visibilitychange", function() {
-    if (!document.hidden && !state.isSyncing) {
-      syncLiveQuotes(false);
+    if (!document.hidden) {
+      if (!state.isSyncing) syncLiveQuotes(false);
+      fetchDeepNews(false);
     }
   });
 
-  setInterval(fetchDeepNews, 300000);
+  setInterval(function() { fetchDeepNews(false); }, 300000);
 
   var initialTab = earlyTab || state.activeTab || "cockpit";
   switchTab(initialTab, true);
@@ -3011,7 +3066,7 @@
   renderAll(false);
   updateMarketSessions();
   renderAlertLogs();
-  fetchDeepNews();
+  fetchDeepNews(false);
   syncLiveQuotes(false);
 })();
 </script>
