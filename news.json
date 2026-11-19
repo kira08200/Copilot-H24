@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T22:56:52Z",
+  "updatedAt": "2026-11-19T23:33:08Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -106,14 +106,14 @@
   ],
   "items": [
     {
-      "id": "289c87eef20cf0a9",
-      "theme": "Amazon • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "Amazon profite de la cotation record d’Anthropic - Brief IA",
-      "source": "Brief IA",
-      "pubDate": "Thu, 19 Nov 2026 19:11:19 GMT",
-      "pubTs": 1795115479,
-      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQazFOWHNkSmtaVzE3aFNwRXp3MXNrVFVFcHlNd0g3X2R1OEYwbzI3Uk1oTjVMbmNxSE9xZGNSWTBhdFBkMkQ2aXZtTGtPQlhLR0FTU3FjdnQxa3J0NlhybEpGNVJpNDQ0d3JxcEpkTGI1b3BWdHpyN3hBU3U5R2JkVVRpa0lzQQ?oc=5"
+      "id": "2423fa476bf83ea2",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft veut détourner les entreprises d’OpenAI et Anthropic avec des modèles d’IA performants et moins coûteux qui « restent sous contrôle » - L'Usine Digitale",
+      "source": "L'Usine Digitale",
+      "pubDate": "Thu, 19 Nov 2026 17:28:03 GMT",
+      "pubTs": 1795109283,
+      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOOUNaY3ZWelNNQ2NiOGR4bVlYbE55SVRCcVRsX2tLS0IwN1d6eEVvS2ZqMl9OWTIzSnNaZFJaeW4wOGdSOGx5Z0FKdHpmc0dNbXpweURLTndrZ09ueThoVVhyYmxCMFFvNFVlcTVEWVJ6Qm5BWVpuNzlrQmxxUXJ1MWlzQnB2SjRzUGtRN3RmOWVNcGM4SkZyV3l6Rkp2d3lSbUtVYVdqV2NmbVAwVlVBV2o4Z1gwUEVLVGlUQVVkeEtTamtvd1FyLTRkVXY0MUlkS2VENkVXNHVsSUcxS2QyNE45X3JDZ19GUHhHZGRlbFNMaW1MTVEzTWFWX0VRaWdqem5ndU50djB3b3oxM3l1X1pfSjBOZDAzRFFzZ2EyXzlGbFVHdnhldFRtcUpUeTBqT0xwako5cS1SUVE2RUJF?oc=5"
     },
     {
       "id": "3a3ed16a59b2cb82",
@@ -144,16 +144,6 @@
       "pubDate": "Thu, 19 Nov 2026 09:02:44 GMT",
       "pubTs": 1795078964,
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5TXdXcHR4QmJXUEF3RmJaM20zOFpRLXBmaUtMVVBTSm5FS3V2dE9hUDJ5V2xhdldHVm1mbk55Rkl2b1pCMDVLTUwzV1lmMHNaTjVNTkprVnBQcVZJY3RuS1RzMVg3azRIeW9fTTNnbXJLSEMtaTJDLXBQQXRhZkE?oc=5"
-    },
-    {
-      "id": "d029e26112b012f8",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft dégaine 7 modèles d’IA maison pour concurrencer OpenAI et Claude - Frandroid",
-      "source": "Frandroid",
-      "pubDate": "Tue, 17 Nov 2026 21:24:14 GMT",
-      "pubTs": 1794950654,
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNTW16ZTRSX3lUVE9IUC0zT1FZZE1KZVZGZW80RWgybldPcXZhMVp5UlFJYTdmVmRCdnB3NmI3YjdVRFNHNWxiR2pTUHllSFU2UFJYRG80a2xKRDRlTXhLNFc2S2lhNEd6NTlRdVRGYmlYV05BMDFSZVcwYXkxZzdkdTFvbHZrRXVVR3ZaVGtXTFZZdWNmXzM1YkpCQy1fYXZPMzk0M3Ytd1NYRlRHUU9oUlJ2M29oSUpWRGljX0tkc1UtbUY3Z0p1WGN4VnU2S1h4bDl0UmxwX2FRbkhEWF84TXhhNnYyeUNlWUFLRWdpa1pVdTFyR0RR?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -208,6 +198,7 @@
     "3a6ccd6a113a32b5",
     "d62992070c27655e",
     "b4dcccc98fb6b310",
-    "1774caca0ac5844d"
+    "1774caca0ac5844d",
+    "2423fa476bf83ea2"
   ]
 }
