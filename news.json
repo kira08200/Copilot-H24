@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T17:35:29Z",
+  "updatedAt": "2026-11-19T18:29:07Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -9.51,
-      "price": 479.735,
+      "changePct": -9.49,
+      "price": 479.8458,
       "currency": "USD",
       "kind": "drop"
     }
@@ -114,16 +114,6 @@
       "pubDate": "Thu, 19 Nov 2026 13:34:00 GMT",
       "pubTs": 1795095240,
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOGU1b0JSVzdjeTQxSG9wZzA1bzNJbkdiWTkyZE14YXRSaGJRbUdlZlF4cVFURWF3R0xBaUEyRjdfM20zc1Y4dmZiajlnYy13TXJIV0FaZzdwQXo4bkFFVDBaWWJJc2d5RVhHY0tCLVVfdUl0RGNIMWFQb19DQnpJNnNZSGlOQzVON3RsZldlbjAtaUdRZGxjNW5DeDVJeXFsaGt3NXNNbFh4SkdDdlVMdw?oc=5"
-    },
-    {
-      "id": "703b8e7f9d727b10",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Wall Street en ordre dispersé après Nvidia et les \"minutes\" de la Fed - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Wed, 18 Nov 2026 21:32:50 GMT",
-      "pubTs": 1795037570,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNY1Nza3NmTVpTdmIyY2Q4ZzAzMVBxX0dxUEFsaHZKSVBnbWI4ZGxIbWQ2NVRkVEtZWktSM0lEZTlQRmE3eXRIQV93T3lxdVJMMFBOLVhHTkRtdUJvOERQYklpbGM4MHNYM2RNTjQ3NlNxYVJFVE9VUGxUMkVkN2V6QWYzRmJ2cWQyOTVBa2R0aHRqc09jZVJ4QlFfdVYyNXpYZUJCZEhvQ1c2aUNvclJuNVpnUmNjeGFqVEFrNDZjMmdnZ3hOWVNhZzJFWkVtcm5BOERYdg?oc=5"
     },
     {
       "id": "e5a8e3334b54b581",
@@ -146,16 +136,6 @@
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
     },
     {
-      "id": "e27bb26733148249",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Cac 40 : Nvidia rassure la Bourse avec ses résultats, le CAC 40 hésite - BFM Bourse",
-      "source": "BFM Bourse",
-      "pubDate": "Wed, 18 Nov 2026 13:13:27 GMT",
-      "pubTs": 1795007607,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOS0t4WjdQSC01Z3Z5TGZHMVJWYWh6MDFZb2V5U1hETjEwOGhBWV9TWUpId2NYa0RmSVFsTmdFdzNGd1FkNGZCci1DdUZTaWVWVGtHSzFJNHV3OHFvVTRKQzU4aVJZcndmbmJQU0Fkc01HODBibzBFRzlUamxVdFBGVHRaTV9CMXhyd0U3MktQOWpUdnpfX09obk9KT25hNlVDOXVSRUFJb0VOdFU1dXRwSFZCTnpqRFRMUk9XYmVNbXJBWS1GVlcydVdqZzN5TnNDTDQwWQ?oc=5"
-    },
-    {
       "id": "95f03527a1afe4b5",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -164,6 +144,26 @@
       "pubDate": "Wed, 18 Nov 2026 06:54:00 GMT",
       "pubTs": 1794984840,
       "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMVB3SUF4TzZhNkZxclQ3cUx6dEg3Wi1NcTU5azJoLU5Zd1ZYTlV1T1JyeWZpaGYtTVo3ajBwakVmc0J6Qkp0YlV3cWR0YkhEMWoxbnlKY09WcmhzeHVmYWQ4ZVBtSFpISmgtRTNFZlRVcHFqMVUyVjU1UUhpMElmUXVqOXpxejZTNnFZNFk5SHNfUUJUTmlIUzhXS0VfX3laY3c5aFhvYnE3WXpJQk5laF8wdHdmOGMxYmRTWW12R2drelRsM0taTjdta0lNbVM2YTVKUXR5eURTeFllUldoMG8tazBDeG5DbnfSAe8BQVVfeXFMUG5OY3NfRnN1eGNhZmxtcXlsTGtZaVkzLUpKQzhaanpWWVNxT2xtRm5DejJPUUxhdllWWDhnLUZxaWVrX3MyNW5NSEVfNnFXUWc1Y0RmVW9pbGtkaDNCOGJCUjRtOGFLNEZJN2F0UDV2OGJDbHRad2dCYWVrSFh3aFNoSHdWUHdfbWVuNVdhZmJQMzQ5M3ZEYkEzT21FbUluMWh3eEk2WWZENThjbVJac1VOOGxQSEo0QjhnY2c0X1RJWHFXb1ZYZjA3U29vOGZlNHJaNk1Dc2JYbjRhbEFGcGotTGpTQklnYlZ4YWJJV0k?oc=5"
+    },
+    {
+      "id": "559d6a661a9c9354",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia dévoile des résultats records, son chiffre d'affaires bondit de 103 % en un an - ABC Bourse",
+      "source": "ABC Bourse",
+      "pubDate": "Tue, 17 Nov 2026 21:35:32 GMT",
+      "pubTs": 1794951332,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQX2trVjlvRHhwZW50azhfUlpRZTBnSkplLTQ3VGJmcU45N0dMWVlVb1FzWWtlX0hfd1dlXzd4ZTNId3RENkswUG9oTGNhSXNHb1NkdE9YdmhIUTROWkN4a2QwUXREZGF3eW5rQ0FUeDJleUdzVENBdV9wUE1BWlU0NGZJVTNKVDRMX0FVMWpCeTJiVHRNZzFjODRXWTgyUC1rLVVMNDJfblFReENBcW8tVy1adDRLRWFU?oc=5"
+    },
+    {
+      "id": "c9b5a6dd9f7e4140",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street poursuit sa chute avant les résultats cruciaux de Nvidia - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Tue, 17 Nov 2026 21:07:28 GMT",
+      "pubTs": 1794949648,
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUVNrZVhPQ2RmVFh4R19vakdBNzFVQ2FUcEppSkxyRVRfSEgyR1dLOWtQbDMyQW1ZcVJGRi1CeFFvS2IwdWtnRjNqUnNYNDZTVkFabjNHc3cxOTRZNEY1WGt2UEhvc1B6M0pFclJIZkZBSHF2cTRRaDY5VnlvbE5Cc3dCTDBmcmR0STRubnpnVlNOdXVlRGo0TDVmV0tpOWlBV1BOYTFxbUlYVGc5Ni1LQ2NIc0h0eU5abkRSWXFWamJzLWlQX1FGVQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -192,6 +192,7 @@
     "758982075e2c9e6e",
     "9c2be938c93dc722",
     "move_drop_NASDAQ:AMD_20261119",
-    "e27bb26733148249"
+    "e27bb26733148249",
+    "c9b5a6dd9f7e4140"
   ]
 }
