@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T13:50:14Z",
+  "updatedAt": "2026-11-19T14:39:33Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,16 +146,6 @@
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
     },
     {
-      "id": "573c434258f0595e",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia publie des résultats trimestriels supérieurs aux attentes - ChannelNews",
-      "source": "ChannelNews",
-      "pubDate": "Wed, 18 Nov 2026 14:20:26 GMT",
-      "pubTs": 1795011626,
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
-    },
-    {
       "id": "95f03527a1afe4b5",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -164,6 +154,16 @@
       "pubDate": "Wed, 18 Nov 2026 06:54:00 GMT",
       "pubTs": 1794984840,
       "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMVB3SUF4TzZhNkZxclQ3cUx6dEg3Wi1NcTU5azJoLU5Zd1ZYTlV1T1JyeWZpaGYtTVo3ajBwakVmc0J6Qkp0YlV3cWR0YkhEMWoxbnlKY09WcmhzeHVmYWQ4ZVBtSFpISmgtRTNFZlRVcHFqMVUyVjU1UUhpMElmUXVqOXpxejZTNnFZNFk5SHNfUUJUTmlIUzhXS0VfX3laY3c5aFhvYnE3WXpJQk5laF8wdHdmOGMxYmRTWW12R2drelRsM0taTjdta0lNbVM2YTVKUXR5eURTeFllUldoMG8tazBDeG5DbnfSAe8BQVVfeXFMUG5OY3NfRnN1eGNhZmxtcXlsTGtZaVkzLUpKQzhaanpWWVNxT2xtRm5DejJPUUxhdllWWDhnLUZxaWVrX3MyNW5NSEVfNnFXUWc1Y0RmVW9pbGtkaDNCOGJCUjRtOGFLNEZJN2F0UDV2OGJDbHRad2dCYWVrSFh3aFNoSHdWUHdfbWVuNVdhZmJQMzQ5M3ZEYkEzT21FbUluMWh3eEk2WWZENThjbVJac1VOOGxQSEo0QjhnY2c0X1RJWHFXb1ZYZjA3U29vOGZlNHJaNk1Dc2JYbjRhbEFGcGotTGpTQklnYlZ4YWJJV0k?oc=5"
+    },
+    {
+      "id": "559d6a661a9c9354",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia dévoile des résultats records, son chiffre d'affaires bondit de 103 % en un an - ABC Bourse",
+      "source": "ABC Bourse",
+      "pubDate": "Tue, 17 Nov 2026 21:35:32 GMT",
+      "pubTs": 1794951332,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQX2trVjlvRHhwZW50azhfUlpRZTBnSkplLTQ3VGJmcU45N0dMWVlVb1FzWWtlX0hfd1dlXzd4ZTNId3RENkswUG9oTGNhSXNHb1NkdE9YdmhIUTROWkN4a2QwUXREZGF3eW5rQ0FUeDJleUdzVENBdV9wUE1BWlU0NGZJVTNKVDRMX0FVMWpCeTJiVHRNZzFjODRXWTgyUC1rLVVMNDJfblFReENBcW8tVy1adDRLRWFU?oc=5"
     }
   ],
   "notifiedIds": [
