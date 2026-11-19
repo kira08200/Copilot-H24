@@ -4544,12 +4544,17 @@
         var ext = extractQtyAndCostFromText(line, match.matchedText);
         qty = ext.qty;
         cost = ext.cost;
-        // Support copier-coller multi-lignes (Nom ligne i, Quantité ligne i+1 ou i+2)
+        // Support copier-coller multi-lignes (Nom ligne i, ISIN / Quantité lignes suivantes)
+        var curKey = match.pos ? ("pos:" + match.pos.id) : ("disc:" + match.disc.tv);
         if (isNaN(qty)) {
-          for (var look = 1; look <= 2 && (i + look) < lines.length; look++) {
+          for (var look = 1; look <= 3 && (i + look) < lines.length; look++) {
             var nextL = lines[i + look];
-            if (matchBrokerAsset(nextL, null)) break;
-            var extNext = extractQtyAndCostFromText(nextL, null);
+            var nextMatch = matchBrokerAsset(nextL, null);
+            if (nextMatch) {
+              var nextKey = nextMatch.pos ? ("pos:" + nextMatch.pos.id) : ("disc:" + nextMatch.disc.tv);
+              if (nextKey !== curKey) break;
+            }
+            var extNext = extractQtyAndCostFromText(nextL, nextMatch ? nextMatch.matchedText : null);
             if (!isNaN(extNext.qty)) {
               qty = extNext.qty;
               if (extNext.cost !== null && cost === null) cost = extNext.cost;
