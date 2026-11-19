@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T03:31:16Z",
+  "updatedAt": "2026-11-19T07:52:12Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -137,16 +137,6 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQb19iMTNSQnNnVkNEMGVMZkU3cWdPN040Y1RGOFhkdlZ0VWJQZDcyU2lNQUZDc3lEWjlVWlJDMDhVS01FemFOR05XQ0VHX08tYmZfSTZneTFudTVGbkxNOF9wS2FGWkRTRUloMWJndGVkczBlSDFEa1dsd0RHOVA0aGRKcktLSXVCVWhsRGZUS2swbWhaaThBa21ZS0xVVE9KdnZuOXlCSFRMZjMtWDJsdER1OU9GWGxXbGFFUzNxSFltNWNkQThDRVRWWWZzbWdMTlpRbkJfeHBpVzh2bTVUQWpENkRLUVJXUWt4cF9wSWxOdw?oc=5"
     },
     {
-      "id": "e5a8e3334b54b581",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Résultats de NVIDIA : des prévisions rassurantes et une action toujours bon marché - Morningstar",
-      "source": "Morningstar",
-      "pubDate": "Wed, 18 Nov 2026 15:58:40 GMT",
-      "pubTs": 1795017520,
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
-    },
-    {
       "id": "573c434258f0595e",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -165,6 +155,16 @@
       "pubDate": "Wed, 18 Nov 2026 13:21:00 GMT",
       "pubTs": 1795008060,
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxNV0Y2S0RkaGVRcGZaWHpzMm1JSXdpTEVRTURSRHBqb283UEtRal96b0xCbUVTNDNXNExMb2prLURJdUlrRnhvZ1Z0aDh5U3FCbFNId1JOUWxXcFk2bXN5bFpndVpUcWFTSG14aW9IY3FfTldIamtfaXloT040Zm4yQUI1SE5NQlQ2T1ZQaEI2eFZLVi1Hd1hrb3JSYXcxVzRfc3kzamxjTFBTZVBZbkxlbmgtQmpHYTJjUUJMX0QzYk55TGtZSGc5cWh0MlFyVGl1LXFDRzF3ZjBUXzI2Z2d2U25CWVViTmVIMmloTW5yUnNyWXhWNWk2MUJYU0pkeXM3eFE?oc=5"
+    },
+    {
+      "id": "95f03527a1afe4b5",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Les résultats de Nvidia dépassent les prévisions : les réactions des analystes - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Wed, 18 Nov 2026 06:54:00 GMT",
+      "pubTs": 1794984840,
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMVB3SUF4TzZhNkZxclQ3cUx6dEg3Wi1NcTU5azJoLU5Zd1ZYTlV1T1JyeWZpaGYtTVo3ajBwakVmc0J6Qkp0YlV3cWR0YkhEMWoxbnlKY09WcmhzeHVmYWQ4ZVBtSFpISmgtRTNFZlRVcHFqMVUyVjU1UUhpMElmUXVqOXpxejZTNnFZNFk5SHNfUUJUTmlIUzhXS0VfX3laY3c5aFhvYnE3WXpJQk5laF8wdHdmOGMxYmRTWW12R2drelRsM0taTjdta0lNbVM2YTVKUXR5eURTeFllUldoMG8tazBDeG5DbnfSAe8BQVVfeXFMUG5OY3NfRnN1eGNhZmxtcXlsTGtZaVkzLUpKQzhaanpWWVNxT2xtRm5DejJPUUxhdllWWDhnLUZxaWVrX3MyNW5NSEVfNnFXUWc1Y0RmVW9pbGtkaDNCOGJCUjRtOGFLNEZJN2F0UDV2OGJDbHRad2dCYWVrSFh3aFNoSHdWUHdfbWVuNVdhZmJQMzQ5M3ZEYkEzT21FbUluMWh3eEk2WWZENThjbVJac1VOOGxQSEo0QjhnY2c0X1RJWHFXb1ZYZjA3U29vOGZlNHJaNk1Dc2JYbjRhbEFGcGotTGpTQklnYlZ4YWJJV0k?oc=5"
     }
   ],
   "notifiedIds": [
@@ -181,6 +181,7 @@
     "dae8b827e8834c4d",
     "fef0c782d8ef4894",
     "move_drop_NASDAQ:MSTR_20261119",
-    "3fa253c33d63f82f"
+    "3fa253c33d63f82f",
+    "95f03527a1afe4b5"
   ]
 }
