@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T10:39:38Z",
+  "updatedAt": "2026-11-19T12:31:29Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -8,7 +8,7 @@
       "weight": "3,4 %",
       "timestamp": 1795521600,
       "dateStr": "24/11/2026",
-      "daysLeft": 5
+      "daysLeft": 4
     },
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -17,7 +17,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 63
+      "daysLeft": 62
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +26,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +35,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +44,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +53,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 76
+      "daysLeft": 75
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 77
+      "daysLeft": 76
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +71,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 77
+      "daysLeft": 76
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +80,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 83
+      "daysLeft": 82
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +89,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 84
+      "daysLeft": 83
     }
   ],
   "majorMoves": [
@@ -104,67 +104,66 @@
       "kind": "drop"
     }
   ],
-  "aiBrief": "",
   "items": [
     {
-      "id": "3fa253c33d63f82f",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Bourses mondiales: après les résultats de Nvidia, cap sur Anthropic - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 18 Nov 2026 22:05:36 GMT",
-      "pubTs": 1795039536,
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMGhfZDZSY3pTeGJPZVZ1ZmRkcjRJdFVtOG5heGg0V0ZQTG93ZFpYNVdxWFpBdUJ6cWhJLUt3bDVOUnFSRDFjdkJvam42a1ZnQ0Z0ZUNhTzhxR2tiaUhaT3BwRUg0RVZPWm5mOTI0QjBMbmhVZDNGSDFkTVlGNkpLaERjTms4dEdiU1AyenhqNTYzRVVvUl90dWVpWjZIQi1sYjU1c2tET1MxdWRGd04wa1NVVVBxb3RlZXJFNDltbWlVeFVm?oc=5"
+      "id": "25dd447bde769aae",
+      "theme": "Macro, Fed, BCE & Inflation",
+      "tagCls": "b-amber",
+      "title": "Taux BCE : décision du 17 décembre 2026 et attentes - Admirals",
+      "source": "Admirals",
+      "pubDate": "Thu, 19 Nov 2026 11:08:51 GMT",
+      "pubTs": 1795086531,
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
     },
     {
-      "id": "703b8e7f9d727b10",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Wall Street en ordre dispersé après Nvidia et les \"minutes\" de la Fed - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Wed, 18 Nov 2026 21:32:50 GMT",
-      "pubTs": 1795037570,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNY1Nza3NmTVpTdmIyY2Q4ZzAzMVBxX0dxUEFsaHZKSVBnbWI4ZGxIbWQ2NVRkVEtZWktSM0lEZTlQRmE3eXRIQV93T3lxdVJMMFBOLVhHTkRtdUJvOERQYklpbGM4MHNYM2RNTjQ3NlNxYVJFVE9VUGxUMkVkN2V6QWYzRmJ2cWQyOTVBa2R0aHRqc09jZVJ4QlFfdVYyNXpYZUJCZEhvQ1c2aUNvclJuNVpnUmNjeGFqVEFrNDZjMmdnZ3hOWVNhZzJFWkVtcm5BOERYdg?oc=5"
+      "id": "0805be9125861e21",
+      "theme": "Macro, Fed, BCE & Inflation",
+      "tagCls": "b-amber",
+      "title": "La Fed redoute un choc en chaîne sur les marchés : Bitcoin en danger ? - Cryptoast",
+      "source": "Cryptoast",
+      "pubDate": "Thu, 19 Nov 2026 09:02:44 GMT",
+      "pubTs": 1795078964,
+      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5TXdXcHR4QmJXUEF3RmJaM20zOFpRLXBmaUtMVVBTSm5FS3V2dE9hUDJ5V2xhdldHVm1mbk55Rkl2b1pCMDVLTUwzV1lmMHNaTjVNTkprVnBQcVZJY3RuS1RzMVg3azRIeW9fTTNnbXJLSEMtaTJDLXBQQXRhZkE?oc=5"
     },
     {
-      "id": "dae8b827e8834c4d",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
-      "source": "BFM Bourse",
-      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
-      "pubTs": 1795021043,
-      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
+      "id": "857133ce6dd86cce",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft affirme que son nouveau modèle de codage IA rivalise avec Claude Opus 5.5 pour 5 fois moins cher - ZDNET",
+      "source": "ZDNET",
+      "pubDate": "Thu, 19 Nov 2026 08:15:12 GMT",
+      "pubTs": 1795076112,
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNeDVpUWp0NDFZQzh3Z1BhNEtoZUZXUTFvUE1DbXk3cWctc3dLLVdadFdFeTl1YnNUaVl0VVpQZmtUczg2WVFkWURBaHd3RnNQN2RKQnc5aHp2UFUtSGt1SzF5cDlrb1VQejlYa1BLcWkteWpTcWZ6dThRTi1YRkRTazVmVTNHc0NaM3VPMGp4aUMtcFhKZEtRcC1DaEpYd3U0cjMwNGFTZ3pnMlhWeW9qd0VyUlBkTllqX2RzQWs1SlJpV3ptSi1tYTliYnNGMzRyUDY0UmVnWi1EX2pFa2NUNkw1WQ?oc=5"
     },
     {
-      "id": "573c434258f0595e",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia publie des résultats trimestriels supérieurs aux attentes - ChannelNews",
-      "source": "ChannelNews",
-      "pubDate": "Wed, 18 Nov 2026 14:20:26 GMT",
-      "pubTs": 1795011626,
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
+      "id": "9af63b7202a1bf7c",
+      "theme": "Macro, Fed, BCE & Inflation",
+      "tagCls": "b-amber",
+      "title": "Les responsables de la Fed considéraient le maintien des taux en octobre comme une décision « serrée », selon les minutes - TradingView",
+      "source": "TradingView",
+      "pubDate": "Wed, 18 Nov 2026 16:35:00 GMT",
+      "pubTs": 1795019700,
+      "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTFBya21Fd2k1TGt6Yzdad2I4dDU0VXo0MVJmaWZhZTFTWE1fZ3F0My1GQ0Y0bWNrZzZ6c3QtbGxmTC1mSkhJUjJxeVJrbG11cTZwR1lzQkdkeHJJN2xyNXNqOXFIQW5aYkl4ZWVuUDRFTQ?oc=5"
     },
     {
-      "id": "95f03527a1afe4b5",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Les résultats de Nvidia dépassent les prévisions : les réactions des analystes - Boursorama",
-      "source": "Boursorama",
-      "pubDate": "Wed, 18 Nov 2026 06:54:00 GMT",
-      "pubTs": 1794984840,
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMVB3SUF4TzZhNkZxclQ3cUx6dEg3Wi1NcTU5azJoLU5Zd1ZYTlV1T1JyeWZpaGYtTVo3ajBwakVmc0J6Qkp0YlV3cWR0YkhEMWoxbnlKY09WcmhzeHVmYWQ4ZVBtSFpISmgtRTNFZlRVcHFqMVUyVjU1UUhpMElmUXVqOXpxejZTNnFZNFk5SHNfUUJUTmlIUzhXS0VfX3laY3c5aFhvYnE3WXpJQk5laF8wdHdmOGMxYmRTWW12R2drelRsM0taTjdta0lNbVM2YTVKUXR5eURTeFllUldoMG8tazBDeG5DbnfSAe8BQVVfeXFMUG5OY3NfRnN1eGNhZmxtcXlsTGtZaVkzLUpKQzhaanpWWVNxT2xtRm5DejJPUUxhdllWWDhnLUZxaWVrX3MyNW5NSEVfNnFXUWc1Y0RmVW9pbGtkaDNCOGJCUjRtOGFLNEZJN2F0UDV2OGJDbHRad2dCYWVrSFh3aFNoSHdWUHdfbWVuNVdhZmJQMzQ5M3ZEYkEzT21FbUluMWh3eEk2WWZENThjbVJac1VOOGxQSEo0QjhnY2c0X1RJWHFXb1ZYZjA3U29vOGZlNHJaNk1Dc2JYbjRhbEFGcGotTGpTQklnYlZ4YWJJV0k?oc=5"
+      "id": "50778a6a4bce4948",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Ignite 2026 : Construire l’écosystème d’avant-garde - Microsoft Source",
+      "source": "Microsoft Source",
+      "pubDate": "Tue, 17 Nov 2026 18:52:42 GMT",
+      "pubTs": 1794941562,
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOMUN5c1RLMDBoYkxqblU3czg3NEFXZU40Y3A2ZDJjMVBpN2ROenh0NERiQU8tbnp5TUNDeVNtZ2l1Z2Y5a0thUVdTQWNlTkthd0R0NDlJSWl4bWg2RFczb0YyVzZUWkYweXNqZGRLODdqeXo2S3lrZ21iZmg4Q0paRXNZLVg4WV9SUEFMaExTbjVmQ3FjOE9IcE4xeHlTUTZ6Vzg3UHh3?oc=5"
     },
     {
-      "id": "559d6a661a9c9354",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia dévoile des résultats records, son chiffre d'affaires bondit de 103 % en un an - ABC Bourse",
-      "source": "ABC Bourse",
-      "pubDate": "Tue, 17 Nov 2026 21:35:32 GMT",
-      "pubTs": 1794951332,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQX2trVjlvRHhwZW50azhfUlpRZTBnSkplLTQ3VGJmcU45N0dMWVlVb1FzWWtlX0hfd1dlXzd4ZTNId3RENkswUG9oTGNhSXNHb1NkdE9YdmhIUTROWkN4a2QwUXREZGF3eW5rQ0FUeDJleUdzVENBdV9wUE1BWlU0NGZJVTNKVDRMX0FVMWpCeTJiVHRNZzFjODRXWTgyUC1rLVVMNDJfblFReENBcW8tVy1adDRLRWFU?oc=5"
+      "id": "9f10946b84b4984e",
+      "theme": "Amazon",
+      "tagCls": "b-amber",
+      "title": "Calendrier économique : décision de la BCE, inflation PCE et résultats d'Amazon à l'honneur - XTB.com",
+      "source": "XTB.com",
+      "pubDate": "Thu, 29 Oct 2026 07:00:00 GMT",
+      "pubTs": 1793257200,
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPeFREZmJ6WW9MUy1iWWN3aDA5QXFtNHZZbXdfdmd1WDhSRzNqNmtfNUhHSlA5WW5wS0QyWExTNEstSzR6dU43RGpVM1FOdlZ6NHZDYXBYblQyaGQwSldxRmpzN2p4QUhNTUQwbS0yWThCRWw3cS1CUmtfcTBSOVhHUjJuTldISkREZURsVmtHcmNRandjdzE5Qmg0QllndnFLeGIyWGZDek5yT0JndkFmN3FyR3BIalFfUmtrT0JTVDRSSlN5dC1n?oc=5"
     }
   ],
   "notifiedIds": [
@@ -183,6 +182,12 @@
     "move_drop_NASDAQ:MSTR_20261119",
     "3fa253c33d63f82f",
     "95f03527a1afe4b5",
-    "559d6a661a9c9354"
+    "559d6a661a9c9354",
+    "25dd447bde769aae",
+    "0805be9125861e21",
+    "857133ce6dd86cce",
+    "9af63b7202a1bf7c",
+    "50778a6a4bce4948",
+    "9f10946b84b4984e"
   ]
 }
