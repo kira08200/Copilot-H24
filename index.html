@@ -1012,10 +1012,10 @@
   </div>
   <div class="portfolio-bar">
     <div class="portfolio-left">
-      <div class="total-val" id="totalVal">50 855,86 €</div>
+      <div class="total-val" id="totalVal">-- €</div>
       <div class="clock-txt" id="clockTxt">Connexion au flux boursier mondial...</div>
     </div>
-    <div class="total-gain" id="totalGain">+11 133,40 € (+28,03 %)</div>
+    <div class="total-gain" id="totalGain">Chargement...</div>
   </div>
 </header>
 
@@ -1029,26 +1029,20 @@
       </div>
       <div class="sub">Recalculé automatiquement selon les cours boursiers en direct. Appuyez sur un pôle pour le détail :</div>
 
-      <div class="stacked-bar" id="stackedBar">
-        <div class="stacked-seg" style="width:46.9%;background:#10b981;"></div>
-        <div class="stacked-seg" style="width:32.0%;background:#3b82f6;"></div>
-        <div class="stacked-seg" style="width:11.0%;background:#8b5cf6;"></div>
-        <div class="stacked-seg" style="width:7.2%;background:#f59e0b;"></div>
-        <div class="stacked-seg" style="width:2.9%;background:#ef4444;"></div>
-      </div>
+      <div class="stacked-bar" id="stackedBar"></div>
 
       <div id="polesList"></div>
 
       <div class="env-grid">
         <div class="env-box">
           <div class="env-lbl">PEA Fortuneo (Air Liquide)</div>
-          <div class="env-num" id="peaTotalVal">21 266,26 €</div>
-          <div class="env-sub" id="peaTotalGain">+3 134,26 € (41,8 % du total)</div>
+          <div class="env-num" id="peaTotalVal">-- €</div>
+          <div class="env-sub" id="peaTotalGain">Calcul en cours...</div>
         </div>
         <div class="env-box">
-          <div class="env-lbl" id="trLinesLbl">Trade Republic (21 lignes)</div>
-          <div class="env-num" id="trTotalVal">29 589,60 €</div>
-          <div class="env-sub" id="trTotalGain">+7 999,14 € (58,2 % du total)</div>
+          <div class="env-lbl" id="trLinesLbl">Trade Republic</div>
+          <div class="env-num" id="trTotalVal">-- €</div>
+          <div class="env-sub" id="trTotalGain">Calcul en cours...</div>
         </div>
       </div>
     </div>
@@ -1065,12 +1059,12 @@
     <div class="card">
       <div class="card-title">
         <span>📈 Cap &amp; Projection Long Terme</span>
-        <span class="badge b-green" id="goalBadge">Objectif 60 000 €</span>
+        <span class="badge b-green" id="goalBadge">Objectif</span>
       </div>
       <div class="goal-track"><div class="goal-fill" id="goalFill"></div></div>
       <div class="goal-meta">
-        <span id="goalPctTxt"><strong>84,8 %</strong> du palier 60 000 € atteint</span>
-        <span id="goalRemTxt">Reste : <strong>9 112,01 €</strong></span>
+        <span id="goalPctTxt">Calcul en cours...</span>
+        <span id="goalRemTxt"></span>
       </div>
       <div class="sub" id="projSubTxt" style="margin-bottom:10px;">Projection corrélée en direct à vos valeurs actuelles et au marché :</div>
       <div class="proj-inputs-grid">
@@ -1140,22 +1134,22 @@
         <span>🌍 Baromètre du Climat Boursier (Direct)</span>
         <span class="badge b-amber" id="regimeBadge">Live : --/100</span>
       </div>
-      <div class="sub">Calculé automatiquement toutes les 10 s à partir de vos 22 lignes en direct, du S&amp;P 500 / MSCI World et de la tendance mensuelle :</div>
+      <div class="sub">Calculé automatiquement toutes les 10 s à partir de vos positions actives en direct, du S&amp;P 500 / MSCI World et de la tendance mensuelle :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:50%"></div></div>
       <div id="regimeAdvice" class="rec-item"></div>
     </div>
   </div>
 
-  <!-- ONGLET 3 : VOS 22 LIGNES -->
+  <!-- ONGLET 3 : MES INVESTISSEMENTS -->
   <div id="tab-lines" class="section">
     <div class="card">
       <div class="card-title">
-        <span id="linesTitleTxt">📊 Vos 22 Positions (Cours en Direct)</span>
-        <span class="badge b-blue" id="linesTotalBadge">50 855,86 €</span>
+        <span id="linesTitleTxt">📊 Mes Investissements (Cours en Direct)</span>
+        <span class="badge b-blue" id="linesTotalBadge">-- €</span>
       </div>
-      <div class="sub">Toutes vos 22 positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
+      <div class="sub">Toutes vos positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
       <div class="pill-row" id="filterRow">
-        <button type="button" class="pill-btn active" data-filter="all">Toutes (22)</button>
+        <button type="button" class="pill-btn active" data-filter="all" id="filterAllBtn">Tous</button>
         <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
         <button type="button" class="pill-btn" data-filter="trim">Sécuriser</button>
         <button type="button" class="pill-btn" data-filter="stop">Stopper</button>
@@ -1215,7 +1209,7 @@
     <span class="nav-icon">🎯</span><span>Investir</span>
   </button>
   <button type="button" class="nav-btn" data-tab="lines">
-    <span class="nav-icon">📊</span><span id="navLinesLbl">22 Lignes</span>
+    <span class="nav-icon">📊</span><span id="navLinesLbl">Investissements</span>
   </button>
   <button type="button" class="nav-btn" data-tab="alerts">
     <span class="nav-icon">🔔</span><span>Alertes</span>
@@ -1351,7 +1345,11 @@
       perf3M: typeof t.perf3M === "number" ? t.perf3M : null,
       perf6M: typeof t.perf6M === "number" ? t.perf6M : null,
       perfY: typeof t.perfY === "number" ? t.perfY : null,
+      perf3Y: typeof t.perf3Y === "number" ? t.perf3Y : null,
+      perf5Y: typeof t.perf5Y === "number" ? t.perf5Y : null,
       beta1Y: typeof t.beta1Y === "number" ? t.beta1Y : null,
+      beta5Y: typeof t.beta5Y === "number" ? t.beta5Y : null,
+      divYield: typeof t.divYield === "number" ? t.divYield : null,
       pole: p.pole,
       tag: p.tag,
       action: p.action,
@@ -1385,17 +1383,10 @@
     : [
         {
           timestamp: formatShortDateTimeNow(),
-          badge: "Opportunité Long Terme",
-          badgeCls: "b-green",
-          title: "Alphabet (A) & Microsoft sous-pondérées",
-          desc: "Alphabet (+131,5 % depuis l'achat) ne pèse que 23,13 € et Microsoft 1 354,49 €. Lignes prioritaires pour vos prochains versements."
-        },
-        {
-          timestamp: "18/11/2026 à 16h29",
-          badge: "Relevé Synchronisé",
+          badge: "Suivi Direct",
           badgeCls: "b-blue",
-          title: "Consolidation PEA Fortuneo (21 266,26 €) + Trade Republic (29 868 €)",
-          desc: "Patrimoine total calibré sur vos 22 positions exactes. Pilier défensif majoritaire à 46,9 %."
+          title: "Copilote connecté en direct",
+          desc: "Les cours, dividendes, projections et actualités sont recalculés automatiquement en temps réel sur vos positions actives."
         }
       ];
 
@@ -1481,7 +1472,11 @@
             perf3M: p.perf3M,
             perf6M: p.perf6M,
             perfY: p.perfY,
-            beta1Y: p.beta1Y
+            perf3Y: p.perf3Y,
+            perf5Y: p.perf5Y,
+            beta1Y: p.beta1Y,
+            beta5Y: p.beta5Y,
+            divYield: p.divYield
           }
         };
       }
@@ -1727,9 +1722,9 @@
     if (linesBadge) linesBadge.textContent = fmtEuro(tot.totalVal);
 
     var linesTitle = document.getElementById("linesTitleTxt");
-    if (linesTitle) linesTitle.textContent = "📊 Vos " + tot.activeCount + " Positions Actives (Cours en Direct)";
-    var navLinesLbl = document.getElementById("navLinesLbl");
-    if (navLinesLbl) navLinesLbl.textContent = tot.activeCount + " Lignes";
+    if (linesTitle) linesTitle.textContent = "📊 Mes Investissements (" + tot.activeCount + " actifs)";
+    var filterAllBtn = document.getElementById("filterAllBtn");
+    if (filterAllBtn) filterAllBtn.textContent = "Tous (" + tot.activeCount + ")";
     var trLinesLbl = document.getElementById("trLinesLbl");
     if (trLinesLbl) trLinesLbl.textContent = "Trade Republic (" + tot.trActiveCount + " ligne" + (tot.trActiveCount > 1 ? "s" : "") + ")";
 
@@ -1759,22 +1754,32 @@
       document.getElementById("goalRemTxt").innerHTML = "Reste : <strong>" + fmtEuro(goalRem) + "</strong>";
     }
 
+    updateLiveRegime();
     renderPoles(tot);
     renderPriorities(tot);
     renderProjections(tot);
-    updateLiveRegime();
     renderInvest(tot);
     renderLines(tot);
     renderEvents();
   }
 
+  function getActiveNamesForPole(poleKey) {
+    var names = [];
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].pole === poleKey && isPositionActive(positions[i])) {
+        names.push(getDisplayPosInfo(positions[i]).name);
+      }
+    }
+    return names;
+  }
+
   function renderPoles(tot) {
     var poleMeta = [
-      { key: "pilier", name: "Pilier Défensif, Énergie & Or", color: "#10b981", role: "Socle patrimonial • Nominatif PEA & Réseaux", detail: "Air Liquide PEA Fortuneo, Siemens Energy, Physical Gold USD, Air Liquide TR et Coca-Cola. Votre bouclier principal de long terme." },
-      { key: "ia", name: "Locomotives IA & Semi-conducteurs", color: "#3b82f6", role: "Moteur de performance • Ne plus surcharger", detail: "AMD, NVIDIA et Qualcomm. Pôle moteur du portefeuille : laissez courir sans alourdir l'exposition." },
-      { key: "etf", name: "ETFs Mondiaux & Finance (Cœur)", color: "#8b5cf6", role: "Diversification mondiale • À étoffer", detail: "S&P 500 EUR (Acc), BlackRock, S&P 500 Equal Weight USD et vos deux lignes Core MSCI World USD (Acc)." },
-      { key: "tech", name: "Géants Tech US & Électrique Asie", color: "#f59e0b", role: "Croissance sélective • Opportunités", detail: "Xiaomi, Microsoft, Apple, BYD, Amazon.com et Alphabet (A). Renforcement dynamique sur les lignes les plus sous-pondérées." },
-      { key: "spec", name: "Poche Spéculative (Gelée à 0 €)", color: "#ef4444", role: "Risque maîtrisé • Interdiction d'ajouter", detail: "Strategy A, DroneShield et SFC Energy. Poids limité : ne remettez aucun euro dessus." }
+      { key: "pilier", name: "Pilier Défensif, Énergie & Or", color: "#10b981", role: "Socle patrimonial • Nominatif PEA & Réseaux", note: "Votre bouclier principal de long terme." },
+      { key: "ia", name: "Locomotives IA & Semi-conducteurs", color: "#3b82f6", role: "Moteur de performance • Ne plus surcharger", note: "Pôle moteur du portefeuille : laissez courir sans alourdir l'exposition." },
+      { key: "etf", name: "ETFs Mondiaux & Finance (Cœur)", color: "#8b5cf6", role: "Diversification mondiale • À étoffer", note: "Cœur diversifié à renforcer progressivement." },
+      { key: "tech", name: "Géants Tech US & Électrique Asie", color: "#f59e0b", role: "Croissance sélective • Opportunités", note: "Renforcement dynamique sur les lignes les plus sous-pondérées." },
+      { key: "spec", name: "Poche Spéculative (Gelée à 0 €)", color: "#ef4444", role: "Risque maîtrisé • Interdiction d'ajouter", note: "Poids limité : ne remettez aucun euro dessus." }
     ];
 
     var barHtml = "";
@@ -1784,6 +1789,10 @@
       var val = tot.poleSums[pm.key] || 0;
       var pctNum = tot.totalVal > 0 ? (val / tot.totalVal) * 100 : 0;
       var pctStr = pctNum.toFixed(1).replace(".", ",") + " %";
+      var activeNames = getActiveNamesForPole(pm.key);
+      var detailTxt = activeNames.length > 0
+        ? (activeNames.join(", ") + ". " + pm.note)
+        : ("Aucune ligne active dans ce pôle. " + pm.note);
       barHtml += "<div class='stacked-seg' style='width:" + pctNum.toFixed(2) + "%;background:" + pm.color + ";'></div>";
 
       var expCls = state.expandedPole === i ? " expanded" : "";
@@ -1800,7 +1809,7 @@
         "</div>" +
         "<div class='pole-details'>" +
           "<div style='color:var(--text);font-weight:700;margin-bottom:3px;'>" + pm.role + "</div>" +
-          "<div>" + pm.detail + "</div>" +
+          "<div>" + detailTxt + "</div>" +
         "</div>" +
       "</div>";
     }
@@ -1911,7 +1920,7 @@
     };
   }
 
-  function analyzePositionForHorizon(p, tot, targets, profile, targetDate) {
+  function analyzePositionForHorizon(p, tot, targets, profile, targetDate, newsInfo) {
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
     var curPoleShare = (tot.poleSums[p.pole] || 0) / totalVal;
     var poleGap = targets[p.pole] - curPoleShare;
@@ -2008,6 +2017,13 @@
     var rsiScore = typeof rsiVal === "number" ? Math.max(-0.4, Math.min(1.6, (60 - rsiVal) / 22)) : 0.35;
     var recScore = typeof recVal === "number" ? Math.max(-0.5, Math.min(0.8, recVal * 0.7)) : 0;
     var volPenalty = Math.max(0, dailyVol - 2.2) * profile.wVolPen;
+    var newsBonus = 0;
+    if (newsInfo && newsInfo.byTv && typeof newsInfo.byTv[p.tv] === "number") {
+      newsBonus = Math.max(-0.45, Math.min(0.45, newsInfo.byTv[p.tv] * 0.25));
+    }
+    var earningsPenalty = (profile.hours <= 72 && newsInfo && newsInfo.upcomingSoonByTv && typeof newsInfo.upcomingSoonByTv[p.tv] === "number")
+      ? 0.35
+      : 0;
 
     var score = Math.max(
       0.2,
@@ -2017,8 +2033,10 @@
       (dipMetric * profile.wDip) +
       (recScore * profile.wRec) +
       (trendScore * profile.wTrend) +
-      sessionBonus -
-      volPenalty
+      sessionBonus +
+      newsBonus -
+      volPenalty -
+      earningsPenalty
     );
 
     return {
@@ -2044,6 +2062,7 @@
     var profile = getHorizonProfile(h);
     var targets = computeTargetPoles(state.regime, h);
     var targetDate = new Date(Date.now() + profile.hours * 3600000);
+    var newsInfo = computeNewsSentiment();
     var candidates = [];
 
     for (var i = 0; i < positions.length; i++) {
@@ -2055,7 +2074,7 @@
       var allowFallbackMsci2 = (p.id === "msci2" && !isPositionActive(findPosById("msci1")));
       if (p.tag !== "buy" && !allowFallbackMsci2 && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
 
-      candidates.push(analyzePositionForHorizon(p, tot, targets, profile, targetDate));
+      candidates.push(analyzePositionForHorizon(p, tot, targets, profile, targetDate, newsInfo));
     }
     candidates.sort(function(a, b) { return b.score - a.score; });
 
@@ -2074,24 +2093,26 @@
   function renderPriorities(tot) {
     if (!tot) tot = computeTotals();
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
-    var socleVal = findPosVal("ai_pea") + findPosVal("enr");
+    var socleVal = tot.poleSums.pilier || 0;
     var soclePct = ((socleVal / totalVal) * 100).toFixed(1).replace(".", ",");
-    var iaVal = findPosVal("amd") + findPosVal("nvda");
+    var socleNames = getActiveNamesForPole("pilier").slice(0, 2).join(" & ") || "Pilier défensif";
+    var iaVal = tot.poleSums.ia || 0;
     var iaPct = ((iaVal / totalVal) * 100).toFixed(1).replace(".", ",");
-    var specVal = findPosVal("mstr") + findPosVal("dro") + findPosVal("sfc");
+    var iaNames = getActiveNamesForPole("ia").slice(0, 2).join("/") || "Pôle IA";
+    var specVal = tot.poleSums.spec || 0;
     var top3 = getTopCandidates(tot, 168);
     var topNames = top3.map(function(c) { return getDisplayPosInfo(c.pos).name; }).join(", ");
 
     var dynamicPrios = [
       {
         id: "p1",
-        title: "1. Socle patrimonial : Air Liquide (PEA) & Siemens Energy (" + soclePct + " %)",
-        desc: "Ensemble à " + fmtEuro(socleVal) + " en direct. Conservez ce pilier industriel et énergétique sans y toucher."
+        title: "1. Socle patrimonial : " + socleNames + " (" + soclePct + " %)",
+        desc: "Pôle défensif à " + fmtEuro(socleVal) + " en direct. Conservez ce socle sans y toucher."
       },
       {
         id: "p2",
-        title: "2. Gel des achats sur la Spéculation (" + fmtRoundEuro(specVal) + ") et AMD/NVIDIA (" + iaPct + " %)",
-        desc: "Vos locomotives IA pèsent déjà " + fmtEuro(iaVal) + ". Laissez courir vos gains sans rajouter et bloquez tout achat spéculatif."
+        title: "2. Gel des achats : Spéculation (" + fmtRoundEuro(specVal) + ") & " + iaNames + " (" + iaPct + " %)",
+        desc: "Votre pôle IA pèse déjà " + fmtEuro(iaVal) + ". Laissez courir vos gains sans rajouter et bloquez tout achat spéculatif."
       },
       {
         id: "p3",
@@ -2149,40 +2170,214 @@
     document.getElementById("prioritiesList").innerHTML = html;
   }
 
+  function computeNewsSentiment() {
+    var data = state.lastNewsData;
+    var byTv = {};
+    var upcomingSoonByTv = {};
+    if (!data) {
+      return { score: 0, itemCount: 0, byTv: byTv, upcomingSoonByTv: upcomingSoonByTv };
+    }
+
+    var posWords = /sup[ée]rieur|d[ée]pass|record|hausse|rebond|rassurant|tonitruant|rel[èe]ve|progression|croissance|solide|acc[ée]l[èe]r|bon march[ée]|surperform|upgrade|\bbeat\b|\bsurge\b|\brally\b|\bstrong\b|\bprofit\b/i;
+    var negWords = /baisse|chute|repli|plonge|d[ée][çc]oit|d[ée]ception|inqui[ée]t|tension|avertissement|ralenti|perte|risque|crise|sanction|droits de douane|tarif|r[ée]cession|inflation|\bmiss\b|\bdrop\b|\bfall\b|\bdowngrade\b|\bwarning\b|\bcut\b/i;
+
+    var tot = computeTotals();
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var nowMs = Date.now();
+
+    var items = Array.isArray(data.items) ? data.items : [];
+    var weightedSent = 0;
+    var weightAcc = 0;
+
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      if (!it || !it.title) continue;
+      var txt = (it.title || "") + " " + (it.theme || "");
+      var s = 0;
+      if (posWords.test(txt)) s += 1;
+      if (negWords.test(txt)) s -= 1;
+
+      var pubMs = (typeof it.pubTs === "number" && it.pubTs > 0) ? (it.pubTs * 1000) : (Date.parse(it.pubDate || "") || nowMs);
+      var ageHours = Math.max(0, (nowMs - pubMs) / 3600000);
+      var recencyW = Math.max(0.25, Math.exp(-ageHours / 48));
+
+      var matchedWeight = 0.04;
+      var themeLow = String(it.theme || "").toLowerCase();
+      var titleLow = String(it.title || "").toLowerCase();
+      for (var pIdx = 0; pIdx < positions.length; pIdx++) {
+        var p = positions[pIdx];
+        if (!isPositionActive(p)) continue;
+        var pNameKey = p.name.toLowerCase().split(" ")[0];
+        var pTickKey = p.ticker.toLowerCase().split(".")[0];
+        if ((themeLow && (p.name.toLowerCase().indexOf(themeLow) >= 0 || themeLow.indexOf(pNameKey) >= 0)) ||
+            (pNameKey.length >= 3 && titleLow.indexOf(pNameKey) >= 0) ||
+            (pTickKey.length >= 3 && titleLow.indexOf(pTickKey) >= 0)) {
+          var pw = getPosMetrics(p).val / totalVal;
+          matchedWeight = Math.max(matchedWeight, pw);
+          byTv[p.tv] = (byTv[p.tv] || 0) + s * recencyW;
+        }
+      }
+
+      if (s !== 0) {
+        var w = recencyW * (0.5 + matchedWeight * 3);
+        weightedSent += s * w;
+        weightAcc += w;
+      }
+    }
+
+    var moves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
+    for (var mIdx = 0; mIdx < moves.length; mIdx++) {
+      var mv = moves[mIdx];
+      if (!mv || !mv.tv) continue;
+      var mvSign = mv.kind === "drop" ? -1 : 1;
+      var mvW = 0.04;
+      for (var mp = 0; mp < positions.length; mp++) {
+        if (positions[mp].tv === mv.tv && isPositionActive(positions[mp])) {
+          mvW = Math.max(mvW, getPosMetrics(positions[mp]).val / totalVal);
+        }
+      }
+      weightedSent += mvSign * (0.6 + mvW * 4);
+      weightAcc += (0.6 + mvW * 4);
+      byTv[mv.tv] = (byTv[mv.tv] || 0) + mvSign * 0.8;
+    }
+
+    var earnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
+    for (var eIdx = 0; eIdx < earnings.length; eIdx++) {
+      var er = earnings[eIdx];
+      if (er && er.tv && typeof er.daysLeft === "number" && er.daysLeft >= 0 && er.daysLeft <= 4) {
+        upcomingSoonByTv[er.tv] = er.daysLeft;
+      }
+    }
+
+    var score = weightAcc > 0 ? Math.max(-1, Math.min(1, weightedSent / weightAcc)) : 0;
+    return {
+      score: score,
+      itemCount: items.length,
+      byTv: byTv,
+      upcomingSoonByTv: upcomingSoonByTv
+    };
+  }
+
+  function annualizedCagr(perfPct, years) {
+    if (typeof perfPct !== "number" || !isFinite(perfPct) || years <= 0) return null;
+    var factor = 1 + (perfPct / 100);
+    if (factor <= 0.05) factor = 0.05;
+    return (Math.pow(factor, 1 / years) - 1) * 100;
+  }
+
   function computePortfolioExpectedRate(tot) {
     if (!tot) tot = computeTotals();
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
-    var poleBase = { pilier: 6.5, etf: 8.2, tech: 10.0, ia: 11.0, spec: 6.0 };
+
+    // Référence de marché réelle calculée depuis MSCI World (EUNL) et S&P 500 (SXR8) en direct (CAGR 5 ans)
+    var benchRates = [];
+    for (var bIdx = 0; bIdx < positions.length; bIdx++) {
+      var bp = positions[bIdx];
+      if (bp.tv === "XETR:SXR8" || bp.tv === "XETR:EUNL") {
+        var b5 = annualizedCagr(bp.perf5Y, 5);
+        var b3 = annualizedCagr(bp.perf3Y, 3);
+        if (b5 !== null && b3 !== null) benchRates.push(b5 * 0.80 + b3 * 0.20);
+        else if (b5 !== null) benchRates.push(b5);
+        else if (b3 !== null) benchRates.push(b3);
+      }
+    }
+    var benchCagr = null;
+    if (benchRates.length > 0) {
+      var bSum = 0;
+      for (var br = 0; br < benchRates.length; br++) bSum += benchRates[br];
+      benchCagr = Math.max(2.0, Math.min(13.0, bSum / benchRates.length));
+    }
+
     var weightedSum = 0;
     var weightSum = 0;
 
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
       if (!isPositionActive(p)) continue;
+      var c5 = annualizedCagr(p.perf5Y, 5);
+      var c3 = annualizedCagr(p.perf3Y, 3);
+      var c1 = annualizedCagr(p.perfY, 1);
+
+      var obsSum = 0, obsW = 0;
+      if (c5 !== null) { obsSum += Math.max(-8, Math.min(18, c5)) * 0.65; obsW += 0.65; }
+      if (c3 !== null) { obsSum += Math.max(-10, Math.min(18, c3)) * 0.25; obsW += 0.25; }
+      if (c1 !== null) { obsSum += Math.max(-12, Math.min(16, c1)) * 0.10; obsW += 0.10; }
+      if (obsW <= 0) continue;
+
+      var obsCagr = obsSum / obsW;
+      var divY = (typeof p.divYield === "number" && isFinite(p.divYield) && p.divYield > 0) ? p.divYield : 0;
+      var volDaily = (typeof p.volM === "number" && isFinite(p.volM) && p.volM > 0)
+        ? p.volM
+        : (typeof p.volD === "number" && isFinite(p.volD) && p.volD > 0 ? p.volD : 1.5);
+      var sigmaAnn = (volDaily * Math.sqrt(252)) / 100;
+      var varianceDragPct = Math.min(8.0, 0.5 * sigmaAnn * sigmaAnn * 100);
+
+      var beta = (typeof p.beta5Y === "number" && isFinite(p.beta5Y) && p.beta5Y > 0.1 && p.beta5Y < 3.5)
+        ? p.beta5Y
+        : ((typeof p.beta1Y === "number" && isFinite(p.beta1Y) && p.beta1Y > 0.1 && p.beta1Y < 3.5) ? p.beta1Y : 1.0);
+      var clampedBeta = Math.max(0.45, Math.min(1.45, beta));
+
+      var anchor = benchCagr !== null ? (benchCagr * (0.55 + 0.45 * clampedBeta)) : obsCagr;
+      var trust = 1 / (1 + Math.pow(sigmaAnn / 0.22, 2));
+      var posRate = (obsCagr * trust) + (anchor * (1 - trust)) - (varianceDragPct * 0.5) + divY;
+
       var val = getPosMetrics(p).val;
       var w = val / totalVal;
-      var base = poleBase[p.pole] || 8.0;
-      var capm = (typeof p.beta1Y === "number" && p.beta1Y > 0.1 && p.beta1Y < 3.5)
-        ? (2.5 + p.beta1Y * 5.2)
-        : base;
-      var momAdj = (typeof p.perfY === "number")
-        ? Math.max(-0.9, Math.min(1.5, p.perfY * 0.06))
-        : 0;
-      var posRate = (base * 0.55 + capm * 0.45) + momAdj;
       weightedSum += posRate * w;
       weightSum += w;
     }
 
-    var basePortfolioRate = weightSum > 0 ? (weightedSum / weightSum) : 8.0;
-    var regimeAdj = ((state.regime - 50) / 50) * 1.2;
-    var finalRate = Math.max(3.5, Math.min(14.5, basePortfolioRate + regimeAdj));
-    return Math.round(finalRate * 10) / 10;
+    if (weightSum <= 0) {
+      return { rate: null, hasLiveData: false, newsScore: 0 };
+    }
+
+    var basePortfolioRate = weightedSum / weightSum;
+    var regimeAdj = ((state.regime - 50) / 50) * 1.1;
+    var newsInfo = computeNewsSentiment();
+    var newsAdj = newsInfo.score * 0.7;
+    var finalRate = Math.max(1.0, Math.min(16.0, basePortfolioRate + regimeAdj + newsAdj));
+    return {
+      rate: Math.round(finalRate * 10) / 10,
+      hasLiveData: true,
+      newsScore: newsInfo.score
+    };
+  }
+
+  function computePortfolioDividends(tot) {
+    if (!tot) tot = computeTotals();
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var divAnnual = 0;
+    var aiPeaBonus = 0;
+    var hasLiveDiv = false;
+
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (!isPositionActive(p)) continue;
+      if (typeof p.divYield === "number" && isFinite(p.divYield)) {
+        hasLiveDiv = true;
+        var val = getPosMetrics(p).val;
+        var lineDiv = val * (Math.max(0, p.divYield) / 100);
+        divAnnual += lineDiv;
+        if (p.id === "ai_pea" && lineDiv > 0) {
+          aiPeaBonus = lineDiv * 0.10;
+        }
+      }
+    }
+
+    return {
+      hasLiveData: hasLiveDiv,
+      divAnnual: divAnnual,
+      yieldPct: totalVal > 0 ? (divAnnual / totalVal) * 100 : 0,
+      aiPeaBonus: aiPeaBonus
+    };
   }
 
   function renderProjections(tot) {
     if (!tot) tot = computeTotals();
-    var autoRate = computePortfolioExpectedRate(tot);
-    var ratePct = state.rateMode === "custom" ? state.customRate : autoRate;
+    var autoInfo = computePortfolioExpectedRate(tot);
+    var divInfo = computePortfolioDividends(tot);
+    var hasRate = state.rateMode === "custom" ? true : autoInfo.hasLiveData;
+    var ratePct = state.rateMode === "custom" ? state.customRate : (autoInfo.hasLiveData ? autoInfo.rate : 0);
     var r = Math.max(0, ratePct) / 100;
     var rm = r > 0 ? (Math.pow(1 + r, 1 / 12) - 1) : 0;
     var p0 = tot.totalVal;
@@ -2198,7 +2393,7 @@
     }
     var rateInp = document.getElementById("customRateInput");
     if (rateInp && document.activeElement !== rateInp) {
-      rateInp.value = String(Math.round(ratePct * 10) / 10);
+      rateInp.value = hasRate ? String(Math.round(ratePct * 10) / 10) : "";
     }
     var autoBtn = document.getElementById("btnRateAuto");
     if (autoBtn) {
@@ -2207,40 +2402,63 @@
 
     var subEl = document.getElementById("projSubTxt");
     if (subEl) {
-      var rateTxt = ratePct.toFixed(1).replace(".", ",");
-      var autoTxt = autoRate.toFixed(1).replace(".", ",");
-      if (state.rateMode === "auto") {
-        subEl.textContent = "Rendement Auto : " + rateTxt + " %/an (corrélé en direct à vos valeurs actives et au climat du marché) :";
+      if (!hasRate) {
+        subEl.textContent = "Calcul du rendement Auto en cours depuis les données réelles du marché...";
       } else {
-        subEl.textContent = "Rendement personnalisé : " + rateTxt + " %/an (estimation Auto du portefeuille : " + autoTxt + " %/an) :";
+        var rateTxt = ratePct.toFixed(1).replace(".", ",");
+        var autoTxt = autoInfo.hasLiveData ? autoInfo.rate.toFixed(1).replace(".", ",") : "--";
+        if (state.rateMode === "auto") {
+          subEl.textContent = "Rendement Auto : " + rateTxt + " %/an (calculé en direct sur vos titres, le marché et les actualités) :";
+        } else {
+          subEl.textContent = "Rendement personnalisé : " + rateTxt + " %/an (Auto en direct : " + autoTxt + " %/an) :";
+        }
       }
     }
 
-    var v5 = rm > 0
-      ? (p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0))
-      : (p0 + dca * 60);
-    var v10 = rm > 0
-      ? (p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0))
-      : (p0 + dca * 120);
-    var divAnnual = (tot.poleSums.pilier || 0) * 0.021 + (p0 - (tot.poleSums.pilier || 0)) * 0.010;
     var curYear = new Date().getFullYear();
-    var peaHint = isPositionActive(findPosById("ai_pea")) ? "+ prime +10 % PEA" : "estimés sur lignes actives";
+    var v5Html, v5Hint, v10Html, v10Hint;
+    if (!hasRate) {
+      v5Html = "-- €";
+      v5Hint = "synchro en cours";
+      v10Html = "-- €";
+      v10Hint = "synchro en cours";
+    } else {
+      var v5 = rm > 0
+        ? (p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0))
+        : (p0 + dca * 60);
+      var v10 = rm > 0
+        ? (p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0))
+        : (p0 + dca * 120);
+      v5Html = fmtRoundEuro(v5);
+      v5Hint = "+" + fmtRoundEuro(Math.max(0, v5 - p0 - dca * 60)) + " gains";
+      v10Html = fmtRoundEuro(v10);
+      v10Hint = "+" + fmtRoundEuro(Math.max(0, v10 - p0 - dca * 120)) + " gains";
+    }
+
+    var divValTxt = divInfo.hasLiveData ? ("~" + fmtRoundEuro(divInfo.divAnnual)) : "-- €";
+    var divHintTxt = "synchro en cours";
+    if (divInfo.hasLiveData) {
+      var yTxt = divInfo.yieldPct.toFixed(2).replace(".", ",") + " % brut";
+      divHintTxt = divInfo.aiPeaBonus >= 1
+        ? (yTxt + " (+" + fmtRoundEuro(divInfo.aiPeaBonus) + " prime PEA)")
+        : (yTxt + " • ETF Acc réinvestis");
+    }
 
     var html =
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dans 5 ans (" + (curYear + 5) + ")</div>" +
-        "<div class='proj-val'>" + fmtRoundEuro(v5) + "</div>" +
-        "<div class='proj-hint'>+" + fmtRoundEuro(Math.max(0, v5 - p0 - dca * 60)) + " gains</div>" +
+        "<div class='proj-val'>" + v5Html + "</div>" +
+        "<div class='proj-hint'>" + v5Hint + "</div>" +
       "</div>" +
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dans 10 ans (" + (curYear + 10) + ")</div>" +
-        "<div class='proj-val'>" + fmtRoundEuro(v10) + "</div>" +
-        "<div class='proj-hint'>+" + fmtRoundEuro(Math.max(0, v10 - p0 - dca * 120)) + " gains</div>" +
+        "<div class='proj-val'>" + v10Html + "</div>" +
+        "<div class='proj-hint'>" + v10Hint + "</div>" +
       "</div>" +
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dividendes / an</div>" +
-        "<div class='proj-val'>~" + fmtRoundEuro(divAnnual) + "</div>" +
-        "<div class='proj-hint'>" + peaHint + "</div>" +
+        "<div class='proj-val'>" + divValTxt + "</div>" +
+        "<div class='proj-hint'>" + divHintTxt + "</div>" +
       "</div>";
     document.getElementById("projGrid").innerHTML = html;
   }
@@ -2374,16 +2592,23 @@
     var avgM1 = m1Cnt > 0 ? (m1Sum / m1Cnt) : 0;
     var avgRec = recCnt > 0 ? (recSum / recCnt) : 0;
 
+    var newsInfo = computeNewsSentiment();
+    var newsPoints = newsInfo.itemCount > 0 ? Math.max(-6, Math.min(6, newsInfo.score * 6)) : 0;
+
     var raw = 50
       + (breadthRatio - 0.5) * 32
       + Math.max(-16, Math.min(16, benchDay * 7))
       + Math.max(-14, Math.min(14, avgM1 * 1.4))
-      + Math.max(-10, Math.min(10, avgRec * 18));
+      + Math.max(-10, Math.min(10, avgRec * 18))
+      + newsPoints;
 
     var score = Math.round(Math.max(12, Math.min(95, raw)));
     var spTxt = benchDay !== null ? ((benchDay >= 0 ? "+" : "") + benchDay.toFixed(2) + " %") : "0,00 %";
     var m1Txt = (avgM1 >= 0 ? "+" : "") + avgM1.toFixed(1) + " %";
-    var detail = "Direct : " + greenCnt + "/" + liveCnt + " lignes actives dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt;
+    var newsTag = newsInfo.itemCount > 0
+      ? (" • Actus " + (newsInfo.score > 0.15 ? "positives" : (newsInfo.score < -0.15 ? "prudentes" : "neutres")))
+      : "";
+    var detail = "Direct : " + greenCnt + "/" + liveCnt + " lignes actives dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt + newsTag;
     return { score: score, detail: detail };
   }
 
@@ -2720,7 +2945,7 @@
         "Recommend.All",
         "price_earnings_ttm",
         "Perf.1M",
-        "dividend_yield_recent"
+        "dividends_yield_current"
       ]
     });
 
@@ -3021,7 +3246,7 @@
     return (pct < 0.1 ? pct.toFixed(2) : pct.toFixed(1)).replace(".", ",") + " %";
   }
 
-  function renderDeepNews(data) {
+  function renderDeepNews(data, skipRecalc) {
     var box = document.getElementById("deepAnalysisBox");
     var movesBox = document.getElementById("majorMovesBox");
     var list = document.getElementById("liveNewsList");
@@ -3198,6 +3423,12 @@
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
     }
     if (seenNewNews) persistState();
+    if (!skipRecalc) {
+      var liveTot = computeTotals();
+      updateLiveRegime();
+      renderProjections(liveTot);
+      renderInvest(liveTot);
+    }
   }
 
   function fetchDeepNews(manualTrigger) {
@@ -3427,7 +3658,11 @@
         "Perf.3M",
         "Perf.6M",
         "Perf.Y",
-        "beta_1_year"
+        "beta_1_year",
+        "Perf.3Y",
+        "Perf.5Y",
+        "beta_5_year",
+        "dividends_yield_current"
       ]
     });
 
@@ -3557,6 +3792,10 @@
               p.perf6M = typeof d[27] === "number" ? d[27] : null;
               p.perfY = typeof d[28] === "number" ? d[28] : null;
               p.beta1Y = typeof d[29] === "number" ? d[29] : null;
+              p.perf3Y = typeof d[30] === "number" ? d[30] : null;
+              p.perf5Y = typeof d[31] === "number" ? d[31] : null;
+              p.beta5Y = typeof d[32] === "number" ? d[32] : null;
+              p.divYield = typeof d[33] === "number" && d[33] >= 0 ? d[33] : 0;
               applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
             }
           }
@@ -3573,15 +3812,15 @@
         state.lastSync = dtStr;
         persistState();
         renderAll(true);
-        if (state.lastNewsData) renderDeepNews(state.lastNewsData);
+        if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
 
-        if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/22";
+        if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/" + positions.length;
         var fxTag = finalFx && finalFx.USD ? (" • EUR/USD " + finalFx.USD.toFixed(4).replace(".", ",")) : "";
         document.getElementById("clockTxt").textContent =
-          "H24 Direct (" + tot.liveCount + "/22) • Maj " + dtStr.split(" • ")[1] + fxTag + " (" + state.nextRefreshSec + "s)";
+          "H24 Direct (" + tot.liveCount + "/" + positions.length + ") • Maj " + dtStr.split(" • ")[1] + fxTag + " (" + state.nextRefreshSec + "s)";
 
         if (manualTrigger) {
-          showToast("✅ " + tot.liveCount + "/22 lignes actualisées en direct !");
+          showToast("✅ " + tot.liveCount + "/" + positions.length + " cours actualisés en direct !");
         }
       })
       .catch(function() {
@@ -3589,10 +3828,10 @@
         state.nextRefreshSec = 10;
         if (dot) dot.classList.remove("syncing");
         var tot = computeTotals();
-        if (badge) badge.textContent = tot.liveCount > 0 ? ("H24 • " + tot.liveCount + "/22") : "Hors ligne";
+        if (badge) badge.textContent = tot.liveCount > 0 ? ("H24 • " + tot.liveCount + "/" + positions.length) : "Hors ligne";
         document.getElementById("clockTxt").textContent =
           tot.liveCount > 0
-            ? ("Dernier cours (" + tot.liveCount + "/22) • Nouvel essai dans 10s")
+            ? ("Dernier cours (" + tot.liveCount + "/" + positions.length + ") • Nouvel essai dans 10s")
             : "Flux temporairement indisponible • Nouvel essai dans 10s";
         if (manualTrigger) {
           showToast("⚠️ Connexion momentanément lente, nouvel essai dans 10s");
@@ -3984,7 +4223,7 @@
         syncLiveQuotes(false);
       } else if (state.lastSync) {
         var timePart = state.lastSync.split(" • ")[1] || state.lastSync;
-        document.getElementById("clockTxt").textContent = "H24 Direct (" + state.liveCount + "/22) • Maj " + timePart + " (suivante " + state.nextRefreshSec + "s)";
+        document.getElementById("clockTxt").textContent = "H24 Direct (" + state.liveCount + "/" + positions.length + ") • Maj " + timePart + " (suivante " + state.nextRefreshSec + "s)";
       }
     }
   }, 1000);
