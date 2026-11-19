@@ -267,60 +267,11 @@
   .b-blue { background: var(--blue-bg); color: var(--blue); }
   .b-purple { background: var(--purple-bg); color: var(--purple); }
 
-  /* Market hours bar in Alerts */
-  .market-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .mkt-box {
-    background: rgba(11, 15, 23, 0.55);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 8px 9px;
-    text-align: center;
-  }
-  .mkt-name {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--text);
-  }
-  .mkt-hours {
-    font-size: 0.68rem;
-    color: var(--muted);
-    margin: 2px 0 4px;
-  }
-  .mkt-status {
-    display: inline-block;
-    font-size: 0.66rem;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 5px;
-  }
-  .ev-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 6px;
-    margin-bottom: 6px;
-  }
-  .ev-datetime {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+  .mkt-inline {
     font-size: 0.74rem;
-    font-weight: 800;
-    color: var(--blue);
-    background: var(--blue-bg);
-    padding: 4px 9px;
-    border-radius: 7px;
-  }
-  .ev-countdown {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--amber);
+    color: var(--muted);
+    font-weight: 600;
+    margin-bottom: 8px;
   }
   .earn-grid {
     display: grid;
@@ -416,32 +367,6 @@
     color: var(--text);
     text-decoration: none;
     line-height: 1.35;
-  }
-  .macro-row {
-    background: var(--card-alt);
-    border: 1px solid var(--border);
-    border-radius: 11px;
-    padding: 10px 12px;
-    margin-bottom: 7px;
-    cursor: pointer;
-  }
-  .macro-row:last-child {
-    margin-bottom: 0;
-  }
-  .macro-row.expanded {
-    border-color: var(--blue);
-  }
-  .macro-details {
-    display: none;
-    margin-top: 7px;
-    padding-top: 7px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 0.79rem;
-    color: var(--muted);
-    line-height: 1.4;
-  }
-  .macro-row.expanded .macro-details {
-    display: block;
   }
 
   /* Live quote pill inside line card */
@@ -1337,19 +1262,18 @@
     </div>
   </div>
 
-  <!-- ONGLET 4 : ACTUS & ALERTES DATEES -->
+  <!-- ONGLET 4 : ACTUS & ALERTES -->
   <div id="tab-alerts" class="section">
     <div class="card" style="padding:12px 14px;">
-      <div class="card-title" style="margin-bottom:8px;">
-        <span>🌍 Places Boursières &amp; Radar</span>
+      <div class="card-title" style="margin-bottom:4px;">
+        <span>🔔 Radar &amp; Notifications</span>
         <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
       </div>
-      <div class="market-grid" id="marketSessionsGrid" style="margin-bottom:10px;"></div>
+      <div class="mkt-inline" id="marketSessionsLine">🇪🇺 Paris -- • 🇺🇸 US -- • 🇭🇰 HK --</div>
       <div class="pill-row" id="alertFilterRow" style="margin-bottom:8px;">
         <button type="button" class="pill-btn btn-compact active" data-afilter="all">Tout voir</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="news">⚡ Actus</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="earnings">📊 Chiffres</button>
-        <button type="button" class="pill-btn btn-compact" data-afilter="macro">🏛️ Macro</button>
       </div>
       <div style="display:flex;align-items:center;gap:6px;">
         <button type="button" class="pill-btn btn-compact" id="btnEnablePush" style="flex:1;">🔔 Activer les notifications</button>
@@ -1372,14 +1296,6 @@
         <span class="badge b-purple">Résultats</span>
       </div>
       <div id="deepAnalysisBox"></div>
-    </div>
-
-    <div class="card" id="alertCardMacro">
-      <div class="card-title">
-        <span>🏛️ Grands Rendez-vous Macro &amp; PEA</span>
-        <span class="badge b-amber">Touchez pour détail</span>
-      </div>
-      <div id="eventsList"></div>
     </div>
   </div>
 </div>
@@ -1457,30 +1373,30 @@
 
   var STORAGE_KEY = "copilote_bourse_live_v5";
 
-  // 22 positions avec mapping TradingView H24, Yahoo/Stooq et prix unitaire de référence EUR
+  // Positions de base avec mapping TradingView H24 et prix de référence EUR
   var defaultPositions = [
-    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 190.14, name: "Air Liquide (PEA Fortuneo)", baseVal: 21266.26, cost: 18132.00, fixedQty: null, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale sur PEA Fortuneo. Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
-    { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", stooq: "amd.us", currency: "USD", refPriceEUR: 462.55, name: "AMD", baseVal: 9336.23, cost: 2360.09, fixedQty: 20.184252, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Plus forte plus-value de votre compte Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
-    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", stooq: "nvda.us", currency: "USD", refPriceEUR: 138.54, name: "NVIDIA", baseVal: 6613.90, cost: 4725.52, fixedQty: 47.740036, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA aux côtés d'AMD : bon équilibre actuel, inutile de renforcer davantage." },
-    { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", stooq: "sxr8.de", currency: "EUR", refPriceEUR: 133.36, name: "S&P 500 EUR (Acc)", baseVal: 3138.06, cost: 2337.98, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
-    { id: "enr", account: "TR", tv: "XETR:ENR", ticker: "ENR.DE", stooq: "enr.de", currency: "EUR", refPriceEUR: 126.46, name: "Siemens Energy", baseVal: 2449.13, cost: 1510.93, fixedQty: 19.366807, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
-    { id: "blk", account: "TR", tv: "NYSE:BLK", ticker: "BLK", stooq: "blk.us", currency: "USD", refPriceEUR: 1070.00, name: "BlackRock", baseVal: 1979.74, cost: 1630.19, fixedQty: 1.85022, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
-    { id: "xiaomi", account: "TR", tv: "HKEX:1810", ticker: "1810.HK", stooq: "1810.hk", currency: "HKD", refPriceEUR: 3.38, name: "Xiaomi", baseVal: 1717.48, cost: 2095.18, fixedQty: 507.530309, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
-    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", ticker: "MSFT", stooq: "msft.us", currency: "USD", refPriceEUR: 458.15, name: "Microsoft", baseVal: 1350.07, cost: 1180.00, fixedQty: 2.94679, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
-    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", ticker: "MSTR", stooq: "mstr.us", currency: "USD", refPriceEUR: 82.89, name: "Strategy A (MicroStrategy)", baseVal: 1036.02, cost: 2979.52, fixedQty: 12.498771, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
-    { id: "dro", account: "TR", tv: "ASX:DRO", ticker: "DRO.AX", stooq: "dro.au", currency: "AUD", refPriceEUR: 0.62, name: "DroneShield", baseVal: 381.92, cost: 1398.21, fixedQty: 613.421916, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Poids limité dans votre patrimoine : laissez de côté sans remettre un euro." },
-    { id: "xdew", account: "TR", tv: "XETR:XDEW", ticker: "XDEW.DE", stooq: "xdew.de", currency: "EUR", refPriceEUR: 109.62, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.05, cost: 239.72, fixedQty: 3.2663, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
-    { id: "gold", account: "TR", tv: "XETR:PPFB", ticker: "PPFB.DE", stooq: "ppfb.de", currency: "EUR", refPriceEUR: 66.11, name: "Physical Gold USD (Acc)", baseVal: 299.84, cost: 319.93, fixedQty: 4.53541, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
-    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", ticker: "AAPL", stooq: "aapl.us", currency: "USD", refPriceEUR: 320.89, name: "Apple", baseVal: 219.80, cost: 119.96, fixedQty: 0.684964, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
-    { id: "byd", account: "TR", tv: "HKEX:1211", ticker: "1211.HK", stooq: "1211.hk", currency: "HKD", refPriceEUR: 7.40, name: "BYD", baseVal: 211.93, cost: 300.00, fixedQty: 28.634791, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
-    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 240.29, name: "Amazon.com", baseVal: 150.45, cost: 109.99, fixedQty: 0.626113, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
-    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 147.64, name: "Qualcomm", baseVal: 147.64, cost: 145.98, fixedQty: 1, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
-    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 189.48, name: "Air Liquide (Trade Republic)", baseVal: 49.01, cost: 41.07, fixedQty: 0.258649, pole: "pilier", tag: "hold", action: "Doublon PEA", why: "Vous détenez déjà votre gros pilier sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
-    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 159.50, name: "Core MSCI World USD (Acc) #1", baseVal: 46.29, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "ETF Monde cœur à renforcer", why: "Votre ligne principale MSCI World : regroupez tous vos futurs achats ETF Monde sur cette ligne." },
-    { id: "msci2", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 127.01, name: "Core MSCI World USD (Acc) #2", baseVal: 36.30, cost: 20.00, fixedQty: 0.2858, pole: "etf", tag: "hold", action: "Doublon à fusionner / solder", why: "Même ETF que votre ligne principale MSCI World : inutile de renforcer ce doublon." },
-    { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 89.47, name: "Coca-Cola", baseVal: 29.07, cost: 19.98, fixedQty: 0.3249, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide valeur de rendement défensive." },
-    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 255.62, name: "Alphabet (A)", baseVal: 22.98, cost: 9.99, fixedQty: 0.0899, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "C'est l'une des grandes valeurs IA les plus attractives et la plus sous-pondérée de votre portefeuille : mérite d'être renforcée." },
-    { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 17.84, name: "SFC Energy", baseVal: 15.69, cost: 20.00, fixedQty: 0.8794, pole: "spec", tag: "stop", action: "Ligne résiduelle", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
+    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", ticker: "AI.PA", currency: "EUR", refPriceEUR: 190.14, name: "Air Liquide (PEA Fortuneo)", baseVal: 21266.26, cost: 18132.00, fixedQty: null, pole: "pilier", tag: "hold", action: "Pilier N°1 (Nominatif)", why: "Votre plus grosse ligne patrimoniale sur PEA Fortuneo. Stabilise tout votre patrimoine et prépare la prime de fidélité +10 % ainsi que l'exonération d'impôt du PEA." },
+    { id: "amd", account: "TR", tv: "NASDAQ:AMD", ticker: "AMD", currency: "USD", refPriceEUR: 462.55, name: "AMD", baseVal: 9336.23, cost: 2360.09, fixedQty: 20.184252, pole: "ia", tag: "trim", action: "Sécuriser 10-15%", why: "Plus forte plus-value de votre compte Trade Republic : laissez courir le cœur mais n'ajoutez plus d'argent dessus." },
+    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", ticker: "NVDA", currency: "USD", refPriceEUR: 138.54, name: "NVIDIA", baseVal: 6613.90, cost: 4725.52, fixedQty: 47.740036, pole: "ia", tag: "hold", action: "Conserver le cœur IA", why: "Deuxième locomotive IA aux côtés d'AMD : bon équilibre actuel, inutile de renforcer davantage." },
+    { id: "sp500", account: "TR", tv: "XETR:SXR8", ticker: "SXR8.DE", currency: "EUR", refPriceEUR: 133.36, name: "S&P 500 EUR (Acc)", baseVal: 3138.06, cost: 2337.98, fixedQty: null, pole: "etf", tag: "buy", action: "Pilier ETF à continuer", why: "Votre premier ETF sur Trade Republic. Idéal en versement programmé long terme." },
+    { id: "enr", account: "TR", tv: "XETR:ENR", ticker: "ENR.DE", currency: "EUR", refPriceEUR: 126.46, name: "Siemens Energy", baseVal: 2449.13, cost: 1510.93, fixedQty: 19.366807, pole: "pilier", tag: "hold", action: "Très belle performance", why: "Porté par les réseaux électriques et data centers. Conservez précieusement." },
+    { id: "blk", account: "TR", tv: "NYSE:BLK", ticker: "BLK", currency: "USD", refPriceEUR: 1070.00, name: "BlackRock", baseVal: 1979.74, cost: 1630.19, fixedQty: 1.85022, pole: "etf", tag: "buy", action: "Conserver / Renforcer", why: "N°1 mondial de la gestion d'actifs. Valeur financière solide sur 10 ans." },
+    { id: "xiaomi", account: "TR", tv: "HKEX:1810", ticker: "1810.HK", currency: "HKD", refPriceEUR: 3.38, name: "Xiaomi", baseVal: 1717.48, cost: 2095.18, fixedQty: 507.530309, pole: "tech", tag: "hold", action: "Patienter (Rebond 12-24m)", why: "Groupe industriel rentable (smartphones + véhicules électriques SU7). Gardez sans paniquer." },
+    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", ticker: "MSFT", currency: "USD", refPriceEUR: 458.15, name: "Microsoft", baseVal: 1350.07, cost: 1180.00, fixedQty: 2.94679, pole: "tech", tag: "buy", action: "Renforcer en priorité", why: "Cash-flow massif sur le Cloud Azure et l'IA d'entreprise. Mérite une place plus grande dans votre portefeuille." },
+    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", ticker: "MSTR", currency: "USD", refPriceEUR: 82.89, name: "Strategy A (MicroStrategy)", baseVal: 1036.02, cost: 2979.52, fixedQty: 12.498771, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Action ultra-volatile liée au Bitcoin avec levier. Interdiction absolue de moyenner à la baisse." },
+    { id: "dro", account: "TR", tv: "ASX:DRO", ticker: "DRO.AX", currency: "AUD", refPriceEUR: 0.62, name: "DroneShield", baseVal: 381.92, cost: 1398.21, fixedQty: 613.421916, pole: "spec", tag: "stop", action: "Bloquer tout achat (0 €)", why: "Poids limité dans votre patrimoine : laissez de côté sans remettre un euro." },
+    { id: "xdew", account: "TR", tv: "XETR:XDEW", ticker: "XDEW.DE", currency: "EUR", refPriceEUR: 109.62, name: "S&P 500 Equal Weight USD (Acc)", baseVal: 358.05, cost: 239.72, fixedQty: 3.2663, pole: "etf", tag: "buy", action: "Top bouclier à étoffer", why: "Pondère également les 500 entreprises US : parfait pour diluer votre exposition aux semi-conducteurs." },
+    { id: "gold", account: "TR", tv: "XETR:PPFB", ticker: "PPFB.DE", currency: "EUR", refPriceEUR: 66.11, name: "Physical Gold USD (Acc)", baseVal: 299.84, cost: 319.93, fixedQty: 4.53541, pole: "pilier", tag: "hold", action: "Assurance anti-crise", why: "Votre poche or physique. Utile comme couverture en cas de tensions géopolitiques." },
+    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", ticker: "AAPL", currency: "USD", refPriceEUR: 320.89, name: "Apple", baseVal: 219.80, cost: 119.96, fixedQty: 0.684964, pole: "tech", tag: "hold", action: "Garder en fond", why: "Ecosystème ultra-rentable et rachats d'actions massifs." },
+    { id: "byd", account: "TR", tv: "HKEX:1211", ticker: "1211.HK", currency: "HKD", refPriceEUR: 7.40, name: "BYD", baseVal: 211.93, cost: 300.00, fixedQty: 28.634791, pole: "tech", tag: "buy", action: "Accumuler doucement", why: "Leader mondial des véhicules électriques et batteries LFP. Potentiel de rebond long terme." },
+    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", currency: "USD", refPriceEUR: 240.29, name: "Amazon.com", baseVal: 150.45, cost: 109.99, fixedQty: 0.626113, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
+    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", currency: "USD", refPriceEUR: 147.64, name: "Qualcomm", baseVal: 147.64, cost: 145.98, fixedQty: 1, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
+    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", currency: "EUR", refPriceEUR: 189.48, name: "Air Liquide (Trade Republic)", baseVal: 49.01, cost: 41.07, fixedQty: 0.258649, pole: "pilier", tag: "hold", action: "Doublon PEA", why: "Vous détenez déjà votre gros pilier sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", currency: "EUR", refPriceEUR: 159.50, name: "Core MSCI World USD (Acc) #1", baseVal: 46.29, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "ETF Monde cœur à renforcer", why: "Votre ligne principale MSCI World : regroupez tous vos futurs achats ETF Monde sur cette ligne." },
+    { id: "msci2", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", currency: "EUR", refPriceEUR: 127.01, name: "Core MSCI World USD (Acc) #2", baseVal: 36.30, cost: 20.00, fixedQty: 0.2858, pole: "etf", tag: "hold", action: "Doublon à fusionner / solder", why: "Même ETF que votre ligne principale MSCI World : inutile de renforcer ce doublon." },
+    { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", currency: "USD", refPriceEUR: 89.47, name: "Coca-Cola", baseVal: 29.07, cost: 19.98, fixedQty: 0.3249, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide valeur de rendement défensive." },
+    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", currency: "USD", refPriceEUR: 255.62, name: "Alphabet (A)", baseVal: 22.98, cost: 9.99, fixedQty: 0.0899, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "C'est l'une des grandes valeurs IA les plus attractives et la plus sous-pondérée de votre portefeuille : mérite d'être renforcée." },
+    { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", currency: "EUR", refPriceEUR: 17.84, name: "SFC Energy", baseVal: 15.69, cost: 20.00, fixedQty: 0.8794, pole: "spec", tag: "stop", action: "Ligne résiduelle", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
   ];
 
   var savedData = {};
@@ -1497,7 +1413,6 @@
       account: p.account || "TR",
       tv: p.tv,
       ticker: p.ticker || p.tv,
-      stooq: p.stooq || "",
       currency: p.currency || "EUR",
       refPriceEUR: typeof p.refPriceEUR === "number" && p.refPriceEUR > 0 ? p.refPriceEUR : 100,
       name: p.name,
@@ -1566,28 +1481,6 @@
     return dd + "/" + mm + "/" + yyyy + " • " + hh + ":" + min + ":" + ss;
   }
 
-  function formatShortDateTimeNow() {
-    var now = new Date();
-    var dd = String(now.getDate()).padStart(2, "0");
-    var mm = String(now.getMonth() + 1).padStart(2, "0");
-    var yyyy = now.getFullYear();
-    var hh = String(now.getHours()).padStart(2, "0");
-    var min = String(now.getMinutes()).padStart(2, "0");
-    return dd + "/" + mm + "/" + yyyy + " à " + hh + "h" + min;
-  }
-
-  var initialLogs = Array.isArray(savedData.alertLogs) && savedData.alertLogs.length > 0
-    ? savedData.alertLogs
-    : [
-        {
-          timestamp: formatShortDateTimeNow(),
-          badge: "Suivi Direct",
-          badgeCls: "b-blue",
-          title: "Copilote connecté en direct",
-          desc: "Les cours, dividendes, projections et actualités sont recalculés automatiquement en temps réel sur vos positions actives."
-        }
-      ];
-
   var savedHorizonUnit = (typeof savedData.horizonUnit === "string" && ["h", "d", "w", "m"].indexOf(savedData.horizonUnit) >= 0) ? savedData.horizonUnit : "h";
   var savedHorizonVal = (typeof savedData.horizonVal === "number" && isFinite(savedData.horizonVal) && savedData.horizonVal >= 0) ? savedData.horizonVal : 0;
   var state = {
@@ -1618,8 +1511,7 @@
     discoveryUpdatedAt: 0,
     discoveryLoading: false,
     lastNewsData: null,
-    globalBenchmarks: (savedData.globalBenchmarks && typeof savedData.globalBenchmarks === "object") ? savedData.globalBenchmarks : {},
-    alertLogs: initialLogs
+    globalBenchmarks: (savedData.globalBenchmarks && typeof savedData.globalBenchmarks === "object") ? savedData.globalBenchmarks : {}
   };
 
   var DISCOVERY_POOL = [
@@ -1718,53 +1610,37 @@
         donePrios: state.donePrios,
         globalBenchmarks: state.globalBenchmarks,
         notifiedNews: state.notifiedNews,
-        notifsEnabled: state.notifsEnabled,
-        alertLogs: state.alertLogs.slice(0, 15)
+        notifsEnabled: state.notifsEnabled
       }));
     } catch (e) {}
   }
 
-  function pushAlertLog(title, desc, badge, badgeCls, sendSystemNotif) {
-    var entry = {
-      timestamp: formatDateTimeNow(),
-      badge: badge || "Alerte Marché",
-      badgeCls: badgeCls || "b-blue",
-      title: title,
-      desc: desc
-    };
-    state.alertLogs.unshift(entry);
-    if (state.alertLogs.length > 15) {
-      state.alertLogs.pop();
-    }
-    persistState();
-    renderAlertLogs();
-
-    if (sendSystemNotif && isNotifActive()) {
-      if (isAndroidBridge()) {
-        try {
-          window.CopiloteAndroid.notify(title, desc);
-        } catch (e) {}
-      } else if ("Notification" in window && Notification.permission === "granted") {
-        var notifOpts = {
-          body: entry.timestamp + " — " + desc,
-          icon: "./icon-192.png",
-          badge: "./icon-192.png",
-          tag: "copilote-alert-" + Date.now()
-        };
-        if ("serviceWorker" in navigator) {
-          navigator.serviceWorker.ready
-            .then(function(reg) {
-              if (reg && reg.showNotification) {
-                return reg.showNotification(title, notifOpts);
-              }
-              new Notification(title, notifOpts);
-            })
-            .catch(function() {
-              try { new Notification(title, notifOpts); } catch (e) {}
-            });
-        } else {
-          try { new Notification(title, notifOpts); } catch (e) {}
-        }
+  function sendSystemAlert(title, desc) {
+    if (!isNotifActive()) return;
+    if (isAndroidBridge()) {
+      try {
+        window.CopiloteAndroid.notify(title, desc);
+      } catch (e) {}
+    } else if ("Notification" in window && Notification.permission === "granted") {
+      var notifOpts = {
+        body: formatDateTimeNow() + " — " + desc,
+        icon: "./icon-192.png",
+        badge: "./icon-192.png",
+        tag: "copilote-alert-" + Date.now()
+      };
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.ready
+          .then(function(reg) {
+            if (reg && reg.showNotification) {
+              return reg.showNotification(title, notifOpts);
+            }
+            new Notification(title, notifOpts);
+          })
+          .catch(function() {
+            try { new Notification(title, notifOpts); } catch (e) {}
+          });
+      } else {
+        try { new Notification(title, notifOpts); } catch (e) {}
       }
     }
   }
@@ -2014,7 +1890,6 @@
     renderProjections(tot);
     renderInvest(tot);
     renderLines(tot);
-    renderEvents();
   }
 
   function getActiveNamesForPole(poleKey) {
@@ -2069,13 +1944,6 @@
     }
     document.getElementById("stackedBar").innerHTML = barHtml;
     document.getElementById("polesList").innerHTML = listHtml;
-  }
-
-  function findPosVal(id) {
-    for (var i = 0; i < positions.length; i++) {
-      if (positions[i].id === id) return getPosMetrics(positions[i]).val;
-    }
-    return 0;
   }
 
   function getHorizonProfile(hours) {
@@ -3491,155 +3359,22 @@
   }
 
   function updateMarketSessions() {
-    var now = new Date();
     var clockEl = document.getElementById("liveParisClock");
     if (clockEl) {
       clockEl.textContent = formatDateTimeNow();
     }
-
-    var day = now.getDay();
-    var mins = now.getHours() * 60 + now.getMinutes();
-    var isWeekday = day >= 1 && day <= 5;
-
-    var euOpen = isWeekday && mins >= 540 && mins < 1050;
-    var usOpen = isWeekday && mins >= 930 && mins < 1320;
-    var hkOpen = isWeekday && mins >= 150 && mins < 540;
-
-    var grid = document.getElementById("marketSessionsGrid");
-    if (grid) {
-      grid.innerHTML =
-        "<div class='mkt-box'>" +
-          "<div class='mkt-name'>🇪🇺 Euronext Paris</div>" +
-          "<div class='mkt-hours'>09h00 – 17h30</div>" +
-          "<span class='mkt-status " + (euOpen ? "b-green" : "b-red") + "'>" + (euOpen ? "OUVERT" : "FERMÉ") + "</span>" +
-        "</div>" +
-        "<div class='mkt-box'>" +
-          "<div class='mkt-name'>🇺🇸 Wall Street</div>" +
-          "<div class='mkt-hours'>15h30 – 22h00</div>" +
-          "<span class='mkt-status " + (usOpen ? "b-green" : "b-red") + "'>" + (usOpen ? "OUVERT" : "FERMÉ") + "</span>" +
-        "</div>" +
-        "<div class='mkt-box'>" +
-          "<div class='mkt-name'>🇭🇰 Hong Kong</div>" +
-          "<div class='mkt-hours'>02h30 – 09h00</div>" +
-          "<span class='mkt-status " + (hkOpen ? "b-green" : "b-red") + "'>" + (hkOpen ? "OUVERT" : "FERMÉ") + "</span>" +
-        "</div>";
+    var lineEl = document.getElementById("marketSessionsLine");
+    if (lineEl) {
+      var euPhase = getExchangePhase("EURONEXT:AI");
+      var usPhase = getExchangePhase("NASDAQ:MSFT");
+      var hkPhase = getExchangePhase("HKEX:1810");
+      var fmtSt = function(ph) {
+        if (ph === "regular") return "<span style='color:var(--green);'>Ouvert</span>";
+        if (ph === "pre") return "<span style='color:var(--amber);'>Pré-marché</span>";
+        return "Fermé";
+      };
+      lineEl.innerHTML = "🇪🇺 Paris : " + fmtSt(euPhase) + " • 🇺🇸 US : " + fmtSt(usPhase) + " • 🇭🇰 HK : " + fmtSt(hkPhase);
     }
-  }
-
-  function getRelativeLabel(isoDateStr) {
-    var target = new Date(isoDateStr);
-    var now = new Date();
-    var diffMs = target.getTime() - now.getTime();
-    if (diffMs <= 0) {
-      return "En cours / Passé";
-    }
-    var totalHours = Math.floor(diffMs / 3600000);
-    var days = Math.floor(totalHours / 24);
-    var remHours = totalHours % 24;
-    if (days === 0) {
-      var remMins = Math.floor((diffMs % 3600000) / 60000);
-      return "Dans " + remHours + "h " + remMins + "min";
-    }
-    if (days === 1) {
-      return "Demain (dans 1j " + remHours + "h)";
-    }
-    return "Dans " + days + " jours";
-  }
-
-  function getMacroEvents() {
-    var peaVal = findPosVal("ai_pea");
-    var euVal = peaVal + findPosVal("enr") + findPosVal("ai_tr") + findPosVal("sfc");
-    var usVal = findPosVal("amd") + findPosVal("nvda") + findPosVal("msft") + findPosVal("blk") + findPosVal("mstr") + findPosVal("aapl") + findPosVal("amzn") + findPosVal("qcom") + findPosVal("ko") + findPosVal("googl");
-    var etfGoldVal = findPosVal("sp500") + findPosVal("xdew") + findPosVal("msci1") + findPosVal("msci2") + findPosVal("gold");
-
-    var rawEvents = [
-      {
-        dateLabel: "Ven. 27/11/2026 • 14h30 (Paris)",
-        iso: "2026-11-27T14:30:00",
-        tag: "Macro US",
-        tagCls: "b-amber",
-        title: "Indice d'Inflation PCE Core US (Indicateur favori de la Fed)",
-        impact: "Impact direct sur vos ETFs & Or (" + fmtRoundEuro(etfGoldVal) + ") et BlackRock (" + fmtRoundEuro(findPosVal("blk")) + ")."
-      },
-      {
-        dateLabel: "Jeu. 10/12/2026 • 14h30 (Paris)",
-        iso: "2026-12-10T14:30:00",
-        tag: "Inflation CPI",
-        tagCls: "b-amber",
-        title: "Chiffres officiels de l'Inflation Américaine (CPI)",
-        impact: "Rendez-vous mensuel majeur à 14h30 précises : détermine la trajectoire des taux américains avant la réunion de la Fed."
-      },
-      {
-        dateLabel: "Mer. 16/12/2026 • 20h00 (Paris)",
-        iso: "2026-12-16T20:00:00",
-        tag: "Banque Centrale US",
-        tagCls: "b-blue",
-        title: "Décision des Taux Directeurs de la Fed (FOMC) & Conférence 20h30",
-        impact: "Influence directement le Dollar (EUR/USD) et vos " + fmtRoundEuro(usVal) + " d'actions américaines."
-      },
-      {
-        dateLabel: "Jeu. 17/12/2026 • 14h15 (Paris)",
-        iso: "2026-12-17T14:15:00",
-        tag: "Banque Centrale EU",
-        tagCls: "b-blue",
-        title: "Décision des Taux de la BCE (Francfort) & Conférence 14h45",
-        impact: "Influence directement vos " + fmtRoundEuro(euVal) + " de valeurs européennes (Air Liquide, Siemens Energy) et la parité Euro/Dollar."
-      },
-      {
-        dateLabel: "Jeu. 31/12/2026 • 17h30 (Paris)",
-        iso: "2026-12-31T17:30:00",
-        tag: "PEA Fortuneo",
-        tagCls: "b-green",
-        title: "Clôture Annuelle Nominatif Administré Air Liquide (PEA)",
-        impact: "Votre ligne Air Liquide PEA (" + fmtEuro(peaVal) + " en direct) doit être au nominatif avant le 31/12 à 17h30 pour valider l'année fiscale vers la prime +10 %."
-      }
-    ];
-
-    var nowMs = Date.now();
-    return rawEvents.filter(function(ev) {
-      return new Date(ev.iso).getTime() + 7200000 >= nowMs;
-    });
-  }
-
-  function checkNewsAlerts() {
-    var nowMs = Date.now();
-    var evs = getMacroEvents();
-    for (var i = 0; i < evs.length; i++) {
-      var ev = evs[i];
-      var evMs = new Date(ev.iso).getTime();
-      var diffMs = evMs - nowMs;
-      if (diffMs <= 30 * 60000 && diffMs >= -15 * 60000 && !state.notifiedNews[ev.iso]) {
-        state.notifiedNews[ev.iso] = true;
-        pushAlertLog(
-          "Actualité imminente : " + ev.title,
-          ev.dateLabel + " — " + ev.impact,
-          ev.tag,
-          ev.tagCls,
-          true
-        );
-      }
-    }
-  }
-
-  function renderEvents() {
-    if (typeof state.expandedMacro !== "number") state.expandedMacro = 0;
-    var evs = getMacroEvents();
-    var html = "";
-    for (var i = 0; i < evs.length; i++) {
-      var ev = evs[i];
-      var rel = getRelativeLabel(ev.iso);
-      var expCls = state.expandedMacro === i ? " expanded" : "";
-      html += "<div class='macro-row" + expCls + "' data-macro='" + i + "'>" +
-        "<div class='ev-meta-row' style='margin-bottom:3px;'>" +
-          "<span class='ev-datetime'>🗓️ " + ev.dateLabel + "</span>" +
-          "<span class='ev-countdown'>⏳ " + rel + "</span>" +
-        "</div>" +
-        "<div class='rec-top' style='margin-bottom:0;'><strong style='font-size:0.84rem;'>" + ev.title + "</strong><span class='badge " + ev.tagCls + "'>" + ev.tag + "</span></div>" +
-        "<div class='macro-details'>" + ev.impact + "</div>" +
-      "</div>";
-    }
-    document.getElementById("eventsList").innerHTML = html;
-    checkNewsAlerts();
   }
 
   function escHtml(str) {
@@ -3762,13 +3497,6 @@
     }
 
     var topHtml = "";
-    if (data.aiBrief) {
-      topHtml += "<div class='rec-item' style='border-color:rgba(16,185,129,0.35);margin-bottom:10px;'>" +
-        "<div class='rec-top'><strong>📌 L'Essentiel sur Vos Lignes</strong><span class='badge b-green'>Résumé</span></div>" +
-        "<div style='font-size:0.81rem;line-height:1.45;white-space:pre-line;'>" + escHtml(data.aiBrief) + "</div>" +
-      "</div>";
-    }
-
     var seenNewNews = false;
     var notifyCount = 0;
 
@@ -3786,12 +3514,9 @@
           seenNewNews = true;
           if (notifyCount < 2) {
             notifyCount++;
-            pushAlertLog(
+            sendSystemAlert(
               (mv.kind === "drop" ? "Grosse chute : " : "Forte hausse : ") + mv.name + " (" + mvSign + mv.changePct.toFixed(1) + " %)",
-              "Mouvement majeur détecté sur votre ligne (" + (mv.weight || "") + ").",
-              mv.kind === "drop" ? "Grosse chute" : "Forte hausse",
-              mv.kind === "drop" ? "b-red" : "b-green",
-              true
+              "Mouvement majeur détecté sur votre ligne (" + (liveMvWeight || "") + ")."
             );
           }
         }
@@ -3826,12 +3551,9 @@
           seenNewNews = true;
           if (notifyCount < 2) {
             notifyCount++;
-            pushAlertLog(
+            sendSystemAlert(
               "Chiffres à venir : " + er.name,
-              "Publication prévue le " + er.dateStr + " (" + dLabel + ").",
-              "Résultats",
-              "b-purple",
-              true
+              "Publication prévue le " + er.dateStr + " (" + dLabel + ")."
             );
           }
         }
@@ -3865,12 +3587,9 @@
           seenNewNews = true;
           if (notifyCount < 2) {
             notifyCount++;
-            pushAlertLog(
-              "Actu " + (it.theme || "Portefeuille") + " : " + it.title,
-              (it.source || "Source"),
-              it.theme || "Essentiel",
-              it.tagCls || "b-blue",
-              true
+            sendSystemAlert(
+              "Actu " + (it.theme || "Portefeuille"),
+              it.title
             );
           }
         }
@@ -3911,28 +3630,6 @@
         showToast("📰 Actualités vérifiées (" + (best && Array.isArray(best.items) ? best.items.length : 0) + " actus)");
       }
     }).catch(function() {});
-  }
-
-  function renderAlertLogs() {
-    var container = document.getElementById("alertLogsList");
-    if (!container) return;
-    if (state.alertLogs.length === 0) {
-      container.innerHTML = "<div class='rec-item'><div style='font-size:0.83rem;color:var(--muted);'>Aucune alerte enregistrée pour le moment.</div></div>";
-      return;
-    }
-    var html = "";
-    for (var i = 0; i < state.alertLogs.length; i++) {
-      var lg = state.alertLogs[i];
-      html += "<div class='rec-item'>" +
-        "<div class='ev-meta-row'>" +
-          "<span class='ev-datetime'>🕒 " + lg.timestamp + "</span>" +
-          "<span class='badge " + lg.badgeCls + "'>" + lg.badge + "</span>" +
-        "</div>" +
-        "<div style='font-size:0.88rem;font-weight:700;margin:4px 0;'>" + lg.title + "</div>" +
-        "<div style='font-size:0.82rem;color:var(--muted);line-height:1.45;'>" + lg.desc + "</div>" +
-      "</div>";
-    }
-    container.innerHTML = html;
   }
 
   function switchTab(tabId, skipSave) {
@@ -4484,13 +4181,6 @@
     renderAll(true);
     closeAddModal();
     syncLiveQuotes(false);
-    pushAlertLog(
-      "Nouvelle ligne ajoutée : " + name,
-      qty + " part(s) pour " + fmtEuro(cost) + " (" + tv + "). Synchronisation du cours live...",
-      "Portefeuille Modifié",
-      "b-green",
-      false
-    );
     showToast("✅ " + name + " ajouté — synchronisation du cours...");
   }
 
@@ -4682,22 +4372,8 @@
     if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
     closeEditModal();
     if (newQty === 0) {
-      pushAlertLog(
-        "Position soldée : " + updatedName,
-        "Quantité mise à 0 part : ligne exclue des calculs et des recommandations d'achat.",
-        "Position Clôturée",
-        "b-amber",
-        false
-      );
       showToast("✅ Position mise à 0 — exclue des recommandations !");
     } else {
-      pushAlertLog(
-        "Mise à jour manuelle : " + updatedName,
-        "Quantité ajustée à " + newQty + " parts pour " + fmtEuro(newCost) + " investis.",
-        "Portefeuille Modifié",
-        "b-blue",
-        false
-      );
       showToast("✅ Position enregistrée et recalculée au cours !");
     }
   }
@@ -4744,12 +4420,9 @@
     updateNotifUi();
     if (granted) {
       showToast("🔔 Notifications Android activées (suivi H24 en arrière-plan) !");
-      pushAlertLog(
+      sendSystemAlert(
         "Notifications Copilote H24 activées",
-        "Vous recevrez les alertes d'actualités, résultats et gros mouvements, y compris en arrière-plan.",
-        "Système Actif",
-        "b-green",
-        true
+        "Vous recevrez les alertes d'actualités, résultats et gros mouvements, y compris en arrière-plan."
       );
     } else {
       showToast("⚠️ Autorisez les notifications pour Copilote H24 dans les réglages Android");
@@ -4787,12 +4460,9 @@
         persistState();
         updateNotifUi();
         showToast("🔔 Notifications activées !");
-        pushAlertLog(
+        sendSystemAlert(
           "Notifications activées",
-          "Vous recevrez les alertes d'actualités essentielles, résultats à 48h et gros mouvements.",
-          "Système Actif",
-          "b-green",
-          true
+          "Vous recevrez les alertes d'actualités essentielles, résultats à 48h et gros mouvements."
         );
       } else {
         state.notifsEnabled = false;
@@ -4810,13 +4480,7 @@
     }
     var title = "🔔 Test Copilote H24";
     var body = "Les notifications fonctionnent bien sur cet appareil (" + formatDateTimeNow() + ").";
-    if (isAndroidBridge()) {
-      try {
-        window.CopiloteAndroid.notify(title, body);
-      } catch (e) {}
-    } else {
-      pushAlertLog(title, body, "Test", "b-green", true);
-    }
+    sendSystemAlert(title, body);
     showToast("✅ Notification de test envoyée !");
   }
 
@@ -4979,17 +4643,8 @@
       }
       var cNews = document.getElementById("alertCardNews");
       var cEarn = document.getElementById("alertCardEarnings");
-      var cMacro = document.getElementById("alertCardMacro");
       if (cNews) cNews.style.display = (af === "all" || af === "news") ? "block" : "none";
       if (cEarn) cEarn.style.display = (af === "all" || af === "earnings") ? "block" : "none";
-      if (cMacro) cMacro.style.display = (af === "all" || af === "macro") ? "block" : "none";
-      return;
-    }
-    var macroRow = e.target.closest(".macro-row");
-    if (macroRow) {
-      var mIdx = parseInt(macroRow.getAttribute("data-macro"), 10);
-      state.expandedMacro = (state.expandedMacro === mIdx) ? -1 : mIdx;
-      renderEvents();
       return;
     }
     var navBtn = e.target.closest("#bottomNav .nav-btn");
@@ -5182,7 +4837,6 @@
   // Compte a rebours seconde par seconde + synchro H24 auto toutes les 10 secondes
   setInterval(function() {
     updateMarketSessions();
-    checkNewsAlerts();
     if (!state.isSyncing) {
       state.nextRefreshSec--;
       if (state.nextRefreshSec <= 0) {
@@ -5210,7 +4864,6 @@
   updateNotifUi();
   renderAll(false);
   updateMarketSessions();
-  renderAlertLogs();
   fetchDeepNews(false);
   syncLiveQuotes(false);
 })();

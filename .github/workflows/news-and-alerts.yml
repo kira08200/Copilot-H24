@@ -20,12 +20,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Fetch news, deep metrics & push smartphone alerts
-        env:
-          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      - name: Fetch news & market shocks
         run: python scripts/fetch_news.py
 
       - name: Commit and push updated news.json

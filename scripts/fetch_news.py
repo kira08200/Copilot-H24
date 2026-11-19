@@ -235,47 +235,6 @@ def fetch_essential_news():
     return top_items
 
 
-def maybe_generate_gemini_brief(earnings, news_items):
-    api_key = os.environ.get("GEMINI_API_KEY", "").strip()
-    if not api_key or (not earnings and not news_items):
-        return ""
-    earn_txt = "\n".join([f"- {e['name']} ({e['weight']}): publication le {e['dateStr']} (dans {e['daysLeft']}j)" for e in earnings[:6]])
-    news_txt = "\n".join([f"- [{n['theme']}] {n['title']} ({n['source']})" for n in news_items[:6]])
-    prompt = (
-        "Résume en français (maximum 3 puces très concises, sans jargon technique comme RSI ou moyennes mobiles) "
-        "uniquement l'essentiel des prochains chiffres attendus et actualités clés pour ce portefeuille :\n"
-        f"Prochains résultats:\n{earn_txt}\n\nActualités essentielles:\n{news_txt}"
-    )
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={urllib.parse.quote(api_key)}"
-    body = json.dumps({"contents": [{"parts": [{"text": prompt}]}]}).encode("utf-8")
-    req = urllib.request.Request(url, data=body, headers={"Content-Type": "application/json"}, method="POST")
-    try:
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            out = json.loads(resp.read().decode("utf-8"))
-        return out["candidates"][0]["content"]["parts"][0]["text"].strip()
-    except Exception as exc:
-        print(f"[WARN] Gemini brief skipped: {exc}")
-        return ""
-
-
-def send_ntfy_alert(topic, title, message, click_url=""):
-    url = f"https://ntfy.sh/{urllib.parse.quote(topic)}"
-    headers = {"Title": title.encode("utf-8"), "Priority": "default", "Tags": "newspaper"}
-    if click_url:
-        headers["Click"] = click_url
-    req = urllib.request.Request(url, data=message.encode("utf-8"), headers=headers, method="POST")
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        return resp.status
-
-
-def send_telegram_alert(bot_token, chat_id, text):
-    url = f"https://api.telegram.org/bot{bot_token}/sendMessage"
-    payload = json.dumps({"chat_id": chat_id, "text": text, "disable_web_page_preview": False}).encode("utf-8")
-    req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"}, method="POST")
-    with urllib.request.urlopen(req, timeout=10) as resp:
-        return resp.status
-
-
 def load_existing():
     if not os.path.exists(NEWS_FILE):
         return {"notifiedIds": []}
@@ -301,66 +260,18 @@ def main():
         list(prev.get("notifiedIds") or []),
     )
 
-    ntfy_topic = os.environ.get("NTFY_TOPIC", "").strip()
-    tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
-    tg_chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-
-    alerts_to_send = []
-
-    # 1. Alerte si grosse chute (<= -5%) ou forte envolée (>= +7%) sur une ligne
     for mv in major_moves:
         if mv["id"] not in notified_set:
-            icon = "📉 Grosse chute" if mv["kind"] == "drop" else "🚀 Forte hausse"
-            alerts_to_send.append(
-                {
-                    "id": mv["id"],
-                    "title": f"{icon} : {mv['name']} ({mv['changePct']:+.1f} %)",
-                    "body": f"Mouvement fort sur votre ligne ({mv['weight']}). Cours actuel : {mv['price']} {mv['currency']}.",
-                    "link": "",
-                }
-            )
-
-    # 2. Alerte si une de vos lignes publie ses chiffres dans les prochaines 48h
+            notified_ids.append(mv["id"])
+            notified_set.add(mv["id"])
     for e in upcoming_earnings:
         if e["daysLeft"] <= 2 and e["id"] not in notified_set:
-            alerts_to_send.append(
-                {
-                    "id": e["id"],
-                    "title": f"Chiffres à venir : {e['name']}",
-                    "body": f"Publication des résultats prévue le {e['dateStr']} ({e['weight']} du portefeuille).",
-                    "link": "",
-                }
-            )
-
-    # 3. Alerte sur les nouvelles actualités essentielles liées à vos lignes (max 2 par cycle)
+            notified_ids.append(e["id"])
+            notified_set.add(e["id"])
     for item in essential_news:
         if item["id"] not in notified_set:
-            alerts_to_send.append(
-                {
-                    "id": item["id"],
-                    "title": f"[{item['theme']}] {item['source']}",
-                    "body": item["title"],
-                    "link": item["link"],
-                }
-            )
-
-    for al in alerts_to_send[:2]:
-        if ntfy_topic:
-            try:
-                send_ntfy_alert(ntfy_topic, al["title"], al["body"], al["link"])
-                print(f"[INFO] ntfy sent: {al['title']}")
-            except Exception as exc:
-                print(f"[WARN] ntfy failed: {exc}")
-        if tg_token and tg_chat:
-            try:
-                txt = f"📰 {al['title']}\n{al['body']}" + (f"\n{al['link']}" if al["link"] else "")
-                send_telegram_alert(tg_token, tg_chat, txt)
-                print(f"[INFO] Telegram sent: {al['title']}")
-            except Exception as exc:
-                print(f"[WARN] Telegram failed: {exc}")
-
-    for al in alerts_to_send:
-        notified_ids.append(al["id"])
+            notified_ids.append(item["id"])
+            notified_set.add(item["id"])
     notified_ids = notified_ids[-150:]
 
     new_sig = (
@@ -374,14 +285,11 @@ def main():
         print("[OK] No news changes; skipping news.json update.")
         return
 
-    ai_brief = maybe_generate_gemini_brief(upcoming_earnings, essential_news) if (not prev.get("updatedAt") or new_sig[:3] != prev_sig[:3]) else (prev.get("aiBrief") or "")
-
     now_iso = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     output = {
         "updatedAt": now_iso,
         "upcomingEarnings": upcoming_earnings,
         "majorMoves": major_moves,
-        "aiBrief": ai_brief,
         "items": essential_news,
         "notifiedIds": notified_ids,
     }
