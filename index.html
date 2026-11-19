@@ -1064,13 +1064,18 @@
   </div>
 </div>
 
-<!-- Modal Sauvegarde / Transfert PC <-> Téléphone -->
+<!-- Modal Sauvegarde / Import / Transfert -->
 <div id="syncModal" class="modal-backdrop">
   <div class="modal-box">
     <div class="modal-title" id="syncModalTitle">💾 Sauvegarder / Transférer</div>
     <div class="sub" id="syncModalSub" style="margin-bottom:8px;">Copiez ce code ou téléchargez le fichier pour retrouver vos parts et réglages sur un autre appareil ou une nouvelle APK.</div>
-    <textarea id="syncCodeBox" class="sync-textarea" placeholder="Collez votre code de sauvegarde ici..."></textarea>
-    <input type="file" id="syncFileInput" accept=".json,application/json" style="display:none;">
+    <textarea id="syncCodeBox" class="sync-textarea" placeholder="Collez ici un export CSV/Excel, un copier-coller Fortuneo / Trade Republic (ex : NVIDIA 47,74 4725 €) ou un code .json..."></textarea>
+    <div id="syncImportPreview" style="display:none;font-size:0.75rem;color:var(--green);margin-top:6px;line-height:1.35;font-weight:600;"></div>
+    <label id="syncZeroMissingWrap" style="display:none;align-items:center;gap:6px;font-size:0.75rem;color:var(--muted);margin-top:7px;cursor:pointer;">
+      <input type="checkbox" id="chkImportZeroMissing">
+      <span>Mettre à 0 mes autres lignes absentes de cet import</span>
+    </label>
+    <input type="file" id="syncFileInput" accept=".json,.csv,.tsv,.txt,text/csv,text/plain,application/json" style="display:none;">
     <div class="pill-row" id="syncExportActions" style="margin-top:10px;margin-bottom:0;">
       <button type="button" class="pill-btn active" id="btnSyncCopy" style="flex:1;">📋 Copier le code</button>
       <button type="button" class="pill-btn" id="btnSyncDownload">⬇️ .json</button>
@@ -1078,7 +1083,7 @@
     </div>
     <div class="pill-row" id="syncImportActions" style="margin-top:10px;margin-bottom:0;display:none;">
       <button type="button" class="pill-btn" id="btnSyncPickFile">📂 Fichier</button>
-      <button type="button" class="pill-btn active" id="btnSyncApply" style="flex:1;">✅ Restaurer</button>
+      <button type="button" class="pill-btn active" id="btnSyncApply" style="flex:1;">✅ Importer</button>
       <button type="button" class="pill-btn" id="btnCloseSync2">Annuler</button>
     </div>
   </div>
@@ -1183,7 +1188,7 @@
     </div>
     <div class="sync-bar">
       <button type="button" class="pill-btn btn-compact" id="btnExportData" style="flex:1;">💾 Sauvegarder / Transférer</button>
-      <button type="button" class="pill-btn btn-compact" id="btnImportData" style="flex:1;">📥 Restaurer une sauvegarde</button>
+      <button type="button" class="pill-btn btn-compact" id="btnImportData" style="flex:1;">📥 Importer (CSV / Texte / JSON)</button>
     </div>
   </div>
 
@@ -1238,8 +1243,9 @@
     <div class="card">
       <div class="card-title">
         <span id="linesTitleTxt">📊 Mes Investissements (Cours en Direct)</span>
-        <div style="display:flex;align-items:center;gap:6px;">
-          <button type="button" class="pill-btn btn-compact" id="btnAddPos" style="border-color:rgba(56,189,248,0.45);color:var(--blue);padding:3px 9px;">+ Ajouter</button>
+        <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;">
+          <button type="button" class="pill-btn btn-compact" id="btnImportLines" style="border-color:rgba(16,185,129,0.45);color:var(--green);padding:3px 8px;">📥 Importer</button>
+          <button type="button" class="pill-btn btn-compact" id="btnAddPos" style="border-color:rgba(56,189,248,0.45);color:var(--blue);padding:3px 8px;">+ Ajouter</button>
           <span class="badge b-blue" id="linesTotalBadge">-- €</span>
         </div>
       </div>
@@ -4219,6 +4225,392 @@
     };
   }
 
+  var DEFAULT_ISIN_BY_TV = {
+    "EURONEXT:AI": "FR0000120073",
+    "NASDAQ:AMD": "US0079031078",
+    "NASDAQ:NVDA": "US67066G1040",
+    "XETR:SXR8": "IE00B5BMR087",
+    "XETR:ENR": "DE000ENER6Y0",
+    "NYSE:BLK": "US09290D1019",
+    "HKEX:1810": "KYG9830T1067",
+    "NASDAQ:MSFT": "US5949181045",
+    "NASDAQ:MSTR": "US5949724083",
+    "ASX:DRO": "AU000000DRO2",
+    "XETR:XDEW": "IE00BLNMYC90",
+    "XETR:PPFB": "IE00B4ND3602",
+    "NASDAQ:AAPL": "US0378331005",
+    "HKEX:1211": "CNE100000296",
+    "NASDAQ:AMZN": "US0231351067",
+    "NASDAQ:QCOM": "US7475251036",
+    "XETR:EUNL": "IE00B4L5Y983",
+    "NYSE:KO": "US1912161007",
+    "NASDAQ:GOOGL": "US02079K3059",
+    "XETR:F3C": "DE0007568578",
+    "EURONEXT:SU": "FR0000121972",
+    "EURONEXT:SAN": "FR0000120578",
+    "EURONEXT:MC": "FR0000121014",
+    "EURONEXT:TTE": "FR0000120271",
+    "XETR:IS3N": "IE00BKM4GZ66",
+    "NYSE:BRK.B": "US0846707026",
+    "NYSE:V": "US92826C8394",
+    "NYSE:JPM": "US46625H1005",
+    "NYSE:LLY": "US5324571083",
+    "NASDAQ:COST": "US22160K1051",
+    "NASDAQ:CRWD": "US22788C1053",
+    "EURONEXT:ASML": "NL0010273215",
+    "NASDAQ:AVGO": "US11135F1012"
+  };
+
+  function normImportTxt(s) {
+    var txt = String(s || "").toLowerCase();
+    try {
+      txt = txt.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    } catch (e) {}
+    return txt.replace(/\s+/g, " ").trim();
+  }
+
+  function parseFlexNum(raw) {
+    if (raw === null || raw === undefined) return NaN;
+    var s = String(raw).replace(/[\u00a0\u202f\s]/g, "").replace(/[€$£]/g, "").replace(/EUR|USD|HKD|AUD/gi, "").trim();
+    if (!s || /%/.test(s) || /^\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}$/.test(s)) return NaN;
+    s = s.replace(/^\+/, "");
+    var lastComma = s.lastIndexOf(",");
+    var lastDot = s.lastIndexOf(".");
+    if (lastComma !== -1 && lastDot !== -1) {
+      if (lastComma > lastDot) {
+        s = s.replace(/\./g, "").replace(",", ".");
+      } else {
+        s = s.replace(/,/g, "");
+      }
+    } else if (lastComma !== -1) {
+      s = s.replace(",", ".");
+    }
+    if (!/^-?\d+(\.\d+)?$/.test(s)) return NaN;
+    var n = parseFloat(s);
+    return isFinite(n) ? n : NaN;
+  }
+
+  function splitCsvLine(line, delim) {
+    var out = [];
+    var cur = "";
+    var inQ = false;
+    for (var i = 0; i < line.length; i++) {
+      var ch = line.charAt(i);
+      if (ch === "\"") {
+        if (inQ && line.charAt(i + 1) === "\"") { cur += "\""; i++; }
+        else inQ = !inQ;
+      } else if (ch === delim && !inQ) {
+        out.push(cur.trim());
+        cur = "";
+      } else {
+        cur += ch;
+      }
+    }
+    out.push(cur.trim());
+    return out;
+  }
+
+  function matchBrokerAsset(rowRaw, rowCells) {
+    var rawStr = String(rowRaw || "");
+    var upper = rawStr.toUpperCase();
+    var norm = normImportTxt(rawStr);
+
+    // 1. Correspondance exacte ISIN
+    var isinMatches = upper.match(/\b[A-Z]{2}[A-Z0-9]{9}[0-9]\b/g) || [];
+    for (var im = 0; im < isinMatches.length; im++) {
+      var isin = isinMatches[im];
+      if (isin === "FR0000120073") {
+        if (norm.indexOf("trade republic") >= 0 || /\btr\b/.test(norm)) {
+          return { kind: "pos", pos: findPosById("ai_tr") || findPosById("ai_pea") };
+        }
+        return { kind: "pos", pos: findPosById("ai_pea") || findPosById("ai_tr") };
+      }
+      if (isin === "IE00B4L5Y983") {
+        if (norm.indexOf("#2") >= 0) {
+          return { kind: "pos", pos: findPosById("msci2") || findPosById("msci1") };
+        }
+        return { kind: "pos", pos: findPosById("msci1") || findPosById("msci2") };
+      }
+      for (var pIdx = 0; pIdx < positions.length; pIdx++) {
+        if (DEFAULT_ISIN_BY_TV[positions[pIdx].tv] === isin) {
+          return { kind: "pos", pos: positions[pIdx] };
+        }
+      }
+      for (var dIdx = 0; dIdx < DISCOVERY_POOL.length; dIdx++) {
+        if (DEFAULT_ISIN_BY_TV[DISCOVERY_POOL[dIdx].tv] === isin) {
+          return { kind: "discovery", disc: DISCOVERY_POOL[dIdx] };
+        }
+      }
+    }
+
+    // 2. Correspondance par symbole TradingView ou Ticker exact dans les cellules
+    var cellTokens = (rowCells && rowCells.length > 0) ? rowCells.map(function(c) { return c.trim().toUpperCase(); }) : [];
+    for (var tIdx = 0; tIdx < positions.length; tIdx++) {
+      var pt = positions[tIdx];
+      if (upper.indexOf(pt.tv) >= 0 || cellTokens.indexOf(pt.ticker.toUpperCase()) >= 0 || cellTokens.indexOf(pt.ticker.split(".")[0].toUpperCase()) >= 0) {
+        if (pt.tv === "EURONEXT:AI" && (norm.indexOf("trade republic") >= 0 || /\btr\b/.test(norm))) {
+          return { kind: "pos", pos: findPosById("ai_tr") || pt };
+        }
+        if (pt.tv === "XETR:EUNL" && norm.indexOf("#2") >= 0) {
+          return { kind: "pos", pos: findPosById("msci2") || pt };
+        }
+        return { kind: "pos", pos: pt };
+      }
+    }
+
+    // 3. Correspondance par nom / alias (triés du plus long au plus court pour éviter les collisions S&P 500 vs Equal Weight)
+    var patterns = [];
+    var extraAliases = {
+      "ai_pea": ["air liquide pea", "air liquide fortuneo", "air liquide"],
+      "ai_tr": ["air liquide trade republic", "air liquide tr"],
+      "mstr": ["strategy a", "microstrategy"],
+      "sp500": ["s&p 500 eur", "sp 500 eur", "ishares core s&p 500", "sxr8"],
+      "xdew": ["s&p 500 equal weight", "sp 500 equal weight", "xtrackers s&p 500 equal", "xdew"],
+      "gold": ["physical gold", "ishares physical gold", "ppfb"],
+      "msci1": ["core msci world #1", "core msci world", "msci world #1", "msci world", "eunl"],
+      "msci2": ["core msci world usd (acc) #2", "msci world #2"],
+      "googl": ["alphabet (a)", "alphabet", "google"],
+      "ko": ["coca-cola", "coca cola"],
+      "enr": ["siemens energy"],
+      "blk": ["blackrock"],
+      "msft": ["microsoft"],
+      "nvda": ["nvidia"],
+      "amzn": ["amazon.com", "amazon"],
+      "aapl": ["apple"],
+      "qcom": ["qualcomm"],
+      "xiaomi": ["xiaomi"],
+      "dro": ["droneshield"],
+      "sfc": ["sfc energy"]
+    };
+
+    for (var pi = 0; pi < positions.length; pi++) {
+      var p = positions[pi];
+      var baseN = normImportTxt(p.name.replace(/\([^)]*\)/g, ""));
+      if (baseN.length >= 3) patterns.push({ key: baseN, kind: "pos", pos: p });
+      var fullN = normImportTxt(p.name);
+      if (fullN.length >= 3) patterns.push({ key: fullN, kind: "pos", pos: p });
+      var als = extraAliases[p.id] || [];
+      for (var ai = 0; ai < als.length; ai++) {
+        patterns.push({ key: als[ai], kind: "pos", pos: p });
+      }
+    }
+    for (var di = 0; di < DISCOVERY_POOL.length; di++) {
+      var dp = DISCOVERY_POOL[di];
+      var dn = normImportTxt(dp.name);
+      if (dn.length >= 3) patterns.push({ key: dn, kind: "discovery", disc: dp });
+    }
+
+    patterns.sort(function(a, b) { return b.key.length - a.key.length; });
+    for (var k = 0; k < patterns.length; k++) {
+      var pat = patterns[k];
+      if (norm.indexOf(pat.key) >= 0) {
+        if (pat.pos && pat.pos.id === "ai_pea" && (norm.indexOf("trade republic") >= 0 || /\btr\b/.test(norm))) {
+          return { kind: "pos", pos: findPosById("ai_tr") || pat.pos, matchedText: pat.key };
+        }
+        return { kind: pat.kind, pos: pat.pos, disc: pat.disc, matchedText: pat.key };
+      }
+    }
+    return null;
+  }
+
+  function extractQtyAndCostFromText(text, matchedText) {
+    var clean = String(text || "");
+    if (matchedText) {
+      var escM = matchedText.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      clean = clean.replace(new RegExp(escM, "ig"), " ");
+    }
+    clean = clean
+      .replace(/\b[A-Z]{2}[A-Z0-9]{9}[0-9]\b/g, " ")
+      .replace(/[A-Z]+:[A-Z0-9.\-]+/g, " ")
+      .replace(/[+\-]?\d+(?:[.,]\d+)?\s*%/g, " ")
+      .replace(/\b\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}\b/g, " ");
+
+    var explicitQty = NaN;
+    var qMatch = clean.match(/(\d+(?:[\s\u00a0.,]\d+)?)\s*(?:actions?|parts?|titres?|pcs?|units?)\b/i)
+      || clean.match(/(?:qt[eé]|quantit[eé]|qty|parts?)\s*[:=]\s*(\d+(?:[\s\u00a0.,]\d+)?)/i);
+    if (qMatch) {
+      explicitQty = parseFlexNum(qMatch[1]);
+    }
+
+    var nums = [];
+    var tokRx = /(?:^|[\s;|(\[])(-?\d[\d\s\u00a0\u202f.,]*\d|\d)(?:\s*[€$])?(?=$|[\s;|)\],€$])/g;
+    var tm;
+    while ((tm = tokRx.exec(clean)) !== null) {
+      var val = parseFlexNum(tm[1]);
+      if (isFinite(val) && val >= 0) nums.push(val);
+    }
+
+    var qty = !isNaN(explicitQty) ? explicitQty : (nums.length >= 1 ? nums[0] : NaN);
+    var cost = null;
+    if (!isNaN(qty)) {
+      if (qty === 0) {
+        cost = 0;
+      } else if (nums.length >= 2) {
+        // Si qMatch a pris le nombre à la position 0, le second nombre est souvent le montant investi ou PRU
+        var secondNum = (!isNaN(explicitQty) && Math.abs(nums[0] - explicitQty) > 0.0001) ? nums[0] : nums[1];
+        if (isFinite(secondNum) && secondNum >= 0) cost = secondNum;
+      }
+    }
+    return { qty: qty, cost: cost };
+  }
+
+  function parseBrokerImport(rawText) {
+    var txt = String(rawText || "").replace(/\r\n/g, "\n").trim();
+    if (!txt) return { type: "empty", entries: [] };
+    if (txt.charAt(0) === "{") {
+      try {
+        var obj = JSON.parse(txt);
+        if (obj && typeof obj === "object" && (obj.positions || obj.customPositions)) {
+          var pCount = Object.keys(obj.positions || {}).length + (Array.isArray(obj.customPositions) ? obj.customPositions.length : 0);
+          return { type: "json", data: obj, count: pCount };
+        }
+      } catch (e) {}
+    }
+
+    var lines = txt.split("\n").map(function(l) { return l.trim(); }).filter(function(l) { return l.length > 0; });
+    if (lines.length === 0) return { type: "empty", entries: [] };
+
+    // Détection d'en-tête CSV/TSV
+    var delim = null;
+    var headerIdx = -1;
+    var cols = { qty: -1, cost: -1, pru: -1, isin: -1, name: -1 };
+    var candidatesDelim = [";", "\t", "|", ","];
+
+    for (var li = 0; li < Math.min(6, lines.length); li++) {
+      for (var di = 0; di < candidatesDelim.length; di++) {
+        var d = candidatesDelim[di];
+        if (lines[li].indexOf(d) === -1) continue;
+        var cells = splitCsvLine(lines[li], d);
+        if (cells.length < 2) continue;
+        var hasQtyHdr = false, hasNameHdr = false;
+        var tmpCols = { qty: -1, cost: -1, pru: -1, isin: -1, name: -1 };
+        for (var ci = 0; ci < cells.length; ci++) {
+          var cn = normImportTxt(cells[ci]);
+          if (/\d/.test(cn)) continue;
+          if (/^(quantite|qte|qty|parts?|nombre|titres?|shares)(\s*\(.*\))?$/.test(cn) || /\b(quantite|qte)\b/.test(cn)) { tmpCols.qty = ci; hasQtyHdr = true; }
+          else if (/(montant investi|prix de revient total|investi|cout total|cost)/.test(cn)) { tmpCols.cost = ci; }
+          else if (/\b(pru|prix de revient|prix moyen|avg price)\b/.test(cn)) { tmpCols.pru = ci; }
+          else if (/\bisin\b/.test(cn)) { tmpCols.isin = ci; hasNameHdr = true; }
+          else if (/^(libelle|nom|valeur|titre|actif|designation|name|symbol|ticker)$/.test(cn)) { tmpCols.name = ci; hasNameHdr = true; }
+        }
+        if (hasQtyHdr && hasNameHdr) {
+          delim = d;
+          headerIdx = li;
+          cols = tmpCols;
+          break;
+        }
+      }
+      if (delim) break;
+    }
+
+    if (!delim) {
+      // Détecter délimiteur simple sans en-tête (ex: "NVIDIA ; 50 ; 5200")
+      var sample = lines[0];
+      if (sample.indexOf(";") >= 0) delim = ";";
+      else if (sample.indexOf("\t") >= 0) delim = "\t";
+      else if (sample.indexOf("|") >= 0) delim = "|";
+    }
+
+    var entries = [];
+    var seenKeys = {};
+
+    for (var i = (headerIdx >= 0 ? headerIdx + 1 : 0); i < lines.length; i++) {
+      var line = lines[i];
+      var rowCells = delim ? splitCsvLine(line, delim) : null;
+      var match = matchBrokerAsset(line, rowCells);
+      if (!match) continue;
+
+      var qty = NaN;
+      var cost = null;
+
+      if (headerIdx >= 0 && rowCells && cols.qty >= 0 && cols.qty < rowCells.length) {
+        qty = parseFlexNum(rowCells[cols.qty]);
+        if (cols.cost >= 0 && cols.cost < rowCells.length) {
+          var cVal = parseFlexNum(rowCells[cols.cost]);
+          if (isFinite(cVal) && cVal >= 0) cost = cVal;
+        } else if (cols.pru >= 0 && cols.pru < rowCells.length && isFinite(qty)) {
+          var pVal = parseFlexNum(rowCells[cols.pru]);
+          if (isFinite(pVal) && pVal >= 0) cost = Math.round(qty * pVal * 100) / 100;
+        }
+      } else if (rowCells && rowCells.length >= 2) {
+        var numsInCells = [];
+        for (var rc = 0; rc < rowCells.length; rc++) {
+          var nv = parseFlexNum(rowCells[rc]);
+          if (isFinite(nv) && nv >= 0) numsInCells.push(nv);
+        }
+        if (numsInCells.length >= 1) qty = numsInCells[0];
+        if (numsInCells.length >= 2) cost = numsInCells[1];
+      } else {
+        var ext = extractQtyAndCostFromText(line, match.matchedText);
+        qty = ext.qty;
+        cost = ext.cost;
+        // Support copier-coller multi-lignes (Nom ligne i, Quantité ligne i+1 ou i+2)
+        if (isNaN(qty)) {
+          for (var look = 1; look <= 2 && (i + look) < lines.length; look++) {
+            var nextL = lines[i + look];
+            if (matchBrokerAsset(nextL, null)) break;
+            var extNext = extractQtyAndCostFromText(nextL, null);
+            if (!isNaN(extNext.qty)) {
+              qty = extNext.qty;
+              if (extNext.cost !== null && cost === null) cost = extNext.cost;
+              i += look;
+              break;
+            }
+          }
+        }
+      }
+
+      if (!isFinite(qty) || qty < 0) continue;
+      if (qty === 0) cost = 0;
+
+      var uniqueKey = match.pos ? ("pos:" + match.pos.id) : ("disc:" + match.disc.tv);
+      if (seenKeys[uniqueKey]) continue;
+      seenKeys[uniqueKey] = true;
+
+      entries.push({
+        kind: match.kind,
+        pos: match.pos || null,
+        disc: match.disc || null,
+        name: match.pos ? getDisplayPosInfo(match.pos).name : match.disc.name,
+        qty: qty,
+        cost: cost
+      });
+    }
+
+    return { type: entries.length > 0 ? "broker" : "unknown", entries: entries };
+  }
+
+  function updateImportPreview() {
+    var box = document.getElementById("syncCodeBox");
+    var prev = document.getElementById("syncImportPreview");
+    var zeroWrap = document.getElementById("syncZeroMissingWrap");
+    if (!box || !prev) return;
+    var val = String(box.value || "").trim();
+    if (!val) {
+      prev.style.display = "none";
+      if (zeroWrap) zeroWrap.style.display = "none";
+      return;
+    }
+    var res = parseBrokerImport(val);
+    prev.style.display = "block";
+    if (res.type === "json") {
+      prev.style.color = "var(--green)";
+      prev.textContent = "✅ Sauvegarde complète Copilote détectée (" + res.count + " lignes).";
+      if (zeroWrap) zeroWrap.style.display = "none";
+    } else if (res.type === "broker") {
+      prev.style.color = "var(--green)";
+      var sampleNames = res.entries.slice(0, 4).map(function(e) {
+        return e.name.split(" (")[0] + " (" + e.qty + ")";
+      }).join(", ");
+      prev.textContent = "✅ " + res.entries.length + " ligne(s) reconnue(s) : " + sampleNames + (res.entries.length > 4 ? "…" : "");
+      if (zeroWrap) zeroWrap.style.display = "flex";
+    } else {
+      prev.style.color = "var(--amber)";
+      prev.textContent = "⚠️ Aucune ligne reconnue — vérifiez le nom/ISIN et la quantité (ex : NVIDIA ; 47,74 ; 4725).";
+      if (zeroWrap) zeroWrap.style.display = "none";
+    }
+  }
+
   function openSyncModal(mode) {
     var modal = document.getElementById("syncModal");
     var titleEl = document.getElementById("syncModalTitle");
@@ -4226,13 +4618,19 @@
     var box = document.getElementById("syncCodeBox");
     var expBtns = document.getElementById("syncExportActions");
     var impBtns = document.getElementById("syncImportActions");
+    var prev = document.getElementById("syncImportPreview");
+    var zeroWrap = document.getElementById("syncZeroMissingWrap");
+    var zeroChk = document.getElementById("chkImportZeroMissing");
     if (!modal || !box) return;
 
     if (mode === "import") {
-      titleEl.textContent = "📥 Restaurer une sauvegarde";
-      subEl.textContent = "Collez le code copié depuis votre autre appareil, ou choisissez un fichier .json :";
+      titleEl.textContent = "📥 Importer facilement";
+      subEl.textContent = "Collez votre tableau Fortuneo / Trade Republic / Excel (ou texte simple comme « NVIDIA 47,74 ») ou choisissez un fichier .csv / .txt / .json :";
       box.readOnly = false;
       box.value = "";
+      if (prev) prev.style.display = "none";
+      if (zeroWrap) zeroWrap.style.display = "none";
+      if (zeroChk) zeroChk.checked = false;
       expBtns.style.display = "none";
       impBtns.style.display = "flex";
     } else {
@@ -4240,6 +4638,8 @@
       subEl.textContent = "Copiez ce code (ou téléchargez le .json) pour retrouver vos parts, ajouts et réglages sur PC, téléphone ou nouvelle APK :";
       box.readOnly = true;
       box.value = JSON.stringify(buildBackupPayload());
+      if (prev) prev.style.display = "none";
+      if (zeroWrap) zeroWrap.style.display = "none";
       expBtns.style.display = "flex";
       impBtns.style.display = "none";
     }
@@ -4287,60 +4687,131 @@
   }
 
   function applyImportText(rawText) {
-    try {
-      var parsed = JSON.parse(String(rawText || "").trim());
-      if (!parsed || typeof parsed !== "object") throw new Error("invalid");
-
-      // Reconstruire positions par défaut + positions ajoutées
-      var nextPositions = defaultPositions.map(function(defP) {
-        var existing = findPosById(defP.id) || {};
-        var imp = (parsed.positions && parsed.positions[defP.id]) || {};
-        return buildPositionObj(defP, {
-          qty: typeof imp.qty === "number" ? imp.qty : existing.qty,
-          cost: typeof imp.cost === "number" ? imp.cost : existing.cost,
-          livePriceEUR: existing.livePriceEUR,
-          dayPct: existing.dayPct,
-          marketSession: existing.marketSession,
-          isLive: existing.isLive
+    var res = parseBrokerImport(rawText);
+    if (res.type === "json") {
+      try {
+        var parsed = res.data;
+        var nextPositions = defaultPositions.map(function(defP) {
+          var existing = findPosById(defP.id) || {};
+          var imp = (parsed.positions && parsed.positions[defP.id]) || {};
+          return buildPositionObj(defP, {
+            qty: typeof imp.qty === "number" ? imp.qty : existing.qty,
+            cost: typeof imp.cost === "number" ? imp.cost : existing.cost,
+            livePriceEUR: existing.livePriceEUR,
+            dayPct: existing.dayPct,
+            marketSession: existing.marketSession,
+            isLive: existing.isLive
+          });
         });
-      });
 
-      if (Array.isArray(parsed.customPositions)) {
-        for (var i = 0; i < parsed.customPositions.length; i++) {
-          var cp = parsed.customPositions[i];
-          if (!cp || !cp.id || !cp.tv || !cp.name) continue;
-          cp.isCustom = true;
-          nextPositions.push(buildPositionObj(cp, { qty: cp.qty, cost: cp.cost }));
+        if (Array.isArray(parsed.customPositions)) {
+          for (var i = 0; i < parsed.customPositions.length; i++) {
+            var cp = parsed.customPositions[i];
+            if (!cp || !cp.id || !cp.tv || !cp.name) continue;
+            cp.isCustom = true;
+            nextPositions.push(buildPositionObj(cp, { qty: cp.qty, cost: cp.cost }));
+          }
+        }
+
+        positions.length = 0;
+        for (var k = 0; k < nextPositions.length; k++) {
+          positions.push(nextPositions[k]);
+        }
+
+        if (typeof parsed.goal === "number" && parsed.goal >= 100) state.goal = parsed.goal;
+        if (typeof parsed.dca === "number" && parsed.dca >= 0) state.dca = parsed.dca;
+        if (parsed.rateMode === "auto" || parsed.rateMode === "custom") state.rateMode = parsed.rateMode;
+        if (typeof parsed.customRate === "number" && parsed.customRate >= 0) state.customRate = parsed.customRate;
+        if (typeof parsed.amount === "number" && parsed.amount >= 1) state.amount = parsed.amount;
+        if (typeof parsed.horizon === "string") state.horizon = parsed.horizon;
+        if (typeof parsed.horizonLabel === "string") state.horizonLabel = parsed.horizonLabel;
+        if (typeof parsed.horizonVal === "number" && parsed.horizonVal >= 0) state.horizonVal = parsed.horizonVal;
+        if (typeof parsed.horizonUnit === "string") state.horizonUnit = parsed.horizonUnit;
+        if (typeof parsed.horizonHours === "number" && parsed.horizonHours >= 0) state.horizonHours = parsed.horizonHours;
+        if (parsed.donePrios && typeof parsed.donePrios === "object") state.donePrios = parsed.donePrios;
+
+        persistState();
+        syncInvestControlsFromState();
+        renderAll(true);
+        if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
+        closeSyncModal();
+        syncLiveQuotes(false);
+        showToast("✅ Sauvegarde restaurée et synchronisée !");
+        return;
+      } catch (e) {}
+    }
+
+    if (res.type === "broker" && res.entries.length > 0) {
+      var updatedIds = {};
+      var addedCount = 0;
+      for (var bi = 0; bi < res.entries.length; bi++) {
+        var ent = res.entries[bi];
+        if (ent.kind === "pos" && ent.pos) {
+          var tp = ent.pos;
+          updatedIds[tp.id] = true;
+          var oldPx = tp.livePriceEUR || tp.refPriceEUR || 0;
+          var oldQty = tp.qty !== null ? tp.qty : (oldPx > 0 ? tp.baseVal / oldPx : 0);
+          var nextCost = ent.cost;
+          if (nextCost === null) {
+            if (ent.qty <= 0) {
+              nextCost = 0;
+            } else if (oldQty > 0 && tp.cost > 0) {
+              nextCost = Math.round(tp.cost * (ent.qty / oldQty) * 100) / 100;
+            } else if (oldPx > 0) {
+              nextCost = Math.round(ent.qty * oldPx * 100) / 100;
+            } else {
+              nextCost = tp.cost || 0;
+            }
+          }
+          tp.qty = ent.qty;
+          tp.cost = nextCost;
+        } else if (ent.kind === "discovery" && ent.disc && ent.qty > 0) {
+          var dc = ent.disc;
+          var dcCost = ent.cost !== null ? ent.cost : 0;
+          var customId = "custom_" + Date.now() + "_" + bi;
+          updatedIds[customId] = true;
+          positions.push(buildPositionObj({
+            id: customId,
+            account: dc.pea ? "PEA" : "TR",
+            tv: dc.tv,
+            ticker: dc.ticker,
+            currency: dc.currency,
+            refPriceEUR: dcCost > 0 ? (dcCost / ent.qty) : 100,
+            name: dc.name,
+            baseVal: dcCost,
+            cost: dcCost,
+            qty: ent.qty,
+            pole: dc.pole,
+            tag: "buy",
+            action: "Position importée à suivre",
+            why: dc.thesis || "Importée depuis votre courtier.",
+            isCustom: true
+          }, { qty: ent.qty, cost: dcCost }));
+          addedCount++;
         }
       }
 
-      positions.length = 0;
-      for (var k = 0; k < nextPositions.length; k++) {
-        positions.push(nextPositions[k]);
+      var zeroChk = document.getElementById("chkImportZeroMissing");
+      if (zeroChk && zeroChk.checked) {
+        for (var zi = 0; zi < positions.length; zi++) {
+          if (!updatedIds[positions[zi].id]) {
+            positions[zi].qty = 0;
+            positions[zi].cost = 0;
+          }
+        }
       }
 
-      if (typeof parsed.goal === "number" && parsed.goal >= 100) state.goal = parsed.goal;
-      if (typeof parsed.dca === "number" && parsed.dca >= 0) state.dca = parsed.dca;
-      if (parsed.rateMode === "auto" || parsed.rateMode === "custom") state.rateMode = parsed.rateMode;
-      if (typeof parsed.customRate === "number" && parsed.customRate >= 0) state.customRate = parsed.customRate;
-      if (typeof parsed.amount === "number" && parsed.amount >= 1) state.amount = parsed.amount;
-      if (typeof parsed.horizon === "string") state.horizon = parsed.horizon;
-      if (typeof parsed.horizonLabel === "string") state.horizonLabel = parsed.horizonLabel;
-      if (typeof parsed.horizonVal === "number" && parsed.horizonVal >= 0) state.horizonVal = parsed.horizonVal;
-      if (typeof parsed.horizonUnit === "string") state.horizonUnit = parsed.horizonUnit;
-      if (typeof parsed.horizonHours === "number" && parsed.horizonHours >= 0) state.horizonHours = parsed.horizonHours;
-      if (parsed.donePrios && typeof parsed.donePrios === "object") state.donePrios = parsed.donePrios;
-
       persistState();
-      syncInvestControlsFromState();
       renderAll(true);
       if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
       closeSyncModal();
       syncLiveQuotes(false);
-      showToast("✅ Sauvegarde restaurée et synchronisée !");
-    } catch (e) {
-      showToast("⚠️ Code ou fichier de sauvegarde invalide");
+      var msg = "✅ " + res.entries.length + " ligne(s) importée(s)" + (addedCount > 0 ? (" (dont " + addedCount + " nouvelle(s))") : "") + " !";
+      showToast(msg);
+      return;
     }
+
+    showToast("⚠️ Format non reconnu : collez votre tableau CSV / texte courtier ou un fichier .json");
   }
 
   function saveEditModal() {
@@ -4552,7 +5023,7 @@
       openSyncModal("export");
       return;
     }
-    if (e.target.closest("#btnImportData")) {
+    if (e.target.closest("#btnImportData") || e.target.closest("#btnImportLines")) {
       openSyncModal("import");
       return;
     }
@@ -4815,6 +5286,11 @@
       document.getElementById("addAccountSel").value = d.pea ? "PEA" : "TR";
       document.getElementById("addPoleSel").value = d.pole || "etf";
     });
+  }
+
+  var syncCodeBoxEl = document.getElementById("syncCodeBox");
+  if (syncCodeBoxEl) {
+    syncCodeBoxEl.addEventListener("input", updateImportPreview);
   }
 
   var syncFileEl = document.getElementById("syncFileInput");
