@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T15:37:28Z",
+  "updatedAt": "2026-11-19T16:39:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -92,7 +92,18 @@
       "daysLeft": 83
     }
   ],
-  "majorMoves": [],
+  "majorMoves": [
+    {
+      "id": "move_drop_NASDAQ:AMD_20261119",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "changePct": -6.48,
+      "price": 495.78,
+      "currency": "USD",
+      "kind": "drop"
+    }
+  ],
   "items": [
     {
       "id": "758982075e2c9e6e",
@@ -103,16 +114,6 @@
       "pubDate": "Thu, 19 Nov 2026 13:34:00 GMT",
       "pubTs": 1795095240,
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOGU1b0JSVzdjeTQxSG9wZzA1bzNJbkdiWTkyZE14YXRSaGJRbUdlZlF4cVFURWF3R0xBaUEyRjdfM20zc1Y4dmZiajlnYy13TXJIV0FaZzdwQXo4bkFFVDBaWWJJc2d5RVhHY0tCLVVfdUl0RGNIMWFQb19DQnpJNnNZSGlOQzVON3RsZldlbjAtaUdRZGxjNW5DeDVJeXFsaGt3NXNNbFh4SkdDdlVMdw?oc=5"
-    },
-    {
-      "id": "9c2be938c93dc722",
-      "theme": "AMD, NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Pourquoi les actions Nvidia, AMD et Intel s'envolent-elles dans le premarket aujourd'hui ? - TradingView",
-      "source": "TradingView",
-      "pubDate": "Thu, 19 Nov 2026 12:04:29 GMT",
-      "pubTs": 1795089869,
-      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE15TFZNSlRuQXg5TnFXQkt5YWdXSkotLWdpaXhuVjFCZ2xiR253clpKQU1xOS11NEdUekYxb2d5VEF3LXU0RnFtUHBOTVBnZFpNZjFLZ2V1YXIxcTlWVXhiV3k4R2tSdw?oc=5"
     },
     {
       "id": "703b8e7f9d727b10",
@@ -133,6 +134,16 @@
       "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
       "pubTs": 1795021043,
       "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
+    },
+    {
+      "id": "573c434258f0595e",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia publie des résultats trimestriels supérieurs aux attentes - ChannelNews",
+      "source": "ChannelNews",
+      "pubDate": "Wed, 18 Nov 2026 14:20:26 GMT",
+      "pubTs": 1795011626,
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOQlB1c2pSTkdBeWl6SFV5bUtvRl95T2xPRElSaDk3dGdsRGd4Smd5TjJxcThnQVVLR3ViUDdrVDRHbGxFWWo5UGQtT1B5dFlEemRMWjNFS3JaMkhHbXNIdGdicnl0YXhIZ19XY19DVGFWNk5YYkVtM0RfTEdvbV9ibi1FQURYYzVWSVUyZ01KSWZEeUoxVi15VHBhMW5LajA?oc=5"
     },
     {
       "id": "95f03527a1afe4b5",
@@ -179,6 +190,7 @@
     "50778a6a4bce4948",
     "9f10946b84b4984e",
     "758982075e2c9e6e",
-    "9c2be938c93dc722"
+    "9c2be938c93dc722",
+    "move_drop_NASDAQ:AMD_20261119"
   ]
 }
