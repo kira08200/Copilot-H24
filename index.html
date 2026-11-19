@@ -3461,12 +3461,31 @@
     return dd + "/" + mm + " • " + hh + "h" + min;
   }
 
+  function isTvActive(tvSym) {
+    if (!tvSym) return false;
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].tv === tvSym && isPositionActive(positions[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function findLivePosByTv(tvSym) {
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].tv === tvSym && isPositionActive(positions[i]) && positions[i].isLive) {
+        return positions[i];
+      }
+    }
+    return null;
+  }
+
   function getLiveWeightByTv(tvSym) {
     var tot = computeTotals();
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
     var sum = 0;
     for (var i = 0; i < positions.length; i++) {
-      if (positions[i].tv === tvSym) {
+      if (positions[i].tv === tvSym && isPositionActive(positions[i])) {
         sum += getPosMetrics(positions[i]).val;
       }
     }
@@ -3490,13 +3509,17 @@
       return;
     }
 
-    var earnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
+    var rawEarnings = Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : [];
+    var earnings = rawEarnings.filter(function(er) {
+      return !er || !er.tv || isTvActive(er.tv);
+    });
     var remoteMoves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
     var items = Array.isArray(data.items) ? data.items : [];
 
     var movesByTv = {};
     for (var lm = 0; lm < positions.length; lm++) {
       var lp = positions[lm];
+      if (!isPositionActive(lp)) continue;
       if (lp.isLive && typeof lp.dayPct === "number" && (lp.dayPct <= -5 || lp.dayPct >= 7)) {
         var lKind = lp.dayPct <= -5 ? "drop" : "jump";
         if (!movesByTv[lp.tv]) {
@@ -3505,7 +3528,7 @@
           movesByTv[lp.tv] = {
             id: "move_" + lKind + "_" + lp.tv + "_" + lKey,
             tv: lp.tv,
-            name: lp.name,
+            name: getDisplayPosInfo(lp).name,
             weight: getLiveWeightByTv(lp.tv),
             changePct: lp.dayPct,
             kind: lKind
@@ -3515,9 +3538,14 @@
     }
     for (var rm = 0; rm < remoteMoves.length; rm++) {
       var rMv = remoteMoves[rm];
-      if (rMv && rMv.tv && !movesByTv[rMv.tv]) {
-        movesByTv[rMv.tv] = rMv;
+      if (!rMv || !rMv.tv || movesByTv[rMv.tv]) continue;
+      if (!isTvActive(rMv.tv)) continue;
+      // Si on a déjà un cours live (ex: pré-marché / séance en cours) qui n'est plus en choc, ne pas afficher l'ancien choc
+      var liveMatch = findLivePosByTv(rMv.tv);
+      if (liveMatch && typeof liveMatch.dayPct === "number" && liveMatch.dayPct > -5 && liveMatch.dayPct < 7) {
+        continue;
       }
+      movesByTv[rMv.tv] = rMv;
     }
     var majorMoves = Object.keys(movesByTv).map(function(k) { return movesByTv[k]; });
     majorMoves.sort(function(a, b) { return Math.abs(b.changePct || 0) - Math.abs(a.changePct || 0); });
@@ -4164,6 +4192,7 @@
     }
     persistState();
     renderAll(true);
+    if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
     closeEditModal();
     if (newQty === 0) {
       pushAlertLog(
