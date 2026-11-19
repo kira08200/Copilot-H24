@@ -904,6 +904,29 @@
     opacity: 0.56;
     border-style: dashed;
   }
+  .port-baro {
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin: 2px 0 10px;
+  }
+  .port-baro-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .port-baro-lbl {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .port-baro-meta {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
 
   .bottom-nav {
     position: fixed;
@@ -1147,7 +1170,14 @@
         <span id="linesTitleTxt">📊 Mes Investissements (Cours en Direct)</span>
         <span class="badge b-blue" id="linesTotalBadge">-- €</span>
       </div>
-      <div class="sub">Toutes vos positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
+      <div class="port-baro">
+        <div class="port-baro-top">
+          <span class="port-baro-lbl" id="portBaroTitle">📡 Baromètre de vos lignes</span>
+          <span class="badge b-amber" id="portBaroBadge" style="font-size:0.68rem;padding:2px 7px;">--/100</span>
+        </div>
+        <div class="meter-wrap" style="height:6px;margin:5px 0;"><div class="meter-bar" id="portBaroBar" style="width:50%"></div></div>
+        <div class="port-baro-meta" id="portBaroDetail">Synchronisation des cours en direct...</div>
+      </div>
       <div class="pill-row" id="filterRow">
         <button type="button" class="pill-btn active" data-filter="all" id="filterAllBtn">Tous</button>
         <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
@@ -2725,6 +2755,90 @@
     if (state.rateMode === "auto") {
       renderProjections(computeTotals());
     }
+    renderPortfolioBarometer();
+  }
+
+  function computePortfolioBarometer() {
+    var tot = computeTotals();
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var liveCnt = 0, greenCnt = 0;
+    var wDay = 0, wDaySum = 0;
+    var wM1 = 0, wM1Sum = 0;
+    var wRec = 0, wRecSum = 0;
+
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (!isPositionActive(p)) continue;
+      var w = getPosMetrics(p).val / totalVal;
+      if (p.isLive && typeof p.dayPct === "number") {
+        liveCnt++;
+        if (p.dayPct >= 0) greenCnt++;
+        wDay += p.dayPct * w;
+        wDaySum += w;
+      }
+      if (typeof p.perf1M === "number") {
+        wM1 += p.perf1M * w;
+        wM1Sum += w;
+      }
+      if (typeof p.recAll === "number") {
+        wRec += p.recAll * w;
+        wRecSum += w;
+      }
+    }
+
+    if (liveCnt === 0) {
+      return { score: 50, hasLive: false, detail: "Synchronisation des cours en direct..." };
+    }
+
+    var breadthRatio = greenCnt / liveCnt;
+    var portDay = wDaySum > 0 ? (wDay / wDaySum) : 0;
+    var portM1 = wM1Sum > 0 ? (wM1 / wM1Sum) : 0;
+    var portRec = wRecSum > 0 ? (wRec / wRecSum) : 0;
+    var newsInfo = computeNewsSentiment();
+    var newsPts = newsInfo.itemCount > 0 ? clampNum(newsInfo.score * 6, -6, 6) : 0;
+
+    var raw = 50
+      + (breadthRatio - 0.5) * 28
+      + clampNum(portDay * 8, -16, 16)
+      + clampNum(portM1 * 1.5, -16, 16)
+      + clampNum(portRec * 18, -12, 12)
+      + newsPts;
+    var score = Math.round(clampNum(raw, 5, 95));
+
+    var parts = [
+      greenCnt + "/" + liveCnt + " dans le vert",
+      "Jour " + fmtSignedPct(portDay, 2),
+      "1M " + fmtSignedPct(portM1, 1)
+    ];
+    if (newsInfo.itemCount > 0 && Math.abs(newsInfo.score) > 0.15) {
+      parts.push(newsInfo.score > 0 ? "Actus +" : "Actus -");
+    }
+
+    return {
+      score: score,
+      hasLive: true,
+      detail: parts.join(" • ")
+    };
+  }
+
+  function renderPortfolioBarometer() {
+    var info = computePortfolioBarometer();
+    var titleEl = document.getElementById("portBaroTitle");
+    var badgeEl = document.getElementById("portBaroBadge");
+    var barEl = document.getElementById("portBaroBar");
+    var detEl = document.getElementById("portBaroDetail");
+
+    var label = !info.hasLive
+      ? "📡 Baromètre de vos lignes"
+      : (info.score <= 35 ? "🌧️ Vos lignes sous tension" : (info.score <= 65 ? "⚖️ Vos lignes : Climat équilibré" : "☀️ Vos lignes en dynamique haussière"));
+
+    if (titleEl) titleEl.textContent = label;
+    if (barEl) barEl.style.width = info.score + "%";
+    if (badgeEl) {
+      badgeEl.textContent = info.hasLive ? (info.score + "/100") : "--/100";
+      badgeEl.className = "badge " + (info.score <= 35 ? "b-red" : (info.score <= 65 ? "b-amber" : "b-green"));
+    }
+    if (detEl) detEl.textContent = info.detail;
   }
 
   function renderInvest(tot) {
