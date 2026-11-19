@@ -1131,10 +1131,10 @@
 
     <div class="card">
       <div class="card-title">
-        <span>🌍 Baromètre du Climat Boursier (Direct)</span>
+        <span>🌍 Baromètre Mondial des Marchés (Direct)</span>
         <span class="badge b-amber" id="regimeBadge">Live : --/100</span>
       </div>
-      <div class="sub">Calculé automatiquement toutes les 10 s à partir de vos positions actives en direct, du S&amp;P 500 / MSCI World et de la tendance mensuelle :</div>
+      <div class="sub">Indice mondial calculé en direct (US, Europe, Asie, VIX, Or, Dollar &amp; Actus) :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:50%"></div></div>
       <div id="regimeAdvice" class="rec-item"></div>
     </div>
@@ -1419,6 +1419,7 @@
     discoveryUpdatedAt: 0,
     discoveryLoading: false,
     lastNewsData: null,
+    globalBenchmarks: (savedData.globalBenchmarks && typeof savedData.globalBenchmarks === "object") ? savedData.globalBenchmarks : {},
     alertLogs: initialLogs
   };
 
@@ -1495,6 +1496,7 @@
         rateMode: state.rateMode,
         customRate: state.customRate,
         donePrios: state.donePrios,
+        globalBenchmarks: state.globalBenchmarks,
         notifiedNews: state.notifiedNews,
         alertLogs: state.alertLogs.slice(0, 15)
       }));
@@ -2555,61 +2557,132 @@
     setHorizon(code, label, cleanVal, cleanUnit, noToast);
   }
 
+  function clampNum(val, minVal, maxVal) {
+    return Math.max(minVal, Math.min(maxVal, val));
+  }
+
+  function fmtSignedPct(val, dec) {
+    if (typeof val !== "number" || !isFinite(val)) return "-- %";
+    var d = typeof dec === "number" ? dec : 1;
+    return (val >= 0 ? "+" : "") + val.toFixed(d).replace(".", ",") + " %";
+  }
+
   function computeLiveRegime() {
-    var liveCnt = 0, greenCnt = 0;
-    var daySum = 0, m1Sum = 0, m1Cnt = 0, recSum = 0, recCnt = 0;
-    var spDay = null, msciDay = null;
+    var gb = state.globalBenchmarks || {};
+    var eqDefs = [
+      { sym: "XETR:EUNL", w: 0.25 },
+      { sym: "AMEX:SPY", w: 0.25 },
+      { sym: "NASDAQ:QQQ", w: 0.15 },
+      { sym: "TVC:SX5E", w: 0.15 },
+      { sym: "TVC:NI225", w: 0.10 },
+      { sym: "TVC:HSI", w: 0.10 }
+    ];
 
-    for (var i = 0; i < positions.length; i++) {
-      var p = positions[i];
-      if (p.isLive && typeof p.dayPct === "number") {
-        if (p.id === "sp500") spDay = p.dayPct;
-        if (p.id === "msci1" || p.id === "msci2") msciDay = p.dayPct;
-      }
-      if (!isPositionActive(p)) continue;
-      if (p.isLive && typeof p.dayPct === "number") {
-        liveCnt++;
-        if (p.dayPct >= 0) greenCnt++;
-        daySum += p.dayPct;
-      }
-      if (typeof p.perf1M === "number") {
-        m1Sum += p.perf1M;
-        m1Cnt++;
-      }
-      if (typeof p.recAll === "number") {
-        recSum += p.recAll;
-        recCnt++;
-      }
+    var eqSumTrend = 0, eqSumMom = 0, eqW = 0;
+    var breadthScoreSum = 0, breadthCount = 0;
+
+    for (var i = 0; i < eqDefs.length; i++) {
+      var item = eqDefs[i];
+      var b = gb[item.sym];
+      if (!b || typeof b.close !== "number") continue;
+
+      var s50 = typeof b.distSma50 === "number" ? b.distSma50 : 0;
+      var s200 = typeof b.distSma200 === "number" ? b.distSma200 : 0;
+      var p1m = typeof b.perf1M === "number" ? b.perf1M : 0;
+      var p3m = typeof b.perf3M === "number" ? b.perf3M : 0;
+      var chg = typeof b.chg === "number" ? b.chg : 0;
+
+      var trendSub = clampNum(50 + s50 * 2.8 + s200 * 1.4 + p1m * 1.8 + p3m * 0.7 + chg * 3.5, 0, 100);
+      eqSumTrend += trendSub * item.w;
+
+      var rsiSub = typeof b.rsi === "number" ? clampNum((b.rsi - 22) * (100 / 56), 0, 100) : 50;
+      var recSub = typeof b.rec === "number" ? clampNum(50 + b.rec * 48, 0, 100) : 50;
+      eqSumMom += (rsiSub * 0.55 + recSub * 0.45) * item.w;
+      eqW += item.w;
+
+      var brUnit = (chg >= 0 ? 0.3 : 0) + (s50 >= 0 ? 0.4 : 0) + (s200 >= 0 ? 0.3 : 0);
+      breadthScoreSum += brUnit * 100;
+      breadthCount++;
     }
-
-    if (liveCnt === 0) {
-      return { score: 50, detail: "Synchronisation du flux boursier en cours..." };
-    }
-
-    var breadthRatio = greenCnt / liveCnt;
-    var avgDay = daySum / liveCnt;
-    var benchDay = spDay !== null ? spDay : (msciDay !== null ? msciDay : avgDay);
-    var avgM1 = m1Cnt > 0 ? (m1Sum / m1Cnt) : 0;
-    var avgRec = recCnt > 0 ? (recSum / recCnt) : 0;
 
     var newsInfo = computeNewsSentiment();
-    var newsPoints = newsInfo.itemCount > 0 ? Math.max(-6, Math.min(6, newsInfo.score * 6)) : 0;
+    var newsScore100 = newsInfo.itemCount > 0 ? clampNum(50 + newsInfo.score * 38, 10, 90) : 50;
 
-    var raw = 50
-      + (breadthRatio - 0.5) * 32
-      + Math.max(-16, Math.min(16, benchDay * 7))
-      + Math.max(-14, Math.min(14, avgM1 * 1.4))
-      + Math.max(-10, Math.min(10, avgRec * 18))
-      + newsPoints;
+    if (eqW < 0.4) {
+      // Secours uniquement avant la première synchro mondiale
+      var hasPos = false;
+      for (var pIdx = 0; pIdx < positions.length; pIdx++) {
+        if (positions[pIdx].isLive) { hasPos = true; break; }
+      }
+      if (!hasPos) {
+        return { score: 50, hasGlobal: false, detail: "Synchronisation des indices mondiaux en cours..." };
+      }
+      return {
+        score: Math.round(50 + newsInfo.score * 10),
+        hasGlobal: false,
+        detail: "Indices mondiaux en attente de réponse..."
+      };
+    }
 
-    var score = Math.round(Math.max(12, Math.min(95, raw)));
-    var spTxt = benchDay !== null ? ((benchDay >= 0 ? "+" : "") + benchDay.toFixed(2) + " %") : "0,00 %";
-    var m1Txt = (avgM1 >= 0 ? "+" : "") + avgM1.toFixed(1) + " %";
-    var newsTag = newsInfo.itemCount > 0
-      ? (" • Actus " + (newsInfo.score > 0.15 ? "positives" : (newsInfo.score < -0.15 ? "prudentes" : "neutres")))
-      : "";
-    var detail = "Direct : " + greenCnt + "/" + liveCnt + " lignes actives dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt + newsTag;
-    return { score: score, detail: detail };
+    var trendPillar = (eqSumTrend / eqW) * 0.68 + (breadthScoreSum / breadthCount) * 0.32;
+    var momPillar = eqSumMom / eqW;
+
+    var vixB = gb["TVC:VIX"];
+    var vixPillar = 50;
+    if (vixB && typeof vixB.close === "number" && vixB.close > 0) {
+      var vixBase = clampNum(96 - (vixB.close - 11) * 4.2, 0, 100);
+      var vixSmaAdj = typeof vixB.distSma20 === "number" ? clampNum(-vixB.distSma20 * 0.45, -12, 12) : 0;
+      vixPillar = clampNum(vixBase + vixSmaAdj, 0, 100);
+    }
+
+    var goldB = gb["TVC:GOLD"];
+    var spyB = gb["AMEX:SPY"];
+    var qqqB = gb["NASDAQ:QQQ"];
+    var dxyB = gb["TVC:DXY"];
+    var safePillar = 50;
+    if (goldB && spyB && typeof spyB.perf1M === "number" && typeof goldB.perf1M === "number") {
+      var q1m = (qqqB && typeof qqqB.perf1M === "number") ? qqqB.perf1M : spyB.perf1M;
+      var eq1m = (spyB.perf1M + q1m) / 2;
+      var spreadGold = eq1m - goldB.perf1M;
+      safePillar = clampNum(50 + spreadGold * 2.2, 5, 95);
+    }
+    if (dxyB && typeof dxyB.distSma50 === "number") {
+      safePillar = clampNum(safePillar - clampNum(dxyB.distSma50 * 2.5, -10, 10), 0, 100);
+    }
+
+    var rawScore = (vixPillar * 0.25) + (trendPillar * 0.32) + (momPillar * 0.20) + (safePillar * 0.13) + (newsScore100 * 0.10);
+    var score = Math.round(clampNum(rawScore, 5, 95));
+
+    var usChg = (spyB && typeof spyB.chg === "number")
+      ? ((qqqB && typeof qqqB.chg === "number") ? (spyB.chg + qqqB.chg) / 2 : spyB.chg)
+      : null;
+    var euB = gb["TVC:SX5E"];
+    var jpB = gb["TVC:NI225"];
+    var hkB = gb["TVC:HSI"];
+    var asiaChg = null;
+    if (jpB && hkB && typeof jpB.chg === "number" && typeof hkB.chg === "number") {
+      asiaChg = (jpB.chg + hkB.chg) / 2;
+    } else if (jpB && typeof jpB.chg === "number") {
+      asiaChg = jpB.chg;
+    } else if (hkB && typeof hkB.chg === "number") {
+      asiaChg = hkB.chg;
+    }
+
+    var parts = [];
+    if (usChg !== null) parts.push("US " + fmtSignedPct(usChg, 1));
+    if (euB && typeof euB.chg === "number") parts.push("Europe " + fmtSignedPct(euB.chg, 1));
+    if (asiaChg !== null) parts.push("Asie " + fmtSignedPct(asiaChg, 1));
+    if (vixB && typeof vixB.close === "number") parts.push("VIX " + vixB.close.toFixed(1).replace(".", ","));
+    if (goldB && typeof goldB.chg === "number") parts.push("Or " + fmtSignedPct(goldB.chg, 1));
+    if (newsInfo.itemCount > 0 && Math.abs(newsInfo.score) > 0.15) {
+      parts.push(newsInfo.score > 0 ? "Actus +" : "Actus -");
+    }
+
+    return {
+      score: score,
+      hasGlobal: true,
+      detail: parts.join(" • ")
+    };
   }
 
   function updateLiveRegime() {
@@ -2622,21 +2695,35 @@
     var badgeEl = document.getElementById("regimeBadge");
     if (badgeEl) {
       badgeEl.textContent = "Live : " + score + "/100";
-      badgeEl.className = "badge " + (score <= 35 ? "b-red" : (score <= 68 ? "b-amber" : "b-green"));
+      badgeEl.className = "badge " + (score <= 28 ? "b-red" : (score <= 55 ? "b-amber" : "b-green"));
     }
 
-    var tot = computeTotals();
-    var top3 = getTopCandidates(tot, 168);
-    var topNames = top3.map(function(c) { return "<strong>" + getDisplayPosInfo(c.pos).name + "</strong>"; }).join(", ");
-    var liveLine = "<div style='font-size:0.76rem;color:var(--blue);margin-top:4px;font-weight:600;'>📡 " + liveInfo.detail + "</div>";
+    var phaseLabel, stanceTxt;
+    if (score <= 24) {
+      phaseLabel = "😰 Peur Extrême Mondiale";
+      stanceTxt = "Stress élevé sur les places mondiales : priorité aux pôles défensifs (Piliers & Or) et achats étalés par ordres limites.";
+    } else if (score <= 44) {
+      phaseLabel = "🌧️ Prudence / Peur";
+      stanceTxt = "Tendance mondiale prudente : renforcement privilégié sur vos ETF cœur mondiaux et valeurs défensives sous-pondérées.";
+    } else if (score <= 56) {
+      phaseLabel = "⚖️ Climat Mondial Neutre";
+      stanceTxt = "Marchés mondiaux partagés : équilibre maintenu entre diversification ETF et opportunités ciblées.";
+    } else if (score <= 74) {
+      phaseLabel = "☀️ Optimisme Mondial";
+      stanceTxt = "Appétit modéré pour le risque : le moteur reste ouvert à la croissance tout en conservant le cap ETF.";
+    } else {
+      phaseLabel = "🔥 Euphorie Mondiale";
+      stanceTxt = "Marchés surachetés : évitez de courir après les hausses et privilégiez les ordres limites sur repli.";
+    }
+
+    var liveLine = "<div style='font-size:0.75rem;color:var(--blue);margin-top:4px;font-weight:600;'>🌐 " + liveInfo.detail + "</div>";
     var box = document.getElementById("regimeAdvice");
     if (box) {
-      var phaseLabel = score <= 35 ? "🌪️ Marché sous Tension" : (score <= 68 ? "⚖️ Climat Sélectif &amp; Équilibré" : "☀️ Momentum Haussier");
       box.innerHTML = "<strong>" + phaseLabel + " (" + score + "/100)</strong>" + liveLine +
-        "<p style='font-size:0.83rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Allocation adaptée automatiquement en temps réel vers vos lignes prioritaires : " + (topNames || "aucune ligne active éligible") + ".</p>";
+        "<p style='font-size:0.81rem;color:var(--muted);margin-top:5px;line-height:1.42;'>" + stanceTxt + "</p>";
     }
     if (state.rateMode === "auto") {
-      renderProjections(tot);
+      renderProjections(computeTotals());
     }
   }
 
@@ -3615,6 +3702,18 @@
       });
   }
 
+  var GLOBAL_BENCHMARKS = [
+    "TVC:VIX",
+    "AMEX:SPY",
+    "NASDAQ:QQQ",
+    "TVC:SX5E",
+    "TVC:NI225",
+    "TVC:HSI",
+    "TVC:GOLD",
+    "TVC:DXY",
+    "XETR:EUNL"
+  ];
+
   function fetchTradingViewH24Batch() {
     var tickers = [
       "FX_IDC:EURUSD",
@@ -3624,6 +3723,11 @@
     for (var i = 0; i < positions.length; i++) {
       if (tickers.indexOf(positions[i].tv) === -1) {
         tickers.push(positions[i].tv);
+      }
+    }
+    for (var g = 0; g < GLOBAL_BENCHMARKS.length; g++) {
+      if (tickers.indexOf(GLOBAL_BENCHMARKS[g]) === -1) {
+        tickers.push(GLOBAL_BENCHMARKS[g]);
       }
     }
     var payload = JSON.stringify({
@@ -3799,6 +3903,35 @@
               applyQuoteToPosition(p, chosenPrice, ccy, chosenChg, sessionLabel, finalFx);
             }
           }
+
+          var nextGlobal = Object.assign({}, state.globalBenchmarks || {});
+          for (var gb = 0; gb < GLOBAL_BENCHMARKS.length; gb++) {
+            var gSym = GLOBAL_BENCHMARKS[gb];
+            var gd = map[gSym];
+            if (!gd || typeof gd[1] !== "number" || gd[1] <= 0) continue;
+            var gClose = gd[1];
+            var gChg = typeof gd[2] === "number" ? gd[2] : 0;
+            var gPhase = getExchangePhase(gSym);
+            if (gPhase === "pre" && typeof gd[4] === "number" && gd[4] > 0) {
+              gChg = typeof gd[5] === "number" ? gd[5] : gChg;
+            } else if (gPhase === "post" && typeof gd[6] === "number" && gd[6] > 0) {
+              gChg = typeof gd[7] === "number" ? gd[7] : gChg;
+            }
+            nextGlobal[gSym] = {
+              close: gClose,
+              chg: gChg,
+              rsi: typeof gd[8] === "number" ? gd[8] : null,
+              rec: typeof gd[9] === "number" ? gd[9] : null,
+              perfW: typeof gd[11] === "number" ? gd[11] : null,
+              perf1M: typeof gd[12] === "number" ? gd[12] : null,
+              perf3M: typeof gd[26] === "number" ? gd[26] : null,
+              distSma20: (typeof gd[23] === "number" && gd[23] > 0) ? ((gClose - gd[23]) / gd[23]) * 100 : null,
+              distSma50: (typeof gd[24] === "number" && gd[24] > 0) ? ((gClose - gd[24]) / gd[24]) * 100 : null,
+              distSma200: (typeof gd[25] === "number" && gd[25] > 0) ? ((gClose - gd[25]) / gd[25]) * 100 : null
+            };
+          }
+          state.globalBenchmarks = nextGlobal;
+
           return finalFx;
         });
       })
