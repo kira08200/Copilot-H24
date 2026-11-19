@@ -926,6 +926,16 @@
     font-size: 0.72rem;
     color: var(--muted);
     font-weight: 600;
+    line-height: 1.38;
+  }
+  .meter-scale {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.62rem;
+    color: var(--muted);
+    opacity: 0.85;
+    margin: -2px 0 6px;
+    font-weight: 600;
   }
 
   .bottom-nav {
@@ -1159,6 +1169,7 @@
       </div>
       <div class="sub">Indice mondial calculé en direct (US, Europe, Asie, VIX, Or, Dollar &amp; Actus) :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:50%"></div></div>
+      <div class="meter-scale"><span>0 Peur</span><span>50 Neutre</span><span>100 Euphorie</span></div>
       <div id="regimeAdvice" class="rec-item"></div>
     </div>
   </div>
@@ -1172,10 +1183,11 @@
       </div>
       <div class="port-baro">
         <div class="port-baro-top">
-          <span class="port-baro-lbl" id="portBaroTitle">📡 Baromètre de vos lignes</span>
+          <span class="port-baro-lbl" id="portBaroTitle">📡 Forme de vos lignes (aujourd'hui &amp; 30 j)</span>
           <span class="badge b-amber" id="portBaroBadge" style="font-size:0.68rem;padding:2px 7px;">--/100</span>
         </div>
         <div class="meter-wrap" style="height:6px;margin:5px 0;"><div class="meter-bar" id="portBaroBar" style="width:50%"></div></div>
+        <div class="meter-scale" style="margin-bottom:4px;"><span>0 Baisse</span><span>50 Neutre</span><span>100 Hausse</span></div>
         <div class="port-baro-meta" id="portBaroDetail">Synchronisation des cours en direct...</div>
       </div>
       <div class="pill-row" id="filterRow">
@@ -1196,11 +1208,15 @@
         <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
       </div>
       <div class="market-grid" id="marketSessionsGrid" style="margin-bottom:10px;"></div>
-      <div class="pill-row" id="alertFilterRow" style="margin-bottom:0;">
+      <div class="pill-row" id="alertFilterRow" style="margin-bottom:8px;">
         <button type="button" class="pill-btn btn-compact active" data-afilter="all">Tout voir</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="news">⚡ Actus</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="earnings">📊 Chiffres</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="macro">🏛️ Macro</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <button type="button" class="pill-btn btn-compact" id="btnEnablePush" style="flex:1;">🔔 Activer les notifications</button>
+        <button type="button" class="pill-btn btn-compact" id="btnNotif" style="display:none;">⚡ Tester</button>
       </div>
     </div>
 
@@ -1444,6 +1460,7 @@
     editingId: null,
     activeTab: savedData.activeTab || "cockpit",
     notifiedNews: savedData.notifiedNews || {},
+    notifsEnabled: savedData.notifsEnabled === true,
     discoveryResults: [],
     discoveryIdx: 0,
     discoveryUpdatedAt: 0,
@@ -1528,6 +1545,7 @@
         donePrios: state.donePrios,
         globalBenchmarks: state.globalBenchmarks,
         notifiedNews: state.notifiedNews,
+        notifsEnabled: state.notifsEnabled,
         alertLogs: state.alertLogs.slice(0, 15)
       }));
     } catch (e) {}
@@ -1548,26 +1566,32 @@
     persistState();
     renderAlertLogs();
 
-    if (sendSystemNotif && "Notification" in window && Notification.permission === "granted") {
-      var notifOpts = {
-        body: entry.timestamp + " — " + desc,
-        icon: "./icon-192.png",
-        badge: "./icon-192.png",
-        tag: "copilote-alert-" + Date.now()
-      };
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.ready
-          .then(function(reg) {
-            if (reg && reg.showNotification) {
-              return reg.showNotification(title, notifOpts);
-            }
-            new Notification(title, notifOpts);
-          })
-          .catch(function() {
-            try { new Notification(title, notifOpts); } catch (e) {}
-          });
-      } else {
-        try { new Notification(title, notifOpts); } catch (e) {}
+    if (sendSystemNotif && isNotifActive()) {
+      if (isAndroidBridge()) {
+        try {
+          window.CopiloteAndroid.notify(title, desc);
+        } catch (e) {}
+      } else if ("Notification" in window && Notification.permission === "granted") {
+        var notifOpts = {
+          body: entry.timestamp + " — " + desc,
+          icon: "./icon-192.png",
+          badge: "./icon-192.png",
+          tag: "copilote-alert-" + Date.now()
+        };
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.ready
+            .then(function(reg) {
+              if (reg && reg.showNotification) {
+                return reg.showNotification(title, notifOpts);
+              }
+              new Notification(title, notifOpts);
+            })
+            .catch(function() {
+              try { new Notification(title, notifOpts); } catch (e) {}
+            });
+        } else {
+          try { new Notification(title, notifOpts); } catch (e) {}
+        }
       }
     }
   }
@@ -2806,12 +2830,12 @@
     var score = Math.round(clampNum(raw, 5, 95));
 
     var parts = [
-      greenCnt + "/" + liveCnt + " dans le vert",
-      "Jour " + fmtSignedPct(portDay, 2),
-      "1M " + fmtSignedPct(portM1, 1)
+      "Aujourd'hui : " + greenCnt + "/" + liveCnt + " en hausse (" + fmtSignedPct(portDay, 2) + ")",
+      "Sur 30 jours : " + fmtSignedPct(portM1, 1)
     ];
-    if (newsInfo.itemCount > 0 && Math.abs(newsInfo.score) > 0.15) {
-      parts.push(newsInfo.score > 0 ? "Actus +" : "Actus -");
+    if (newsInfo.itemCount > 0) {
+      var actusLabel = newsInfo.score > 0.15 ? "positives" : (newsInfo.score < -0.15 ? "prudentes" : "neutres");
+      parts.push("Actualités : " + actusLabel);
     }
 
     return {
@@ -2829,8 +2853,12 @@
     var detEl = document.getElementById("portBaroDetail");
 
     var label = !info.hasLive
-      ? "📡 Baromètre de vos lignes"
-      : (info.score <= 35 ? "🌧️ Vos lignes sous tension" : (info.score <= 65 ? "⚖️ Vos lignes : Climat équilibré" : "☀️ Vos lignes en dynamique haussière"));
+      ? "📡 Forme de vos lignes (aujourd'hui & 30 j)"
+      : (info.score <= 35
+          ? "🌧️ Forme de vos lignes (jour & 30 j) : Baisse"
+          : (info.score <= 65
+              ? "⚖️ Forme de vos lignes (jour & 30 j) : Équilibré"
+              : "☀️ Forme de vos lignes (jour & 30 j) : Hausse"));
 
     if (titleEl) titleEl.textContent = label;
     if (barEl) barEl.style.width = info.score + "%";
@@ -4158,37 +4186,122 @@
     }
   }
 
+  function isAndroidBridge() {
+    return typeof window.CopiloteAndroid === "object" &&
+      window.CopiloteAndroid !== null &&
+      typeof window.CopiloteAndroid.notify === "function";
+  }
+
+  function isNotifActive() {
+    if (isAndroidBridge()) {
+      try {
+        return !!(window.CopiloteAndroid.isGranted() && window.CopiloteAndroid.isBgEnabled());
+      } catch (e) {
+        return !!state.notifsEnabled;
+      }
+    }
+    return !!state.notifsEnabled && ("Notification" in window) && Notification.permission === "granted";
+  }
+
+  function updateNotifUi() {
+    var btn = document.getElementById("btnEnablePush");
+    var testBtn = document.getElementById("btnNotif");
+    var active = isNotifActive();
+    if (btn) {
+      btn.classList.toggle("active", active);
+      if (active) {
+        btn.textContent = isAndroidBridge()
+          ? "🔔 Notifications actives (H24 arrière-plan)"
+          : "🔔 Notifications actives";
+      } else {
+        btn.textContent = "🔔 Activer les notifications";
+      }
+    }
+    if (testBtn) {
+      testBtn.style.display = active ? "inline-block" : "none";
+    }
+  }
+
+  window.__onAndroidNotifPerm = function(granted) {
+    state.notifsEnabled = !!granted;
+    persistState();
+    updateNotifUi();
+    if (granted) {
+      showToast("🔔 Notifications Android activées (suivi H24 en arrière-plan) !");
+      pushAlertLog(
+        "Notifications Copilote H24 activées",
+        "Vous recevrez les alertes d'actualités, résultats et gros mouvements, y compris en arrière-plan.",
+        "Système Actif",
+        "b-green",
+        true
+      );
+    } else {
+      showToast("⚠️ Autorisez les notifications pour Copilote H24 dans les réglages Android");
+    }
+  };
+
   function enablePushNotifications() {
+    if (isNotifActive()) {
+      state.notifsEnabled = false;
+      if (isAndroidBridge()) {
+        try { window.CopiloteAndroid.setBgEnabled(false); } catch (e) {}
+      }
+      persistState();
+      updateNotifUi();
+      showToast("🔕 Notifications mises en pause");
+      return;
+    }
+
+    if (isAndroidBridge()) {
+      try {
+        window.CopiloteAndroid.requestPermission();
+      } catch (e) {
+        showToast("⚠️ Impossible de demander la permission Android");
+      }
+      return;
+    }
+
     if (!("Notification" in window)) {
-      showToast("Notifications système non supportées sur ce navigateur");
+      showToast("⚠️ Notifications natives disponibles via la nouvelle APK Android ou Chrome/Edge");
       return;
     }
     Notification.requestPermission().then(function(perm) {
       if (perm === "granted") {
-        showToast("🔔 Notifications d'actualités activées !");
+        state.notifsEnabled = true;
+        persistState();
+        updateNotifUi();
+        showToast("🔔 Notifications activées !");
         pushAlertLog(
-          "Notifications d'actualités activées",
-          "Vous recevrez uniquement les alertes d'actualités et catalyseurs majeurs (sans alertes de cours).",
+          "Notifications activées",
+          "Vous recevrez les alertes d'actualités essentielles, résultats à 48h et gros mouvements.",
           "Système Actif",
           "b-green",
           true
         );
       } else {
+        state.notifsEnabled = false;
+        persistState();
+        updateNotifUi();
         showToast("⚠️ Autorisez les notifications dans les réglages du navigateur");
       }
     });
   }
 
   function testNotification() {
-    var dt = formatDateTimeNow();
-    pushAlertLog(
-      "Actualité : Catalyseur Semi-conducteurs & Macro US",
-      "Alerte d'actualité importante sur vos positions (sans alerte de variation de cours).",
-      "Actualité",
-      "b-blue",
-      true
-    );
-    showToast("🔔 Alerte d'actualité enregistrée le " + dt);
+    if (!isNotifActive()) {
+      showToast("Activez d'abord les notifications");
+      return;
+    }
+    var title = "🔔 Test Copilote H24";
+    var body = "Les notifications fonctionnent bien sur cet appareil (" + formatDateTimeNow() + ").";
+    if (isAndroidBridge()) {
+      try {
+        window.CopiloteAndroid.notify(title, body);
+      } catch (e) {}
+    } else {
+      pushAlertLog(title, body, "Test", "b-green", true);
+    }
+    showToast("✅ Notification de test envoyée !");
   }
 
   function triggerInstall() {
@@ -4488,6 +4601,7 @@
   switchTab(initialTab, true);
 
   syncInvestControlsFromState();
+  updateNotifUi();
   renderAll(false);
   updateMarketSessions();
   renderAlertLogs();
