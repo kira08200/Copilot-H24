@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T09:44:30Z",
+  "updatedAt": "2026-11-19T10:39:38Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -137,16 +137,6 @@
       "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     },
     {
-      "id": "e5a8e3334b54b581",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Résultats de NVIDIA : des prévisions rassurantes et une action toujours bon marché - Morningstar",
-      "source": "Morningstar",
-      "pubDate": "Wed, 18 Nov 2026 15:58:40 GMT",
-      "pubTs": 1795017520,
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPYmJEQUtkd0VRU1lwQk9ZWE5GRTFoNk82NDVBYThiNjBVYlMxTF9xcUxwZnZNeEYyU3hFR2FRVWYydlJuREJFUWR1ZWNEczYxZVRxS0NJWWxTSzVJamdLV2U2VU9PaHMyTnpEbEFOaHhLVnNRYkI1dU5GaXh4cWVxbGlmekNpNERqdlNXZy1LQ0hIMTRoUDA5TUNrR2cxYTZFSkRoWmplazNMeTlDbDJCaF81RlQ5M2Y0b3M5T3dwYw?oc=5"
-    },
-    {
       "id": "573c434258f0595e",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -165,6 +155,16 @@
       "pubDate": "Wed, 18 Nov 2026 06:54:00 GMT",
       "pubTs": 1794984840,
       "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxPMVB3SUF4TzZhNkZxclQ3cUx6dEg3Wi1NcTU5azJoLU5Zd1ZYTlV1T1JyeWZpaGYtTVo3ajBwakVmc0J6Qkp0YlV3cWR0YkhEMWoxbnlKY09WcmhzeHVmYWQ4ZVBtSFpISmgtRTNFZlRVcHFqMVUyVjU1UUhpMElmUXVqOXpxejZTNnFZNFk5SHNfUUJUTmlIUzhXS0VfX3laY3c5aFhvYnE3WXpJQk5laF8wdHdmOGMxYmRTWW12R2drelRsM0taTjdta0lNbVM2YTVKUXR5eURTeFllUldoMG8tazBDeG5DbnfSAe8BQVVfeXFMUG5OY3NfRnN1eGNhZmxtcXlsTGtZaVkzLUpKQzhaanpWWVNxT2xtRm5DejJPUUxhdllWWDhnLUZxaWVrX3MyNW5NSEVfNnFXUWc1Y0RmVW9pbGtkaDNCOGJCUjRtOGFLNEZJN2F0UDV2OGJDbHRad2dCYWVrSFh3aFNoSHdWUHdfbWVuNVdhZmJQMzQ5M3ZEYkEzT21FbUluMWh3eEk2WWZENThjbVJac1VOOGxQSEo0QjhnY2c0X1RJWHFXb1ZYZjA3U29vOGZlNHJaNk1Dc2JYbjRhbEFGcGotTGpTQklnYlZ4YWJJV0k?oc=5"
+    },
+    {
+      "id": "559d6a661a9c9354",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia dévoile des résultats records, son chiffre d'affaires bondit de 103 % en un an - ABC Bourse",
+      "source": "ABC Bourse",
+      "pubDate": "Tue, 17 Nov 2026 21:35:32 GMT",
+      "pubTs": 1794951332,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQX2trVjlvRHhwZW50azhfUlpRZTBnSkplLTQ3VGJmcU45N0dMWVlVb1FzWWtlX0hfd1dlXzd4ZTNId3RENkswUG9oTGNhSXNHb1NkdE9YdmhIUTROWkN4a2QwUXREZGF3eW5rQ0FUeDJleUdzVENBdV9wUE1BWlU0NGZJVTNKVDRMX0FVMWpCeTJiVHRNZzFjODRXWTgyUC1rLVVMNDJfblFReENBcW8tVy1adDRLRWFU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -182,6 +182,7 @@
     "fef0c782d8ef4894",
     "move_drop_NASDAQ:MSTR_20261119",
     "3fa253c33d63f82f",
-    "95f03527a1afe4b5"
+    "95f03527a1afe4b5",
+    "559d6a661a9c9354"
   ]
 }
