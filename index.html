@@ -996,7 +996,8 @@
     <input type="number" step="any" class="field-input" id="editCostInput">
     <div class="pill-row" style="margin-top:14px;margin-bottom:0;">
       <button type="button" class="pill-btn" id="btnCancelEdit">Annuler</button>
-      <button type="button" class="pill-btn" id="btnDeletePos" style="display:none;border-color:rgba(239,68,68,0.45);color:var(--red);">🗑️ Supprimer</button>
+      <button type="button" class="pill-btn" id="btnZeroPos" title="Mettre à 0 part sans supprimer la ligne">0 part</button>
+      <button type="button" class="pill-btn" id="btnDeletePos" style="border-color:rgba(239,68,68,0.45);color:var(--red);">🗑️ Supprimer</button>
       <button type="button" class="pill-btn active" id="btnSaveEdit">Enregistrer</button>
     </div>
   </div>
@@ -1462,7 +1463,10 @@
     };
   }
 
-  var positions = defaultPositions.map(function(p) {
+  var initialDeletedIds = (savedData.deletedIds && typeof savedData.deletedIds === "object") ? savedData.deletedIds : {};
+  var positions = defaultPositions.filter(function(p) {
+    return !initialDeletedIds[p.id];
+  }).map(function(p) {
     var s = (savedData.positions && savedData.positions[p.id]) || {};
     return buildPositionObj(p, s);
   });
@@ -1517,6 +1521,7 @@
     discoveryUpdatedAt: 0,
     discoveryLoading: false,
     lastNewsData: null,
+    deletedIds: initialDeletedIds,
     globalBenchmarks: (savedData.globalBenchmarks && typeof savedData.globalBenchmarks === "object") ? savedData.globalBenchmarks : {}
   };
 
@@ -1601,6 +1606,7 @@
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         positions: map,
         customPositions: customList,
+        deletedIds: state.deletedIds,
         lastSync: state.lastSync,
         activeTab: state.activeTab,
         amount: state.amount,
@@ -1632,7 +1638,8 @@
         body: formatDateTimeNow() + " — " + desc,
         icon: "./icon-192.png",
         badge: "./icon-192.png",
-        tag: "copilote-alert-" + Date.now()
+        tag: "copilote-grouped-alert",
+        renotify: true
       };
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.ready
@@ -3353,7 +3360,10 @@
         "<div class='rec-top'><strong>" + disp.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + disp.action + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
-          "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
+          "<div style='display:flex;gap:5px;align-items:center;'>" +
+            "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
+            "<button type='button' class='q-edit-btn q-del-btn' data-del-id='" + p.id + "' style='color:var(--red);border-color:rgba(239,68,68,0.35);padding:3px 7px;' title='Supprimer cette ligne'>🗑️</button>" +
+          "</div>" +
         "</div>" +
         metaLine +
         "<div style='font-size:0.83rem;line-height:1.45;'>" + disp.why + "</div>" +
@@ -3435,6 +3445,79 @@
     return (pct < 0.1 ? pct.toFixed(2) : pct.toFixed(1)).replace(".", ",") + " %";
   }
 
+  var NEWS_STOPWORDS_FR = {
+    apres:1, avant:1, avec:1, dans:1, pour:1, sans:1, sous:1, vers:1, chez:1,
+    entre:1, cette:1, leurs:1, sont:1, mais:1, plus:1, moins:1, tres:1, tout:1,
+    tous:1, comme:1, alors:1, depuis:1, contre:1, selon:1, avoir:1, etre:1,
+    bourse:1, bourses:1, marche:1, marches:1, action:1, actions:1, mondiale:1,
+    mondiales:1, publie:1, annonce:1, affiche:1, termine:1, cloture:1
+  };
+  var NEWS_ENTITIES = [
+    "anthropic", "openai", "spacex", "databricks", "stripe", "tsmc", "asml",
+    "nvidia", "air liquide", "microsoft", "alphabet", "google", "blackrock",
+    "apple", "amazon", "xiaomi", "byd", "siemens", "droneshield", "microstrategy",
+    "fed", "bce"
+  ];
+
+  function extractClientNewsSig(item) {
+    var raw = String((item && item.title) || "");
+    var dashIdx = raw.lastIndexOf(" - ");
+    if (dashIdx > 12 && raw.length - dashIdx <= 35) {
+      raw = raw.slice(0, dashIdx);
+    }
+    var low = raw.toLowerCase();
+    var norm = low.normalize ? low.normalize("NFD").replace(/[\u0300-\u036f]/g, "") : low;
+    var words = norm.match(/[a-z0-9]{4,}/g) || [];
+    var tokens = [];
+    for (var i = 0; i < words.length; i++) {
+      if (!NEWS_STOPWORDS_FR[words[i]]) tokens.push(words[i]);
+    }
+    var ents = [];
+    for (var j = 0; j < NEWS_ENTITIES.length; j++) {
+      var e = NEWS_ENTITIES[j];
+      if (low.indexOf(e) !== -1) {
+        ents.push(e === "google" ? "alphabet" : e);
+      }
+    }
+    return { tokens: tokens, ents: ents, theme: String((item && item.theme) || "") };
+  }
+
+  function dedupeClientNewsItems(rawItems) {
+    if (!Array.isArray(rawItems) || rawItems.length <= 1) return rawItems || [];
+    var kept = [];
+    var sigs = [];
+    for (var i = 0; i < rawItems.length; i++) {
+      var it = rawItems[i];
+      if (!it || !it.title) continue;
+      var sig = extractClientNewsSig(it);
+      var isDup = false;
+      for (var k = 0; k < sigs.length; k++) {
+        var prev = sigs[k];
+        for (var e1 = 0; e1 < sig.ents.length; e1++) {
+          if (prev.ents.indexOf(sig.ents[e1]) !== -1) {
+            isDup = true;
+            break;
+          }
+        }
+        if (isDup) break;
+        var common = 0;
+        for (var t1 = 0; t1 < sig.tokens.length; t1++) {
+          if (prev.tokens.indexOf(sig.tokens[t1]) !== -1) common++;
+        }
+        var minLen = Math.min(sig.tokens.length, prev.tokens.length);
+        if (common >= 2 && minLen > 0 && (common / minLen) >= 0.45) {
+          isDup = true;
+          break;
+        }
+      }
+      if (!isDup) {
+        kept.push(it);
+        sigs.push(sig);
+      }
+    }
+    return kept;
+  }
+
   function renderDeepNews(data, skipRecalc) {
     var box = document.getElementById("deepAnalysisBox");
     var movesBox = document.getElementById("majorMovesBox");
@@ -3455,7 +3538,7 @@
       return !er || !er.tv || isTvActive(er.tv);
     });
     var remoteMoves = Array.isArray(data.majorMoves) ? data.majorMoves : [];
-    var items = Array.isArray(data.items) ? data.items : [];
+    var items = dedupeClientNewsItems(Array.isArray(data.items) ? data.items : []);
 
     var movesByTv = {};
     for (var lm = 0; lm < positions.length; lm++) {
@@ -3504,7 +3587,7 @@
 
     var topHtml = "";
     var seenNewNews = false;
-    var notifyCount = 0;
+    var pendingAlerts = [];
 
     if (majorMoves.length > 0) {
       var mRows = "";
@@ -3518,13 +3601,10 @@
         if (mv.id && !state.notifiedNews["mv_" + mv.id]) {
           state.notifiedNews["mv_" + mv.id] = true;
           seenNewNews = true;
-          if (notifyCount < 2) {
-            notifyCount++;
-            sendSystemAlert(
-              (mv.kind === "drop" ? "Grosse chute : " : "Forte hausse : ") + mv.name + " (" + mvSign + mv.changePct.toFixed(1) + " %)",
-              "Mouvement majeur détecté sur votre ligne (" + (liveMvWeight || "") + ")."
-            );
-          }
+          pendingAlerts.push({
+            title: (mv.kind === "drop" ? "📉 Chute : " : "🚀 Hausse : ") + mv.name + " (" + mvSign + mv.changePct.toFixed(1) + " %)",
+            body: "Mouvement majeur sur votre ligne (" + (liveMvWeight || "") + ")."
+          });
         }
       }
       topHtml += "<div class='rec-item' style='border-color:rgba(245,158,11,0.35);margin-bottom:10px;'>" +
@@ -3555,13 +3635,10 @@
         if (er.daysLeft <= 2 && er.id && !state.notifiedNews["earn_" + er.id]) {
           state.notifiedNews["earn_" + er.id] = true;
           seenNewNews = true;
-          if (notifyCount < 2) {
-            notifyCount++;
-            sendSystemAlert(
-              "Chiffres à venir : " + er.name,
-              "Publication prévue le " + er.dateStr + " (" + dLabel + ")."
-            );
-          }
+          pendingAlerts.push({
+            title: "📊 Chiffres " + er.name + " (" + dLabel + ")",
+            body: "Publication prévue le " + er.dateStr + "."
+          });
         }
       }
       box.innerHTML = "<div class='earn-grid'>" + eCells + "</div>";
@@ -3591,18 +3668,31 @@
         if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
           state.notifiedNews["news_" + it.id] = true;
           seenNewNews = true;
-          if (notifyCount < 2) {
-            notifyCount++;
-            sendSystemAlert(
-              "Actu " + (it.theme || "Portefeuille"),
-              it.title
-            );
-          }
+          pendingAlerts.push({
+            title: "⚡ " + (it.theme || "Marchés"),
+            body: it.title
+          });
         }
       }
       list.innerHTML = "<div class='news-group'>" + rowsHtml + "</div>";
     } else {
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
+    }
+    if (pendingAlerts.length === 1) {
+      sendSystemAlert(pendingAlerts[0].title, pendingAlerts[0].body);
+    } else if (pendingAlerts.length > 1) {
+      var digestLines = [];
+      var maxDigest = Math.min(pendingAlerts.length, 4);
+      for (var dIdx = 0; dIdx < maxDigest; dIdx++) {
+        digestLines.push("• " + pendingAlerts[dIdx].title + " : " + pendingAlerts[dIdx].body);
+      }
+      if (pendingAlerts.length > maxDigest) {
+        digestLines.push("• +" + (pendingAlerts.length - maxDigest) + " autre(s) alerte(s)");
+      }
+      sendSystemAlert(
+        "🔔 Copilote H24 • " + pendingAlerts.length + " nouveautés",
+        digestLines.join("\n")
+      );
     }
     if (seenNewNews) persistState();
     if (!skipRecalc) {
@@ -4062,7 +4152,9 @@
     var estQty = target.qty !== null ? target.qty : (m.val / price);
     var subEl = document.getElementById("editModalSub");
     var delBtn = document.getElementById("btnDeletePos");
-    if (delBtn) delBtn.style.display = target.isCustom ? "inline-block" : "none";
+    if (delBtn) delBtn.style.display = "inline-block";
+    var zeroBtn = document.getElementById("btnZeroPos");
+    if (zeroBtn) zeroBtn.style.display = estQty > 0 ? "inline-block" : "none";
 
     if (typeof prefillBuyAmt === "number" && isFinite(prefillBuyAmt) && prefillBuyAmt > 0) {
       var addedQty = price > 0 ? (prefillBuyAmt / price) : 0;
@@ -4077,7 +4169,7 @@
       document.getElementById("editQtyInput").value = Number(estQty.toFixed(6));
       document.getElementById("editCostInput").value = Number(target.cost.toFixed(2));
       if (subEl) {
-        subEl.textContent = "Modifiez votre nombre de parts si vous avez renforcé ou vendu (0 pour solder) : la valeur s'actualise en direct.";
+        subEl.textContent = "Modifiez votre nombre de parts (0 pour solder sans effacer, ou Supprimer pour retirer la ligne).";
       }
     }
     document.getElementById("editModal").classList.add("open");
@@ -4088,12 +4180,23 @@
     document.getElementById("editModal").classList.remove("open");
   }
 
-  function deleteEditingPosition() {
+  function zeroEditingPosition() {
     if (!state.editingId) return;
+    document.getElementById("editQtyInput").value = "0";
+    document.getElementById("editCostInput").value = "0";
+    saveEditModal();
+  }
+
+  function deletePositionById(posId) {
+    if (!posId) return;
     var removedName = "";
     for (var i = 0; i < positions.length; i++) {
-      if (positions[i].id === state.editingId && positions[i].isCustom) {
-        removedName = positions[i].name;
+      if (positions[i].id === posId) {
+        removedName = getDisplayPosInfo(positions[i]).name;
+        if (!positions[i].isCustom) {
+          if (!state.deletedIds) state.deletedIds = {};
+          state.deletedIds[posId] = true;
+        }
         positions.splice(i, 1);
         break;
       }
@@ -4102,14 +4205,25 @@
     persistState();
     renderAll(true);
     if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
-    closeEditModal();
-    showToast("🗑️ Position supprimée : " + removedName);
+    if (state.editingId === posId) closeEditModal();
+    showToast("🗑️ Ligne supprimée : " + removedName);
+  }
+
+  function deleteEditingPosition() {
+    if (!state.editingId) return;
+    deletePositionById(state.editingId);
   }
 
   function populateAddPresets() {
     var sel = document.getElementById("addPresetSel");
     if (!sel) return;
     var html = "<option value=''>-- Saisie libre --</option>";
+    for (var dIdx = 0; dIdx < defaultPositions.length; dIdx++) {
+      var defP = defaultPositions[dIdx];
+      if (!findPosById(defP.id)) {
+        html += "<option value='def:" + escHtml(defP.id) + "'>↺ " + escHtml(defP.name) + " (" + escHtml(defP.tv) + ")</option>";
+      }
+    }
     for (var i = 0; i < DISCOVERY_POOL.length; i++) {
       var d = DISCOVERY_POOL[i];
       if (isTvActive(d.tv)) continue;
@@ -4164,6 +4278,23 @@
     }
     if (!isFinite(cost) || cost < 0) cost = 0;
 
+    var presetVal = String((document.getElementById("addPresetSel") && document.getElementById("addPresetSel").value) || "");
+    if (presetVal.indexOf("def:") === 0) {
+      var defId = presetVal.slice(4);
+      for (var dIdx = 0; dIdx < defaultPositions.length; dIdx++) {
+        if (defaultPositions[dIdx].id === defId) {
+          if (state.deletedIds) delete state.deletedIds[defId];
+          positions.push(buildPositionObj(defaultPositions[dIdx], { qty: qty, cost: cost }));
+          persistState();
+          renderAll(true);
+          closeAddModal();
+          syncLiveQuotes(false);
+          showToast("✅ " + name + " restauré — synchronisation du cours...");
+          return;
+        }
+      }
+    }
+
     var refPrice = (cost > 0 && qty > 0) ? (cost / qty) : 100;
     var newDef = {
       id: "custom_" + Date.now(),
@@ -4211,6 +4342,7 @@
       exportedAt: new Date().toISOString(),
       positions: posMap,
       customPositions: customList,
+      deletedIds: state.deletedIds || {},
       goal: state.goal,
       dca: state.dca,
       rateMode: state.rateMode,
@@ -4696,7 +4828,11 @@
     if (res.type === "json") {
       try {
         var parsed = res.data;
-        var nextPositions = defaultPositions.map(function(defP) {
+        var nextDeleted = (parsed.deletedIds && typeof parsed.deletedIds === "object") ? parsed.deletedIds : {};
+        state.deletedIds = nextDeleted;
+        var nextPositions = defaultPositions.filter(function(defP) {
+          return !nextDeleted[defP.id];
+        }).map(function(defP) {
           var existing = findPosById(defP.id) || {};
           var imp = (parsed.positions && parsed.positions[defP.id]) || {};
           return buildPositionObj(defP, {
@@ -4871,6 +5007,31 @@
     return !!state.notifsEnabled && ("Notification" in window) && Notification.permission === "granted";
   }
 
+  function syncServiceWorkerNotifState() {
+    if (!("serviceWorker" in navigator)) return;
+    navigator.serviceWorker.ready
+      .then(function(reg) {
+        if (!reg) return;
+        var active = isNotifActive();
+        if (reg.active) {
+          try {
+            reg.active.postMessage({
+              type: "COPILOTE_SYNC_STATE",
+              enabled: active,
+              notifiedIds: Object.keys(state.notifiedNews || {})
+            });
+          } catch (e) {}
+        }
+        if (active && reg.periodicSync && typeof reg.periodicSync.register === "function") {
+          reg.periodicSync.register("copilote-news-sync", { minInterval: 15 * 60 * 1000 }).catch(function() {});
+        }
+        if (active && reg.sync && typeof reg.sync.register === "function") {
+          reg.sync.register("copilote-news-check").catch(function() {});
+        }
+      })
+      .catch(function() {});
+  }
+
   function updateNotifUi() {
     var btn = document.getElementById("btnEnablePush");
     var testBtn = document.getElementById("btnNotif");
@@ -4879,8 +5040,8 @@
       btn.classList.toggle("active", active);
       if (active) {
         btn.textContent = isAndroidBridge()
-          ? "🔔 Notifications actives (H24 arrière-plan)"
-          : "🔔 Notifications actives";
+          ? "🔔 Notifications actives (H24 veille & arrière-plan)"
+          : "🔔 Notifications actives (veille & direct)";
       } else {
         btn.textContent = "🔔 Activer les notifications";
       }
@@ -4888,6 +5049,7 @@
     if (testBtn) {
       testBtn.style.display = active ? "inline-block" : "none";
     }
+    syncServiceWorkerNotifState();
   }
 
   window.__onAndroidNotifPerm = function(granted) {
@@ -4982,6 +5144,11 @@
       triggerInstall();
       return;
     }
+    var delBtn = e.target.closest(".q-del-btn");
+    if (delBtn) {
+      deletePositionById(delBtn.getAttribute("data-del-id"));
+      return;
+    }
     var editBtn = e.target.closest(".q-edit-btn");
     if (editBtn) {
       openEditModal(editBtn.getAttribute("data-edit-id"));
@@ -4997,6 +5164,10 @@
     }
     if (e.target.closest("#btnCancelEdit") || e.target.id === "editModal") {
       closeEditModal();
+      return;
+    }
+    if (e.target.closest("#btnZeroPos")) {
+      zeroEditingPosition();
       return;
     }
     if (e.target.closest("#btnDeletePos")) {
@@ -5282,7 +5453,22 @@
   var addPresetEl = document.getElementById("addPresetSel");
   if (addPresetEl) {
     addPresetEl.addEventListener("change", function() {
-      var idx = parseInt(addPresetEl.value, 10);
+      var val = String(addPresetEl.value || "");
+      if (val.indexOf("def:") === 0) {
+        var defId = val.slice(4);
+        for (var di = 0; di < defaultPositions.length; di++) {
+          if (defaultPositions[di].id === defId) {
+            var dp = defaultPositions[di];
+            document.getElementById("addNameInput").value = dp.name;
+            document.getElementById("addTvInput").value = dp.tv;
+            document.getElementById("addCcySel").value = dp.currency || "EUR";
+            document.getElementById("addAccountSel").value = dp.account || "TR";
+            document.getElementById("addPoleSel").value = dp.pole || "etf";
+            return;
+          }
+        }
+      }
+      var idx = parseInt(val, 10);
       if (isNaN(idx) || !DISCOVERY_POOL[idx]) return;
       var d = DISCOVERY_POOL[idx];
       document.getElementById("addNameInput").value = d.name;
@@ -5333,6 +5519,8 @@
     if (!document.hidden) {
       if (!state.isSyncing) syncLiveQuotes(false);
       fetchDeepNews(false);
+    } else {
+      syncServiceWorkerNotifState();
     }
   });
 

@@ -38,24 +38,35 @@ RSS_FEEDS = [
         "theme": "Cœur Portefeuille (Air Liquide / IA)",
         "tagCls": "b-purple",
         "priority": 3,
+        "isGlobal": False,
         "url": "https://news.google.com/rss/search?q=(%22Air+Liquide%22+OR+NVIDIA+OR+AMD+OR+%22Siemens+Energy%22)+(r%C3%A9sultats+OR+chiffres+OR+trimestriel+OR+pr%C3%A9visions+OR+contrat+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
         "theme": "Big Tech & ETF (MSFT / GOOGL / BLK)",
         "tagCls": "b-blue",
         "priority": 2,
+        "isGlobal": False,
         "url": "https://news.google.com/rss/search?q=(Microsoft+OR+Alphabet+OR+BlackRock+OR+Apple+OR+Amazon)+(r%C3%A9sultats+OR+chiffres+OR+IA+OR+earnings+OR+guidance)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
         "theme": "Macro, Fed, BCE & Inflation",
         "tagCls": "b-amber",
         "priority": 2,
+        "isGlobal": True,
         "url": "https://news.google.com/rss/search?q=(Fed+OR+BCE+OR+inflation+OR+%22taux+directeurs%22+OR+%22S%26P+500%22)+(d%C3%A9cision+OR+chiffres+OR+CPI+OR+PCE)&hl=fr&gl=FR&ceid=FR:fr",
+    },
+    {
+        "theme": "IPO, IA & Géants Mondiaux",
+        "tagCls": "b-amber",
+        "priority": 2,
+        "isGlobal": True,
+        "url": "https://news.google.com/rss/search?q=(Anthropic+OR+OpenAI+OR+SpaceX+OR+IPO+OR+%22introduction+en+bourse%22+OR+TSMC+OR+ASML+OR+%22Wall+Street%22)+(IPO+OR+bourse+OR+valorisation+OR+milliards+OR+lev%C3%A9e+OR+krach+OR+record)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
         "theme": "Asie & Spéculatif (Xiaomi / BYD / MSTR)",
         "tagCls": "b-green",
         "priority": 1,
+        "isGlobal": False,
         "url": "https://news.google.com/rss/search?q=(Xiaomi+OR+BYD+OR+MicroStrategy+OR+DroneShield)+(r%C3%A9sultats+OR+chiffres+OR+ventes+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
 ]
@@ -67,7 +78,24 @@ ESSENTIAL_WORDS = [
     "forecast", "outlook", "profit", "beat", "miss", "livraison", "ventes",
     "chute", "plonge", "dévisse", "envole", "bondit", "record", "alerte",
     "warning", "partenariat", "sanction", "droits de douane", "opa",
+    "ipo", "introduction en bourse", "cotation", "levée de fonds", "valorisation",
+    "milliard", "anthropic", "openai", "spacex", "tsmc", "asml", "wall street",
+    "nasdaq", "s&p 500", "krach", "semi-conducteur",
 ]
+
+GLOBAL_TOPICS = [
+    {"name": "IPO & IA Mondiale", "tagCls": "b-purple", "keywords": ["anthropic", "openai", "spacex", "ipo", "introduction en bourse", "levée de fonds", "cotation", "databricks", "stripe"]},
+    {"name": "Semi-conducteurs (TSMC / ASML)", "tagCls": "b-blue", "keywords": ["tsmc", "asml", "semi-conducteur", "semiconducteur", "fonderie"]},
+    {"name": "Macro & Wall Street", "tagCls": "b-amber", "keywords": ["fed", "bce", "inflation", "taux", "cpi", "pce", "wall street", "nasdaq", "s&p 500", "krach", "droits de douane"]},
+]
+
+STOPWORDS_FR = {
+    "apres", "avant", "avec", "dans", "pour", "sans", "sous", "vers", "chez",
+    "entre", "cette", "leurs", "sont", "mais", "plus", "moins", "tres", "tout",
+    "tous", "comme", "alors", "depuis", "contre", "selon", "avoir", "etre",
+    "fait", "faire", "bourse", "bourses", "marche", "marches", "action", "actions",
+    "mondiale", "mondiales", "publie", "annonce", "affiche", "termine", "cloture",
+}
 
 
 def clean_html(raw_text):
@@ -167,9 +195,73 @@ def match_stock_tag(text_lower):
     return matched, score
 
 
+def match_global_topic(text_lower):
+    for gt in GLOBAL_TOPICS:
+        if any(kw in text_lower for kw in gt["keywords"]):
+            return gt["name"], gt["tagCls"], 9
+    return None, None, 0
+
+
+def strip_source_suffix(title):
+    parts = title.rsplit(" - ", 1)
+    if len(parts) == 2 and len(parts[1]) <= 32:
+        return parts[0].strip()
+    return title.strip()
+
+
+def extract_story_tokens(title):
+    core = strip_source_suffix(title).lower()
+    for a, b in [("é", "e"), ("è", "e"), ("ê", "e"), ("à", "a"), ("â", "a"), ("ô", "o"), ("û", "u"), ("ù", "u"), ("î", "i"), ("ï", "i"), ("ç", "c")]:
+        core = core.replace(a, b)
+    words = re.findall(r"[a-z0-9]{4,}", core)
+    return {w for w in words if w not in STOPWORDS_FR}
+
+
+NAMED_ENTITIES = [
+    "anthropic", "openai", "spacex", "databricks", "stripe", "tsmc", "asml",
+    "nvidia", "air liquide", "microsoft", "alphabet", "google", "blackrock",
+    "apple", "amazon", "xiaomi", "byd", "siemens", "droneshield", "microstrategy",
+    "fed", "bce",
+]
+
+
+def extract_named_entities(title_lower):
+    found = set()
+    for ent in NAMED_ENTITIES:
+        if ent in title_lower:
+            found.add("alphabet" if ent == "google" else ent)
+    return found
+
+
+def is_duplicate_story(cand, selected_list):
+    c_tokens = cand.get("_tokens") or set()
+    c_primary = cand.get("_primary") or ""
+    c_entities = cand.get("_entities") or set()
+    macro_count = sum(1 for ex in selected_list if (ex.get("_primary") or "").startswith("Macro"))
+    if c_primary.startswith("Macro") and macro_count >= 2:
+        return True
+    for ex in selected_list:
+        e_tokens = ex.get("_tokens") or set()
+        e_primary = ex.get("_primary") or ""
+        e_entities = ex.get("_entities") or set()
+        # Maximum 1 article par entreprise / entité majeure (ex: pas 2 articles sur Anthropic ou 2 sur Nvidia ou 2 sur la Fed)
+        if c_entities and e_entities and (c_entities & e_entities):
+            return True
+        if c_primary and e_primary and c_primary == e_primary and not c_primary.startswith("Macro"):
+            return True
+        if c_tokens and e_tokens:
+            inter = len(c_tokens & e_tokens)
+            union = len(c_tokens | e_tokens)
+            smaller = min(len(c_tokens), len(e_tokens))
+            if inter >= 2 and ((union > 0 and (inter / union) >= 0.30) or (smaller > 0 and (inter / smaller) >= 0.45)):
+                return True
+    return False
+
+
 def fetch_essential_news():
     candidates = []
     seen = set()
+    now_ts = int(datetime.datetime.now(datetime.timezone.utc).timestamp())
 
     for feed in RSS_FEEDS:
         req = urllib.request.Request(feed["url"], headers={"User-Agent": USER_AGENT})
@@ -177,7 +269,7 @@ def fetch_essential_news():
             with urllib.request.urlopen(req, timeout=15) as resp:
                 xml_bytes = resp.read()
             root = ET.fromstring(xml_bytes)
-            for item in root.findall("./channel/item")[:8]:
+            for item in root.findall("./channel/item")[:10]:
                 title = clean_html(item.findtext("title") or "")
                 link = (item.findtext("link") or "").strip()
                 pub_date = (item.findtext("pubDate") or "").strip()
@@ -186,19 +278,21 @@ def fetch_essential_news():
                 if not title or not link:
                     continue
 
-                norm = re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+                core_title = strip_source_suffix(title)
+                norm = re.sub(r"[^a-z0-9]+", " ", core_title.lower()).strip()
                 if norm in seen:
                     continue
                 seen.add(norm)
 
                 t_lower = title.lower()
                 matched_stocks, stock_score = match_stock_tag(t_lower)
+                global_theme, global_cls, global_score = match_global_topic(t_lower)
                 has_essential_kw = any(w in t_lower for w in ESSENTIAL_WORDS)
 
-                # Ne garder que ce qui touche directement vos lignes ou la macro essentielle
-                if not matched_stocks and feed["theme"] != "Macro, Fed, BCE & Inflation":
+                # Garder vos lignes, les IPO/géants tech mondiaux (Anthropic, OpenAI, SpaceX, TSMC...) et la macro réelle
+                if not matched_stocks and not global_theme:
                     continue
-                if not has_essential_kw and stock_score < 10:
+                if not has_essential_kw and stock_score < 10 and global_score == 0:
                     continue
 
                 uid = hashlib.sha256(norm.encode("utf-8")).hexdigest()[:16]
@@ -209,18 +303,49 @@ def fetch_essential_news():
                 except Exception:
                     pub_ts = 0
 
-                relevance = feed["priority"] * 5 + stock_score + (6 if has_essential_kw else 0)
+                # Ignorer les vieilles actualités (> 10 jours)
+                if pub_ts > 0 and (now_ts - pub_ts) > 10 * 86400:
+                    continue
+
+                if matched_stocks and global_theme == "IPO & IA Mondiale" and any(k in t_lower for k in ("ipo", "introduction en bourse", "cotation")):
+                    display_theme = matched_stocks[0] + " • IPO & IA"
+                    primary_key = matched_stocks[0]
+                    tag_cls = "b-purple"
+                elif matched_stocks:
+                    display_theme = ", ".join(matched_stocks[:2])
+                    primary_key = matched_stocks[0]
+                    tag_cls = feed["tagCls"]
+                elif global_theme:
+                    display_theme = global_theme
+                    primary_key = global_theme
+                    tag_cls = global_cls or feed["tagCls"]
+                else:
+                    display_theme = feed["theme"]
+                    primary_key = feed["theme"]
+                    tag_cls = feed["tagCls"]
+
+                for special_kw in ("anthropic", "openai", "spacex", "ipo", "tsmc", "asml"):
+                    if special_kw in t_lower and not matched_stocks:
+                        primary_key = f"global_{special_kw}"
+                        break
+
+                age_hours = ((now_ts - pub_ts) / 3600.0) if pub_ts > 0 else 999.0
+                recency_bonus = 18 if age_hours <= 24 else (8 if age_hours <= 72 else 0)
+                relevance = feed["priority"] * 5 + stock_score + global_score + (6 if has_essential_kw else 0) + recency_bonus
                 candidates.append(
                     {
                         "id": uid,
-                        "theme": ", ".join(matched_stocks[:2]) if matched_stocks else feed["theme"],
-                        "tagCls": feed["tagCls"],
+                        "theme": display_theme,
+                        "tagCls": tag_cls,
                         "title": title,
                         "source": source,
                         "pubDate": pub_date,
                         "pubTs": pub_ts,
                         "link": link,
                         "_score": relevance,
+                        "_tokens": extract_story_tokens(title),
+                        "_primary": primary_key,
+                        "_entities": extract_named_entities(t_lower),
                     }
                 )
         except Exception as exc:
@@ -228,9 +353,18 @@ def fetch_essential_news():
 
     candidates.sort(key=lambda x: (x["_score"], x.get("pubTs", 0)), reverse=True)
     top_items = []
-    for c in candidates[:6]:
-        c.pop("_score", None)
+    for c in candidates:
+        if len(top_items) >= 7:
+            break
+        if is_duplicate_story(c, top_items):
+            continue
         top_items.append(c)
+
+    for c in top_items:
+        c.pop("_score", None)
+        c.pop("_tokens", None)
+        c.pop("_primary", None)
+        c.pop("_entities", None)
     top_items.sort(key=lambda x: x.get("pubTs", 0), reverse=True)
     return top_items
 
