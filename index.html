@@ -856,6 +856,54 @@
   @media (max-width: 420px) {
     .custom-inputs-grid { grid-template-columns: 1fr; }
   }
+  .proj-inputs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 4px 0 12px;
+  }
+  .btn-auto-mini {
+    background: rgba(56, 189, 248, 0.14);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    color: var(--blue);
+    border-radius: 6px;
+    padding: 4px 7px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  .btn-auto-mini.active {
+    background: var(--blue);
+    color: #0b1220;
+    border-color: var(--blue);
+  }
+  @media (max-width: 520px) {
+    .proj-inputs-grid { grid-template-columns: 1fr; }
+  }
+  .prio-done-box {
+    margin-top: 10px;
+    background: rgba(16, 185, 129, 0.10);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    border-radius: 12px;
+    padding: 12px;
+  }
+  .prio-done-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 4px;
+  }
+  .prio-done-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.42;
+    margin-bottom: 10px;
+  }
+  .rec-item.sold-line {
+    opacity: 0.56;
+    border-style: dashed;
+  }
 
   .bottom-nav {
     position: fixed;
@@ -998,7 +1046,7 @@
           <div class="env-sub" id="peaTotalGain">+3 134,26 € (41,8 % du total)</div>
         </div>
         <div class="env-box">
-          <div class="env-lbl">Trade Republic (21 lignes)</div>
+          <div class="env-lbl" id="trLinesLbl">Trade Republic (21 lignes)</div>
           <div class="env-num" id="trTotalVal">29 589,60 €</div>
           <div class="env-sub" id="trTotalGain">+7 999,14 € (58,2 % du total)</div>
         </div>
@@ -1008,7 +1056,7 @@
     <div class="card">
       <div class="card-title">
         <span>🎯 Vos 3 Décisions Prioritaires</span>
-        <span class="badge b-blue">Cap Long Terme</span>
+        <span class="badge b-blue" id="prioStatusBadge">0/3 vérifiées</span>
       </div>
       <div class="sub">Votre feuille de route simple (touchez une règle pour la cocher une fois vérifiée) :</div>
       <div id="prioritiesList"></div>
@@ -1017,18 +1065,37 @@
     <div class="card">
       <div class="card-title">
         <span>📈 Cap &amp; Projection Long Terme</span>
-        <span class="badge b-green">Objectif 60 000 €</span>
+        <span class="badge b-green" id="goalBadge">Objectif 60 000 €</span>
       </div>
       <div class="goal-track"><div class="goal-fill" id="goalFill"></div></div>
       <div class="goal-meta">
         <span id="goalPctTxt"><strong>84,8 %</strong> du palier 60 000 € atteint</span>
         <span id="goalRemTxt">Reste : <strong>9 112,01 €</strong></span>
       </div>
-      <div class="sub" style="margin-bottom:10px;">Simulez l'évolution de votre capital actuel selon votre épargne mensuelle (hypothèse 8 %/an) :</div>
-      <div class="pill-row" id="dcaRow">
-        <button type="button" class="pill-btn active" data-dca="0">Sans ajout (0 €)</button>
-        <button type="button" class="pill-btn" data-dca="200">+200 €/mois</button>
-        <button type="button" class="pill-btn" data-dca="500">+500 €/mois</button>
+      <div class="sub" id="projSubTxt" style="margin-bottom:10px;">Projection corrélée en direct à vos valeurs actuelles et au marché :</div>
+      <div class="proj-inputs-grid">
+        <div class="custom-input-box">
+          <label class="custom-input-lbl" for="customGoalInput">Objectif</label>
+          <div class="custom-input-row">
+            <input type="number" id="customGoalInput" class="custom-num" min="100" max="10000000" step="any" value="60000" inputmode="decimal" aria-label="Objectif en euros">
+            <span class="custom-unit-txt">€</span>
+          </div>
+        </div>
+        <div class="custom-input-box">
+          <label class="custom-input-lbl" for="customDcaInput">Épargne / mois</label>
+          <div class="custom-input-row">
+            <input type="number" id="customDcaInput" class="custom-num" min="0" max="100000" step="any" value="0" inputmode="decimal" aria-label="Épargne mensuelle en euros">
+            <span class="custom-unit-txt">€</span>
+          </div>
+        </div>
+        <div class="custom-input-box">
+          <label class="custom-input-lbl" for="customRateInput">Rendement / an</label>
+          <div class="custom-input-row">
+            <input type="number" id="customRateInput" class="custom-num" min="0" max="40" step="0.1" value="8" inputmode="decimal" aria-label="Rendement annuel estimé">
+            <span class="custom-unit-txt">%</span>
+            <button type="button" class="btn-auto-mini active" id="btnRateAuto" title="Recalculer selon votre portefeuille et le marché">Auto</button>
+          </div>
+        </div>
       </div>
       <div class="proj-grid" id="projGrid"></div>
     </div>
@@ -1083,7 +1150,7 @@
   <div id="tab-lines" class="section">
     <div class="card">
       <div class="card-title">
-        <span>📊 Vos 22 Positions (Cours en Direct)</span>
+        <span id="linesTitleTxt">📊 Vos 22 Positions (Cours en Direct)</span>
         <span class="badge b-blue" id="linesTotalBadge">50 855,86 €</span>
       </div>
       <div class="sub">Toutes vos 22 positions sont actualisées automatiquement au cours du marché (Euronext, XETRA, Wall Street, Hong Kong, ASX) :</div>
@@ -1148,7 +1215,7 @@
     <span class="nav-icon">🎯</span><span>Investir</span>
   </button>
   <button type="button" class="nav-btn" data-tab="lines">
-    <span class="nav-icon">📊</span><span>22 Lignes</span>
+    <span class="nav-icon">📊</span><span id="navLinesLbl">22 Lignes</span>
   </button>
   <button type="button" class="nav-btn" data-tab="alerts">
     <span class="nav-icon">🔔</span><span>Alertes</span>
@@ -1232,8 +1299,8 @@
     { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", ticker: "AMZN", stooq: "amzn.us", currency: "USD", refPriceEUR: 240.29, name: "Amazon.com", baseVal: 150.45, cost: 109.99, fixedQty: 0.626113, pole: "tech", tag: "buy", action: "Renforcer sur repli", why: "Porté par le Cloud AWS et la robotisation logistique." },
     { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", ticker: "QCOM", stooq: "qcom.us", currency: "USD", refPriceEUR: 147.64, name: "Qualcomm", baseVal: 147.64, cost: 145.98, fixedQty: 1, pole: "ia", tag: "hold", action: "Garder (Puces mobiles/IA)", why: "Déjà bien exposé aux puces via AMD et NVIDIA, gardez cette ligne telle quelle." },
     { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", ticker: "AI.PA", stooq: "ai.fr", currency: "EUR", refPriceEUR: 189.48, name: "Air Liquide (Trade Republic)", baseVal: 49.01, cost: 41.07, fixedQty: 0.258649, pole: "pilier", tag: "hold", action: "Doublon PEA", why: "Vous détenez déjà votre gros pilier sur votre PEA Fortuneo. Ne renforcez pas cette petite ligne sur Trade Republic." },
-    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 159.50, name: "Core MSCI World USD (Acc) #1", baseVal: 46.29, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "Doublon ETF Monde", why: "Vous avez deux lignes identiques MSCI World : regroupez vos futurs achats sur une seule." },
-    { id: "msci2", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 127.01, name: "Core MSCI World USD (Acc) #2", baseVal: 36.30, cost: 20.00, fixedQty: 0.2858, pole: "etf", tag: "hold", action: "Doublon ETF Monde", why: "Même ETF que la ligne précédente." },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 159.50, name: "Core MSCI World USD (Acc) #1", baseVal: 46.29, cost: 26.22, fixedQty: null, pole: "etf", tag: "buy", action: "ETF Monde cœur à renforcer", why: "Votre ligne principale MSCI World : regroupez tous vos futurs achats ETF Monde sur cette ligne." },
+    { id: "msci2", account: "TR", tv: "XETR:EUNL", ticker: "EUNL.DE", stooq: "eunl.de", currency: "EUR", refPriceEUR: 127.01, name: "Core MSCI World USD (Acc) #2", baseVal: 36.30, cost: 20.00, fixedQty: 0.2858, pole: "etf", tag: "hold", action: "Doublon à fusionner / solder", why: "Même ETF que votre ligne principale MSCI World : inutile de renforcer ce doublon." },
     { id: "ko", account: "TR", tv: "NYSE:KO", ticker: "KO", stooq: "ko.us", currency: "USD", refPriceEUR: 89.47, name: "Coca-Cola", baseVal: 29.07, cost: 19.98, fixedQty: 0.3249, pole: "pilier", tag: "hold", action: "Dividende défensif", why: "Solide valeur de rendement défensive." },
     { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", ticker: "GOOGL", stooq: "googl.us", currency: "USD", refPriceEUR: 255.62, name: "Alphabet (A)", baseVal: 22.98, cost: 9.99, fixedQty: 0.0899, pole: "tech", tag: "buy", action: "Pépite sous-pondérée !", why: "C'est l'une des grandes valeurs IA les plus attractives et la plus sous-pondérée de votre portefeuille : mérite d'être renforcée." },
     { id: "sfc", account: "TR", tv: "XETR:F3C", ticker: "F3C.DE", stooq: "f3c.de", currency: "EUR", refPriceEUR: 17.84, name: "SFC Energy", baseVal: 15.69, cost: 20.00, fixedQty: 0.8794, pole: "spec", tag: "stop", action: "Ligne résiduelle", why: "Ligne résiduelle : ne perdez plus de temps dessus." }
@@ -1343,9 +1410,12 @@
     horizonHours: (typeof savedData.horizonHours === "number" && isFinite(savedData.horizonHours) && savedData.horizonHours >= 0) ? savedData.horizonHours : 0,
     regime: 62,
     filter: "all",
-    dca: 0,
+    dca: (typeof savedData.dca === "number" && isFinite(savedData.dca) && savedData.dca >= 0) ? savedData.dca : 0,
+    goal: (typeof savedData.goal === "number" && isFinite(savedData.goal) && savedData.goal >= 100) ? savedData.goal : 60000,
+    rateMode: savedData.rateMode === "custom" ? "custom" : "auto",
+    customRate: (typeof savedData.customRate === "number" && isFinite(savedData.customRate) && savedData.customRate >= 0 && savedData.customRate <= 40) ? savedData.customRate : 8,
     expandedPole: 0,
-    donePrios: {},
+    donePrios: (savedData.donePrios && typeof savedData.donePrios === "object") ? savedData.donePrios : {},
     lastSync: savedData.lastSync || null,
     liveCount: 0,
     nextRefreshSec: 10,
@@ -1425,6 +1495,11 @@
         horizonVal: state.horizonVal,
         horizonUnit: state.horizonUnit,
         horizonHours: state.horizonHours,
+        dca: state.dca,
+        goal: state.goal,
+        rateMode: state.rateMode,
+        customRate: state.customRate,
+        donePrios: state.donePrios,
         notifiedNews: state.notifiedNews,
         alertLogs: state.alertLogs.slice(0, 15)
       }));
@@ -1471,6 +1546,9 @@
   }
 
   function getPosMetrics(p) {
+    if (p.qty !== null && p.qty <= 0) {
+      return { val: 0, gain: 0, pct: 0 };
+    }
     var val = p.baseVal;
     if (p.qty !== null && p.livePriceEUR !== null && p.livePriceEUR > 0) {
       val = p.qty * p.livePriceEUR;
@@ -1486,22 +1564,109 @@
     };
   }
 
+  function isPositionActive(p) {
+    if (!p) return false;
+    if (p.qty !== null && p.qty <= 0) return false;
+    return getPosMetrics(p).val > 0.01;
+  }
+
+  function findPosById(id) {
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].id === id) return positions[i];
+    }
+    return null;
+  }
+
+  function isSecondaryDuplicate(p) {
+    if (!isPositionActive(p)) return false;
+    if (p.id === "msci2" && isPositionActive(findPosById("msci1"))) return true;
+    if (p.id === "ai_tr" && isPositionActive(findPosById("ai_pea"))) return true;
+    for (var i = 0; i < positions.length; i++) {
+      var other = positions[i];
+      if (other.id === p.id) break;
+      if (other.tv === p.tv && isPositionActive(other)) return true;
+    }
+    return false;
+  }
+
+  function getDisplayPosInfo(p) {
+    if (!isPositionActive(p)) {
+      return {
+        name: p.name.replace(/\s+#[12]$/, ""),
+        action: "Soldé (0 part)",
+        why: "Position clôturée (0 part) — automatiquement exclue des recommandations.",
+        isSold: true,
+        isDup: false
+      };
+    }
+    if (p.id === "msci1") {
+      var m2Act = isPositionActive(findPosById("msci2"));
+      return {
+        name: m2Act ? "Core MSCI World USD (Acc) #1" : "Core MSCI World USD (Acc)",
+        action: "ETF Monde cœur à renforcer",
+        why: m2Act
+          ? "Ligne principale MSCI World à privilégier pour vos achats (laissez la ligne #2 de côté ou consolidez-la ici)."
+          : "Votre pilier ETF Monde (MSCI World) : exposition diversifiée aux grandes entreprises mondiales.",
+        isSold: false,
+        isDup: false
+      };
+    }
+    if (p.id === "msci2") {
+      var m1Act = isPositionActive(findPosById("msci1"));
+      if (m1Act) {
+        return {
+          name: p.name,
+          action: "Doublon à fusionner / solder",
+          why: "Même ETF que votre ligne #1 : inutile d'investir sur ce doublon, privilégiez la ligne principale.",
+          isSold: false,
+          isDup: true
+        };
+      }
+      return {
+        name: "Core MSCI World USD (Acc)",
+        action: "ETF Monde cœur à renforcer",
+        why: "Votre ligne ETF Monde principale (la ligne #1 est soldée).",
+        isSold: false,
+        isDup: false
+      };
+    }
+    if (p.id === "ai_tr") {
+      var aiPeaAct = isPositionActive(findPosById("ai_pea"));
+      if (aiPeaAct) {
+        return { name: p.name, action: "Doublon PEA", why: p.why, isSold: false, isDup: true };
+      }
+      return { name: p.name, action: "Pilier industriel", why: "Action industrielle solide sur Trade Republic.", isSold: false, isDup: false };
+    }
+    return {
+      name: p.name,
+      action: p.action,
+      why: p.why,
+      isSold: false,
+      isDup: isSecondaryDuplicate(p)
+    };
+  }
+
   function computeTotals() {
     var peaVal = 0, peaCost = 0;
     var trVal = 0, trCost = 0;
     var poleSums = { pilier: 0, ia: 0, etf: 0, tech: 0, spec: 0 };
     var liveCount = 0;
+    var activeCount = 0, trActiveCount = 0, peaActiveCount = 0;
 
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
       if (p.isLive) liveCount++;
+      if (!isPositionActive(p)) continue;
+      activeCount++;
       var m = getPosMetrics(p);
       if (p.account === "PEA") {
         peaVal += m.val;
         peaCost += p.cost;
+        peaActiveCount++;
       } else {
         trVal += m.val;
         trCost += p.cost;
+        trActiveCount++;
       }
       poleSums[p.pole] += m.val;
     }
@@ -1522,7 +1687,10 @@
       totalGain: totalGain,
       totalPct: totalPct,
       poleSums: poleSums,
-      liveCount: liveCount
+      liveCount: liveCount,
+      activeCount: activeCount,
+      trActiveCount: trActiveCount,
+      peaActiveCount: peaActiveCount
     };
   }
 
@@ -1558,9 +1726,16 @@
     var linesBadge = document.getElementById("linesTotalBadge");
     if (linesBadge) linesBadge.textContent = fmtEuro(tot.totalVal);
 
+    var linesTitle = document.getElementById("linesTitleTxt");
+    if (linesTitle) linesTitle.textContent = "📊 Vos " + tot.activeCount + " Positions Actives (Cours en Direct)";
+    var navLinesLbl = document.getElementById("navLinesLbl");
+    if (navLinesLbl) navLinesLbl.textContent = tot.activeCount + " Lignes";
+    var trLinesLbl = document.getElementById("trLinesLbl");
+    if (trLinesLbl) trLinesLbl.textContent = "Trade Republic (" + tot.trActiveCount + " ligne" + (tot.trActiveCount > 1 ? "s" : "") + ")";
+
     var syncBadge = document.getElementById("liveSyncBadge");
     if (syncBadge && !state.isSyncing) {
-      syncBadge.textContent = "Cours Live • " + tot.liveCount + "/22";
+      syncBadge.textContent = "Cours Live • " + tot.liveCount + "/" + positions.length;
     }
 
     var peaShare = tot.totalVal > 0 ? ((tot.peaVal / tot.totalVal) * 100).toFixed(1) : "0.0";
@@ -1570,12 +1745,19 @@
     document.getElementById("trTotalVal").textContent = fmtEuro(tot.trVal);
     document.getElementById("trTotalGain").textContent = (tot.trGain >= 0 ? "+" : "") + fmtEuro(tot.trGain) + " (" + trShare + " % du total)";
 
-    var goal = 60000;
+    var goal = (typeof state.goal === "number" && isFinite(state.goal) && state.goal >= 100) ? state.goal : 60000;
     var goalPct = Math.min(100, (tot.totalVal / goal) * 100);
     var goalRem = Math.max(0, goal - tot.totalVal);
+    var goalBadge = document.getElementById("goalBadge");
+    if (goalBadge) goalBadge.textContent = "Objectif " + fmtRoundEuro(goal);
     document.getElementById("goalFill").style.width = goalPct.toFixed(1) + "%";
-    document.getElementById("goalPctTxt").innerHTML = "<strong>" + goalPct.toFixed(1).replace(".", ",") + " %</strong> du palier 60 000 € atteint";
-    document.getElementById("goalRemTxt").innerHTML = "Reste : <strong>" + fmtEuro(goalRem) + "</strong>";
+    if (tot.totalVal >= goal) {
+      document.getElementById("goalPctTxt").innerHTML = "<strong>🎉 100 %</strong> du palier " + fmtRoundEuro(goal) + " atteint !";
+      document.getElementById("goalRemTxt").innerHTML = "Surplus : <strong>+" + fmtEuro(tot.totalVal - goal) + "</strong>";
+    } else {
+      document.getElementById("goalPctTxt").innerHTML = "<strong>" + goalPct.toFixed(1).replace(".", ",") + " %</strong> du palier " + fmtRoundEuro(goal) + " atteint";
+      document.getElementById("goalRemTxt").innerHTML = "Reste : <strong>" + fmtEuro(goalRem) + "</strong>";
+    }
 
     renderPoles(tot);
     renderPriorities(tot);
@@ -1866,15 +2048,27 @@
 
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
+      if (!isPositionActive(p)) continue;
+      if (isSecondaryDuplicate(p)) continue;
       if (p.tag === "stop" || p.tag === "trim") continue;
       if (state.regime <= 35 && (p.pole === "tech" || p.pole === "ia")) continue;
-      if (p.tag !== "buy" && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
-      if (p.id === "msci2") continue;
+      var allowFallbackMsci2 = (p.id === "msci2" && !isPositionActive(findPosById("msci1")));
+      if (p.tag !== "buy" && !allowFallbackMsci2 && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
 
       candidates.push(analyzePositionForHorizon(p, tot, targets, profile, targetDate));
     }
     candidates.sort(function(a, b) { return b.score - a.score; });
-    return candidates.slice(0, 3);
+
+    var uniqueTop = [];
+    var seenTv = {};
+    for (var u = 0; u < candidates.length; u++) {
+      var tv = candidates[u].pos.tv;
+      if (seenTv[tv]) continue;
+      seenTv[tv] = true;
+      uniqueTop.push(candidates[u]);
+      if (uniqueTop.length >= 3) break;
+    }
+    return uniqueTop;
   }
 
   function renderPriorities(tot) {
@@ -1886,7 +2080,7 @@
     var iaPct = ((iaVal / totalVal) * 100).toFixed(1).replace(".", ",");
     var specVal = findPosVal("mstr") + findPosVal("dro") + findPosVal("sfc");
     var top3 = getTopCandidates(tot, 168);
-    var topNames = top3.map(function(c) { return c.pos.name; }).join(", ");
+    var topNames = top3.map(function(c) { return getDisplayPosInfo(c.pos).name; }).join(", ");
 
     var dynamicPrios = [
       {
@@ -1907,9 +2101,11 @@
     ];
 
     var html = "";
+    var doneCount = 0;
     for (var i = 0; i < dynamicPrios.length; i++) {
       var pr = dynamicPrios[i];
       var isDone = !!state.donePrios[pr.id];
+      if (isDone) doneCount++;
       html += "<div class='prio-card" + (isDone ? " done" : "") + "' data-prio='" + pr.id + "'>" +
         "<div class='prio-num'>" + (isDone ? "✓" : (i + 1)) + "</div>" +
         "<div class='prio-body'>" +
@@ -1918,41 +2114,133 @@
         "</div>" +
       "</div>";
     }
+
+    var badge = document.getElementById("prioStatusBadge");
+    if (badge) {
+      if (doneCount === dynamicPrios.length) {
+        badge.textContent = "✅ Validé (3/3)";
+        badge.className = "badge b-green";
+      } else {
+        badge.textContent = doneCount + "/3 vérifiées";
+        badge.className = "badge b-blue";
+      }
+    }
+
+    if (doneCount === dynamicPrios.length) {
+      var goal = (typeof state.goal === "number" && isFinite(state.goal) && state.goal >= 100) ? state.goal : 60000;
+      var rem = Math.max(0, goal - tot.totalVal);
+      var hasActiveDup = isSecondaryDuplicate(findPosById("msci2")) || isSecondaryDuplicate(findPosById("ai_tr"));
+      var nextMsg = rem > 0
+        ? ("Toutes vos règles sont appliquées. Votre portefeuille est sur de bons rails — il vous reste " + fmtEuro(rem) + " avant votre objectif de " + fmtRoundEuro(goal) + ". Prochaine étape : passez sur l'onglet Investir dès que vous avez une nouvelle somme à placer.")
+        : ("Toutes vos règles sont appliquées et votre objectif de " + fmtRoundEuro(goal) + " est déjà atteint ! Vous pouvez relever votre palier ci-dessous ou préparer votre prochain placement.");
+      if (hasActiveDup) {
+        nextMsg += " Pensez aussi, quand cela vous arrange, à regrouper votre doublon actif sur votre ligne principale.";
+      }
+      html += "<div class='prio-done-box'>" +
+        "<div class='prio-done-title'>✅ Feuille de route à jour ! Que faire maintenant ?</div>" +
+        "<div class='prio-done-desc'>" + nextMsg + "</div>" +
+        "<div class='pill-row' style='margin-bottom:0;'>" +
+          "<button type='button' class='pill-btn active btn-compact' id='btnGoInvest' style='flex:1;'>💰 Placer mon prochain billet →</button>" +
+          "<button type='button' class='pill-btn btn-compact' id='btnResetPrios'>🔄 Nouvelle revue</button>" +
+        "</div>" +
+      "</div>";
+    }
+
     document.getElementById("prioritiesList").innerHTML = html;
+  }
+
+  function computePortfolioExpectedRate(tot) {
+    if (!tot) tot = computeTotals();
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var poleBase = { pilier: 6.5, etf: 8.2, tech: 10.0, ia: 11.0, spec: 6.0 };
+    var weightedSum = 0;
+    var weightSum = 0;
+
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (!isPositionActive(p)) continue;
+      var val = getPosMetrics(p).val;
+      var w = val / totalVal;
+      var base = poleBase[p.pole] || 8.0;
+      var capm = (typeof p.beta1Y === "number" && p.beta1Y > 0.1 && p.beta1Y < 3.5)
+        ? (2.5 + p.beta1Y * 5.2)
+        : base;
+      var momAdj = (typeof p.perfY === "number")
+        ? Math.max(-0.9, Math.min(1.5, p.perfY * 0.06))
+        : 0;
+      var posRate = (base * 0.55 + capm * 0.45) + momAdj;
+      weightedSum += posRate * w;
+      weightSum += w;
+    }
+
+    var basePortfolioRate = weightSum > 0 ? (weightedSum / weightSum) : 8.0;
+    var regimeAdj = ((state.regime - 50) / 50) * 1.2;
+    var finalRate = Math.max(3.5, Math.min(14.5, basePortfolioRate + regimeAdj));
+    return Math.round(finalRate * 10) / 10;
   }
 
   function renderProjections(tot) {
     if (!tot) tot = computeTotals();
-    var btns = document.querySelectorAll("#dcaRow .pill-btn");
-    for (var i = 0; i < btns.length; i++) {
-      var val = parseInt(btns[i].getAttribute("data-dca"), 10);
-      btns[i].classList.toggle("active", val === state.dca);
-    }
-    var r = 0.08;
-    var rm = Math.pow(1 + r, 1 / 12) - 1;
+    var autoRate = computePortfolioExpectedRate(tot);
+    var ratePct = state.rateMode === "custom" ? state.customRate : autoRate;
+    var r = Math.max(0, ratePct) / 100;
+    var rm = r > 0 ? (Math.pow(1 + r, 1 / 12) - 1) : 0;
     var p0 = tot.totalVal;
-    var dca = state.dca;
+    var dca = Math.max(0, state.dca || 0);
 
-    var v5 = p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0);
-    var v10 = p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0);
+    var goalInp = document.getElementById("customGoalInput");
+    if (goalInp && document.activeElement !== goalInp) {
+      goalInp.value = String(Math.round(state.goal || 60000));
+    }
+    var dcaInp = document.getElementById("customDcaInput");
+    if (dcaInp && document.activeElement !== dcaInp) {
+      dcaInp.value = String(Math.round(dca));
+    }
+    var rateInp = document.getElementById("customRateInput");
+    if (rateInp && document.activeElement !== rateInp) {
+      rateInp.value = String(Math.round(ratePct * 10) / 10);
+    }
+    var autoBtn = document.getElementById("btnRateAuto");
+    if (autoBtn) {
+      autoBtn.classList.toggle("active", state.rateMode === "auto");
+    }
+
+    var subEl = document.getElementById("projSubTxt");
+    if (subEl) {
+      var rateTxt = ratePct.toFixed(1).replace(".", ",");
+      var autoTxt = autoRate.toFixed(1).replace(".", ",");
+      if (state.rateMode === "auto") {
+        subEl.textContent = "Rendement Auto : " + rateTxt + " %/an (corrélé en direct à vos valeurs actives et au climat du marché) :";
+      } else {
+        subEl.textContent = "Rendement personnalisé : " + rateTxt + " %/an (estimation Auto du portefeuille : " + autoTxt + " %/an) :";
+      }
+    }
+
+    var v5 = rm > 0
+      ? (p0 * Math.pow(1 + rm, 60) + (dca > 0 ? dca * ((Math.pow(1 + rm, 60) - 1) / rm) : 0))
+      : (p0 + dca * 60);
+    var v10 = rm > 0
+      ? (p0 * Math.pow(1 + rm, 120) + (dca > 0 ? dca * ((Math.pow(1 + rm, 120) - 1) / rm) : 0))
+      : (p0 + dca * 120);
     var divAnnual = (tot.poleSums.pilier || 0) * 0.021 + (p0 - (tot.poleSums.pilier || 0)) * 0.010;
     var curYear = new Date().getFullYear();
+    var peaHint = isPositionActive(findPosById("ai_pea")) ? "+ prime +10 % PEA" : "estimés sur lignes actives";
 
     var html =
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dans 5 ans (" + (curYear + 5) + ")</div>" +
         "<div class='proj-val'>" + fmtRoundEuro(v5) + "</div>" +
-        "<div class='proj-hint'>+" + fmtRoundEuro(v5 - p0 - dca * 60) + " gains</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(Math.max(0, v5 - p0 - dca * 60)) + " gains</div>" +
       "</div>" +
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dans 10 ans (" + (curYear + 10) + ")</div>" +
         "<div class='proj-val'>" + fmtRoundEuro(v10) + "</div>" +
-        "<div class='proj-hint'>+" + fmtRoundEuro(v10 - p0 - dca * 120) + " gains</div>" +
+        "<div class='proj-hint'>+" + fmtRoundEuro(Math.max(0, v10 - p0 - dca * 120)) + " gains</div>" +
       "</div>" +
       "<div class='proj-box'>" +
         "<div class='proj-lbl'>Dividendes / an</div>" +
         "<div class='proj-val'>~" + fmtRoundEuro(divAnnual) + "</div>" +
-        "<div class='proj-hint'>+ prime +10 % PEA</div>" +
+        "<div class='proj-hint'>" + peaHint + "</div>" +
       "</div>";
     document.getElementById("projGrid").innerHTML = html;
   }
@@ -2057,11 +2345,14 @@
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
       if (p.isLive && typeof p.dayPct === "number") {
+        if (p.id === "sp500") spDay = p.dayPct;
+        if (p.id === "msci1" || p.id === "msci2") msciDay = p.dayPct;
+      }
+      if (!isPositionActive(p)) continue;
+      if (p.isLive && typeof p.dayPct === "number") {
         liveCnt++;
         if (p.dayPct >= 0) greenCnt++;
         daySum += p.dayPct;
-        if (p.id === "sp500") spDay = p.dayPct;
-        if (p.id === "msci2") msciDay = p.dayPct;
       }
       if (typeof p.perf1M === "number") {
         m1Sum += p.perf1M;
@@ -2092,7 +2383,7 @@
     var score = Math.round(Math.max(12, Math.min(95, raw)));
     var spTxt = benchDay !== null ? ((benchDay >= 0 ? "+" : "") + benchDay.toFixed(2) + " %") : "0,00 %";
     var m1Txt = (avgM1 >= 0 ? "+" : "") + avgM1.toFixed(1) + " %";
-    var detail = "Direct : " + greenCnt + "/" + liveCnt + " lignes dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt;
+    var detail = "Direct : " + greenCnt + "/" + liveCnt + " lignes actives dans le vert • S&P 500 " + spTxt + " • Tendance 1M " + m1Txt;
     return { score: score, detail: detail };
   }
 
@@ -2111,13 +2402,16 @@
 
     var tot = computeTotals();
     var top3 = getTopCandidates(tot, 168);
-    var topNames = top3.map(function(c) { return "<strong>" + c.pos.name + "</strong>"; }).join(", ");
+    var topNames = top3.map(function(c) { return "<strong>" + getDisplayPosInfo(c.pos).name + "</strong>"; }).join(", ");
     var liveLine = "<div style='font-size:0.76rem;color:var(--blue);margin-top:4px;font-weight:600;'>📡 " + liveInfo.detail + "</div>";
     var box = document.getElementById("regimeAdvice");
     if (box) {
       var phaseLabel = score <= 35 ? "🌪️ Marché sous Tension" : (score <= 68 ? "⚖️ Climat Sélectif &amp; Équilibré" : "☀️ Momentum Haussier");
       box.innerHTML = "<strong>" + phaseLabel + " (" + score + "/100)</strong>" + liveLine +
-        "<p style='font-size:0.83rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Allocation adaptée automatiquement en temps réel vers vos lignes prioritaires : " + topNames + ".</p>";
+        "<p style='font-size:0.83rem;color:var(--muted);margin-top:6px;line-height:1.45;'>Allocation adaptée automatiquement en temps réel vers vos lignes prioritaires : " + (topNames || "aucune ligne active éligible") + ".</p>";
+    }
+    if (state.rateMode === "auto") {
+      renderProjections(tot);
     }
   }
 
@@ -2131,7 +2425,10 @@
     var targets = computeTargetPoles(state.regime, h);
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
     var top3 = getTopCandidates(tot, h);
-    if (top3.length === 0) return;
+    if (top3.length === 0) {
+      document.getElementById("allocationBox").innerHTML = "<div class='rec-item'><div style='font-size:0.83rem;color:var(--muted);'>Aucune ligne active éligible au renforcement pour le moment. Utilisez le bouton ci-dessous pour découvrir une nouvelle idée hors portefeuille.</div></div>";
+      return;
+    }
 
     var scoreSum = 0;
     for (var s = 0; s < top3.length; s++) scoreSum += top3[s].score;
@@ -2224,9 +2521,10 @@
     for (var x = 0; x < top3.length; x++) {
       if (allocAmounts[x] <= 0) continue;
       var tp = top3[x].pos;
+      var disp = getDisplayPosInfo(tp);
       var wPct = Math.round((allocAmounts[x] / (amt || 1)) * 100);
       rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" +
-        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + tp.name + "</strong> : " + tp.action + "." +
+        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + disp.name + "</strong> : " + disp.action + "." +
       "</div></div>";
     }
 
@@ -2387,7 +2685,9 @@
 
     var owned = {};
     for (var i = 0; i < positions.length; i++) {
-      owned[positions[i].tv] = true;
+      if (isPositionActive(positions[i])) {
+        owned[positions[i].tv] = true;
+      }
     }
     var pool = [];
     for (var j = 0; j < DISCOVERY_POOL.length; j++) {
@@ -2490,12 +2790,15 @@
     for (var k = 0; k < btns.length; k++) {
       btns[k].classList.toggle("active", btns[k].getAttribute("data-filter") === f);
     }
-    var html = "";
+    var activeHtml = "";
+    var soldHtml = "";
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
-      if (f !== "all" && p.tag !== f) continue;
+      var disp = getDisplayPosInfo(p);
+      if (disp.isSold && f !== "all") continue;
+      if (!disp.isSold && f !== "all" && p.tag !== f) continue;
       var m = getPosMetrics(p);
-      var bCls = p.tag === "buy" ? "b-green" : (p.tag === "trim" ? "b-amber" : (p.tag === "stop" ? "b-red" : "b-blue"));
+      var bCls = disp.isSold ? "b-amber" : (p.tag === "buy" ? "b-green" : (p.tag === "trim" ? "b-amber" : (p.tag === "stop" ? "b-red" : "b-blue")));
       var sign = m.gain >= 0 ? "+" : "";
 
       var displayPrice = p.livePriceEUR !== null ? p.livePriceEUR : p.refPriceEUR;
@@ -2511,20 +2814,26 @@
       }
 
       var estQty = p.qty !== null ? p.qty : (displayPrice > 0 ? m.val / displayPrice : 0);
-      var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3)) + " parts") : "";
+      var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3)) + " parts") : " • 0 part";
       var weightPct = ((m.val / totalVal) * 100).toFixed(1).replace(".", ",");
 
-      html += "<div class='rec-item'>" +
-        "<div class='rec-top'><strong>" + p.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + p.action + "</span></div>" +
+      var metaLine = disp.isSold
+        ? "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Position clôturée (0 part) • Exclue des calculs et recommandations</div>"
+        : "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
+
+      var cardHtml = "<div class='rec-item" + (disp.isSold ? " sold-line" : "") + "'>" +
+        "<div class='rec-top'><strong>" + disp.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + disp.action + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
           "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
         "</div>" +
-        "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong> • Poids : <strong>" + weightPct + " %</strong></div>" +
-        "<div style='font-size:0.83rem;line-height:1.45;'>" + p.why + "</div>" +
+        metaLine +
+        "<div style='font-size:0.83rem;line-height:1.45;'>" + disp.why + "</div>" +
         "</div>";
+      if (disp.isSold) soldHtml += cardHtml;
+      else activeHtml += cardHtml;
     }
-    document.getElementById("linesContainer").innerHTML = html;
+    document.getElementById("linesContainer").innerHTML = activeHtml + soldHtml;
   }
 
   function updateMarketSessions() {
@@ -3319,8 +3628,15 @@
     if (!state.editingId) return;
     var newQty = parseFloat(document.getElementById("editQtyInput").value);
     var newCost = parseFloat(document.getElementById("editCostInput").value);
-    if (isNaN(newQty) || newQty < 0 || isNaN(newCost) || newCost < 0) {
-      showToast("Veuillez saisir des valeurs valides");
+    if (isNaN(newQty) || newQty < 0) {
+      showToast("Veuillez saisir une quantité valide");
+      return;
+    }
+    if (newQty <= 0) {
+      newQty = 0;
+      newCost = 0;
+    } else if (isNaN(newCost) || newCost < 0) {
+      showToast("Veuillez saisir un montant investi valide");
       return;
     }
     var updatedName = "";
@@ -3328,21 +3644,32 @@
       if (positions[i].id === state.editingId) {
         positions[i].qty = newQty;
         positions[i].cost = newCost;
-        updatedName = positions[i].name;
+        updatedName = getDisplayPosInfo(positions[i]).name;
         break;
       }
     }
     persistState();
     renderAll(true);
     closeEditModal();
-    pushAlertLog(
-      "Mise à jour manuelle : " + updatedName,
-      "Quantité ajustée à " + newQty + " parts pour " + fmtEuro(newCost) + " investis.",
-      "Portefeuille Modifié",
-      "b-blue",
-      false
-    );
-    showToast("✅ Position enregistrée et recalculée au cours !");
+    if (newQty === 0) {
+      pushAlertLog(
+        "Position soldée : " + updatedName,
+        "Quantité mise à 0 part : ligne exclue des calculs et des recommandations d'achat.",
+        "Position Clôturée",
+        "b-amber",
+        false
+      );
+      showToast("✅ Position mise à 0 — exclue des recommandations !");
+    } else {
+      pushAlertLog(
+        "Mise à jour manuelle : " + updatedName,
+        "Quantité ajustée à " + newQty + " parts pour " + fmtEuro(newCost) + " investis.",
+        "Portefeuille Modifié",
+        "b-blue",
+        false
+      );
+      showToast("✅ Position enregistrée et recalculée au cours !");
+    }
   }
 
   function enablePushNotifications() {
@@ -3424,15 +3751,27 @@
     if (prioCard) {
       var pid = prioCard.getAttribute("data-prio");
       state.donePrios[pid] = !state.donePrios[pid];
+      persistState();
       renderPriorities();
       showToast(state.donePrios[pid] ? "Règle marquée comme appliquée ✓" : "Règle remise en suivi");
       return;
     }
-    var dcaBtn = e.target.closest("#dcaRow .pill-btn");
-    if (dcaBtn) {
-      state.dca = parseInt(dcaBtn.getAttribute("data-dca"), 10);
+    if (e.target.closest("#btnGoInvest")) {
+      switchTab("invest");
+      return;
+    }
+    if (e.target.closest("#btnResetPrios")) {
+      state.donePrios = {};
+      persistState();
+      renderPriorities();
+      showToast("🔄 Feuille de route réinitialisée pour une nouvelle revue");
+      return;
+    }
+    if (e.target.closest("#btnRateAuto")) {
+      state.rateMode = "auto";
+      persistState();
       renderProjections();
-      showToast("Simulation : +" + state.dca + " €/mois");
+      showToast("📈 Rendement calé en Auto sur votre portefeuille et le marché");
       return;
     }
     if (e.target.closest("#btnDiscover") || e.target.closest("#btnDiscoverRetry")) {
@@ -3545,6 +3884,93 @@
       var hv = parseFloat(rawH);
       if (!isFinite(hv) || hv < 0) hv = state.horizonVal;
       setHorizonCustom(hv, customHorUnitEl.value, false);
+    });
+  }
+
+  var customGoalEl = document.getElementById("customGoalInput");
+  if (customGoalEl) {
+    customGoalEl.addEventListener("input", function() {
+      var raw = String(customGoalEl.value || "").replace(",", ".").trim();
+      if (raw === "") return;
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 100) return;
+      state.goal = Math.min(10000000, Math.round(v));
+      persistState();
+      renderAll(false);
+    });
+    customGoalEl.addEventListener("change", function() {
+      var raw = String(customGoalEl.value || "").replace(",", ".").trim();
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 100) v = 60000;
+      state.goal = Math.min(10000000, Math.round(v));
+      customGoalEl.value = String(state.goal);
+      persistState();
+      renderAll(false);
+      showToast("🎯 Objectif mis à jour : " + fmtRoundEuro(state.goal));
+    });
+  }
+
+  var customDcaEl = document.getElementById("customDcaInput");
+  if (customDcaEl) {
+    customDcaEl.addEventListener("input", function() {
+      var raw = String(customDcaEl.value || "").replace(",", ".").trim();
+      if (raw === "") return;
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 0) return;
+      state.dca = Math.min(100000, Math.round(v));
+      persistState();
+      renderProjections();
+    });
+    customDcaEl.addEventListener("change", function() {
+      var raw = String(customDcaEl.value || "").replace(",", ".").trim();
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 0) v = 0;
+      state.dca = Math.min(100000, Math.round(v));
+      customDcaEl.value = String(state.dca);
+      persistState();
+      renderProjections();
+      showToast("Épargne mensuelle : +" + fmtRoundEuro(state.dca) + "/mois");
+    });
+  }
+
+  var customRateEl = document.getElementById("customRateInput");
+  if (customRateEl) {
+    customRateEl.addEventListener("input", function() {
+      var raw = String(customRateEl.value || "").replace(",", ".").trim();
+      if (raw === "") return;
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 0) return;
+      state.rateMode = "custom";
+      state.customRate = Math.round(Math.min(40, v) * 10) / 10;
+      persistState();
+      renderProjections();
+    });
+    customRateEl.addEventListener("change", function() {
+      var raw = String(customRateEl.value || "").replace(",", ".").trim();
+      var v = parseFloat(raw);
+      if (!isFinite(v) || v < 0) {
+        state.rateMode = "auto";
+      } else {
+        state.rateMode = "custom";
+        state.customRate = Math.round(Math.min(40, v) * 10) / 10;
+        customRateEl.value = String(state.customRate);
+      }
+      persistState();
+      renderProjections();
+      if (state.rateMode === "custom") {
+        showToast("📈 Rendement personnalisé : " + state.customRate.toFixed(1).replace(".", ",") + " %/an");
+      }
+    });
+  }
+
+  var editQtyEl = document.getElementById("editQtyInput");
+  var editCostEl = document.getElementById("editCostInput");
+  if (editQtyEl && editCostEl) {
+    editQtyEl.addEventListener("input", function() {
+      var v = parseFloat(String(editQtyEl.value || "").replace(",", "."));
+      if (isFinite(v) && v === 0) {
+        editCostEl.value = "0";
+      }
     });
   }
 
