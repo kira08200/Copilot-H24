@@ -937,6 +937,50 @@
     margin: -2px 0 6px;
     font-weight: 600;
   }
+  .day-gain-sub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-top: 3px;
+    color: var(--muted);
+  }
+  .day-gain-sub.pos { color: var(--green); }
+  .day-gain-sub.neg { color: var(--red); }
+  .btn-bought-mini {
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.38);
+    color: var(--green);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 6px;
+    vertical-align: middle;
+  }
+  .btn-bought-mini:active { opacity: 0.75; }
+  .sync-bar {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+  }
+  .sync-textarea {
+    width: 100%;
+    min-height: 92px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    resize: vertical;
+  }
+  .modal-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
 
   .bottom-nav {
     position: fixed;
@@ -1020,14 +1064,97 @@
 <div id="editModal" class="modal-backdrop">
   <div class="modal-box">
     <div class="modal-title" id="editModalTitle">Ajuster la position</div>
-    <div class="sub" style="margin-bottom:8px;">Modifiez votre nombre de parts si vous avez renforcé : la valeur continuera de s'actualiser en direct avec le cours boursier.</div>
+    <div class="sub" id="editModalSub" style="margin-bottom:8px;">Modifiez votre nombre de parts si vous avez renforcé : la valeur continuera de s'actualiser en direct avec le cours boursier.</div>
     <label class="field-lbl" for="editQtyInput">Nombre d'actions / parts détenues</label>
     <input type="number" step="any" class="field-input" id="editQtyInput">
     <label class="field-lbl" for="editCostInput">Montant total investi (€)</label>
     <input type="number" step="any" class="field-input" id="editCostInput">
     <div class="pill-row" style="margin-top:14px;margin-bottom:0;">
       <button type="button" class="pill-btn" id="btnCancelEdit">Annuler</button>
+      <button type="button" class="pill-btn" id="btnDeletePos" style="display:none;border-color:rgba(239,68,68,0.45);color:var(--red);">🗑️ Supprimer</button>
       <button type="button" class="pill-btn active" id="btnSaveEdit">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal d'ajout d'une nouvelle ligne -->
+<div id="addModal" class="modal-backdrop">
+  <div class="modal-box">
+    <div class="modal-title">➕ Ajouter un investissement</div>
+    <div class="sub" style="margin-bottom:8px;">Choisissez une idée rapide ou saisissez votre propre symbole TradingView :</div>
+    <label class="field-lbl" for="addPresetSel">Pré-remplissage rapide (optionnel)</label>
+    <select class="field-input" id="addPresetSel" style="font-size:0.84rem;padding:8px 10px;">
+      <option value="">-- Saisie libre --</option>
+    </select>
+    <label class="field-lbl" for="addNameInput">Nom du titre / ETF</label>
+    <input type="text" class="field-input" id="addNameInput" placeholder="Ex : Schneider Electric">
+    <div class="modal-grid-2">
+      <div>
+        <label class="field-lbl" for="addTvInput">Symbole TradingView</label>
+        <input type="text" class="field-input" id="addTvInput" placeholder="Ex : EURONEXT:SU" style="font-size:0.84rem;">
+      </div>
+      <div>
+        <label class="field-lbl" for="addCcySel">Devise</label>
+        <select class="field-input" id="addCcySel" style="font-size:0.84rem;padding:10px 8px;">
+          <option value="EUR">EUR (€)</option>
+          <option value="USD">USD ($)</option>
+          <option value="HKD">HKD</option>
+          <option value="AUD">AUD</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-grid-2">
+      <div>
+        <label class="field-lbl" for="addAccountSel">Compte</label>
+        <select class="field-input" id="addAccountSel" style="font-size:0.84rem;padding:10px 8px;">
+          <option value="TR">Trade Republic</option>
+          <option value="PEA">PEA Fortuneo</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-lbl" for="addPoleSel">Pôle</label>
+        <select class="field-input" id="addPoleSel" style="font-size:0.84rem;padding:10px 8px;">
+          <option value="etf">ETF &amp; Finance</option>
+          <option value="pilier">Pilier Défensif</option>
+          <option value="tech">Tech &amp; Croissance</option>
+          <option value="ia">IA &amp; Semi-cond.</option>
+          <option value="spec">Spéculatif</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-grid-2">
+      <div>
+        <label class="field-lbl" for="addQtyInput">Nombre de parts</label>
+        <input type="number" step="any" min="0" class="field-input" id="addQtyInput" placeholder="Ex : 2.5">
+      </div>
+      <div>
+        <label class="field-lbl" for="addCostInput">Montant investi (€)</label>
+        <input type="number" step="any" min="0" class="field-input" id="addCostInput" placeholder="Ex : 250">
+      </div>
+    </div>
+    <div class="pill-row" style="margin-top:14px;margin-bottom:0;">
+      <button type="button" class="pill-btn" id="btnCancelAdd">Annuler</button>
+      <button type="button" class="pill-btn active" id="btnSaveAdd">Ajouter</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Sauvegarde / Transfert PC <-> Téléphone -->
+<div id="syncModal" class="modal-backdrop">
+  <div class="modal-box">
+    <div class="modal-title" id="syncModalTitle">💾 Sauvegarder / Transférer</div>
+    <div class="sub" id="syncModalSub" style="margin-bottom:8px;">Copiez ce code ou téléchargez le fichier pour retrouver vos parts et réglages sur un autre appareil ou une nouvelle APK.</div>
+    <textarea id="syncCodeBox" class="sync-textarea" placeholder="Collez votre code de sauvegarde ici..."></textarea>
+    <input type="file" id="syncFileInput" accept=".json,application/json" style="display:none;">
+    <div class="pill-row" id="syncExportActions" style="margin-top:10px;margin-bottom:0;">
+      <button type="button" class="pill-btn active" id="btnSyncCopy" style="flex:1;">📋 Copier le code</button>
+      <button type="button" class="pill-btn" id="btnSyncDownload">⬇️ .json</button>
+      <button type="button" class="pill-btn" id="btnCloseSync">Fermer</button>
+    </div>
+    <div class="pill-row" id="syncImportActions" style="margin-top:10px;margin-bottom:0;display:none;">
+      <button type="button" class="pill-btn" id="btnSyncPickFile">📂 Fichier</button>
+      <button type="button" class="pill-btn active" id="btnSyncApply" style="flex:1;">✅ Restaurer</button>
+      <button type="button" class="pill-btn" id="btnCloseSync2">Annuler</button>
     </div>
   </div>
 </div>
@@ -1048,7 +1175,10 @@
       <div class="total-val" id="totalVal">-- €</div>
       <div class="clock-txt" id="clockTxt">Connexion au flux boursier mondial...</div>
     </div>
-    <div class="total-gain" id="totalGain">Chargement...</div>
+    <div style="text-align:right;flex-shrink:0;">
+      <div class="total-gain" id="totalGain">Chargement...</div>
+      <div class="day-gain-sub" id="dayGainSub">Aujourd'hui : --</div>
+    </div>
   </div>
 </header>
 
@@ -1126,6 +1256,10 @@
       </div>
       <div class="proj-grid" id="projGrid"></div>
     </div>
+    <div class="sync-bar">
+      <button type="button" class="pill-btn btn-compact" id="btnExportData" style="flex:1;">💾 Sauvegarder / Transférer</button>
+      <button type="button" class="pill-btn btn-compact" id="btnImportData" style="flex:1;">📥 Restaurer une sauvegarde</button>
+    </div>
   </div>
 
   <!-- ONGLET 2 : INVESTIR & METEO -->
@@ -1179,7 +1313,10 @@
     <div class="card">
       <div class="card-title">
         <span id="linesTitleTxt">📊 Mes Investissements (Cours en Direct)</span>
-        <span class="badge b-blue" id="linesTotalBadge">-- €</span>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button type="button" class="pill-btn btn-compact" id="btnAddPos" style="border-color:rgba(56,189,248,0.45);color:var(--blue);padding:3px 9px;">+ Ajouter</button>
+          <span class="badge b-blue" id="linesTotalBadge">-- €</span>
+        </div>
       </div>
       <div class="port-baro">
         <div class="port-baro-top">
@@ -1352,25 +1489,26 @@
     if (rawSaved) savedData = JSON.parse(rawSaved);
   } catch (e) {}
 
-  var positions = defaultPositions.map(function(p) {
-    var s = (savedData.positions && savedData.positions[p.id]) || {};
+  function buildPositionObj(p, s) {
+    s = s || {};
     var t = s.tech || {};
     return {
       id: p.id,
-      account: p.account,
+      account: p.account || "TR",
       tv: p.tv,
-      ticker: p.ticker,
-      stooq: p.stooq,
-      currency: p.currency,
-      refPriceEUR: p.refPriceEUR,
+      ticker: p.ticker || p.tv,
+      stooq: p.stooq || "",
+      currency: p.currency || "EUR",
+      refPriceEUR: typeof p.refPriceEUR === "number" && p.refPriceEUR > 0 ? p.refPriceEUR : 100,
       name: p.name,
-      baseVal: p.baseVal,
-      cost: typeof s.cost === "number" ? s.cost : p.cost,
-      qty: typeof s.qty === "number" ? s.qty : p.fixedQty,
+      baseVal: typeof p.baseVal === "number" ? p.baseVal : 0,
+      cost: typeof s.cost === "number" ? s.cost : (typeof p.cost === "number" ? p.cost : 0),
+      qty: typeof s.qty === "number" ? s.qty : (typeof p.fixedQty === "number" ? p.fixedQty : (typeof p.qty === "number" ? p.qty : null)),
       livePriceEUR: typeof s.livePriceEUR === "number" ? s.livePriceEUR : null,
       dayPct: typeof s.dayPct === "number" ? s.dayPct : null,
       marketSession: s.marketSession || null,
       isLive: !!s.isLive,
+      isCustom: !!p.isCustom,
       rsi: typeof t.rsi === "number" ? t.rsi : null,
       rsi1h: typeof t.rsi1h === "number" ? t.rsi1h : null,
       rsi4h: typeof t.rsi4h === "number" ? t.rsi4h : null,
@@ -1396,12 +1534,26 @@
       beta1Y: typeof t.beta1Y === "number" ? t.beta1Y : null,
       beta5Y: typeof t.beta5Y === "number" ? t.beta5Y : null,
       divYield: typeof t.divYield === "number" ? t.divYield : null,
-      pole: p.pole,
-      tag: p.tag,
-      action: p.action,
-      why: p.why
+      pole: p.pole || "etf",
+      tag: p.tag || "buy",
+      action: p.action || "Renforcer",
+      why: p.why || "Position suivie en direct."
     };
+  }
+
+  var positions = defaultPositions.map(function(p) {
+    var s = (savedData.positions && savedData.positions[p.id]) || {};
+    return buildPositionObj(p, s);
   });
+  if (Array.isArray(savedData.customPositions)) {
+    for (var cpIdx = 0; cpIdx < savedData.customPositions.length; cpIdx++) {
+      var cpDef = savedData.customPositions[cpIdx];
+      if (!cpDef || !cpDef.id || !cpDef.tv || !cpDef.name) continue;
+      cpDef.isCustom = true;
+      var cpSaved = (savedData.positions && savedData.positions[cpDef.id]) || {};
+      positions.push(buildPositionObj(cpDef, cpSaved));
+    }
+  }
 
   function formatDateTimeNow() {
     var now = new Date();
@@ -1490,8 +1642,28 @@
   function persistState() {
     try {
       var map = {};
+      var customList = [];
       for (var i = 0; i < positions.length; i++) {
         var p = positions[i];
+        if (p.isCustom) {
+          customList.push({
+            id: p.id,
+            account: p.account,
+            tv: p.tv,
+            ticker: p.ticker,
+            currency: p.currency,
+            refPriceEUR: p.refPriceEUR,
+            name: p.name,
+            baseVal: p.baseVal,
+            cost: p.cost,
+            qty: p.qty,
+            pole: p.pole,
+            tag: p.tag,
+            action: p.action,
+            why: p.why,
+            isCustom: true
+          });
+        }
         map[p.id] = {
           qty: p.qty,
           cost: p.cost,
@@ -1530,6 +1702,7 @@
       }
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         positions: map,
+        customPositions: customList,
         lastSync: state.lastSync,
         activeTab: state.activeTab,
         amount: state.amount,
@@ -1703,6 +1876,7 @@
     var poleSums = { pilier: 0, ia: 0, etf: 0, tech: 0, spec: 0 };
     var liveCount = 0;
     var activeCount = 0, trActiveCount = 0, peaActiveCount = 0;
+    var dayGainEUR = 0, hasDayLive = false;
 
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
@@ -1710,6 +1884,13 @@
       if (!isPositionActive(p)) continue;
       activeCount++;
       var m = getPosMetrics(p);
+      if (p.isLive && typeof p.dayPct === "number" && isFinite(p.dayPct)) {
+        var denom = 1 + (p.dayPct / 100);
+        if (denom > 0.05) {
+          dayGainEUR += m.val - (m.val / denom);
+          hasDayLive = true;
+        }
+      }
       if (p.account === "PEA") {
         peaVal += m.val;
         peaCost += p.cost;
@@ -1728,6 +1909,8 @@
     var totalCost = peaCost + trCost;
     var totalGain = totalVal - totalCost;
     var totalPct = totalCost > 0 ? (totalGain / totalCost) * 100 : 0;
+    var prevTotalVal = totalVal - dayGainEUR;
+    var dayPctTotal = prevTotalVal > 0 ? (dayGainEUR / prevTotalVal) * 100 : 0;
 
     return {
       peaVal: peaVal,
@@ -1737,6 +1920,9 @@
       totalVal: totalVal,
       totalGain: totalGain,
       totalPct: totalPct,
+      dayGainEUR: dayGainEUR,
+      dayPctTotal: dayPctTotal,
+      hasDayLive: hasDayLive,
       poleSums: poleSums,
       liveCount: liveCount,
       activeCount: activeCount,
@@ -1773,6 +1959,18 @@
       setTimeout(function() { totalEl.classList.remove("flash"); }, 450);
     }
     document.getElementById("totalGain").textContent = sign + fmtEuro(tot.totalGain) + " (" + sign + tot.totalPct.toFixed(2) + " %)";
+
+    var daySub = document.getElementById("dayGainSub");
+    if (daySub) {
+      if (tot.hasDayLive) {
+        var dSign = tot.dayGainEUR >= 0 ? "+" : "";
+        daySub.textContent = "Aujourd'hui : " + dSign + fmtEuro(tot.dayGainEUR) + " (" + dSign + tot.dayPctTotal.toFixed(2).replace(".", ",") + " %)";
+        daySub.className = "day-gain-sub " + (tot.dayGainEUR >= 0 ? "pos" : "neg");
+      } else {
+        daySub.textContent = "Aujourd'hui : --";
+        daySub.className = "day-gain-sub";
+      }
+    }
 
     var linesBadge = document.getElementById("linesTotalBadge");
     if (linesBadge) linesBadge.textContent = fmtEuro(tot.totalVal);
@@ -2979,6 +3177,7 @@
       var wPct = Math.round((allocAmounts[x] / (amt || 1)) * 100);
       rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" +
         "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + disp.name + "</strong> : " + disp.action + "." +
+        "<button type='button' class='btn-bought-mini' data-buy-id='" + tp.id + "' data-buy-amt='" + allocAmounts[x] + "'>✓ Acheté</button>" +
       "</div></div>";
     }
 
@@ -3126,6 +3325,7 @@
         "<div style='font-size:0.82rem;color:var(--text);line-height:1.45;margin-bottom:4px;'>" + escHtml(cur.whyFit) + "</div>" +
         "<div style='font-size:0.79rem;color:var(--muted);line-height:1.4;margin-bottom:10px;'>" + escHtml(cur.thesis) + "</div>" +
         "<div class='pill-row' style='margin-bottom:0;'>" +
+          "<button type='button' class='pill-btn btn-compact' id='btnDiscoverAdd' style='border-color:rgba(16,185,129,0.45);color:var(--green);'>+ Ajouter</button>" +
           "<button type='button' class='pill-btn btn-compact' id='btnDiscoverNext' style='flex:1;'>🔄 Autre idée (" + (state.discoveryIdx + 1) + "/" + list.length + ")</button>" +
           "<button type='button' class='pill-btn btn-compact' id='btnDiscoverClose'>✕ Masquer</button>" +
         "</div>" +
@@ -4142,7 +4342,7 @@
       });
   }
 
-  function openEditModal(posId) {
+  function openEditModal(posId, prefillBuyAmt) {
     var target = null;
     for (var i = 0; i < positions.length; i++) {
       if (positions[i].id === posId) {
@@ -4152,18 +4352,305 @@
     }
     if (!target) return;
     state.editingId = posId;
-    document.getElementById("editModalTitle").textContent = target.name;
+    var disp = getDisplayPosInfo(target);
+    document.getElementById("editModalTitle").textContent = disp.name;
     var m = getPosMetrics(target);
     var price = target.livePriceEUR || target.refPriceEUR || 1;
     var estQty = target.qty !== null ? target.qty : (m.val / price);
-    document.getElementById("editQtyInput").value = Number(estQty.toFixed(6));
-    document.getElementById("editCostInput").value = Number(target.cost.toFixed(2));
+    var subEl = document.getElementById("editModalSub");
+    var delBtn = document.getElementById("btnDeletePos");
+    if (delBtn) delBtn.style.display = target.isCustom ? "inline-block" : "none";
+
+    if (typeof prefillBuyAmt === "number" && isFinite(prefillBuyAmt) && prefillBuyAmt > 0) {
+      var addedQty = price > 0 ? (prefillBuyAmt / price) : 0;
+      var nextQty = estQty + addedQty;
+      var nextCost = (target.cost || 0) + prefillBuyAmt;
+      document.getElementById("editQtyInput").value = Number(nextQty.toFixed(6));
+      document.getElementById("editCostInput").value = Number(nextCost.toFixed(2));
+      if (subEl) {
+        subEl.textContent = "Achat pré-calculé (+" + fmtBudget(prefillBuyAmt) + " ≈ +" + addedQty.toFixed(4).replace(".", ",") + " part(s) au cours actuel) : ajustez si besoin puis validez.";
+      }
+    } else {
+      document.getElementById("editQtyInput").value = Number(estQty.toFixed(6));
+      document.getElementById("editCostInput").value = Number(target.cost.toFixed(2));
+      if (subEl) {
+        subEl.textContent = "Modifiez votre nombre de parts si vous avez renforcé ou vendu (0 pour solder) : la valeur s'actualise en direct.";
+      }
+    }
     document.getElementById("editModal").classList.add("open");
   }
 
   function closeEditModal() {
     state.editingId = null;
     document.getElementById("editModal").classList.remove("open");
+  }
+
+  function deleteEditingPosition() {
+    if (!state.editingId) return;
+    var removedName = "";
+    for (var i = 0; i < positions.length; i++) {
+      if (positions[i].id === state.editingId && positions[i].isCustom) {
+        removedName = positions[i].name;
+        positions.splice(i, 1);
+        break;
+      }
+    }
+    if (!removedName) return;
+    persistState();
+    renderAll(true);
+    if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
+    closeEditModal();
+    showToast("🗑️ Position supprimée : " + removedName);
+  }
+
+  function populateAddPresets() {
+    var sel = document.getElementById("addPresetSel");
+    if (!sel) return;
+    var html = "<option value=''>-- Saisie libre --</option>";
+    for (var i = 0; i < DISCOVERY_POOL.length; i++) {
+      var d = DISCOVERY_POOL[i];
+      if (isTvActive(d.tv)) continue;
+      html += "<option value='" + i + "'>" + escHtml(d.name) + " (" + escHtml(d.tv) + ")</option>";
+    }
+    sel.innerHTML = html;
+  }
+
+  function openAddModal(presetItem) {
+    populateAddPresets();
+    var sel = document.getElementById("addPresetSel");
+    if (sel) sel.value = "";
+    document.getElementById("addNameInput").value = presetItem && presetItem.name ? presetItem.name : "";
+    document.getElementById("addTvInput").value = presetItem && presetItem.tv ? presetItem.tv : "";
+    document.getElementById("addCcySel").value = presetItem && presetItem.currency ? presetItem.currency : "EUR";
+    document.getElementById("addAccountSel").value = presetItem && presetItem.pea ? "PEA" : "TR";
+    document.getElementById("addPoleSel").value = presetItem && presetItem.pole ? presetItem.pole : "etf";
+
+    var defaultAmt = presetItem && state.amount >= 1 ? state.amount : "";
+    var defaultQty = (presetItem && presetItem.priceEUR > 0 && state.amount >= 1)
+      ? Number((state.amount / presetItem.priceEUR).toFixed(4))
+      : "";
+    document.getElementById("addQtyInput").value = defaultQty;
+    document.getElementById("addCostInput").value = defaultAmt;
+    document.getElementById("addModal").classList.add("open");
+  }
+
+  function closeAddModal() {
+    document.getElementById("addModal").classList.remove("open");
+  }
+
+  function saveAddModal() {
+    var name = String(document.getElementById("addNameInput").value || "").trim();
+    var tv = String(document.getElementById("addTvInput").value || "").trim().toUpperCase();
+    var ccy = document.getElementById("addCcySel").value || "EUR";
+    var account = document.getElementById("addAccountSel").value || "TR";
+    var pole = document.getElementById("addPoleSel").value || "etf";
+    var qty = parseFloat(String(document.getElementById("addQtyInput").value || "").replace(",", "."));
+    var cost = parseFloat(String(document.getElementById("addCostInput").value || "").replace(",", "."));
+
+    if (!name || !tv) {
+      showToast("Indiquez le nom et le symbole TradingView (ex : EURONEXT:SU)");
+      return;
+    }
+    if (tv.indexOf(":") === -1) {
+      showToast("Ajoutez la bourse devant le ticker (ex : NASDAQ:AAPL ou EURONEXT:SU)");
+      return;
+    }
+    if (!isFinite(qty) || qty <= 0) {
+      showToast("Indiquez un nombre de parts supérieur à 0");
+      return;
+    }
+    if (!isFinite(cost) || cost < 0) cost = 0;
+
+    var refPrice = (cost > 0 && qty > 0) ? (cost / qty) : 100;
+    var newDef = {
+      id: "custom_" + Date.now(),
+      account: account,
+      tv: tv,
+      ticker: tv.split(":")[1] || tv,
+      currency: ccy,
+      refPriceEUR: refPrice,
+      name: name,
+      baseVal: cost,
+      cost: cost,
+      qty: qty,
+      pole: pole,
+      tag: pole === "spec" ? "stop" : "buy",
+      action: pole === "spec" ? "Suivi spéculatif" : "Position à suivre / renforcer",
+      why: "Investissement ajouté manuellement et suivi en temps réel.",
+      isCustom: true
+    };
+    positions.push(buildPositionObj(newDef, { qty: qty, cost: cost }));
+    persistState();
+    renderAll(true);
+    closeAddModal();
+    syncLiveQuotes(false);
+    pushAlertLog(
+      "Nouvelle ligne ajoutée : " + name,
+      qty + " part(s) pour " + fmtEuro(cost) + " (" + tv + "). Synchronisation du cours live...",
+      "Portefeuille Modifié",
+      "b-green",
+      false
+    );
+    showToast("✅ " + name + " ajouté — synchronisation du cours...");
+  }
+
+  function buildBackupPayload() {
+    var posMap = {};
+    var customList = [];
+    for (var i = 0; i < positions.length; i++) {
+      var p = positions[i];
+      if (p.isCustom) {
+        customList.push({
+          id: p.id, account: p.account, tv: p.tv, ticker: p.ticker,
+          currency: p.currency, refPriceEUR: p.refPriceEUR, name: p.name,
+          baseVal: p.baseVal, cost: p.cost, qty: p.qty, pole: p.pole,
+          tag: p.tag, action: p.action, why: p.why, isCustom: true
+        });
+      } else {
+        posMap[p.id] = { qty: p.qty, cost: p.cost };
+      }
+    }
+    return {
+      v: 1,
+      exportedAt: new Date().toISOString(),
+      positions: posMap,
+      customPositions: customList,
+      goal: state.goal,
+      dca: state.dca,
+      rateMode: state.rateMode,
+      customRate: state.customRate,
+      amount: state.amount,
+      horizon: state.horizon,
+      horizonLabel: state.horizonLabel,
+      horizonVal: state.horizonVal,
+      horizonUnit: state.horizonUnit,
+      horizonHours: state.horizonHours,
+      donePrios: state.donePrios
+    };
+  }
+
+  function openSyncModal(mode) {
+    var modal = document.getElementById("syncModal");
+    var titleEl = document.getElementById("syncModalTitle");
+    var subEl = document.getElementById("syncModalSub");
+    var box = document.getElementById("syncCodeBox");
+    var expBtns = document.getElementById("syncExportActions");
+    var impBtns = document.getElementById("syncImportActions");
+    if (!modal || !box) return;
+
+    if (mode === "import") {
+      titleEl.textContent = "📥 Restaurer une sauvegarde";
+      subEl.textContent = "Collez le code copié depuis votre autre appareil, ou choisissez un fichier .json :";
+      box.readOnly = false;
+      box.value = "";
+      expBtns.style.display = "none";
+      impBtns.style.display = "flex";
+    } else {
+      titleEl.textContent = "💾 Sauvegarder / Transférer";
+      subEl.textContent = "Copiez ce code (ou téléchargez le .json) pour retrouver vos parts, ajouts et réglages sur PC, téléphone ou nouvelle APK :";
+      box.readOnly = true;
+      box.value = JSON.stringify(buildBackupPayload());
+      expBtns.style.display = "flex";
+      impBtns.style.display = "none";
+    }
+    modal.classList.add("open");
+  }
+
+  function closeSyncModal() {
+    var modal = document.getElementById("syncModal");
+    if (modal) modal.classList.remove("open");
+  }
+
+  function copySyncCode() {
+    var box = document.getElementById("syncCodeBox");
+    if (!box || !box.value) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(box.value)
+        .then(function() { showToast("📋 Code de sauvegarde copié !"); })
+        .catch(function() {
+          box.select();
+          try { document.execCommand("copy"); showToast("📋 Code de sauvegarde copié !"); } catch (e) {}
+        });
+    } else {
+      box.select();
+      try { document.execCommand("copy"); showToast("📋 Code de sauvegarde copié !"); } catch (e) {}
+    }
+  }
+
+  function downloadSyncJson() {
+    var box = document.getElementById("syncCodeBox");
+    if (!box || !box.value) return;
+    try {
+      var blob = new Blob([box.value], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "copilote-sauvegarde.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+      showToast("⬇️ Fichier copilote-sauvegarde.json téléchargé !");
+    } catch (e) {
+      showToast("Utilisez « Copier le code » sur cet appareil");
+    }
+  }
+
+  function applyImportText(rawText) {
+    try {
+      var parsed = JSON.parse(String(rawText || "").trim());
+      if (!parsed || typeof parsed !== "object") throw new Error("invalid");
+
+      // Reconstruire positions par défaut + positions ajoutées
+      var nextPositions = defaultPositions.map(function(defP) {
+        var existing = findPosById(defP.id) || {};
+        var imp = (parsed.positions && parsed.positions[defP.id]) || {};
+        return buildPositionObj(defP, {
+          qty: typeof imp.qty === "number" ? imp.qty : existing.qty,
+          cost: typeof imp.cost === "number" ? imp.cost : existing.cost,
+          livePriceEUR: existing.livePriceEUR,
+          dayPct: existing.dayPct,
+          marketSession: existing.marketSession,
+          isLive: existing.isLive
+        });
+      });
+
+      if (Array.isArray(parsed.customPositions)) {
+        for (var i = 0; i < parsed.customPositions.length; i++) {
+          var cp = parsed.customPositions[i];
+          if (!cp || !cp.id || !cp.tv || !cp.name) continue;
+          cp.isCustom = true;
+          nextPositions.push(buildPositionObj(cp, { qty: cp.qty, cost: cp.cost }));
+        }
+      }
+
+      positions.length = 0;
+      for (var k = 0; k < nextPositions.length; k++) {
+        positions.push(nextPositions[k]);
+      }
+
+      if (typeof parsed.goal === "number" && parsed.goal >= 100) state.goal = parsed.goal;
+      if (typeof parsed.dca === "number" && parsed.dca >= 0) state.dca = parsed.dca;
+      if (parsed.rateMode === "auto" || parsed.rateMode === "custom") state.rateMode = parsed.rateMode;
+      if (typeof parsed.customRate === "number" && parsed.customRate >= 0) state.customRate = parsed.customRate;
+      if (typeof parsed.amount === "number" && parsed.amount >= 1) state.amount = parsed.amount;
+      if (typeof parsed.horizon === "string") state.horizon = parsed.horizon;
+      if (typeof parsed.horizonLabel === "string") state.horizonLabel = parsed.horizonLabel;
+      if (typeof parsed.horizonVal === "number" && parsed.horizonVal >= 0) state.horizonVal = parsed.horizonVal;
+      if (typeof parsed.horizonUnit === "string") state.horizonUnit = parsed.horizonUnit;
+      if (typeof parsed.horizonHours === "number" && parsed.horizonHours >= 0) state.horizonHours = parsed.horizonHours;
+      if (parsed.donePrios && typeof parsed.donePrios === "object") state.donePrios = parsed.donePrios;
+
+      persistState();
+      syncInvestControlsFromState();
+      renderAll(true);
+      if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
+      closeSyncModal();
+      syncLiveQuotes(false);
+      showToast("✅ Sauvegarde restaurée et synchronisée !");
+    } catch (e) {
+      showToast("⚠️ Code ou fichier de sauvegarde invalide");
+    }
   }
 
   function saveEditModal() {
@@ -4360,12 +4847,71 @@
       openEditModal(editBtn.getAttribute("data-edit-id"));
       return;
     }
+    var boughtBtn = e.target.closest(".btn-bought-mini");
+    if (boughtBtn) {
+      openEditModal(
+        boughtBtn.getAttribute("data-buy-id"),
+        parseFloat(boughtBtn.getAttribute("data-buy-amt"))
+      );
+      return;
+    }
     if (e.target.closest("#btnCancelEdit") || e.target.id === "editModal") {
       closeEditModal();
       return;
     }
+    if (e.target.closest("#btnDeletePos")) {
+      deleteEditingPosition();
+      return;
+    }
     if (e.target.closest("#btnSaveEdit")) {
       saveEditModal();
+      return;
+    }
+    if (e.target.closest("#btnAddPos")) {
+      openAddModal(null);
+      return;
+    }
+    if (e.target.closest("#btnDiscoverAdd")) {
+      var curIdea = (state.discoveryResults && state.discoveryResults[state.discoveryIdx]) || null;
+      openAddModal(curIdea);
+      return;
+    }
+    if (e.target.closest("#btnCancelAdd") || e.target.id === "addModal") {
+      closeAddModal();
+      return;
+    }
+    if (e.target.closest("#btnSaveAdd")) {
+      saveAddModal();
+      return;
+    }
+    if (e.target.closest("#btnExportData")) {
+      openSyncModal("export");
+      return;
+    }
+    if (e.target.closest("#btnImportData")) {
+      openSyncModal("import");
+      return;
+    }
+    if (e.target.closest("#btnCloseSync") || e.target.closest("#btnCloseSync2") || e.target.id === "syncModal") {
+      closeSyncModal();
+      return;
+    }
+    if (e.target.closest("#btnSyncCopy")) {
+      copySyncCode();
+      return;
+    }
+    if (e.target.closest("#btnSyncDownload")) {
+      downloadSyncJson();
+      return;
+    }
+    if (e.target.closest("#btnSyncPickFile")) {
+      var fInp = document.getElementById("syncFileInput");
+      if (fInp) fInp.click();
+      return;
+    }
+    if (e.target.closest("#btnSyncApply")) {
+      var boxEl = document.getElementById("syncCodeBox");
+      applyImportText(boxEl ? boxEl.value : "");
       return;
     }
     var poleRow = e.target.closest(".pole-row");
@@ -4599,6 +5145,37 @@
       if (isFinite(v) && v === 0) {
         editCostEl.value = "0";
       }
+    });
+  }
+
+  var addPresetEl = document.getElementById("addPresetSel");
+  if (addPresetEl) {
+    addPresetEl.addEventListener("change", function() {
+      var idx = parseInt(addPresetEl.value, 10);
+      if (isNaN(idx) || !DISCOVERY_POOL[idx]) return;
+      var d = DISCOVERY_POOL[idx];
+      document.getElementById("addNameInput").value = d.name;
+      document.getElementById("addTvInput").value = d.tv;
+      document.getElementById("addCcySel").value = d.currency || "EUR";
+      document.getElementById("addAccountSel").value = d.pea ? "PEA" : "TR";
+      document.getElementById("addPoleSel").value = d.pole || "etf";
+    });
+  }
+
+  var syncFileEl = document.getElementById("syncFileInput");
+  if (syncFileEl) {
+    syncFileEl.addEventListener("change", function() {
+      var file = syncFileEl.files && syncFileEl.files[0];
+      if (!file) return;
+      var reader = new FileReader();
+      reader.onload = function(ev) {
+        var txt = String((ev && ev.target && ev.target.result) || "");
+        var boxEl = document.getElementById("syncCodeBox");
+        if (boxEl) boxEl.value = txt;
+        applyImportText(txt);
+        syncFileEl.value = "";
+      };
+      reader.readAsText(file);
     });
   }
 
