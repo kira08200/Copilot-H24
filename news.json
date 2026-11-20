@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T15:34:12Z",
+  "updatedAt": "2026-11-20T16:30:36Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -6.43,
-      "price": 457.745,
+      "changePct": -8.82,
+      "price": 446.02,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,9 +108,19 @@
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -5.79,
-      "price": 119.36,
+      "changePct": -5.75,
+      "price": 119.42,
       "currency": "EUR",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261120",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -5.67,
+      "price": 137.71,
+      "currency": "USD",
       "kind": "drop"
     }
   ],
@@ -219,6 +229,7 @@
     "6070076fd3e0645e",
     "9fee1d0bf7ce3d63",
     "463fb5cfbe9814f7",
-    "6fad790261b5d411"
+    "6fad790261b5d411",
+    "move_drop_NASDAQ:NVDA_20261120"
   ]
 }
