@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T14:37:30Z",
+  "updatedAt": "2026-11-20T15:34:12Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,13 +98,43 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -7.72,
-      "price": 489.19,
+      "changePct": -6.43,
+      "price": 457.745,
       "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_XETR:ENR_20261120",
+      "tv": "XETR:ENR",
+      "name": "Siemens Energy",
+      "weight": "4,8 %",
+      "changePct": -5.79,
+      "price": 119.36,
+      "currency": "EUR",
       "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "463fb5cfbe9814f7",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Malgré les succès de Nvidia et d'Anthropic, le Cac 40 perd plus de 4 % sur la semaine, sa plus forte baisse depuis huit mois - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 20 Nov 2026 13:41:09 GMT",
+      "pubTs": 1795182069,
+      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNdHhtRzJDT18xVzBONE9FTFJIWHJmaGNHMjJ1OWFSZTJYNUk4aGdJM2NWYzAzQjNhNXBad0d2QmVBNWs5S3lNTHVTenFrZ0NXWUpVVkU5VW9WYUtNRjhVY3hSbzFvd1BiU1Z5VW9PNWFWbzd5bTN2cUZlT2FJUHdidGFudFRQMV9RTEE1VzRLMkNMUzM3RUNTM1JpWi02d29JVHZMWkZWNkVBNDVzTC1vQmRJeWpJMTJmMlpWTFZVNDN0blFXMVh3MjNmWG82MDlSSHM1ZnpwVFk3N1hlb3BqdHZWRnhuVE1TbjZLbElVVFFSdXd2b3FSR2lGeVNWUFZkemthdl9iTHNNeXJhTURkSlZlU1l1SFBWRmc?oc=5"
+    },
+    {
+      "id": "6fad790261b5d411",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
+      "pubTs": 1795181841,
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
+    },
     {
       "id": "c20b86f8cee8ee1a",
       "theme": "Macro & Wall Street",
@@ -116,16 +146,6 @@
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
     },
     {
-      "id": "2423fa476bf83ea2",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft veut détourner les entreprises d’OpenAI et Anthropic avec des modèles d’IA performants et moins coûteux qui « restent sous contrôle » - L'Usine Digitale",
-      "source": "L'Usine Digitale",
-      "pubDate": "Thu, 19 Nov 2026 17:28:03 GMT",
-      "pubTs": 1795109283,
-      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxOOUNaY3ZWelNNQ2NiOGR4bVlYbE55SVRCcVRsX2tLS0IwN1d6eEVvS2ZqMl9OWTIzSnNaZFJaeW4wOGdSOGx5Z0FKdHpmc0dNbXpweURLTndrZ09ueThoVVhyYmxCMFFvNFVlcTVEWVJ6Qm5BWVpuNzlrQmxxUXJ1MWlzQnB2SjRzUGtRN3RmOWVNcGM4SkZyV3l6Rkp2d3lSbUtVYVdqV2NmbVAwVlVBV2o4Z1gwUEVLVGlUQVVkeEtTamtvd1FyLTRkVXY0MUlkS2VENkVXNHVsSUcxS2QyNE45X3JDZ19GUHhHZGRlbFNMaW1MTVEzTWFWX0VRaWdqem5ndU50djB3b3oxM3l1X1pfSjBOZDAzRFFzZ2EyXzlGbFVHdnhldFRtcUpUeTBqT0xwako5cS1SUVE2RUJF?oc=5"
-    },
-    {
       "id": "3a3ed16a59b2cb82",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -134,16 +154,6 @@
       "pubDate": "Thu, 19 Nov 2026 16:04:12 GMT",
       "pubTs": 1795104252,
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
-    },
-    {
-      "id": "6070076fd3e0645e",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Wall Street poursuit sa chute avant les résultats cruciaux de Nvidia - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Tue, 17 Nov 2026 21:07:28 GMT",
-      "pubTs": 1794949648,
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUVNrZVhPQ2RmVFh4R19vakdBNzFVQ2FUcEppSkxyRVRfSEgyR1dLOWtQbDMyQW1ZcVJGRi1CeFFvS2IwdWtnRjNqUnNYNDZTVkFabjNHc3cxOTRZNEY1WGt2UEhvc1B6M0pFclJIZkZBSHF2cTRRaDY5VnlvbE5Cc3dCTDBmcmR0STRubnpnVlNOdXVlRGo0TDVmV0tpOWlBV1BOYTFxbUlYVGc5Ni1LQ2NIc0h0eU5abkRSWXFWamJzLWlQX1FGVQ?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -207,6 +217,8 @@
     "c20b86f8cee8ee1a",
     "move_drop_XETR:ENR_20261120",
     "6070076fd3e0645e",
-    "9fee1d0bf7ce3d63"
+    "9fee1d0bf7ce3d63",
+    "463fb5cfbe9814f7",
+    "6fad790261b5d411"
   ]
 }
