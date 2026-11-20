@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T21:11:36Z",
+  "updatedAt": "2026-11-20T21:55:47Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,22 +94,22 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:AMD_20261120",
-      "tv": "NASDAQ:AMD",
-      "name": "AMD",
-      "weight": "18,4 %",
-      "changePct": -14.29,
-      "price": 419.275,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
       "id": "move_drop_NASDAQ:NVDA_20261120",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -14.25,
-      "price": 125.185,
+      "changePct": -14.01,
+      "price": 125.53,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:AMD_20261120",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "changePct": -13.25,
+      "price": 424.39,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,8 +118,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -9.78,
-      "price": 77.71,
+      "changePct": -9.67,
+      "price": 77.8,
       "currency": "USD",
       "kind": "drop"
     },
@@ -128,8 +128,8 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": -7.6,
-      "price": 149.69,
+      "changePct": -7.45,
+      "price": 149.94,
       "currency": "USD",
       "kind": "drop"
     },
