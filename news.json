@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T10:37:59Z",
+  "updatedAt": "2026-11-20T11:32:07Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -102,6 +102,16 @@
       "price": 489.19,
       "currency": "USD",
       "kind": "drop"
+    },
+    {
+      "id": "move_drop_XETR:ENR_20261120",
+      "tv": "XETR:ENR",
+      "name": "Siemens Energy",
+      "weight": "4,8 %",
+      "changePct": -5.26,
+      "price": 120.04,
+      "currency": "EUR",
+      "kind": "drop"
     }
   ],
   "items": [
@@ -136,14 +146,14 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
     },
     {
-      "id": "848e418bf242f25d",
+      "id": "6070076fd3e0645e",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
-      "pubTs": 1794956760,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
+      "title": "Wall Street poursuit sa chute avant les résultats cruciaux de Nvidia - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Tue, 17 Nov 2026 21:07:28 GMT",
+      "pubTs": 1794949648,
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUVNrZVhPQ2RmVFh4R19vakdBNzFVQ2FUcEppSkxyRVRfSEgyR1dLOWtQbDMyQW1ZcVJGRi1CeFFvS2IwdWtnRjNqUnNYNDZTVkFabjNHc3cxOTRZNEY1WGt2UEhvc1B6M0pFclJIZkZBSHF2cTRRaDY5VnlvbE5Cc3dCTDBmcmR0STRubnpnVlNOdXVlRGo0TDVmV0tpOWlBV1BOYTFxbUlYVGc5Ni1LQ2NIc0h0eU5abkRSWXFWamJzLWlQX1FGVQ?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -204,6 +214,8 @@
     "848e418bf242f25d",
     "5e5854487bd9ea79",
     "92109f8cc8ca951d",
-    "c20b86f8cee8ee1a"
+    "c20b86f8cee8ee1a",
+    "move_drop_XETR:ENR_20261120",
+    "6070076fd3e0645e"
   ]
 }
