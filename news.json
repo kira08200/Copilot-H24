@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T09:39:40Z",
+  "updatedAt": "2026-11-20T10:37:59Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -106,6 +106,16 @@
   ],
   "items": [
     {
+      "id": "c20b86f8cee8ee1a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le yen japonais se renforce, les chiffres de l’inflation confortant les anticipations de hausse des taux de la BoJ - www.tmgm.com",
+      "source": "www.tmgm.com",
+      "pubDate": "Fri, 20 Nov 2026 03:04:54 GMT",
+      "pubTs": 1795143894,
+      "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
+    },
+    {
       "id": "2423fa476bf83ea2",
       "theme": "Microsoft",
       "tagCls": "b-blue",
@@ -124,16 +134,6 @@
       "pubDate": "Thu, 19 Nov 2026 16:04:12 GMT",
       "pubTs": 1795104252,
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
-    },
-    {
-      "id": "541b826bde211581",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "La Fed redoute un choc en chaîne sur les marchés : Bitcoin en danger ? - Cryptoast",
-      "source": "Cryptoast",
-      "pubDate": "Thu, 19 Nov 2026 09:02:44 GMT",
-      "pubTs": 1795078964,
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5TXdXcHR4QmJXUEF3RmJaM20zOFpRLXBmaUtMVVBTSm5FS3V2dE9hUDJ5V2xhdldHVm1mbk55Rkl2b1pCMDVLTUwzV1lmMHNaTjVNTkprVnBQcVZJY3RuS1RzMVg3azRIeW9fTTNnbXJLSEMtaTJDLXBQQXRhZkE?oc=5"
     },
     {
       "id": "848e418bf242f25d",
@@ -203,6 +203,7 @@
     "move_drop_NASDAQ:AMD_20261120",
     "848e418bf242f25d",
     "5e5854487bd9ea79",
-    "92109f8cc8ca951d"
+    "92109f8cc8ca951d",
+    "c20b86f8cee8ee1a"
   ]
 }
