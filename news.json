@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T23:33:08Z",
+  "updatedAt": "2026-11-20T00:18:56Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,7 +94,7 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:AMD_20261119",
+      "id": "move_drop_NASDAQ:AMD_20261120",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
@@ -199,6 +199,7 @@
     "d62992070c27655e",
     "b4dcccc98fb6b310",
     "1774caca0ac5844d",
-    "2423fa476bf83ea2"
+    "2423fa476bf83ea2",
+    "move_drop_NASDAQ:AMD_20261120"
   ]
 }
