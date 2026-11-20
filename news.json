@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T16:30:36Z",
+  "updatedAt": "2026-11-20T17:27:08Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,18 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.82,
-      "price": 446.02,
+      "changePct": -10.92,
+      "price": 435.771,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261120",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -6.87,
+      "price": 135.9531,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,28 +118,38 @@
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -5.75,
-      "price": 119.42,
+      "changePct": -6.61,
+      "price": 118.32,
       "currency": "EUR",
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:NVDA_20261120",
-      "tv": "NASDAQ:NVDA",
-      "name": "NVIDIA",
-      "weight": "13,0 %",
-      "changePct": -5.67,
-      "price": 137.71,
+      "id": "move_drop_NASDAQ:MSTR_20261120",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -6.07,
+      "price": 80.9,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "items": [
     {
+      "id": "eb8f07f8e9a09d1a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "AGENDA DU 23 AU 27 NOVEMBRE: L'inflation américaine au menu de Thanksgiving - ABC Bourse",
+      "source": "ABC Bourse",
+      "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
+      "pubTs": 1795192051,
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
+    },
+    {
       "id": "463fb5cfbe9814f7",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Malgré les succès de Nvidia et d'Anthropic, le Cac 40 perd plus de 4 % sur la semaine, sa plus forte baisse depuis huit mois - Investir Les Echos",
+      "title": "Malgré les succès de Nvidia et d'Anthropic, le Cac 40 perd plus de 4% sur la semaine, sa plus forte baisse depuis huit mois - Investir Les Echos",
       "source": "Investir Les Echos",
       "pubDate": "Fri, 20 Nov 2026 13:41:09 GMT",
       "pubTs": 1795182069,
@@ -154,16 +174,6 @@
       "pubDate": "Fri, 20 Nov 2026 03:04:54 GMT",
       "pubTs": 1795143894,
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
-    },
-    {
-      "id": "3a3ed16a59b2cb82",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Taux BCE : décision du 17 décembre 2026 et attentes - Admirals",
-      "source": "Admirals",
-      "pubDate": "Thu, 19 Nov 2026 16:04:12 GMT",
-      "pubTs": 1795104252,
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -230,6 +240,8 @@
     "9fee1d0bf7ce3d63",
     "463fb5cfbe9814f7",
     "6fad790261b5d411",
-    "move_drop_NASDAQ:NVDA_20261120"
+    "move_drop_NASDAQ:NVDA_20261120",
+    "move_drop_NASDAQ:MSTR_20261120",
+    "eb8f07f8e9a09d1a"
   ]
 }
