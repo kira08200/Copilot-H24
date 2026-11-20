@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T12:29:36Z",
+  "updatedAt": "2026-11-20T13:45:30Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -108,13 +108,23 @@
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -5.37,
-      "price": 119.9,
+      "changePct": -5.57,
+      "price": 119.64,
       "currency": "EUR",
       "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Fri, 20 Nov 2026 10:44:35 GMT",
+      "pubTs": 1795171475,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
     {
       "id": "c20b86f8cee8ee1a",
       "theme": "Macro & Wall Street",
@@ -144,16 +154,6 @@
       "pubDate": "Thu, 19 Nov 2026 16:04:12 GMT",
       "pubTs": 1795104252,
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
-    },
-    {
-      "id": "848e418bf242f25d",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
-      "pubTs": 1794956760,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -216,6 +216,7 @@
     "92109f8cc8ca951d",
     "c20b86f8cee8ee1a",
     "move_drop_XETR:ENR_20261120",
-    "6070076fd3e0645e"
+    "6070076fd3e0645e",
+    "9fee1d0bf7ce3d63"
   ]
 }
