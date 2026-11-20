@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T03:18:28Z",
+  "updatedAt": "2026-11-20T06:23:30Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,16 +126,6 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
     },
     {
-      "id": "1774caca0ac5844d",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA : des résultats étincelants... et pourtant une action qui recule - Clubic.com",
-      "source": "Clubic.com",
-      "pubDate": "Thu, 19 Nov 2026 13:34:00 GMT",
-      "pubTs": 1795095240,
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPOGU1b0JSVzdjeTQxSG9wZzA1bzNJbkdiWTkyZE14YXRSaGJRbUdlZlF4cVFURWF3R0xBaUEyRjdfM20zc1Y4dmZiajlnYy13TXJIV0FaZzdwQXo4bkFFVDBaWWJJc2d5RVhHY0tCLVVfdUl0RGNIMWFQb19DQnpJNnNZSGlOQzVON3RsZldlbjAtaUdRZGxjNW5DeDVJeXFsaGt3NXNNbFh4SkdDdlVMdw?oc=5"
-    },
-    {
       "id": "541b826bde211581",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -144,6 +134,16 @@
       "pubDate": "Thu, 19 Nov 2026 09:02:44 GMT",
       "pubTs": 1795078964,
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5TXdXcHR4QmJXUEF3RmJaM20zOFpRLXBmaUtMVVBTSm5FS3V2dE9hUDJ5V2xhdldHVm1mbk55Rkl2b1pCMDVLTUwzV1lmMHNaTjVNTkprVnBQcVZJY3RuS1RzMVg3azRIeW9fTTNnbXJLSEMtaTJDLXBQQXRhZkE?oc=5"
+    },
+    {
+      "id": "848e418bf242f25d",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
+      "source": "XTB.com",
+      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
+      "pubTs": 1794956760,
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -200,6 +200,7 @@
     "b4dcccc98fb6b310",
     "1774caca0ac5844d",
     "2423fa476bf83ea2",
-    "move_drop_NASDAQ:AMD_20261120"
+    "move_drop_NASDAQ:AMD_20261120",
+    "848e418bf242f25d"
   ]
 }
