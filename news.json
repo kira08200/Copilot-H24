@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T13:45:30Z",
+  "updatedAt": "2026-11-20T14:37:30Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -102,29 +102,9 @@
       "price": 489.19,
       "currency": "USD",
       "kind": "drop"
-    },
-    {
-      "id": "move_drop_XETR:ENR_20261120",
-      "tv": "XETR:ENR",
-      "name": "Siemens Energy",
-      "weight": "4,8 %",
-      "changePct": -5.57,
-      "price": 119.64,
-      "currency": "EUR",
-      "kind": "drop"
     }
   ],
   "items": [
-    {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "source": "Boursorama",
-      "pubDate": "Fri, 20 Nov 2026 10:44:35 GMT",
-      "pubTs": 1795171475,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
-    },
     {
       "id": "c20b86f8cee8ee1a",
       "theme": "Macro & Wall Street",
@@ -154,6 +134,16 @@
       "pubDate": "Thu, 19 Nov 2026 16:04:12 GMT",
       "pubTs": 1795104252,
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
+    },
+    {
+      "id": "6070076fd3e0645e",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street poursuit sa chute avant les résultats cruciaux de Nvidia - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Tue, 17 Nov 2026 21:07:28 GMT",
+      "pubTs": 1794949648,
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUVNrZVhPQ2RmVFh4R19vakdBNzFVQ2FUcEppSkxyRVRfSEgyR1dLOWtQbDMyQW1ZcVJGRi1CeFFvS2IwdWtnRjNqUnNYNDZTVkFabjNHc3cxOTRZNEY1WGt2UEhvc1B6M0pFclJIZkZBSHF2cTRRaDY5VnlvbE5Cc3dCTDBmcmR0STRubnpnVlNOdXVlRGo0TDVmV0tpOWlBV1BOYTFxbUlYVGc5Ni1LQ2NIc0h0eU5abkRSWXFWamJzLWlQX1FGVQ?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
