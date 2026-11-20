@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T11:32:07Z",
+  "updatedAt": "2026-11-20T12:29:36Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -8,7 +8,7 @@
       "weight": "3,4 %",
       "timestamp": 1795521600,
       "dateStr": "24/11/2026",
-      "daysLeft": 4
+      "daysLeft": 3
     },
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -17,7 +17,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 62
+      "daysLeft": 61
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +26,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 67
+      "daysLeft": 66
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +35,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +44,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +53,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 76
+      "daysLeft": 75
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +71,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 76
+      "daysLeft": 75
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +80,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 82
+      "daysLeft": 81
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +89,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 83
+      "daysLeft": 82
     }
   ],
   "majorMoves": [
@@ -108,8 +108,8 @@
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -5.26,
-      "price": 120.04,
+      "changePct": -5.37,
+      "price": 119.9,
       "currency": "EUR",
       "kind": "drop"
     }
@@ -146,14 +146,14 @@
       "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPd25hT0o3VVBxNjl0d09nUjA4RFZwTnlsSUdQX0EweVh1SzJiWFVkcGdMVnoyUjBaOFNPQWJOTzMxYkRmeG9xVE1OeTFnZUh3dXQwN01acXV0YUlNRGNsaXppZzA3ODA5VVdRbE1VdDhxQVNPSEpKT1hNQngxcURHUXhBdE1iUWNpUkV5eW0tZXI2UQ?oc=5"
     },
     {
-      "id": "6070076fd3e0645e",
+      "id": "848e418bf242f25d",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Wall Street poursuit sa chute avant les résultats cruciaux de Nvidia - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Tue, 17 Nov 2026 21:07:28 GMT",
-      "pubTs": 1794949648,
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPUVNrZVhPQ2RmVFh4R19vakdBNzFVQ2FUcEppSkxyRVRfSEgyR1dLOWtQbDMyQW1ZcVJGRi1CeFFvS2IwdWtnRjNqUnNYNDZTVkFabjNHc3cxOTRZNEY1WGt2UEhvc1B6M0pFclJIZkZBSHF2cTRRaDY5VnlvbE5Cc3dCTDBmcmR0STRubnpnVlNOdXVlRGo0TDVmV0tpOWlBV1BOYTFxbUlYVGc5Ni1LQ2NIc0h0eU5abkRSWXFWamJzLWlQX1FGVQ?oc=5"
+      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
+      "source": "XTB.com",
+      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
+      "pubTs": 1794956760,
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
