@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T17:27:08Z",
+  "updatedAt": "2026-11-20T19:28:03Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -10.92,
-      "price": 435.771,
+      "changePct": -11.95,
+      "price": 430.75,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -6.87,
-      "price": 135.9531,
+      "changePct": -9.16,
+      "price": 132.615,
       "currency": "USD",
       "kind": "drop"
     },
@@ -128,13 +128,23 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -6.07,
-      "price": 80.9,
+      "changePct": -6.0,
+      "price": 80.96,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "8a756c2ab21f5391",
+      "theme": "BYD",
+      "tagCls": "b-green",
+      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
+      "pubTs": 1795200540,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
+    },
     {
       "id": "eb8f07f8e9a09d1a",
       "theme": "Macro & Wall Street",
@@ -159,11 +169,11 @@
       "id": "6fad790261b5d411",
       "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
-      "pubTs": 1795181841,
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires... - Fortuneo",
+      "source": "Fortuneo",
+      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
+      "pubTs": 1795181700,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQWVHX1lLNUNjVTNINFlsMEk0QkJsQURFbG50SWtqZjNTekdpSzg3MjJoU084dmtKZnNjdVdXSlRoRXN2TzJ2TWQybE9fblVOOHBFS3BCdHFZeE1XNDhWazBFb2xKNzFmV0tkWVU3ZFMwWWNLamZCMEE1S0Q3ZzBuV2x4TDZfMlMxMmZpZWxMQUtqRVVwY3dZOXRjQzhvaGFHbXN2bjlhTUZPbzNLbEZXMV9MQzZXTlkx0gG-AUFVX3lxTE1Ma002OFhTeDNxN1RYWWY0eEtwM2RnOUgxV1gxc19qMXIyX1l2OGpPY1lYRF9nWWRkd1k0WDN4bjB5T1lnWTVBVFJlX2hlQzBNUTJWR1JkQTM1SkYyanFwNF9IWWxtc0owUkxCcjZScTdnVXdMSUhUS092WGtZNWM4ak1WcEgxdUxZZ1NUMjJkR0RxYjFUWnpyNUpzSmF5Y0p6VUo5bVZxeDlIR3AzdlRQMWx2VnBFaFhndFVyNHc?oc=5"
     },
     {
       "id": "c20b86f8cee8ee1a",
@@ -176,14 +186,24 @@
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
     },
     {
-      "id": "b9281e7d3f3dae7f",
+      "id": "d3f96a40962af29d",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "27 000 ventes en octobre : la gamme Skynomad poursuit sur sa lancée et représente déjà plus d'une vente sur deux pour Xiaomi - Auto Plus",
-      "source": "Auto Plus",
-      "pubDate": "Sat, 14 Nov 2026 12:30:00 GMT",
-      "pubTs": 1794659400,
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNWFGVC1qcnI0TnJKeW5RMU51QWhqNHVMVHlvd0N6MWtwanZtSkxid3lDV016ZlZkTnVCOVdxTm9vRUlPZGNGd01pOEVWTHJPcnBpb196d09QUXh2aWVKZVBXMlBUYXBhMmZsM3VxM1lzSlhFLUR5dEpKMHBZTEpmeUFaSFphNkw2OWxQTU1pd0VEd0NZMktJODYtWjVEN2NiRFpBNlJWdWRveWo2c25ZZDJjS2tvLWxOS2tlbFJlaHo0a0wyZ2RPUVFnMTZnRWNjbWk0UjRJNEJManlVc1NlMm5PSVh2YkJnT3A0c2k1QTE4RXEyMkRRTE5KWV9uZHBzb3c?oc=5"
+      "title": "Les ventes s’envolent pour le Xiaomi Note 15 Pro à prix dingue sur Cdiscount - ladepeche.fr",
+      "source": "ladepeche.fr",
+      "pubDate": "Wed, 11 Nov 2026 08:00:00 GMT",
+      "pubTs": 1794384000,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOWFFEb2VWU0lpTGw5aUkzNE5RNDMwenFRd0ZVcFJPRWR1bnZnZ29vcWxkYkh5MlV1U29yUDR3MTNWWHFPQi1lZEkxQnB2MVJJcDk5d2l6SUlXeFpSZE1JcU5kZUxXc3ViUWFFSnY0REVhbHo4aTdRQ2hIalp3dW5CdXpVb3RCWktzT2QxUXZoTk95NGRlUnNrejNrY1RPNmtDaF9ZWWI0bW9NT29Kb0hiRThqVVN6NlBhMWwtVVp2aVRoUQ?oc=5"
+    },
+    {
+      "id": "c9c64243af001067",
+      "theme": "Strategy A",
+      "tagCls": "b-green",
+      "title": "Les ventes de Bitcoin en trésorerie atteignent un niveau rare avant le test MSCI de MicroStrategy - Yahoo Finance France",
+      "source": "Yahoo Finance France",
+      "pubDate": "Wed, 11 Nov 2026 08:00:00 GMT",
+      "pubTs": 1794384000,
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxONzI5Z1l0OHhTVk1BRFFnT3VKZFlYSFV1dFNEN05SMGFNcXdrb25UZFNoVTZlUmtyVUNaTndZV0RYbWJSbTBPUkdNX2M1MTBjZzBsLTFWMUVBQUdZeTkwTmRzeHhtSHhBbUJhQXJsTlB0MWo1b3lIc21zX2pOby1aZDBoaHlpN2xKNFBvUWJQUjBBUEV3QXFfaHNzX0dSaFV2c0NOUG13?oc=5"
     }
   ],
   "notifiedIds": [
@@ -242,6 +262,9 @@
     "6fad790261b5d411",
     "move_drop_NASDAQ:NVDA_20261120",
     "move_drop_NASDAQ:MSTR_20261120",
-    "eb8f07f8e9a09d1a"
+    "eb8f07f8e9a09d1a",
+    "8a756c2ab21f5391",
+    "d3f96a40962af29d",
+    "c9c64243af001067"
   ]
 }
