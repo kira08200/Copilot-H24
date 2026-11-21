@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T20:03:42Z",
+  "updatedAt": "2026-11-21T20:41:38Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -186,6 +186,16 @@
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
     },
     {
+      "id": "6fad790261b5d411",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
+      "pubTs": 1795181700,
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOdTJFT2NnSzA3dXBxUS1ldkF1djB5LWtkVTZGZXZ2bHluYjdkeVQ0Uk81MENZT0RBeDJMSjNDVHZsREtzLXJwVHAzQ0I3dXFJSmVYZmlralF6cU0zdE9mRVhOaV9jQm8teFRwWUVneGtqczcxZlgyM1N6LTJTNFB3ZGtaZGRHWnMxNWs1ODB2QzRIQV82aGZsZWJHR2JVT2ZiekIxTGhwQXZPUTljdUtUWGpJUy1NSF9WUUNWaGVrM3R4dlZsMHZxZEk1ejVyNUtTaHIwUk5TQm8zN3I2TnpqdWFsTTdBMTlS0gHoAUFVX3lxTE51MkVPY2dLMDd1cHFRLWV2QXV2MHkta2RVNkZldnZseW5iN2R5VDRSTzUwQ1lPREF4MkxKM0NUdmxES3MtcnBUcDNDQjd1cUlKZVhmaWtqUXpxTTN0T2ZFWE5pX2NCby14VHBZRWd4a2pzNzFmWDIzU3otMlM0UHdka1pkZEdaczE1azU4MHZDNEhBXzZoZmxlYkdHYlVPZmJ6QjFMaHBBdk9ROWN1S1RYaklTLU1IX1ZRQ1ZoZWszdHh2VmwwdnFkSTV6NXI1S1NocjBSTlNCbzM3cjZOemp1YWxNN0ExOVI?oc=5"
+    },
+    {
       "id": "62ab90be12e0a127",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -196,24 +206,14 @@
       "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxON093Mks4SHh6VUU1YzhwTXJKMC1mVDVTZDF4Nl82eWJVUWFtRzRZRWUxN2dlVjUtRzgxWGgtaS1uZ2E3QV9GMVFtYnh4dFhMZ3lpNTEtNDJXYXBMU0k1Zl9xQzdNSi1GTzN4SDlsYTJmRzR1dXNWVDVIMzQyS1g3WnpXU3kzbzMzWlhLQ1gwZUhoSUtEeUVKYS12aDN6bE8zYjJMZkFhbVJLVXF6WFVJU09yRHhlREU2UVVScTN3RDhDNGV2NkNtN09BbjZnZUVOWE0tZkdhWUJIeEtVME4xd25HSklpeFZtMHkzOHdPTkphY2didFJSelVRa3dIWFV5WkdudmhmalE4X2Zh?oc=5"
     },
     {
-      "id": "252acad272eaa56c",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft lance une initiative pour rendre les agents d'IA vérifiables - ActuIA",
-      "source": "ActuIA",
-      "pubDate": "Thu, 19 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795111200,
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcXZ2c1g3YWlRemVYS0twbG5ielBXZjg1Q2Qxa2k5eVJGRVdEdWdYODJfcDUwbVB2WjhLcTRHQVRLRmpBWjVCQThnZG03Vk1pR0QxS3Z5cng3d0FpSVBPSWR1Nkw2dmhyWUc4QlZXWTJITnQ3dWw4QnFWSzkxV1ZwS2Nyb0ZqYUhIV1FLUEhPTHlJNUJ0UVlqRXV4Qi02MzlCSEYyYTJR?oc=5"
-    },
-    {
-      "id": "848e418bf242f25d",
+      "id": "57753768ba4101b9",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
-      "pubTs": 1794956760,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     }
   ],
   "notifiedIds": [
