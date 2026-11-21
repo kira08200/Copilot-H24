@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T11:38:52Z",
+  "updatedAt": "2026-11-21T12:26:15Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -8,7 +8,7 @@
       "weight": "3,4 %",
       "timestamp": 1795521600,
       "dateStr": "24/11/2026",
-      "daysLeft": 3
+      "daysLeft": 2
     },
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -17,7 +17,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 61
+      "daysLeft": 60
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +26,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 66
+      "daysLeft": 65
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +35,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 73
+      "daysLeft": 72
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +44,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 73
+      "daysLeft": 72
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +53,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +71,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +80,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 81
+      "daysLeft": 80
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +89,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 82
+      "daysLeft": 81
     }
   ],
   "majorMoves": [
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "3066938bd99e6be8",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "La Bourse de Wall Street enregistre des centaines de milliards de dollars de pertes, pénalisée par le secteur de l'IA - franceinfo",
+      "source": "franceinfo",
+      "pubDate": "Sat, 21 Nov 2026 11:33:52 GMT",
+      "pubTs": 1795260832,
+      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQLTVGZ0NrQ2Y5cXBTcFV6Qm02MTJnaklZTzY1S2FDUlZuSE93ZTZRTXdONVpOZTUxYi1ydjVxbzNTNTNCelEzbFJGcVhTeFZKNU03RnFvRmNpWlBHMlhpNURsSU1NYXh5VzdRb2JGZ3ZUUjJ4VGxmRW5GaXN0ZXgxSWZfaU5sbEliWlU1NmZJc3YwdVlHOUZic0FsNldfQVFRcHpYalR6VzhmclIxX2tjQkFvUFZzRHJDZ2ZiUzVDdU0xM2VGVXBpblpYZ2U2cHpsN2xuUUExOE9maWtNOEMwdUZFM3RSSXoyNjBNOFllNURfNVozb3pSODFhM2d4NjNXLTFiWld5QmdWSndNUjBjbUFGeTJ0Q21pdVE?oc=5"
+    },
+    {
       "id": "b150c96c5a5af7d3",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -176,16 +186,6 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     },
     {
-      "id": "eb8f07f8e9a09d1a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "AGENDA DU 23 AU 27 NOVEMBRE: L'inflation américaine au menu de Thanksgiving - ABC Bourse",
-      "source": "ABC Bourse",
-      "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
-      "pubTs": 1795192051,
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
-    },
-    {
       "id": "6353b4bded169452",
       "theme": "Apple",
       "tagCls": "b-blue",
@@ -199,11 +199,11 @@
       "id": "6fad790261b5d411",
       "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
-      "pubTs": 1795181841,
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
+      "pubTs": 1795181700,
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOdTJFT2NnSzA3dXBxUS1ldkF1djB5LWtkVTZGZXZ2bHluYjdkeVQ0Uk81MENZT0RBeDJMSjNDVHZsREtzLXJwVHAzQ0I3dXFJSmVYZmlralF6cU0zdE9mRVhOaV9jQm8teFRwWUVneGtqczcxZlgyM1N6LTJTNFB3ZGtaZGRHWnMxNWs1ODB2QzRIQV82aGZsZWJHR2JVT2ZiekIxTGhwQXZPUTljdUtUWGpJUy1NSF9WUUNWaGVrM3R4dlZsMHZxZEk1ejVyNUtTaHIwUk5TQm8zN3I2TnpqdWFsTTdBMTlS0gHoAUFVX3lxTE51MkVPY2dLMDd1cHFRLWV2QXV2MHkta2RVNkZldnZseW5iN2R5VDRSTzUwQ1lPREF4MkxKM0NUdmxES3MtcnBUcDNDQjd1cUlKZVhmaWtqUXpxTTN0T2ZFWE5pX2NCby14VHBZRWd4a2pzNzFmWDIzU3otMlM0UHdka1pkZEdaczE1azU4MHZDNEhBXzZoZmxlYkdHYlVPZmJ6QjFMaHBBdk9ROWN1S1RYaklTLU1IX1ZRQ1ZoZWszdHh2VmwwdnFkSTV6NXI1S1NocjBSTlNCbzM3cjZOemp1YWxNN0ExOVI?oc=5"
     },
     {
       "id": "848e418bf242f25d",
@@ -289,6 +289,8 @@
     "5626bb6e2a5694ff",
     "2bcee17acaa27d9e",
     "b150c96c5a5af7d3",
-    "57753768ba4101b9"
+    "57753768ba4101b9",
+    "earn_HKEX:1810_20261124",
+    "3066938bd99e6be8"
   ]
 }
