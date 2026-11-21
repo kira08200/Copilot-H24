@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T16:28:59Z",
+  "updatedAt": "2026-11-21T17:54:26Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,14 +146,14 @@
   ],
   "items": [
     {
-      "id": "79bd0d08bd7e478a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Panique à Wall Street : faut-il craindre un krach après une chute historique de la tech ? - Le Figaro",
-      "source": "Le Figaro",
-      "pubDate": "Sat, 21 Nov 2026 13:09:33 GMT",
-      "pubTs": 1795266573,
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPc3VkVTF4TDgtQXkxU0ZyRDU2aXVFTU01NjdPRndfb2tRNU5nYVowdDJlV1ZPS1pBOGl3NDhkcFRPX2I2c2sxTHF5RkxJanBXQkxEV2xpQnNkVjZXWW9FUGg5RHU1N1VsLUdRX1hVRFFENmNYSXpEYTM2Q1FFa2pmd05TUEZZUUZPMzlCRy1rRUo2ZDJpRDhHVU04Z2lOdllLc0gyNmFGYnA0LVFtcW1hdklaaEE4T0tWMExlVWZtSTBoX0xnQTFSM1I1aUFuaFNWN3c?oc=5"
+      "id": "a55c7afb2fa7f2e5",
+      "theme": "Amazon, Alphabet (A)",
+      "tagCls": "b-blue",
+      "title": "Google déstabilise la concurrence : ce smartphone 256GB et boosté à l’IA chute de 350 euros sur Amazon pour le Black Friday - Le Parisien",
+      "source": "Le Parisien",
+      "pubDate": "Sat, 21 Nov 2026 17:15:00 GMT",
+      "pubTs": 1795281300,
+      "link": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNaVRDd1VrVzlZeUhaTVQ1MldlM2xZZG1QbDZvaVlkdXQtM2l2Z1dEbFh5R3BpLW9Pa09UV0Vqb05wNFFKT1p5VW40bmRSTjdaNWt5OC00c0ljYmcwQTFEYkprc3AySEFHbGlVR1hYNmRaUzh1U2FxbFp4anZQSmlJSHVvblhyZFNyamx3Zmt0T0FoU3BoaWZaVnZKNUlQMllaR0I3RmhEQ0xlS0FXeVhrRGROS0hrLXR6dk5vNldacWRlX1RLeVdBUkZyUG93aXJJY2ZxLXBtVXVUeE5zenVMaXlXbjBkN1VXbzVNWWhlcllyWXdVOTBrNV9WYTlUdmtERU80U3FPSzhjbS1DQk1FTm9YTmJiUmhhd013eG5nQVZuRFM2dnpVcUUxOVRXQkpmWnllYndaTFlXZlZ2MVdxQjJfYjk4Z0FM?oc=5"
     },
     {
       "id": "dde1a221352e287e",
@@ -176,14 +176,24 @@
       "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQLTVGZ0NrQ2Y5cXBTcFV6Qm02MTJnaklZTzY1S2FDUlZuSE93ZTZRTXdONVpOZTUxYi1ydjVxbzNTNTNCelEzbFJGcVhTeFZKNU03RnFvRmNpWlBHMlhpNURsSU1NYXh5VzdRb2JGZ3ZUUjJ4VGxmRW5GaXN0ZXgxSWZfaU5sbEliWlU1NmZJc3YwdVlHOUZic0FsNldfQVFRcHpYalR6VzhmclIxX2tjQkFvUFZzRHJDZ2ZiUzVDdU0xM2VGVXBpblpYZ2U2cHpsN2xuUUExOE9maWtNOEMwdUZFM3RSSXoyNjBNOFllNURfNVozb3pSODFhM2d4NjNXLTFiWld5QmdWSndNUjBjbUFGeTJ0Q21pdVE?oc=5"
     },
     {
-      "id": "b150c96c5a5af7d3",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
-      "source": "AutoNext.co",
-      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
-      "pubTs": 1795257742,
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
+      "id": "0ce05f4a06661be3",
+      "theme": "Air Liquide",
+      "tagCls": "b-amber",
+      "title": "CAC 40, Air liquide, Anthropic, Société générale… les actions en Bourse au programme de Momentum - Capital.fr",
+      "source": "Capital.fr",
+      "pubDate": "Sat, 21 Nov 2026 07:30:00 GMT",
+      "pubTs": 1795246200,
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZGdwNS0tOURsYUcwYXFXMmRVVUFDMXozQTFUYnNHTm9Ud0NUeFFJRXF4ZEVsWWVORXNJX0hKZnpHYlllb1d0OWJPZVFzeXRzdlBlZVVlY0RsYmJhbXU3NUdzcTVTektCNGNNQUlNc0dWN3pBZ0tRUWVkQXFkeHFHM01FMWRGaG1KNkxpS2hZMEVFRlFwYnVTYll0Sm5WYzk5OGRoRmtXa1RMdGluSzk5QlFBa2h0MVVla0V3NGZad3luNDYxQTVJZWppNUVBVjJ5X3JGMDVIN1BzTk0?oc=5"
+    },
+    {
+      "id": "2cc92b1a2a3d6178",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
+      "source": "Vietnam.vn",
+      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
+      "pubTs": 1795239169,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -196,14 +206,14 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     },
     {
-      "id": "714bda9ffbfd4a7f",
+      "id": "57753768ba4101b9",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Nvidia continue d'impressionner, le prochain test de l'appétit pour le risque dans l'IA sera l'introduction d'Anthropic - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Wed, 18 Nov 2026 07:37:06 GMT",
-      "pubTs": 1794987426,
-      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPT1JScnYtQWZobklYNGQ5OXFZSUdfTzB5cGZSSWhiMXA1cDhncDVhaXFFTHZVVHB6QzBUX1VNMDM1a2IzMzJNRktYaFQ5TEpLc1V0cVJYdEJqZEktZVo2Tl9FRUFKMFJFTloxQjlfNUpUdGRuYWRxSTkxNE4yRVhhLW9SdFE5Q05fVU41eHdxUTVVYU5wbWE5V2hlOGRVSHJVbElWM3NTVmN4cG5fTFhrX0RIcDJ0Q1B4Smx4M1lhOGxtdWM5SzZJc0EtWTZ5aGsybVMyaWlQQVdWVTJrRTRzQXpRUWFWVEd4VjBXcWZPWGdrWjBIOENpek9zWW5URy1wVlJmMWVBRll0eUFOcnRleU53?oc=5"
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     }
   ],
   "notifiedIds": [
@@ -283,6 +293,8 @@
     "earn_HKEX:1810_20261124",
     "3066938bd99e6be8",
     "79bd0d08bd7e478a",
-    "dde1a221352e287e"
+    "dde1a221352e287e",
+    "a55c7afb2fa7f2e5",
+    "0ce05f4a06661be3"
   ]
 }
