@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T07:51:44Z",
+  "updatedAt": "2026-11-21T08:37:11Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "5626bb6e2a5694ff",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "La pire semaine depuis le Covid : la tech s'effondre à Wall Street et entraîne le reste des marchés mondiaux - Les Echos",
+      "source": "Les Echos",
+      "pubDate": "Sat, 21 Nov 2026 07:51:14 GMT",
+      "pubTs": 1795247474,
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTlMtekhPQ2tvLUhYNVdqbF9Rdmk5Z2E5b2R0NndqcUFIYVp0M3UwQnBkNmtwd1UyV3didEJuTE9Yd2czVlVJX2FFdnRQWjhoQk1UZlpEY0FMdWNsQmRNYmNlS285d08zT3BvaGl0R0h2dVA0bHFtVnZsaDZKSXd6ZVFCZUlxa05PM2JFcHVXWmh6bk1WbFBJSENrdW04eXhaaXZMT3hKQ0R5cFZrYlZHWWRlLXZoRjFjZjBaa1RxTi1pZUl4WEdYdVdadUJtLWg4dkhETG80SXFtdjdKQXZLcGY4QkpMWGNX?oc=5"
+    },
+    {
       "id": "2cc92b1a2a3d6178",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -164,16 +174,6 @@
       "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
       "pubTs": 1795200540,
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
-    },
-    {
-      "id": "eb8f07f8e9a09d1a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "AGENDA DU 23 AU 27 NOVEMBRE: L'inflation américaine au menu de Thanksgiving - ABC Bourse",
-      "source": "ABC Bourse",
-      "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
-      "pubTs": 1795192051,
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
     },
     {
       "id": "463fb5cfbe9814f7",
@@ -265,6 +265,7 @@
     "move_drop_XETR:ENR_20261121",
     "3b2ad51327c5eefd",
     "6353b4bded169452",
-    "2cc92b1a2a3d6178"
+    "2cc92b1a2a3d6178",
+    "5626bb6e2a5694ff"
   ]
 }
