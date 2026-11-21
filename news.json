@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T03:56:06Z",
+  "updatedAt": "2026-11-21T05:40:54Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "2cc92b1a2a3d6178",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
+      "source": "Vietnam.vn",
+      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
+      "pubTs": 1795239169,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
+    },
+    {
       "id": "8a756c2ab21f5391",
       "theme": "BYD",
       "tagCls": "b-green",
@@ -184,16 +194,6 @@
       "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
       "pubTs": 1795181841,
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
-    },
-    {
-      "id": "62ab90be12e0a127",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Calendrier économique : publication des chiffres définitifs de la confiance des consommateurs américains et discours de responsables de la Fed - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Fri, 20 Nov 2026 08:32:00 GMT",
-      "pubTs": 1795163520,
-      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxON093Mks4SHh6VUU1YzhwTXJKMC1mVDVTZDF4Nl82eWJVUWFtRzRZRWUxN2dlVjUtRzgxWGgtaS1uZ2E3QV9GMVFtYnh4dFhMZ3lpNTEtNDJXYXBMU0k1Zl9xQzdNSi1GTzN4SDlsYTJmRzR1dXNWVDVIMzQyS1g3WnpXU3kzbzMzWlhLQ1gwZUhoSUtEeUVKYS12aDN6bE8zYjJMZkFhbVJLVXF6WFVJU09yRHhlREU2UVVScTN3RDhDNGV2NkNtN09BbjZnZUVOWE0tZkdhWUJIeEtVME4xd25HSklpeFZtMHkzOHdPTkphY2didFJSelVRa3dIWFV5WkdudmhmalE4X2Zh?oc=5"
     }
   ],
   "notifiedIds": [
@@ -264,6 +264,7 @@
     "move_drop_NASDAQ:QCOM_20261121",
     "move_drop_XETR:ENR_20261121",
     "3b2ad51327c5eefd",
-    "6353b4bded169452"
+    "6353b4bded169452",
+    "2cc92b1a2a3d6178"
   ]
 }
