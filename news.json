@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:24:55Z",
+  "updatedAt": "2026-11-21T00:11:20Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,7 +94,7 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:NVDA_20261120",
+      "id": "move_drop_NASDAQ:NVDA_20261121",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
@@ -104,7 +104,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:AMD_20261120",
+      "id": "move_drop_NASDAQ:AMD_20261121",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
@@ -114,7 +114,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:MSTR_20261120",
+      "id": "move_drop_NASDAQ:MSTR_20261121",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
@@ -124,7 +124,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:QCOM_20261120",
+      "id": "move_drop_NASDAQ:QCOM_20261121",
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
@@ -134,7 +134,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_XETR:ENR_20261120",
+      "id": "move_drop_XETR:ENR_20261121",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
@@ -179,11 +179,11 @@
       "id": "6fad790261b5d411",
       "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires... - Fortuneo",
-      "source": "Fortuneo",
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Boursorama",
+      "source": "Boursorama",
       "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
       "pubTs": 1795181700,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQWVHX1lLNUNjVTNINFlsMEk0QkJsQURFbG50SWtqZjNTekdpSzg3MjJoU084dmtKZnNjdVdXSlRoRXN2TzJ2TWQybE9fblVOOHBFS3BCdHFZeE1XNDhWazBFb2xKNzFmV0tkWVU3ZFMwWWNLamZCMEE1S0Q3ZzBuV2x4TDZfMlMxMmZpZWxMQUtqRVVwY3dZOXRjQzhvaGFHbXN2bjlhTUZPbzNLbEZXMV9MQzZXTlkx0gG-AUFVX3lxTE1Ma002OFhTeDNxN1RYWWY0eEtwM2RnOUgxV1gxc19qMXIyX1l2OGpPY1lYRF9nWWRkd1k0WDN4bjB5T1lnWTVBVFJlX2hlQzBNUTJWR1JkQTM1SkYyanFwNF9IWWxtc0owUkxCcjZScTdnVXdMSUhUS092WGtZNWM4ak1WcEgxdUxZZ1NUMjJkR0RxYjFUWnpyNUpzSmF5Y0p6VUo5bVZxeDlIR3AzdlRQMWx2VnBFaFhndFVyNHc?oc=5"
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOdTJFT2NnSzA3dXBxUS1ldkF1djB5LWtkVTZGZXZ2bHluYjdkeVQ0Uk81MENZT0RBeDJMSjNDVHZsREtzLXJwVHAzQ0I3dXFJSmVYZmlralF6cU0zdE9mRVhOaV9jQm8teFRwWUVneGtqczcxZlgyM1N6LTJTNFB3ZGtaZGRHWnMxNWs1ODB2QzRIQV82aGZsZWJHR2JVT2ZiekIxTGhwQXZPUTljdUtUWGpJUy1NSF9WUUNWaGVrM3R4dlZsMHZxZEk1ejVyNUtTaHIwUk5TQm8zN3I2TnpqdWFsTTdBMTlS0gHoAUFVX3lxTE51MkVPY2dLMDd1cHFRLWV2QXV2MHkta2RVNkZldnZseW5iN2R5VDRSTzUwQ1lPREF4MkxKM0NUdmxES3MtcnBUcDNDQjd1cUlKZVhmaWtqUXpxTTN0T2ZFWE5pX2NCby14VHBZRWd4a2pzNzFmWDIzU3otMlM0UHdka1pkZEdaczE1azU4MHZDNEhBXzZoZmxlYkdHYlVPZmJ6QjFMaHBBdk9ROWN1S1RYaklTLU1IX1ZRQ1ZoZWszdHh2VmwwdnFkSTV6NXI1S1NocjBSTlNCbzM3cjZOemp1YWxNN0ExOVI?oc=5"
     },
     {
       "id": "62ab90be12e0a127",
@@ -267,6 +267,11 @@
     "d3f96a40962af29d",
     "c9c64243af001067",
     "move_drop_NASDAQ:QCOM_20261120",
-    "62ab90be12e0a127"
+    "62ab90be12e0a127",
+    "move_drop_NASDAQ:NVDA_20261121",
+    "move_drop_NASDAQ:AMD_20261121",
+    "move_drop_NASDAQ:MSTR_20261121",
+    "move_drop_NASDAQ:QCOM_20261121",
+    "move_drop_XETR:ENR_20261121"
   ]
 }
