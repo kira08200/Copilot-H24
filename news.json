@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T00:11:20Z",
+  "updatedAt": "2026-11-21T02:21:24Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -156,6 +156,16 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     },
     {
+      "id": "3b2ad51327c5eefd",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "La Française Laurence Boone proposée au directoire de la BCE - Boursorama",
+      "source": "Boursorama",
+      "pubDate": "Fri, 20 Nov 2026 17:44:55 GMT",
+      "pubTs": 1795196695,
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNZHY0UGVLcnhadkxtdHFvSWE0RF85SUM2X05wQzdUSHhrTmhUamU3ZkpBaThVLVlObndVMUNhQnZnaDF5NEpCeXB4R0hXZHJUdlV5dFJYd2d0dDdrUDJ6d1oxQjZoX2UzeWVMU1VFN1hDOXd1dWlNSWZpRTZ0eGNzVGVvOTNfMG1EdDJBOHVKeERtYVU4Nkp4UktaUGVfN0NRZDRMc2ZtTDhrVWsyaDRBcHFlRmV4NmI5OUhDU21jMzlFeWNyM1VDN1RLamRITi14RzE4WnlIcTlrTDV3VlZXaV9ZeXRmZU1FN0N2ZNIB7AFBVV95cUxNZHY0UGVLcnhadkxtdHFvSWE0RF85SUM2X05wQzdUSHhrTmhUamU3ZkpBaThVLVlObndVMUNhQnZnaDF5NEpCeXB4R0hXZHJUdlV5dFJYd2d0dDdrUDJ6d1oxQjZoX2UzeWVMU1VFN1hDOXd1dWlNSWZpRTZ0eGNzVGVvOTNfMG1EdDJBOHVKeERtYVU4Nkp4UktaUGVfN0NRZDRMc2ZtTDhrVWsyaDRBcHFlRmV4NmI5OUhDU21jMzlFeWNyM1VDN1RLamRITi14RzE4WnlIcTlrTDV3VlZXaV9ZeXRmZU1FN0N2ZA?oc=5"
+    },
+    {
       "id": "eb8f07f8e9a09d1a",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -179,21 +189,11 @@
       "id": "6fad790261b5d411",
       "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Boursorama",
-      "source": "Boursorama",
-      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
-      "pubTs": 1795181700,
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOdTJFT2NnSzA3dXBxUS1ldkF1djB5LWtkVTZGZXZ2bHluYjdkeVQ0Uk81MENZT0RBeDJMSjNDVHZsREtzLXJwVHAzQ0I3dXFJSmVYZmlralF6cU0zdE9mRVhOaV9jQm8teFRwWUVneGtqczcxZlgyM1N6LTJTNFB3ZGtaZGRHWnMxNWs1ODB2QzRIQV82aGZsZWJHR2JVT2ZiekIxTGhwQXZPUTljdUtUWGpJUy1NSF9WUUNWaGVrM3R4dlZsMHZxZEk1ejVyNUtTaHIwUk5TQm8zN3I2TnpqdWFsTTdBMTlS0gHoAUFVX3lxTE51MkVPY2dLMDd1cHFRLWV2QXV2MHkta2RVNkZldnZseW5iN2R5VDRSTzUwQ1lPREF4MkxKM0NUdmxES3MtcnBUcDNDQjd1cUlKZVhmaWtqUXpxTTN0T2ZFWE5pX2NCby14VHBZRWd4a2pzNzFmWDIzU3otMlM0UHdka1pkZEdaczE1azU4MHZDNEhBXzZoZmxlYkdHYlVPZmJ6QjFMaHBBdk9ROWN1S1RYaklTLU1IX1ZRQ1ZoZWszdHh2VmwwdnFkSTV6NXI1S1NocjBSTlNCbzM3cjZOemp1YWxNN0ExOVI?oc=5"
-    },
-    {
-      "id": "62ab90be12e0a127",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Calendrier économique : publication des chiffres définitifs de la confiance des consommateurs américains et discours de responsables de la Fed - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Fri, 20 Nov 2026 08:32:00 GMT",
-      "pubTs": 1795163520,
-      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxON093Mks4SHh6VUU1YzhwTXJKMC1mVDVTZDF4Nl82eWJVUWFtRzRZRWUxN2dlVjUtRzgxWGgtaS1uZ2E3QV9GMVFtYnh4dFhMZ3lpNTEtNDJXYXBMU0k1Zl9xQzdNSi1GTzN4SDlsYTJmRzR1dXNWVDVIMzQyS1g3WnpXU3kzbzMzWlhLQ1gwZUhoSUtEeUVKYS12aDN6bE8zYjJMZkFhbVJLVXF6WFVJU09yRHhlREU2UVVScTN3RDhDNGV2NkNtN09BbjZnZUVOWE0tZkdhWUJIeEtVME4xd25HSklpeFZtMHkzOHdPTkphY2didFJSelVRa3dIWFV5WkdudmhmalE4X2Zh?oc=5"
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
+      "pubTs": 1795181841,
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
     },
     {
       "id": "b9281e7d3f3dae7f",
@@ -272,6 +272,7 @@
     "move_drop_NASDAQ:AMD_20261121",
     "move_drop_NASDAQ:MSTR_20261121",
     "move_drop_NASDAQ:QCOM_20261121",
-    "move_drop_XETR:ENR_20261121"
+    "move_drop_XETR:ENR_20261121",
+    "3b2ad51327c5eefd"
   ]
 }
