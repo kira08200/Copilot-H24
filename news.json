@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T18:28:11Z",
+  "updatedAt": "2026-11-21T19:21:44Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -156,6 +156,16 @@
       "link": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNaVRDd1VrVzlZeUhaTVQ1MldlM2xZZG1QbDZvaVlkdXQtM2l2Z1dEbFh5R3BpLW9Pa09UV0Vqb05wNFFKT1p5VW40bmRSTjdaNWt5OC00c0ljYmcwQTFEYkprc3AySEFHbGlVR1hYNmRaUzh1U2FxbFp4anZQSmlJSHVvblhyZFNyamx3Zmt0T0FoU3BoaWZaVnZKNUlQMllaR0I3RmhEQ0xlS0FXeVhrRGROS0hrLXR6dk5vNldacWRlX1RLeVdBUkZyUG93aXJJY2ZxLXBtVXVUeE5zenVMaXlXbjBkN1VXbzVNWWhlcllyWXdVOTBrNV9WYTlUdmtERU80U3FPSzhjbS1DQk1FTm9YTmJiUmhhd013eG5nQVZuRFM2dnpVcUUxOVRXQkpmWnllYndaTFlXZlZ2MVdxQjJfYjk4Z0FM?oc=5"
     },
     {
+      "id": "79bd0d08bd7e478a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Panique à Wall Street : faut-il craindre un krach après une chute historique de la tech ? - Le Figaro",
+      "source": "Le Figaro",
+      "pubDate": "Sat, 21 Nov 2026 13:09:33 GMT",
+      "pubTs": 1795266573,
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPc3VkVTF4TDgtQXkxU0ZyRDU2aXVFTU01NjdPRndfb2tRNU5nYVowdDJlV1ZPS1pBOGl3NDhkcFRPX2I2c2sxTHF5RkxJanBXQkxEV2xpQnNkVjZXWW9FUGg5RHU1N1VsLUdRX1hVRFFENmNYSXpEYTM2Q1FFa2pmd05TUEZZUUZPMzlCRy1rRUo2ZDJpRDhHVU04Z2lOdllLc0gyNmFGYnA0LVFtcW1hdklaaEE4T0tWMExlVWZtSTBoX0xnQTFSM1I1aUFuaFNWN3c?oc=5"
+    },
+    {
       "id": "b150c96c5a5af7d3",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -176,26 +186,6 @@
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZGdwNS0tOURsYUcwYXFXMmRVVUFDMXozQTFUYnNHTm9Ud0NUeFFJRXF4ZEVsWWVORXNJX0hKZnpHYlllb1d0OWJPZVFzeXRzdlBlZVVlY0RsYmJhbXU3NUdzcTVTektCNGNNQUlNc0dWN3pBZ0tRUWVkQXFkeHFHM01FMWRGaG1KNkxpS2hZMEVFRlFwYnVTYll0Sm5WYzk5OGRoRmtXa1RMdGluSzk5QlFBa2h0MVVla0V3NGZad3luNDYxQTVJZWppNUVBVjJ5X3JGMDVIN1BzTk0?oc=5"
     },
     {
-      "id": "2cc92b1a2a3d6178",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
-      "source": "Vietnam.vn",
-      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
-      "pubTs": 1795239169,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
-    },
-    {
-      "id": "8a756c2ab21f5391",
-      "theme": "BYD",
-      "tagCls": "b-green",
-      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
-      "pubTs": 1795200540,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
-    },
-    {
       "id": "eb8f07f8e9a09d1a",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -204,6 +194,16 @@
       "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
       "pubTs": 1795192051,
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
+    },
+    {
+      "id": "252acad272eaa56c",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft lance une initiative pour rendre les agents d'IA vérifiables - ActuIA",
+      "source": "ActuIA",
+      "pubDate": "Thu, 19 Nov 2026 18:00:00 GMT",
+      "pubTs": 1795111200,
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcXZ2c1g3YWlRemVYS0twbG5ielBXZjg1Q2Qxa2k5eVJGRVdEdWdYODJfcDUwbVB2WjhLcTRHQVRLRmpBWjVCQThnZG03Vk1pR0QxS3Z5cng3d0FpSVBPSWR1Nkw2dmhyWUc4QlZXWTJITnQ3dWw4QnFWSzkxV1ZwS2Nyb0ZqYUhIV1FLUEhPTHlJNUJ0UVlqRXV4Qi02MzlCSEYyYTJR?oc=5"
     },
     {
       "id": "848e418bf242f25d",
@@ -295,6 +295,7 @@
     "79bd0d08bd7e478a",
     "dde1a221352e287e",
     "a55c7afb2fa7f2e5",
-    "0ce05f4a06661be3"
+    "0ce05f4a06661be3",
+    "252acad272eaa56c"
   ]
 }
