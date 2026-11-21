@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T14:20:31Z",
+  "updatedAt": "2026-11-21T16:28:59Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,26 @@
   ],
   "items": [
     {
+      "id": "79bd0d08bd7e478a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Panique à Wall Street : faut-il craindre un krach après une chute historique de la tech ? - Le Figaro",
+      "source": "Le Figaro",
+      "pubDate": "Sat, 21 Nov 2026 13:09:33 GMT",
+      "pubTs": 1795266573,
+      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPc3VkVTF4TDgtQXkxU0ZyRDU2aXVFTU01NjdPRndfb2tRNU5nYVowdDJlV1ZPS1pBOGl3NDhkcFRPX2I2c2sxTHF5RkxJanBXQkxEV2xpQnNkVjZXWW9FUGg5RHU1N1VsLUdRX1hVRFFENmNYSXpEYTM2Q1FFa2pmd05TUEZZUUZPMzlCRy1rRUo2ZDJpRDhHVU04Z2lOdllLc0gyNmFGYnA0LVFtcW1hdklaaEE4T0tWMExlVWZtSTBoX0xnQTFSM1I1aUFuaFNWN3c?oc=5"
+    },
+    {
+      "id": "dde1a221352e287e",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Relier plusieurs mini PC en USB4 sous Windows : Microsoft ouvre le RDMA pour charger de gros modèles d’IA - HardwareCooking",
+      "source": "HardwareCooking",
+      "pubDate": "Sat, 21 Nov 2026 12:05:26 GMT",
+      "pubTs": 1795262726,
+      "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPSVVsZ0FYeW0wVUlfR0t6WDVGYldsYWRTazJYU2RtY1A0UW85ZWpieVBsSmpPUk5nbUswUXFoRk9aYmZzMjZrNVY0dzJhbWhoQXZ1U2I1ejkwVFBWSlZGQXJLZS1SX2owTlZpRUc5SjNwT0FfVW9WQjhuNkhUNlhYSzFlRFNEQ2tzMXJRQVlB?oc=5"
+    },
+    {
       "id": "3066938bd99e6be8",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -166,16 +186,6 @@
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
-      "id": "2cc92b1a2a3d6178",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
-      "source": "Vietnam.vn",
-      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
-      "pubTs": 1795239169,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
-    },
-    {
       "id": "8a756c2ab21f5391",
       "theme": "BYD",
       "tagCls": "b-green",
@@ -194,16 +204,6 @@
       "pubDate": "Wed, 18 Nov 2026 07:37:06 GMT",
       "pubTs": 1794987426,
       "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPT1JScnYtQWZobklYNGQ5OXFZSUdfTzB5cGZSSWhiMXA1cDhncDVhaXFFTHZVVHB6QzBUX1VNMDM1a2IzMzJNRktYaFQ5TEpLc1V0cVJYdEJqZEktZVo2Tl9FRUFKMFJFTloxQjlfNUpUdGRuYWRxSTkxNE4yRVhhLW9SdFE5Q05fVU41eHdxUTVVYU5wbWE5V2hlOGRVSHJVbElWM3NTVmN4cG5fTFhrX0RIcDJ0Q1B4Smx4M1lhOGxtdWM5SzZJc0EtWTZ5aGsybVMyaWlQQVdWVTJrRTRzQXpRUWFWVEd4VjBXcWZPWGdrWjBIOENpek9zWW5URy1wVlJmMWVBRll0eUFOcnRleU53?oc=5"
-    },
-    {
-      "id": "d029e26112b012f8",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft dégaine 7 modèles d’IA maison pour concurrencer OpenAI et Claude - Frandroid",
-      "source": "Frandroid",
-      "pubDate": "Tue, 17 Nov 2026 21:24:14 GMT",
-      "pubTs": 1794950654,
-      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNTW16ZTRSX3lUVE9IUC0zT1FZZE1KZVZGZW80RWgybldPcXZhMVp5UlFJYTdmVmRCdnB3NmI3YjdVRFNHNWxiR2pTUHllSFU2UFJYRG80a2xKRDRlTXhLNFc2S2lhNEd6NTlRdVRGYmlYV05BMDFSZVcwYXkxZzdkdTFvbHZrRXVVR3ZaVGtXTFZZdWNmXzM1YkpCQy1fYXZPMzk0M3Ytd1NYRlRHUU9oUlJ2M29oSUpWRGljX0tkc1UtbUY3Z0p1WGN4VnU2S1h4bDl0UmxwX2FRbkhEWF84TXhhNnYyeUNlWUFLRWdpa1pVdTFyR0RR?oc=5"
     }
   ],
   "notifiedIds": [
@@ -281,6 +281,8 @@
     "b150c96c5a5af7d3",
     "57753768ba4101b9",
     "earn_HKEX:1810_20261124",
-    "3066938bd99e6be8"
+    "3066938bd99e6be8",
+    "79bd0d08bd7e478a",
+    "dde1a221352e287e"
   ]
 }
