@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T09:25:23Z",
+  "updatedAt": "2026-11-21T10:13:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,16 +146,6 @@
   ],
   "items": [
     {
-      "id": "2bcee17acaa27d9e",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Aux Etats-Unis, Wall Street en déroute après la dégringolade des sociétés liées à l’IA - Le Monde.fr",
-      "source": "Le Monde.fr",
-      "pubDate": "Sat, 21 Nov 2026 08:04:02 GMT",
-      "pubTs": 1795248242,
-      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOSGp1TENXS2JGYW95MW1UQ05KS3B3XzI4Sk51TmZLdFQwUmJ2ZXVxLXRZR1liRDA4Z094MGFfbmd0TFkyaHdCU2l1M1E5RjFMdWV6S0pULWd2Zkc3bVRUM1k5b09KdG9MajFYYjVFb21xblpLNFpSRVN1SExOUUVGYzhvclFHSEFQV0IwbXBEWUxRa2RWUzdGcUVJdGlWUmRwVnNIOXRsRG5JNnJiN1d5UXJBZG8zdXFSUndTM3F4bTNqN29Ed0VaTGVwVmtTb01NcEswV0NLRG5nLWcwYjMtT0F1SlBwaEVTRi12RFZCTVlSWncwZnZwMEpkY1lhMUd0UEtnelBvY04?oc=5"
-    },
-    {
       "id": "2cc92b1a2a3d6178",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -176,14 +166,24 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     },
     {
-      "id": "463fb5cfbe9814f7",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Malgré les succès de Nvidia et d'Anthropic, le Cac 40 perd plus de 4% sur la semaine, sa plus forte baisse depuis huit mois - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 20 Nov 2026 13:41:09 GMT",
-      "pubTs": 1795182069,
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNdHhtRzJDT18xVzBONE9FTFJIWHJmaGNHMjJ1OWFSZTJYNUk4aGdJM2NWYzAzQjNhNXBad0d2QmVBNWs5S3lNTHVTenFrZ0NXWUpVVkU5VW9WYUtNRjhVY3hSbzFvd1BiU1Z5VW9PNWFWbzd5bTN2cUZlT2FJUHdidGFudFRQMV9RTEE1VzRLMkNMUzM3RUNTM1JpWi02d29JVHZMWkZWNkVBNDVzTC1vQmRJeWpJMTJmMlpWTFZVNDN0blFXMVh3MjNmWG82MDlSSHM1ZnpwVFk3N1hlb3BqdHZWRnhuVE1TbjZLbElVVFFSdXd2b3FSR2lGeVNWUFZkemthdl9iTHNNeXJhTURkSlZlU1l1SFBWRmc?oc=5"
+      "id": "eb8f07f8e9a09d1a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "AGENDA DU 23 AU 27 NOVEMBRE: L'inflation américaine au menu de Thanksgiving - ABC Bourse",
+      "source": "ABC Bourse",
+      "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
+      "pubTs": 1795192051,
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
+    },
+    {
+      "id": "6353b4bded169452",
+      "theme": "Apple",
+      "tagCls": "b-blue",
+      "title": "Apple prépare un agent d'IA pour défier Anthropic et Meta - Le Revenu",
+      "source": "Le Revenu",
+      "pubDate": "Fri, 20 Nov 2026 13:55:00 GMT",
+      "pubTs": 1795182900,
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMWV2d1YxZHBuU2wzR051MmFFb0FCbXJRRVhjTlpEbVhVay1ac1JuRmdnUnhwUzdYaF9xTjJPbzF3TDh0SjJlNEctcFp5ZXRQbHZYb1F3dnNkWDZYbDgxbDdKMmVmbmZjTHdMWWZLeHRyQk9GaXNIbmR1dExCNVFBNURMX0txMmRzUjNsc01SUGN5SU5wR1Z4Y3JPOU5qMkZ0NktHajdSTHk1QUxENkktS1dfZzNSNmM?oc=5"
     },
     {
       "id": "6fad790261b5d411",
@@ -194,6 +194,16 @@
       "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
       "pubTs": 1795181841,
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
+    },
+    {
+      "id": "848e418bf242f25d",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
+      "source": "XTB.com",
+      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
+      "pubTs": 1794956760,
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
     }
   ],
   "notifiedIds": [
