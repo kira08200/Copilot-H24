@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T12:26:15Z",
+  "updatedAt": "2026-11-21T14:20:31Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -186,34 +186,24 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     },
     {
-      "id": "6353b4bded169452",
-      "theme": "Apple",
-      "tagCls": "b-blue",
-      "title": "Apple prépare un agent d'IA pour défier Anthropic et Meta - Le Revenu",
-      "source": "Le Revenu",
-      "pubDate": "Fri, 20 Nov 2026 13:55:00 GMT",
-      "pubTs": 1795182900,
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMWV2d1YxZHBuU2wzR051MmFFb0FCbXJRRVhjTlpEbVhVay1ac1JuRmdnUnhwUzdYaF9xTjJPbzF3TDh0SjJlNEctcFp5ZXRQbHZYb1F3dnNkWDZYbDgxbDdKMmVmbmZjTHdMWWZLeHRyQk9GaXNIbmR1dExCNVFBNURMX0txMmRzUjNsc01SUGN5SU5wR1Z4Y3JPOU5qMkZ0NktHajdSTHk1QUxENkktS1dfZzNSNmM?oc=5"
-    },
-    {
-      "id": "6fad790261b5d411",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Boursorama",
-      "source": "Boursorama",
-      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
-      "pubTs": 1795181700,
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxOdTJFT2NnSzA3dXBxUS1ldkF1djB5LWtkVTZGZXZ2bHluYjdkeVQ0Uk81MENZT0RBeDJMSjNDVHZsREtzLXJwVHAzQ0I3dXFJSmVYZmlralF6cU0zdE9mRVhOaV9jQm8teFRwWUVneGtqczcxZlgyM1N6LTJTNFB3ZGtaZGRHWnMxNWs1ODB2QzRIQV82aGZsZWJHR2JVT2ZiekIxTGhwQXZPUTljdUtUWGpJUy1NSF9WUUNWaGVrM3R4dlZsMHZxZEk1ejVyNUtTaHIwUk5TQm8zN3I2TnpqdWFsTTdBMTlS0gHoAUFVX3lxTE51MkVPY2dLMDd1cHFRLWV2QXV2MHkta2RVNkZldnZseW5iN2R5VDRSTzUwQ1lPREF4MkxKM0NUdmxES3MtcnBUcDNDQjd1cUlKZVhmaWtqUXpxTTN0T2ZFWE5pX2NCby14VHBZRWd4a2pzNzFmWDIzU3otMlM0UHdka1pkZEdaczE1azU4MHZDNEhBXzZoZmxlYkdHYlVPZmJ6QjFMaHBBdk9ROWN1S1RYaklTLU1IX1ZRQ1ZoZWszdHh2VmwwdnFkSTV6NXI1S1NocjBSTlNCbzM3cjZOemp1YWxNN0ExOVI?oc=5"
-    },
-    {
-      "id": "848e418bf242f25d",
+      "id": "714bda9ffbfd4a7f",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Nvidia rebondit de 4 % après la publication de ses résultats 🔼 Le géant de l'IA pourra-t-il redonner de l'élan à Wall Street - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Tue, 17 Nov 2026 23:06:00 GMT",
-      "pubTs": 1794956760,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNSFdBUXBiNmpGT2EzVXhaSG1CMVItZTV6bUNhS0hiclZqdHlVeTI3NUwwVkJfUDhTVWZoMGJ4a2FsU184S1kyMm1JV1dFVzZhX3N6M1otWEVoc2JJb1RkRFpRaGpNa0ltdXFPYzU2ZlRIMDlvT1dzQVp1VDQ2YUtOTU1hQ3llY2dzdVgzSllrYlRJLVpvbHJJN3JtbHpDakMzbUJBQWItN24wRkdhUjZuUFNCcFh6RVE2Q1FDdk9IUHVPY25nRGtKcFh3NGkzWlktc041UzRuR0xYLW9weFdRRDRKVnNydmZWaFZDOFE4MnkxZw?oc=5"
+      "title": "Nvidia continue d'impressionner, le prochain test de l'appétit pour le risque dans l'IA sera l'introduction d'Anthropic - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Wed, 18 Nov 2026 07:37:06 GMT",
+      "pubTs": 1794987426,
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxPT1JScnYtQWZobklYNGQ5OXFZSUdfTzB5cGZSSWhiMXA1cDhncDVhaXFFTHZVVHB6QzBUX1VNMDM1a2IzMzJNRktYaFQ5TEpLc1V0cVJYdEJqZEktZVo2Tl9FRUFKMFJFTloxQjlfNUpUdGRuYWRxSTkxNE4yRVhhLW9SdFE5Q05fVU41eHdxUTVVYU5wbWE5V2hlOGRVSHJVbElWM3NTVmN4cG5fTFhrX0RIcDJ0Q1B4Smx4M1lhOGxtdWM5SzZJc0EtWTZ5aGsybVMyaWlQQVdWVTJrRTRzQXpRUWFWVEd4VjBXcWZPWGdrWjBIOENpek9zWW5URy1wVlJmMWVBRll0eUFOcnRleU53?oc=5"
+    },
+    {
+      "id": "d029e26112b012f8",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft dégaine 7 modèles d’IA maison pour concurrencer OpenAI et Claude - Frandroid",
+      "source": "Frandroid",
+      "pubDate": "Tue, 17 Nov 2026 21:24:14 GMT",
+      "pubTs": 1794950654,
+      "link": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxNTW16ZTRSX3lUVE9IUC0zT1FZZE1KZVZGZW80RWgybldPcXZhMVp5UlFJYTdmVmRCdnB3NmI3YjdVRFNHNWxiR2pTUHllSFU2UFJYRG80a2xKRDRlTXhLNFc2S2lhNEd6NTlRdVRGYmlYV05BMDFSZVcwYXkxZzdkdTFvbHZrRXVVR3ZaVGtXTFZZdWNmXzM1YkpCQy1fYXZPMzk0M3Ytd1NYRlRHUU9oUlJ2M29oSUpWRGljX0tkc1UtbUY3Z0p1WGN4VnU2S1h4bDl0UmxwX2FRbkhEWF84TXhhNnYyeUNlWUFLRWdpa1pVdTFyR0RR?oc=5"
     }
   ],
   "notifiedIds": [
