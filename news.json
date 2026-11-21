@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T08:37:11Z",
+  "updatedAt": "2026-11-21T09:25:23Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,14 +146,14 @@
   ],
   "items": [
     {
-      "id": "5626bb6e2a5694ff",
+      "id": "2bcee17acaa27d9e",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "La pire semaine depuis le Covid : la tech s'effondre à Wall Street et entraîne le reste des marchés mondiaux - Les Echos",
-      "source": "Les Echos",
-      "pubDate": "Sat, 21 Nov 2026 07:51:14 GMT",
-      "pubTs": 1795247474,
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPTlMtekhPQ2tvLUhYNVdqbF9Rdmk5Z2E5b2R0NndqcUFIYVp0M3UwQnBkNmtwd1UyV3didEJuTE9Yd2czVlVJX2FFdnRQWjhoQk1UZlpEY0FMdWNsQmRNYmNlS285d08zT3BvaGl0R0h2dVA0bHFtVnZsaDZKSXd6ZVFCZUlxa05PM2JFcHVXWmh6bk1WbFBJSENrdW04eXhaaXZMT3hKQ0R5cFZrYlZHWWRlLXZoRjFjZjBaa1RxTi1pZUl4WEdYdVdadUJtLWg4dkhETG80SXFtdjdKQXZLcGY4QkpMWGNX?oc=5"
+      "title": "Aux Etats-Unis, Wall Street en déroute après la dégringolade des sociétés liées à l’IA - Le Monde.fr",
+      "source": "Le Monde.fr",
+      "pubDate": "Sat, 21 Nov 2026 08:04:02 GMT",
+      "pubTs": 1795248242,
+      "link": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxOSGp1TENXS2JGYW95MW1UQ05KS3B3XzI4Sk51TmZLdFQwUmJ2ZXVxLXRZR1liRDA4Z094MGFfbmd0TFkyaHdCU2l1M1E5RjFMdWV6S0pULWd2Zkc3bVRUM1k5b09KdG9MajFYYjVFb21xblpLNFpSRVN1SExOUUVGYzhvclFHSEFQV0IwbXBEWUxRa2RWUzdGcUVJdGlWUmRwVnNIOXRsRG5JNnJiN1d5UXJBZG8zdXFSUndTM3F4bTNqN29Ed0VaTGVwVmtTb01NcEswV0NLRG5nLWcwYjMtT0F1SlBwaEVTRi12RFZCTVlSWncwZnZwMEpkY1lhMUd0UEtnelBvY04?oc=5"
     },
     {
       "id": "2cc92b1a2a3d6178",
@@ -266,6 +266,7 @@
     "3b2ad51327c5eefd",
     "6353b4bded169452",
     "2cc92b1a2a3d6178",
-    "5626bb6e2a5694ff"
+    "5626bb6e2a5694ff",
+    "2bcee17acaa27d9e"
   ]
 }
