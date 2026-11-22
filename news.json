@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-21T23:52:42Z",
+  "updatedAt": "2026-11-22T00:26:53Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,7 +94,7 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:NVDA_20261121",
+      "id": "move_drop_NASDAQ:NVDA_20261122",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
@@ -104,7 +104,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:AMD_20261121",
+      "id": "move_drop_NASDAQ:AMD_20261122",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
@@ -114,7 +114,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:MSTR_20261121",
+      "id": "move_drop_NASDAQ:MSTR_20261122",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
@@ -124,7 +124,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:QCOM_20261121",
+      "id": "move_drop_NASDAQ:QCOM_20261122",
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
@@ -134,7 +134,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_XETR:ENR_20261121",
+      "id": "move_drop_XETR:ENR_20261122",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
@@ -176,6 +176,16 @@
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZGdwNS0tOURsYUcwYXFXMmRVVUFDMXozQTFUYnNHTm9Ud0NUeFFJRXF4ZEVsWWVORXNJX0hKZnpHYlllb1d0OWJPZVFzeXRzdlBlZVVlY0RsYmJhbXU3NUdzcTVTektCNGNNQUlNc0dWN3pBZ0tRUWVkQXFkeHFHM01FMWRGaG1KNkxpS2hZMEVFRlFwYnVTYll0Sm5WYzk5OGRoRmtXa1RMdGluSzk5QlFBa2h0MVVla0V3NGZad3luNDYxQTVJZWppNUVBVjJ5X3JGMDVIN1BzTk0?oc=5"
     },
     {
+      "id": "8a756c2ab21f5391",
+      "theme": "BYD",
+      "tagCls": "b-green",
+      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
+      "pubTs": 1795200540,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
+    },
+    {
       "id": "eb8f07f8e9a09d1a",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -194,16 +204,6 @@
       "pubDate": "Fri, 20 Nov 2026 03:04:54 GMT",
       "pubTs": 1795143894,
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
-    },
-    {
-      "id": "252acad272eaa56c",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft lance une initiative pour rendre les agents d'IA vérifiables - ActuIA",
-      "source": "ActuIA",
-      "pubDate": "Thu, 19 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795111200,
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNcXZ2c1g3YWlRemVYS0twbG5ielBXZjg1Q2Qxa2k5eVJGRVdEdWdYODJfcDUwbVB2WjhLcTRHQVRLRmpBWjVCQThnZG03Vk1pR0QxS3Z5cng3d0FpSVBPSWR1Nkw2dmhyWUc4QlZXWTJITnQ3dWw4QnFWSzkxV1ZwS2Nyb0ZqYUhIV1FLUEhPTHlJNUJ0UVlqRXV4Qi02MzlCSEYyYTJR?oc=5"
     },
     {
       "id": "57753768ba4101b9",
@@ -296,6 +296,11 @@
     "dde1a221352e287e",
     "a55c7afb2fa7f2e5",
     "0ce05f4a06661be3",
-    "252acad272eaa56c"
+    "252acad272eaa56c",
+    "move_drop_NASDAQ:NVDA_20261122",
+    "move_drop_NASDAQ:AMD_20261122",
+    "move_drop_NASDAQ:MSTR_20261122",
+    "move_drop_NASDAQ:QCOM_20261122",
+    "move_drop_XETR:ENR_20261122"
   ]
 }
