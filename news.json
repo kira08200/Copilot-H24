@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-20T23:24:55Z",
+  "updatedAt": "2026-11-22T19:39:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -8,7 +8,7 @@
       "weight": "3,4 %",
       "timestamp": 1795521600,
       "dateStr": "24/11/2026",
-      "daysLeft": 3
+      "daysLeft": 1
     },
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -17,7 +17,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 61
+      "daysLeft": 59
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +26,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 66
+      "daysLeft": 64
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +35,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 73
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +44,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 73
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +53,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 74
+      "daysLeft": 72
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 75
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +71,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 75
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +80,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 81
+      "daysLeft": 79
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,12 +89,12 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 82
+      "daysLeft": 80
     }
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:NVDA_20261120",
+      "id": "move_drop_NASDAQ:NVDA_20261122",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
@@ -104,7 +104,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:AMD_20261120",
+      "id": "move_drop_NASDAQ:AMD_20261122",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
@@ -114,7 +114,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:MSTR_20261120",
+      "id": "move_drop_NASDAQ:MSTR_20261122",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
@@ -124,7 +124,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:QCOM_20261120",
+      "id": "move_drop_NASDAQ:QCOM_20261122",
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
@@ -134,7 +134,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_XETR:ENR_20261120",
+      "id": "move_drop_XETR:ENR_20261122",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
@@ -145,6 +145,36 @@
     }
   ],
   "items": [
+    {
+      "id": "7d505d52dcb03ef5",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Anthropic : ces étonnantes coulisses d’une entrée en Bourse historique - Le Point",
+      "source": "Le Point",
+      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
+      "pubTs": 1795370400,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcFNmcWtLY1pTY2ZfalVOVHFHUFVjNElBN296a0JfcWhObGRZZ1BrZXd6enltR1V4cXAyRW9XalFSNnUwTC0zNDY4N0R1bnlTbUJKZ1l6SUszRDZYa0RpWjVpSHNLa0M1dUlITFM1NGNrM1JSMU00bjVhaUZIckR2MEtPWF94bzdmOXRnMDlOVHRMRzlXR2Rndy0tLU82Xy16bEswd292NUstYmhUd1pEbHJhdnAwblNoQjBmTTdPUW44WmhQWGg2NkJyOGpDUUxqWXh2ODh2VHh2ckZmU0RGLTAwbTY?oc=5"
+    },
+    {
+      "id": "62888ffb4f772dbf",
+      "theme": "Microsoft, Alphabet (A)",
+      "tagCls": "b-blue",
+      "title": "Et si demain, vous ne payiez plus vos logiciels, mais les agents IA qui les utilisent ? Le pari d'OVHcloud face à Microsoft et Google - Clubic.com",
+      "source": "Clubic.com",
+      "pubDate": "Sun, 22 Nov 2026 15:12:00 GMT",
+      "pubTs": 1795360320,
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOdVZLZVhDeUlWczhZRHpfV0E1TXFyckN1b280VDJYeTEzRFZ3RmZiMnBCMUtBUkt5RWRLcTBKbmVyNVNtQjFXeUtmOC1UeTYwZDJJcWNyZDROX2dkLTBXNEZYcWw1X01kOTJlQnVDVTBXV2J2cG0ydnhua1k2cU5xVGE4SHVCbm1jaVh4ZnM4eEhOeTJ6bnZwNmZIdzJHdHpNZHc0LVhRM180a21iYmE3TG41SXQwTjF1MGJfX2JxWEVKRWsxcWNrNFkxRS1fSkVkaWQyeVduUEtNOXNDMHFUT01CYzRYSWtiOHNpUlBzYkdWcWdiQW8xdE9mTVV6ZEo4NUE?oc=5"
+    },
+    {
+      "id": "b150c96c5a5af7d3",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
+      "source": "AutoNext.co",
+      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
+      "pubTs": 1795257742,
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
+    },
     {
       "id": "8a756c2ab21f5391",
       "theme": "BYD",
@@ -166,44 +196,24 @@
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
     },
     {
-      "id": "463fb5cfbe9814f7",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Malgré les succès de Nvidia et d'Anthropic, le Cac 40 perd plus de 4% sur la semaine, sa plus forte baisse depuis huit mois - Investir Les Echos",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 20 Nov 2026 13:41:09 GMT",
-      "pubTs": 1795182069,
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxNdHhtRzJDT18xVzBONE9FTFJIWHJmaGNHMjJ1OWFSZTJYNUk4aGdJM2NWYzAzQjNhNXBad0d2QmVBNWs5S3lNTHVTenFrZ0NXWUpVVkU5VW9WYUtNRjhVY3hSbzFvd1BiU1Z5VW9PNWFWbzd5bTN2cUZlT2FJUHdidGFudFRQMV9RTEE1VzRLMkNMUzM3RUNTM1JpWi02d29JVHZMWkZWNkVBNDVzTC1vQmRJeWpJMTJmMlpWTFZVNDN0blFXMVh3MjNmWG82MDlSSHM1ZnpwVFk3N1hlb3BqdHZWRnhuVE1TbjZLbElVVFFSdXd2b3FSR2lGeVNWUFZkemthdl9iTHNNeXJhTURkSlZlU1l1SFBWRmc?oc=5"
-    },
-    {
-      "id": "6fad790261b5d411",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires... - Fortuneo",
-      "source": "Fortuneo",
-      "pubDate": "Fri, 20 Nov 2026 13:35:00 GMT",
-      "pubTs": 1795181700,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQWVHX1lLNUNjVTNINFlsMEk0QkJsQURFbG50SWtqZjNTekdpSzg3MjJoU084dmtKZnNjdVdXSlRoRXN2TzJ2TWQybE9fblVOOHBFS3BCdHFZeE1XNDhWazBFb2xKNzFmV0tkWVU3ZFMwWWNLamZCMEE1S0Q3ZzBuV2x4TDZfMlMxMmZpZWxMQUtqRVVwY3dZOXRjQzhvaGFHbXN2bjlhTUZPbzNLbEZXMV9MQzZXTlkx0gG-AUFVX3lxTE1Ma002OFhTeDNxN1RYWWY0eEtwM2RnOUgxV1gxc19qMXIyX1l2OGpPY1lYRF9nWWRkd1k0WDN4bjB5T1lnWTVBVFJlX2hlQzBNUTJWR1JkQTM1SkYyanFwNF9IWWxtc0owUkxCcjZScTdnVXdMSUhUS092WGtZNWM4ak1WcEgxdUxZZ1NUMjJkR0RxYjFUWnpyNUpzSmF5Y0p6VUo5bVZxeDlIR3AzdlRQMWx2VnBFaFhndFVyNHc?oc=5"
-    },
-    {
-      "id": "62ab90be12e0a127",
+      "id": "7a90e2589083751d",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Calendrier économique : publication des chiffres définitifs de la confiance des consommateurs américains et discours de responsables de la Fed - XTB.com",
-      "source": "XTB.com",
-      "pubDate": "Fri, 20 Nov 2026 08:32:00 GMT",
-      "pubTs": 1795163520,
-      "link": "https://news.google.com/rss/articles/CBMijAJBVV95cUxON093Mks4SHh6VUU1YzhwTXJKMC1mVDVTZDF4Nl82eWJVUWFtRzRZRWUxN2dlVjUtRzgxWGgtaS1uZ2E3QV9GMVFtYnh4dFhMZ3lpNTEtNDJXYXBMU0k1Zl9xQzdNSi1GTzN4SDlsYTJmRzR1dXNWVDVIMzQyS1g3WnpXU3kzbzMzWlhLQ1gwZUhoSUtEeUVKYS12aDN6bE8zYjJMZkFhbVJLVXF6WFVJU09yRHhlREU2UVVScTN3RDhDNGV2NkNtN09BbjZnZUVOWE0tZkdhWUJIeEtVME4xd25HSklpeFZtMHkzOHdPTkphY2didFJSelVRa3dIWFV5WkdudmhmalE4X2Zh?oc=5"
+      "title": "Les enquêtes PMI et l'inflation PCE au coeur de la semaine pour les marchés - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 20 Nov 2026 14:55:09 GMT",
+      "pubTs": 1795186509,
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
     },
     {
-      "id": "b9281e7d3f3dae7f",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "27 000 ventes en octobre : la gamme Skynomad poursuit sur sa lancée et représente déjà plus d'une vente sur deux pour Xiaomi - Auto Plus",
-      "source": "Auto Plus",
-      "pubDate": "Sat, 14 Nov 2026 12:30:00 GMT",
-      "pubTs": 1794659400,
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQNWFGVC1qcnI0TnJKeW5RMU51QWhqNHVMVHlvd0N6MWtwanZtSkxid3lDV016ZlZkTnVCOVdxTm9vRUlPZGNGd01pOEVWTHJPcnBpb196d09QUXh2aWVKZVBXMlBUYXBhMmZsM3VxM1lzSlhFLUR5dEpKMHBZTEpmeUFaSFphNkw2OWxQTU1pd0VEd0NZMktJODYtWjVEN2NiRFpBNlJWdWRveWo2c25ZZDJjS2tvLWxOS2tlbFJlaHo0a0wyZ2RPUVFnMTZnRWNjbWk0UjRJNEJManlVc1NlMm5PSVh2YkJnT3A0c2k1QTE4RXEyMkRRTE5KWV9uZHBzb3c?oc=5"
+      "id": "57753768ba4101b9",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     }
   ],
   "notifiedIds": [
@@ -267,6 +277,41 @@
     "d3f96a40962af29d",
     "c9c64243af001067",
     "move_drop_NASDAQ:QCOM_20261120",
-    "62ab90be12e0a127"
+    "62ab90be12e0a127",
+    "move_drop_NASDAQ:NVDA_20261121",
+    "move_drop_NASDAQ:AMD_20261121",
+    "move_drop_NASDAQ:MSTR_20261121",
+    "move_drop_NASDAQ:QCOM_20261121",
+    "move_drop_XETR:ENR_20261121",
+    "3b2ad51327c5eefd",
+    "6353b4bded169452",
+    "2cc92b1a2a3d6178",
+    "5626bb6e2a5694ff",
+    "2bcee17acaa27d9e",
+    "b150c96c5a5af7d3",
+    "57753768ba4101b9",
+    "earn_HKEX:1810_20261124",
+    "3066938bd99e6be8",
+    "79bd0d08bd7e478a",
+    "dde1a221352e287e",
+    "a55c7afb2fa7f2e5",
+    "0ce05f4a06661be3",
+    "252acad272eaa56c",
+    "move_drop_NASDAQ:NVDA_20261122",
+    "move_drop_NASDAQ:AMD_20261122",
+    "move_drop_NASDAQ:MSTR_20261122",
+    "move_drop_NASDAQ:QCOM_20261122",
+    "move_drop_XETR:ENR_20261122",
+    "120797fac1ba2aba",
+    "7a90e2589083751d",
+    "1069a09eb27d7f0f",
+    "e6af9ce700ccf340",
+    "03d35f759f3ce6c2",
+    "87d785c812029997",
+    "62888ffb4f772dbf",
+    "6fb0a17263bd41d6",
+    "1d22e71d1c113bad",
+    "2397244539e0b8f2",
+    "7d505d52dcb03ef5"
   ]
 }
