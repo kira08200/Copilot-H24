@@ -382,6 +382,31 @@
     text-decoration: none;
     line-height: 1.35;
   }
+  .news-excerpt {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.38;
+    margin-top: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-card {
+    cursor: pointer;
+  }
+  .line-why {
+    display: none;
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.42;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .line-card.line-open .line-why {
+    display: block;
+  }
 
   /* Live quote pill inside line card */
   .quote-strip {
@@ -986,8 +1011,24 @@
   }
   .nav-btn.active { color: var(--blue); }
   .nav-icon {
+    position: relative;
+    display: inline-block;
     font-size: 1.2rem;
     line-height: 1;
+  }
+  .nav-dot {
+    display: none;
+    position: absolute;
+    top: -2px;
+    right: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--red);
+    box-shadow: 0 0 6px var(--red);
+  }
+  .nav-dot.show {
+    display: block;
   }
   .toast {
     position: fixed;
@@ -1198,7 +1239,7 @@
         <span>🧭 Équilibre Réel par Grands Pôles</span>
         <span class="badge b-green" id="liveSyncBadge">Cours Live</span>
       </div>
-      <div class="sub">Recalculé automatiquement selon les cours boursiers en direct. Appuyez sur un pôle pour le détail :</div>
+      <div class="sub">Touchez un pôle pour voir le détail :</div>
 
       <div class="stacked-bar" id="stackedBar"></div>
 
@@ -1223,7 +1264,7 @@
         <span>🎯 Vos 3 Décisions Prioritaires</span>
         <span class="badge b-blue" id="prioStatusBadge">0/3 vérifiées</span>
       </div>
-      <div class="sub">Votre feuille de route simple (touchez une règle pour la cocher une fois vérifiée) :</div>
+      <div class="sub">Touchez une règle pour la cocher :</div>
       <div id="prioritiesList"></div>
     </div>
 
@@ -1277,7 +1318,12 @@
         <span>💰 Où placer votre prochain billet ?</span>
         <span class="badge b-blue" id="selectedHorizonBadge">Créneau : Maintenant</span>
       </div>
-      <div class="sub">Saisissez un montant et une durée : l'algorithme sélectionne et pondère en direct vos 3 lignes les plus pertinentes selon le retard de chaque pôle, le poids actuel et le climat boursier.</div>
+      <div class="sub">Saisissez un montant, une durée et le compte visé :</div>
+      <div class="pill-row" id="investAccRow" style="margin-bottom:10px;">
+        <button type="button" class="pill-btn btn-compact active" data-iacc="all" style="flex:1;">Tous comptes</button>
+        <button type="button" class="pill-btn btn-compact" data-iacc="PEA" style="flex:1;">PEA Fortuneo</button>
+        <button type="button" class="pill-btn btn-compact" data-iacc="TR" style="flex:1;">Trade Republic</button>
+      </div>
       <div class="custom-inputs-grid">
         <div class="custom-input-box">
           <label class="custom-input-lbl" for="customAmountInput">Montant libre</label>
@@ -1309,7 +1355,7 @@
         <span>🌍 Baromètre Mondial des Marchés (Direct)</span>
         <span class="badge b-amber" id="regimeBadge">Live : --/100</span>
       </div>
-      <div class="sub">Indice mondial calculé en direct (US, Europe, Asie, VIX, Or, Dollar &amp; Actus) :</div>
+      <div class="sub">US, Europe, Asie, VIX, Or, Dollar &amp; Actus :</div>
       <div class="meter-wrap"><div class="meter-bar" id="regimeBar" style="width:50%"></div></div>
       <div class="meter-scale"><span>0 Peur</span><span>50 Neutre</span><span>100 Euphorie</span></div>
       <div id="regimeAdvice" class="rec-item"></div>
@@ -1341,6 +1387,7 @@
         <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
         <button type="button" class="pill-btn" data-filter="trim">Sécuriser</button>
         <button type="button" class="pill-btn" data-filter="stop">Stopper</button>
+        <button type="button" class="pill-btn" id="btnAccLines" style="flex:0 0 auto;padding:8px 10px;" title="Filtrer par compte">🏦 Tous</button>
         <button type="button" class="pill-btn" id="btnSortLines" style="flex:0 0 auto;padding:8px 10px;" title="Changer l'ordre de tri">↕ Valeur</button>
       </div>
       <div id="linesContainer"></div>
@@ -1396,7 +1443,7 @@
     <span class="nav-icon">📊</span><span id="navLinesLbl">Portefeuille</span>
   </button>
   <button type="button" class="nav-btn" data-tab="alerts">
-    <span class="nav-icon">🔔</span><span>Alertes</span>
+    <span class="nav-icon">🔔<span class="nav-dot" id="alertNavDot"></span></span><span>Alertes</span>
   </button>
 </nav>
 
@@ -1580,7 +1627,11 @@
     horizonHours: (typeof savedData.horizonHours === "number" && isFinite(savedData.horizonHours) && savedData.horizonHours >= 0) ? savedData.horizonHours : 0,
     regime: 62,
     filter: "all",
+    linesAccount: "all",
     linesSort: "val",
+    expandedLineId: null,
+    investAccount: (savedData.investAccount === "PEA" || savedData.investAccount === "TR") ? savedData.investAccount : "all",
+    hasUnreadAlerts: !!savedData.hasUnreadAlerts,
     dca: (typeof savedData.dca === "number" && isFinite(savedData.dca) && savedData.dca >= 0) ? savedData.dca : 0,
     goal: (typeof savedData.goal === "number" && isFinite(savedData.goal) && savedData.goal >= 100) ? savedData.goal : 60000,
     rateMode: savedData.rateMode === "custom" ? "custom" : "auto",
@@ -1701,7 +1752,9 @@
         donePrios: state.donePrios,
         globalBenchmarks: state.globalBenchmarks,
         notifiedNews: state.notifiedNews,
-        notifsEnabled: state.notifsEnabled
+        notifsEnabled: state.notifsEnabled,
+        investAccount: state.investAccount,
+        hasUnreadAlerts: state.hasUnreadAlerts
       }));
     } catch (e) {}
   }
@@ -2280,9 +2333,10 @@
     };
   }
 
-  function getTopCandidates(tot, horizonHours) {
+  function getTopCandidates(tot, horizonHours, accFilter) {
     if (!tot) tot = computeTotals();
     var h = (typeof horizonHours === "number" && isFinite(horizonHours)) ? horizonHours : state.horizonHours;
+    var acc = accFilter || state.investAccount || "all";
     var profile = getHorizonProfile(h);
     var targets = computeTargetPoles(state.regime, h);
     var targetDate = new Date(Date.now() + profile.hours * 3600000);
@@ -2292,11 +2346,12 @@
     for (var i = 0; i < positions.length; i++) {
       var p = positions[i];
       if (!isPositionActive(p)) continue;
-      if (isSecondaryDuplicate(p)) continue;
+      if (acc !== "all" && p.account !== acc) continue;
+      if (acc === "all" && isSecondaryDuplicate(p)) continue;
       if (p.tag === "stop" || p.tag === "trim") continue;
-      if (state.regime <= 35 && (p.pole === "tech" || p.pole === "ia")) continue;
+      if (acc !== "PEA" && state.regime <= 35 && (p.pole === "tech" || p.pole === "ia")) continue;
       var allowFallbackMsci2 = (p.id === "msci2" && !isPositionActive(findPosById("msci1")));
-      if (p.tag !== "buy" && !allowFallbackMsci2 && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
+      if (acc !== "PEA" && p.tag !== "buy" && !allowFallbackMsci2 && !(state.regime <= 35 && (p.id === "gold" || p.id === "ai_pea"))) continue;
 
       candidates.push(analyzePositionForHorizon(p, tot, targets, profile, targetDate, newsInfo));
     }
@@ -2324,7 +2379,7 @@
     var iaPct = ((iaVal / totalVal) * 100).toFixed(1).replace(".", ",");
     var iaNames = getActiveNamesForPole("ia").slice(0, 2).join("/") || "Pôle IA";
     var specVal = tot.poleSums.spec || 0;
-    var top3 = getTopCandidates(tot, 168);
+    var top3 = getTopCandidates(tot, 168, "all");
     var topNames = top3.map(function(c) { return getDisplayPosInfo(c.pos).name; }).join(", ");
 
     var dynamicPrios = [
@@ -3001,6 +3056,18 @@
       "Aujourd'hui : " + greenCnt + "/" + liveCnt + " en hausse (" + fmtSignedPct(portDay, 2) + ")",
       "Sur 30 jours : " + fmtSignedPct(portM1, 1)
     ];
+    var msciRef = (state.globalBenchmarks && state.globalBenchmarks["XETR:EUNL"]) || null;
+    if (!msciRef) {
+      var mPos = findLivePosByTv("XETR:EUNL");
+      if (mPos && mPos.isLive) msciRef = { chg: mPos.dayPct, perf1M: mPos.perf1M };
+    }
+    if (msciRef && typeof msciRef.chg === "number") {
+      var alphaTxt = "vs MSCI World : " + fmtSignedPct(portDay - msciRef.chg, 1) + " (jour)";
+      if (typeof msciRef.perf1M === "number" && wM1Sum > 0) {
+        alphaTxt += " • " + fmtSignedPct(portM1 - msciRef.perf1M, 1) + " (30 j)";
+      }
+      parts.push(alphaTxt);
+    }
     if (newsInfo.itemCount > 0) {
       var actusLabel = newsInfo.score > 0.15 ? "positives" : (newsInfo.score < -0.15 ? "prudentes" : "neutres");
       parts.push("Actualités : " + actusLabel);
@@ -3039,6 +3106,10 @@
 
   function renderInvest(tot) {
     if (!tot) tot = computeTotals();
+    var iAccBtns = document.querySelectorAll("#investAccRow .pill-btn[data-iacc]");
+    for (var ia = 0; ia < iAccBtns.length; ia++) {
+      iAccBtns[ia].classList.toggle("active", iAccBtns[ia].getAttribute("data-iacc") === state.investAccount);
+    }
     var rawAmt = (typeof state.amount === "number" && isFinite(state.amount) && state.amount >= 1) ? state.amount : 1;
     var useCents = Math.abs(rawAmt - Math.round(rawAmt)) >= 0.005;
     var amt = useCents ? Math.round(rawAmt * 100) / 100 : Math.round(rawAmt);
@@ -3046,9 +3117,10 @@
     var profile = getHorizonProfile(h);
     var targets = computeTargetPoles(state.regime, h);
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
-    var top3 = getTopCandidates(tot, h);
+    var top3 = getTopCandidates(tot, h, state.investAccount);
     if (top3.length === 0) {
-      document.getElementById("allocationBox").innerHTML = "<div class='rec-item'><div style='font-size:0.83rem;color:var(--muted);'>Aucune ligne active éligible au renforcement pour le moment. Utilisez le bouton ci-dessous pour découvrir une nouvelle idée hors portefeuille.</div></div>";
+      var emptyAcc = state.investAccount === "PEA" ? " sur votre PEA" : (state.investAccount === "TR" ? " sur Trade Republic" : "");
+      document.getElementById("allocationBox").innerHTML = "<div class='rec-item'><div style='font-size:0.83rem;color:var(--muted);'>Aucune ligne active éligible au renforcement" + emptyAcc + ". Utilisez le bouton ci-dessous pour découvrir une nouvelle idée.</div></div>";
       return;
     }
 
@@ -3151,8 +3223,9 @@
       "</div></div>";
     }
 
+    var accSuffix = state.investAccount === "PEA" ? " (PEA)" : (state.investAccount === "TR" ? " (Trade Republic)" : "");
     var allocHtml = "<div class='rec-item'>" +
-      "<div class='rec-top'><strong>🎯 Répartition conseillée pour " + fmtBudget(amt) + " (" + state.horizonLabel + ")</strong><span class='badge b-green'>Pertinence : " + mathScore + "/100</span></div>" +
+      "<div class='rec-top'><strong>🎯 Répartition" + accSuffix + " pour " + fmtBudget(amt) + " (" + state.horizonLabel + ")</strong><span class='badge b-green'>Pertinence : " + mathScore + "/100</span></div>" +
       "<div style='font-size:0.81rem;color:var(--muted);margin-bottom:8px;line-height:1.42;'>" + timingNote + "</div>" +
       "<div class='alloc-list'>" + rowsHtml + "</div>" +
       "</div>";
@@ -3315,7 +3388,14 @@
     }
     var pool = [];
     for (var j = 0; j < DISCOVERY_POOL.length; j++) {
-      if (!owned[DISCOVERY_POOL[j].tv]) pool.push(DISCOVERY_POOL[j]);
+      if (owned[DISCOVERY_POOL[j].tv]) continue;
+      if (state.investAccount === "PEA" && !DISCOVERY_POOL[j].pea) continue;
+      pool.push(DISCOVERY_POOL[j]);
+    }
+    if (pool.length === 0 && state.investAccount === "PEA") {
+      for (var j2 = 0; j2 < DISCOVERY_POOL.length; j2++) {
+        if (!owned[DISCOVERY_POOL[j2].tv]) pool.push(DISCOVERY_POOL[j2]);
+      }
     }
     if (pool.length === 0) {
       box.innerHTML = "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>Vous détenez déjà tous les actifs de l'univers suivi.</div></div>";
@@ -3414,6 +3494,12 @@
     for (var k = 0; k < btns.length; k++) {
       btns[k].classList.toggle("active", btns[k].getAttribute("data-filter") === f);
     }
+    var accBtn = document.getElementById("btnAccLines");
+    if (accBtn) {
+      var accLabels = { all: "🏦 Tous", PEA: "🏦 PEA", TR: "🏦 TR" };
+      accBtn.textContent = accLabels[state.linesAccount] || "🏦 Tous";
+      accBtn.classList.toggle("active", state.linesAccount !== "all");
+    }
     var sortBtn = document.getElementById("btnSortLines");
     if (sortBtn) {
       var sortLabels = { val: "↕ Valeur", day: "↕ Jour %", gain: "↕ Gain %" };
@@ -3440,6 +3526,7 @@
     var soldHtml = "";
     for (var i = 0; i < sortedPositions.length; i++) {
       var p = sortedPositions[i];
+      if (state.linesAccount !== "all" && p.account !== state.linesAccount) continue;
       var disp = getDisplayPosInfo(p);
       if (disp.isSold && f !== "all") continue;
       if (!disp.isSold && f !== "all" && p.tag !== f) continue;
@@ -3464,20 +3551,18 @@
       var weightPct = ((m.val / totalVal) * 100).toFixed(1).replace(".", ",");
 
       var metaLine = disp.isSold
-        ? "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Position clôturée (0 part) • Exclue des calculs et recommandations</div>"
-        : "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2).replace(".", ",") + " %)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
+        ? "<div style='font-size:0.78rem;color:var(--muted);line-height:1.35;'>Position clôturée (0 part) • Exclue des calculs</div>"
+        : "<div style='font-size:0.78rem;color:var(--muted);line-height:1.35;'>Gain : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2).replace(".", ",") + " %)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
 
-      var cardHtml = "<div class='rec-item" + (disp.isSold ? " sold-line" : "") + "'>" +
+      var isOpen = state.expandedLineId === p.id;
+      var cardHtml = "<div class='rec-item line-card" + (disp.isSold ? " sold-line" : "") + (isOpen ? " line-open" : "") + "' data-line-id='" + escHtml(p.id) + "'>" +
         "<div class='rec-top'><strong>" + escHtml(disp.name) + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + escHtml(disp.action) + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
-          "<div style='display:flex;gap:5px;align-items:center;'>" +
-            "<button type='button' class='q-edit-btn' data-edit-id='" + escHtml(p.id) + "'>✏️ Parts</button>" +
-            "<button type='button' class='q-edit-btn q-del-btn' data-del-id='" + escHtml(p.id) + "' style='color:var(--red);border-color:rgba(239,68,68,0.35);padding:3px 7px;' title='Supprimer cette ligne'>🗑️</button>" +
-          "</div>" +
+          "<button type='button' class='q-edit-btn' data-edit-id='" + escHtml(p.id) + "'>✏️ Parts</button>" +
         "</div>" +
         metaLine +
-        "<div style='font-size:0.83rem;line-height:1.45;'>" + escHtml(disp.why) + "</div>" +
+        "<div class='line-why'>" + escHtml(disp.why) + "</div>" +
         "</div>";
       if (disp.isSold) soldHtml += cardHtml;
       else activeHtml += cardHtml;
@@ -3780,12 +3865,14 @@
         var it = items[i];
         var safeLink = (it.link && /^https?:\/\//i.test(it.link)) ? escHtml(it.link) : "#";
         var shortDt = formatNewsShortDate(it.pubDate);
+        var excerptTxt = String(it.excerpt || "").trim();
         rowsHtml += "<div class='news-row'>" +
           "<div class='news-row-top'>" +
             "<span class='badge " + escHtml(it.tagCls || "b-blue") + "' style='font-size:0.68rem;padding:2px 7px;'>" + escHtml(it.theme || "Essentiel") + "</span>" +
             "<span class='news-src'>" + escHtml(it.source || "Marchés") + (shortDt ? " • " + escHtml(shortDt) : "") + "</span>" +
           "</div>" +
           "<a href='" + safeLink + "' target='_blank' rel='noopener noreferrer' class='news-title-link'>" + escHtml(it.title) + " ↗</a>" +
+          (excerptTxt ? ("<div class='news-excerpt'>" + escHtml(excerptTxt) + "</div>") : "") +
         "</div>";
 
         if (data.updatedAt && it.id && !state.notifiedNews["news_" + it.id]) {
@@ -3794,13 +3881,18 @@
           pendingAlerts.push({
             title: "⚡ " + (it.theme || "Marchés"),
             body: it.title,
-            excerpt: String(it.excerpt || "").trim()
+            excerpt: excerptTxt
           });
         }
       }
       list.innerHTML = "<div class='news-group'>" + rowsHtml + "</div>";
     } else {
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
+    }
+    if (hadNotifSeed && pendingAlerts.length > 0 && state.activeTab !== "alerts") {
+      state.hasUnreadAlerts = true;
+      updateAlertBadge();
+      seenNewNews = true;
     }
     if (hadNotifSeed && pendingAlerts.length === 1) {
       var singleBody = pendingAlerts[0].body + (pendingAlerts[0].excerpt ? ("\n" + pendingAlerts[0].excerpt) : "");
@@ -3855,6 +3947,11 @@
     }).catch(function() {});
   }
 
+  function updateAlertBadge() {
+    var dot = document.getElementById("alertNavDot");
+    if (dot) dot.classList.toggle("show", !!state.hasUnreadAlerts);
+  }
+
   function switchTab(tabId, skipSave) {
     var target = document.getElementById("tab-" + tabId);
     if (!target) {
@@ -3872,6 +3969,11 @@
       navs[j].classList.toggle("active", navs[j].getAttribute("data-tab") === tabId);
     }
     state.activeTab = tabId;
+    if (tabId === "alerts" && state.hasUnreadAlerts) {
+      state.hasUnreadAlerts = false;
+      updateAlertBadge();
+      if (skipSave) persistState();
+    }
     if (!skipSave) {
       window.scrollTo(0, 0);
       try { sessionStorage.setItem(TAB_KEY, tabId); } catch (e) {}
@@ -5453,10 +5555,32 @@
       if (dBox) dBox.style.display = "none";
       return;
     }
+    var iAccBtn = e.target.closest("#investAccRow .pill-btn[data-iacc]");
+    if (iAccBtn) {
+      state.investAccount = iAccBtn.getAttribute("data-iacc") || "all";
+      state.discoveryUpdatedAt = 0;
+      persistState();
+      renderInvest();
+      return;
+    }
+    if (e.target.closest("#btnAccLines")) {
+      var accOrder = ["all", "PEA", "TR"];
+      var curAccIdx = accOrder.indexOf(state.linesAccount);
+      state.linesAccount = accOrder[(curAccIdx + 1) % accOrder.length];
+      renderLines();
+      return;
+    }
     if (e.target.closest("#btnSortLines")) {
       var sortOrder = ["val", "day", "gain"];
       var curIdx = sortOrder.indexOf(state.linesSort);
       state.linesSort = sortOrder[(curIdx + 1) % sortOrder.length];
+      renderLines();
+      return;
+    }
+    var lineCard = e.target.closest(".line-card");
+    if (lineCard && !e.target.closest(".q-edit-btn")) {
+      var lid = lineCard.getAttribute("data-line-id");
+      state.expandedLineId = (state.expandedLineId === lid) ? null : lid;
       renderLines();
       return;
     }
@@ -5739,6 +5863,7 @@
 
   syncInvestControlsFromState();
   updateNotifUi();
+  updateAlertBadge();
   renderAll(false);
   updateMarketSessions();
   fetchDeepNews(false);
