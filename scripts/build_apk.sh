@@ -573,10 +573,11 @@ public class MainActivity extends Activity {
     }
 
     private String resolveStartUrl(Intent intent) {
+        String base = LIVE_URL + "?t=" + System.currentTimeMillis();
         if (intent != null && "alerts".equals(intent.getStringExtra("open_tab"))) {
-            return LIVE_URL + "#alerts";
+            return base + "#alerts";
         }
-        return LIVE_URL;
+        return base;
     }
 
     @Override
@@ -622,8 +623,9 @@ public class MainActivity extends Activity {
         s.setAllowFileAccess(true);
         s.setAllowUniversalAccessFromFileURLs(true);
         s.setAllowFileAccessFromFileURLs(true);
-        s.setCacheMode(WebSettings.LOAD_DEFAULT);
-        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/1.3");
+        s.setCacheMode(WebSettings.LOAD_NO_CACHE);
+        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/1.4");
+        webView.clearCache(true);
 
         webView.addJavascriptInterface(new AndroidBridge(), "CopiloteAndroid");
 

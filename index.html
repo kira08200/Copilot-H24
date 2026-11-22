@@ -1475,9 +1475,31 @@
     }
   }
 
+  var isApkUa = /CopiloteH24APK/i.test(navigator.userAgent || "") || (typeof window.CopiloteAndroid === "object" && window.CopiloteAndroid !== null);
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function() {
-      navigator.serviceWorker.register("./sw.js").catch(function() {});
+      if (isApkUa) {
+        navigator.serviceWorker.getRegistrations().then(function(regs) {
+          for (var ri = 0; ri < regs.length; ri++) regs[ri].unregister().catch(function() {});
+        }).catch(function() {});
+        if ("caches" in window) {
+          caches.keys().then(function(keys) {
+            for (var ki = 0; ki < keys.length; ki++) {
+              if (keys[ki] !== "copilote-sw-state") caches.delete(keys[ki]).catch(function() {});
+            }
+          }).catch(function() {});
+        }
+      } else {
+        var swRefreshing = false;
+        navigator.serviceWorker.addEventListener("controllerchange", function() {
+          if (swRefreshing) return;
+          swRefreshing = true;
+          window.location.reload();
+        });
+        navigator.serviceWorker.register("./sw.js", { updateViaCache: "none" })
+          .then(function(reg) { if (reg && reg.update) reg.update().catch(function() {}); })
+          .catch(function() {});
+      }
     });
   }
 
@@ -5402,7 +5424,7 @@
     } else {
       showToast("📥 Téléchargement de Copilote-H24.apk...");
       var a = document.createElement("a");
-      a.href = "./Copilote-H24.apk";
+      a.href = "./Copilote-H24.apk?t=" + Date.now();
       a.download = "Copilote-H24.apk";
       document.body.appendChild(a);
       a.click();
