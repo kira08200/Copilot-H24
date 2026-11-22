@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T19:39:58Z",
+  "updatedAt": "2026-11-22T21:12:08Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,14 +146,24 @@
   ],
   "items": [
     {
-      "id": "7d505d52dcb03ef5",
+      "id": "cc0507de301637ad",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Anthropic : ces étonnantes coulisses d’une entrée en Bourse historique - Le Point",
+      "title": "Anthropic : les étonnantes coulisses d’une entrée en Bourse historique - Le Point",
       "source": "Le Point",
       "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
       "pubTs": 1795370400,
       "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcFNmcWtLY1pTY2ZfalVOVHFHUFVjNElBN296a0JfcWhObGRZZ1BrZXd6enltR1V4cXAyRW9XalFSNnUwTC0zNDY4N0R1bnlTbUJKZ1l6SUszRDZYa0RpWjVpSHNLa0M1dUlITFM1NGNrM1JSMU00bjVhaUZIckR2MEtPWF94bzdmOXRnMDlOVHRMRzlXR2Rndy0tLU82Xy16bEswd292NUstYmhUd1pEbHJhdnAwblNoQjBmTTdPUW44WmhQWGg2NkJyOGpDUUxqWXh2ODh2VHh2ckZmU0RGLTAwbTY?oc=5"
+    },
+    {
+      "id": "1d22e71d1c113bad",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Bourse : gare à l’addition cachée d’une fusion entre SpaceX et Tesla, faut-il vraiment investir sur ces actions - Capital.fr",
+      "source": "Capital.fr",
+      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
+      "pubTs": 1795370400,
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
     },
     {
       "id": "62888ffb4f772dbf",
@@ -164,16 +174,6 @@
       "pubDate": "Sun, 22 Nov 2026 15:12:00 GMT",
       "pubTs": 1795360320,
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOdVZLZVhDeUlWczhZRHpfV0E1TXFyckN1b280VDJYeTEzRFZ3RmZiMnBCMUtBUkt5RWRLcTBKbmVyNVNtQjFXeUtmOC1UeTYwZDJJcWNyZDROX2dkLTBXNEZYcWw1X01kOTJlQnVDVTBXV2J2cG0ydnhua1k2cU5xVGE4SHVCbm1jaVh4ZnM4eEhOeTJ6bnZwNmZIdzJHdHpNZHc0LVhRM180a21iYmE3TG41SXQwTjF1MGJfX2JxWEVKRWsxcWNrNFkxRS1fSkVkaWQyeVduUEtNOXNDMHFUT01CYzRYSWtiOHNpUlBzYkdWcWdiQW8xdE9mTVV6ZEo4NUE?oc=5"
-    },
-    {
-      "id": "b150c96c5a5af7d3",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
-      "source": "AutoNext.co",
-      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
-      "pubTs": 1795257742,
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -312,6 +312,7 @@
     "6fb0a17263bd41d6",
     "1d22e71d1c113bad",
     "2397244539e0b8f2",
-    "7d505d52dcb03ef5"
+    "7d505d52dcb03ef5",
+    "cc0507de301637ad"
   ]
 }
