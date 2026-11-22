@@ -280,14 +280,15 @@
   }
   .earn-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
   .earn-box {
     background: var(--card-alt);
     border: 1px solid var(--border);
     border-radius: 11px;
-    padding: 9px 10px;
+    padding: 8px 9px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -301,20 +302,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
+    min-width: 0;
   }
   .earn-name {
-    font-size: 0.82rem;
+    font-size: 0.79rem;
     font-weight: 800;
     color: var(--text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    min-width: 0;
   }
   .earn-weight {
     font-size: 0.68rem;
     color: var(--muted);
     font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .earn-btm {
     display: flex;
@@ -322,19 +327,23 @@
     align-items: center;
     gap: 4px;
     margin-top: 2px;
+    min-width: 0;
   }
   .earn-date {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     font-weight: 700;
     color: var(--blue);
+    white-space: nowrap;
   }
   .earn-days {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 800;
     padding: 2px 6px;
     border-radius: 5px;
     background: rgba(255,255,255,0.07);
     color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
   .earn-box.soon .earn-days {
     background: var(--amber-bg);
@@ -890,9 +899,24 @@
   .btn-bought-mini:active { opacity: 0.75; }
   .sync-bar {
     display: flex;
+    flex-wrap: wrap;
     gap: 8px;
     margin-top: 4px;
     margin-bottom: 10px;
+  }
+  .sync-bar .pill-btn {
+    flex: 1 1 140px;
+    min-width: 0;
+    white-space: normal;
+  }
+  .lines-actions-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .lines-actions-row .pill-btn {
+    flex: 1 1 0;
+    min-width: 0;
   }
   .sync-textarea {
     width: 100%;
@@ -981,6 +1005,13 @@
     cursor: pointer;
   }
   @media (max-width: 420px) {
+    .brand {
+      font-size: 0.88rem;
+    }
+    .btn-compact {
+      padding: 5px 8px;
+      font-size: 0.72rem;
+    }
     .rec-top {
       flex-wrap: wrap;
       align-items: flex-start;
@@ -994,6 +1025,18 @@
     }
     .proj-val {
       font-size: 0.84rem;
+    }
+    .earn-grid {
+      gap: 6px;
+    }
+    .earn-box {
+      padding: 7px 8px;
+    }
+    .earn-name {
+      font-size: 0.75rem;
+    }
+    .earn-date {
+      font-size: 0.69rem;
     }
   }
 </style>
@@ -1112,7 +1155,7 @@
   <div class="top-row">
     <div class="brand">
       <span class="pulse-dot" id="liveDot"></span>
-      <span>Copilote Patrimoine</span>
+      <span>Copilote H24</span>
     </div>
     <div class="header-actions">
       <button type="button" class="pill-btn btn-compact btn-install" id="btnInstall">📲 Installer App</button>
@@ -1206,8 +1249,8 @@
       <div class="proj-grid" id="projGrid"></div>
     </div>
     <div class="sync-bar">
-      <button type="button" class="pill-btn btn-compact" id="btnExportData" style="flex:1;">💾 Sauvegarder / Transférer</button>
-      <button type="button" class="pill-btn btn-compact" id="btnImportData" style="flex:1;">📥 Importer (CSV / Texte / JSON)</button>
+      <button type="button" class="pill-btn btn-compact" id="btnExportData">💾 Sauvegarder</button>
+      <button type="button" class="pill-btn btn-compact" id="btnImportData">📥 Importer (CSV / JSON)</button>
     </div>
   </div>
 
@@ -1261,12 +1304,12 @@
   <div id="tab-lines" class="section">
     <div class="card">
       <div class="card-title">
-        <span id="linesTitleTxt">📊 Mes Investissements (Cours en Direct)</span>
-        <div style="display:flex;align-items:center;gap:5px;flex-wrap:wrap;">
-          <button type="button" class="pill-btn btn-compact" id="btnImportLines" style="border-color:rgba(16,185,129,0.45);color:var(--green);padding:3px 8px;">📥 Importer</button>
-          <button type="button" class="pill-btn btn-compact" id="btnAddPos" style="border-color:rgba(56,189,248,0.45);color:var(--blue);padding:3px 8px;">+ Ajouter</button>
-          <span class="badge b-blue" id="linesTotalBadge">-- €</span>
-        </div>
+        <span id="linesTitleTxt">📊 Mes Investissements</span>
+        <span class="badge b-blue" id="linesTotalBadge">-- €</span>
+      </div>
+      <div class="lines-actions-row">
+        <button type="button" class="pill-btn btn-compact" id="btnImportLines" style="border-color:rgba(16,185,129,0.45);color:var(--green);">📥 Importer</button>
+        <button type="button" class="pill-btn btn-compact" id="btnAddPos" style="border-color:rgba(56,189,248,0.45);color:var(--blue);">+ Ajouter une ligne</button>
       </div>
       <div class="port-baro">
         <div class="port-baro-top">
@@ -1295,7 +1338,7 @@
         <span>🔔 Radar &amp; Notifications</span>
         <span class="badge b-blue" id="liveParisClock">--/--/---- • --:--</span>
       </div>
-      <div class="mkt-inline" id="marketSessionsLine">🇪🇺 Paris -- • 🇺🇸 US -- • 🇭🇰 HK --</div>
+      <div class="mkt-inline" id="marketSessionsLine">⚪ Paris -- • ⚪ Wall Street -- • ⚪ Hong Kong --</div>
       <div class="pill-row" id="alertFilterRow" style="margin-bottom:8px;">
         <button type="button" class="pill-btn btn-compact active" data-afilter="all">Tout voir</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="news">⚡ Actus</button>
@@ -1334,7 +1377,7 @@
     <span class="nav-icon">🎯</span><span>Investir</span>
   </button>
   <button type="button" class="nav-btn" data-tab="lines">
-    <span class="nav-icon">📊</span><span id="navLinesLbl">Investissements</span>
+    <span class="nav-icon">📊</span><span id="navLinesLbl">Portefeuille</span>
   </button>
   <button type="button" class="nav-btn" data-tab="alerts">
     <span class="nav-icon">🔔</span><span>Alertes</span>
@@ -1874,7 +1917,7 @@
       setTimeout(function() { totalEl.classList.remove("flash"); }, 450);
     }
     var totalGainEl = document.getElementById("totalGain");
-    totalGainEl.textContent = sign + fmtEuro(tot.totalGain) + " (" + sign + tot.totalPct.toFixed(2) + " %)";
+    totalGainEl.textContent = sign + fmtEuro(tot.totalGain) + " (" + sign + tot.totalPct.toFixed(2).replace(".", ",") + " %)";
     totalGainEl.classList.toggle("neg", tot.totalGain < 0);
 
     var daySub = document.getElementById("dayGainSub");
@@ -1906,8 +1949,8 @@
       syncBadge.textContent = "Cours Live • " + tot.liveCount + "/" + positions.length;
     }
 
-    var peaShare = tot.totalVal > 0 ? ((tot.peaVal / tot.totalVal) * 100).toFixed(1) : "0.0";
-    var trShare = tot.totalVal > 0 ? ((tot.trVal / tot.totalVal) * 100).toFixed(1) : "0.0";
+    var peaShare = tot.totalVal > 0 ? ((tot.peaVal / tot.totalVal) * 100).toFixed(1).replace(".", ",") : "0,0";
+    var trShare = tot.totalVal > 0 ? ((tot.trVal / tot.totalVal) * 100).toFixed(1).replace(".", ",") : "0,0";
     document.getElementById("peaTotalVal").textContent = fmtEuro(tot.peaVal);
     document.getElementById("peaTotalGain").textContent = (tot.peaGain >= 0 ? "+" : "") + fmtEuro(tot.peaGain) + " (" + peaShare + " % du total)";
     document.getElementById("trTotalVal").textContent = fmtEuro(tot.trVal);
@@ -2838,7 +2881,7 @@
     if (vixB && typeof vixB.close === "number") parts.push("VIX " + vixB.close.toFixed(1).replace(".", ","));
     if (goldB && typeof goldB.chg === "number") parts.push("Or " + fmtSignedPct(goldB.chg, 1));
     if (newsInfo.itemCount > 0 && Math.abs(newsInfo.score) > 0.15) {
-      parts.push(newsInfo.score > 0 ? "Actus +" : "Actus -");
+      parts.push(newsInfo.score > 0 ? "Actus positives" : "Actus prudentes");
     }
 
     return {
@@ -3397,16 +3440,16 @@
       if (p.dayPct !== null) {
         var dCls = p.dayPct >= 0 ? "q-day-pos" : "q-day-neg";
         var dSign = p.dayPct >= 0 ? "+" : "";
-        dayHtml = " • Jour : <span class='" + dCls + "'>" + dSign + p.dayPct.toFixed(2) + " %</span>";
+        dayHtml = " • Jour : <span class='" + dCls + "'>" + dSign + p.dayPct.toFixed(2).replace(".", ",") + " %</span>";
       }
 
       var estQty = p.qty !== null ? p.qty : (displayPrice > 0 ? m.val / displayPrice : 0);
-      var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3)) + " parts") : " • 0 part";
+      var qtyInfo = estQty > 0 ? (" • " + (Number.isInteger(estQty) ? estQty : estQty.toFixed(3).replace(".", ",")) + " parts") : " • 0 part";
       var weightPct = ((m.val / totalVal) * 100).toFixed(1).replace(".", ",");
 
       var metaLine = disp.isSold
         ? "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Position clôturée (0 part) • Exclue des calculs et recommandations</div>"
-        : "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
+        : "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2).replace(".", ",") + " %)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
 
       var cardHtml = "<div class='rec-item" + (disp.isSold ? " sold-line" : "") + "'>" +
         "<div class='rec-top'><strong>" + escHtml(disp.name) + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + escHtml(disp.action) + "</span></div>" +
@@ -3443,7 +3486,15 @@
         if (ph === "pre") return "<span style='color:var(--amber);'>Pré-marché</span>";
         return "Fermé";
       };
-      lineEl.innerHTML = "🇪🇺 Paris : " + fmtSt(euPhase) + " • 🇺🇸 US : " + fmtSt(usPhase) + " • 🇭🇰 HK : " + fmtSt(hkPhase);
+      var fmtDot = function(ph) {
+        if (ph === "regular") return "🟢";
+        if (ph === "pre") return "🟠";
+        return "⚪";
+      };
+      lineEl.innerHTML =
+        "<span style='white-space:nowrap;'>" + fmtDot(euPhase) + " Paris : " + fmtSt(euPhase) + "</span> • " +
+        "<span style='white-space:nowrap;'>" + fmtDot(usPhase) + " Wall Street : " + fmtSt(usPhase) + "</span> • " +
+        "<span style='white-space:nowrap;'>" + fmtDot(hkPhase) + " Hong Kong : " + fmtSt(hkPhase) + "</span>";
     }
   }
 
@@ -3676,13 +3727,14 @@
         var dLabel = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("J-" + er.daysLeft));
         var soonCls = er.daysLeft <= 7 ? " soon" : "";
         var shortW = getLiveWeightByTv(er.tv) || String(er.weight || "").replace(" (PEA)", "");
+        var compactDate = String(er.dateStr || "").replace(/^(\d{2}\/\d{2})\/20(\d{2})$/, "$1/$2");
         eCells += "<div class='earn-box" + soonCls + "'>" +
           "<div class='earn-top'>" +
             "<span class='earn-name'>" + escHtml(er.name) + "</span>" +
             "<span class='earn-weight'>" + escHtml(shortW) + "</span>" +
           "</div>" +
           "<div class='earn-btm'>" +
-            "<span class='earn-date'>📅 " + escHtml(er.dateStr) + "</span>" +
+            "<span class='earn-date'>📅 " + escHtml(compactDate) + "</span>" +
             "<span class='earn-days'>" + dLabel + "</span>" +
           "</div>" +
         "</div>";
@@ -3801,6 +3853,7 @@
     }
     state.activeTab = tabId;
     if (!skipSave) {
+      window.scrollTo(0, 0);
       try { sessionStorage.setItem(TAB_KEY, tabId); } catch (e) {}
       try { localStorage.setItem(TAB_KEY, tabId); } catch (e) {}
       persistState();
