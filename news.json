@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T12:57:07Z",
+  "updatedAt": "2026-11-22T13:50:16Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "87d785c812029997",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "C'est un avertissement pour tous les salariés : voici pourquoi Microsoft propose à 60 000 personnes de quitter l'entreprise - Presse-citron",
+      "source": "Presse-citron",
+      "pubDate": "Sun, 22 Nov 2026 13:04:05 GMT",
+      "pubTs": 1795352645,
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1PUEdvYjIyS2prSjRTWjVQUVlxVW94Uk5kdkNvVHE3dDN5QXp5d0tEV2JVcWwxMnpQc3FGLXZDY3R3V3h0dS12VW9XUkxxVTdVZTA2WFJHNWg1cDRJTE1LaEs0NmttNWVmQXBXS0FyNzdzc2RfLVF3?oc=5"
+    },
+    {
       "id": "03d35f759f3ce6c2",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -194,16 +204,6 @@
       "pubDate": "Fri, 20 Nov 2026 14:55:09 GMT",
       "pubTs": 1795186509,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
-    },
-    {
-      "id": "6fad790261b5d411",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
-      "pubTs": 1795181841,
-      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
     },
     {
       "id": "57753768ba4101b9",
@@ -306,6 +306,7 @@
     "7a90e2589083751d",
     "1069a09eb27d7f0f",
     "e6af9ce700ccf340",
-    "03d35f759f3ce6c2"
+    "03d35f759f3ce6c2",
+    "87d785c812029997"
   ]
 }
