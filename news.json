@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T18:54:08Z",
+  "updatedAt": "2026-11-22T19:39:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,14 +146,14 @@
   ],
   "items": [
     {
-      "id": "2397244539e0b8f2",
+      "id": "7d505d52dcb03ef5",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "IPO Anthropic : OKX distribue 20 000 vouchers de 50 € sur X-Perps - TradingView",
-      "source": "TradingView",
+      "title": "Anthropic : ces étonnantes coulisses d’une entrée en Bourse historique - Le Point",
+      "source": "Le Point",
       "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
       "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0d1lNZGhQbW0yLVd5TnQyQU44bS02YjFfTjhFYUJjZU9xeVBXcFdqcmRSQlZnVjBUcDlMNmMyb25Tb3VxUFZkREJManUwZ2NPZFo0THlfVzBXLW5mS0VZanRScG85Qnl5cjk5Xw?oc=5"
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcFNmcWtLY1pTY2ZfalVOVHFHUFVjNElBN296a0JfcWhObGRZZ1BrZXd6enltR1V4cXAyRW9XalFSNnUwTC0zNDY4N0R1bnlTbUJKZ1l6SUszRDZYa0RpWjVpSHNLa0M1dUlITFM1NGNrM1JSMU00bjVhaUZIckR2MEtPWF94bzdmOXRnMDlOVHRMRzlXR2Rndy0tLU82Xy16bEswd292NUstYmhUd1pEbHJhdnAwblNoQjBmTTdPUW44WmhQWGg2NkJyOGpDUUxqWXh2ODh2VHh2ckZmU0RGLTAwbTY?oc=5"
     },
     {
       "id": "62888ffb4f772dbf",
@@ -311,6 +311,7 @@
     "62888ffb4f772dbf",
     "6fb0a17263bd41d6",
     "1d22e71d1c113bad",
-    "2397244539e0b8f2"
+    "2397244539e0b8f2",
+    "7d505d52dcb03ef5"
   ]
 }
