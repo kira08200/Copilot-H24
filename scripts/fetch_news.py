@@ -39,6 +39,47 @@ RSS_FEEDS = [
         "tagCls": "b-purple",
         "priority": 3,
         "isGlobal": False,
+        "provider": "bing",
+        "url": "https://www.bing.com/news/search?q=(%22Air+Liquide%22+OR+NVIDIA+OR+AMD+OR+%22Siemens+Energy%22)+(r%C3%A9sultats+OR+chiffres+OR+trimestriel+OR+pr%C3%A9visions+OR+contrat+OR+bourse)&format=rss&mkt=fr-FR",
+    },
+    {
+        "theme": "Big Tech & ETF (MSFT / GOOGL / BLK)",
+        "tagCls": "b-blue",
+        "priority": 2,
+        "isGlobal": False,
+        "provider": "bing",
+        "url": "https://www.bing.com/news/search?q=(Microsoft+OR+Alphabet+OR+BlackRock+OR+Apple+OR+Amazon)+(r%C3%A9sultats+OR+chiffres+OR+IA+OR+bourse)&format=rss&mkt=fr-FR",
+    },
+    {
+        "theme": "Macro, Fed, BCE & Inflation",
+        "tagCls": "b-amber",
+        "priority": 2,
+        "isGlobal": True,
+        "provider": "bing",
+        "url": "https://www.bing.com/news/search?q=(Fed+OR+BCE+OR+inflation+OR+%22taux+directeurs%22+OR+%22S%26P+500%22)+(d%C3%A9cision+OR+chiffres+OR+taux+OR+march%C3%A9s)&format=rss&mkt=fr-FR",
+    },
+    {
+        "theme": "IPO, IA & Géants Mondiaux",
+        "tagCls": "b-amber",
+        "priority": 2,
+        "isGlobal": True,
+        "provider": "bing",
+        "url": "https://www.bing.com/news/search?q=(Anthropic+OR+OpenAI+OR+SpaceX+OR+IPO+OR+%22introduction+en+bourse%22+OR+TSMC+OR+ASML)+(IPO+OR+bourse+OR+valorisation+OR+milliards+OR+IA)&format=rss&mkt=fr-FR",
+    },
+    {
+        "theme": "Asie & Spéculatif (Xiaomi / BYD / MSTR)",
+        "tagCls": "b-green",
+        "priority": 1,
+        "isGlobal": False,
+        "provider": "bing",
+        "url": "https://www.bing.com/news/search?q=(Xiaomi+OR+BYD+OR+MicroStrategy+OR+DroneShield)+(r%C3%A9sultats+OR+chiffres+OR+ventes+OR+bourse)&format=rss&mkt=fr-FR",
+    },
+    {
+        "theme": "Cœur Portefeuille (Air Liquide / IA)",
+        "tagCls": "b-purple",
+        "priority": 3,
+        "isGlobal": False,
+        "provider": "google",
         "url": "https://news.google.com/rss/search?q=(%22Air+Liquide%22+OR+NVIDIA+OR+AMD+OR+%22Siemens+Energy%22)+(r%C3%A9sultats+OR+chiffres+OR+trimestriel+OR+pr%C3%A9visions+OR+contrat+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
@@ -46,6 +87,7 @@ RSS_FEEDS = [
         "tagCls": "b-blue",
         "priority": 2,
         "isGlobal": False,
+        "provider": "google",
         "url": "https://news.google.com/rss/search?q=(Microsoft+OR+Alphabet+OR+BlackRock+OR+Apple+OR+Amazon)+(r%C3%A9sultats+OR+chiffres+OR+IA+OR+earnings+OR+guidance)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
@@ -53,6 +95,7 @@ RSS_FEEDS = [
         "tagCls": "b-amber",
         "priority": 2,
         "isGlobal": True,
+        "provider": "google",
         "url": "https://news.google.com/rss/search?q=(Fed+OR+BCE+OR+inflation+OR+%22taux+directeurs%22+OR+%22S%26P+500%22)+(d%C3%A9cision+OR+chiffres+OR+CPI+OR+PCE)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
@@ -60,6 +103,7 @@ RSS_FEEDS = [
         "tagCls": "b-amber",
         "priority": 2,
         "isGlobal": True,
+        "provider": "google",
         "url": "https://news.google.com/rss/search?q=(Anthropic+OR+OpenAI+OR+SpaceX+OR+IPO+OR+%22introduction+en+bourse%22+OR+TSMC+OR+ASML+OR+%22Wall+Street%22)+(IPO+OR+bourse+OR+valorisation+OR+milliards+OR+lev%C3%A9e+OR+krach+OR+record)&hl=fr&gl=FR&ceid=FR:fr",
     },
     {
@@ -67,6 +111,7 @@ RSS_FEEDS = [
         "tagCls": "b-green",
         "priority": 1,
         "isGlobal": False,
+        "provider": "google",
         "url": "https://news.google.com/rss/search?q=(Xiaomi+OR+BYD+OR+MicroStrategy+OR+DroneShield)+(r%C3%A9sultats+OR+chiffres+OR+ventes+OR+earnings)&hl=fr&gl=FR&ceid=FR:fr",
     },
 ]
@@ -258,6 +303,113 @@ def is_duplicate_story(cand, selected_list):
     return False
 
 
+BOILERPLATE_EXCERPTS = (
+    "retrouvez les dernières actualités",
+    "retrouvez toute l'actualité",
+    "suivez en direct",
+    "toutes les informations sur",
+    "cours de l'action",
+    "cotation en direct",
+)
+
+
+def unwrap_bing_link(raw_link):
+    try:
+        parsed = urllib.parse.urlparse(raw_link)
+        if "bing.com" in parsed.netloc:
+            qs = urllib.parse.parse_qs(parsed.query)
+            if qs.get("url") and qs["url"][0].startswith(("http://", "https://")):
+                return qs["url"][0]
+    except Exception:
+        pass
+    return raw_link
+
+
+def extract_item_source(item, direct_link):
+    source_el = item.find("source")
+    if source_el is not None and source_el.text:
+        return clean_html(source_el.text)
+    for child in item:
+        if child.tag.endswith("Source") and child.text:
+            return clean_html(child.text)
+    try:
+        host = urllib.parse.urlparse(direct_link).netloc.lower()
+        if host.startswith("www."):
+            host = host[4:]
+        if host:
+            return host.split(".")[0].capitalize()
+    except Exception:
+        pass
+    return "Marchés"
+
+
+def clean_excerpt(raw_desc, title):
+    txt = clean_html(raw_desc or "")
+    txt = re.sub(r"^[\*\-–—\s]+", "", txt).strip()
+    if not txt or len(txt) < 35:
+        return ""
+    low = txt.lower()
+    if any(bp in low for bp in BOILERPLATE_EXCERPTS):
+        return ""
+    core_title = strip_source_suffix(title).lower()
+    if low.startswith(core_title[:45]) and len(txt) <= len(core_title) + 35:
+        return ""
+    # Nettoyer les coupures Bing du type "... les investis ..." -> dernier mot entier + "…"
+    txt = re.sub(r"\s*\.\.\.\s*$", "…", txt).strip()
+    if txt.endswith("…"):
+        body = txt[:-1].rstrip()
+        if " " in body and len(body.rsplit(" ", 1)[1]) <= 6:
+            body = body.rsplit(" ", 1)[0].rstrip(" ,;:-")
+        txt = body + "…"
+    if len(txt) > 185:
+        cut = txt[:182].rsplit(" ", 1)[0].rstrip(" ,;:-")
+        txt = cut + "…"
+    return txt
+
+
+def fetch_excerpt_fallback(title, link):
+    core = strip_source_suffix(title)
+    try:
+        q = urllib.parse.quote_plus(core[:95])
+        url = f"https://www.bing.com/news/search?q={q}&format=rss&mkt=fr-FR"
+        req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            root = ET.fromstring(resp.read())
+        title_tokens = extract_story_tokens(core)
+        for item in root.findall("./channel/item")[:5]:
+            b_title = clean_html(item.findtext("title") or "")
+            b_desc = clean_excerpt(item.findtext("description") or "", b_title)
+            if not b_desc:
+                continue
+            b_tokens = extract_story_tokens(b_title)
+            if title_tokens and b_tokens and len(title_tokens & b_tokens) >= 2:
+                return b_desc
+    except Exception:
+        pass
+    # Dernier recours : meta description si lien direct éditeur
+    if link and "news.google.com" not in link and "bing.com" not in link:
+        try:
+            req = urllib.request.Request(link, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=6) as resp:
+                raw_html = resp.read(65536).decode("utf-8", errors="ignore")
+            m = re.search(
+                r'<meta[^>]+(?:property=["\']og:description["\']|name=["\']description["\'])[^>]+content=["\']([^"\']{40,320})["\']',
+                raw_html,
+                re.IGNORECASE,
+            )
+            if not m:
+                m = re.search(
+                    r'<meta[^>]+content=["\']([^"\']{40,320})["\'][^>]+(?:property=["\']og:description["\']|name=["\']description["\'])',
+                    raw_html,
+                    re.IGNORECASE,
+                )
+            if m:
+                return clean_excerpt(m.group(1), title)
+        except Exception:
+            pass
+    return ""
+
+
 def fetch_essential_news():
     candidates = []
     seen = set()
@@ -271,10 +423,12 @@ def fetch_essential_news():
             root = ET.fromstring(xml_bytes)
             for item in root.findall("./channel/item")[:10]:
                 title = clean_html(item.findtext("title") or "")
-                link = (item.findtext("link") or "").strip()
+                raw_link = (item.findtext("link") or "").strip()
+                link = unwrap_bing_link(raw_link) if feed.get("provider") == "bing" else raw_link
                 pub_date = (item.findtext("pubDate") or "").strip()
-                source_el = item.find("source")
-                source = clean_html(source_el.text) if source_el is not None and source_el.text else "Marchés"
+                source = extract_item_source(item, link)
+                raw_desc = item.findtext("description") or ""
+                excerpt = clean_excerpt(raw_desc, title) if feed.get("provider") == "bing" else ""
                 if not title or not link:
                     continue
 
@@ -331,13 +485,15 @@ def fetch_essential_news():
 
                 age_hours = ((now_ts - pub_ts) / 3600.0) if pub_ts > 0 else 999.0
                 recency_bonus = 18 if age_hours <= 24 else (8 if age_hours <= 72 else 0)
-                relevance = feed["priority"] * 5 + stock_score + global_score + (6 if has_essential_kw else 0) + recency_bonus
+                excerpt_bonus = 4 if excerpt else 0
+                relevance = feed["priority"] * 5 + stock_score + global_score + (6 if has_essential_kw else 0) + recency_bonus + excerpt_bonus
                 candidates.append(
                     {
                         "id": uid,
                         "theme": display_theme,
                         "tagCls": tag_cls,
                         "title": title,
+                        "excerpt": excerpt,
                         "source": source,
                         "pubDate": pub_date,
                         "pubTs": pub_ts,
@@ -361,6 +517,8 @@ def fetch_essential_news():
         top_items.append(c)
 
     for c in top_items:
+        if not c.get("excerpt"):
+            c["excerpt"] = fetch_excerpt_fallback(c["title"], c.get("link", ""))
         c.pop("_score", None)
         c.pop("_tokens", None)
         c.pop("_primary", None)
@@ -388,7 +546,7 @@ def main():
     essential_news = fetch_essential_news()
 
     prev_sig = (
-        [it.get("id") for it in (prev.get("items") or [])],
+        [(it.get("id"), it.get("excerpt") or "") for it in (prev.get("items") or [])],
         [m.get("id") for m in (prev.get("majorMoves") or [])],
         [e.get("id") for e in (prev.get("upcomingEarnings") or [])],
         list(prev.get("notifiedIds") or []),
@@ -409,7 +567,7 @@ def main():
     notified_ids = notified_ids[-150:]
 
     new_sig = (
-        [it.get("id") for it in essential_news],
+        [(it.get("id"), it.get("excerpt") or "") for it in essential_news],
         [m.get("id") for m in major_moves],
         [e.get("id") for e in upcoming_earnings],
         notified_ids,

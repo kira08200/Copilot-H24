@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v43";
+const CACHE_NAME = "copilote-bourse-pwa-v44";
 const STATE_CACHE_NAME = "copilote-sw-state";
 const STATE_CACHE_REQ = "./__copilote_sw_state__";
 const ASSETS = [
@@ -87,7 +87,8 @@ function checkNewsInBackground() {
             list.push(nid);
             pending.push({
               title: "⚡ " + (it.theme || "Marchés"),
-              body: it.title || ""
+              body: it.title || "",
+              excerpt: String(it.excerpt || "").trim()
             });
           }
         }
@@ -99,8 +100,11 @@ function checkNewsInBackground() {
             ? pending[0].title
             : ("🔔 Copilote H24 • " + pending.length + " nouveautés");
           var nBody = pending.length === 1
-            ? pending[0].body
-            : pending.slice(0, 4).map(function(p) { return "• " + p.title + " : " + p.body; }).join("\n");
+            ? (pending[0].body + (pending[0].excerpt ? ("\n" + pending[0].excerpt) : ""))
+            : pending.slice(0, 4).map(function(p) {
+                var ex = p.excerpt ? ("\n  " + (p.excerpt.length > 115 ? (p.excerpt.slice(0, 112).trim() + "…") : p.excerpt)) : "";
+                return "• " + p.title + " : " + p.body + ex;
+              }).join("\n");
           return self.registration.showNotification(nTitle, {
             body: nBody,
             icon: "./icon-192.png",

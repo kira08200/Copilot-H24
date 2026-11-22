@@ -918,6 +918,22 @@
     flex: 1 1 0;
     min-width: 0;
   }
+  .notif-actions-row {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .notif-actions-row #btnEnablePush {
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: normal;
+  }
+  .notif-actions-row #btnNotif {
+    flex: 0 0 auto;
+    padding: 6px 12px;
+    border-color: rgba(59, 130, 246, 0.45);
+    color: var(--blue);
+  }
   .sync-textarea {
     width: 100%;
     min-height: 92px;
@@ -1344,8 +1360,8 @@
         <button type="button" class="pill-btn btn-compact" data-afilter="news">⚡ Actus</button>
         <button type="button" class="pill-btn btn-compact" data-afilter="earnings">📊 Chiffres</button>
       </div>
-      <div style="display:flex;align-items:center;gap:6px;">
-        <button type="button" class="pill-btn btn-compact" id="btnEnablePush" style="flex:1;">🔔 Activer les notifications</button>
+      <div class="notif-actions-row">
+        <button type="button" class="pill-btn btn-compact" id="btnEnablePush">🔔 Activer les notifications</button>
         <button type="button" class="pill-btn btn-compact" id="btnNotif" style="display:none;">⚡ Tester</button>
       </div>
     </div>
@@ -3777,7 +3793,8 @@
           seenNewNews = true;
           pendingAlerts.push({
             title: "⚡ " + (it.theme || "Marchés"),
-            body: it.title
+            body: it.title,
+            excerpt: String(it.excerpt || "").trim()
           });
         }
       }
@@ -3786,12 +3803,15 @@
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
     }
     if (hadNotifSeed && pendingAlerts.length === 1) {
-      sendSystemAlert(pendingAlerts[0].title, pendingAlerts[0].body);
+      var singleBody = pendingAlerts[0].body + (pendingAlerts[0].excerpt ? ("\n" + pendingAlerts[0].excerpt) : "");
+      sendSystemAlert(pendingAlerts[0].title, singleBody);
     } else if (hadNotifSeed && pendingAlerts.length > 1) {
       var digestLines = [];
       var maxDigest = Math.min(pendingAlerts.length, 4);
       for (var dIdx = 0; dIdx < maxDigest; dIdx++) {
-        digestLines.push("• " + pendingAlerts[dIdx].title + " : " + pendingAlerts[dIdx].body);
+        var pa = pendingAlerts[dIdx];
+        var exLine = pa.excerpt ? ("\n  " + (pa.excerpt.length > 115 ? (pa.excerpt.slice(0, 112).trim() + "…") : pa.excerpt)) : "";
+        digestLines.push("• " + pa.title + " : " + pa.body + exLine);
       }
       if (pendingAlerts.length > maxDigest) {
         digestLines.push("• +" + (pendingAlerts.length - maxDigest) + " autre(s) alerte(s)");
@@ -5184,14 +5204,14 @@
       btn.classList.toggle("active", active);
       if (active) {
         btn.textContent = isAndroidBridge()
-          ? "🔔 Notifications actives (H24 veille & arrière-plan)"
-          : "🔔 Notifications actives (veille & direct)";
+          ? "🔔 Alertes H24 actives"
+          : "🔔 Alertes actives";
       } else {
         btn.textContent = "🔔 Activer les notifications";
       }
     }
     if (testBtn) {
-      testBtn.style.display = active ? "inline-block" : "none";
+      testBtn.style.display = active ? "inline-flex" : "none";
     }
     syncServiceWorkerNotifState();
   }
@@ -5260,8 +5280,13 @@
       showToast("Activez d'abord les notifications");
       return;
     }
-    var title = "🔔 Test Copilote H24";
-    var body = "Les notifications fonctionnent bien sur cet appareil (" + formatDateTimeNow() + ").";
+    var sample = (state.lastNewsData && Array.isArray(state.lastNewsData.items) && state.lastNewsData.items.length > 0)
+      ? state.lastNewsData.items[0]
+      : null;
+    var title = sample ? ("🔔 Test • " + (sample.theme || "Marchés")) : "🔔 Test Copilote H24";
+    var body = sample
+      ? (sample.title + (sample.excerpt ? ("\n" + sample.excerpt) : ""))
+      : ("Les notifications fonctionnent bien sur cet appareil (" + formatDateTimeNow() + ").");
     sendSystemAlert(title, body);
     showToast("✅ Notification de test envoyée !");
   }

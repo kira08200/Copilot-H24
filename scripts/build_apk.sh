@@ -353,6 +353,7 @@ public class AlertJobService extends JobService {
 
         List<String> alertTitles = new ArrayList<String>();
         List<String> alertBodies = new ArrayList<String>();
+        List<String> alertExcerpts = new ArrayList<String>();
 
         JSONArray moves = root.optJSONArray("majorMoves");
         if (moves != null) {
@@ -369,6 +370,7 @@ public class AlertJobService extends JobService {
                     String prefix = "drop".equals(mv.optString("kind")) ? "📉 Chute : " : "🚀 Hausse : ";
                     alertTitles.add(prefix + name + " (" + String.format(Locale.US, "%+.1f %%", chg) + ")");
                     alertBodies.add("Mouvement majeur sur votre portefeuille (" + mv.optString("weight", "") + ").");
+                    alertExcerpts.add("");
                 }
             }
         }
@@ -387,6 +389,7 @@ public class AlertJobService extends JobService {
                 if (seeded) {
                     alertTitles.add("📊 Chiffres : " + er.optString("name", ""));
                     alertBodies.add("Publication prévue le " + er.optString("dateStr", "") + " (" + er.optString("weight", "") + ").");
+                    alertExcerpts.add("");
                 }
             }
         }
@@ -402,6 +405,7 @@ public class AlertJobService extends JobService {
                 idSet.add(id);
                 idList.add(id);
                 String headline = it.optString("title", "");
+                String excerpt = it.optString("excerpt", "").trim();
                 String entity = detectEntity(headline);
                 if (entity.length() > 0 && !seenCycleEntities.add(entity)) {
                     continue;
@@ -409,18 +413,29 @@ public class AlertJobService extends JobService {
                 if (seeded) {
                     alertTitles.add("⚡ " + it.optString("theme", "Marchés"));
                     alertBodies.add(headline);
+                    alertExcerpts.add(excerpt);
                 }
             }
         }
 
         if (seeded && alertTitles.size() == 1) {
-            NotificationHelper.show(ctx, alertTitles.get(0), alertBodies.get(0));
+            String singleBody = alertBodies.get(0);
+            String singleEx = alertExcerpts.get(0);
+            if (singleEx != null && singleEx.length() > 0) {
+                singleBody = singleBody + "\n" + singleEx;
+            }
+            NotificationHelper.show(ctx, alertTitles.get(0), singleBody);
         } else if (seeded && alertTitles.size() > 1) {
             StringBuilder digest = new StringBuilder();
             int limit = Math.min(alertTitles.size(), 4);
             for (int i = 0; i < limit; i++) {
                 if (i > 0) digest.append("\n");
                 digest.append("• ").append(alertTitles.get(i)).append(" : ").append(alertBodies.get(i));
+                String ex = alertExcerpts.get(i);
+                if (ex != null && ex.length() > 0) {
+                    String shortEx = ex.length() > 115 ? (ex.substring(0, 112).trim() + "…") : ex;
+                    digest.append("\n  ").append(shortEx);
+                }
             }
             if (alertTitles.size() > limit) {
                 digest.append("\n• +").append(alertTitles.size() - limit).append(" autre(s) alerte(s)");
