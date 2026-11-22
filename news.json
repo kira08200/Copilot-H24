@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T17:29:04Z",
+  "updatedAt": "2026-11-22T18:09:53Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "1d22e71d1c113bad",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Bourse : gare à l’addition cachée d’une fusion entre SpaceX et Tesla, faut-il vraiment investir sur ces actions - Capital.fr",
+      "source": "Capital.fr",
+      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
+      "pubTs": 1795370400,
+      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
+    },
+    {
       "id": "62888ffb4f772dbf",
       "theme": "Microsoft, Alphabet (A)",
       "tagCls": "b-blue",
@@ -154,16 +164,6 @@
       "pubDate": "Sun, 22 Nov 2026 15:12:00 GMT",
       "pubTs": 1795360320,
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOdVZLZVhDeUlWczhZRHpfV0E1TXFyckN1b280VDJYeTEzRFZ3RmZiMnBCMUtBUkt5RWRLcTBKbmVyNVNtQjFXeUtmOC1UeTYwZDJJcWNyZDROX2dkLTBXNEZYcWw1X01kOTJlQnVDVTBXV2J2cG0ydnhua1k2cU5xVGE4SHVCbm1jaVh4ZnM4eEhOeTJ6bnZwNmZIdzJHdHpNZHc0LVhRM180a21iYmE3TG41SXQwTjF1MGJfX2JxWEVKRWsxcWNrNFkxRS1fSkVkaWQyeVduUEtNOXNDMHFUT01CYzRYSWtiOHNpUlBzYkdWcWdiQW8xdE9mTVV6ZEo4NUE?oc=5"
-    },
-    {
-      "id": "b150c96c5a5af7d3",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
-      "source": "AutoNext.co",
-      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
-      "pubTs": 1795257742,
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -196,14 +196,24 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
     },
     {
-      "id": "6fb0a17263bd41d6",
+      "id": "6353b4bded169452",
+      "theme": "Apple",
+      "tagCls": "b-blue",
+      "title": "Apple prépare un agent d'IA pour défier Anthropic et Meta - Le Revenu",
+      "source": "Le Revenu",
+      "pubDate": "Fri, 20 Nov 2026 13:55:00 GMT",
+      "pubTs": 1795182900,
+      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPMWV2d1YxZHBuU2wzR051MmFFb0FCbXJRRVhjTlpEbVhVay1ac1JuRmdnUnhwUzdYaF9xTjJPbzF3TDh0SjJlNEctcFp5ZXRQbHZYb1F3dnNkWDZYbDgxbDdKMmVmbmZjTHdMWWZLeHRyQk9GaXNIbmR1dExCNVFBNURMX0txMmRzUjNsc01SUGN5SU5wR1Z4Y3JPOU5qMkZ0NktHajdSTHk1QUxENkktS1dfZzNSNmM?oc=5"
+    },
+    {
+      "id": "57753768ba4101b9",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Bourses mondiales: après les résultats de Nvidia, cap sur Anthropic - Zonebourse",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 18 Nov 2026 22:05:36 GMT",
-      "pubTs": 1795039536,
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMGhfZDZSY3pTeGJPZVZ1ZmRkcjRJdFVtOG5heGg0V0ZQTG93ZFpYNVdxWFpBdUJ6cWhJLUt3bDVOUnFSRDFjdkJvam42a1ZnQ0Z0ZUNhTzhxR2tiaUhaT3BwRUg0RVZPWm5mOTI0QjBMbmhVZDNGSDFkTVlGNkpLaERjTms4dEdiU1AyenhqNTYzRVVvUl90dWVpWjZIQi1sYjU1c2tET1MxdWRGd04wa1NVVVBxb3RlZXJFNDltbWlVeFVm?oc=5"
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     }
   ],
   "notifiedIds": [
@@ -299,6 +309,7 @@
     "03d35f759f3ce6c2",
     "87d785c812029997",
     "62888ffb4f772dbf",
-    "6fb0a17263bd41d6"
+    "6fb0a17263bd41d6",
+    "1d22e71d1c113bad"
   ]
 }
