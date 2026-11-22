@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T13:50:16Z",
+  "updatedAt": "2026-11-22T16:51:26Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,14 +146,14 @@
   ],
   "items": [
     {
-      "id": "87d785c812029997",
-      "theme": "Microsoft",
+      "id": "62888ffb4f772dbf",
+      "theme": "Microsoft, Alphabet (A)",
       "tagCls": "b-blue",
-      "title": "C'est un avertissement pour tous les salariés : voici pourquoi Microsoft propose à 60 000 personnes de quitter l'entreprise - Presse-citron",
-      "source": "Presse-citron",
-      "pubDate": "Sun, 22 Nov 2026 13:04:05 GMT",
-      "pubTs": 1795352645,
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1PUEdvYjIyS2prSjRTWjVQUVlxVW94Uk5kdkNvVHE3dDN5QXp5d0tEV2JVcWwxMnpQc3FGLXZDY3R3V3h0dS12VW9XUkxxVTdVZTA2WFJHNWg1cDRJTE1LaEs0NmttNWVmQXBXS0FyNzdzc2RfLVF3?oc=5"
+      "title": "Et si demain, vous ne payiez plus vos logiciels, mais les agents IA qui les utilisent ? Le pari d'OVHcloud face à Microsoft et Google - Clubic.com",
+      "source": "Clubic.com",
+      "pubDate": "Sun, 22 Nov 2026 15:12:00 GMT",
+      "pubTs": 1795360320,
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOdVZLZVhDeUlWczhZRHpfV0E1TXFyckN1b280VDJYeTEzRFZ3RmZiMnBCMUtBUkt5RWRLcTBKbmVyNVNtQjFXeUtmOC1UeTYwZDJJcWNyZDROX2dkLTBXNEZYcWw1X01kOTJlQnVDVTBXV2J2cG0ydnhua1k2cU5xVGE4SHVCbm1jaVh4ZnM4eEhOeTJ6bnZwNmZIdzJHdHpNZHc0LVhRM180a21iYmE3TG41SXQwTjF1MGJfX2JxWEVKRWsxcWNrNFkxRS1fSkVkaWQyeVduUEtNOXNDMHFUT01CYzRYSWtiOHNpUlBzYkdWcWdiQW8xdE9mTVV6ZEo4NUE?oc=5"
     },
     {
       "id": "03d35f759f3ce6c2",
@@ -166,14 +166,14 @@
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNNEQ1aGEzVnhQUkR3MWRVTnFRX2N6MXdJaW9mM0xjWVpBLTlad0NQbnJFOEE4WTBWVjR0TTB0OVRxOU1ZSWJuWWQ1WU1RRm5SX2FPbDcyYjJMYkxQWGlXZDFEQWxFd3VxUEVSUFhUb08zdXQ5cG9HazM0cWFtNVZza0lqOVU5RUhZTVhvNEV5d1REdEpxbi12OThKMWFNb19jbzkzN3Q4eFZYWXpiZ3NDSGxlZ0NENnlCRll2eS1rUndhSkxqbmlnaDNJR3YxUUI0NnQ3X0VTWHpJMTdiRHFwZ1p0czdMSmQ2T0hXSQ?oc=5"
     },
     {
-      "id": "a55c7afb2fa7f2e5",
-      "theme": "Amazon, Alphabet (A)",
-      "tagCls": "b-blue",
-      "title": "Google déstabilise la concurrence : ce smartphone 256GB et boosté à l’IA chute de 350 euros sur Amazon pour le Black Friday - Le Parisien",
-      "source": "Le Parisien",
-      "pubDate": "Sat, 21 Nov 2026 17:15:00 GMT",
-      "pubTs": 1795281300,
-      "link": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNaVRDd1VrVzlZeUhaTVQ1MldlM2xZZG1QbDZvaVlkdXQtM2l2Z1dEbFh5R3BpLW9Pa09UV0Vqb05wNFFKT1p5VW40bmRSTjdaNWt5OC00c0ljYmcwQTFEYkprc3AySEFHbGlVR1hYNmRaUzh1U2FxbFp4anZQSmlJSHVvblhyZFNyamx3Zmt0T0FoU3BoaWZaVnZKNUlQMllaR0I3RmhEQ0xlS0FXeVhrRGROS0hrLXR6dk5vNldacWRlX1RLeVdBUkZyUG93aXJJY2ZxLXBtVXVUeE5zenVMaXlXbjBkN1VXbzVNWWhlcllyWXdVOTBrNV9WYTlUdmtERU80U3FPSzhjbS1DQk1FTm9YTmJiUmhhd013eG5nQVZuRFM2dnpVcUUxOVRXQkpmWnllYndaTFlXZlZ2MVdxQjJfYjk4Z0FM?oc=5"
+      "id": "b150c96c5a5af7d3",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
+      "source": "AutoNext.co",
+      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
+      "pubTs": 1795257742,
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -307,6 +307,7 @@
     "1069a09eb27d7f0f",
     "e6af9ce700ccf340",
     "03d35f759f3ce6c2",
-    "87d785c812029997"
+    "87d785c812029997",
+    "62888ffb4f772dbf"
   ]
 }
