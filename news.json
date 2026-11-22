@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T02:36:02Z",
+  "updatedAt": "2026-11-22T03:26:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,16 +146,6 @@
   ],
   "items": [
     {
-      "id": "120797fac1ba2aba",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft défie ses partenaires OpenAI et Anthropic sur les prix - Brief IA",
-      "source": "Brief IA",
-      "pubDate": "Sat, 21 Nov 2026 19:08:48 GMT",
-      "pubTs": 1795288128,
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYmRiT3NXVHhfMDNrU1pTaGJQemswcF9QV2NVYkpUVE5xOTIxYi1Gc0JoUTVodzlBdE9lOERzNGxwMXQ0T2VFMGlfV2lLUDVVNFJSWFZjUE90akNZYkEzejc2ZlZhNVZydEFGMzVIZDVDZlAzVmdHaGlhWDQzR2RaSk1TNE9NWFozZkxDWkJnTXBER1FfVVA2RlJyYw?oc=5"
-    },
-    {
       "id": "a55c7afb2fa7f2e5",
       "theme": "Amazon, Alphabet (A)",
       "tagCls": "b-blue",
@@ -174,6 +164,16 @@
       "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
       "pubTs": 1795257742,
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
+    },
+    {
+      "id": "0ce05f4a06661be3",
+      "theme": "Air Liquide",
+      "tagCls": "b-amber",
+      "title": "CAC 40, Air liquide, Anthropic, Société générale… les actions en Bourse au programme de Momentum - Capital.fr",
+      "source": "Capital.fr",
+      "pubDate": "Sat, 21 Nov 2026 07:30:00 GMT",
+      "pubTs": 1795246200,
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZGdwNS0tOURsYUcwYXFXMmRVVUFDMXozQTFUYnNHTm9Ud0NUeFFJRXF4ZEVsWWVORXNJX0hKZnpHYlllb1d0OWJPZVFzeXRzdlBlZVVlY0RsYmJhbXU3NUdzcTVTektCNGNNQUlNc0dWN3pBZ0tRUWVkQXFkeHFHM01FMWRGaG1KNkxpS2hZMEVFRlFwYnVTYll0Sm5WYzk5OGRoRmtXa1RMdGluSzk5QlFBa2h0MVVla0V3NGZad3luNDYxQTVJZWppNUVBVjJ5X3JGMDVIN1BzTk0?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -204,6 +204,16 @@
       "pubDate": "Fri, 20 Nov 2026 03:04:54 GMT",
       "pubTs": 1795143894,
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQSDFFY3hBWGYxQkJBUHRkanYyeGF2SjVERExFUDZMaUliMG45ZDFQSEZyMU1WNmc4bkYzU3kwV1ZXVlM5OFhKYnVxU0lvTlZUWHZHRGVCRF91Q3RUVVVWaHpQcnVjMGw3UWJ0cjRkTk9sQWx2ZUpfX0lUVC1lRTIzelVJMG9pN01zR2trcmcyc05CMGNiYnZiWEY2TWc4UVhnMGE4eFdHYTlSZl9ydFBvQl9LcVZuYjJlcmpSYWJjcFo4bWtlZHB1dEdHUUFoLWFp?oc=5"
+    },
+    {
+      "id": "57753768ba4101b9",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
+      "source": "BFM Bourse",
+      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
+      "pubTs": 1795021043,
+      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
     }
   ],
   "notifiedIds": [
