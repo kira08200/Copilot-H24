@@ -1,5 +1,6 @@
-const CACHE_NAME = "copilote-bourse-pwa-v41";
-const STATE_CACHE_REQ = "/__copilote_sw_state__";
+const CACHE_NAME = "copilote-bourse-pwa-v42";
+const STATE_CACHE_NAME = "copilote-sw-state";
+const STATE_CACHE_REQ = "./__copilote_sw_state__";
 const ASSETS = [
   "./",
   "./index.html",
@@ -9,7 +10,7 @@ const ASSETS = [
 ];
 
 function readSwState() {
-  return caches.open(CACHE_NAME).then(function(cache) {
+  return caches.open(STATE_CACHE_NAME).then(function(cache) {
     return cache.match(STATE_CACHE_REQ).then(function(resp) {
       if (!resp) return { enabled: false, notifiedIds: [] };
       return resp.json().catch(function() { return { enabled: false, notifiedIds: [] }; });
@@ -20,7 +21,7 @@ function readSwState() {
 }
 
 function writeSwState(st) {
-  return caches.open(CACHE_NAME).then(function(cache) {
+  return caches.open(STATE_CACHE_NAME).then(function(cache) {
     return cache.put(
       STATE_CACHE_REQ,
       new Response(JSON.stringify(st), { headers: { "Content-Type": "application/json" } })
@@ -126,7 +127,7 @@ self.addEventListener("activate", function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
       return Promise.all(
-        keys.filter(function(k) { return k !== CACHE_NAME; }).map(function(k) { return caches.delete(k); })
+        keys.filter(function(k) { return k !== CACHE_NAME && k !== STATE_CACHE_NAME; }).map(function(k) { return caches.delete(k); })
       );
     })
   );

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#0b0f17">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -11,7 +11,7 @@
 <link rel="manifest" href="./manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <link rel="apple-touch-icon" href="./icon-192.png">
-<title>Copilote Bourse — Cours Direct 22/22</title>
+<title>Copilote Bourse — Cours Direct H24</title>
 <style>
   :root {
     --bg: #0b0f17;
@@ -141,6 +141,11 @@
     white-space: nowrap;
     flex-shrink: 0;
     line-height: 1.2;
+  }
+  .total-gain.neg {
+    color: var(--red);
+    background: var(--red-bg);
+    border-color: rgba(239, 68, 68, 0.25);
   }
   .container {
     max-width: 680px;
@@ -961,7 +966,19 @@
     max-width: 90vw;
     z-index: 100;
     display: none;
+    pointer-events: auto;
     box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+  }
+  .toast-undo-btn {
+    margin-left: 8px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 99px;
+    padding: 3px 10px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
   }
   @media (max-width: 420px) {
     .rec-top {
@@ -991,9 +1008,10 @@
     <div class="modal-title" id="editModalTitle">Ajuster la position</div>
     <div class="sub" id="editModalSub" style="margin-bottom:8px;">Modifiez votre nombre de parts si vous avez renforcé : la valeur continuera de s'actualiser en direct avec le cours boursier.</div>
     <label class="field-lbl" for="editQtyInput">Nombre d'actions / parts détenues</label>
-    <input type="number" step="any" class="field-input" id="editQtyInput">
+    <input type="number" step="any" inputmode="decimal" class="field-input" id="editQtyInput">
     <label class="field-lbl" for="editCostInput">Montant total investi (€)</label>
-    <input type="number" step="any" class="field-input" id="editCostInput">
+    <input type="number" step="any" inputmode="decimal" class="field-input" id="editCostInput">
+    <div id="editPruPreview" style="font-size:0.75rem;color:var(--muted);margin-top:6px;"></div>
     <div class="pill-row" style="margin-top:14px;margin-bottom:0;">
       <button type="button" class="pill-btn" id="btnCancelEdit">Annuler</button>
       <button type="button" class="pill-btn" id="btnZeroPos" title="Mettre à 0 part sans supprimer la ligne">0 part</button>
@@ -1051,11 +1069,11 @@
     <div class="modal-grid-2">
       <div>
         <label class="field-lbl" for="addQtyInput">Nombre de parts</label>
-        <input type="number" step="any" min="0" class="field-input" id="addQtyInput" placeholder="Ex : 2.5">
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addQtyInput" placeholder="Ex : 2.5">
       </div>
       <div>
         <label class="field-lbl" for="addCostInput">Montant investi (€)</label>
-        <input type="number" step="any" min="0" class="field-input" id="addCostInput" placeholder="Ex : 250">
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addCostInput" placeholder="Ex : 250">
       </div>
     </div>
     <div class="pill-row" style="margin-top:14px;margin-bottom:0;">
@@ -1129,7 +1147,7 @@
 
       <div class="env-grid">
         <div class="env-box">
-          <div class="env-lbl">PEA Fortuneo (Air Liquide)</div>
+          <div class="env-lbl" id="peaLinesLbl">PEA Fortuneo</div>
           <div class="env-num" id="peaTotalVal">-- €</div>
           <div class="env-sub" id="peaTotalGain">Calcul en cours...</div>
         </div>
@@ -1264,6 +1282,7 @@
         <button type="button" class="pill-btn" data-filter="buy">À Renforcer</button>
         <button type="button" class="pill-btn" data-filter="trim">Sécuriser</button>
         <button type="button" class="pill-btn" data-filter="stop">Stopper</button>
+        <button type="button" class="pill-btn" id="btnSortLines" style="flex:0 0 auto;padding:8px 10px;" title="Changer l'ordre de tri">↕ Valeur</button>
       </div>
       <div id="linesContainer"></div>
     </div>
@@ -1502,6 +1521,7 @@
     horizonHours: (typeof savedData.horizonHours === "number" && isFinite(savedData.horizonHours) && savedData.horizonHours >= 0) ? savedData.horizonHours : 0,
     regime: 62,
     filter: "all",
+    linesSort: "val",
     dca: (typeof savedData.dca === "number" && isFinite(savedData.dca) && savedData.dca >= 0) ? savedData.dca : 0,
     goal: (typeof savedData.goal === "number" && isFinite(savedData.goal) && savedData.goal >= 100) ? savedData.goal : 60000,
     rateMode: savedData.rateMode === "custom" ? "custom" : "auto",
@@ -1828,14 +1848,20 @@
     return Math.round(n).toLocaleString("fr-FR") + " €";
   }
 
-  function showToast(msg) {
+  function showToast(msg, undoCb) {
     var t = document.getElementById("toast");
-    t.textContent = msg;
+    window._toastUndoCb = typeof undoCb === "function" ? undoCb : null;
+    if (window._toastUndoCb) {
+      t.innerHTML = "<span>" + escHtml(msg) + "</span><button type='button' class='toast-undo-btn' id='btnToastUndo'>Annuler</button>";
+    } else {
+      t.textContent = msg;
+    }
     t.style.display = "block";
     clearTimeout(window._toastTimer);
     window._toastTimer = setTimeout(function() {
       t.style.display = "none";
-    }, 2800);
+      window._toastUndoCb = null;
+    }, window._toastUndoCb ? 5000 : 2800);
   }
 
   function renderAll(flashTotal) {
@@ -1847,7 +1873,9 @@
       totalEl.classList.add("flash");
       setTimeout(function() { totalEl.classList.remove("flash"); }, 450);
     }
-    document.getElementById("totalGain").textContent = sign + fmtEuro(tot.totalGain) + " (" + sign + tot.totalPct.toFixed(2) + " %)";
+    var totalGainEl = document.getElementById("totalGain");
+    totalGainEl.textContent = sign + fmtEuro(tot.totalGain) + " (" + sign + tot.totalPct.toFixed(2) + " %)";
+    totalGainEl.classList.toggle("neg", tot.totalGain < 0);
 
     var daySub = document.getElementById("dayGainSub");
     if (daySub) {
@@ -1868,6 +1896,8 @@
     if (linesTitle) linesTitle.textContent = "📊 Mes Investissements (" + tot.activeCount + " actifs)";
     var filterAllBtn = document.getElementById("filterAllBtn");
     if (filterAllBtn) filterAllBtn.textContent = "Tous (" + tot.activeCount + ")";
+    var peaLinesLbl = document.getElementById("peaLinesLbl");
+    if (peaLinesLbl) peaLinesLbl.textContent = "PEA Fortuneo (" + tot.peaActiveCount + " ligne" + (tot.peaActiveCount > 1 ? "s" : "") + ")";
     var trLinesLbl = document.getElementById("trLinesLbl");
     if (trLinesLbl) trLinesLbl.textContent = "Trade Republic (" + tot.trActiveCount + " ligne" + (tot.trActiveCount > 1 ? "s" : "") + ")";
 
@@ -1933,8 +1963,8 @@
       var pctStr = pctNum.toFixed(1).replace(".", ",") + " %";
       var activeNames = getActiveNamesForPole(pm.key);
       var detailTxt = activeNames.length > 0
-        ? (activeNames.join(", ") + ". " + pm.note)
-        : ("Aucune ligne active dans ce pôle. " + pm.note);
+        ? (escHtml(activeNames.join(", ")) + ". " + escHtml(pm.note))
+        : ("Aucune ligne active dans ce pôle. " + escHtml(pm.note));
       barHtml += "<div class='stacked-seg' style='width:" + pctNum.toFixed(2) + "%;background:" + pm.color + ";'></div>";
 
       var expCls = state.expandedPole === i ? " expanded" : "";
@@ -2265,8 +2295,8 @@
       html += "<div class='prio-card" + (isDone ? " done" : "") + "' data-prio='" + pr.id + "'>" +
         "<div class='prio-num'>" + (isDone ? "✓" : (i + 1)) + "</div>" +
         "<div class='prio-body'>" +
-          "<div class='prio-title'>" + pr.title + "</div>" +
-          "<div class='prio-desc'>" + pr.desc + "</div>" +
+          "<div class='prio-title'>" + escHtml(pr.title) + "</div>" +
+          "<div class='prio-desc'>" + escHtml(pr.desc) + "</div>" +
         "</div>" +
       "</div>";
     }
@@ -3057,8 +3087,8 @@
       var disp = getDisplayPosInfo(tp);
       var wPct = Math.round((allocAmounts[x] / (amt || 1)) * 100);
       rowsHtml += "<div class='alloc-row'><span class='alloc-dot'>•</span><div>" +
-        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + disp.name + "</strong> : " + disp.action + "." +
-        "<button type='button' class='btn-bought-mini' data-buy-id='" + tp.id + "' data-buy-amt='" + allocAmounts[x] + "'>✓ Acheté</button>" +
+        "<strong>" + fmtBudget(allocAmounts[x]) + " (" + wPct + " %) sur " + escHtml(disp.name) + "</strong> : " + escHtml(disp.action) + "." +
+        "<button type='button' class='btn-bought-mini' data-buy-id='" + escHtml(tp.id) + "' data-buy-amt='" + allocAmounts[x] + "'>✓ Acheté</button>" +
       "</div></div>";
     }
 
@@ -3321,14 +3351,36 @@
     if (!tot) tot = computeTotals();
     var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
     var f = state.filter;
-    var btns = document.querySelectorAll("#filterRow .pill-btn");
+    var btns = document.querySelectorAll("#filterRow .pill-btn[data-filter]");
     for (var k = 0; k < btns.length; k++) {
       btns[k].classList.toggle("active", btns[k].getAttribute("data-filter") === f);
     }
+    var sortBtn = document.getElementById("btnSortLines");
+    if (sortBtn) {
+      var sortLabels = { val: "↕ Valeur", day: "↕ Jour %", gain: "↕ Gain %" };
+      sortBtn.textContent = sortLabels[state.linesSort] || "↕ Valeur";
+    }
+
+    var sortedPositions = positions.slice().sort(function(a, b) {
+      var actA = isPositionActive(a);
+      var actB = isPositionActive(b);
+      if (actA !== actB) return actA ? -1 : 1;
+      var ma = getPosMetrics(a);
+      var mb = getPosMetrics(b);
+      if (state.linesSort === "day") {
+        var da = typeof a.dayPct === "number" ? a.dayPct : -999;
+        var db = typeof b.dayPct === "number" ? b.dayPct : -999;
+        if (db !== da) return db - da;
+      } else if (state.linesSort === "gain") {
+        if (mb.pct !== ma.pct) return mb.pct - ma.pct;
+      }
+      return mb.val - ma.val;
+    });
+
     var activeHtml = "";
     var soldHtml = "";
-    for (var i = 0; i < positions.length; i++) {
-      var p = positions[i];
+    for (var i = 0; i < sortedPositions.length; i++) {
+      var p = sortedPositions[i];
       var disp = getDisplayPosInfo(p);
       if (disp.isSold && f !== "all") continue;
       if (!disp.isSold && f !== "all" && p.tag !== f) continue;
@@ -3339,7 +3391,7 @@
       var displayPrice = p.livePriceEUR !== null ? p.livePriceEUR : p.refPriceEUR;
       var dotCls = p.isLive ? "live-tag" : "live-tag ref";
       var labelPrefix = p.isLive ? (p.marketSession || "Cours Live") + " : " : "Cours réf. : ";
-      var priceText = "<span class='" + dotCls + "'></span>" + labelPrefix + "<span class='q-price'>" + fmtEuro(displayPrice) + "</span>";
+      var priceText = "<span class='" + dotCls + "'></span>" + escHtml(labelPrefix) + "<span class='q-price'>" + fmtEuro(displayPrice) + "</span>";
 
       var dayHtml = "";
       if (p.dayPct !== null) {
@@ -3357,21 +3409,23 @@
         : "<div style='font-size:0.78rem;color:var(--muted);margin-bottom:6px;line-height:1.35;'>Depuis l'achat : <strong>" + sign + fmtEuro(m.gain) + " (" + sign + m.pct.toFixed(2) + "%)</strong> • Poids : <strong>" + weightPct + " %</strong></div>";
 
       var cardHtml = "<div class='rec-item" + (disp.isSold ? " sold-line" : "") + "'>" +
-        "<div class='rec-top'><strong>" + disp.name + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + disp.action + "</span></div>" +
+        "<div class='rec-top'><strong>" + escHtml(disp.name) + " — " + fmtEuro(m.val) + "</strong><span class='badge " + bCls + "'>" + escHtml(disp.action) + "</span></div>" +
         "<div class='quote-strip'>" +
           "<div class='quote-left'>" + priceText + dayHtml + qtyInfo + "</div>" +
           "<div style='display:flex;gap:5px;align-items:center;'>" +
-            "<button type='button' class='q-edit-btn' data-edit-id='" + p.id + "'>✏️ Parts</button>" +
-            "<button type='button' class='q-edit-btn q-del-btn' data-del-id='" + p.id + "' style='color:var(--red);border-color:rgba(239,68,68,0.35);padding:3px 7px;' title='Supprimer cette ligne'>🗑️</button>" +
+            "<button type='button' class='q-edit-btn' data-edit-id='" + escHtml(p.id) + "'>✏️ Parts</button>" +
+            "<button type='button' class='q-edit-btn q-del-btn' data-del-id='" + escHtml(p.id) + "' style='color:var(--red);border-color:rgba(239,68,68,0.35);padding:3px 7px;' title='Supprimer cette ligne'>🗑️</button>" +
           "</div>" +
         "</div>" +
         metaLine +
-        "<div style='font-size:0.83rem;line-height:1.45;'>" + disp.why + "</div>" +
+        "<div style='font-size:0.83rem;line-height:1.45;'>" + escHtml(disp.why) + "</div>" +
         "</div>";
       if (disp.isSold) soldHtml += cardHtml;
       else activeHtml += cardHtml;
     }
-    document.getElementById("linesContainer").innerHTML = activeHtml + soldHtml;
+    document.getElementById("linesContainer").innerHTML = (activeHtml || soldHtml)
+      ? (activeHtml + soldHtml)
+      : "<div class='rec-item'><div style='font-size:0.82rem;color:var(--muted);'>Aucune ligne dans cette catégorie.</div></div>";
   }
 
   function updateMarketSessions() {
@@ -3587,6 +3641,7 @@
 
     var topHtml = "";
     var seenNewNews = false;
+    var hadNotifSeed = Object.keys(state.notifiedNews || {}).length > 0;
     var pendingAlerts = [];
 
     if (majorMoves.length > 0) {
@@ -3678,9 +3733,9 @@
     } else {
       list.innerHTML = "<div class='rec-item'><div style='font-size:0.8rem;color:var(--muted);'>Aucune actualité essentielle détectée sur ce cycle.</div></div>";
     }
-    if (pendingAlerts.length === 1) {
+    if (hadNotifSeed && pendingAlerts.length === 1) {
       sendSystemAlert(pendingAlerts[0].title, pendingAlerts[0].body);
-    } else if (pendingAlerts.length > 1) {
+    } else if (hadNotifSeed && pendingAlerts.length > 1) {
       var digestLines = [];
       var maxDigest = Math.min(pendingAlerts.length, 4);
       for (var dIdx = 0; dIdx < maxDigest; dIdx++) {
@@ -4112,8 +4167,9 @@
 
         if (badge) badge.textContent = "H24 Live • " + tot.liveCount + "/" + positions.length;
         var fxTag = finalFx && finalFx.USD ? (" • EUR/USD " + finalFx.USD.toFixed(4).replace(".", ",")) : "";
-        document.getElementById("clockTxt").textContent =
-          "H24 Direct (" + tot.liveCount + "/" + positions.length + ") • Maj " + dtStr.split(" • ")[1] + fxTag + " (" + state.nextRefreshSec + "s)";
+        var shortTime = (dtStr.split(" • ")[1] || dtStr).slice(0, 5).replace(":", "h");
+        state.lastSyncDisplay = "En direct (" + tot.liveCount + "/" + positions.length + ") • Maj " + shortTime + fxTag;
+        document.getElementById("clockTxt").textContent = state.lastSyncDisplay;
 
         if (manualTrigger) {
           showToast("✅ " + tot.liveCount + "/" + positions.length + " cours actualisés en direct !");
@@ -4133,6 +4189,22 @@
           showToast("⚠️ Connexion momentanément lente, nouvel essai dans 10s");
         }
       });
+  }
+
+  function updateEditPruPreview() {
+    var pruEl = document.getElementById("editPruPreview");
+    if (!pruEl) return;
+    var q = parseFloat(String((document.getElementById("editQtyInput") && document.getElementById("editQtyInput").value) || "").replace(",", "."));
+    var c = parseFloat(String((document.getElementById("editCostInput") && document.getElementById("editCostInput").value) || "").replace(",", "."));
+    if (!isFinite(q) || q <= 0) {
+      pruEl.textContent = "Position soldée (0 part)";
+      return;
+    }
+    if (isFinite(c) && c > 0) {
+      pruEl.textContent = "PRU moyen : " + fmtEuro(c / q) + " / part";
+    } else {
+      pruEl.textContent = "Saisissez le montant total investi pour afficher le PRU moyen.";
+    }
   }
 
   function openEditModal(posId, prefillBuyAmt) {
@@ -4172,6 +4244,7 @@
         subEl.textContent = "Modifiez votre nombre de parts (0 pour solder sans effacer, ou Supprimer pour retirer la ligne).";
       }
     }
+    updateEditPruPreview();
     document.getElementById("editModal").classList.add("open");
   }
 
@@ -4190,9 +4263,15 @@
   function deletePositionById(posId) {
     if (!posId) return;
     var removedName = "";
+    var snapshot = null;
     for (var i = 0; i < positions.length; i++) {
       if (positions[i].id === posId) {
         removedName = getDisplayPosInfo(positions[i]).name;
+        snapshot = {
+          pos: positions[i],
+          index: i,
+          wasDefault: !positions[i].isCustom
+        };
         if (!positions[i].isCustom) {
           if (!state.deletedIds) state.deletedIds = {};
           state.deletedIds[posId] = true;
@@ -4201,12 +4280,24 @@
         break;
       }
     }
-    if (!removedName) return;
+    if (!removedName || !snapshot) return;
     persistState();
     renderAll(true);
     if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
     if (state.editingId === posId) closeEditModal();
-    showToast("🗑️ Ligne supprimée : " + removedName);
+    showToast("🗑️ Ligne supprimée : " + removedName, function() {
+      if (!findPosById(snapshot.pos.id)) {
+        var insertAt = Math.min(snapshot.index, positions.length);
+        positions.splice(insertAt, 0, snapshot.pos);
+        if (snapshot.wasDefault && state.deletedIds) {
+          delete state.deletedIds[snapshot.pos.id];
+        }
+        persistState();
+        renderAll(true);
+        if (state.lastNewsData) renderDeepNews(state.lastNewsData, true);
+        showToast("↩️ Ligne restaurée : " + removedName);
+      }
+    });
   }
 
   function deleteEditingPosition() {
@@ -4957,8 +5048,8 @@
 
   function saveEditModal() {
     if (!state.editingId) return;
-    var newQty = parseFloat(document.getElementById("editQtyInput").value);
-    var newCost = parseFloat(document.getElementById("editCostInput").value);
+    var newQty = parseFloat(String(document.getElementById("editQtyInput").value || "").replace(",", "."));
+    var newCost = parseFloat(String(document.getElementById("editCostInput").value || "").replace(",", "."));
     if (isNaN(newQty) || newQty < 0) {
       showToast("Veuillez saisir une quantité valide");
       return;
@@ -5140,6 +5231,15 @@
   }
 
   document.addEventListener("click", function(e) {
+    if (e.target.closest("#btnToastUndo")) {
+      var cb = window._toastUndoCb;
+      window._toastUndoCb = null;
+      clearTimeout(window._toastTimer);
+      var tEl = document.getElementById("toast");
+      if (tEl) tEl.style.display = "none";
+      if (typeof cb === "function") cb();
+      return;
+    }
     if (e.target.closest("#btnInstall")) {
       triggerInstall();
       return;
@@ -5275,7 +5375,14 @@
       if (dBox) dBox.style.display = "none";
       return;
     }
-    var filBtn = e.target.closest("#filterRow .pill-btn");
+    if (e.target.closest("#btnSortLines")) {
+      var sortOrder = ["val", "day", "gain"];
+      var curIdx = sortOrder.indexOf(state.linesSort);
+      state.linesSort = sortOrder[(curIdx + 1) % sortOrder.length];
+      renderLines();
+      return;
+    }
+    var filBtn = e.target.closest("#filterRow .pill-btn[data-filter]");
     if (filBtn) {
       state.filter = filBtn.getAttribute("data-filter");
       renderLines();
@@ -5447,7 +5554,9 @@
       if (isFinite(v) && v === 0) {
         editCostEl.value = "0";
       }
+      updateEditPruPreview();
     });
+    editCostEl.addEventListener("input", updateEditPruPreview);
   }
 
   var addPresetEl = document.getElementById("addPresetSel");
@@ -5501,16 +5610,37 @@
     });
   }
 
-  // Compte a rebours seconde par seconde + synchro H24 auto toutes les 10 secondes
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      if (document.getElementById("editModal").classList.contains("open")) closeEditModal();
+      else if (document.getElementById("addModal").classList.contains("open")) closeAddModal();
+      else if (document.getElementById("syncModal").classList.contains("open")) closeSyncModal();
+    } else if (e.key === "Enter") {
+      var tag = e.target && e.target.tagName ? e.target.tagName.toUpperCase() : "";
+      if (tag === "TEXTAREA" || tag === "BUTTON" || tag === "SELECT") return;
+      if (document.getElementById("editModal").classList.contains("open")) {
+        e.preventDefault();
+        saveEditModal();
+      } else if (document.getElementById("addModal").classList.contains("open")) {
+        e.preventDefault();
+        saveAddModal();
+      }
+    }
+  });
+
+  // Synchro H24 auto toutes les 10 secondes (en pause si onglet masqué)
   setInterval(function() {
+    if (document.hidden) return;
     updateMarketSessions();
     if (!state.isSyncing) {
       state.nextRefreshSec--;
       if (state.nextRefreshSec <= 0) {
         syncLiveQuotes(false);
-      } else if (state.lastSync) {
-        var timePart = state.lastSync.split(" • ")[1] || state.lastSync;
-        document.getElementById("clockTxt").textContent = "H24 Direct (" + state.liveCount + "/" + positions.length + ") • Maj " + timePart + " (suivante " + state.nextRefreshSec + "s)";
+      } else if (state.lastSyncDisplay) {
+        var clk = document.getElementById("clockTxt");
+        if (clk && clk.textContent !== state.lastSyncDisplay) {
+          clk.textContent = state.lastSyncDisplay;
+        }
       }
     }
   }, 1000);

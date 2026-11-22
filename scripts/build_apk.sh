@@ -9,6 +9,12 @@ echo "Using BUILD_TOOLS: $BUILD_TOOLS"
 echo "Using PLATFORM: $PLATFORM"
 
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+VERSION_CODE="$(git -C "$REPO_ROOT" rev-list --count HEAD 2>/dev/null || echo 3)"
+if [ -z "$VERSION_CODE" ] || [ "$VERSION_CODE" -lt 3 ] 2>/dev/null; then
+  VERSION_CODE=3
+fi
+echo "Using VERSION_CODE: $VERSION_CODE"
+
 WORK="/tmp/copilote-apk-build"
 rm -rf "$WORK"
 mkdir -p "$WORK/res/drawable" "$WORK/assets" "$WORK/gen" "$WORK/classes" "$WORK/dex" "$WORK/src/fr/copilote/h24"
@@ -22,12 +28,12 @@ if [ -f "$REPO_ROOT/news.json" ]; then
   cp "$REPO_ROOT/news.json" "$WORK/assets/news.json"
 fi
 
-cat > "$WORK/AndroidManifest.xml" << 'EOF'
+cat > "$WORK/AndroidManifest.xml" << EOF
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.copilote.h24"
-    android:versionCode="2"
-    android:versionName="1.1">
+    android:versionCode="$VERSION_CODE"
+    android:versionName="1.3">
 
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -127,6 +133,7 @@ public class NotificationHelper {
         if (nm == null) return;
 
         Intent openIntent = new Intent(ctx, MainActivity.class);
+        openIntent.putExtra("open_tab", "alerts");
         openIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         int flags = PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE;
         PendingIntent pi = PendingIntent.getActivity(ctx, NOTIF_GROUP_ID, openIntent, flags);
@@ -550,6 +557,30 @@ public class MainActivity extends Activity {
         }
     }
 
+    private String resolveStartUrl(Intent intent) {
+        if (intent != null && "alerts".equals(intent.getStringExtra("open_tab"))) {
+            return LIVE_URL + "#alerts";
+        }
+        return LIVE_URL;
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        if (intent != null && "alerts".equals(intent.getStringExtra("open_tab")) && webView != null) {
+            webView.post(new Runnable() {
+                @Override
+                public void run() {
+                    webView.evaluateJavascript(
+                        "if(window.location.hash!=='#alerts'){window.location.hash='#alerts';}var b=document.querySelector('#bottomNav .nav-btn[data-tab=\"alerts\"]');if(b)b.click();",
+                        null
+                    );
+                }
+            });
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -577,7 +608,7 @@ public class MainActivity extends Activity {
         s.setAllowUniversalAccessFromFileURLs(true);
         s.setAllowFileAccessFromFileURLs(true);
         s.setCacheMode(WebSettings.LOAD_DEFAULT);
-        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/1.2");
+        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/1.3");
 
         webView.addJavascriptInterface(new AndroidBridge(), "CopiloteAndroid");
 
@@ -608,7 +639,7 @@ public class MainActivity extends Activity {
         });
 
         setContentView(webView);
-        webView.loadUrl(LIVE_URL);
+        webView.loadUrl(resolveStartUrl(getIntent()));
     }
 
     @Override
@@ -654,18 +685,28 @@ javac --release 8 \
 
 "$BUILD_TOOLS/zipalign" -f -p 4 "$WORK/unsigned.apk" "$WORK/aligned.apk"
 
-keytool -genkeypair -v \
-  -keystore "$WORK/release.keystore" \
-  -alias copilote \
-  -keyalg RSA -keysize 2048 -validity 10000 \
-  -storepass copilote123 -keypass copilote123 \
-  -dname "CN=Copilote H24, OU=Mobile, O=Copilote, L=Paris, S=IDF, C=FR"
+KEYSTORE_PASS="${ANDROID_KEYSTORE_PASS:-copilote123}"
+KEY_ALIAS="${ANDROID_KEY_ALIAS:-copilote}"
+KEY_PASS="${ANDROID_KEY_PASS:-$KEYSTORE_PASS}"
+
+if [ -n "${ANDROID_KEYSTORE_B64:-}" ]; then
+  echo "Using persistent signing keystore from ANDROID_KEYSTORE_B64"
+  printf '%s' "$ANDROID_KEYSTORE_B64" | base64 -d > "$WORK/release.keystore"
+else
+  echo "ANDROID_KEYSTORE_B64 not set; generating ephemeral release keystore"
+  keytool -genkeypair -v \
+    -keystore "$WORK/release.keystore" \
+    -alias "$KEY_ALIAS" \
+    -keyalg RSA -keysize 2048 -validity 10000 \
+    -storepass "$KEYSTORE_PASS" -keypass "$KEY_PASS" \
+    -dname "CN=Copilote H24, OU=Mobile, O=Copilote, L=Paris, S=IDF, C=FR"
+fi
 
 "$BUILD_TOOLS/apksigner" sign \
   --ks "$WORK/release.keystore" \
-  --ks-key-alias copilote \
-  --ks-pass pass:copilote123 \
-  --key-pass pass:copilote123 \
+  --ks-key-alias "$KEY_ALIAS" \
+  --ks-pass "pass:$KEYSTORE_PASS" \
+  --key-pass "pass:$KEY_PASS" \
   --out "$REPO_ROOT/Copilote-H24.apk" \
   "$WORK/aligned.apk"
 

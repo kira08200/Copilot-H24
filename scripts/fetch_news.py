@@ -22,7 +22,7 @@ STOCKS = [
     {"tv": "NYSE:BLK", "name": "BlackRock", "weight": "3,9 %", "keywords": ["blackrock"]},
     {"tv": "HKEX:1810", "name": "Xiaomi", "weight": "3,4 %", "keywords": ["xiaomi"]},
     {"tv": "NASDAQ:MSFT", "name": "Microsoft", "weight": "2,7 %", "keywords": ["microsoft"]},
-    {"tv": "NASDAQ:MSTR", "name": "Strategy A", "weight": "2,0 %", "keywords": ["microstrategy", "strategy"]},
+    {"tv": "NASDAQ:MSTR", "name": "Strategy A", "weight": "2,0 %", "keywords": ["microstrategy", "strategy inc", "strategy a", "mstr"]},
     {"tv": "ASX:DRO", "name": "DroneShield", "weight": "0,8 %", "keywords": ["droneshield"]},
     {"tv": "NASDAQ:AAPL", "name": "Apple", "weight": "0,4 %", "keywords": ["apple"]},
     {"tv": "HKEX:1211", "name": "BYD", "weight": "0,4 %", "keywords": ["byd"]},
