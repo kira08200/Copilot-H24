@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T11:26:31Z",
+  "updatedAt": "2026-11-22T12:57:07Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -8,7 +8,7 @@
       "weight": "3,4 %",
       "timestamp": 1795521600,
       "dateStr": "24/11/2026",
-      "daysLeft": 2
+      "daysLeft": 1
     },
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -17,7 +17,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 60
+      "daysLeft": 59
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +26,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 65
+      "daysLeft": 64
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +35,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 72
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +44,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 72
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +53,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 73
+      "daysLeft": 72
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +71,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +80,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 80
+      "daysLeft": 79
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +89,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 81
+      "daysLeft": 80
     }
   ],
   "majorMoves": [
@@ -146,14 +146,14 @@
   ],
   "items": [
     {
-      "id": "120797fac1ba2aba",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft défie ses partenaires OpenAI et Anthropic sur les prix - Brief IA",
-      "source": "Brief IA",
-      "pubDate": "Sat, 21 Nov 2026 19:08:48 GMT",
-      "pubTs": 1795288128,
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYmRiT3NXVHhfMDNrU1pTaGJQemswcF9QV2NVYkpUVE5xOTIxYi1Gc0JoUTVodzlBdE9lOERzNGxwMXQ0T2VFMGlfV2lLUDVVNFJSWFZjUE90akNZYkEzejc2ZlZhNVZydEFGMzVIZDVDZlAzVmdHaGlhWDQzR2RaSk1TNE9NWFozZkxDWkJnTXBER1FfVVA2RlJyYw?oc=5"
+      "id": "03d35f759f3ce6c2",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Comme SpaceX, Anthropic a suivi un processus d’introduction en Bourse inhabituel, au grand dam de certains banquiers - Zonebourse Suisse",
+      "source": "Zonebourse Suisse",
+      "pubDate": "Sun, 22 Nov 2026 11:01:49 GMT",
+      "pubTs": 1795345309,
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNNEQ1aGEzVnhQUkR3MWRVTnFRX2N6MXdJaW9mM0xjWVpBLTlad0NQbnJFOEE4WTBWVjR0TTB0OVRxOU1ZSWJuWWQ1WU1RRm5SX2FPbDcyYjJMYkxQWGlXZDFEQWxFd3VxUEVSUFhUb08zdXQ5cG9HazM0cWFtNVZza0lqOVU5RUhZTVhvNEV5d1REdEpxbi12OThKMWFNb19jbzkzN3Q4eFZYWXpiZ3NDSGxlZ0NENnlCRll2eS1rUndhSkxqbmlnaDNJR3YxUUI0NnQ3X0VTWHpJMTdiRHFwZ1p0czdMSmQ2T0hXSQ?oc=5"
     },
     {
       "id": "a55c7afb2fa7f2e5",
@@ -164,16 +164,6 @@
       "pubDate": "Sat, 21 Nov 2026 17:15:00 GMT",
       "pubTs": 1795281300,
       "link": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxNaVRDd1VrVzlZeUhaTVQ1MldlM2xZZG1QbDZvaVlkdXQtM2l2Z1dEbFh5R3BpLW9Pa09UV0Vqb05wNFFKT1p5VW40bmRSTjdaNWt5OC00c0ljYmcwQTFEYkprc3AySEFHbGlVR1hYNmRaUzh1U2FxbFp4anZQSmlJSHVvblhyZFNyamx3Zmt0T0FoU3BoaWZaVnZKNUlQMllaR0I3RmhEQ0xlS0FXeVhrRGROS0hrLXR6dk5vNldacWRlX1RLeVdBUkZyUG93aXJJY2ZxLXBtVXVUeE5zenVMaXlXbjBkN1VXbzVNWWhlcllyWXdVOTBrNV9WYTlUdmtERU80U3FPSzhjbS1DQk1FTm9YTmJiUmhhd013eG5nQVZuRFM2dnpVcUUxOVRXQkpmWnllYndaTFlXZlZ2MVdxQjJfYjk4Z0FM?oc=5"
-    },
-    {
-      "id": "b150c96c5a5af7d3",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
-      "source": "AutoNext.co",
-      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
-      "pubTs": 1795257742,
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -204,6 +194,16 @@
       "pubDate": "Fri, 20 Nov 2026 14:55:09 GMT",
       "pubTs": 1795186509,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
+    },
+    {
+      "id": "6fad790261b5d411",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Danaher et Microsoft s'allient pour intégrer l'IA dans les laboratoires - Zonebourse",
+      "source": "Zonebourse",
+      "pubDate": "Fri, 20 Nov 2026 13:37:21 GMT",
+      "pubTs": 1795181841,
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxObmhERWZwTnZKYjVPTHE1X2NuaTVQQVU2VUxzYnMyQVMwWEs5NFRWUWs4WFdrMzNYbUY3dUEzckV5X1dtZC1tVTFPOVBBZzFaaFpMUlo5MEluaEp4U1ZTaFlZM0tQbjd3LWtSQWw1dkVsbWVSZG1hMWM4T2RfdVdBVEtCQmxvVzh0b1JlQ0FIVS1ZSXNDb1FlTXd4S1R4WXQzTWxlUWZYR3VsSFphN3RjVUx2XzZDTHV3QUhfWkpUbVBMTFVKZ3d1bWRwVjA?oc=5"
     },
     {
       "id": "57753768ba4101b9",
@@ -305,6 +305,7 @@
     "120797fac1ba2aba",
     "7a90e2589083751d",
     "1069a09eb27d7f0f",
-    "e6af9ce700ccf340"
+    "e6af9ce700ccf340",
+    "03d35f759f3ce6c2"
   ]
 }
