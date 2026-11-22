@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T06:18:43Z",
+  "updatedAt": "2026-11-22T07:35:26Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,16 @@
   ],
   "items": [
     {
+      "id": "120797fac1ba2aba",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft défie ses partenaires OpenAI et Anthropic sur les prix - Brief IA",
+      "source": "Brief IA",
+      "pubDate": "Sat, 21 Nov 2026 19:08:48 GMT",
+      "pubTs": 1795288128,
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQYmRiT3NXVHhfMDNrU1pTaGJQemswcF9QV2NVYkpUVE5xOTIxYi1Gc0JoUTVodzlBdE9lOERzNGxwMXQ0T2VFMGlfV2lLUDVVNFJSWFZjUE90akNZYkEzejc2ZlZhNVZydEFGMzVIZDVDZlAzVmdHaGlhWDQzR2RaSk1TNE9NWFozZkxDWkJnTXBER1FfVVA2RlJyYw?oc=5"
+    },
+    {
       "id": "a55c7afb2fa7f2e5",
       "theme": "Amazon, Alphabet (A)",
       "tagCls": "b-blue",
@@ -166,14 +176,14 @@
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
-      "id": "0ce05f4a06661be3",
-      "theme": "Air Liquide",
+      "id": "2cc92b1a2a3d6178",
+      "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "CAC 40, Air liquide, Anthropic, Société générale… les actions en Bourse au programme de Momentum - Capital.fr",
-      "source": "Capital.fr",
-      "pubDate": "Sat, 21 Nov 2026 07:30:00 GMT",
-      "pubTs": 1795246200,
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxNZGdwNS0tOURsYUcwYXFXMmRVVUFDMXozQTFUYnNHTm9Ud0NUeFFJRXF4ZEVsWWVORXNJX0hKZnpHYlllb1d0OWJPZVFzeXRzdlBlZVVlY0RsYmJhbXU3NUdzcTVTektCNGNNQUlNc0dWN3pBZ0tRUWVkQXFkeHFHM01FMWRGaG1KNkxpS2hZMEVFRlFwYnVTYll0Sm5WYzk5OGRoRmtXa1RMdGluSzk5QlFBa2h0MVVla0V3NGZad3luNDYxQTVJZWppNUVBVjJ5X3JGMDVIN1BzTk0?oc=5"
+      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
+      "source": "Vietnam.vn",
+      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
+      "pubTs": 1795239169,
+      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -194,16 +204,6 @@
       "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
       "pubTs": 1795192051,
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
-    },
-    {
-      "id": "541b826bde211581",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "La Fed redoute un choc en chaîne sur les marchés : Bitcoin en danger ? - Cryptoast",
-      "source": "Cryptoast",
-      "pubDate": "Thu, 19 Nov 2026 09:02:44 GMT",
-      "pubTs": 1795078964,
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTFA5TXdXcHR4QmJXUEF3RmJaM20zOFpRLXBmaUtMVVBTSm5FS3V2dE9hUDJ5V2xhdldHVm1mbk55Rkl2b1pCMDVLTUwzV1lmMHNaTjVNTkprVnBQcVZJY3RuS1RzMVg3azRIeW9fTTNnbXJLSEMtaTJDLXBQQXRhZkE?oc=5"
     },
     {
       "id": "57753768ba4101b9",
