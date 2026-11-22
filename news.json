@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T21:12:08Z",
+  "updatedAt": "2026-11-22T22:30:06Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -166,14 +166,14 @@
       "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
     },
     {
-      "id": "62888ffb4f772dbf",
-      "theme": "Microsoft, Alphabet (A)",
+      "id": "e4b8de0fce7442bf",
+      "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Et si demain, vous ne payiez plus vos logiciels, mais les agents IA qui les utilisent ? Le pari d'OVHcloud face à Microsoft et Google - Clubic.com",
-      "source": "Clubic.com",
-      "pubDate": "Sun, 22 Nov 2026 15:12:00 GMT",
-      "pubTs": 1795360320,
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOdVZLZVhDeUlWczhZRHpfV0E1TXFyckN1b280VDJYeTEzRFZ3RmZiMnBCMUtBUkt5RWRLcTBKbmVyNVNtQjFXeUtmOC1UeTYwZDJJcWNyZDROX2dkLTBXNEZYcWw1X01kOTJlQnVDVTBXV2J2cG0ydnhua1k2cU5xVGE4SHVCbm1jaVh4ZnM4eEhOeTJ6bnZwNmZIdzJHdHpNZHc0LVhRM180a21iYmE3TG41SXQwTjF1MGJfX2JxWEVKRWsxcWNrNFkxRS1fSkVkaWQyeVduUEtNOXNDMHFUT01CYzRYSWtiOHNpUlBzYkdWcWdiQW8xdE9mTVV6ZEo4NUE?oc=5"
+      "title": "Microsoft corrige 1 413 failles, Nadella alerte sur l'IA - Brief IA",
+      "source": "Brief IA",
+      "pubDate": "Sun, 22 Nov 2026 16:17:12 GMT",
+      "pubTs": 1795364232,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNYnRSQzZabS1WUk9kUFpBOElVc3pSWXpVZktvUml1QjVxOG94Y0szbmZJbFIyUjMxSWx4YVZHTWpOWUwtamtNUVd2VkNrWjJOazI0Z2Jacjdta0s2RHhBTzZWNzFIRHBvaUZqek1fNFgzXy10VTdYcExCelFNTWpXMkpLZTNpdHlQMVE0MWJubw?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -313,6 +313,7 @@
     "1d22e71d1c113bad",
     "2397244539e0b8f2",
     "7d505d52dcb03ef5",
-    "cc0507de301637ad"
+    "cc0507de301637ad",
+    "e4b8de0fce7442bf"
   ]
 }
