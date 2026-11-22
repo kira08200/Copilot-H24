@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-22T07:35:26Z",
+  "updatedAt": "2026-11-22T08:28:08Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -176,16 +176,6 @@
       "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
-      "id": "2cc92b1a2a3d6178",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation a dépassé son objectif fixé à 67 mois, et la Fed a été avertie du coût d'un report des hausses de taux d'intérêt. - Vietnam.vn",
-      "source": "Vietnam.vn",
-      "pubDate": "Sat, 21 Nov 2026 05:32:49 GMT",
-      "pubTs": 1795239169,
-      "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOQTlKVjlabzRqMDRjOHNXQmFpUndad1lWMU85Um5HX2hhMGRUTXZuZk0xUVZERnBlX2JFdXlfVkYzQXdHc3NMbU5lazJBRHpqbTFnNDBMQUdzVkpjdVZHSmo1X0E3bmRBREtydUp1dEQwTzNOakJaUm9XQjZRXzRleUIwcExlakttQ3FydnZsVlp2ajZfT1ZrMjRoRWpieWxreVhSN2cyWm90WEtHWE02aWhVOEZjOGNP?oc=5"
-    },
-    {
       "id": "8a756c2ab21f5391",
       "theme": "BYD",
       "tagCls": "b-green",
@@ -204,6 +194,16 @@
       "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
       "pubTs": 1795192051,
       "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
+    },
+    {
+      "id": "7a90e2589083751d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Les enquêtes PMI et l'inflation PCE au coeur de la semaine pour les marchés - Investir Les Echos",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 20 Nov 2026 14:55:09 GMT",
+      "pubTs": 1795186509,
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
     },
     {
       "id": "57753768ba4101b9",
@@ -302,6 +302,7 @@
     "move_drop_NASDAQ:MSTR_20261122",
     "move_drop_NASDAQ:QCOM_20261122",
     "move_drop_XETR:ENR_20261122",
-    "120797fac1ba2aba"
+    "120797fac1ba2aba",
+    "7a90e2589083751d"
   ]
 }
