@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T16:51:54Z",
+  "updatedAt": "2026-11-23T17:44:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 31.47,
-      "price": 165.04,
+      "changePct": 32.26,
+      "price": 166.02,
       "currency": "USD",
       "kind": "jump"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": 12.04,
-      "price": 87.17,
+      "changePct": 10.78,
+      "price": 86.185,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,8 +118,8 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 9.51,
-      "price": 164.205,
+      "changePct": 9.53,
+      "price": 164.23,
       "currency": "USD",
       "kind": "jump"
     },
@@ -128,8 +128,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": 8.43,
-      "price": 460.18,
+      "changePct": 8.15,
+      "price": 458.98,
       "currency": "USD",
       "kind": "jump"
     }
@@ -173,7 +173,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "Les premières enquêtes PMI de novembre donneront lundi un aperçu de l'activité des deux côtés de l'Atlantique. La semaine se poursuivra avec l'inflation PCE américaine, avant le…",
+      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
