@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T08:27:58Z",
+  "updatedAt": "2026-11-23T09:49:55Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -136,26 +136,37 @@
   ],
   "items": [
     {
-      "id": "a51e324f99253be9",
-      "theme": "Apple, Alphabet (A)",
-      "tagCls": "b-blue",
-      "title": "Pourquoi l’IA de Google pourrait coûter des milliards à Apple - iPhoneSoft",
-      "excerpt": "L’essor de la recherche par intelligence artificielle a eu impact très fort sur les sites Internet comme le nôtre depuis près de trois ans…",
-      "source": "iPhoneSoft",
-      "pubDate": "Mon, 23 Nov 2026 08:00:14 GMT",
-      "pubTs": 1795420814,
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5sQ2xnRm0tXzVrcW9KcW1LVUJmcmVIa20xdUlSN012MHk4djZncUNtaFpXQi1vTkZxa0E3RUJpa0tiOEpGaUxwbnhYM2pTUUtFSGo4VkVEVFRUT0REYkI5U29KcGVxVFRTQnRJcFNRYnRiREtxMFl1MFQ3WHg4dm8?oc=5"
-    },
-    {
-      "id": "9dc6a374c7a33f4b",
+      "id": "ea4449b61d6ee8fd",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Le Cac 40 tente de se relever après sa pire semaine depuis mars, Wall Street annonce un rebond marqué - Investir Les Echos",
-      "excerpt": "Après une semaine de dégagements massifs, les acheteurs reviennent sur la tech américaine mais la Bourse de Paris devrait en profiter assez modestement. Le rebond annoncé à Wall…",
-      "source": "Investir Les Echos",
-      "pubDate": "Mon, 23 Nov 2026 07:37:05 GMT",
-      "pubTs": 1795419425,
-      "link": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQRDdpbHRpa2RUQjM0REc3elRTX3E3emZqYllEYnNzaHFDWEExMVhXd3JfY19yQTNZYW5DNTI4aThoSDNDLWJ6Q3BydlhrQnFzcVVGU3gyazM3SWUxblVuZVdTY3VmZVFKRUliaDdQclVGclRYMGx0NUktVFl6VVJkY0N6YTRudTFRQUs5bkJRVmU0UDh5ODQtTlhGdk5PMk4tcXVsczlOblM5V3ItNnJFQnM3aURSU0xjOXhZOEV2YV9HazYzejlwakhsZ3BUYmppeXdjNXY2aHVuZmhJd1czNGdrXzdscGk0cVRRcnlyUldmcW1PTUxiY1JrY0xzRlZJ?oc=5"
+      "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
+      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "source": "Investing.com France",
+      "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
+      "pubTs": 1795425900,
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdjlLUW9GMW9UbC1zN2NiOUtMYnpGWmFfZHg2TUFHbWxSeXd1Tkk0Vkl5RlNpNDBOUGRlUTA3c1JUSmp4aEtZRTBPQjh2eWtsNGd6Smx2M2NvOWU3VDgyUzFoYjlxenRhc2JfWVFsZ2FRdmhrcGNGY1dZeVNuX0t2eFBscHJQT2JPNHp2a1l1dE1ScmRIZXliMHhLRHE1c3NhVUI2Y29pbVRlTzF3YjRtal9FM3o4czFUTW9LT2d5WTlyVzlBZnpVSFZZMnl3el9GdkRodQ?oc=5"
+    },
+    {
+      "id": "0f2b25ec58d75744",
+      "theme": "Apple, Alphabet (A)",
+      "tagCls": "b-blue",
+      "title": "Apple va développer ses propres agents IA pour concurrencer OpenAI, Google et Meta - RTBF",
+      "excerpt": "Selon Bloomberg, Apple recrute en ce moment des ingénieurs pour développer des agents IA autonomes, capables…",
+      "source": "RTBF",
+      "pubDate": "Mon, 23 Nov 2026 09:00:10 GMT",
+      "pubTs": 1795424410,
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPMGJUOUtlQ0NEQWNuX0RhdHFIQzVrMER1OVo1c2x4SG1pSjNYR2xoZzItR3IwZmZRa1A5dzhVMjhaYlJGa1cwOGFFWUU5YWk2T1k4MWM1UGNFY2lUVEZBTlhvdGJCaU9LSnJMZXNGQzhpdklFVVVGYWlQRVk0dG5DSm9ZaTczbUQxOVhlNVVQNC1TSVRWMGJMUzBhcUxBRDRZZmdvM2FDcC1SYXFQMVdkcXRieG9Fb2VnOGc?oc=5"
+    },
+    {
+      "id": "ee4f139ce48569d4",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "🔥 LE PCE DE BASE D’OCTOBRE VA-T-IL MODIFIER LES ANTICIPATIONS DE HAUSSE DES TAUX DE LA FED ? 🔥 - Binance",
+      "excerpt": "",
+      "source": "Binance",
+      "pubDate": "Mon, 23 Nov 2026 07:35:55 GMT",
+      "pubTs": 1795419355,
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1CNExqSG43NlpSNmVfb0pYMy16VzkzRU4ybVRJS0hkdl9OcU14cGVUS1N6MERoLUFWNk1kQW14QWttN0JwOEFnYlVFSzJKRmdwOFFzcVd4dUxYWE9POWFfYldyWWdCQ3hK?oc=5"
     },
     {
       "id": "9a3ac680fbd3a2ed",
@@ -184,22 +195,11 @@
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Xiaomi Auto en Europe : l’Allemagne ouvre la voie en 2027 - business-times.fr",
-      "excerpt": "Xiaomi arrive en Europe en 2027 en choisissant délibérément l’Allemagne comme tête de pont pour ses voitures électriques. Un pari assumé sur le marché auto le plus exigeant, qui…",
+      "excerpt": "Xiaomi a confié son activité automobile européenne à Qiang Shunqiang, un ancien cadre de Xpeng qui est passé par Toyota, Mercedes-Benz et Lamborghini.…",
       "source": "business-times.fr",
       "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
       "pubTs": 1795413420,
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
-    },
-    {
-      "id": "1d22e71d1c113bad",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Bourse : gare à l’addition cachée d’une fusion entre SpaceX et Tesla, faut-il vraiment investir sur ces actions - Capital.fr",
-      "excerpt": "Alors que SpaceX et Tesla coopèrent déjà industriellement et commercialement, quelles synergies supplémentaires en cas de fusion ? Une fusion entre SpaceX et Tesla améliorerait-elle…",
-      "source": "Capital.fr",
-      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
     },
     {
       "id": "6fb0a17263bd41d6",
@@ -241,6 +241,9 @@
     "9a3ac680fbd3a2ed",
     "46992aad3a5167a9",
     "214d38137d111fe8",
-    "6fb0a17263bd41d6"
+    "6fb0a17263bd41d6",
+    "ea4449b61d6ee8fd",
+    "0f2b25ec58d75744",
+    "ee4f139ce48569d4"
   ]
 }
