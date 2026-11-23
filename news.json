@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T14:58:09Z",
+  "updatedAt": "2026-11-23T15:57:16Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 27.37,
-      "price": 159.8825,
+      "changePct": 34.36,
+      "price": 168.66,
       "currency": "USD",
       "kind": "jump"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": 14.39,
-      "price": 88.9985,
+      "changePct": 13.3,
+      "price": 88.1451,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,41 +118,50 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 8.65,
-      "price": 162.91,
+      "changePct": 9.12,
+      "price": 163.61,
       "currency": "USD",
+      "kind": "jump"
+    },
+    {
+      "id": "move_jump_NASDAQ:AMD_20261123",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "changePct": 8.67,
+      "price": 461.175,
+      "currency": "USD",
+      "kind": "jump"
+    },
+    {
+      "id": "move_jump_XETR:ENR_20261123",
+      "tv": "XETR:ENR",
+      "name": "Siemens Energy",
+      "weight": "4,8 %",
+      "changePct": 7.54,
+      "price": 127.24,
+      "currency": "EUR",
       "kind": "jump"
     }
   ],
   "items": [
     {
-      "id": "e603a91a1e9c791c",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Investing.com France",
-      "excerpt": "Amazon serait proche d’un accord de 7,5 milliards de dollars pour acquérir la start-up d’intelligence artificielle Decart, a rapporté samedi le Financial Times, citant des personnes…",
-      "source": "Investing.com France",
-      "pubDate": "Mon, 23 Nov 2026 14:30:00 GMT",
-      "pubTs": 1795444200,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeE9mbnhsbFBOSFJNR3Vqd0o3dktJZlI4ZFF5Y2MyMjN5MF9pOUN6TWRGajVhdS1LVE5fek1NYXQ5YkR3akFUMDJCRTFTcmEtdWJnQ1J0anVhRjBjXzFPd0V4cmNBbC14VEpHZk1SRVpmMGpZdE9LSXBYd2VGTmx6d2ZndlQ5QzdPTVdOTUNlanlqSzgyTUpTYkJLX1hyd29XVGdPbHQ5ZDRRVjJnRWMxX29wdU1yNkVQblBNUFFSMmI2VmJDSGN3U3cxb3hPV3U3VmxJTQ?oc=5"
-    },
-    {
-      "id": "4f59efab9c4e6fcb",
+      "id": "60288b4d603df5db",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Licences de puces Nvidia pour la Chine : le Congrès révèle les chiffres - NeoTeo",
-      "excerpt": "L'affaire Nvidia, qui a conduit à la démission de son PDG Jensen Huang, met en lumière la campagne menée par Pékin afin d'aider les entreprises chinoises à acquérir des puces d'IA…",
-      "source": "NeoTeo",
-      "pubDate": "Mon, 23 Nov 2026 13:59:22 GMT",
-      "pubTs": 1795442362,
-      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOFN0U2twYUwxOUg2eGxqeEp1RHQtZl9jMndScHB4ekxnNnhNeTkwM3pyTkVJRW81cm1wYUlzQk11eFV1SHNRMFVrTkxpaURzM1Rmby1wTHhaVjBDX0NZYV96NlJZSVRCMjYzVjBCdlBfTGNLV2tKTUxackNreFF6UFZBMFNhdVZVZkM4WkhQck91Ul91M1hVS3dDaw?oc=5"
+      "title": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen” to Musk. Oops. - TIKR.com",
+      "excerpt": "Key TakeawaysARK Invest sold $85 million of Nvidia the day before its earnings report and put the money into SpaceX. Cathie Wood says ARK sold because it could lose Jensen Huang to…",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 15:33:45 GMT",
+      "pubTs": 1795448025,
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMEFhSUVJU3RxS2VxUy1kbHRVY2oyLXpuWlVpWDRnSEZKbWRPSUtRSWxXc2l2WW42cHVna3VxOGN2ZG9JaFk3Y3MzZGJ5bk5jSzdScXNORWFteFpRbk1VWFdVeU9kR0lnN2FDX1ZleDNvSmtVdUh2VWhVMG5mdk9mM0JWODlNa3pVZmRHWHNLLWZuX2JpT3VRZnFQY05rWDE0NG1ER19wMlBxeHZiVU1VWg?oc=5"
     },
     {
       "id": "35ce6a76b9d58ace",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Anthropic : l’action chute de 8,5 % au Nasdaq après son IPO - Le Revenu",
-      "excerpt": "L'action Anthropic perd 9 % au lendemain de son IPO record. Le Nasdaq mène la baisse, l'Asie plonge et le Bitcoin glisse vers 61 000 dollars.",
+      "excerpt": "Investing.com - Les actions Anthropic ont progressé de plus de 4% en avant-bourse lundi, rebondissant après qu’une large vente massive sur les marchés vendredi a pesé sur le titre…",
       "source": "Le Revenu",
       "pubDate": "Mon, 23 Nov 2026 10:06:00 GMT",
       "pubTs": 1795428360,
@@ -163,7 +172,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
+      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -181,17 +190,6 @@
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdjlLUW9GMW9UbC1zN2NiOUtMYnpGWmFfZHg2TUFHbWxSeXd1Tkk0Vkl5RlNpNDBOUGRlUTA3c1JUSmp4aEtZRTBPQjh2eWtsNGd6Smx2M2NvOWU3VDgyUzFoYjlxenRhc2JfWVFsZ2FRdmhrcGNGY1dZeVNuX0t2eFBscHJQT2JPNHp2a1l1dE1ScmRIZXliMHhLRHE1c3NhVUI2Y29pbVRlTzF3YjRtal9FM3o4czFUTW9LT2d5WTlyVzlBZnpVSFZZMnl3el9GdkRodQ?oc=5"
     },
     {
-      "id": "a51e324f99253be9",
-      "theme": "Apple, Alphabet (A)",
-      "tagCls": "b-blue",
-      "title": "Pourquoi l’IA de Google pourrait coûter des milliards à Apple - iPhoneSoft",
-      "excerpt": "L’essor de la recherche par intelligence artificielle a eu impact très fort sur les sites Internet comme le nôtre depuis près de trois ans…",
-      "source": "iPhoneSoft",
-      "pubDate": "Mon, 23 Nov 2026 08:00:14 GMT",
-      "pubTs": 1795420814,
-      "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5sQ2xnRm0tXzVrcW9KcW1LVUJmcmVIa20xdUlSN012MHk4djZncUNtaFpXQi1vTkZxa0E3RUJpa0tiOEpGaUxwbnhYM2pTUUtFSGo4VkVEVFRUT0REYkI5U29KcGVxVFRTQnRJcFNRYnRiREtxMFl1MFQ3WHg4dm8?oc=5"
-    },
-    {
       "id": "214d38137d111fe8",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -201,6 +199,28 @@
       "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
       "pubTs": 1795413420,
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
+    },
+    {
+      "id": "57bcc6f15b2e628a",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "TF1 et Amazon Ads livrent les premiers résultats d’Amazon Publisher Cloud en France - Minted",
+      "excerpt": "24 % de reach incrémental et 5 % d’actes d’achat supplémentaires sur Amazon.fr. Un an après l’annonce de leur partenariat, Amazon Ads et TF1 dévoilent les premiers résultats d’une…",
+      "source": "Minted",
+      "pubDate": "Mon, 23 Nov 2026 05:52:41 GMT",
+      "pubTs": 1795413161,
+      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPM2ZVdEpHekx6Ymg4cE9iWWE5NlRBTkIwZ3MtMWhxU2lwcVdTLXZSV2k1VGRsOXNOM3BocU1NWW1idU5RcWJkNl8yczVJcUctMmRYZ3EzUkwxVDJyQWhYaFpyS2xMQm12R2VHTXlrTFBQTDJ0cWdGcWllVl8yaGJia01qQXpqTjIyM0I0ME5ZZnBqd1lDdDhaM1RGR0ZQMlBKdEVxTUZR?oc=5"
+    },
+    {
+      "id": "8a756c2ab21f5391",
+      "theme": "BYD",
+      "tagCls": "b-green",
+      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
+      "excerpt": "BYD fera appel d’une décision de justice néerlandaise interdisant la commercialisation dans l’Union européenne de son véhicule utilitaire sport Fang Cheng Bao Ti7, après que le…",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
+      "pubTs": 1795200540,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     }
   ],
   "notifiedIds": [
@@ -245,6 +265,10 @@
     "move_jump_NASDAQ:NVDA_20261123",
     "move_jump_NASDAQ:MSTR_20261123",
     "move_jump_NASDAQ:QCOM_20261123",
-    "e603a91a1e9c791c"
+    "e603a91a1e9c791c",
+    "move_jump_NASDAQ:AMD_20261123",
+    "move_jump_XETR:ENR_20261123",
+    "60288b4d603df5db",
+    "57bcc6f15b2e628a"
   ]
 }
