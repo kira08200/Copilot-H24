@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T15:57:16Z",
+  "updatedAt": "2026-11-23T16:51:54Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 34.36,
-      "price": 168.66,
+      "changePct": 31.47,
+      "price": 165.04,
       "currency": "USD",
       "kind": "jump"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": 13.3,
-      "price": 88.1451,
+      "changePct": 12.04,
+      "price": 87.17,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,8 +118,8 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 9.12,
-      "price": 163.61,
+      "changePct": 9.51,
+      "price": 164.205,
       "currency": "USD",
       "kind": "jump"
     },
@@ -128,19 +128,9 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": 8.67,
-      "price": 461.175,
+      "changePct": 8.43,
+      "price": 460.18,
       "currency": "USD",
-      "kind": "jump"
-    },
-    {
-      "id": "move_jump_XETR:ENR_20261123",
-      "tv": "XETR:ENR",
-      "name": "Siemens Energy",
-      "weight": "4,8 %",
-      "changePct": 7.54,
-      "price": 127.24,
-      "currency": "EUR",
       "kind": "jump"
     }
   ],
@@ -157,22 +147,33 @@
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMEFhSUVJU3RxS2VxUy1kbHRVY2oyLXpuWlVpWDRnSEZKbWRPSUtRSWxXc2l2WW42cHVna3VxOGN2ZG9JaFk3Y3MzZGJ5bk5jSzdScXNORWFteFpRbk1VWFdVeU9kR0lnN2FDX1ZleDNvSmtVdUh2VWhVMG5mdk9mM0JWODlNa3pVZmRHWHNLLWZuX2JpT3VRZnFQY05rWDE0NG1ER19wMlBxeHZiVU1VWg?oc=5"
     },
     {
-      "id": "35ce6a76b9d58ace",
+      "id": "bc7fe17c207ec4a3",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Anthropic : l’action chute de 8,5 % au Nasdaq après son IPO - Le Revenu",
-      "excerpt": "Investing.com - Les actions Anthropic ont progressé de plus de 4% en avant-bourse lundi, rebondissant après qu’une large vente massive sur les marchés vendredi a pesé sur le titre…",
-      "source": "Le Revenu",
-      "pubDate": "Mon, 23 Nov 2026 10:06:00 GMT",
-      "pubTs": 1795428360,
-      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxNekhtaUU2Z2dyWlgySjc5OF90eFdQZkdHNUk1ZlozWjFyTHFXMG5SNWxONGp1M3Ffd01sZTg3aHJYV0VlUkNqbnZBVm1haF90N0JKdnd6RXlmQUN2RkdNcU9VcHdmZ1BPcWY3ZFJLRFR6ek9VTlR1UEoyZkdfQ2ZUaFNzTmVWN1EwWEFnRHJIWDE5cjFwaG5GZXB5cUxHV3dKTzFzdkpsOEV0MzF0enBhd1ByZEFMMFNXMndoMnJid1lILUMzenJaaW9DZjJDUQ?oc=5"
+      "title": "Anthropic : qui contrôle les votes après son entrée en Bourse ? - Libnanews",
+      "excerpt": "À l’entrée en Bourse d’Anthropic, une seule action de catégorie F conserve 50,1 % des voix sur les questions générales. Mais la majorité des sièges du conseil relève d’un autre titre.",
+      "source": "Libnanews",
+      "pubDate": "Mon, 23 Nov 2026 13:25:00 GMT",
+      "pubTs": 1795440300,
+      "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOcVVBVE0xSE1WVEd3UDNwRkhsUFZKR1AyeEx3WFVWb3dzR1A1SnBhM3k1bDEwZ3BJaUh0dmx5THhPaWpoaGUtN1Q5NXFpN0VJaUZHWm43THkxRkNVVll4MlVFM3FxSm5WU1F4RzhZRXgxNG5wa0tJeUdHRkd0azU1UlFHbXFnelVUMFE?oc=5"
+    },
+    {
+      "id": "ae734faed996698f",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Derrière une introduction en Bourse record, le pari du marocain Laprophan pour bâtir un géant pharmaceutique - AGENCE ECOFIN",
+      "excerpt": "Fondé en 1949, le laboratoire marocain multiplie les acquisitions depuis 2 ans, au Maroc comme en Europe. Cette stratégie doit lui permettre…",
+      "source": "AGENCE ECOFIN",
+      "pubDate": "Mon, 23 Nov 2026 12:40:00 GMT",
+      "pubTs": 1795437600,
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPdENfcHhVMWZCdE1LXzlDU0V0LUxnMV9nVGQtNmVPZWpSNVROT291MVN0ODdPUEw0ZXZlZVZNWmJDSEN1Vm9MUnZZal93dDlMRUxhREpPVC1SWjR2ckFNRjh5X1h6ZXNYZlpMUzQ4bjFZS3JuY2pQenB4SHJjOXJ0N2t6dHNXX3FjVjIyX001UnZqWkZ5VGQzek9yemUyRDhxQ0hCeXIxQVdvejlGaGJHQkRpa1N0aEVRQWVOd1pIMndDckY0dW41OEtfc2JfaVd0YnFkV3VESDZFaS04ekJwTXM0WlBDMDAtU0hoZ1p4cEg?oc=5"
     },
     {
       "id": "9d44e26fa4d77c63",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les premières enquêtes PMI de novembre donneront lundi un aperçu de l'activité des deux côtés de l'Atlantique. La semaine se poursuivra avec l'inflation PCE américaine, avant le…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -183,7 +184,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les investisseurs vont continuer de surveiller de près l'évolution des valeurs liées à l'IA, en attendant les chiffres de l'inflation qui seront publiés aux Etats-Unis ce mardi.…",
       "source": "Investing.com France",
       "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
       "pubTs": 1795425900,
@@ -199,17 +200,6 @@
       "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
       "pubTs": 1795413420,
       "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
-    },
-    {
-      "id": "57bcc6f15b2e628a",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "TF1 et Amazon Ads livrent les premiers résultats d’Amazon Publisher Cloud en France - Minted",
-      "excerpt": "24 % de reach incrémental et 5 % d’actes d’achat supplémentaires sur Amazon.fr. Un an après l’annonce de leur partenariat, Amazon Ads et TF1 dévoilent les premiers résultats d’une…",
-      "source": "Minted",
-      "pubDate": "Mon, 23 Nov 2026 05:52:41 GMT",
-      "pubTs": 1795413161,
-      "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPM2ZVdEpHekx6Ymg4cE9iWWE5NlRBTkIwZ3MtMWhxU2lwcVdTLXZSV2k1VGRsOXNOM3BocU1NWW1idU5RcWJkNl8yczVJcUctMmRYZ3EzUkwxVDJyQWhYaFpyS2xMQm12R2VHTXlrTFBQTDJ0cWdGcWllVl8yaGJia01qQXpqTjIyM0I0ME5ZZnBqd1lDdDhaM1RGR0ZQMlBKdEVxTUZR?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -269,6 +259,8 @@
     "move_jump_NASDAQ:AMD_20261123",
     "move_jump_XETR:ENR_20261123",
     "60288b4d603df5db",
-    "57bcc6f15b2e628a"
+    "57bcc6f15b2e628a",
+    "bc7fe17c207ec4a3",
+    "ae734faed996698f"
   ]
 }
