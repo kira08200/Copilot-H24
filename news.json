@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T04:54:14Z",
+  "updatedAt": "2026-11-23T05:52:45Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,26 +146,15 @@
   ],
   "items": [
     {
-      "id": "cc0507de301637ad",
+      "id": "7add5f0dfeb745a1",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Anthropic : les étonnantes coulisses d’une entrée en Bourse historique - Le Point",
-      "excerpt": "Anthropic ANT.O s'apprête à faire son entrée très attendue au Nasdaq plus tard dans la journée de jeudi, après une introduction en Bourse de 81 milliards de dollars qui a pulvérisé…",
-      "source": "Le Point",
-      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQcFNmcWtLY1pTY2ZfalVOVHFHUFVjNElBN296a0JfcWhObGRZZ1BrZXd6enltR1V4cXAyRW9XalFSNnUwTC0zNDY4N0R1bnlTbUJKZ1l6SUszRDZYa0RpWjVpSHNLa0M1dUlITFM1NGNrM1JSMU00bjVhaUZIckR2MEtPWF94bzdmOXRnMDlOVHRMRzlXR2Rndy0tLU82Xy16bEswd292NUstYmhUd1pEbHJhdnAwblNoQjBmTTdPUW44WmhQWGg2NkJyOGpDUUxqWXh2ODh2VHh2ckZmU0RGLTAwbTY?oc=5"
-    },
-    {
-      "id": "1d22e71d1c113bad",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Bourse : gare à l’addition cachée d’une fusion entre SpaceX et Tesla, faut-il vraiment investir sur ces actions - Capital.fr",
-      "excerpt": "Alors que SpaceX et Tesla coopèrent déjà industriellement et commercialement, quelles synergies supplémentaires en cas de fusion ? Une fusion entre SpaceX et Tesla améliorerait-elle…",
-      "source": "Capital.fr",
-      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
+      "title": "Introduction en Bourse record d’Anthropic: Wall Street fait le pari de l’IA, l’entreprise met en garde contre des risques « existentiels - World Socialist Web Site",
+      "excerpt": "Anthropic a levé 81 milliards de dollars lors de son introduction en bourse spectaculaire, pulvérisant tous les records et éclipsant l'entrée en bourse de SpaceX en juin pour…",
+      "source": "World Socialist Web Site",
+      "pubDate": "Mon, 23 Nov 2026 05:20:10 GMT",
+      "pubTs": 1795411210,
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBhWTA4R2xtUmJnV2ZHX0ZhZWY2UEJ4S1RXMUlya3RUaENEbkQyOGRIbjV2Nk8tbXFBNVdRc1F3X09fTXFfMFJzcVU2NTJOQTQ4VTd3cGN6U2VwOVpwUGhXWW5rMEp0Y3hY?oc=5"
     },
     {
       "id": "e4b8de0fce7442bf",
@@ -177,6 +166,17 @@
       "pubDate": "Sun, 22 Nov 2026 16:17:12 GMT",
       "pubTs": 1795364232,
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNYnRSQzZabS1WUk9kUFpBOElVc3pSWXpVZktvUml1QjVxOG94Y0szbmZJbFIyUjMxSWx4YVZHTWpOWUwtamtNUVd2VkNrWjJOazI0Z2Jacjdta0s2RHhBTzZWNzFIRHBvaUZqek1fNFgzXy10VTdYcExCelFNTWpXMkpLZTNpdHlQMVE0MWJubw?oc=5"
+    },
+    {
+      "id": "b150c96c5a5af7d3",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
+      "excerpt": "Du 7 au 12 septembre 2027, le salon automobile de Munich verra 18 marques chinoises, de Xiaomi à BYD, occuper le devant de la scène. Une démonstration de force qui inquiète les…",
+      "source": "AutoNext.co",
+      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
+      "pubTs": 1795257742,
+      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -243,6 +243,7 @@
     "move_drop_NASDAQ:QCOM_20261123",
     "move_drop_XETR:ENR_20261123",
     "cc0507de301637ad",
-    "b150c96c5a5af7d3"
+    "b150c96c5a5af7d3",
+    "7add5f0dfeb745a1"
   ]
 }
