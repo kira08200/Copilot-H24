@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T14:00:16Z",
+  "updatedAt": "2026-11-23T14:58:09Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,68 +94,58 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:NVDA_20261123",
+      "id": "move_jump_NASDAQ:NVDA_20261123",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -14.01,
-      "price": 125.53,
+      "changePct": 27.37,
+      "price": 159.8825,
       "currency": "USD",
-      "kind": "drop"
+      "kind": "jump"
     },
     {
-      "id": "move_drop_NASDAQ:AMD_20261123",
-      "tv": "NASDAQ:AMD",
-      "name": "AMD",
-      "weight": "18,4 %",
-      "changePct": -13.25,
-      "price": 424.39,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:MSTR_20261123",
+      "id": "move_jump_NASDAQ:MSTR_20261123",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -9.67,
-      "price": 77.8,
+      "changePct": 14.39,
+      "price": 88.9985,
       "currency": "USD",
-      "kind": "drop"
+      "kind": "jump"
     },
     {
-      "id": "move_drop_NASDAQ:QCOM_20261123",
+      "id": "move_jump_NASDAQ:QCOM_20261123",
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": -7.45,
-      "price": 149.94,
+      "changePct": 8.65,
+      "price": 162.91,
       "currency": "USD",
-      "kind": "drop"
+      "kind": "jump"
     }
   ],
   "items": [
+    {
+      "id": "e603a91a1e9c791c",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Investing.com France",
+      "excerpt": "Amazon serait proche d’un accord de 7,5 milliards de dollars pour acquérir la start-up d’intelligence artificielle Decart, a rapporté samedi le Financial Times, citant des personnes…",
+      "source": "Investing.com France",
+      "pubDate": "Mon, 23 Nov 2026 14:30:00 GMT",
+      "pubTs": 1795444200,
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQeE9mbnhsbFBOSFJNR3Vqd0o3dktJZlI4ZFF5Y2MyMjN5MF9pOUN6TWRGajVhdS1LVE5fek1NYXQ5YkR3akFUMDJCRTFTcmEtdWJnQ1J0anVhRjBjXzFPd0V4cmNBbC14VEpHZk1SRVpmMGpZdE9LSXBYd2VGTmx6d2ZndlQ5QzdPTVdOTUNlanlqSzgyTUpTYkJLX1hyd29XVGdPbHQ5ZDRRVjJnRWMxX29wdU1yNkVQblBNUFFSMmI2VmJDSGN3U3cxb3hPV3U3VmxJTQ?oc=5"
+    },
     {
       "id": "4f59efab9c4e6fcb",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
       "title": "Licences de puces Nvidia pour la Chine : le Congrès révèle les chiffres - NeoTeo",
-      "excerpt": "",
+      "excerpt": "L'affaire Nvidia, qui a conduit à la démission de son PDG Jensen Huang, met en lumière la campagne menée par Pékin afin d'aider les entreprises chinoises à acquérir des puces d'IA…",
       "source": "NeoTeo",
       "pubDate": "Mon, 23 Nov 2026 13:59:22 GMT",
       "pubTs": 1795442362,
       "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPOFN0U2twYUwxOUg2eGxqeEp1RHQtZl9jMndScHB4ekxnNnhNeTkwM3pyTkVJRW81cm1wYUlzQk11eFV1SHNRMFVrTkxpaURzM1Rmby1wTHhaVjBDX0NZYV96NlJZSVRCMjYzVjBCdlBfTGNLV2tKTUxackNreFF6UFZBMFNhdVZVZkM4WkhQck91Ul91M1hVS3dDaw?oc=5"
-    },
-    {
-      "id": "2528de4cba3dfaae",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "V2X et Microsoft élargissent leur collaboration pour développer des outils d’IA destinés aux opérations de mission - Zonebourse Suisse",
-      "excerpt": "V2X, Inc. a annoncé l’élargissement de sa collaboration avec Microsoft afin de faire progresser la prochaine génération d’opérations de mission alimentées par l’intelligence…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Mon, 23 Nov 2026 13:07:53 GMT",
-      "pubTs": 1795439273,
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxON2RHZV96cVVsOXNIbU1WdE9lRGNlTmZpc29ubWhSLU5JNlc3aWVYUnBVVnA1TTg1dEV1SnE5T1dOWUpPTlFWdVo5STBKNlVESDhJRTNUYTEybkxmeUo1RmhwWklqVzNpSGI1MVRzWk02U085dUhmOGRFelZ5dmdWSjYzTEU2bk1vc25xQWRVVVc4QnNoRmYwc2pLalpzMjViV1Vmd09GVVlvV05MdDRyampmWXNzaWJ3X0JIOHNtNVdHY2RrX0haVEc2QTJ3cXEyZVBXM3J0MjdjZFFuQ0VjdTROMUx2V2ZLZWNjNmEyd18?oc=5"
     },
     {
       "id": "35ce6a76b9d58ace",
@@ -173,7 +163,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -202,15 +192,15 @@
       "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5sQ2xnRm0tXzVrcW9KcW1LVUJmcmVIa20xdUlSN012MHk4djZncUNtaFpXQi1vTkZxa0E3RUJpa0tiOEpGaUxwbnhYM2pTUUtFSGo4VkVEVFRUT0REYkI5U29KcGVxVFRTQnRJcFNRYnRiREtxMFl1MFQ3WHg4dm8?oc=5"
     },
     {
-      "id": "9a3ac680fbd3a2ed",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Le FBI et Amazon alertent sur des cybercriminels capables d'automatiser leurs attaques grâce à des agents IA - Science et vie",
-      "excerpt": "",
-      "source": "Science et vie",
-      "pubDate": "Mon, 23 Nov 2026 07:00:33 GMT",
-      "pubTs": 1795417233,
-      "link": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQNWFOanhGd2JTVHVaNlZzRHpBTGItMUFOc3ppX1VsNTVnbUNCRzZudmNzd0VDcjdva2Q1dzVNUWpRU2tUWXYzdVY5dzdtdkxwOFkydWVhX1JWV2wtbVNTeWs2ZGVIVWZ1S1VDdlo0em9NUXQyMC1mMy1CY1FlUENWTUZvamxTS0E3b0ZXN2txcUtJR1ljNUl6MXZnQ2ZTTVBTc19IVTJBX1BWSDVnRnJfMWptVXJhd251NnktT2w2WDFwSmJKTjNhQ1J1M19nRW10T3kyYXl4RXF6U2U5VE1xeVUxWEtoSzNsWE9MejJtdnJhOHU3M3d6X2d3OA?oc=5"
+      "id": "214d38137d111fe8",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Xiaomi Auto en Europe : l’Allemagne ouvre la voie en 2027 - business-times.fr",
+      "excerpt": "Xiaomi a confié son activité automobile européenne à Qiang Shunqiang, un ancien cadre de Xpeng qui est passé par Toyota, Mercedes-Benz et Lamborghini.…",
+      "source": "business-times.fr",
+      "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
+      "pubTs": 1795413420,
+      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
     }
   ],
   "notifiedIds": [
@@ -251,6 +241,10 @@
     "35ce6a76b9d58ace",
     "9d44e26fa4d77c63",
     "4f59efab9c4e6fcb",
-    "2528de4cba3dfaae"
+    "2528de4cba3dfaae",
+    "move_jump_NASDAQ:NVDA_20261123",
+    "move_jump_NASDAQ:MSTR_20261123",
+    "move_jump_NASDAQ:QCOM_20261123",
+    "e603a91a1e9c791c"
   ]
 }
