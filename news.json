@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T01:58:08Z",
+  "updatedAt": "2026-11-23T02:51:12Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -161,7 +161,7 @@
       "theme": "Microsoft",
       "tagCls": "b-blue",
       "title": "Microsoft corrige 1 413 failles, Nadella alerte sur l'IA - Brief IA",
-      "excerpt": "Ce 13 octobre 2026, Microsoft a publié un nouveau Patch Tuesday, son traditionnel ensemble mensuel de correctifs de sécurité, diffusé le deuxième mardi de chaque mois. Mais celui…",
+      "excerpt": "Microsoft vient de déployer le plus imposant Patch Tuesday de son histoire. Avec le patch de septembre 2026, l’éditeur corrige près de 1000 failles de sécurité identifiées dans le…",
       "source": "Brief IA",
       "pubDate": "Sun, 22 Nov 2026 16:17:12 GMT",
       "pubTs": 1795364232,
