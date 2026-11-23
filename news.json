@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T05:52:45Z",
+  "updatedAt": "2026-11-23T06:58:06Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -146,6 +146,17 @@
   ],
   "items": [
     {
+      "id": "c8bb9bfa2a432f4d",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon négocierait l’acquisition de Decart, spécialiste de l’efficacité des modèles d’IA - ZDNET",
+      "excerpt": "Selon le Financial Times, Amazon est en négociations avancées pour racheter Decart, une start-up d’IA fondée en 2023, sur la base d’environ 7,5 milliards de dollars. Ses logiciels…",
+      "source": "ZDNET",
+      "pubDate": "Mon, 23 Nov 2026 06:01:12 GMT",
+      "pubTs": 1795413672,
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQS1JrTHRDOHdjTmIwYzhLRllDTkNOSFFKMmVHMGdKZmR5M2JZZW5XME1QWVE1LTVadENOb29OdHpXN2ZickJXRWFNU19PejdZSklXQkY5WVlGRUx5MjA0bDNzTU5NM3VRdk1oNUd6bGRzQ0hPOWRnYXU0eHZETF94eDJ1NWZyRmFDSGJ5UEluNUxKd2M0VUVySTUyTkJfdEZnaXZydGloMzgyRlgwdjlHOEd4TVpicC1LNXBqQUN2VmtnVkFIcGc?oc=5"
+    },
+    {
       "id": "7add5f0dfeb745a1",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -166,17 +177,6 @@
       "pubDate": "Sun, 22 Nov 2026 16:17:12 GMT",
       "pubTs": 1795364232,
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNYnRSQzZabS1WUk9kUFpBOElVc3pSWXpVZktvUml1QjVxOG94Y0szbmZJbFIyUjMxSWx4YVZHTWpOWUwtamtNUVd2VkNrWjJOazI0Z2Jacjdta0s2RHhBTzZWNzFIRHBvaUZqek1fNFgzXy10VTdYcExCelFNTWpXMkpLZTNpdHlQMVE0MWJubw?oc=5"
-    },
-    {
-      "id": "b150c96c5a5af7d3",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi débauche les patrons européens de Xpeng pour 2027 - AutoNext.co",
-      "excerpt": "Du 7 au 12 septembre 2027, le salon automobile de Munich verra 18 marques chinoises, de Xiaomi à BYD, occuper le devant de la scène. Une démonstration de force qui inquiète les…",
-      "source": "AutoNext.co",
-      "pubDate": "Sat, 21 Nov 2026 10:42:22 GMT",
-      "pubTs": 1795257742,
-      "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE01MGRfYTY4dEx0MGU0a3o4MTRCWm1KbnhUOUlRSWVoWFNQdW12dnd2dF9OQ1dnZ081MXJDaTdveDVWWDVxU3dKRzZ2QVV5Sk9wWHVISWZVQldUQ1dtRHo5VkxCRlhMQy1XMUE5cmIxc2FvRzNBMGZjNjVuMA?oc=5"
     },
     {
       "id": "8a756c2ab21f5391",
@@ -244,6 +244,7 @@
     "move_drop_XETR:ENR_20261123",
     "cc0507de301637ad",
     "b150c96c5a5af7d3",
-    "7add5f0dfeb745a1"
+    "7add5f0dfeb745a1",
+    "c8bb9bfa2a432f4d"
   ]
 }
