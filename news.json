@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T09:49:55Z",
+  "updatedAt": "2026-11-23T10:50:09Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -136,11 +136,22 @@
   ],
   "items": [
     {
+      "id": "0d3fe6abc80189f6",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Anthropic a signé une introduction en Bourse historique, et maintenant quelle position adopter sur l'action de cette star de l'IA - Investir Les Echos",
+      "excerpt": "Le créateur du chatbot IA Claude a marqué l'histoire par une entrée à Wall Street record, levant 81,3 milliards de dollars, un montant porté à 107,3 milliards grâce à un placement…",
+      "source": "Investir Les Echos",
+      "pubDate": "Mon, 23 Nov 2026 10:18:04 GMT",
+      "pubTs": 1795429084,
+      "link": "https://news.google.com/rss/articles/CBMipgJBVV95cUxPNXZhN1BfVHNOVFY4WC13YTdVUU5KdzFLcGt4Nkl5QXFfdTAzY3JMQUtxSU1pUzZvUHRha2tSLVRYRnZmVU1SLU1VdFlzVUZncVNwRTh1N2xTSnA0cy1WaFBhMG1SWkIxRFFQdmhvMjJJTUp3ZUFVNk1SRjhrNGlrUmV1UnN6TS1qSGFNUlhOX04yajAzQXFaclV6Z09leXd2dk9WYzRfZVVpR2FkcWRkSWFMRU9GenpjcjZsTWh1LXo5VW9obHc5RFRZd3lUOTc1YW9WLTRsRUw2LXM2UWpQWGdPRnc1SGFXWlRzdGh1WjFJck1zR3c0OExIaG5ZdUQtWWp5MHdoR25MOXVfbk9OLXM3MmJ2ME8wNUYxcWs4eC1qMHpPeHc?oc=5"
+    },
+    {
       "id": "ea4449b61d6ee8fd",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les investisseurs vont continuer de surveiller de près l'évolution des valeurs liées à l'IA, en attendant les chiffres de l'inflation qui seront publiés aux Etats-Unis ce mardi.…",
       "source": "Investing.com France",
       "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
       "pubTs": 1795425900,
@@ -191,26 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxQdkRneVE2dmhFczVRTElSb0FWcnhac2J3T3d2b1E1MWhhZlczSWRQNk9WTkk4S0JSWHdDc1B4b1g5NUhhUXZOVFliTHpYZ2pHLU5KdnY0RkZscmkxbkQ2ZlJSb1pFVEdtSVZGTXNNSjljSlhiLUhhUXZmc3JZT1JLMUVsRm9ROUJ3eDFHVklZdzFvV1IyN25LdDNibzRtcXFkTS1udUc4VXBNNHpSOTlkam9Mc0pyMzJZMDE3N0NqZw?oc=5"
     },
     {
-      "id": "214d38137d111fe8",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi Auto en Europe : l’Allemagne ouvre la voie en 2027 - business-times.fr",
-      "excerpt": "Xiaomi a confié son activité automobile européenne à Qiang Shunqiang, un ancien cadre de Xpeng qui est passé par Toyota, Mercedes-Benz et Lamborghini.…",
-      "source": "business-times.fr",
-      "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
-      "pubTs": 1795413420,
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
-    },
-    {
-      "id": "6fb0a17263bd41d6",
-      "theme": "NVIDIA",
+      "id": "901b94bdeb5a4d3e",
+      "theme": "AMD, NVIDIA",
       "tagCls": "b-purple",
-      "title": "Bourses mondiales: après les résultats de Nvidia, cap sur Anthropic - Zonebourse",
-      "excerpt": "Paris - Les Bourses mondiales évoluaient encore avec prudence mercredi. Les valeurs des semi-conducteurs profitaient encore du soulagement offert par les résultats meilleurs…",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 18 Nov 2026 22:05:36 GMT",
-      "pubTs": 1795039536,
-      "link": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQMGhfZDZSY3pTeGJPZVZ1ZmRkcjRJdFVtOG5heGg0V0ZQTG93ZFpYNVdxWFpBdUJ6cWhJLUt3bDVOUnFSRDFjdkJvam42a1ZnQ0Z0ZUNhTzhxR2tiaUhaT3BwRUg0RVZPWm5mOTI0QjBMbmhVZDNGSDFkTVlGNkpLaERjTms4dEdiU1AyenhqNTYzRVVvUl90dWVpWjZIQi1sYjU1c2tET1MxdWRGd04wa1NVVVBxb3RlZXJFNDltbWlVeFVm?oc=5"
+      "title": "Nvidia, AMD et semi-conducteurs : pourquoi les actions chutent malgré les records de l’IA - https://www.leconseilpatrimoine.fr/",
+      "excerpt": "Nvidia publie 115,8 Md$ de ventes mais recule de 3,3 %. AMD perd 7,7 %. Analyse des valorisations, des risques et des investissements IA.",
+      "source": "https://www.leconseilpatrimoine.fr/",
+      "pubDate": "Fri, 20 Nov 2026 08:47:32 GMT",
+      "pubTs": 1795164452,
+      "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOOTJhSHJad0JsYTVzbzFtV1kyRkZyYnpxeEJTTjBnSlIweGJneS1oc3FJdnZjTWhESnhYV2xWMmZCbnowVXdfNV9PbGxud3pwcDJ4WWw1RnZuVWRuNVhHVmZXd055Vkh3TjdRbkdiNGV6WDdNY1hZVmwyMzhGSTNSc05saHhyVWJvb19xMXRCSEVHTHQtNHJIZDYtcw?oc=5"
     }
   ],
   "notifiedIds": [
@@ -244,6 +244,8 @@
     "6fb0a17263bd41d6",
     "ea4449b61d6ee8fd",
     "0f2b25ec58d75744",
-    "ee4f139ce48569d4"
+    "ee4f139ce48569d4",
+    "0d3fe6abc80189f6",
+    "901b94bdeb5a4d3e"
   ]
 }
