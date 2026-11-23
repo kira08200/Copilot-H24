@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T21:17:58Z",
+  "updatedAt": "2026-11-23T22:11:08Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -152,7 +152,7 @@
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Black Friday : le Xiaomi 15 Pro passe sous les 300 € et c’est la star des ventes ici - Ouest-France",
-      "excerpt": "Si vous avez envie de trouver le cadeau idéal pour vos proches, foncez sur le site de Cdiscount pour commander ce Xiaomi Redmi Note 15 Pro. Il est proposé à un prix presque indécent…",
+      "excerpt": "La dernière ligne droite du Black Friday commence fort. Le Redmi Note 15 Pro 5G passe sous les 360 €, et à ce tarif, il devient l’un des Xiaomi les plus intéressants de la semaine.",
       "source": "Ouest-France",
       "pubDate": "Mon, 23 Nov 2026 20:06:02 GMT",
       "pubTs": 1795464362,
@@ -181,6 +181,17 @@
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
     },
     {
+      "id": "83dc6300c4b49f2a",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Actualités crypto | La semaine crypto à venir : l’inflation du PCE d’octobre met à l’épreuve le rebond du bitcoin pendant une semaine écourtée par Thanksgiving - Binance",
+      "excerpt": "Bitcoin repasse au-dessus de 64 000 dollars. Fed, Nvidia, Anthropic : les dates clés de la semaine qui pourraient décider du rebond du BTC.",
+      "source": "Binance",
+      "pubDate": "Mon, 23 Nov 2026 12:53:58 GMT",
+      "pubTs": 1795438438,
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OdHRsMkN3MDZ6TFFPZ18wMUdRdldYWFg5MkdrRFpJcUwxT0FSbHNhcC1JSlBFalhic2tFUnIwdGhETjJFTmNHNVRDQU50NTRvLVdKLXlYSzctTEowWHJGc1UzMXR6Zm9T?oc=5"
+    },
+    {
       "id": "9d44e26fa4d77c63",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -190,17 +201,6 @@
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWllVZUFydjVIM0d5QXI2eUxDeC1fRFNpMWhmRy1NcWVJWEk3d0Nremh6YmpYSVR0Qy04NFcwdFFhRFZFU2tEemprV1pfRGh5eUJTQnBPalNQT1N3SkxpTkpWcFlCclQtemk0UjhHRVI0MFdCNm83Y1RMMkxkNXpqUHpvWldMTTFjLVpKMGJaUDNPM0pEZmFBRlN2UXZlQVNHeXJIbU1IQnJWZWpESmJ2X1IwVkpQb0lFTEFGT2ZBZUpQQUpfN2c?oc=5"
-    },
-    {
-      "id": "ea4449b61d6ee8fd",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
-      "source": "Investing.com France",
-      "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
-      "pubTs": 1795425900,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdjlLUW9GMW9UbC1zN2NiOUtMYnpGWmFfZHg2TUFHbWxSeXd1Tkk0Vkl5RlNpNDBOUGRlUTA3c1JUSmp4aEtZRTBPQjh2eWtsNGd6Smx2M2NvOWU3VDgyUzFoYjlxenRhc2JfWVFsZ2FRdmhrcGNGY1dZeVNuX0t2eFBscHJQT2JPNHp2a1l1dE1ScmRIZXliMHhLRHE1c3NhVUI2Y29pbVRlTzF3YjRtal9FM3o4czFUTW9LT2d5WTlyVzlBZnpVSFZZMnl3el9GdkRodQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -258,6 +258,7 @@
     "fa3ffe13bc513ac8",
     "fa9294ccb8b6f37c",
     "7813f16b38341fe0",
-    "e62a9fb8b84862e4"
+    "e62a9fb8b84862e4",
+    "83dc6300c4b49f2a"
   ]
 }
