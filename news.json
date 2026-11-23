@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T22:11:08Z",
+  "updatedAt": "2026-11-23T22:59:33Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,26 +126,15 @@
   ],
   "items": [
     {
-      "id": "7813f16b38341fe0",
+      "id": "493f08d43f2d0342",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Les options d’Anthropic démarrent en fanfare, mais restent derrière le record de SpaceX - Zonebourse Suisse",
-      "excerpt": "Les options nouvellement cotées d’Anthropic ont fait l’objet d’échanges soutenus lundi, marquant un solide démarrage pour le nouveau marché de produits dérivés du développeur…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Mon, 23 Nov 2026 20:39:31 GMT",
-      "pubTs": 1795466371,
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNS1gyZ2IxbkZ2cThmZ1EzT0JMZXF4UlhfZ2JyVFRSTWJlajBRaFB4MTdVZTJscDZJX0FwYjd5MGExRF8xUGd2V2dzWEtYd3FpUXBTeGluVmlYMkJFYm13OFhoUTRPQzhNNnRiR0M4SlpaT3psZEtPOFRiY01nNUd2UEhZYUxQSmpJT2ZRVTUzLTlGeUxIS29KVmtwRWZPa1dmQ1EyRGVOV1M2ZGhKRGdRRmlRenhobUk3cUI0Mks1VEdXLWJsNHYwYmtZdHRvTjdwZW9rOFY2NWEyZW81YlFpTA?oc=5"
-    },
-    {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+      "title": "Les options d'Anthropic enregistrent des débuts solides, derrière le record de SpaceX - Boursorama",
+      "excerpt": "par Laura Matthews Les options sur les actions d'Anthropic ANT.O pourraient commencer à être négociées dès lundi, offrant ainsi aux investisseurs un nouveau moyen de parier sur les…",
+      "source": "Boursorama",
+      "pubDate": "Mon, 23 Nov 2026 20:38:28 GMT",
+      "pubTs": 1795466308,
+      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOTWlsTzRkOGtqN1ZwSXJQMG1PNHlSZnhMYllVbGl2Z3ZxbFZsOXI1am9KelJORUEzOXUwUDlCLVRTQjJ6ekZlcVp0RWd3LUc0ZERiSnRwckhxZmtCQVdsNlJ1c1RZRkRDbGh5LXlBSEJHTDJVUmZMM3B5ZnhpRThybVhSSmVnYXNHLVZzQ0hsWXRYMU91TzdqUDJjbkVMS3VmTnIwekpYUjJJMXdOT0hYM1BRNkQ5MUZtLWNuZWhnT2EtTTBXNVBaM3dUaXBweWx3T1RZSFdqaWc2NjUwbjlDTHBScnQ3b1ZzVEJ2UUotSWs4cU9F0gH6AUFVX3lxTE1JZUhZeFQwUmthWEJXVU9hUlBQQmhnZ21WVEVLM1hoVVVzZ3NrbGVkZDRiMGhJWV93c1R2Q011NzNyNGNUZGxsYXhnU0pHZ2RqQWlmcmViZ0NOSzRvTk10Wmc0ckREWkt1QThTNFpVUEFYai1FcVpNYXZxU0xVTlBRWXdIT2kyMmJGWEh6NERFTlh3MmlCYTFYajFYRzVyV0RzTmhkOV90blBJT0IxSmFfeTd5RFM5d3RlOFlmb0k5TElKMFFIZVU3aVVYZ0lLdjJ3d2E4c3dlX1VCRWZzdmROV29CcFJuYTZTVDVyN2NoTHFwY0NhSUhtZnc?oc=5"
     },
     {
       "id": "fa3ffe13bc513ac8",
@@ -170,6 +159,17 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
     },
     {
+      "id": "2b24c83cf07a96dc",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Résultats de NVIDIA : les prévisions sont rassurantes et l’action demeure sous-évaluée - Morningstar",
+      "excerpt": "par Ankur Banerjee Les prévisions solides de Nvidia ont apaisé pour l'instant les craintes des investisseurs quant à la pérennité de la demande en IA, mais la question de savoir qui…",
+      "source": "Morningstar",
+      "pubDate": "Mon, 23 Nov 2026 17:47:04 GMT",
+      "pubTs": 1795456024,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT0IxSkdsU0JZdkRVWkI2LWxFdXdNOFZEeHZ6SEJndlZuM1d0UjBkSmNWdzJHbUUtVHdabGpjTnR4VzhpRFhoX0prUWZxNVRPcllWckozS2t1UF9DcXE0Qm91NTY3YnRobmpxT2NoZ2xGbDM2NTFkWnlLVG9LWEVKcUVLdXl0dTF0SkF1b1RnUEtLaXZURUk1TTFaVC11Qjl5TzhVMXdpc09PcHdPZFN5QVR5WjRZWElZUmVGRVdfdnJyQQ?oc=5"
+    },
+    {
       "id": "e603a91a1e9c791c",
       "theme": "Amazon",
       "tagCls": "b-blue",
@@ -185,7 +185,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Actualités crypto | La semaine crypto à venir : l’inflation du PCE d’octobre met à l’épreuve le rebond du bitcoin pendant une semaine écourtée par Thanksgiving - Binance",
-      "excerpt": "Bitcoin repasse au-dessus de 64 000 dollars. Fed, Nvidia, Anthropic : les dates clés de la semaine qui pourraient décider du rebond du BTC.",
+      "excerpt": "La Solana Foundation prend le contrôle de CoinGecko : vers du trading intégré sur Solana ? Vibhu Norby, le directeur produit de la Solana Foundation…",
       "source": "Binance",
       "pubDate": "Mon, 23 Nov 2026 12:53:58 GMT",
       "pubTs": 1795438438,
@@ -196,7 +196,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -259,6 +259,8 @@
     "fa9294ccb8b6f37c",
     "7813f16b38341fe0",
     "e62a9fb8b84862e4",
-    "83dc6300c4b49f2a"
+    "83dc6300c4b49f2a",
+    "493f08d43f2d0342",
+    "2b24c83cf07a96dc"
   ]
 }
