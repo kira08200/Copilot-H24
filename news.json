@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T19:40:10Z",
+  "updatedAt": "2026-11-23T20:28:12Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 31.35,
-      "price": 164.885,
+      "changePct": 31.53,
+      "price": 165.11,
       "currency": "USD",
       "kind": "jump"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 9.32,
-      "price": 163.92,
+      "changePct": 9.31,
+      "price": 163.8975,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,23 +118,23 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": 9.22,
-      "price": 84.97,
+      "changePct": 8.96,
+      "price": 84.77,
       "currency": "USD",
       "kind": "jump"
     }
   ],
   "items": [
     {
-      "id": "6455023584ec9100",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Anthropic : le Golfe attend des milliards de son entrée en Bourse - Brief IA",
-      "excerpt": "Pour la première fois l'un des champions américains de l'intelligence artificielle, Anthropic, fait son entrée à la bourse de New York ce jeudi. Un minimum de 825 millions de titres…",
-      "source": "Brief IA",
-      "pubDate": "Mon, 23 Nov 2026 19:11:08 GMT",
-      "pubTs": 1795461068,
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPY2FFV1VvWTM4bHpzNlpHdkdxVFpqSWhjdWtEODlwbDNmclluN285bWw4bk1sU09Yam54MGVjblRWY1U1MG9kLUpuaXZST0FXOS15Yk9ESGozajFoQ051bTZIWDBxVFA1SnVQUjdDNDlxWUxzc1h0ekdORkJvR0ZVMTZrd3lvclFoWlpGbUpubS12S015a3BEMWVR?oc=5"
+      "id": "fa3ffe13bc513ac8",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Black Friday : le Xiaomi 15 Pro passe sous les 300 € et c’est la star des ventes ici - Ouest-France",
+      "excerpt": "La dernière ligne droite du Black Friday commence fort. Le Redmi Note 15 Pro 5G passe sous les 360 €, et à ce tarif, il devient l’un des Xiaomi les plus intéressants de la semaine.",
+      "source": "Ouest-France",
+      "pubDate": "Mon, 23 Nov 2026 20:06:02 GMT",
+      "pubTs": 1795464362,
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPTUJZOTU3NGoyZ2drekhkM05WSEdFaHZTN25KQTFLR0NZdHZVUWxtZVdoOTA1VTdBNVYwY19QSFVYUlJ5UDZ5cm5USE9VazdBaEhMTnhueTlDZDE0YVBOci1qMVhOZ2hhbXBxNm1ZSEUwbHpFQzdRYmhrVDhBeGxodTNHVDZEdVlCSzlvZzk3TE80YThNNWg0Q3VHU1pKOURzSjlTQnlOWHhaVlZqZndIR1BJTUY5UE5YZTliWkNkdENwVGRjWkIyN1ZDMlprMFBPRmxTb25fWWhJMjA0dGNmbkNORWpydlBadG9VN3FqaW51MXNhbGFsVGNmVGlOQkJwRVE?oc=5"
     },
     {
       "id": "59099ab8c72321bf",
@@ -146,6 +146,17 @@
       "pubDate": "Mon, 23 Nov 2026 18:00:35 GMT",
       "pubTs": 1795456835,
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
+    },
+    {
+      "id": "fa9294ccb8b6f37c",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Mythomètre : \"Il est encore temps d'investir dans Anthropic\", FAUX répond Jean-Benoit Gambet - 23/11 - BFM",
+      "excerpt": "Ce lundi 23 novembre, Guillaume Chaloin, directeur des gestions actions Delubac AM, s'est penché sur le retour de Jensen Huang à la tête de Nvidia, et les conséquences de cette…",
+      "source": "BFM",
+      "pubDate": "Mon, 23 Nov 2026 16:04:34 GMT",
+      "pubTs": 1795449874,
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
     },
     {
       "id": "60288b4d603df5db",
@@ -170,17 +181,6 @@
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
     },
     {
-      "id": "ae734faed996698f",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Derrière une introduction en Bourse record, le pari du marocain Laprophan pour bâtir un géant pharmaceutique - AGENCE ECOFIN",
-      "excerpt": "Fondé en 1949, le laboratoire marocain multiplie les acquisitions depuis 2 ans, au Maroc comme en Europe. Cette stratégie doit lui permettre…",
-      "source": "AGENCE ECOFIN",
-      "pubDate": "Mon, 23 Nov 2026 12:40:00 GMT",
-      "pubTs": 1795437600,
-      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPdENfcHhVMWZCdE1LXzlDU0V0LUxnMV9nVGQtNmVPZWpSNVROT291MVN0ODdPUEw0ZXZlZVZNWmJDSEN1Vm9MUnZZal93dDlMRUxhREpPVC1SWjR2ckFNRjh5X1h6ZXNYZlpMUzQ4bjFZS3JuY2pQenB4SHJjOXJ0N2t6dHNXX3FjVjIyX001UnZqWkZ5VGQzek9yemUyRDhxQ0hCeXIxQVdvejlGaGJHQkRpa1N0aEVRQWVOd1pIMndDckY0dW41OEtfc2JfaVd0YnFkV3VESDZFaS04ekJwTXM0WlBDMDAtU0hoZ1p4cEg?oc=5"
-    },
-    {
       "id": "9d44e26fa4d77c63",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -196,7 +196,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
+      "excerpt": "Les investisseurs vont continuer de surveiller de près l'évolution des valeurs liées à l'IA, en attendant les chiffres de l'inflation qui seront publiés aux Etats-Unis ce mardi.…",
       "source": "Investing.com France",
       "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
       "pubTs": 1795425900,
@@ -254,6 +254,8 @@
     "ae734faed996698f",
     "move_jump_NASDAQ:GOOGL_20261123",
     "59099ab8c72321bf",
-    "6455023584ec9100"
+    "6455023584ec9100",
+    "fa3ffe13bc513ac8",
+    "fa9294ccb8b6f37c"
   ]
 }
