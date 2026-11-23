@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T17:44:51Z",
+  "updatedAt": "2026-11-23T18:37:13Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,18 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 32.26,
-      "price": 166.02,
-      "currency": "USD",
-      "kind": "jump"
-    },
-    {
-      "id": "move_jump_NASDAQ:MSTR_20261123",
-      "tv": "NASDAQ:MSTR",
-      "name": "Strategy A",
-      "weight": "2,0 %",
-      "changePct": 10.78,
-      "price": 86.185,
+      "changePct": 31.6,
+      "price": 165.2,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,8 +108,18 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 9.53,
-      "price": 164.23,
+      "changePct": 10.0,
+      "price": 164.93,
+      "currency": "USD",
+      "kind": "jump"
+    },
+    {
+      "id": "move_jump_NASDAQ:MSTR_20261123",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": 9.07,
+      "price": 84.86,
       "currency": "USD",
       "kind": "jump"
     },
@@ -128,13 +128,34 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": 8.15,
-      "price": 458.98,
+      "changePct": 7.81,
+      "price": 457.535,
+      "currency": "USD",
+      "kind": "jump"
+    },
+    {
+      "id": "move_jump_NASDAQ:GOOGL_20261123",
+      "tv": "NASDAQ:GOOGL",
+      "name": "Alphabet (A)",
+      "weight": "0,1 %",
+      "changePct": 7.29,
+      "price": 284.6299,
       "currency": "USD",
       "kind": "jump"
     }
   ],
   "items": [
+    {
+      "id": "59099ab8c72321bf",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Le patron de Microsoft imagine une économie bouleversée par l'IA qu'il contribue lui-même à développer - Science et vie",
+      "excerpt": "Découvrez pourquoi le patron de Microsoft redoute un impact économique de l'IA capable de bouleverser entreprises, emploi et démocratie.",
+      "source": "Science et vie",
+      "pubDate": "Mon, 23 Nov 2026 18:00:35 GMT",
+      "pubTs": 1795456835,
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
+    },
     {
       "id": "60288b4d603df5db",
       "theme": "NVIDIA",
@@ -145,6 +166,17 @@
       "pubDate": "Mon, 23 Nov 2026 15:33:45 GMT",
       "pubTs": 1795448025,
       "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMEFhSUVJU3RxS2VxUy1kbHRVY2oyLXpuWlVpWDRnSEZKbWRPSUtRSWxXc2l2WW42cHVna3VxOGN2ZG9JaFk3Y3MzZGJ5bk5jSzdScXNORWFteFpRbk1VWFdVeU9kR0lnN2FDX1ZleDNvSmtVdUh2VWhVMG5mdk9mM0JWODlNa3pVZmRHWHNLLWZuX2JpT3VRZnFQY05rWDE0NG1ER19wMlBxeHZiVU1VWg?oc=5"
+    },
+    {
+      "id": "e603a91a1e9c791c",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
+      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
+      "source": "Yahoo Finance France",
+      "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
+      "pubTs": 1795446027,
+      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
     },
     {
       "id": "bc7fe17c207ec4a3",
@@ -173,7 +205,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
+      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -189,28 +221,6 @@
       "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
       "pubTs": 1795425900,
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdjlLUW9GMW9UbC1zN2NiOUtMYnpGWmFfZHg2TUFHbWxSeXd1Tkk0Vkl5RlNpNDBOUGRlUTA3c1JUSmp4aEtZRTBPQjh2eWtsNGd6Smx2M2NvOWU3VDgyUzFoYjlxenRhc2JfWVFsZ2FRdmhrcGNGY1dZeVNuX0t2eFBscHJQT2JPNHp2a1l1dE1ScmRIZXliMHhLRHE1c3NhVUI2Y29pbVRlTzF3YjRtal9FM3o4czFUTW9LT2d5WTlyVzlBZnpVSFZZMnl3el9GdkRodQ?oc=5"
-    },
-    {
-      "id": "214d38137d111fe8",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Xiaomi Auto en Europe : l’Allemagne ouvre la voie en 2027 - business-times.fr",
-      "excerpt": "Xiaomi a confié son activité automobile européenne à Qiang Shunqiang, un ancien cadre de Xpeng qui est passé par Toyota, Mercedes-Benz et Lamborghini.…",
-      "source": "business-times.fr",
-      "pubDate": "Mon, 23 Nov 2026 05:57:00 GMT",
-      "pubTs": 1795413420,
-      "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1YM2k4em50UjBzVkVROU0ySVg5STlTX21yVFhPdzBRb1hnd25IWlVYR0xVWE5wMG1ac2ZQbWRMa3JmWE5zMjVRY1pHUWl3QS1yRjExeXpXb0xkRjVNUlFr?oc=5"
-    },
-    {
-      "id": "8a756c2ab21f5391",
-      "theme": "BYD",
-      "tagCls": "b-green",
-      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
-      "excerpt": "BYD fera appel d’une décision de justice néerlandaise interdisant la commercialisation dans l’Union européenne de son véhicule utilitaire sport Fang Cheng Bao Ti7, après que le…",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
-      "pubTs": 1795200540,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     }
   ],
   "notifiedIds": [
@@ -261,6 +271,8 @@
     "60288b4d603df5db",
     "57bcc6f15b2e628a",
     "bc7fe17c207ec4a3",
-    "ae734faed996698f"
+    "ae734faed996698f",
+    "move_jump_NASDAQ:GOOGL_20261123",
+    "59099ab8c72321bf"
   ]
 }
