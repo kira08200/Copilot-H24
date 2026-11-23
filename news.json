@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T20:28:12Z",
+  "updatedAt": "2026-11-23T21:17:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 31.53,
-      "price": 165.11,
+      "changePct": 31.48,
+      "price": 165.05,
       "currency": "USD",
       "kind": "jump"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
-      "changePct": 9.31,
-      "price": 163.8975,
+      "changePct": 10.3,
+      "price": 165.38,
       "currency": "USD",
       "kind": "jump"
     },
@@ -118,19 +118,41 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": 8.96,
-      "price": 84.77,
+      "changePct": 8.48,
+      "price": 84.4,
       "currency": "USD",
       "kind": "jump"
     }
   ],
   "items": [
     {
+      "id": "7813f16b38341fe0",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les options d’Anthropic démarrent en fanfare, mais restent derrière le record de SpaceX - Zonebourse Suisse",
+      "excerpt": "Les options nouvellement cotées d’Anthropic ont fait l’objet d’échanges soutenus lundi, marquant un solide démarrage pour le nouveau marché de produits dérivés du développeur…",
+      "source": "Zonebourse Suisse",
+      "pubDate": "Mon, 23 Nov 2026 20:39:31 GMT",
+      "pubTs": 1795466371,
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNS1gyZ2IxbkZ2cThmZ1EzT0JMZXF4UlhfZ2JyVFRSTWJlajBRaFB4MTdVZTJscDZJX0FwYjd5MGExRF8xUGd2V2dzWEtYd3FpUXBTeGluVmlYMkJFYm13OFhoUTRPQzhNNnRiR0M4SlpaT3psZEtPOFRiY01nNUd2UEhZYUxQSmpJT2ZRVTUzLTlGeUxIS29KVmtwRWZPa1dmQ1EyRGVOV1M2ZGhKRGdRRmlRenhobUk3cUI0Mks1VEdXLWJsNHYwYmtZdHRvTjdwZW9rOFY2NWEyZW81YlFpTA?oc=5"
+    },
+    {
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+    },
+    {
       "id": "fa3ffe13bc513ac8",
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Black Friday : le Xiaomi 15 Pro passe sous les 300 € et c’est la star des ventes ici - Ouest-France",
-      "excerpt": "La dernière ligne droite du Black Friday commence fort. Le Redmi Note 15 Pro 5G passe sous les 360 €, et à ce tarif, il devient l’un des Xiaomi les plus intéressants de la semaine.",
+      "excerpt": "Si vous avez envie de trouver le cadeau idéal pour vos proches, foncez sur le site de Cdiscount pour commander ce Xiaomi Redmi Note 15 Pro. Il est proposé à un prix presque indécent…",
       "source": "Ouest-France",
       "pubDate": "Mon, 23 Nov 2026 20:06:02 GMT",
       "pubTs": 1795464362,
@@ -148,28 +170,6 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
     },
     {
-      "id": "fa9294ccb8b6f37c",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Mythomètre : \"Il est encore temps d'investir dans Anthropic\", FAUX répond Jean-Benoit Gambet - 23/11 - BFM",
-      "excerpt": "Ce lundi 23 novembre, Guillaume Chaloin, directeur des gestions actions Delubac AM, s'est penché sur le retour de Jensen Huang à la tête de Nvidia, et les conséquences de cette…",
-      "source": "BFM",
-      "pubDate": "Mon, 23 Nov 2026 16:04:34 GMT",
-      "pubTs": 1795449874,
-      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
-    },
-    {
-      "id": "60288b4d603df5db",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Cathie Wood Swapped Nvidia for SpaceX Over the Risk of “Losing Jensen” to Musk. Oops. - TIKR.com",
-      "excerpt": "Key TakeawaysARK Invest sold $85 million of Nvidia the day before its earnings report and put the money into SpaceX. Cathie Wood says ARK sold because it could lose Jensen Huang to…",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 15:33:45 GMT",
-      "pubTs": 1795448025,
-      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQMEFhSUVJU3RxS2VxUy1kbHRVY2oyLXpuWlVpWDRnSEZKbWRPSUtRSWxXc2l2WW42cHVna3VxOGN2ZG9JaFk3Y3MzZGJ5bk5jSzdScXNORWFteFpRbk1VWFdVeU9kR0lnN2FDX1ZleDNvSmtVdUh2VWhVMG5mdk9mM0JWODlNa3pVZmRHWHNLLWZuX2JpT3VRZnFQY05rWDE0NG1ER19wMlBxeHZiVU1VWg?oc=5"
-    },
-    {
       "id": "e603a91a1e9c791c",
       "theme": "Amazon",
       "tagCls": "b-blue",
@@ -185,7 +185,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "Les investisseurs examineront attentivement les rapports sur l’emploi et l’inflation au cours de la semaine à venir afin d’évaluer la probabilité d’une trajectoire plus marquée de…",
+      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
       "source": "www.tmgm.com",
       "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
       "pubTs": 1795426189,
@@ -196,7 +196,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "Les investisseurs vont continuer de surveiller de près l'évolution des valeurs liées à l'IA, en attendant les chiffres de l'inflation qui seront publiés aux Etats-Unis ce mardi.…",
+      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
       "source": "Investing.com France",
       "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
       "pubTs": 1795425900,
@@ -256,6 +256,8 @@
     "59099ab8c72321bf",
     "6455023584ec9100",
     "fa3ffe13bc513ac8",
-    "fa9294ccb8b6f37c"
+    "fa9294ccb8b6f37c",
+    "7813f16b38341fe0",
+    "e62a9fb8b84862e4"
   ]
 }
