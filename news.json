@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T14:02:26Z",
+  "updatedAt": "2026-11-24T14:58:23Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -94,47 +94,37 @@
   ],
   "majorMoves": [
     {
-      "id": "move_jump_NASDAQ:NVDA_20261124",
+      "id": "move_drop_NASDAQ:AMD_20261124",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "changePct": -8.7,
+      "price": 414,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261124",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": 31.48,
-      "price": 165.05,
+      "changePct": -5.9,
+      "price": 155.3101,
       "currency": "USD",
-      "kind": "jump"
-    },
-    {
-      "id": "move_jump_NASDAQ:QCOM_20261124",
-      "tv": "NASDAQ:QCOM",
-      "name": "Qualcomm",
-      "weight": "0,3 %",
-      "changePct": 10.3,
-      "price": 165.38,
-      "currency": "USD",
-      "kind": "jump"
-    },
-    {
-      "id": "move_jump_NASDAQ:MSTR_20261124",
-      "tv": "NASDAQ:MSTR",
-      "name": "Strategy A",
-      "weight": "2,0 %",
-      "changePct": 8.48,
-      "price": 84.4,
-      "currency": "USD",
-      "kind": "jump"
+      "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "f5dcd6a930260d0e",
+      "id": "7455375e84887c4a",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "Sortie Xiaomi 18 Pro : dates des ventes au Chili - NeoTeo",
-      "excerpt": "J’ai reçu à la rédaction le Xiaomi 18 Pro Max version Bleue Cosmos. En attendant mon test complet, je vous livre mes premières impressions sur cet étonnant smartphone.",
-      "source": "NeoTeo",
-      "pubDate": "Tue, 24 Nov 2026 13:41:21 GMT",
-      "pubTs": 1795527681,
-      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1OTE9Bdmc5NWphYkNwQnR2cm5SRGRCOVhsQkVIbmpHZWk1NFIzZ283TjFIT1RpM2dMRGR5MEVFLTQ5RXg0Y1BncS1mRkdnOThxZmg0SVpROU9yWWJHQnE5RFRyX0NBd1hGNnBYNjVfbmhnVWUtR19UdlZPYkU?oc=5"
+      "title": "Résultats de Xiaomi T3 2026 : le bénéfice chute de 68 % en raison des coûts des puces mémoire - Quartz en Français",
+      "excerpt": "Le chiffre d'affaires a chuté de 5,2 % à 107,2 milliards de yuans, car les expéditions de smartphones ont diminué de 29,1 %, et l'unité automobile et IA a perdu 3,4 milliards de yuans.",
+      "source": "Quartz en Français",
+      "pubDate": "Tue, 24 Nov 2026 14:24:43 GMT",
+      "pubTs": 1795530283,
+      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9vMVV4ZDlXQUdtdHdDQ2RuT1MxMHJQa2E5TlFYaXZzMFg5M2YzZ2FLT21CX1k3YkVjNXBlcjdHWVUta0dvZ0E5ZExTWFRzTU5QRnRVT2FvNENvQWc5ZDJLNHoyNDUzaTZ6TG8zU0dNaDJqdjA?oc=5"
     },
     {
       "id": "314c26fe3667a6ee",
@@ -148,15 +138,26 @@
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWXhZc2twZEVsYjRWbnc4Y19KZTFjamphd2JjZlRhX0NHTnZEU090R3NGSEFqSFhGcC1LTGR6dGNwVHk2aVNPc2VvY1lYcVg5UFhySEZBeFVQMGdlbjlhNXJMR2NES3VuYll4NFI0czNLcElxRUlrUUUwSUFjTHo2ZGtRRzFVb0VaNGhxSlFtMU40MlFBdUtOdWNyMVZDeUtCSlNhVg?oc=5"
     },
     {
-      "id": "7d38f8e79401f6b5",
+      "id": "079abd111048b2e6",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Anthropic passe sous la barre des 83 dollars, son prix d'introduction en bourse, dans un revirement rapide apr - Boursorama",
+      "excerpt": "par Medha Singh Les actions d'Anthropic ANT.O ont chuté sous leur prix d'introduction en bourse de 83 dollars lors des premières transactions de mardi, un recul spectaculaire…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 12:55:26 GMT",
+      "pubTs": 1795524926,
+      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNVVpZby10SERvYkIwUV9LZUZObnNJU1VYUFdEZC14ZU44S0tBa25QdTc1QUM4TzZZOW0xS0duSUN0bDdFUno0NkxwRjhBcjFhT0hVUnhTZ3BjX0NnYkpUWW5uMzlIYmYwa0lYN1NMWlBOaGxlelVrVURYRDUyT3JfY2Z3Y1ZOa1g5ODdZYUNQUjlVN2VsODVZcWp1a29rWU5FUVhKVkhUaGUzcHd2UExJVUFWeDNmNUlRaDBGR1VlS05PSFkzV09WcEZkVFhyZGNVTTFoRjY4djRpU1N6R0R6dlFud3plN1BWTHRKa0I2bmR4VUZWOUJjaFJibUdjc3IyeGJSQV9wdUxSNGZYdVh4b2pteW1SekF6aXl6Q0Q5c0FPTWhBa1dreVU4STBtckctWkhTbjZnRUNjV3dy0gHCAkFVX3lxTE1ZdHFEbzFtcWJqZXUyWk9hWEowcWtUY0M4eDhULVRsSU9LMUx4N0RPSnlQejhPbEFEcVpyNE9oQ1A5ZkNhTG9WRW9xSnR3Nnp3LTAwY0hmdDU0eHJuTGRDVG5qRzlwZk9rTFZoSU5KcVJudkFGVXhsNUtuY2JHM3lYdDhjS2tJTmh1Q0k2cWdWb0tacUlOajYzOE1fZXpSc1FwX0FVS1ZneEVSRXJyOEYzdUVCWE5QcmdZbWhDZXdkaWFuMzlVS1d5MDg0ZWhnN0xIdlJGMGtYX3hYUjRBczZqRXBSb0QyQXpqSUpsNnZQd19wWnBOeDBUcVd5b0FuT1ZReWQwTjNBaHVvb18yZWgwS3d1RERrYks2WXN0dVNYMWZoNTdLbGpMVTl6ZFJLd0gwR3FpdVJpMy0zR0l2UEozdFE?oc=5"
+    },
+    {
+      "id": "54532972aa15050d",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "PRÉCIEUX-L'or recule alors que tous les regards sont tournés vers les chiffres de l'inflation aux États-Unis - Boursorama",
-      "excerpt": "par Ashitha Shivaprasad L'or a reculé mardi, les anticipations de nouvelles hausses des taux d'intérêt pesant sur les cours, tandis que l'attention du marché s'est tournée vers les…",
-      "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 11:14:39 GMT",
-      "pubTs": 1795518879,
-      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQZkk2Q0N0Ni12bjF3M25QVUNUdE1MWjk1QTduWFFGWm5FZTRHVVBpMXl6eXVKMmFVdV9uV3N2M2tKZ0lLSWZ5N21pTVdRdWNaMWhfRXQ3WmtWWU40UlNYR2daTTBzTEZ0cldnZ1FOLUt0R0p2VTczUTc0ODdiR1hlekZaeHNEWEY1QW1DN3BHQVNzeFY4Qms2Q2c2UjlhajdzdWxWU3RneUZQbXZyeUhiTEgzcFc5QTE0ZjVzLXp3R0Y2R2I5OWUyRTVDd3FhZ2xPVTdodGVYX3JDQXdoS1BNajFYSHhTbjJCSldQalp6RGtnQnVxSW1SazlJMVBoS1BIOW9KWFgtR2t5X0RkN281SXZZaUF2aWxQVVHSAZoCQVVfeXFMUGZJNkNDdDYtdm4xdzNuUFVDVHRNTFo5NUE3blhRRlpuRWU0R1VQaTF5enl1SjJhVXVfbldzdjNrSmdJS0lmeTdtaU1XUXVjWjFoX0V0N1prVllONFJTWEdnWk0wc0xGdHJXZ2dRTi1LdEdKdlU3M1E3NDg3YkdYZXpGWnhzRFhGNUFtQzdwR0FTc3hWOEJrNkNnNlI5YWo3c3VsVlN0Z3lGUG12cnlIYkxIM3BXOUExNGY1cy16d0dGNkdiOTllMkU1Q3dxYWdsT1U3aHRlWF9yQ0F3aEtQTWoxWEh4U24yQkpXUGpaekRrZ0J1cUltUms5STFQaEtQSDlvSlhYLUdreV9EZDdvNUl2WWlBdmlsUFVR?oc=5"
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 12:54:40 GMT",
+      "pubTs": 1795524880,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
     },
     {
       "id": "5bf3fd173184c964",
@@ -174,11 +175,22 @@
       "theme": "BYD",
       "tagCls": "b-green",
       "title": "Un tribunal néerlandais bloque les ventes du BYD Ti7 dans l’UE en raison de sa ressemblance avec le Defender - Notebookcheck.fr",
-      "excerpt": "",
+      "excerpt": "Un tribunal de première instance de La Haye a rendu une ordonnance provisoire interdisant à BYD de vendre ou de fabriquer son SUV Ti7 à sept places dans toute l’Union européenne. La…",
       "source": "Notebookcheck.fr",
       "pubDate": "Mon, 23 Nov 2026 23:30:00 GMT",
       "pubTs": 1795476600,
       "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdnB6Sy1INjVpLTNNd2xYUllDeDJkY3YxNTdmS0YtajloeHRBV2xmVnZJYWw2cjI3VmgxX04yaTJQNkRyZkY4QV9XVnpXc3FJcElqRmhvTmJSOW00VkNDYnViRDVWY1RCVjdOYlBlN005TTZFdHlTTkhPRkJNR1NrcHp3c3gtNFZRNlFmNDd3ODR2WVNEa1oxTXpfaVlSMUhybkRvdDlNTVNXTXN2X0tGdVVEMHRZMkVpOHNESTAtMWEwTU1kdXF0TGEzaVdWZXd4eGRYc3FjMzJhR1lEeTBiZU0xTTE2U2JH?oc=5"
+    },
+    {
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -272,6 +284,10 @@
     "f5dcd6a930260d0e",
     "314c26fe3667a6ee",
     "7d38f8e79401f6b5",
-    "885f3195058b5457"
+    "885f3195058b5457",
+    "move_drop_NASDAQ:AMD_20261124",
+    "move_drop_NASDAQ:NVDA_20261124",
+    "7455375e84887c4a",
+    "079abd111048b2e6"
   ]
 }
