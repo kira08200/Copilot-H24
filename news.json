@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T05:40:58Z",
+  "updatedAt": "2026-11-24T06:37:11Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -122,9 +122,30 @@
       "price": 84.4,
       "currency": "USD",
       "kind": "jump"
+    },
+    {
+      "id": "move_drop_HKEX:1810_20261124",
+      "tv": "HKEX:1810",
+      "name": "Xiaomi",
+      "weight": "3,4 %",
+      "changePct": -5.52,
+      "price": 26,
+      "currency": "HKD",
+      "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "7a3fff7e8c9b33ca",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les directeurs de SpaceX et Tesla négocient une fusion à 3.500 milliards$ - Investing.com France",
+      "excerpt": "Les deux sociétés cotées d’Elon Musk ont nommé cinq administrateurs — trois de Tesla et deux de SpaceX — pour encadrer deux comités spéciaux chargés des négociations de fusion, a…",
+      "source": "Investing.com France",
+      "pubDate": "Tue, 24 Nov 2026 05:53:00 GMT",
+      "pubTs": 1795499580,
+      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOWDVPdV9rZGxLTEJYMlg1dmlzQlIzS2h5WXo1Y0t1NjE3ZDVOazR3YXRHTjVpeU5OdWM2N3paQlIwVVRlNUh5QWRlbFRLbEpaUW13U19VV0thSktFazYzUkN5aVpHZ1F2SklxdnpIVUppaFFySVNHVW50R2lFWUFwcngxNXl0NDhYeVJkYnBMRDBUS2ZPcmRMeU5MSjJYSm5ieWs0WDJ6VjAyd05TQWhoSzgyU3Q4TkYtdTkyZTlqX3dKakpSaWc?oc=5"
+    },
     {
       "id": "3d84fe6cc36e0349",
       "theme": "Macro & Wall Street",
@@ -146,17 +167,6 @@
       "pubDate": "Tue, 24 Nov 2026 02:05:37 GMT",
       "pubTs": 1795485937,
       "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNzViMFA5YTRwOTBmN29wQm43cWdsSjJqX2ZQWWR6UlVBUWlUUE9zMFU3aWdPaTdNX3ppeWRYandfMGN2RzRvQkFHRGhUaGpVUWhDWU5ueUsweXd1c2Q5eWRiTk9Ud3pkUXplWnlyTHhXeDJ2eGJKR2VDVl8wSG4wZXc4TkdzQ1A3X3Rpa3NFczM0OHl0czFUSjRmTE5TSGg3U3AwSWNpcm9tdTRGdU1HcnFkUTVvZ2IwOHJsclNjNVZYOTN2S3JnbnB3ZHFyNjdvTDlhLVIwaVYwczJwY244Z0s0MTA?oc=5"
-    },
-    {
-      "id": "25c81f26fa42eb62",
-      "theme": "Semi-conducteurs (TSMC / ASML)",
-      "tagCls": "b-blue",
-      "title": "ASML Holding prend 9,28% - Boursier.com",
-      "excerpt": "Sur les sept derniers jours, l'action ASML Holding a enregistré une baisse de 1,64%. En un an l'action a, en revanche, connu une forte hausse de 40,08%, valant 1 383,78$ contre…",
-      "source": "Boursier.com",
-      "pubDate": "Mon, 23 Nov 2026 21:21:54 GMT",
-      "pubTs": 1795468914,
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
     },
     {
       "id": "e62a9fb8b84862e4",
@@ -192,15 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
     },
     {
-      "id": "8a756c2ab21f5391",
-      "theme": "BYD",
-      "tagCls": "b-green",
-      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
-      "excerpt": "BYD fera appel d’une décision de justice néerlandaise interdisant la commercialisation dans l’Union européenne de son véhicule utilitaire sport Fang Cheng Bao Ti7, après que le…",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
-      "pubTs": 1795200540,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
+      "id": "ae734faed996698f",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Derrière une introduction en Bourse record, le pari du marocain Laprophan pour bâtir un géant pharmaceutique - AGENCE ECOFIN",
+      "excerpt": "Fondé en 1949, le laboratoire marocain multiplie les acquisitions depuis 2 ans, au Maroc comme en Europe. Cette stratégie doit lui permettre…",
+      "source": "AGENCE ECOFIN",
+      "pubDate": "Mon, 23 Nov 2026 12:40:00 GMT",
+      "pubTs": 1795437600,
+      "link": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxPdENfcHhVMWZCdE1LXzlDU0V0LUxnMV9nVGQtNmVPZWpSNVROT291MVN0ODdPUEw0ZXZlZVZNWmJDSEN1Vm9MUnZZal93dDlMRUxhREpPVC1SWjR2ckFNRjh5X1h6ZXNYZlpMUzQ4bjFZS3JuY2pQenB4SHJjOXJ0N2t6dHNXX3FjVjIyX001UnZqWkZ5VGQzek9yemUyRDhxQ0hCeXIxQVdvejlGaGJHQkRpa1N0aEVRQWVOd1pIMndDckY0dW41OEtfc2JfaVd0YnFkV3VESDZFaS04ekJwTXM0WlBDMDAtU0hoZ1p4cEg?oc=5"
     }
   ],
   "notifiedIds": [
@@ -269,6 +279,8 @@
     "d288e5e2138c5f54",
     "25c81f26fa42eb62",
     "0a3624c93e9d5df6",
-    "3d84fe6cc36e0349"
+    "3d84fe6cc36e0349",
+    "move_drop_HKEX:1810_20261124",
+    "7a3fff7e8c9b33ca"
   ]
 }
