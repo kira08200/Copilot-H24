@@ -685,6 +685,7 @@
           <label class="field-lbl" for="addAccountSel">Compte</label>
           <select class="field-input" id="addAccountSel">
             <option value="PEA">PEA</option>
+            <option value="TR">Trade Republic</option>
             <option value="CTO">CTO</option>
             <option value="AV">Assurance-Vie</option>
           </select>
@@ -729,6 +730,7 @@
         <label class="field-lbl" for="editAccountSel">Compte</label>
         <select class="field-input" id="editAccountSel">
           <option value="PEA">PEA</option>
+          <option value="TR">Trade Republic</option>
           <option value="CTO">CTO</option>
           <option value="AV">Assurance-Vie</option>
         </select>
@@ -813,7 +815,7 @@
       <div class="profile-grid" id="heroProfileGrid"></div>
       <div class="btn-row" style="margin-bottom:0;">
         <button type="button" class="btn primary" id="btnHeroAdd">🔍 Ajouter une valeur</button>
-        <button type="button" class="btn green-outline" id="btnHeroDemo">✨ Tester en mode Démo</button>
+        <button type="button" class="btn green-outline" id="btnHeroMine">↺ Mes 22 valeurs</button>
       </div>
     </div>
 
@@ -838,8 +840,8 @@
         <div class="btn-row" id="buyAccRow">
           <button type="button" class="btn compact active" data-bacc="all" style="flex:1;">Tous</button>
           <button type="button" class="btn compact" data-bacc="PEA" style="flex:1;">PEA</button>
+          <button type="button" class="btn compact" data-bacc="TR" style="flex:1;">Trade Rep.</button>
           <button type="button" class="btn compact" data-bacc="CTO" style="flex:1;">CTO</button>
-          <button type="button" class="btn compact" data-bacc="AV" style="flex:1;">AV</button>
         </div>
         <div id="buySignalsBox"></div>
       </div>
@@ -876,8 +878,8 @@
       <div class="btn-row" id="portFilterRow">
         <button type="button" class="btn compact active" data-pacc="all">Tous</button>
         <button type="button" class="btn compact" data-pacc="PEA">PEA</button>
+        <button type="button" class="btn compact" data-pacc="TR">Trade Rep.</button>
         <button type="button" class="btn compact" data-pacc="CTO">CTO</button>
-        <button type="button" class="btn compact" data-pacc="AV">AV</button>
         <button type="button" class="btn compact" id="btnSortPort">↕ Valeur</button>
       </div>
       <div id="portfolioList"></div>
@@ -904,8 +906,11 @@
         <button type="button" class="btn" id="btnExport">💾 Sauvegarder</button>
         <button type="button" class="btn" id="btnImport">📥 Importer (.json)</button>
       </div>
+      <div class="btn-row">
+        <button type="button" class="btn green-outline" id="btnLoadMine">↺ Mes 22 valeurs</button>
+        <button type="button" class="btn" id="btnLoadDemo">✨ Mode démo</button>
+      </div>
       <div class="btn-row" style="margin-bottom:0;">
-        <button type="button" class="btn green-outline" id="btnLoadDemo">✨ Charger portefeuille démo</button>
         <button type="button" class="btn red-outline" id="btnResetEmpty">🧹 Portefeuille vierge</button>
       </div>
     </div>
@@ -930,7 +935,7 @@
 
 <script>
 (function() {
-  var STORAGE_KEY = "copilote_pro_v2_state";
+  var STORAGE_KEY = "copilote_pro_v2_personal";
 
   var PROFILES = {
     prudent: {
@@ -1014,6 +1019,31 @@
     { tv: "HKEX:1810", name: "Xiaomi", ticker: "1810", isin: "KYG9830T1067", ccy: "HKD", pocket: "growth", pea: false }
   ];
 
+  var PERSONAL_POSITIONS = [
+    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", name: "Air Liquide (PEA)", ccy: "EUR", refPx: 190.14, cost: 18132.00, qty: 111.845272, pocket: "def", isCore: true },
+    { id: "amd", account: "TR", tv: "NASDAQ:AMD", name: "AMD", ccy: "USD", refPx: 462.55, cost: 2360.09, qty: 20.184252, pocket: "growth" },
+    { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", name: "NVIDIA", ccy: "USD", refPx: 138.54, cost: 4725.52, qty: 47.740036, pocket: "growth" },
+    { id: "sp500", account: "TR", tv: "XETR:SXR8", name: "S&P 500 EUR (Acc)", ccy: "EUR", refPx: 133.36, cost: 2337.98, qty: 23.530744, pocket: "etf" },
+    { id: "enr", account: "TR", tv: "XETR:ENR", name: "Siemens Energy", ccy: "EUR", refPx: 126.46, cost: 1510.93, qty: 19.366807, pocket: "def" },
+    { id: "blk", account: "TR", tv: "NYSE:BLK", name: "BlackRock", ccy: "USD", refPx: 1070.00, cost: 1630.19, qty: 1.85022, pocket: "etf" },
+    { id: "xiaomi", account: "TR", tv: "HKEX:1810", name: "Xiaomi", ccy: "HKD", refPx: 3.38, cost: 2095.18, qty: 507.530309, pocket: "growth" },
+    { id: "msft", account: "TR", tv: "NASDAQ:MSFT", name: "Microsoft", ccy: "USD", refPx: 458.15, cost: 1180.00, qty: 2.94679, pocket: "growth" },
+    { id: "mstr", account: "TR", tv: "NASDAQ:MSTR", name: "Strategy A (MicroStrategy)", ccy: "USD", refPx: 82.89, cost: 2979.52, qty: 12.498771, pocket: "spec" },
+    { id: "dro", account: "TR", tv: "ASX:DRO", name: "DroneShield", ccy: "AUD", refPx: 0.62, cost: 1398.21, qty: 613.421916, pocket: "spec" },
+    { id: "xdew", account: "TR", tv: "XETR:XDEW", name: "S&P 500 Equal Weight (Acc)", ccy: "EUR", refPx: 109.62, cost: 239.72, qty: 3.2663, pocket: "etf" },
+    { id: "gold", account: "TR", tv: "XETR:PPFB", name: "Physical Gold (Or)", ccy: "EUR", refPx: 66.11, cost: 319.93, qty: 4.53541, pocket: "def" },
+    { id: "aapl", account: "TR", tv: "NASDAQ:AAPL", name: "Apple", ccy: "USD", refPx: 320.89, cost: 119.96, qty: 0.684964, pocket: "growth" },
+    { id: "byd", account: "TR", tv: "HKEX:1211", name: "BYD", ccy: "HKD", refPx: 7.40, cost: 300.00, qty: 28.634791, pocket: "growth" },
+    { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", name: "Amazon.com", ccy: "USD", refPx: 240.29, cost: 109.99, qty: 0.626113, pocket: "growth" },
+    { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", name: "Qualcomm", ccy: "USD", refPx: 147.64, cost: 145.98, qty: 1, pocket: "growth" },
+    { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", name: "Air Liquide (TR)", ccy: "EUR", refPx: 189.48, cost: 41.07, qty: 0.258649, pocket: "def" },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", name: "Core MSCI World (Acc) #1", ccy: "EUR", refPx: 159.50, cost: 26.22, qty: 0.290219, pocket: "etf" },
+    { id: "msci2", account: "TR", tv: "XETR:EUNL", name: "Core MSCI World (Acc) #2", ccy: "EUR", refPx: 127.01, cost: 20.00, qty: 0.2858, pocket: "etf" },
+    { id: "ko", account: "TR", tv: "NYSE:KO", name: "Coca-Cola", ccy: "USD", refPx: 89.47, cost: 19.98, qty: 0.3249, pocket: "def" },
+    { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", name: "Alphabet (A)", ccy: "USD", refPx: 255.62, cost: 9.99, qty: 0.0899, pocket: "growth" },
+    { id: "sfc", account: "TR", tv: "XETR:F3C", name: "SFC Energy", ccy: "EUR", refPx: 17.84, cost: 20.00, qty: 0.8794, pocket: "spec" }
+  ];
+
   var DEMO_POSITIONS = [
     { id: "d1", tv: "EURONEXT:CW8", name: "Amundi MSCI World (CW8)", account: "PEA", pocket: "etf", ccy: "EUR", qty: 8, cost: 4300, refPx: 675 },
     { id: "d2", tv: "EURONEXT:AI", name: "Air Liquide", account: "PEA", pocket: "def", ccy: "EUR", qty: 20, cost: 3100, refPx: 188 },
@@ -1050,8 +1080,25 @@
         if (parsed && Array.isArray(parsed.positions)) state.positions = parsed.positions;
         if (parsed && typeof parsed.investAmt === "number" && parsed.investAmt >= 10) state.investAmt = parsed.investAmt;
         if (parsed && parsed.buyAcc) state.buyAcc = parsed.buyAcc;
+        return;
       }
     } catch (e) {}
+    // Reprendre la sauvegarde v6 si elle existe déjà, sinon charger vos 22 valeurs
+    try {
+      var rawV6 = localStorage.getItem("copilote_bourse_live_v6");
+      if (rawV6) {
+        var d6 = JSON.parse(rawV6);
+        if (d6 && Array.isArray(d6.positions) && d6.positions.length > 0) {
+          if (PROFILES[d6.profile]) state.profile = d6.profile;
+          state.positions = d6.positions;
+          if (typeof d6.investAmt === "number" && d6.investAmt >= 10) state.investAmt = d6.investAmt;
+          saveState();
+          return;
+        }
+      }
+    } catch (e) {}
+    state.positions = PERSONAL_POSITIONS.map(function(x) { return Object.assign({}, x); });
+    saveState();
   }
 
   function saveState() {
@@ -1186,7 +1233,9 @@
       if (m.val <= 1) continue;
       var weight = m.val / totalVal;
       var isEtf = p.pocket === "etf";
-      var maxW = isEtf ? Math.max(0.55, prof.targets.etf + 0.15) : prof.maxSingleWeight;
+      var maxW = isEtf
+        ? Math.max(0.55, prof.targets.etf + 0.15)
+        : (p.isCore ? Math.max(0.45, prof.maxSingleWeight * 2) : prof.maxSingleWeight);
       var rsi = typeof p.rsi === "number" ? p.rsi : null;
       var reasons = [];
       var severity = "warn";
@@ -1918,7 +1967,16 @@
       return;
     }
     if (e.target.closest("#btnHeroAdd") || e.target.closest("#btnAddTop")) { openAddModal(); return; }
-    if (e.target.closest("#btnHeroDemo") || e.target.closest("#btnLoadDemo")) {
+    if (e.target.closest("#btnHeroMine") || e.target.closest("#btnLoadMine")) {
+      state.positions = PERSONAL_POSITIONS.map(function(x) { return Object.assign({}, x); });
+      saveState();
+      switchTab("actions");
+      renderAll();
+      syncLiveQuotes();
+      showToast("↺ Vos 22 valeurs chargées !");
+      return;
+    }
+    if (e.target.closest("#btnLoadDemo")) {
       state.positions = DEMO_POSITIONS.map(function(x) { return Object.assign({}, x); });
       saveState();
       switchTab("actions");
