@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-23T23:45:57Z",
+  "updatedAt": "2026-11-24T00:34:34Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -94,7 +94,7 @@
   ],
   "majorMoves": [
     {
-      "id": "move_jump_NASDAQ:NVDA_20261123",
+      "id": "move_jump_NASDAQ:NVDA_20261124",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
@@ -104,7 +104,7 @@
       "kind": "jump"
     },
     {
-      "id": "move_jump_NASDAQ:QCOM_20261123",
+      "id": "move_jump_NASDAQ:QCOM_20261124",
       "tv": "NASDAQ:QCOM",
       "name": "Qualcomm",
       "weight": "0,3 %",
@@ -114,7 +114,7 @@
       "kind": "jump"
     },
     {
-      "id": "move_jump_NASDAQ:MSTR_20261123",
+      "id": "move_jump_NASDAQ:MSTR_20261124",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
@@ -130,22 +130,11 @@
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Les options d'Anthropic enregistrent des débuts solides, derrière le record de SpaceX - Boursorama",
-      "excerpt": "par Saqib Iqbal Ahmed Les options sur les actions d'Anthropic ANT.O ont commencé à se négocier à un rythme soutenu lundi, offrant aux investisseurs un nouveau moyen de parier sur…",
+      "excerpt": "par Laura Matthews Les options sur les actions d'Anthropic ANT.O pourraient commencer à être négociées dès lundi, offrant ainsi aux investisseurs un nouveau moyen de parier sur les…",
       "source": "Boursorama",
       "pubDate": "Mon, 23 Nov 2026 20:38:28 GMT",
       "pubTs": 1795466308,
       "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOTWlsTzRkOGtqN1ZwSXJQMG1PNHlSZnhMYllVbGl2Z3ZxbFZsOXI1am9KelJORUEzOXUwUDlCLVRTQjJ6ekZlcVp0RWd3LUc0ZERiSnRwckhxZmtCQVdsNlJ1c1RZRkRDbGh5LXlBSEJHTDJVUmZMM3B5ZnhpRThybVhSSmVnYXNHLVZzQ0hsWXRYMU91TzdqUDJjbkVMS3VmTnIwekpYUjJJMXdOT0hYM1BRNkQ5MUZtLWNuZWhnT2EtTTBXNVBaM3dUaXBweWx3T1RZSFdqaWc2NjUwbjlDTHBScnQ3b1ZzVEJ2UUotSWs4cU9F0gH6AUFVX3lxTE1JZUhZeFQwUmthWEJXVU9hUlBQQmhnZ21WVEVLM1hoVVVzZ3NrbGVkZDRiMGhJWV93c1R2Q011NzNyNGNUZGxsYXhnU0pHZ2RqQWlmcmViZ0NOSzRvTk10Wmc0ckREWkt1QThTNFpVUEFYai1FcVpNYXZxU0xVTlBRWXdIT2kyMmJGWEh6NERFTlh3MmlCYTFYajFYRzVyV0RzTmhkOV90blBJT0IxSmFfeTd5RFM5d3RlOFlmb0k5TElKMFFIZVU3aVVYZ0lLdjJ3d2E4c3dlX1VCRWZzdmROV29CcFJuYTZTVDVyN2NoTHFwY0NhSUhtZnc?oc=5"
-    },
-    {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     },
     {
       "id": "fa3ffe13bc513ac8",
@@ -170,11 +159,22 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
     },
     {
+      "id": "2b24c83cf07a96dc",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Résultats de NVIDIA : les prévisions sont rassurantes et l’action demeure sous-évaluée - Morningstar",
+      "excerpt": "par Ankur Banerjee Les prévisions solides de Nvidia ont apaisé pour l'instant les craintes des investisseurs quant à la pérennité de la demande en IA, mais la question de savoir qui…",
+      "source": "Morningstar",
+      "pubDate": "Mon, 23 Nov 2026 17:47:04 GMT",
+      "pubTs": 1795456024,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT0IxSkdsU0JZdkRVWkI2LWxFdXdNOFZEeHZ6SEJndlZuM1d0UjBkSmNWdzJHbUUtVHdabGpjTnR4VzhpRFhoX0prUWZxNVRPcllWckozS2t1UF9DcXE0Qm91NTY3YnRobmpxT2NoZ2xGbDM2NTFkWnlLVG9LWEVKcUVLdXl0dTF0SkF1b1RnUEtLaXZURUk1TTFaVC11Qjl5TzhVMXdpc09PcHdPZFN5QVR5WjRZWElZUmVGRVdfdnJyQQ?oc=5"
+    },
+    {
       "id": "e603a91a1e9c791c",
       "theme": "Amazon",
       "tagCls": "b-blue",
       "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
-      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
+      "excerpt": "",
       "source": "Yahoo Finance France",
       "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
       "pubTs": 1795446027,
@@ -261,6 +261,9 @@
     "e62a9fb8b84862e4",
     "83dc6300c4b49f2a",
     "493f08d43f2d0342",
-    "2b24c83cf07a96dc"
+    "2b24c83cf07a96dc",
+    "move_jump_NASDAQ:NVDA_20261124",
+    "move_jump_NASDAQ:QCOM_20261124",
+    "move_jump_NASDAQ:MSTR_20261124"
   ]
 }
