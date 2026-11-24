@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T12:46:31Z",
+  "updatedAt": "2026-11-24T14:02:26Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -126,48 +126,37 @@
   ],
   "items": [
     {
-      "id": "a49172b76aecd4ec",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Anthropic passe brièvement sous son prix d’introduction en Bourse - Investing.com France",
-      "excerpt": "L'action d'Anthropic ANT.O a chuté sous son prix d'introduction en bourse de 83 dollars lors des échanges avant l'ouverture mardi , un revirement spectaculaire quelques jours…",
-      "source": "Investing.com France",
-      "pubDate": "Tue, 24 Nov 2026 11:59:00 GMT",
-      "pubTs": 1795521540,
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQ1Q3SXNLeGpXUmtCcFJCREJmaFFEbTN6NmdQM1U0bGpvYjI1ekN2Z0hjLWw0QmZBNU5xTlpybV93SXdLNFlic1dheWZYb2s0QmNUVnQzV0c2XzdCNk41WlpaQ1lxTDk2RFF4MzJGSzB6eG9JSzJYR05KQXpUajYybUYwMHVKOGFaRFJRdkkzWnl0bnY3OVBoM2p5Yko2UGVLOW5lS0ZLeGRhMjdlZno3S3M0WmJGNzl6TzlvbA?oc=5"
-    },
-    {
-      "id": "54532972aa15050d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
-      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
-      "source": "L'Echo",
-      "pubDate": "Tue, 24 Nov 2026 10:54:25 GMT",
-      "pubTs": 1795517665,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
-    },
-    {
-      "id": "86e05cee903e1b40",
+      "id": "f5dcd6a930260d0e",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "Xiaomi : numéro 1 des ventes de batteries externes en Chine en octobre 2026 - xiaomi-miui.gr",
-      "excerpt": "Se couper du monde et partir en pleine nature ou bien s’envoler au bout du monde sans prendre connaissance de la compatibilité matérielle, tout cela n’est plus incompatible avec vos…",
-      "source": "xiaomi-miui.gr",
-      "pubDate": "Tue, 24 Nov 2026 10:51:38 GMT",
-      "pubTs": 1795517498,
-      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5GdThjZ18ycGxZT29pbDZ2d3dsc2pKSTZuSlJoOVg4a21zTkVMSXFPWlhHdDJrMXFQQzc3WHFQcnBFRUZ0ekhfZ0J2Q0ZpZjVnQ016TUxMREhiU1psQWs5MkVuY2toZFFaUENiVC1xendkNFhDTjh0ZA?oc=5"
+      "title": "Sortie Xiaomi 18 Pro : dates des ventes au Chili - NeoTeo",
+      "excerpt": "J’ai reçu à la rédaction le Xiaomi 18 Pro Max version Bleue Cosmos. En attendant mon test complet, je vous livre mes premières impressions sur cet étonnant smartphone.",
+      "source": "NeoTeo",
+      "pubDate": "Tue, 24 Nov 2026 13:41:21 GMT",
+      "pubTs": 1795527681,
+      "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE1OTE9Bdmc5NWphYkNwQnR2cm5SRGRCOVhsQkVIbmpHZWk1NFIzZ283TjFIT1RpM2dMRGR5MEVFLTQ5RXg0Y1BncS1mRkdnOThxZmg0SVpROU9yWWJHQnE5RFRyX0NBd1hGNnBYNjVfbmhnVWUtR19UdlZPYkU?oc=5"
     },
     {
-      "id": "fc41d1f1fb3f2262",
+      "id": "314c26fe3667a6ee",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Les taux en ordre dispersé aux Etats-Unis à la veille de l'indicateur d'inflation PCE - ABC Bourse",
-      "excerpt": "PARIS --Les rendements des obligations d'Etat américaines évoluent en ordre dispersé mardi matin, alors que les investisseurs se préparent à la parution mercredi de chiffres…",
+      "title": "L'or reflue avant des données clés sur l'inflation américaine - ABC Bourse",
+      "excerpt": "PARIS --Le cours de l'or se replie mardi, à la veille de la publication de l'indicateur d'inflation préféré de la Réserve fédérale pour octobre. Vers 13h55, le contrat à terme de…",
       "source": "ABC Bourse",
-      "pubDate": "Tue, 24 Nov 2026 10:44:49 GMT",
-      "pubTs": 1795517089,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
+      "pubDate": "Tue, 24 Nov 2026 13:01:54 GMT",
+      "pubTs": 1795525314,
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWXhZc2twZEVsYjRWbnc4Y19KZTFjamphd2JjZlRhX0NHTnZEU090R3NGSEFqSFhGcC1LTGR6dGNwVHk2aVNPc2VvY1lYcVg5UFhySEZBeFVQMGdlbjlhNXJMR2NES3VuYll4NFI0czNLcElxRUlrUUUwSUFjTHo2ZGtRRzFVb0VaNGhxSlFtMU40MlFBdUtOdWNyMVZDeUtCSlNhVg?oc=5"
+    },
+    {
+      "id": "7d38f8e79401f6b5",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "PRÉCIEUX-L'or recule alors que tous les regards sont tournés vers les chiffres de l'inflation aux États-Unis - Boursorama",
+      "excerpt": "par Ashitha Shivaprasad L'or a reculé mardi, les anticipations de nouvelles hausses des taux d'intérêt pesant sur les cours, tandis que l'attention du marché s'est tournée vers les…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 11:14:39 GMT",
+      "pubTs": 1795518879,
+      "link": "https://news.google.com/rss/articles/CBMimgJBVV95cUxQZkk2Q0N0Ni12bjF3M25QVUNUdE1MWjk1QTduWFFGWm5FZTRHVVBpMXl6eXVKMmFVdV9uV3N2M2tKZ0lLSWZ5N21pTVdRdWNaMWhfRXQ3WmtWWU40UlNYR2daTTBzTEZ0cldnZ1FOLUt0R0p2VTczUTc0ODdiR1hlekZaeHNEWEY1QW1DN3BHQVNzeFY4Qms2Q2c2UjlhajdzdWxWU3RneUZQbXZyeUhiTEgzcFc5QTE0ZjVzLXp3R0Y2R2I5OWUyRTVDd3FhZ2xPVTdodGVYX3JDQXdoS1BNajFYSHhTbjJCSldQalp6RGtnQnVxSW1SazlJMVBoS1BIOW9KWFgtR2t5X0RkN281SXZZaUF2aWxQVVHSAZoCQVVfeXFMUGZJNkNDdDYtdm4xdzNuUFVDVHRNTFo5NUE3blhRRlpuRWU0R1VQaTF5enl1SjJhVXVfbldzdjNrSmdJS0lmeTdtaU1XUXVjWjFoX0V0N1prVllONFJTWEdnWk0wc0xGdHJXZ2dRTi1LdEdKdlU3M1E3NDg3YkdYZXpGWnhzRFhGNUFtQzdwR0FTc3hWOEJrNkNnNlI5YWo3c3VsVlN0Z3lGUG12cnlIYkxIM3BXOUExNGY1cy16d0dGNkdiOTllMkU1Q3dxYWdsT1U3aHRlWF9yQ0F3aEtQTWoxWEh4U24yQkpXUGpaekRrZ0J1cUltUms5STFQaEtQSDlvSlhYLUdreV9EZDdvNUl2WWlBdmlsUFVR?oc=5"
     },
     {
       "id": "5bf3fd173184c964",
@@ -181,26 +170,15 @@
       "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
     },
     {
-      "id": "1be6d0427e645001",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
-      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
-      "source": "Yahoo Finance France",
-      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
-      "pubTs": 1795451675,
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
-    },
-    {
-      "id": "e603a91a1e9c791c",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
-      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
-      "source": "Yahoo Finance France",
-      "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
-      "pubTs": 1795446027,
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
+      "id": "885f3195058b5457",
+      "theme": "BYD",
+      "tagCls": "b-green",
+      "title": "Un tribunal néerlandais bloque les ventes du BYD Ti7 dans l’UE en raison de sa ressemblance avec le Defender - Notebookcheck.fr",
+      "excerpt": "",
+      "source": "Notebookcheck.fr",
+      "pubDate": "Mon, 23 Nov 2026 23:30:00 GMT",
+      "pubTs": 1795476600,
+      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdnB6Sy1INjVpLTNNd2xYUllDeDJkY3YxNTdmS0YtajloeHRBV2xmVnZJYWw2cjI3VmgxX04yaTJQNkRyZkY4QV9XVnpXc3FJcElqRmhvTmJSOW00VkNDYnViRDVWY1RCVjdOYlBlN005TTZFdHlTTkhPRkJNR1NrcHp3c3gtNFZRNlFmNDd3ODR2WVNEa1oxTXpfaVlSMUhybkRvdDlNTVNXTXN2X0tGdVVEMHRZMkVpOHNESTAtMWEwTU1kdXF0TGEzaVdWZXd4eGRYc3FjMzJhR1lEeTBiZU0xTTE2U2JH?oc=5"
     }
   ],
   "notifiedIds": [
@@ -290,6 +268,10 @@
     "54532972aa15050d",
     "a49172b76aecd4ec",
     "86e05cee903e1b40",
-    "1be6d0427e645001"
+    "1be6d0427e645001",
+    "f5dcd6a930260d0e",
+    "314c26fe3667a6ee",
+    "7d38f8e79401f6b5",
+    "885f3195058b5457"
   ]
 }
