@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T00:34:34Z",
+  "updatedAt": "2026-11-24T01:52:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,15 +126,15 @@
   ],
   "items": [
     {
-      "id": "493f08d43f2d0342",
+      "id": "7813f16b38341fe0",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Les options d'Anthropic enregistrent des débuts solides, derrière le record de SpaceX - Boursorama",
-      "excerpt": "par Laura Matthews Les options sur les actions d'Anthropic ANT.O pourraient commencer à être négociées dès lundi, offrant ainsi aux investisseurs un nouveau moyen de parier sur les…",
-      "source": "Boursorama",
-      "pubDate": "Mon, 23 Nov 2026 20:38:28 GMT",
-      "pubTs": 1795466308,
-      "link": "https://news.google.com/rss/articles/CBMi9AFBVV95cUxOTWlsTzRkOGtqN1ZwSXJQMG1PNHlSZnhMYllVbGl2Z3ZxbFZsOXI1am9KelJORUEzOXUwUDlCLVRTQjJ6ekZlcVp0RWd3LUc0ZERiSnRwckhxZmtCQVdsNlJ1c1RZRkRDbGh5LXlBSEJHTDJVUmZMM3B5ZnhpRThybVhSSmVnYXNHLVZzQ0hsWXRYMU91TzdqUDJjbkVMS3VmTnIwekpYUjJJMXdOT0hYM1BRNkQ5MUZtLWNuZWhnT2EtTTBXNVBaM3dUaXBweWx3T1RZSFdqaWc2NjUwbjlDTHBScnQ3b1ZzVEJ2UUotSWs4cU9F0gH6AUFVX3lxTE1JZUhZeFQwUmthWEJXVU9hUlBQQmhnZ21WVEVLM1hoVVVzZ3NrbGVkZDRiMGhJWV93c1R2Q011NzNyNGNUZGxsYXhnU0pHZ2RqQWlmcmViZ0NOSzRvTk10Wmc0ckREWkt1QThTNFpVUEFYai1FcVpNYXZxU0xVTlBRWXdIT2kyMmJGWEh6NERFTlh3MmlCYTFYajFYRzVyV0RzTmhkOV90blBJT0IxSmFfeTd5RFM5d3RlOFlmb0k5TElKMFFIZVU3aVVYZ0lLdjJ3d2E4c3dlX1VCRWZzdmROV29CcFJuYTZTVDVyN2NoTHFwY0NhSUhtZnc?oc=5"
+      "title": "Les options d’Anthropic démarrent en fanfare, mais restent derrière le record de SpaceX - Zonebourse Suisse",
+      "excerpt": "Les options nouvellement cotées d’Anthropic ont fait l’objet d’échanges soutenus lundi, marquant un solide démarrage pour le nouveau marché de produits dérivés du développeur…",
+      "source": "Zonebourse Suisse",
+      "pubDate": "Mon, 23 Nov 2026 20:39:31 GMT",
+      "pubTs": 1795466371,
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNS1gyZ2IxbkZ2cThmZ1EzT0JMZXF4UlhfZ2JyVFRSTWJlajBRaFB4MTdVZTJscDZJX0FwYjd5MGExRF8xUGd2V2dzWEtYd3FpUXBTeGluVmlYMkJFYm13OFhoUTRPQzhNNnRiR0M4SlpaT3psZEtPOFRiY01nNUd2UEhZYUxQSmpJT2ZRVTUzLTlGeUxIS29KVmtwRWZPa1dmQ1EyRGVOV1M2ZGhKRGdRRmlRenhobUk3cUI0Mks1VEdXLWJsNHYwYmtZdHRvTjdwZW9rOFY2NWEyZW81YlFpTA?oc=5"
     },
     {
       "id": "fa3ffe13bc513ac8",
@@ -174,33 +174,33 @@
       "theme": "Amazon",
       "tagCls": "b-blue",
       "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
-      "excerpt": "",
+      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
       "source": "Yahoo Finance France",
       "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
       "pubTs": 1795446027,
       "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
     },
     {
-      "id": "9d44e26fa4d77c63",
+      "id": "45f4779a6e1a3ecf",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "La semaine à venir : les chiffres de l’inflation et les anticipations concernant la Fed devraient orienter les marchés sur fond de dégagements sur les valeurs liées à l’IA - www.tmgm.com",
-      "excerpt": "par Lewis Krauskopf La semaine prochaine, les investisseurs se concentreront sur les dépenses de consommation, à la recherche d’indices montrant qu’une économie globalement solide…",
-      "source": "www.tmgm.com",
-      "pubDate": "Mon, 23 Nov 2026 09:29:49 GMT",
-      "pubTs": 1795426189,
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPWllVZUFydjVIM0d5QXI2eUxDeC1fRFNpMWhmRy1NcWVJWEk3d0Nremh6YmpYSVR0Qy04NFcwdFFhRFZFU2tEemprV1pfRGh5eUJTQnBPalNQT1N3SkxpTkpWcFlCclQtemk0UjhHRVI0MFdCNm83Y1RMMkxkNXpqUHpvWldMTTFjLVpKMGJaUDNPM0pEZmFBRlN2UXZlQVNHeXJIbU1IQnJWZWpESmJ2X1IwVkpQb0lFTEFGT2ZBZUpQQUpfN2c?oc=5"
+      "title": "L'or s'offre un rebond technique, avant l'inflation américaine - ABC Bourse",
+      "excerpt": "PARIS --Le cours de l'or rebondit lundi, en attendant la publication plus tard cette semaine de l'indicateur d'inflation préféré de la Réserve fédérale pour octobre. Vers 13h50, le…",
+      "source": "ABC Bourse",
+      "pubDate": "Mon, 23 Nov 2026 13:03:38 GMT",
+      "pubTs": 1795439018,
+      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONUdPWlZFREVJZ3NWTHF6S3pxSjJRVW5kT1FVd05hYTRSR0czOWdmNmFGRDgwYVJTMWhmdTFYSWpST2lhNVU1X1dObTV6SE80d2lKWlA1MnpydEZHZk5JMG45OTJqSzFfOHJLZDlNdmdCN1lRZ2pHUmlpclREWU1KWFV5S25SdkZZRWJsOGVpeG50SGwzT082bkpKV2VOSVh6dzBlcQ?oc=5"
     },
     {
-      "id": "ea4449b61d6ee8fd",
+      "id": "83dc6300c4b49f2a",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "A surveiller cette semaine : inflation, PIB et chiffres de l’emploi après la chute de Wall Street - Investing.com France",
-      "excerpt": "Les investisseurs vont continuer de surveiller de près l'évolution des valeurs liées à l'IA, en attendant les chiffres de l'inflation qui seront publiés aux Etats-Unis ce mardi.…",
-      "source": "Investing.com France",
-      "pubDate": "Mon, 23 Nov 2026 09:25:00 GMT",
-      "pubTs": 1795425900,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPdjlLUW9GMW9UbC1zN2NiOUtMYnpGWmFfZHg2TUFHbWxSeXd1Tkk0Vkl5RlNpNDBOUGRlUTA3c1JUSmp4aEtZRTBPQjh2eWtsNGd6Smx2M2NvOWU3VDgyUzFoYjlxenRhc2JfWVFsZ2FRdmhrcGNGY1dZeVNuX0t2eFBscHJQT2JPNHp2a1l1dE1ScmRIZXliMHhLRHE1c3NhVUI2Y29pbVRlTzF3YjRtal9FM3o4czFUTW9LT2d5WTlyVzlBZnpVSFZZMnl3el9GdkRodQ?oc=5"
+      "title": "Actualités crypto | La semaine crypto à venir : l’inflation du PCE d’octobre met à l’épreuve le rebond du bitcoin pendant une semaine écourtée par Thanksgiving - Binance",
+      "excerpt": "Bitcoin repasse au-dessus de 64 000 dollars. Fed, Nvidia, Anthropic : les dates clés de la semaine qui pourraient décider du rebond du BTC.",
+      "source": "Binance",
+      "pubDate": "Mon, 23 Nov 2026 12:53:58 GMT",
+      "pubTs": 1795438438,
+      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OdHRsMkN3MDZ6TFFPZ18wMUdRdldYWFg5MkdrRFpJcUwxT0FSbHNhcC1JSlBFalhic2tFUnIwdGhETjJFTmNHNVRDQU50NTRvLVdKLXlYSzctTEowWHJGc1UzMXR6Zm9T?oc=5"
     }
   ],
   "notifiedIds": [
@@ -264,6 +264,7 @@
     "2b24c83cf07a96dc",
     "move_jump_NASDAQ:NVDA_20261124",
     "move_jump_NASDAQ:QCOM_20261124",
-    "move_jump_NASDAQ:MSTR_20261124"
+    "move_jump_NASDAQ:MSTR_20261124",
+    "45f4779a6e1a3ecf"
   ]
 }
