@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T21:26:17Z",
+  "updatedAt": "2026-11-24T22:23:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -136,6 +136,28 @@
   ],
   "items": [
     {
+      "id": "ca0b7e1ff1128517",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street clôture sans direction claire, nouvelles ventes sur l'IA - Bourse Direct",
+      "excerpt": "L’indice Nasdaq - à forte coloration technologique - a perdu 1,48 % et l’indice élargi S&P a reculé de 0,50 %. Mais le Dow Jones, composé de valeurs plus traditionnelles, a lui…",
+      "source": "Bourse Direct",
+      "pubDate": "Tue, 24 Nov 2026 21:48:00 GMT",
+      "pubTs": 1795556880,
+      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQYnV6ZmdJbDNCRmlaVF9wSXkwcjBGRFJrb2c0TkJxSGtaNmdXWkRKWjVLMVhBZ3dBS2VXNjVoczJFREd6MDdDOWxSMVA2RTBXUlAyc05mOF9FMXhSNHNFZVg2TnRHN2FtQmRwQjUzbW9ST0NGcExTazhoUUVQdjdNWm41VjZBaElEVFZsX0RURU5abnJCT0R4NlN5TVF0ZkpTOUJoOEoxNGtGQWxneVprU3RtMEstUVNaY0VBQ3pYYlBSQmFBOWQ2UXJIZV9jUEcyMHktZFN1UEVtanA4TGVuYTBWUFBjcmZyYnY4VVZQMHNUZ0x5ZUxXTG1LdG51MTl3V1Bj?oc=5"
+    },
+    {
+      "id": "fb6dc7e20e76ad06",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Après des débuts difficiles en Bourse, Anthropic passe déjà sous son prix d’introduction - Cafétech",
+      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
+      "source": "Cafétech",
+      "pubDate": "Tue, 24 Nov 2026 21:34:57 GMT",
+      "pubTs": 1795556097,
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZjlkMGNiRlJTUTUxLWJ0cnF6Z1c4QmtTNTNKZjAwY0VXWGh6dEU1ZUpVT09NdmJ2aTg0Z0JlMFpoN3liQUwxR3JJeUNxa0FNdHNqWnppcV9adFVFR0VNUVpZRGRGbEx1aHJwbVJoV3JHam41c2JzdzJxemJmSHRDNjMtV3ZyUG1MZkhrVFVRWFk0NzZkckV0bXJNNUhsWGJoUXQ5UnJxT3dvS2I0MDU2amNLRQ?oc=5"
+    },
+    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
@@ -147,26 +169,15 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "337dd3fc3bdf305c",
-      "theme": "NVIDIA",
-      "tagCls": "b-amber",
-      "title": "Le Nasdaq et le S&P 500 reculent alors que la vague haussière liée à l'IA, portée par Nvidia, s'essouffle - Boursorama",
-      "excerpt": "par Ragini Mathur et Avinash P Le Nasdaq et le S&P 500 ont reculé mardi, les investisseurs se détournant des valeurs liées à l'IA après un rebond alimenté par Nvidia, l'attention se…",
-      "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 17:15:17 GMT",
-      "pubTs": 1795540517,
-      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZ9IBkwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZw?oc=5"
-    },
-    {
-      "id": "c38feb62009be3f3",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "IPO record d'Anthropic : faut-il investir à ce prix ? - BFM",
-      "excerpt": "Anthropic a fixé le prix de son introduction en Bourse à 83 $ par action, au-dessus de la fourchette de 70 à 78 $ annoncée au départ. Le titre doit débuter sa cotation jeudi 19…",
-      "source": "BFM",
-      "pubDate": "Tue, 24 Nov 2026 16:13:38 GMT",
-      "pubTs": 1795536818,
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdVZ4bWVNSVUxcW5pTFhtNHJoRjNBQmN0QUI5Q01sbjd1blhoNTZ1ZjlDNExoVHgzaGZqZU9yaTljOWJFMzJjUWE4em5IM0tKandEN2lIRzhTRDA3eWRValRSbkxUUE5ZMWwzZVdKUDJwakFWbmtETTI4N0JJWVZnWk92b3NvMXNLT3NiTG9vWlNjOHVVT2x5RkJ6dV9SYldhNG1kTGp0R2xZcms?oc=5"
+      "id": "863578b463b9b92f",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
+      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
+      "source": "L'Agefi",
+      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
+      "pubTs": 1795537144,
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -191,26 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
-      "id": "fc41d1f1fb3f2262",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Les taux en ordre dispersé aux Etats-Unis à la veille de l'indicateur d'inflation PCE - ABC Bourse",
-      "excerpt": "PARIS --Les rendements des obligations d'Etat américaines évoluent en ordre dispersé mardi matin, alors que les investisseurs se préparent à la parution mercredi de chiffres…",
-      "source": "ABC Bourse",
-      "pubDate": "Tue, 24 Nov 2026 10:44:49 GMT",
-      "pubTs": 1795517089,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
-    },
-    {
-      "id": "58f55cd1316381cb",
-      "theme": "IPO & IA Mondiale",
+      "id": "1be6d0427e645001",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
-      "source": "Saxo",
-      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
-      "pubTs": 1795510800,
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
+      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
+      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
+      "source": "Yahoo Finance France",
+      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
+      "pubTs": 1795451675,
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -320,6 +320,8 @@
     "5042d76261506656",
     "58f55cd1316381cb",
     "e4651a17d8e6e94e",
-    "337dd3fc3bdf305c"
+    "337dd3fc3bdf305c",
+    "ca0b7e1ff1128517",
+    "fb6dc7e20e76ad06"
   ]
 }
