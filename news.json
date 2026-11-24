@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T19:40:00Z",
+  "updatedAt": "2026-11-24T20:29:33Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.16,
-      "price": 416.44,
+      "changePct": -9.05,
+      "price": 412.4179,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,8 +108,18 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -7.11,
-      "price": 153.315,
+      "changePct": -7.41,
+      "price": 152.82,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261124",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -6.88,
+      "price": 78.59,
       "currency": "USD",
       "kind": "drop"
     },
@@ -121,16 +131,6 @@
       "changePct": -6.78,
       "price": 117.88,
       "currency": "EUR",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:MSTR_20261124",
-      "tv": "NASDAQ:MSTR",
-      "name": "Strategy A",
-      "weight": "2,0 %",
-      "changePct": -6.61,
-      "price": 78.825,
-      "currency": "USD",
       "kind": "drop"
     }
   ],
@@ -156,6 +156,17 @@
       "pubDate": "Tue, 24 Nov 2026 16:59:00 GMT",
       "pubTs": 1795539540,
       "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxObExOMlY4ODM4NnZaaS0yRXRuMHVRT2EtbGZKcjQ4VFdzUnhZaVU2OEZxb0hzUERmV0ljNmxzRGpQcXlqRS01Qm9BcTBIYWlMcjd1aGwwVnd0azlLZlgxWEI0WTFtU2xOeXZpWWgzcDJjb2N6MjAzVy1fVEJCZzZaM1hDalFuNHNOQXdSQlNLSlUwb0RFVGZ2ekNLRGxEeG1yTGQxNEplUmZ4UHYwNWRMRGhHZmkyNkZBWVE0a0dKUjlIU21YdFhYVExINC1lNE1XWENtVmQ1eTRmMXRMUFBwaUcxeEt6RXEzZjNBZzNCLV96V3BESzRadG1VU2k2QlBWYzVzeWIxckJlYkhFMHhPTTJPTTNXVDliZ3E5ejh0VFZzN0tQUXhZZUMyUnltcHNMT2VqdXpaZmFlVmNmcWJCU1ZqUlFsT2xNSlHSAc8CQVVfeXFMTlVHSTh5czZjLVUySjRoTXNlYllqQWpLV0hsX3podzlaU294dEdsOFBMSHZ0dkZqejA3VGRaek9lU3F1MGlEUHhlYm80U244bkJFMDBYdkZuT1JhanRzRi1ZUURVYzRHUXJ5NUFxdWwxWkFKYkh0NXc5WWd3M3Fyb3pwS2hrUGVMVkZGZUFyMEFOZkNQLXMyQ2g5TVVQRXAwMngtemp3cUFhXzV6REE4c3o2T1d6dWtsem4wMFQ3LWRaa0ZyQkd6ak1WeXV3NVhfQlYxbVNtT0hQSlFIUU9KclNST1QtZkFKcGduOTdTamJ1enVHSmhsYXNGNnBoR3JUdVRDN0V2Q2k0Y2duMDFxbjlIMklUU2s1ZTRSdkd0S2pPNlE4bDlIUk54WDFrOTR1NVlaVmhndF9JQ3ZYVG1jcGFnV05hNzkyUWNwWHNlRk0?oc=5"
+    },
+    {
+      "id": "863578b463b9b92f",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
+      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
+      "source": "L'Agefi",
+      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
+      "pubTs": 1795537144,
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -189,17 +200,6 @@
       "pubDate": "Tue, 24 Nov 2026 10:44:49 GMT",
       "pubTs": 1795517089,
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
-    },
-    {
-      "id": "58f55cd1316381cb",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "",
-      "source": "Saxo",
-      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
-      "pubTs": 1795510800,
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     },
     {
       "id": "e62a9fb8b84862e4",
