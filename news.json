@@ -1,15 +1,6 @@
 {
-  "updatedAt": "2026-11-22T23:15:12Z",
+  "updatedAt": "2026-11-24T16:58:04Z",
   "upcomingEarnings": [
-    {
-      "id": "earn_HKEX:1810_20261124",
-      "tv": "HKEX:1810",
-      "name": "Xiaomi",
-      "weight": "3,4 %",
-      "timestamp": 1795521600,
-      "dateStr": "24/11/2026",
-      "daysLeft": 1
-    },
     {
       "id": "earn_NYSE:BLK_20270121",
       "tv": "NYSE:BLK",
@@ -17,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 59
+      "daysLeft": 57
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 64
+      "daysLeft": 62
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 71
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 71
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 72
+      "daysLeft": 70
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 73
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 73
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 79
+      "daysLeft": 77
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,138 +80,137 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 80
+      "daysLeft": 78
+    },
+    {
+      "id": "earn_NYSE:KO_20270216",
+      "tv": "NYSE:KO",
+      "name": "Coca-Cola",
+      "weight": "0,1 %",
+      "timestamp": 1802779200,
+      "dateStr": "16/02/2027",
+      "daysLeft": 83
     }
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:NVDA_20261122",
-      "tv": "NASDAQ:NVDA",
-      "name": "NVIDIA",
-      "weight": "13,0 %",
-      "changePct": -14.01,
-      "price": 125.53,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:AMD_20261122",
+      "id": "move_drop_NASDAQ:AMD_20261124",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -13.25,
-      "price": 424.39,
+      "changePct": -11.89,
+      "price": 399.565,
       "currency": "USD",
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:MSTR_20261122",
+      "id": "move_drop_NASDAQ:NVDA_20261124",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -8.62,
+      "price": 150.83,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261124",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -9.67,
-      "price": 77.8,
+      "changePct": -7.33,
+      "price": 78.21,
       "currency": "USD",
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:QCOM_20261122",
-      "tv": "NASDAQ:QCOM",
-      "name": "Qualcomm",
-      "weight": "0,3 %",
-      "changePct": -7.45,
-      "price": 149.94,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_XETR:ENR_20261122",
+      "id": "move_drop_XETR:ENR_20261124",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -6.61,
-      "price": 118.32,
+      "changePct": -6.78,
+      "price": 117.88,
       "currency": "EUR",
       "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "2397244539e0b8f2",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "IPO Anthropic : OKX distribue 20 000 vouchers de 50 € sur X-Perps - TradingView",
-      "excerpt": "Anthropic entre au Nasdaq le 19 novembre. OKX offre 20 000 vouchers de 50 € pour s'exposer à son prix via un X-Perp à levier 3x : conditions, risques.",
-      "source": "TradingView",
-      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTFB0d1lNZGhQbW0yLVd5TnQyQU44bS02YjFfTjhFYUJjZU9xeVBXcFdqcmRSQlZnVjBUcDlMNmMyb25Tb3VxUFZkREJManUwZ2NPZFo0THlfVzBXLW5mS0VZanRScG85Qnl5cjk5Xw?oc=5"
+      "id": "863578b463b9b92f",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
+      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
+      "source": "L'Agefi",
+      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
+      "pubTs": 1795537144,
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
     },
     {
-      "id": "1d22e71d1c113bad",
+      "id": "c38feb62009be3f3",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Bourse : gare à l’addition cachée d’une fusion entre SpaceX et Tesla, faut-il vraiment investir sur ces actions - Capital.fr",
-      "excerpt": "Alors que SpaceX et Tesla coopèrent déjà industriellement et commercialement, quelles synergies supplémentaires en cas de fusion ? Une fusion entre SpaceX et Tesla améliorerait-elle…",
-      "source": "Capital.fr",
-      "pubDate": "Sun, 22 Nov 2026 18:00:00 GMT",
-      "pubTs": 1795370400,
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxOazdoZ2lsSmFya2FEdkhCN29Ec2FYR0JraExtVVpGOG9leV9mYkxkSWs2VjJmYnlBYmhHTkhTNGpoQzZKYjhYSGZHODJEVmk2UUtXZVJuUDVpWHZqU00wa0xXVWFwUk5IU1k1YmlSS2M1aGJKczgwMjEzTTlkbzJ6RnpPdzA3U002dTZfZ1MtZFBuNjZ0UWFva2EwTUhBT2g5aEl6WXRvZ1ZPQ20taE9zWHZ1TXlsWV9iNWlHZDBvX1MxVXA5ajl6RmxzUFRtNU1iTVhKckdJTmFVX2czVHZ0VV9Ecjk5ZVlfeWRINHNR?oc=5"
+      "title": "IPO record d'Anthropic : faut-il investir à ce prix ? - BFM",
+      "excerpt": "Anthropic a fixé le prix de son introduction en Bourse à 83 $ par action, au-dessus de la fourchette de 70 à 78 $ annoncée au départ. Le titre doit débuter sa cotation jeudi 19…",
+      "source": "BFM",
+      "pubDate": "Tue, 24 Nov 2026 16:13:38 GMT",
+      "pubTs": 1795536818,
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdVZ4bWVNSVUxcW5pTFhtNHJoRjNBQmN0QUI5Q01sbjd1blhoNTZ1ZjlDNExoVHgzaGZqZU9yaTljOWJFMzJjUWE4em5IM0tKandEN2lIRzhTRDA3eWRValRSbkxUUE5ZMWwzZVdKUDJwakFWbmtETTI4N0JJWVZnWk92b3NvMXNLT3NiTG9vWlNjOHVVT2x5RkJ6dV9SYldhNG1kTGp0R2xZcms?oc=5"
     },
     {
-      "id": "e4b8de0fce7442bf",
+      "id": "9ef42602bb57d7d2",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - www.edcom.fr",
+      "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
+      "source": "www.edcom.fr",
+      "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
+      "pubTs": 1795532400,
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVEhqZHVFb2RxNUdhRDR0clhtRHI5eFJPdm5vQkRTVzlJWHlZRHp0aVpEQWxFX2ExVkRGTW9sdDIwbFcwR19Zek5zRHlYNV92SnhsdnJHMjc0emlzaTBZQU16ZE4wM3A4Q05qLXdsNm01b3dWd0Nzanp0T1dnZUhTUVgydnNidnlqdTUxU25NZHB0eEJQaXJpd2tNZUtOT3BETTI0NEROeld2ejhubHJuYWc4OA?oc=5"
+    },
+    {
+      "id": "880211cf3ac3c617",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
+      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
+      "pubTs": 1795532157,
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
+    },
+    {
+      "id": "54532972aa15050d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 11:06:22 GMT",
+      "pubTs": 1795518382,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
+    },
+    {
+      "id": "5bf3fd173184c964",
       "theme": "Microsoft",
       "tagCls": "b-blue",
-      "title": "Microsoft corrige 1 413 failles, Nadella alerte sur l'IA - Brief IA",
-      "excerpt": "Ce 13 octobre 2026, Microsoft a publié un nouveau Patch Tuesday, son traditionnel ensemble mensuel de correctifs de sécurité, diffusé le deuxième mardi de chaque mois. Mais celui…",
-      "source": "Brief IA",
-      "pubDate": "Sun, 22 Nov 2026 16:17:12 GMT",
-      "pubTs": 1795364232,
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNYnRSQzZabS1WUk9kUFpBOElVc3pSWXpVZktvUml1QjVxOG94Y0szbmZJbFIyUjMxSWx4YVZHTWpOWUwtamtNUVd2VkNrWjJOazI0Z2Jacjdta0s2RHhBTzZWNzFIRHBvaUZqek1fNFgzXy10VTdYcExCelFNTWpXMkpLZTNpdHlQMVE0MWJubw?oc=5"
+      "title": "Microsoft Teams va surveiller vos appels avec l’IA pour démasquer les arnaques - Frandroid",
+      "excerpt": "Microsoft prépare sur une nouvelle fonction de sécurité pour son application Teams. La messagerie collaborative pourra s’appuyer sur l’IA pour détecter les arnaques utilisant de…",
+      "source": "Frandroid",
+      "pubDate": "Tue, 24 Nov 2026 10:35:01 GMT",
+      "pubTs": 1795516501,
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
     },
     {
-      "id": "8a756c2ab21f5391",
-      "theme": "BYD",
-      "tagCls": "b-green",
-      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
-      "excerpt": "Investing.com - Un tribunal néerlandais a statué aujourd’hui que le SUV Ti7 de BYD enfreint le design du Defender de Jaguar Land Rover et a émis une injonction temporaire…",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
-      "pubTs": 1795200540,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
-    },
-    {
-      "id": "eb8f07f8e9a09d1a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "AGENDA DU 23 AU 27 NOVEMBRE: L'inflation américaine au menu de Thanksgiving - ABC Bourse",
-      "excerpt": "PARIS --La semaine prochaine aura une saveur particulière pour les investisseurs américains, qui célébreront la fête de Thanksgiving. Wall Street sera ainsi fermée jeudi et ouvrira…",
-      "source": "ABC Bourse",
-      "pubDate": "Fri, 20 Nov 2026 16:27:31 GMT",
-      "pubTs": 1795192051,
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQUFNMTlgtRk9LcXRPOVBIeFhsRi1HRHA3QnU5ckhOVWZia1NBcUFURmFROThhVlRWemRDRzJLenR0QVNhc2FQa3pMQUJibk9rY3pJQ1pfbFZvV0NUM1hBSnhuZnlEU1VlU1RaaDRxZ2xBNDRmYnpydDQ1SFFZR09yZ0tMR0JIWjlMVFJ5Uk44MUZvYmFUN2hGVENuR2lmcUNYZHJGQldyTXVZbWg4U194clg3QnRnUQ?oc=5"
-    },
-    {
-      "id": "7a90e2589083751d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Les enquêtes PMI et l'inflation PCE au coeur de la semaine pour les marchés - Investir Les Echos",
-      "excerpt": "Les premières enquêtes PMI de novembre donneront lundi un aperçu de l'activité des deux côtés de l'Atlantique. La semaine se poursuivra avec l'inflation PCE américaine, avant le…",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 20 Nov 2026 14:55:09 GMT",
-      "pubTs": 1795186509,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxOa1hwU2FmMGp3YnFsWWc2ZXVJbm5zQnMzVk51NnAzSUpFampDMmxVMTZMSXJQcWtsVHJPYkZ1d2ZxckFvYkZuSnNpUjFfZFE4Ti12ZXlKRk03QjJ3dEM2SjZZejFYZWVuRkV4ZmRsZWZpVGRYWElqcFE5YXlQSnpCSkNMTVU2bDNpRmFYSlY0YkprNTFoRllZb1ZHU2JqR21CVkRvU3NLdTJNN1V2dXJmazdyTk5wRkZ2aGRqalVSNHppdUhVS2FJNDgzVlhId0xiV2oxVjVUd1FabHVUeFE?oc=5"
-    },
-    {
-      "id": "57753768ba4101b9",
-      "theme": "NVIDIA",
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
       "tagCls": "b-purple",
-      "title": "Cac 40 : Les résultats tonitruants de Nvidia ne suffisent pas à apaiser Wall Street, le CAC 40 termine en nette baisse - BFM Bourse",
-      "excerpt": "La Bourse de Paris repart à la baisse ce mardi 18 novembre. Son indice phare, le CAC 40, a perdu 0,85% à 8.146,83 points. Les investisseurs se sont concentrés sur la lecture des…",
-      "source": "BFM Bourse",
-      "pubDate": "Wed, 18 Nov 2026 16:57:23 GMT",
-      "pubTs": 1795021043,
-      "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxOZG50Nlo4MEVfMHVfb0JJcVhkcU1pZzg3aS1DdzhGY3o1a25uYV9OOGxEMlRwVW1ZcjdiMTl2MVRMMWNjc2p4aHFfWDJpbWFmLU9yazdlQlpObE9ZeHoyS2JFSW5YNnQ4Vk4zT1kwZ05lRXVmV0RDYnQ1Rng1dWNZNG81UUptdUxkQnlicVNKQlBXeWpSSVlyc0FidHE2aTlTSmdNRlF1S3Z1R2hZUUZPRWxoRll3NzRDSzJmQW9LTExSQ1h2a0lxalNWS1ZTNkY1Z0RFQ2pHWlZIbDR0dDN5cXR6QUpsc0lhRTdIUndGa1g5VmR5OXBqR0R4aWFFalZSOTY0SkNnbkE1VDlWeENJR1dmdmY?oc=5"
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -236,6 +226,96 @@
     "8a756c2ab21f5391",
     "eb8f07f8e9a09d1a",
     "7a90e2589083751d",
-    "57753768ba4101b9"
+    "57753768ba4101b9",
+    "move_drop_NASDAQ:NVDA_20261123",
+    "move_drop_NASDAQ:AMD_20261123",
+    "move_drop_NASDAQ:MSTR_20261123",
+    "move_drop_NASDAQ:QCOM_20261123",
+    "move_drop_XETR:ENR_20261123",
+    "cc0507de301637ad",
+    "b150c96c5a5af7d3",
+    "7add5f0dfeb745a1",
+    "c8bb9bfa2a432f4d",
+    "a51e324f99253be9",
+    "9dc6a374c7a33f4b",
+    "9a3ac680fbd3a2ed",
+    "46992aad3a5167a9",
+    "214d38137d111fe8",
+    "6fb0a17263bd41d6",
+    "ea4449b61d6ee8fd",
+    "0f2b25ec58d75744",
+    "ee4f139ce48569d4",
+    "0d3fe6abc80189f6",
+    "901b94bdeb5a4d3e",
+    "8e971ba5e35a0047",
+    "35ce6a76b9d58ace",
+    "9d44e26fa4d77c63",
+    "4f59efab9c4e6fcb",
+    "2528de4cba3dfaae",
+    "move_jump_NASDAQ:NVDA_20261123",
+    "move_jump_NASDAQ:MSTR_20261123",
+    "move_jump_NASDAQ:QCOM_20261123",
+    "e603a91a1e9c791c",
+    "move_jump_NASDAQ:AMD_20261123",
+    "move_jump_XETR:ENR_20261123",
+    "60288b4d603df5db",
+    "57bcc6f15b2e628a",
+    "bc7fe17c207ec4a3",
+    "ae734faed996698f",
+    "move_jump_NASDAQ:GOOGL_20261123",
+    "59099ab8c72321bf",
+    "6455023584ec9100",
+    "fa3ffe13bc513ac8",
+    "fa9294ccb8b6f37c",
+    "7813f16b38341fe0",
+    "e62a9fb8b84862e4",
+    "83dc6300c4b49f2a",
+    "493f08d43f2d0342",
+    "2b24c83cf07a96dc",
+    "move_jump_NASDAQ:NVDA_20261124",
+    "move_jump_NASDAQ:QCOM_20261124",
+    "move_jump_NASDAQ:MSTR_20261124",
+    "45f4779a6e1a3ecf",
+    "d288e5e2138c5f54",
+    "25c81f26fa42eb62",
+    "0a3624c93e9d5df6",
+    "3d84fe6cc36e0349",
+    "move_drop_HKEX:1810_20261124",
+    "7a3fff7e8c9b33ca",
+    "8d1bd601c1f098b3",
+    "cf9d3097ef4db12e",
+    "afca977531d8843a",
+    "9fee1d0bf7ce3d63",
+    "7147e78edbf1de10",
+    "35ab1cec65f79445",
+    "7609d6bc89e5e3ef",
+    "8d06962c54c2de88",
+    "21a26bab54cba752",
+    "32ec9b56d1d40bf4",
+    "a8d68eda36bc248d",
+    "992006a4a4d6a763",
+    "b9a720be83f7de6c",
+    "fc41d1f1fb3f2262",
+    "5bf3fd173184c964",
+    "54532972aa15050d",
+    "a49172b76aecd4ec",
+    "86e05cee903e1b40",
+    "1be6d0427e645001",
+    "f5dcd6a930260d0e",
+    "314c26fe3667a6ee",
+    "7d38f8e79401f6b5",
+    "885f3195058b5457",
+    "move_drop_NASDAQ:AMD_20261124",
+    "move_drop_NASDAQ:NVDA_20261124",
+    "7455375e84887c4a",
+    "079abd111048b2e6",
+    "move_drop_NASDAQ:MSTR_20261124",
+    "move_drop_XETR:ENR_20261124",
+    "2175ce71d11e81c0",
+    "5f98037b4d62526d",
+    "9ef42602bb57d7d2",
+    "880211cf3ac3c617",
+    "863578b463b9b92f",
+    "c38feb62009be3f3"
   ]
 }
