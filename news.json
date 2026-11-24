@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T18:37:50Z",
+  "updatedAt": "2026-11-24T19:40:00Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -9.66,
-      "price": 409.65,
+      "changePct": -8.16,
+      "price": 416.44,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -7.26,
-      "price": 153.0728,
+      "changePct": -7.11,
+      "price": 153.315,
       "currency": "USD",
       "kind": "drop"
     },
@@ -128,13 +128,24 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -6.6,
-      "price": 78.83,
+      "changePct": -6.61,
+      "price": 78.825,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "e4651a17d8e6e94e",
+      "theme": "Air Liquide",
+      "tagCls": "b-purple",
+      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
+      "excerpt": "PARIS (Agefi-Dow Jones)--Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
+      "pubTs": 1795542420,
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+    },
     {
       "id": "5042d76261506656",
       "theme": "IPO & IA Mondiale",
@@ -145,28 +156,6 @@
       "pubDate": "Tue, 24 Nov 2026 16:59:00 GMT",
       "pubTs": 1795539540,
       "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxObExOMlY4ODM4NnZaaS0yRXRuMHVRT2EtbGZKcjQ4VFdzUnhZaVU2OEZxb0hzUERmV0ljNmxzRGpQcXlqRS01Qm9BcTBIYWlMcjd1aGwwVnd0azlLZlgxWEI0WTFtU2xOeXZpWWgzcDJjb2N6MjAzVy1fVEJCZzZaM1hDalFuNHNOQXdSQlNLSlUwb0RFVGZ2ekNLRGxEeG1yTGQxNEplUmZ4UHYwNWRMRGhHZmkyNkZBWVE0a0dKUjlIU21YdFhYVExINC1lNE1XWENtVmQ1eTRmMXRMUFBwaUcxeEt6RXEzZjNBZzNCLV96V3BESzRadG1VU2k2QlBWYzVzeWIxckJlYkhFMHhPTTJPTTNXVDliZ3E5ejh0VFZzN0tQUXhZZUMyUnltcHNMT2VqdXpaZmFlVmNmcWJCU1ZqUlFsT2xNSlHSAc8CQVVfeXFMTlVHSTh5czZjLVUySjRoTXNlYllqQWpLV0hsX3podzlaU294dEdsOFBMSHZ0dkZqejA3VGRaek9lU3F1MGlEUHhlYm80U244bkJFMDBYdkZuT1JhanRzRi1ZUURVYzRHUXJ5NUFxdWwxWkFKYkh0NXc5WWd3M3Fyb3pwS2hrUGVMVkZGZUFyMEFOZkNQLXMyQ2g5TVVQRXAwMngtemp3cUFhXzV6REE4c3o2T1d6dWtsem4wMFQ3LWRaa0ZyQkd6ak1WeXV3NVhfQlYxbVNtT0hQSlFIUU9KclNST1QtZkFKcGduOTdTamJ1enVHSmhsYXNGNnBoR3JUdVRDN0V2Q2k0Y2duMDFxbjlIMklUU2s1ZTRSdkd0S2pPNlE4bDlIUk54WDFrOTR1NVlaVmhndF9JQ3ZYVG1jcGFnV05hNzkyUWNwWHNlRk0?oc=5"
-    },
-    {
-      "id": "54532972aa15050d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
-      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
-      "source": "L'Echo",
-      "pubDate": "Tue, 24 Nov 2026 16:35:34 GMT",
-      "pubTs": 1795538134,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
-    },
-    {
-      "id": "863578b463b9b92f",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
-      "source": "L'Agefi",
-      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
-      "pubTs": 1795537144,
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -191,26 +180,37 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
+      "id": "fc41d1f1fb3f2262",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Les taux en ordre dispersé aux Etats-Unis à la veille de l'indicateur d'inflation PCE - ABC Bourse",
+      "excerpt": "PARIS --Les rendements des obligations d'Etat américaines évoluent en ordre dispersé mardi matin, alors que les investisseurs se préparent à la parution mercredi de chiffres…",
+      "source": "ABC Bourse",
+      "pubDate": "Tue, 24 Nov 2026 10:44:49 GMT",
+      "pubTs": 1795517089,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
+    },
+    {
       "id": "58f55cd1316381cb",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "excerpt": "",
       "source": "Saxo",
       "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
       "pubTs": 1795510800,
       "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     },
     {
-      "id": "1be6d0427e645001",
-      "theme": "NVIDIA",
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
       "tagCls": "b-purple",
-      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
-      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
-      "source": "Yahoo Finance France",
-      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
-      "pubTs": 1795451675,
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -318,6 +318,7 @@
     "863578b463b9b92f",
     "c38feb62009be3f3",
     "5042d76261506656",
-    "58f55cd1316381cb"
+    "58f55cd1316381cb",
+    "e4651a17d8e6e94e"
   ]
 }
