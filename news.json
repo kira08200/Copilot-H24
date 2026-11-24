@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T01:52:51Z",
+  "updatedAt": "2026-11-24T02:43:49Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,15 +126,26 @@
   ],
   "items": [
     {
-      "id": "7813f16b38341fe0",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Les options d’Anthropic démarrent en fanfare, mais restent derrière le record de SpaceX - Zonebourse Suisse",
-      "excerpt": "Les options nouvellement cotées d’Anthropic ont fait l’objet d’échanges soutenus lundi, marquant un solide démarrage pour le nouveau marché de produits dérivés du développeur…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Mon, 23 Nov 2026 20:39:31 GMT",
-      "pubTs": 1795466371,
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNS1gyZ2IxbkZ2cThmZ1EzT0JMZXF4UlhfZ2JyVFRSTWJlajBRaFB4MTdVZTJscDZJX0FwYjd5MGExRF8xUGd2V2dzWEtYd3FpUXBTeGluVmlYMkJFYm13OFhoUTRPQzhNNnRiR0M4SlpaT3psZEtPOFRiY01nNUd2UEhZYUxQSmpJT2ZRVTUzLTlGeUxIS29KVmtwRWZPa1dmQ1EyRGVOV1M2ZGhKRGdRRmlRenhobUk3cUI0Mks1VEdXLWJsNHYwYmtZdHRvTjdwZW9rOFY2NWEyZW81YlFpTA?oc=5"
+      "id": "d288e5e2138c5f54",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Japanese Yen strengthens amid intervention fears, traders await US PCE inflation data - tmgm.com",
+      "excerpt": "The USD/JPY pair declines to near 158.95 during the early Asian trading hours on Tuesday. The Japanese Yen (JPY) edges higher against the US Dollar (USD) as traders remain on high…",
+      "source": "tmgm.com",
+      "pubDate": "Tue, 24 Nov 2026 02:05:37 GMT",
+      "pubTs": 1795485937,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNzViMFA5YTRwOTBmN29wQm43cWdsSjJqX2ZQWWR6UlVBUWlUUE9zMFU3aWdPaTdNX3ppeWRYandfMGN2RzRvQkFHRGhUaGpVUWhDWU5ueUsweXd1c2Q5eWRiTk9Ud3pkUXplWnlyTHhXeDJ2eGJKR2VDVl8wSG4wZXc4TkdzQ1A3X3Rpa3NFczM0OHl0czFUSjRmTE5TSGg3U3AwSWNpcm9tdTRGdU1HcnFkUTVvZ2IwOHJsclNjNVZYOTN2S3JnbnB3ZHFyNjdvTDlhLVIwaVYwczJwY244Z0s0MTA?oc=5"
+    },
+    {
+      "id": "25c81f26fa42eb62",
+      "theme": "Semi-conducteurs (TSMC / ASML)",
+      "tagCls": "b-blue",
+      "title": "ASML Holding prend 9,28% - Boursier.com",
+      "excerpt": "Sur les sept derniers jours, l'action ASML Holding a enregistré une baisse de 1,64%. En un an l'action a, en revanche, connu une forte hausse de 40,08%, valant 1 383,78$ contre…",
+      "source": "Boursier.com",
+      "pubDate": "Mon, 23 Nov 2026 21:21:54 GMT",
+      "pubTs": 1795468914,
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
     },
     {
       "id": "fa3ffe13bc513ac8",
@@ -148,17 +159,6 @@
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPTUJZOTU3NGoyZ2drekhkM05WSEdFaHZTN25KQTFLR0NZdHZVUWxtZVdoOTA1VTdBNVYwY19QSFVYUlJ5UDZ5cm5USE9VazdBaEhMTnhueTlDZDE0YVBOci1qMVhOZ2hhbXBxNm1ZSEUwbHpFQzdRYmhrVDhBeGxodTNHVDZEdVlCSzlvZzk3TE80YThNNWg0Q3VHU1pKOURzSjlTQnlOWHhaVlZqZndIR1BJTUY5UE5YZTliWkNkdENwVGRjWkIyN1ZDMlprMFBPRmxTb25fWWhJMjA0dGNmbkNORWpydlBadG9VN3FqaW51MXNhbGFsVGNmVGlOQkJwRVE?oc=5"
     },
     {
-      "id": "59099ab8c72321bf",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Le patron de Microsoft imagine une économie bouleversée par l'IA qu'il contribue lui-même à développer - Science et vie",
-      "excerpt": "Découvrez pourquoi le patron de Microsoft redoute un impact économique de l'IA capable de bouleverser entreprises, emploi et démocratie.",
-      "source": "Science et vie",
-      "pubDate": "Mon, 23 Nov 2026 18:00:35 GMT",
-      "pubTs": 1795456835,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
-    },
-    {
       "id": "2b24c83cf07a96dc",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -168,6 +168,17 @@
       "pubDate": "Mon, 23 Nov 2026 17:47:04 GMT",
       "pubTs": 1795456024,
       "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT0IxSkdsU0JZdkRVWkI2LWxFdXdNOFZEeHZ6SEJndlZuM1d0UjBkSmNWdzJHbUUtVHdabGpjTnR4VzhpRFhoX0prUWZxNVRPcllWckozS2t1UF9DcXE0Qm91NTY3YnRobmpxT2NoZ2xGbDM2NTFkWnlLVG9LWEVKcUVLdXl0dTF0SkF1b1RnUEtLaXZURUk1TTFaVC11Qjl5TzhVMXdpc09PcHdPZFN5QVR5WjRZWElZUmVGRVdfdnJyQQ?oc=5"
+    },
+    {
+      "id": "fa9294ccb8b6f37c",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Mythomètre : \"Il est encore temps d'investir dans Anthropic\", FAUX répond Jean-Benoit Gambet - 23/11 - BFM",
+      "excerpt": "Ce lundi 23 novembre, Guillaume Chaloin, directeur des gestions actions Delubac AM, s'est penché sur le retour de Jensen Huang à la tête de Nvidia, et les conséquences de cette…",
+      "source": "BFM",
+      "pubDate": "Mon, 23 Nov 2026 16:04:34 GMT",
+      "pubTs": 1795449874,
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
     },
     {
       "id": "e603a91a1e9c791c",
@@ -190,17 +201,6 @@
       "pubDate": "Mon, 23 Nov 2026 13:03:38 GMT",
       "pubTs": 1795439018,
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxONUdPWlZFREVJZ3NWTHF6S3pxSjJRVW5kT1FVd05hYTRSR0czOWdmNmFGRDgwYVJTMWhmdTFYSWpST2lhNVU1X1dObTV6SE80d2lKWlA1MnpydEZHZk5JMG45OTJqSzFfOHJLZDlNdmdCN1lRZ2pHUmlpclREWU1KWFV5S25SdkZZRWJsOGVpeG50SGwzT082bkpKV2VOSVh6dzBlcQ?oc=5"
-    },
-    {
-      "id": "83dc6300c4b49f2a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Actualités crypto | La semaine crypto à venir : l’inflation du PCE d’octobre met à l’épreuve le rebond du bitcoin pendant une semaine écourtée par Thanksgiving - Binance",
-      "excerpt": "Bitcoin repasse au-dessus de 64 000 dollars. Fed, Nvidia, Anthropic : les dates clés de la semaine qui pourraient décider du rebond du BTC.",
-      "source": "Binance",
-      "pubDate": "Mon, 23 Nov 2026 12:53:58 GMT",
-      "pubTs": 1795438438,
-      "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9OdHRsMkN3MDZ6TFFPZ18wMUdRdldYWFg5MkdrRFpJcUwxT0FSbHNhcC1JSlBFalhic2tFUnIwdGhETjJFTmNHNVRDQU50NTRvLVdKLXlYSzctTEowWHJGc1UzMXR6Zm9T?oc=5"
     }
   ],
   "notifiedIds": [
@@ -265,6 +265,8 @@
     "move_jump_NASDAQ:NVDA_20261124",
     "move_jump_NASDAQ:QCOM_20261124",
     "move_jump_NASDAQ:MSTR_20261124",
-    "45f4779a6e1a3ecf"
+    "45f4779a6e1a3ecf",
+    "d288e5e2138c5f54",
+    "25c81f26fa42eb62"
   ]
 }
