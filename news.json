@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T22:23:58Z",
+  "updatedAt": "2026-11-24T23:17:01Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -136,6 +136,17 @@
   ],
   "items": [
     {
+      "id": "53fe4a55a366a368",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "L’action Anthropic passe sous son prix d’introduction en Bourse - The Media Leader",
+      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
+      "source": "The Media Leader",
+      "pubDate": "Tue, 24 Nov 2026 22:10:00 GMT",
+      "pubTs": 1795558200,
+      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQT3JSRkJpV19lUF9iSGNrLU5JenRia3NyYktmVTFXTDVtNFkzbGgtU1hqTkxsRFJPcHZCakVqMnY0VXFPNmZnTUtjODE2TTZsaXFTdUtnU0xhYi04eWhmSFU0NDF3eF91UEU1QUNzTUh5QzBwMlVnYUw2M3Vqamt5WDd5YnV3SExfM3JtUnZkT0luekNsY2tuVFdR?oc=5"
+    },
+    {
       "id": "ca0b7e1ff1128517",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -145,17 +156,6 @@
       "pubDate": "Tue, 24 Nov 2026 21:48:00 GMT",
       "pubTs": 1795556880,
       "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQYnV6ZmdJbDNCRmlaVF9wSXkwcjBGRFJrb2c0TkJxSGtaNmdXWkRKWjVLMVhBZ3dBS2VXNjVoczJFREd6MDdDOWxSMVA2RTBXUlAyc05mOF9FMXhSNHNFZVg2TnRHN2FtQmRwQjUzbW9ST0NGcExTazhoUUVQdjdNWm41VjZBaElEVFZsX0RURU5abnJCT0R4NlN5TVF0ZkpTOUJoOEoxNGtGQWxneVprU3RtMEstUVNaY0VBQ3pYYlBSQmFBOWQ2UXJIZV9jUEcyMHktZFN1UEVtanA4TGVuYTBWUFBjcmZyYnY4VVZQMHNUZ0x5ZUxXTG1LdG51MTl3V1Bj?oc=5"
-    },
-    {
-      "id": "fb6dc7e20e76ad06",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Après des débuts difficiles en Bourse, Anthropic passe déjà sous son prix d’introduction - Cafétech",
-      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
-      "source": "Cafétech",
-      "pubDate": "Tue, 24 Nov 2026 21:34:57 GMT",
-      "pubTs": 1795556097,
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQZjlkMGNiRlJTUTUxLWJ0cnF6Z1c4QmtTNTNKZjAwY0VXWGh6dEU1ZUpVT09NdmJ2aTg0Z0JlMFpoN3liQUwxR3JJeUNxa0FNdHNqWnppcV9adFVFR0VNUVpZRGRGbEx1aHJwbVJoV3JHam41c2JzdzJxemJmSHRDNjMtV3ZyUG1MZkhrVFVRWFk0NzZkckV0bXJNNUhsWGJoUXQ5UnJxT3dvS2I0MDU2amNLRQ?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
@@ -173,7 +173,7 @@
       "theme": "Amazon",
       "tagCls": "b-blue",
       "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
+      "excerpt": "",
       "source": "L'Agefi",
       "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
       "pubTs": 1795537144,
@@ -184,7 +184,7 @@
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - Edcom",
-      "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
+      "excerpt": "bon Plan - Si vous avez envie de trouver le smartphone parfait pour le quotidien, le moment est venu de commander ce Xiaomi Redmi Note 17 Pro sur le site de Pixmania. Il ne sera pas…",
       "source": "Edcom",
       "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
       "pubTs": 1795532400,
@@ -202,15 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
-      "id": "1be6d0427e645001",
+      "id": "393ac12a62086dbf",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
-      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
-      "source": "Yahoo Finance France",
-      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
-      "pubTs": 1795451675,
-      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
+      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
+      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
+      "pubTs": 1795531580,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -322,6 +322,8 @@
     "e4651a17d8e6e94e",
     "337dd3fc3bdf305c",
     "ca0b7e1ff1128517",
-    "fb6dc7e20e76ad06"
+    "fb6dc7e20e76ad06",
+    "53fe4a55a366a368",
+    "393ac12a62086dbf"
   ]
 }
