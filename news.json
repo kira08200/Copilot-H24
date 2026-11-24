@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T17:46:53Z",
+  "updatedAt": "2026-11-24T18:37:50Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,18 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.84,
-      "price": 413.37,
+      "changePct": -9.66,
+      "price": 409.65,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261124",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -7.26,
+      "price": 153.0728,
       "currency": "USD",
       "kind": "drop"
     },
@@ -114,22 +124,12 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:NVDA_20261124",
-      "tv": "NASDAQ:NVDA",
-      "name": "NVIDIA",
-      "weight": "13,0 %",
-      "changePct": -6.73,
-      "price": 153.94,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
       "id": "move_drop_NASDAQ:MSTR_20261124",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -6.02,
-      "price": 79.32,
+      "changePct": -6.6,
+      "price": 78.83,
       "currency": "USD",
       "kind": "drop"
     }
@@ -172,9 +172,9 @@
       "id": "9ef42602bb57d7d2",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - www.edcom.fr",
+      "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - Edcom",
       "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
-      "source": "www.edcom.fr",
+      "source": "Edcom",
       "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
       "pubTs": 1795532400,
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVEhqZHVFb2RxNUdhRDR0clhtRHI5eFJPdm5vQkRTVzlJWHlZRHp0aVpEQWxFX2ExVkRGTW9sdDIwbFcwR19Zek5zRHlYNV92SnhsdnJHMjc0emlzaTBZQU16ZE4wM3A4Q05qLXdsNm01b3dWd0Nzanp0T1dnZUhTUVgydnNidnlqdTUxU25NZHB0eEJQaXJpd2tNZUtOT3BETTI0NEROeld2ejhubHJuYWc4OA?oc=5"
@@ -191,26 +191,26 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
-      "id": "5bf3fd173184c964",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft Teams va surveiller vos appels avec l’IA pour démasquer les arnaques - Frandroid",
-      "excerpt": "Microsoft prépare sur une nouvelle fonction de sécurité pour son application Teams. La messagerie collaborative pourra s’appuyer sur l’IA pour détecter les arnaques utilisant de…",
-      "source": "Frandroid",
-      "pubDate": "Tue, 24 Nov 2026 10:35:01 GMT",
-      "pubTs": 1795516501,
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     },
     {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
+      "id": "1be6d0427e645001",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
+      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
+      "source": "Yahoo Finance France",
+      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
+      "pubTs": 1795451675,
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -317,6 +317,7 @@
     "880211cf3ac3c617",
     "863578b463b9b92f",
     "c38feb62009be3f3",
-    "5042d76261506656"
+    "5042d76261506656",
+    "58f55cd1316381cb"
   ]
 }
