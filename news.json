@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T15:58:25Z",
+  "updatedAt": "2026-11-24T16:58:04Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -10.73,
-      "price": 404.785,
+      "changePct": -11.89,
+      "price": 399.565,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -7.28,
-      "price": 153.0301,
+      "changePct": -8.62,
+      "price": 150.83,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,8 +118,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -5.83,
-      "price": 79.4777,
+      "changePct": -7.33,
+      "price": 78.21,
       "currency": "USD",
       "kind": "drop"
     },
@@ -128,34 +128,34 @@
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
-      "changePct": -5.8,
-      "price": 119.12,
+      "changePct": -6.78,
+      "price": 117.88,
       "currency": "EUR",
       "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "2175ce71d11e81c0",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Le cours d'Anthropic repasse sous son prix d'IPO moins d'une semaine après l'entrée en Bourse - Les Echos",
-      "excerpt": "Le cours d'Anthropic a reculé lors de chaque séance, y compris lundi, lorsque le Nasdaq s'est envolé après l'annonce du retour de Jensen Huang à la tête de Nvidia.",
-      "source": "Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 15:42:21 GMT",
-      "pubTs": 1795534941,
-      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPSTZ4ellBMWJVUk1QUEJUMzF4ZW9rcDZRMndqQjZ2WGdubTlQTl9DSXBma0RXYU5ENGpNQUQ3WXhwRHdEUWNyTGZzclJwMjJzNlVfTHloel94VGtXRlNGSVFyVlE0X3F4NlQyV1lhSmZmZTNXRHVjMFFEWGpaNkpUQ2Q0dTNNLXluM3FLNjJIdTBhWVU4SjdWQzVaRVNjT3IwOWJOZWdLd3pXTXZVejhvdVo2UDdQX0xvcHA1MHgwMFEzaWVkTDZBeHhia0hQNlU1YXBZNDZkNVRpNW9uZXpQYW5YS2E1NWlCMHRYRA?oc=5"
-    },
-    {
-      "id": "5f98037b4d62526d",
+      "id": "863578b463b9b92f",
       "theme": "Amazon",
       "tagCls": "b-blue",
-      "title": "Amazon acquiert une technologie de Decart pour 7,5 milliards - Brief IA",
-      "excerpt": "L'intelligence artificielle est au cœur de toutes les stratégies. Amazon a annoncé une nouvelle acquisition afin d'améliorer l'utilisation des modèles d'IA. Elle vise la technologie…",
-      "source": "Brief IA",
-      "pubDate": "Tue, 24 Nov 2026 15:05:08 GMT",
-      "pubTs": 1795532708,
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOOEtPSGJUWFN1SnE1TW1SMlZJalpnUmlMcWlLYW5nUE11TlptM3RmZm9SNHVNTHEzSFNjdTZVZkZTejZNVFgxOXI3YWRFR3NQVENRc0s0eldpaU1yRHA5M3gzZHZMNmd1SHFuQTlub2YxTEpJVFZFdXpFcUVxSmo2ZjdTZzF0QVVsUGc4QVhiZ2UxTU5oQWc?oc=5"
+      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
+      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
+      "source": "L'Agefi",
+      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
+      "pubTs": 1795537144,
+      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
+    },
+    {
+      "id": "c38feb62009be3f3",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "IPO record d'Anthropic : faut-il investir à ce prix ? - BFM",
+      "excerpt": "Anthropic a fixé le prix de son introduction en Bourse à 83 $ par action, au-dessus de la fourchette de 70 à 78 $ annoncée au départ. Le titre doit débuter sa cotation jeudi 19…",
+      "source": "BFM",
+      "pubDate": "Tue, 24 Nov 2026 16:13:38 GMT",
+      "pubTs": 1795536818,
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdVZ4bWVNSVUxcW5pTFhtNHJoRjNBQmN0QUI5Q01sbjd1blhoNTZ1ZjlDNExoVHgzaGZqZU9yaTljOWJFMzJjUWE4em5IM0tKandEN2lIRzhTRDA3eWRValRSbkxUUE5ZMWwzZVdKUDJwakFWbmtETTI4N0JJWVZnWk92b3NvMXNLT3NiTG9vWlNjOHVVT2x5RkJ6dV9SYldhNG1kTGp0R2xZcms?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -180,22 +180,22 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
-      "id": "314c26fe3667a6ee",
+      "id": "54532972aa15050d",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "L'or reflue avant des données clés sur l'inflation américaine - ABC Bourse",
-      "excerpt": "PARIS --Le cours de l'or se replie mardi, à la veille de la publication de l'indicateur d'inflation préféré de la Réserve fédérale pour octobre. Vers 13h55, le contrat à terme de…",
-      "source": "ABC Bourse",
-      "pubDate": "Tue, 24 Nov 2026 13:01:54 GMT",
-      "pubTs": 1795525314,
-      "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWXhZc2twZEVsYjRWbnc4Y19KZTFjamphd2JjZlRhX0NHTnZEU090R3NGSEFqSFhGcC1LTGR6dGNwVHk2aVNPc2VvY1lYcVg5UFhySEZBeFVQMGdlbjlhNXJMR2NES3VuYll4NFI0czNLcElxRUlrUUUwSUFjTHo2ZGtRRzFVb0VaNGhxSlFtMU40MlFBdUtOdWNyMVZDeUtCSlNhVg?oc=5"
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 11:06:22 GMT",
+      "pubTs": 1795518382,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
     },
     {
       "id": "5bf3fd173184c964",
       "theme": "Microsoft",
       "tagCls": "b-blue",
       "title": "Microsoft Teams va surveiller vos appels avec l’IA pour démasquer les arnaques - Frandroid",
-      "excerpt": "La messagerie collaborative de Microsoft s’apprête à accueillir un nouvel outil de surveillance. En utilisant l’intelligence artificielle, la firme de Redmond souhaite détecter les…",
+      "excerpt": "Microsoft prépare sur une nouvelle fonction de sécurité pour son application Teams. La messagerie collaborative pourra s’appuyer sur l’IA pour détecter les arnaques utilisant de…",
       "source": "Frandroid",
       "pubDate": "Tue, 24 Nov 2026 10:35:01 GMT",
       "pubTs": 1795516501,
@@ -314,6 +314,8 @@
     "2175ce71d11e81c0",
     "5f98037b4d62526d",
     "9ef42602bb57d7d2",
-    "880211cf3ac3c617"
+    "880211cf3ac3c617",
+    "863578b463b9b92f",
+    "c38feb62009be3f3"
   ]
 }
