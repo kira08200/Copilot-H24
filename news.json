@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T20:29:33Z",
+  "updatedAt": "2026-11-24T21:26:17Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,18 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -9.05,
-      "price": 412.4179,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:NVDA_20261124",
-      "tv": "NASDAQ:NVDA",
-      "name": "NVIDIA",
-      "weight": "13,0 %",
-      "changePct": -7.41,
-      "price": 152.82,
+      "changePct": -8.86,
+      "price": 413.27,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,8 +108,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -6.88,
-      "price": 78.59,
+      "changePct": -8.12,
+      "price": 77.55,
       "currency": "USD",
       "kind": "drop"
     },
@@ -131,6 +121,16 @@
       "changePct": -6.78,
       "price": 117.88,
       "currency": "EUR",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261124",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -5.86,
+      "price": 155.38,
+      "currency": "USD",
       "kind": "drop"
     }
   ],
@@ -147,26 +147,26 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "5042d76261506656",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "L'action Anthropic s'effondre sous les 83 dollars, son prix d'introduction en bourse, et s'apprête à perdre pr - Boursorama",
-      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
+      "id": "337dd3fc3bdf305c",
+      "theme": "NVIDIA",
+      "tagCls": "b-amber",
+      "title": "Le Nasdaq et le S&P 500 reculent alors que la vague haussière liée à l'IA, portée par Nvidia, s'essouffle - Boursorama",
+      "excerpt": "par Ragini Mathur et Avinash P Le Nasdaq et le S&P 500 ont reculé mardi, les investisseurs se détournant des valeurs liées à l'IA après un rebond alimenté par Nvidia, l'attention se…",
       "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 16:59:00 GMT",
-      "pubTs": 1795539540,
-      "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxObExOMlY4ODM4NnZaaS0yRXRuMHVRT2EtbGZKcjQ4VFdzUnhZaVU2OEZxb0hzUERmV0ljNmxzRGpQcXlqRS01Qm9BcTBIYWlMcjd1aGwwVnd0azlLZlgxWEI0WTFtU2xOeXZpWWgzcDJjb2N6MjAzVy1fVEJCZzZaM1hDalFuNHNOQXdSQlNLSlUwb0RFVGZ2ekNLRGxEeG1yTGQxNEplUmZ4UHYwNWRMRGhHZmkyNkZBWVE0a0dKUjlIU21YdFhYVExINC1lNE1XWENtVmQ1eTRmMXRMUFBwaUcxeEt6RXEzZjNBZzNCLV96V3BESzRadG1VU2k2QlBWYzVzeWIxckJlYkhFMHhPTTJPTTNXVDliZ3E5ejh0VFZzN0tQUXhZZUMyUnltcHNMT2VqdXpaZmFlVmNmcWJCU1ZqUlFsT2xNSlHSAc8CQVVfeXFMTlVHSTh5czZjLVUySjRoTXNlYllqQWpLV0hsX3podzlaU294dEdsOFBMSHZ0dkZqejA3VGRaek9lU3F1MGlEUHhlYm80U244bkJFMDBYdkZuT1JhanRzRi1ZUURVYzRHUXJ5NUFxdWwxWkFKYkh0NXc5WWd3M3Fyb3pwS2hrUGVMVkZGZUFyMEFOZkNQLXMyQ2g5TVVQRXAwMngtemp3cUFhXzV6REE4c3o2T1d6dWtsem4wMFQ3LWRaa0ZyQkd6ak1WeXV3NVhfQlYxbVNtT0hQSlFIUU9KclNST1QtZkFKcGduOTdTamJ1enVHSmhsYXNGNnBoR3JUdVRDN0V2Q2k0Y2duMDFxbjlIMklUU2s1ZTRSdkd0S2pPNlE4bDlIUk54WDFrOTR1NVlaVmhndF9JQ3ZYVG1jcGFnV05hNzkyUWNwWHNlRk0?oc=5"
+      "pubDate": "Tue, 24 Nov 2026 17:15:17 GMT",
+      "pubTs": 1795540517,
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZ9IBkwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZw?oc=5"
     },
     {
-      "id": "863578b463b9b92f",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
-      "source": "L'Agefi",
-      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
-      "pubTs": 1795537144,
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
+      "id": "c38feb62009be3f3",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "IPO record d'Anthropic : faut-il investir à ce prix ? - BFM",
+      "excerpt": "Anthropic a fixé le prix de son introduction en Bourse à 83 $ par action, au-dessus de la fourchette de 70 à 78 $ annoncée au départ. Le titre doit débuter sa cotation jeudi 19…",
+      "source": "BFM",
+      "pubDate": "Tue, 24 Nov 2026 16:13:38 GMT",
+      "pubTs": 1795536818,
+      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdVZ4bWVNSVUxcW5pTFhtNHJoRjNBQmN0QUI5Q01sbjd1blhoNTZ1ZjlDNExoVHgzaGZqZU9yaTljOWJFMzJjUWE4em5IM0tKandEN2lIRzhTRDA3eWRValRSbkxUUE5ZMWwzZVdKUDJwakFWbmtETTI4N0JJWVZnWk92b3NvMXNLT3NiTG9vWlNjOHVVT2x5RkJ6dV9SYldhNG1kTGp0R2xZcms?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -202,15 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
     },
     {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     }
   ],
   "notifiedIds": [
@@ -319,6 +319,7 @@
     "c38feb62009be3f3",
     "5042d76261506656",
     "58f55cd1316381cb",
-    "e4651a17d8e6e94e"
+    "e4651a17d8e6e94e",
+    "337dd3fc3bdf305c"
   ]
 }
