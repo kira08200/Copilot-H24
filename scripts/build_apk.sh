@@ -33,7 +33,7 @@ cat > "$WORK/AndroidManifest.xml" << EOF
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.copilote.h24"
     android:versionCode="$VERSION_CODE"
-    android:versionName="1.3">
+    android:versionName="2.0">
 
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -467,6 +467,9 @@ cat > "$WORK/src/fr/copilote/h24/MainActivity.java" << 'EOF'
 package fr.copilote.h24;
 
 import android.app.Activity;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
@@ -543,6 +546,36 @@ public class MainActivity extends Activity {
         @JavascriptInterface
         public void notify(final String title, final String body) {
             NotificationHelper.show(MainActivity.this, title, body);
+        }
+
+        @JavascriptInterface
+        public boolean copyText(final String text) {
+            try {
+                ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                if (cm != null) {
+                    cm.setPrimaryClip(ClipData.newPlainText("Copilote H24", text != null ? text : ""));
+                    return true;
+                }
+            } catch (Exception ignored) {}
+            return false;
+        }
+
+        @JavascriptInterface
+        public boolean shareText(final String title, final String text) {
+            try {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent send = new Intent(Intent.ACTION_SEND);
+                        send.setType("text/plain");
+                        send.putExtra(Intent.EXTRA_SUBJECT, title != null ? title : "Sauvegarde Copilote H24");
+                        send.putExtra(Intent.EXTRA_TEXT, text != null ? text : "");
+                        startActivity(Intent.createChooser(send, "Partager / Enregistrer la sauvegarde"));
+                    }
+                });
+                return true;
+            } catch (Exception ignored) {}
+            return false;
         }
     }
 
@@ -624,7 +657,7 @@ public class MainActivity extends Activity {
         s.setAllowUniversalAccessFromFileURLs(true);
         s.setAllowFileAccessFromFileURLs(true);
         s.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/1.4");
+        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/2.0");
         webView.clearCache(true);
 
         webView.addJavascriptInterface(new AndroidBridge(), "CopiloteAndroid");

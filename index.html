@@ -1157,6 +1157,7 @@
     <div class="card">
       <div class="card-head">
         <div class="card-title">💾 Sauvegarde &amp; Modes</div>
+        <span class="badge b-blue">v2.0</span>
       </div>
       <div class="btn-row">
         <button type="button" class="btn" id="btnExport">💾 Sauvegarder</button>
@@ -1455,6 +1456,21 @@
         state.notifsEnabled = d5.notifsEnabled === true;
         saveState();
         return;
+      }
+    } catch (e) {}
+
+    // Reprise si l'utilisateur avait déjà modifié le prototype app-v2.html
+    try {
+      var rawP2 = localStorage.getItem("copilote_pro_v2_personal");
+      if (rawP2) {
+        var dp2 = JSON.parse(rawP2);
+        if (dp2 && Array.isArray(dp2.positions) && dp2.positions.length > 0) {
+          if (PROFILES[dp2.profile]) state.profile = dp2.profile;
+          state.positions = dp2.positions;
+          if (typeof dp2.investAmt === "number" && dp2.investAmt >= 10) state.investAmt = dp2.investAmt;
+          saveState();
+          return;
+        }
       }
     } catch (e) {}
 
@@ -2535,7 +2551,18 @@
             for (var j = 0; j < parsed.customPositions.length; j++) {
               var cp = parsed.customPositions[j];
               if (cp && cp.tv && cp.name) {
-                next.push({ id: cp.id || ("c_" + j), tv: cp.tv, name: cp.name, account: cp.account || "TR", ccy: cp.currency || "EUR", refPx: cp.refPriceEUR || 100, qty: cp.qty || 0, cost: cp.cost || 0, pocket: mapOldPoleToPocket(cp.pole) });
+                var cip = (cp.id && parsed.positions[cp.id]) ? parsed.positions[cp.id] : {};
+                next.push({
+                  id: cp.id || ("c_" + j),
+                  tv: cp.tv,
+                  name: cp.name,
+                  account: cp.account || "TR",
+                  ccy: cp.currency || "EUR",
+                  refPx: cp.refPriceEUR || 100,
+                  qty: typeof cip.qty === "number" ? cip.qty : (typeof cp.qty === "number" ? cp.qty : 0),
+                  cost: typeof cip.cost === "number" ? cip.cost : (typeof cp.cost === "number" ? cp.cost : 0),
+                  pocket: mapOldPoleToPocket(cp.pole)
+                });
               }
             }
           }
@@ -2795,11 +2822,37 @@
       return;
     }
     if (e.target.closest("#btnIoCopy")) {
-      try { navigator.clipboard.writeText(document.getElementById("ioBox").value); showToast("📋 Sauvegarde copiée !"); } catch (err) {}
+      var box = document.getElementById("ioBox");
+      var txt = box ? box.value : "";
+      var copied = false;
+      try {
+        if (window.CopiloteAndroid && typeof window.CopiloteAndroid.copyText === "function") {
+          copied = !!window.CopiloteAndroid.copyText(txt);
+        }
+      } catch (err) {}
+      if (!copied && box) {
+        try { box.focus(); box.select(); box.setSelectionRange(0, txt.length); copied = document.execCommand("copy"); } catch (err) {}
+      }
+      if (!copied && navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(txt).then(function() { showToast("📋 Sauvegarde copiée !"); }).catch(function() { showToast("⚠️ Sélectionnez tout le texte et copiez-le"); });
+        return;
+      }
+      showToast(copied ? "📋 Sauvegarde copiée !" : "⚠️ Sélectionnez le texte ci-dessus et copiez-le");
       return;
     }
     if (e.target.closest("#btnIoDownload")) {
-      var blob = new Blob([document.getElementById("ioBox").value], { type: "application/json" });
+      var dlBox = document.getElementById("ioBox");
+      var dlTxt = dlBox ? dlBox.value : "";
+      if (window.CopiloteAndroid && typeof window.CopiloteAndroid.shareText === "function") {
+        window.CopiloteAndroid.shareText("copilote-h24.json", dlTxt);
+        return;
+      }
+      if (isApkUa) {
+        try { if (dlBox) { dlBox.focus(); dlBox.select(); dlBox.setSelectionRange(0, dlTxt.length); document.execCommand("copy"); } } catch (err) {}
+        showToast("📋 Code copié (l'APK bloque les fichiers .json) — collez-le dans Importer !");
+        return;
+      }
+      var blob = new Blob([dlTxt], { type: "application/json" });
       var url = URL.createObjectURL(blob);
       var dl = document.createElement("a");
       dl.href = url; dl.download = "copilote-h24.json";
