@@ -1,6 +1,15 @@
 {
-  "updatedAt": "2026-11-24T10:53:03Z",
+  "updatedAt": "2026-11-24T11:43:01Z",
   "upcomingEarnings": [
+    {
+      "id": "earn_HKEX:1810_20261124",
+      "tv": "HKEX:1810",
+      "name": "Xiaomi",
+      "weight": "3,4 %",
+      "timestamp": 1795521600,
+      "dateStr": "24/11/2026",
+      "daysLeft": 0
+    },
     {
       "id": "earn_NYSE:BLK_20270121",
       "tv": "NYSE:BLK",
@@ -81,15 +90,6 @@
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
       "daysLeft": 79
-    },
-    {
-      "id": "earn_NYSE:KO_20270216",
-      "tv": "NYSE:KO",
-      "name": "Coca-Cola",
-      "weight": "0,1 %",
-      "timestamp": 1802779200,
-      "dateStr": "16/02/2027",
-      "daysLeft": 84
     }
   ],
   "majorMoves": [
@@ -126,37 +126,59 @@
   ],
   "items": [
     {
-      "id": "32ec9b56d1d40bf4",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Le bénéfice de Xiaomi recule de 57 % au troisième trimestre, les ventes de véhicules électriques diminuant - Zonebourse Suisse",
-      "excerpt": "La société chinoise Xiaomi Corp a annoncé mardi un recul de 57 % de son bénéfice net au troisième trimestre, inférieur aux attentes des analystes. Le fabricant chinois de…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Tue, 24 Nov 2026 10:33:28 GMT",
-      "pubTs": 1795516408,
-      "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNTGtsMllISV9ra0U3bEtBQzh5cWRScS1LeFpBaFcwSzZlSFZIbTZrUUhOUlBsVm00WEh0M2JFa01NVV9uZ1dVNURFUGxxczBmR0xGS3pWamJSa0pyLWgxbWhMMUE0WVdnZW13Z2RRQ25JZ2dhaGw2MUJCUHlyc3Q5dEduYkhqbFg4Tml6dVV6THVIR2ZVSGEyWnFaNVNBdDg2XzJ5VkZxNW1TSnZwREFUNjhMT04xaXc5a1pPdnl4cUIzTU1TNFhqZmoxVGoycU8yX281dHd4RVF0RGRUM21qVHczN1dxQUh6SmpxU3dB?oc=5"
-    },
-    {
-      "id": "a8d68eda36bc248d",
+      "id": "992006a4a4d6a763",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Appels sur l'actualité - IA : Anthropic une valorisation record mais pour quelle rentabilité ? - RFI",
-      "excerpt": "Pour la première fois l'un des champions américains de l'intelligence artificielle, Anthropic, fait son entrée à la bourse de New York ce jeudi. Un minimum de 825 millions de titres…",
-      "source": "RFI",
-      "pubDate": "Tue, 24 Nov 2026 10:20:47 GMT",
-      "pubTs": 1795515647,
-      "link": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPTThOSG1SLTN5T2NiMnZieTFJMU93Nko0NHFMNjdHa2tDWlVkVGp4YS1QWEo5WlFmUm1kSWd0Skt2MUsyZ1l2SWRHU1hXZlliM3ZMU29lelVNU1NvdXlqa2FFMm9HVnlkeDRtRXpuUGdGSUVJTF9NZ2huMHJIbkNENWwyRDIyMFJBS0FsWHRVUDNodmQxSWpLNEhlcG1wM2Zzbnl0LU14NGJVeURIYlBOalpvM2Q1YWtQUC15MXA5Rk44R3ZpSXVLdlB5eDByS043dEpB?oc=5"
+      "title": "Anthropic passe sous la barre des 83 dollars, son prix d'introduction en bourse, alors que l'élan haussier de - Boursorama",
+      "excerpt": "L'action d'Anthropic ( ANT.O ) a chuté sous son prix d'introduction en bourse de 83 dollars lors des échanges avant l'ouverture mardi , un revirement spectaculaire quelques jours…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 11:25:29 GMT",
+      "pubTs": 1795519529,
+      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPUHp4OFo3N1RaaWdtaGZwaGRzTzExcnk4TDYwdjNsZXdYMlNrRVlkRjdyTUNlN2dYYzZHdVR3a1p4eDdNRDNIMGhrQ1gxSmhNVnRHbGhydjgyMzJJT0FRb3J3c2NzOWxfZWxUc1AzOVdjcmVnX3BuRkhtNGlEOHotTFRYZWVkdDJ4UWhPRndCdkNaeExfYno3Q2tScGlyc0ZlSWJKZzFMbkFTY3ZDNy1FR01rbl9rRmZxN0w1RkJvWkNEdE85YXdnY1FjV3NWdXFvZk9zR29Ga0VsR0d2eGNoWnI5bGMzc1JTRFYyR3FuQkRGZkFKOTZjcmRDZ2ZpZlg0ZzNubWFxbmpUSkR6TThFb21nbXNVdnE2WWJ6alh3RmV4OUgwcVVnWWx3QTRNeEJQZXlJM3lfMjVzWjRqU3Fj0gHEAkFVX3lxTE1HdWdSVVRWd3pzRHI4WThpcVk2Z2dFMmMwOEZfZnBCd3h1Rk1xUHU1UmlCTnR3WHA4WXN5cVFkTXQ4OW1hb3c5bXFhdVY1bkN4QU5nTWlCWnlQTG14RnVhMDVPNHZxcXVPYXdnLUhRUmxhUE14SEh3SUlyUEc3NnpNM3Nfd1hIRHQ0SWV2UmxKVU9pRUlVSGFOdF9vU0ZDOEdxWHVvZVRkbHJiZFBmVk1FcGgxbmY1YUZDSlo2Q0VOUkR0ZVFrRzZMQmhteFRLWDVUcGRlTTZtV05vcUhtQXoxcUQ2VnZCc09pWnR1RXFrNzloenlQZ1dESFFjQ1ZULWVJNncyUmpGVzEwd041ekRoZmJ1SVo4ekx4endNTjk2dDhVQUxJUzg4ZndvazdlZ2xVbEVUUmZOWWI4a0xpdU5rbUtvMg?oc=5"
     },
     {
-      "id": "7609d6bc89e5e3ef",
+      "id": "b9a720be83f7de6c",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Le bénéfice de Xiaomi rate les prévisions du T3 avec des ventes en baisse - Investing.com France",
+      "excerpt": "Le chinois Xiaomi Corp a fait état mardi d’un recul de 57 % de son bénéfice net au troisième trimestre, inférieur aux prévisions des analystes. Le fabricant chinois de smartphones et…",
+      "source": "Investing.com France",
+      "pubDate": "Tue, 24 Nov 2026 10:50:00 GMT",
+      "pubTs": 1795517400,
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOX2UxLWh2a2psVDE3UzdHdmlRdHN2TlNLQVVOOF85aVZSX2ZSOGcyTUhRNDJnYS1fSXhfazI2X1dCUzFfNmpIV3BfMGp3NUhqLTE2QVhReFlqQ1dGNXdZRFdGNlhJUTgtQ082aXZ1WFRUNDVyZmYwMFBiQXlwQmxqa1lJZE9JbS1lVjZVdEhrQ2lNZjhMaVNCZHRWUVpqYThmNFJkQmZfMnQ1dkpTamNPdVdEUlZ1YkkxRGZ6cA?oc=5"
+    },
+    {
+      "id": "fc41d1f1fb3f2262",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Les cours de l'or reculent légèrement alors que les marchés attendent les chiffres de l'inflation aux États-Unis - Business AM",
-      "excerpt": "Principaux renseignements Les cours de l’or ont légèrement baissé, tandis que les opérateurs attendent avec impatience la publication des prochains chiffres de l’inflation…",
-      "source": "Business AM",
-      "pubDate": "Tue, 24 Nov 2026 09:30:00 GMT",
-      "pubTs": 1795512600,
-      "link": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQVS15anl0OTkxRmJ1M01Da3prT0xSX3hlY1E0U1NRMlptRUUyc2Y0Qk02RGRkQ0NIZmpYUmtOTlRSS0d0c25rLXpwaHd0bVNqZ2RqSU5kR2g5M3FoM1NXeXlnR2dkSmd0V0JPaDlqc01nRzl0LXROVGxRal9WZk9ONkoxbF81a0NvMUxUZFdaN0RxQ2JXSEhlUzEzYWJReHotNVA2YWJwUm80TExfTmRmd3A5eFVQbWNnWFdZX0pQaGJJT2RCcTIwaU85NHNYSWg0ZGc?oc=5"
+      "title": "Les taux en ordre dispersé aux Etats-Unis à la veille de l'indicateur d'inflation PCE - ABC Bourse",
+      "excerpt": "PARIS --Les rendements des obligations d'Etat américaines évoluent en ordre dispersé mardi matin, alors que les investisseurs se préparent à la parution mercredi de chiffres…",
+      "source": "ABC Bourse",
+      "pubDate": "Tue, 24 Nov 2026 10:44:49 GMT",
+      "pubTs": 1795517089,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb0VtY2RJZ1F5bkh2U1ZYUUI1WE9TT2R2Qlotb05ocE1zMTJqTzVwLURIakUydUtTTEt2NjBBMGQwcHFnUmRwV0FfM19tMXZzZnc3ajZzdTk3UnJxdVBTMExPLVNBb2o5T21NZjJLakJNZ0E5akxjUTdJU3BtWERNQ0hpYllteGx2R3JBV2VGZWptY1VZamJ5bUpvNGE1cUk4MWZFZ2lNMEpQSVhrbkppU2ZPbW1yOE5oc29kYXFB?oc=5"
+    },
+    {
+      "id": "5bf3fd173184c964",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft Teams va surveiller vos appels avec l’IA pour démasquer les arnaques - Frandroid",
+      "excerpt": "La messagerie collaborative de Microsoft s’apprête à accueillir un nouvel outil de surveillance. En utilisant l’intelligence artificielle, la firme de Redmond souhaite détecter les…",
+      "source": "Frandroid",
+      "pubDate": "Tue, 24 Nov 2026 10:35:01 GMT",
+      "pubTs": 1795516501,
+      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
+    },
+    {
+      "id": "54532972aa15050d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 10:09:43 GMT",
+      "pubTs": 1795514983,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
     },
     {
       "id": "9fee1d0bf7ce3d63",
@@ -168,28 +190,6 @@
       "pubDate": "Tue, 24 Nov 2026 09:08:43 GMT",
       "pubTs": 1795511323,
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
-    },
-    {
-      "id": "d288e5e2138c5f54",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Japanese Yen strengthens amid intervention fears, traders await US PCE inflation data - tmgm.com",
-      "excerpt": "The USD/JPY pair declines to near 158.95 during the early Asian trading hours on Tuesday. The Japanese Yen (JPY) edges higher against the US Dollar (USD) as traders remain on high…",
-      "source": "tmgm.com",
-      "pubDate": "Tue, 24 Nov 2026 02:05:37 GMT",
-      "pubTs": 1795485937,
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNzViMFA5YTRwOTBmN29wQm43cWdsSjJqX2ZQWWR6UlVBUWlUUE9zMFU3aWdPaTdNX3ppeWRYandfMGN2RzRvQkFHRGhUaGpVUWhDWU5ueUsweXd1c2Q5eWRiTk9Ud3pkUXplWnlyTHhXeDJ2eGJKR2VDVl8wSG4wZXc4TkdzQ1A3X3Rpa3NFczM0OHl0czFUSjRmTE5TSGg3U3AwSWNpcm9tdTRGdU1HcnFkUTVvZ2IwOHJsclNjNVZYOTN2S3JnbnB3ZHFyNjdvTDlhLVIwaVYwczJwY244Z0s0MTA?oc=5"
-    },
-    {
-      "id": "25c81f26fa42eb62",
-      "theme": "Semi-conducteurs (TSMC / ASML)",
-      "tagCls": "b-blue",
-      "title": "ASML Holding prend 9,28% - Boursier.com",
-      "excerpt": "Sur les sept derniers jours, l'action ASML Holding a enregistré une baisse de 1,64%. En un an l'action a, en revanche, connu une forte hausse de 40,08%, valant 1 383,78$ contre…",
-      "source": "Boursier.com",
-      "pubDate": "Mon, 23 Nov 2026 21:21:54 GMT",
-      "pubTs": 1795468914,
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
     },
     {
       "id": "e603a91a1e9c791c",
@@ -282,6 +282,11 @@
     "8d06962c54c2de88",
     "21a26bab54cba752",
     "32ec9b56d1d40bf4",
-    "a8d68eda36bc248d"
+    "a8d68eda36bc248d",
+    "992006a4a4d6a763",
+    "b9a720be83f7de6c",
+    "fc41d1f1fb3f2262",
+    "5bf3fd173184c964",
+    "54532972aa15050d"
   ]
 }
