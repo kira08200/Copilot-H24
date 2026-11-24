@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T07:59:44Z",
+  "updatedAt": "2026-11-24T08:57:56Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,15 +126,37 @@
   ],
   "items": [
     {
-      "id": "8d1bd601c1f098b3",
-      "theme": "NVIDIA",
-      "tagCls": "b-amber",
-      "title": "Affaire Nvidia : « Le boom de l'IA est devenu trop important à l'échelle mondiale pour qu'on le laisse échouer - Investir Les Echos",
-      "excerpt": "Le rebond de la tech américaine se prolonge chez les fabricants de puces asiatiques. Derrière la célébration boursière, la réintégration du patron de Nvidia révèle l'ampleur de…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 07:36:17 GMT",
-      "pubTs": 1795505777,
-      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPUFVibGlwWmNvS2FkUGhGRzROdHo2OC1saTYzd1RMczI0enptaDlKZHVWeGZLYTQ5MGhra045T2ZQZ2tnRTNINUpyU0MtbWFhNlJuRmg2VWtWUnhzdDhWaUNVRDFyckpOVnRLVHBfWmlmRWplejNOV2VMOWRRTXZYckVGbWZjelM4RG9OYnJrTF9sQzk4X0lCX2V5X0VTQVRLc1ltNl9fdEh2ZWl3RlpWclNyTmdTZlJrNjVVemdsaEFNRkNMUFpTNTBVaXFfOWpwV083TE1MUVpybU5Oc1RIWkhYMmFTX0xPTTRVay1aRlNiU3F6OFBRbEhIUkw4d2dNNEJ6Tg?oc=5"
+      "id": "cf9d3097ef4db12e",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Dossier de Bourse d'Anthropic : les confessions d'un géant de l'IA - JDN",
+      "excerpt": "Pour la première fois l'un des champions américains de l'intelligence artificielle, Anthropic, fait son entrée à la bourse de New York ce jeudi. Un minimum de 825 millions de titres…",
+      "source": "JDN",
+      "pubDate": "Tue, 24 Nov 2026 08:30:46 GMT",
+      "pubTs": 1795509046,
+      "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQzFLdDRkUW9zWlRJa2tidFRzMy1kVjI0OUh5ak5FMDlaMi1LaWdvdTB2YmJnTXo3VmxfMVl3TWVNLVJKcDZMLUxmekRlbG9sQ1hqQlgxZnNidmJXSWNHRzRhRHZycmJ3dkVoUjhZRS1wNzZ3alV6XzZzWi1SdjFCN1JUOTdlbGxmb3hmVWd2M0xub3dreVpLbVpQOC1CTThhOXM0SUpnZWt6OUlEQlVJZTUwblF1V29uVTk2WDdQRUxtenRNMGJF?oc=5"
+    },
+    {
+      "id": "afca977531d8843a",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Bourse : Sanofi casse sa tirelire, la fusion SpaceX et Tesla en discussion - Zonebourse",
+      "excerpt": "Sanofi va racheter Insmed pour 41 milliards de dollars, tandis que HLD prépare une offre sur Clariane. A l'international, Clariant discute l'acquisition d'Ashland et Petrobras…",
+      "source": "Zonebourse",
+      "pubDate": "Tue, 24 Nov 2026 08:00:08 GMT",
+      "pubTs": 1795507208,
+      "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxQcUpSOFlBQ1ZmalRlUURkU0h1Q2JpYktwblYyNGcwSlRfbUVITW51WGR0Q3RzQ0lqSVhjUXVhTWtFdXQ4aGcxdG9aeFY2eFhGN3RfNkhuSGdJNUVleWxINDJVUVNJSGNneVNEM25KRC03ZlZ0R3lLSVZfa0RoWllWamxLZzFwVHp4THNpU2NjYU5GZy1adUlCNWtEM2FxdTNsU2dQbjNzT3NraVg0Nkw0RE1TWHZEb05aYjhJbWdNaGZpUE5HZXViZXFCVmU?oc=5"
+    },
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 07:22:23 GMT",
+      "pubTs": 1795504943,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
       "id": "3d84fe6cc36e0349",
@@ -159,17 +181,6 @@
       "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNzViMFA5YTRwOTBmN29wQm43cWdsSjJqX2ZQWWR6UlVBUWlUUE9zMFU3aWdPaTdNX3ppeWRYandfMGN2RzRvQkFHRGhUaGpVUWhDWU5ueUsweXd1c2Q5eWRiTk9Ud3pkUXplWnlyTHhXeDJ2eGJKR2VDVl8wSG4wZXc4TkdzQ1A3X3Rpa3NFczM0OHl0czFUSjRmTE5TSGg3U3AwSWNpcm9tdTRGdU1HcnFkUTVvZ2IwOHJsclNjNVZYOTN2S3JnbnB3ZHFyNjdvTDlhLVIwaVYwczJwY244Z0s0MTA?oc=5"
     },
     {
-      "id": "25c81f26fa42eb62",
-      "theme": "Semi-conducteurs (TSMC / ASML)",
-      "tagCls": "b-blue",
-      "title": "ASML Holding prend 9,28% - Boursier.com",
-      "excerpt": "Sur les sept derniers jours, l'action ASML Holding a enregistré une baisse de 1,64%. En un an l'action a, en revanche, connu une forte hausse de 40,08%, valant 1 383,78$ contre…",
-      "source": "Boursier.com",
-      "pubDate": "Mon, 23 Nov 2026 21:21:54 GMT",
-      "pubTs": 1795468914,
-      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
-    },
-    {
       "id": "fa3ffe13bc513ac8",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -181,22 +192,11 @@
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPTUJZOTU3NGoyZ2drekhkM05WSEdFaHZTN25KQTFLR0NZdHZVUWxtZVdoOTA1VTdBNVYwY19QSFVYUlJ5UDZ5cm5USE9VazdBaEhMTnhueTlDZDE0YVBOci1qMVhOZ2hhbXBxNm1ZSEUwbHpFQzdRYmhrVDhBeGxodTNHVDZEdVlCSzlvZzk3TE80YThNNWg0Q3VHU1pKOURzSjlTQnlOWHhaVlZqZndIR1BJTUY5UE5YZTliWkNkdENwVGRjWkIyN1ZDMlprMFBPRmxTb25fWWhJMjA0dGNmbkNORWpydlBadG9VN3FqaW51MXNhbGFsVGNmVGlOQkJwRVE?oc=5"
     },
     {
-      "id": "fa9294ccb8b6f37c",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Mythomètre : \"Il est encore temps d'investir dans Anthropic\", FAUX répond Jean-Benoit Gambet - 23/11 - BFM",
-      "excerpt": "Ce lundi 23 novembre, Guillaume Chaloin, directeur des gestions actions Delubac AM, s'est penché sur le retour de Jensen Huang à la tête de Nvidia, et les conséquences de cette…",
-      "source": "BFM",
-      "pubDate": "Mon, 23 Nov 2026 16:04:34 GMT",
-      "pubTs": 1795449874,
-      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
-    },
-    {
       "id": "e603a91a1e9c791c",
       "theme": "Amazon",
       "tagCls": "b-blue",
       "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
-      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
+      "excerpt": "",
       "source": "Yahoo Finance France",
       "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
       "pubTs": 1795446027,
@@ -272,6 +272,9 @@
     "3d84fe6cc36e0349",
     "move_drop_HKEX:1810_20261124",
     "7a3fff7e8c9b33ca",
-    "8d1bd601c1f098b3"
+    "8d1bd601c1f098b3",
+    "cf9d3097ef4db12e",
+    "afca977531d8843a",
+    "9fee1d0bf7ce3d63"
   ]
 }
