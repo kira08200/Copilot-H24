@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T16:58:04Z",
+  "updatedAt": "2026-11-24T17:46:53Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,28 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -11.89,
-      "price": 399.565,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:NVDA_20261124",
-      "tv": "NASDAQ:NVDA",
-      "name": "NVIDIA",
-      "weight": "13,0 %",
-      "changePct": -8.62,
-      "price": 150.83,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:MSTR_20261124",
-      "tv": "NASDAQ:MSTR",
-      "name": "Strategy A",
-      "weight": "2,0 %",
-      "changePct": -7.33,
-      "price": 78.21,
+      "changePct": -8.84,
+      "price": 413.37,
       "currency": "USD",
       "kind": "drop"
     },
@@ -132,9 +112,51 @@
       "price": 117.88,
       "currency": "EUR",
       "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:NVDA_20261124",
+      "tv": "NASDAQ:NVDA",
+      "name": "NVIDIA",
+      "weight": "13,0 %",
+      "changePct": -6.73,
+      "price": 153.94,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261124",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -6.02,
+      "price": 79.32,
+      "currency": "USD",
+      "kind": "drop"
     }
   ],
   "items": [
+    {
+      "id": "5042d76261506656",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "L'action Anthropic s'effondre sous les 83 dollars, son prix d'introduction en bourse, et s'apprête à perdre pr - Boursorama",
+      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 16:59:00 GMT",
+      "pubTs": 1795539540,
+      "link": "https://news.google.com/rss/articles/CBMiygJBVV95cUxObExOMlY4ODM4NnZaaS0yRXRuMHVRT2EtbGZKcjQ4VFdzUnhZaVU2OEZxb0hzUERmV0ljNmxzRGpQcXlqRS01Qm9BcTBIYWlMcjd1aGwwVnd0azlLZlgxWEI0WTFtU2xOeXZpWWgzcDJjb2N6MjAzVy1fVEJCZzZaM1hDalFuNHNOQXdSQlNLSlUwb0RFVGZ2ekNLRGxEeG1yTGQxNEplUmZ4UHYwNWRMRGhHZmkyNkZBWVE0a0dKUjlIU21YdFhYVExINC1lNE1XWENtVmQ1eTRmMXRMUFBwaUcxeEt6RXEzZjNBZzNCLV96V3BESzRadG1VU2k2QlBWYzVzeWIxckJlYkhFMHhPTTJPTTNXVDliZ3E5ejh0VFZzN0tQUXhZZUMyUnltcHNMT2VqdXpaZmFlVmNmcWJCU1ZqUlFsT2xNSlHSAc8CQVVfeXFMTlVHSTh5czZjLVUySjRoTXNlYllqQWpLV0hsX3podzlaU294dEdsOFBMSHZ0dkZqejA3VGRaek9lU3F1MGlEUHhlYm80U244bkJFMDBYdkZuT1JhanRzRi1ZUURVYzRHUXJ5NUFxdWwxWkFKYkh0NXc5WWd3M3Fyb3pwS2hrUGVMVkZGZUFyMEFOZkNQLXMyQ2g5TVVQRXAwMngtemp3cUFhXzV6REE4c3o2T1d6dWtsem4wMFQ3LWRaa0ZyQkd6ak1WeXV3NVhfQlYxbVNtT0hQSlFIUU9KclNST1QtZkFKcGduOTdTamJ1enVHSmhsYXNGNnBoR3JUdVRDN0V2Q2k0Y2duMDFxbjlIMklUU2s1ZTRSdkd0S2pPNlE4bDlIUk54WDFrOTR1NVlaVmhndF9JQ3ZYVG1jcGFnV05hNzkyUWNwWHNlRk0?oc=5"
+    },
+    {
+      "id": "54532972aa15050d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 16:35:34 GMT",
+      "pubTs": 1795538134,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
+    },
     {
       "id": "863578b463b9b92f",
       "theme": "Amazon",
@@ -145,17 +167,6 @@
       "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
       "pubTs": 1795537144,
       "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
-    },
-    {
-      "id": "c38feb62009be3f3",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "IPO record d'Anthropic : faut-il investir à ce prix ? - BFM",
-      "excerpt": "Anthropic a fixé le prix de son introduction en Bourse à 83 $ par action, au-dessus de la fourchette de 70 à 78 $ annoncée au départ. Le titre doit débuter sa cotation jeudi 19…",
-      "source": "BFM",
-      "pubDate": "Tue, 24 Nov 2026 16:13:38 GMT",
-      "pubTs": 1795536818,
-      "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOdVZ4bWVNSVUxcW5pTFhtNHJoRjNBQmN0QUI5Q01sbjd1blhoNTZ1ZjlDNExoVHgzaGZqZU9yaTljOWJFMzJjUWE4em5IM0tKandEN2lIRzhTRDA3eWRValRSbkxUUE5ZMWwzZVdKUDJwakFWbmtETTI4N0JJWVZnWk92b3NvMXNLT3NiTG9vWlNjOHVVT2x5RkJ6dV9SYldhNG1kTGp0R2xZcms?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
@@ -178,17 +189,6 @@
       "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
       "pubTs": 1795532157,
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
-    },
-    {
-      "id": "54532972aa15050d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
-      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
-      "source": "L'Echo",
-      "pubDate": "Tue, 24 Nov 2026 11:06:22 GMT",
-      "pubTs": 1795518382,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
     },
     {
       "id": "5bf3fd173184c964",
@@ -316,6 +316,7 @@
     "9ef42602bb57d7d2",
     "880211cf3ac3c617",
     "863578b463b9b92f",
-    "c38feb62009be3f3"
+    "c38feb62009be3f3",
+    "5042d76261506656"
   ]
 }
