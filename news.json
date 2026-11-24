@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T04:44:03Z",
+  "updatedAt": "2026-11-24T05:40:58Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,6 +126,17 @@
   ],
   "items": [
     {
+      "id": "3d84fe6cc36e0349",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L’or progresse légèrement grâce aux achats à bon compte, les chiffres de l’inflation aux États-Unis attendus - Zonebourse",
+      "excerpt": "Les cours de l’or ont légèrement progressé mardi, prolongeant leur rebond depuis un plus bas de 14 mois, les acheteurs à bon compte étant revenus après les fortes ventes de la…",
+      "source": "Zonebourse",
+      "pubDate": "Tue, 24 Nov 2026 04:59:21 GMT",
+      "pubTs": 1795496361,
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPU25Mb015d3NFY29Zd1RkUnI1THBrc2FOLXk4OFBHUEFxdW1jUS1FVG90dGc0OGxkdDMwcGxnZzUwWGkweGJaaUdIb0NaVVZuUFc5VkQ1eHc2MzlHZmlZcGttOHhGZUE2RWtuaVAwNDlGR3NOZlZlbm84N180TF9SUmZ4cThiRXZ5djNJbW5lNzBBX0xjZWUzenhmam9GaGlhbHhGdjJtZU1ob0F2OHpoRExmTklTbnBIZGlzbXA2Q3ZJVGFJY1I4LVZxNTlMbjRvZFVaWDF3SDJ2aTlnd0M0bW9LdGtUaFR5ZmM0Sm4zdw?oc=5"
+    },
+    {
       "id": "d288e5e2138c5f54",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -137,26 +148,15 @@
       "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQNzViMFA5YTRwOTBmN29wQm43cWdsSjJqX2ZQWWR6UlVBUWlUUE9zMFU3aWdPaTdNX3ppeWRYandfMGN2RzRvQkFHRGhUaGpVUWhDWU5ueUsweXd1c2Q5eWRiTk9Ud3pkUXplWnlyTHhXeDJ2eGJKR2VDVl8wSG4wZXc4TkdzQ1A3X3Rpa3NFczM0OHl0czFUSjRmTE5TSGg3U3AwSWNpcm9tdTRGdU1HcnFkUTVvZ2IwOHJsclNjNVZYOTN2S3JnbnB3ZHFyNjdvTDlhLVIwaVYwczJwY244Z0s0MTA?oc=5"
     },
     {
-      "id": "0a3624c93e9d5df6",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Ackman souhaite un objectif de 3 % pour la Fed ; l'inflation PCE se situe à 3.65 %. - FourWeekMBA",
-      "excerpt": "Jean-François Ouvrard (Morgan Stanley) : « Même si c’est à un prix plus élevé, la dette française trouve toujours des investisseurs sur le marché » Droits de reproduction et de…",
-      "source": "FourWeekMBA",
-      "pubDate": "Mon, 23 Nov 2026 21:12:19 GMT",
-      "pubTs": 1795468339,
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNWkhmZU9uNFlmR2xXQi1GX3F6QXhSeHBZZTI4ZzJsZjRWNTF1V25GYkZtSnRmMHk5TDFLaEJ3R3VSVVRXR3dnVFpHcUhEY2dEaGZkeVNmRFZva2ZIV0tST0dpQ3d0RmUxVG5XSGJPMTlEOTJ1YTI1R3NTYkRnSmY0SUJ5ZDJrMFVSdzdlYjNaV1J2OGNITFdZazV4bjBDTFFMTDUxS3czR2xCcHNULUVXejR2aw?oc=5"
-    },
-    {
-      "id": "7813f16b38341fe0",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Les options d’Anthropic démarrent en fanfare, mais restent derrière le record de SpaceX - Zonebourse Suisse",
-      "excerpt": "Les options nouvellement cotées d’Anthropic ont fait l’objet d’échanges soutenus lundi, marquant un solide démarrage pour le nouveau marché de produits dérivés du développeur…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Mon, 23 Nov 2026 20:39:00 GMT",
-      "pubTs": 1795466340,
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxNS1gyZ2IxbkZ2cThmZ1EzT0JMZXF4UlhfZ2JyVFRSTWJlajBRaFB4MTdVZTJscDZJX0FwYjd5MGExRF8xUGd2V2dzWEtYd3FpUXBTeGluVmlYMkJFYm13OFhoUTRPQzhNNnRiR0M4SlpaT3psZEtPOFRiY01nNUd2UEhZYUxQSmpJT2ZRVTUzLTlGeUxIS29KVmtwRWZPa1dmQ1EyRGVOV1M2ZGhKRGdRRmlRenhobUk3cUI0Mks1VEdXLWJsNHYwYmtZdHRvTjdwZW9rOFY2NWEyZW81YlFpTA?oc=5"
+      "id": "25c81f26fa42eb62",
+      "theme": "Semi-conducteurs (TSMC / ASML)",
+      "tagCls": "b-blue",
+      "title": "ASML Holding prend 9,28% - Boursier.com",
+      "excerpt": "Sur les sept derniers jours, l'action ASML Holding a enregistré une baisse de 1,64%. En un an l'action a, en revanche, connu une forte hausse de 40,08%, valant 1 383,78$ contre…",
+      "source": "Boursier.com",
+      "pubDate": "Mon, 23 Nov 2026 21:21:54 GMT",
+      "pubTs": 1795468914,
+      "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
     },
     {
       "id": "e62a9fb8b84862e4",
@@ -181,26 +181,26 @@
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPTUJZOTU3NGoyZ2drekhkM05WSEdFaHZTN25KQTFLR0NZdHZVUWxtZVdoOTA1VTdBNVYwY19QSFVYUlJ5UDZ5cm5USE9VazdBaEhMTnhueTlDZDE0YVBOci1qMVhOZ2hhbXBxNm1ZSEUwbHpFQzdRYmhrVDhBeGxodTNHVDZEdVlCSzlvZzk3TE80YThNNWg0Q3VHU1pKOURzSjlTQnlOWHhaVlZqZndIR1BJTUY5UE5YZTliWkNkdENwVGRjWkIyN1ZDMlprMFBPRmxTb25fWWhJMjA0dGNmbkNORWpydlBadG9VN3FqaW51MXNhbGFsVGNmVGlOQkJwRVE?oc=5"
     },
     {
-      "id": "59099ab8c72321bf",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Le patron de Microsoft imagine une économie bouleversée par l'IA qu'il contribue lui-même à développer - Science et vie",
-      "excerpt": "Découvrez pourquoi le patron de Microsoft redoute un impact économique de l'IA capable de bouleverser entreprises, emploi et démocratie.",
-      "source": "Science et vie",
-      "pubDate": "Mon, 23 Nov 2026 18:00:35 GMT",
-      "pubTs": 1795456835,
-      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQWUFyNURRUFJxTUVKZmw5NHdPNFBMVTNwRC1rSjNYT1Z6MkpLODZ5eEJra2hCNVlTMmtYeklhS3VQWTJNLXJnOEkzbHFqY2NLa1lNcE9FdW54QzBZeG1XRUlDSFBfdzE2UUZKa1NPQ3AwbWlwX1Z1U2phcXFYUlczOHVpOE55MXdsODFxNFktZmtVMEtjd2NhNTByZkNHSmhQUktHbmxBdWxVYTAyWVVMamFjTWxOMjVTNEFxeHlTUGN6ZlZGQ2d0M0JKOTlkQUg3Q2pnMGs1T0NXU3ZRSHptT1ZqV2hGWmx2MWtud2I0OW4yZw?oc=5"
+      "id": "fa9294ccb8b6f37c",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Mythomètre : \"Il est encore temps d'investir dans Anthropic\", FAUX répond Jean-Benoit Gambet - 23/11 - BFM",
+      "excerpt": "Ce lundi 23 novembre, Guillaume Chaloin, directeur des gestions actions Delubac AM, s'est penché sur le retour de Jensen Huang à la tête de Nvidia, et les conséquences de cette…",
+      "source": "BFM",
+      "pubDate": "Mon, 23 Nov 2026 16:04:34 GMT",
+      "pubTs": 1795449874,
+      "link": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxNQ1I3SWtBUGFqR2NGR2hud05XNmxVVU5abXVCaTFNajlCNVphTUh1b29OUkYzcmRTLVdia2lfdVdVOXkwZVFKN2FDNFNEcmN0SnB5NktrRXlhamdlRDJOU2M4SVlJcWtvSUNxTm9JXzQ3ZEQ2MDctNVd0d2JOR0JBMlJ4b3NjSE9GMUxNel92UDNVbzMwaUZVbWtsNDRoejQ1MVJSaDJRcUZ3YkpMME1UZWM0OGFHZFk4UFE0SnY1Zk9Wb2RlSVVZVG1FcHNQbHhhal8ybjFaLTYtWVM0VUhScUNvc29SMnBGaFhPeFFxSzhzYW5VYkZPbHpVMGhNa1U4MEJvd3NUd0N0aEk?oc=5"
     },
     {
-      "id": "e603a91a1e9c791c",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon accepte de racheter la technologie et l’équipe d’IA Decart pour 7,5 milliards $ - Yahoo Finance France",
-      "excerpt": "Investing.com - Amazon a accepté d’acquérir une grande partie de la startup d’IA Decart, notamment son logiciel d’optimisation et son équipe fondatrice, dans le cadre d’une…",
-      "source": "Yahoo Finance France",
-      "pubDate": "Mon, 23 Nov 2026 15:00:27 GMT",
-      "pubTs": 1795446027,
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNUjRMdUJYbzM1OFRWYnhLZHVxT3dMRXFnaUJsM3RDOHZzaFkyMlczYm96T2FEcnBXTlc2VDZuUlVidzI2Z3g1YTh3VEdrOWt1bFBkRWE2aWdSZ3Q1VWRGTnVISUtFUEYzWTIwV1FiZkVlVnVjSVU4Rk5vMTZXNkx5b0x1N28yb1Y5OEdWWjYzU1V3UV9rUkJz?oc=5"
+      "id": "8a756c2ab21f5391",
+      "theme": "BYD",
+      "tagCls": "b-green",
+      "title": "Un tribunal néerlandais bloque les ventes du SUV BYD Ti7 dans l’UE - Investing.com France",
+      "excerpt": "BYD fera appel d’une décision de justice néerlandaise interdisant la commercialisation dans l’Union européenne de son véhicule utilitaire sport Fang Cheng Bao Ti7, après que le…",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 20 Nov 2026 18:49:00 GMT",
+      "pubTs": 1795200540,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPc0cwSXhnRi1nYkN1R0JQYUJTUmxZSlN5Ql9JX3ltdE5Za2k1dWh4dFJibDNHZUdrWTJwc2JFNWxENEI5UUQ1NUZObWNiR0xHZDFXZDRUSjBVdU00OTR3NHg4b3NaNk9NbUxKWGZJVl9SMkt6ZVNURVFYSVI2Zndmc3pIM3F5NHZFMFlFWGgxSVp5MXBqeU5PVF9UZG0yMDZGblN0Z3J0T0U1RnVCei1Tdm8wY3NUc0hZQ3VGMzNR?oc=5"
     }
   ],
   "notifiedIds": [
@@ -268,6 +268,7 @@
     "45f4779a6e1a3ecf",
     "d288e5e2138c5f54",
     "25c81f26fa42eb62",
-    "0a3624c93e9d5df6"
+    "0a3624c93e9d5df6",
+    "3d84fe6cc36e0349"
   ]
 }
