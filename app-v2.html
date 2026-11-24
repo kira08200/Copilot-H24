@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0f17">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Copilote Bourse — Assistant Achat &amp; Vente par Profil</title>
+<style>
+  :root {
+    --bg: #0a0f18;
+    --card: #121a27;
+    --card-alt: #182233;
+    --border: #243247;
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+    --green: #10b981;
+    --green-bg: rgba(16, 185, 129, 0.14);
+    --red: #ef4444;
+    --red-bg: rgba(239, 68, 68, 0.14);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245, 158, 11, 0.14);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59, 130, 246, 0.16);
+    --purple: #8b5cf6;
+    --purple-bg: rgba(139, 92, 246, 0.16);
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding-bottom: 88px;
+    line-height: 1.45;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 15, 24, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 16px;
+  }
+  .header-inner {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 800;
+    font-size: 0.96rem;
+    min-width: 0;
+  }
+  .pulse-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+  }
+  .pulse-dot.syncing {
+    background: var(--amber);
+    box-shadow: 0 0 10px var(--amber);
+  }
+  .profile-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--blue-bg);
+    color: var(--blue);
+    border: 1px solid rgba(59, 130, 246, 0.35);
+    border-radius: 99px;
+    padding: 5px 11px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .portfolio-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .total-val {
+    font-size: 1.46rem;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.15;
+  }
+  .status-line {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .gain-col {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .total-gain {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.79rem;
+    font-weight: 700;
+    color: var(--green);
+    background: var(--green-bg);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    padding: 5px 10px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+  .total-gain.neg {
+    color: var(--red);
+    background: var(--red-bg);
+    border-color: rgba(239, 68, 68, 0.25);
+  }
+  .day-sub {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin-top: 3px;
+  }
+  .day-sub.pos { color: var(--green); }
+  .day-sub.neg { color: var(--red); }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 14px;
+  }
+  .section { display: none; }
+  .section.active { display: block; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 15px;
+    margin-bottom: 14px;
+  }
+  .card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .card-title {
+    font-size: 0.96rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .sub {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 10px;
+    line-height: 1.42;
+  }
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.71rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .b-green { background: var(--green-bg); color: var(--green); }
+  .b-red { background: var(--red-bg); color: var(--red); }
+  .b-amber { background: var(--amber-bg); color: var(--amber); }
+  .b-blue { background: var(--blue-bg); color: var(--blue); }
+  .b-purple { background: var(--purple-bg); color: var(--purple); }
+
+  .btn-row {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .btn {
+    flex: 1 1 auto;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: var(--card-alt);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 7px 11px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.15s;
+    user-select: none;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn.active, .btn.primary {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+  .btn.green-outline {
+    border-color: rgba(16, 185, 129, 0.45);
+    color: var(--green);
+    background: rgba(16, 185, 129, 0.08);
+  }
+  .btn.red-outline {
+    border-color: rgba(239, 68, 68, 0.45);
+    color: var(--red);
+    background: rgba(239, 68, 68, 0.08);
+  }
+  .btn.compact {
+    flex: 0 0 auto;
+    min-height: 32px;
+    padding: 5px 10px;
+    font-size: 0.74rem;
+  }
+
+  /* Budget & account control */
+  .budget-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+  .budget-lbl {
+    font-size: 0.76rem;
+    color: var(--muted);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .budget-input {
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.08rem;
+    font-weight: 800;
+    outline: none;
+    text-align: right;
+  }
+  .budget-unit {
+    font-size: 0.92rem;
+    font-weight: 800;
+    color: var(--blue);
+  }
+  .preset-chips {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+  .preset-chip {
+    flex: 1;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    border-radius: 8px;
+    padding: 5px 4px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: center;
+  }
+  .preset-chip.active {
+    background: var(--blue-bg);
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+
+  /* Signal items */
+  .sig-item {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 13px;
+    margin-bottom: 9px;
+  }
+  .sig-item:last-child { margin-bottom: 0; }
+  .sig-item.buy { border-left: 3px solid var(--green); }
+  .sig-item.sell { border-left: 3px solid var(--red); }
+  .sig-item.warn { border-left: 3px solid var(--amber); }
+  .sig-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .sig-title {
+    font-size: 0.89rem;
+    font-weight: 800;
+    min-width: 0;
+  }
+  .sig-why {
+    font-size: 0.79rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+  .sig-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .sig-meta {
+    font-size: 0.73rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Pocket bars */
+  .stacked-bar {
+    display: flex;
+    height: 10px;
+    border-radius: 99px;
+    overflow: hidden;
+    background: #1e293b;
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+  .pocket-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.81rem;
+  }
+  .pocket-row:last-child { border-bottom: none; }
+  .pocket-left {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+  }
+  .pocket-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .pocket-right {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .target-tag {
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-weight: 600;
+  }
+
+  /* Portfolio lines */
+  .line-card {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 13px;
+    margin-bottom: 9px;
+    cursor: pointer;
+  }
+  .line-card:last-child { margin-bottom: 0; }
+  .line-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+  }
+  .line-name {
+    font-size: 0.9rem;
+    font-weight: 800;
+    min-width: 0;
+  }
+  .line-sub {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .pos-txt { color: var(--green); font-weight: 700; }
+  .neg-txt { color: var(--red); font-weight: 700; }
+  .line-details {
+    display: none;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.42;
+  }
+  .line-card.open .line-details { display: block; }
+
+  /* Profile cards */
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .prof-card {
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 11px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text);
+    transition: 0.15s;
+  }
+  .prof-card.active {
+    border-color: var(--blue);
+    background: rgba(59, 130, 246, 0.14);
+  }
+  .prof-title {
+    font-size: 0.86rem;
+    font-weight: 800;
+    margin-bottom: 3px;
+  }
+  .prof-desc {
+    font-size: 0.73rem;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  /* Onboarding hero */
+  .hero-box {
+    text-align: center;
+    padding: 18px 14px;
+    background: linear-gradient(160deg, rgba(59,130,246,0.14), rgba(16,185,129,0.08));
+    border: 1px solid rgba(59,130,246,0.32);
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+  .hero-title {
+    font-size: 1.08rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .hero-sub {
+    font-size: 0.81rem;
+    color: var(--muted);
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+
+  /* Modals */
+  .modal-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 8, 15, 0.78);
+    backdrop-filter: blur(4px);
+    z-index: 90;
+    align-items: center;
+    justify-content: center;
+    padding: 14px;
+  }
+  .modal-backdrop.open { display: flex; }
+  .modal-box {
+    width: 100%;
+    max-width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+  }
+  .modal-title {
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .field-lbl {
+    display: block;
+    font-size: 0.74rem;
+    color: var(--muted);
+    font-weight: 700;
+    margin: 9px 0 4px;
+  }
+  .field-input {
+    width: 100%;
+    background: var(--card-alt);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text);
+    padding: 9px 11px;
+    font-size: 0.88rem;
+    outline: none;
+  }
+  .field-input:focus { border-color: var(--blue); }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .search-results {
+    margin-top: 6px;
+    background: #0d1420;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+  .sr-row {
+    padding: 9px 11px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+  .sr-row:last-child { border-bottom: none; }
+  .sr-row:hover { background: rgba(59, 130, 246, 0.12); }
+  .sr-main {
+    min-width: 0;
+  }
+  .sr-name {
+    font-size: 0.83rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .sr-meta {
+    font-size: 0.7rem;
+    color: var(--muted);
+  }
+  .sr-px {
+    font-size: 0.79rem;
+    font-weight: 800;
+    color: var(--green);
+    white-space: nowrap;
+  }
+  .selected-asset-pill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    background: rgba(16, 185, 129, 0.11);
+    border: 1px solid rgba(16, 185, 129, 0.38);
+    border-radius: 10px;
+    padding: 8px 10px;
+    margin-top: 8px;
+  }
+
+  /* Bottom Nav */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(13, 19, 30, 0.97);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 6px 12px;
+    z-index: 60;
+  }
+  .nav-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 0.74rem;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    cursor: pointer;
+    flex: 1;
+    padding: 3px;
+  }
+  .nav-btn.active { color: var(--blue); }
+  .nav-icon { font-size: 1.18rem; line-height: 1; }
+
+  .toast {
+    position: fixed;
+    top: 74px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e293b;
+    color: #fff;
+    border: 1px solid var(--blue);
+    padding: 8px 15px;
+    border-radius: 99px;
+    font-size: 0.79rem;
+    font-weight: 600;
+    z-index: 100;
+    display: none;
+    max-width: 92vw;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+  }
+  .toast-undo {
+    margin-left: 8px;
+    background: var(--blue);
+    color: #fff;
+    border: none;
+    border-radius: 99px;
+    padding: 3px 10px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .disclaimer {
+    font-size: 0.71rem;
+    color: var(--muted);
+    line-height: 1.4;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 10px;
+  }
+  @media (max-width: 420px) {
+    .total-val { font-size: 1.32rem; }
+    .profile-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div id="toast" class="toast"></div>
+
+<!-- Modal Recherche & Ajout 1-Clic -->
+<div id="addModal" class="modal-backdrop">
+  <div class="modal-box">
+    <div class="modal-title">➕ Ajouter une valeur</div>
+    <div class="sub" style="margin-bottom:6px;">Tapez un nom, un ticker ou un code ISIN : tout se remplit automatiquement.</div>
+    <input type="text" class="field-input" id="searchAssetInput" placeholder="Ex : LVMH, Apple, CW8, Air Liquide, FR0000121014..." autocomplete="off">
+    <div id="searchStatus" style="font-size:0.72rem;color:var(--muted);margin-top:5px;">Tapez 2 lettres ou choisissez parmi les titres populaires ci-dessous.</div>
+    <div id="searchResultsBox" class="search-results"></div>
+
+    <div id="selectedAssetWrap" style="display:none;">
+      <div class="selected-asset-pill">
+        <div style="min-width:0;">
+          <div id="selAssetName" style="font-size:0.86rem;font-weight:800;"></div>
+          <div id="selAssetMeta" style="font-size:0.72rem;color:var(--muted);"></div>
+        </div>
+        <button type="button" class="btn compact" id="btnChangeAsset">Changer</button>
+      </div>
+      <div class="grid-2">
+        <div>
+          <label class="field-lbl" for="addAccountSel">Compte</label>
+          <select class="field-input" id="addAccountSel">
+            <option value="PEA">PEA</option>
+            <option value="CTO">CTO</option>
+            <option value="AV">Assurance-Vie</option>
+          </select>
+        </div>
+        <div>
+          <label class="field-lbl" for="addPocketSel">Catégorie (auto)</label>
+          <select class="field-input" id="addPocketSel">
+            <option value="etf">🌍 ETF / Socle</option>
+            <option value="def">🛡️ Défensif / Div.</option>
+            <option value="growth">🚀 Croissance / Tech</option>
+            <option value="spec">⚡ Spéculatif</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <label class="field-lbl" for="addQtyInput">Nombre de parts</label>
+          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addQtyInput" placeholder="Ex : 10">
+        </div>
+        <div>
+          <label class="field-lbl" for="addCostInput">Montant investi (€)</label>
+          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addCostInput" placeholder="Ex : 1200">
+        </div>
+      </div>
+      <div id="addPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:5px;"></div>
+    </div>
+
+    <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
+      <button type="button" class="btn" id="btnCancelAdd">Annuler</button>
+      <button type="button" class="btn primary" id="btnConfirmAdd" style="display:none;">Ajouter au portefeuille</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Modifier / Vendre / Supprimer -->
+<div id="editModal" class="modal-backdrop">
+  <div class="modal-box">
+    <div class="modal-title" id="editModalTitle">Ajuster la ligne</div>
+    <div class="sub" id="editModalSub" style="margin-bottom:6px;">Modifiez vos parts après un achat ou un allègement.</div>
+    <div class="grid-2">
+      <div>
+        <label class="field-lbl" for="editAccountSel">Compte</label>
+        <select class="field-input" id="editAccountSel">
+          <option value="PEA">PEA</option>
+          <option value="CTO">CTO</option>
+          <option value="AV">Assurance-Vie</option>
+        </select>
+      </div>
+      <div>
+        <label class="field-lbl" for="editPocketSel">Catégorie</label>
+        <select class="field-input" id="editPocketSel">
+          <option value="etf">🌍 ETF / Socle</option>
+          <option value="def">🛡️ Défensif / Div.</option>
+          <option value="growth">🚀 Croissance / Tech</option>
+          <option value="spec">⚡ Spéculatif</option>
+        </select>
+      </div>
+    </div>
+    <div class="grid-2">
+      <div>
+        <label class="field-lbl" for="editQtyInput">Nombre de parts</label>
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editQtyInput">
+      </div>
+      <div>
+        <label class="field-lbl" for="editCostInput">Montant investi (€)</label>
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editCostInput">
+      </div>
+    </div>
+    <div id="editPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:5px;"></div>
+    <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
+      <button type="button" class="btn" id="btnCancelEdit">Annuler</button>
+      <button type="button" class="btn red-outline" id="btnDeleteEdit">🗑️ Supprimer</button>
+      <button type="button" class="btn primary" id="btnSaveEdit">Enregistrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Import / Export -->
+<div id="ioModal" class="modal-backdrop">
+  <div class="modal-box">
+    <div class="modal-title" id="ioTitle">Sauvegarder / Importer</div>
+    <div class="sub" id="ioSub" style="margin-bottom:8px;">Exportez votre portefeuille ou collez une sauvegarde JSON.</div>
+    <textarea id="ioBox" class="field-input" style="min-height:110px;font-family:monospace;font-size:0.74rem;"></textarea>
+    <input type="file" id="ioFile" accept=".json,application/json" style="display:none;">
+    <div class="btn-row" style="margin-top:10px;margin-bottom:0;" id="ioExportRow">
+      <button type="button" class="btn primary" id="btnIoCopy">📋 Copier</button>
+      <button type="button" class="btn" id="btnIoDownload">⬇️ .json</button>
+      <button type="button" class="btn" id="btnIoClose1">Fermer</button>
+    </div>
+    <div class="btn-row" style="margin-top:10px;margin-bottom:0;display:none;" id="ioImportRow">
+      <button type="button" class="btn" id="btnIoPick">📂 Fichier</button>
+      <button type="button" class="btn primary" id="btnIoApply">✅ Restaurer</button>
+      <button type="button" class="btn" id="btnIoClose2">Annuler</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <div class="top-row">
+      <div class="brand">
+        <span class="pulse-dot" id="liveDot"></span>
+        <span>Copilote Bourse</span>
+      </div>
+      <button type="button" class="profile-chip" id="headerProfileBtn">⚖️ Profil Équilibré</button>
+    </div>
+    <div class="portfolio-bar">
+      <div>
+        <div class="total-val" id="totalVal">0,00 €</div>
+        <div class="status-line" id="statusLine">Prêt • Cours en direct</div>
+      </div>
+      <div class="gain-col">
+        <div class="total-gain" id="totalGain">+0,00 € (+0,00 %)</div>
+        <div class="day-sub" id="daySub">Aujourd'hui : --</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <!-- ONGLET 1 : ACTIONS (ACHETER / VENDRE / SANTE) -->
+  <div id="tab-actions" class="section active">
+    <div id="onboardingHero" class="hero-box" style="display:none;">
+      <div class="hero-title">👋 Bienvenue sur Copilote Bourse</div>
+      <div class="hero-sub">Choisissez votre profil puis ajoutez vos actions ou ETF en 1 clic : l'application vous indique clairement <strong>où investir</strong> et <strong>quoi alléger</strong> en direct.</div>
+      <div class="profile-grid" id="heroProfileGrid"></div>
+      <div class="btn-row" style="margin-bottom:0;">
+        <button type="button" class="btn primary" id="btnHeroAdd">🔍 Ajouter une valeur</button>
+        <button type="button" class="btn green-outline" id="btnHeroDemo">✨ Tester en mode Démo</button>
+      </div>
+    </div>
+
+    <div id="actionsMain">
+      <!-- CARTE 1 : QUOI ACHETER -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🟢 Où investir maintenant ?</div>
+          <span class="badge b-green" id="buyScoreBadge">Selon profil</span>
+        </div>
+        <div class="budget-box">
+          <span class="budget-lbl">Montant à placer</span>
+          <input type="number" id="investAmtInput" class="budget-input" min="10" max="1000000" step="any" inputmode="decimal" value="300">
+          <span class="budget-unit">€</span>
+        </div>
+        <div class="preset-chips" id="amtChips">
+          <button type="button" class="preset-chip" data-amt="100">100 €</button>
+          <button type="button" class="preset-chip active" data-amt="300">300 €</button>
+          <button type="button" class="preset-chip" data-amt="500">500 €</button>
+          <button type="button" class="preset-chip" data-amt="1000">1 000 €</button>
+        </div>
+        <div class="btn-row" id="buyAccRow">
+          <button type="button" class="btn compact active" data-bacc="all" style="flex:1;">Tous</button>
+          <button type="button" class="btn compact" data-bacc="PEA" style="flex:1;">PEA</button>
+          <button type="button" class="btn compact" data-bacc="CTO" style="flex:1;">CTO</button>
+          <button type="button" class="btn compact" data-bacc="AV" style="flex:1;">AV</button>
+        </div>
+        <div id="buySignalsBox"></div>
+      </div>
+
+      <!-- CARTE 2 : QUOI VENDRE / ALLEGER -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🔴 Quoi alléger ou vendre ?</div>
+          <span class="badge b-amber" id="sellCountBadge">Analyse</span>
+        </div>
+        <div id="sellSignalsBox"></div>
+      </div>
+
+      <!-- CARTE 3 : SANTE & EQUILIBRE VS PROFIL -->
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">🧭 Équilibre vs votre Profil</div>
+          <span class="badge b-blue" id="healthScoreBadge">--/100</span>
+        </div>
+        <div class="sub" id="climateLine" style="margin-bottom:8px;">Climat boursier mondial : synchronisation...</div>
+        <div class="stacked-bar" id="stackedBar"></div>
+        <div id="pocketsList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ONGLET 2 : PORTEFEUILLE -->
+  <div id="tab-portfolio" class="section">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title" id="portTitle">📊 Mon Portefeuille</div>
+        <button type="button" class="btn compact primary" id="btnAddTop">➕ Ajouter</button>
+      </div>
+      <div class="btn-row" id="portFilterRow">
+        <button type="button" class="btn compact active" data-pacc="all">Tous</button>
+        <button type="button" class="btn compact" data-pacc="PEA">PEA</button>
+        <button type="button" class="btn compact" data-pacc="CTO">CTO</button>
+        <button type="button" class="btn compact" data-pacc="AV">AV</button>
+        <button type="button" class="btn compact" id="btnSortPort">↕ Valeur</button>
+      </div>
+      <div id="portfolioList"></div>
+    </div>
+  </div>
+
+  <!-- ONGLET 3 : PROFIL & REGLAGES -->
+  <div id="tab-profile" class="section">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">🎯 Votre Profil Investisseur</div>
+        <span class="badge b-blue" id="profActiveBadge">Équilibré</span>
+      </div>
+      <div class="sub">Vos cibles d'allocation, vos plafonds de risque par ligne et vos alertes de prise de profit s'adaptent instantanément :</div>
+      <div class="profile-grid" id="profileGrid"></div>
+      <div id="profileRulesBox" style="font-size:0.78rem;color:var(--muted);background:var(--card-alt);border:1px solid var(--border);border-radius:10px;padding:10px 12px;line-height:1.48;"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">💾 Données &amp; Mode Test</div>
+      </div>
+      <div class="btn-row">
+        <button type="button" class="btn" id="btnExport">💾 Sauvegarder</button>
+        <button type="button" class="btn" id="btnImport">📥 Importer (.json)</button>
+      </div>
+      <div class="btn-row" style="margin-bottom:0;">
+        <button type="button" class="btn green-outline" id="btnLoadDemo">✨ Charger portefeuille démo</button>
+        <button type="button" class="btn red-outline" id="btnResetEmpty">🧹 Portefeuille vierge</button>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      ℹ️ <strong>Avertissement :</strong> Copilote Bourse est un outil d'aide à l'équilibrage mathématique basé uniquement sur vos paramètres de profil et les cours boursiers publics. Il ne constitue pas un conseil en investissement personnalisé au sens de la réglementation AMF. Vous restez seul décisionnaire de vos ordres.
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav" id="bottomNav">
+  <button type="button" class="nav-btn active" data-tab="actions">
+    <span class="nav-icon">🎯</span><span>Actions</span>
+  </button>
+  <button type="button" class="nav-btn" data-tab="portfolio">
+    <span class="nav-icon">📊</span><span>Portefeuille</span>
+  </button>
+  <button type="button" class="nav-btn" data-tab="profile">
+    <span class="nav-icon">⚙️</span><span>Profil</span>
+  </button>
+</nav>
+
+<script>
+(function() {
+  var STORAGE_KEY = "copilote_pro_v2_state";
+
+  var PROFILES = {
+    prudent: {
+      id: "prudent",
+      icon: "🛡️",
+      name: "Prudent",
+      shortDesc: "Priorité ETF & valeurs stables, risque limité.",
+      targets: { etf: 0.55, def: 0.30, growth: 0.15, spec: 0.00 },
+      maxSingleWeight: 0.12,
+      takeProfitPct: 25,
+      maxSpecShare: 0.00,
+      rsiOverbought: 67
+    },
+    equilibre: {
+      id: "equilibre",
+      icon: "⚖️",
+      name: "Équilibré",
+      shortDesc: "Cœur ETF Monde + actions leaders et croissance maîtrisée.",
+      targets: { etf: 0.45, def: 0.25, growth: 0.25, spec: 0.05 },
+      maxSingleWeight: 0.18,
+      takeProfitPct: 40,
+      maxSpecShare: 0.08,
+      rsiOverbought: 70
+    },
+    dynamique: {
+      id: "dynamique",
+      icon: "🚀",
+      name: "Dynamique",
+      shortDesc: "Orientation Tech & croissance, tolère la volatilité.",
+      targets: { etf: 0.35, def: 0.15, growth: 0.40, spec: 0.10 },
+      maxSingleWeight: 0.25,
+      takeProfitPct: 65,
+      maxSpecShare: 0.15,
+      rsiOverbought: 73
+    },
+    dividendes: {
+      id: "dividendes",
+      icon: "💶",
+      name: "Dividendes",
+      shortDesc: "Priorité aux revenus réguliers et valeurs solides PEA.",
+      targets: { etf: 0.30, def: 0.50, growth: 0.18, spec: 0.02 },
+      maxSingleWeight: 0.16,
+      takeProfitPct: 35,
+      maxSpecShare: 0.04,
+      rsiOverbought: 68
+    }
+  };
+
+  var POCKET_META = [
+    { key: "etf", label: "ETF / Socle Monde", color: "#8b5cf6" },
+    { key: "def", label: "Défensif & Dividendes", color: "#10b981" },
+    { key: "growth", label: "Croissance & Tech", color: "#3b82f6" },
+    { key: "spec", label: "Thématique / Spéculatif", color: "#f59e0b" }
+  ];
+
+  // Catalogue populaire instantané (nom, ticker, ISIN -> 0 attente) + recherche mondiale TradingView live
+  var POPULAR_CATALOG = [
+    { tv: "EURONEXT:CW8", name: "Amundi MSCI World (CW8)", ticker: "CW8", isin: "LU1681043599", ccy: "EUR", pocket: "etf", pea: true },
+    { tv: "EURONEXT:WPEA", name: "iShares MSCI World PEA (WPEA)", ticker: "WPEA", isin: "IE0002XZSHO1", ccy: "EUR", pocket: "etf", pea: true },
+    { tv: "XETR:EUNL", name: "iShares Core MSCI World (Acc)", ticker: "EUNL", isin: "IE00B4L5Y983", ccy: "EUR", pocket: "etf", pea: false },
+    { tv: "XETR:SXR8", name: "iShares Core S&P 500 (Acc)", ticker: "SXR8", isin: "IE00B5BMR087", ccy: "EUR", pocket: "etf", pea: false },
+    { tv: "EURONEXT:ESE", name: "BNP Paribas Easy S&P 500 PEA", ticker: "ESE", isin: "FR0011550185", ccy: "EUR", pocket: "etf", pea: true },
+    { tv: "XETR:XDEW", name: "S&P 500 Equal Weight (Acc)", ticker: "XDEW", isin: "IE00BLNMYC90", ccy: "EUR", pocket: "etf", pea: false },
+    { tv: "EURONEXT:AI", name: "Air Liquide", ticker: "AI", isin: "FR0000120073", ccy: "EUR", pocket: "def", pea: true },
+    { tv: "EURONEXT:MC", name: "LVMH", ticker: "MC", isin: "FR0000121014", ccy: "EUR", pocket: "def", pea: true },
+    { tv: "EURONEXT:TTE", name: "TotalEnergies", ticker: "TTE", isin: "FR0000120271", ccy: "EUR", pocket: "def", pea: true },
+    { tv: "EURONEXT:SU", name: "Schneider Electric", ticker: "SU", isin: "FR0000121972", ccy: "EUR", pocket: "def", pea: true },
+    { tv: "EURONEXT:SAN", name: "Sanofi", ticker: "SAN", isin: "FR0000120578", ccy: "EUR", pocket: "def", pea: true },
+    { tv: "EURONEXT:ASML", name: "ASML Holding", ticker: "ASML", isin: "NL0010273215", ccy: "EUR", pocket: "growth", pea: true },
+    { tv: "NASDAQ:NVDA", name: "NVIDIA", ticker: "NVDA", isin: "US67066G1040", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:MSFT", name: "Microsoft", ticker: "MSFT", isin: "US5949181045", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:AAPL", name: "Apple", ticker: "AAPL", isin: "US0378331005", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:GOOGL", name: "Alphabet (Google)", ticker: "GOOGL", isin: "US02079K3059", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:AMZN", name: "Amazon", ticker: "AMZN", isin: "US0231351067", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:AMD", name: "AMD", ticker: "AMD", isin: "US0079031078", ccy: "USD", pocket: "growth", pea: false },
+    { tv: "NASDAQ:TSLA", name: "Tesla", ticker: "TSLA", isin: "US88160R1014", ccy: "USD", pocket: "spec", pea: false },
+    { tv: "NYSE:BLK", name: "BlackRock", ticker: "BLK", isin: "US09290D1019", ccy: "USD", pocket: "def", pea: false },
+    { tv: "NYSE:KO", name: "Coca-Cola", ticker: "KO", isin: "US1912161007", ccy: "USD", pocket: "def", pea: false },
+    { tv: "XETR:PPFB", name: "Physical Gold ETC (Or)", ticker: "PPFB", isin: "IE00B4ND3602", ccy: "EUR", pocket: "def", pea: false },
+    { tv: "NASDAQ:MSTR", name: "Strategy (MicroStrategy)", ticker: "MSTR", isin: "US5949724083", ccy: "USD", pocket: "spec", pea: false },
+    { tv: "HKEX:1810", name: "Xiaomi", ticker: "1810", isin: "KYG9830T1067", ccy: "HKD", pocket: "growth", pea: false }
+  ];
+
+  var DEMO_POSITIONS = [
+    { id: "d1", tv: "EURONEXT:CW8", name: "Amundi MSCI World (CW8)", account: "PEA", pocket: "etf", ccy: "EUR", qty: 8, cost: 4300, refPx: 675 },
+    { id: "d2", tv: "EURONEXT:AI", name: "Air Liquide", account: "PEA", pocket: "def", ccy: "EUR", qty: 20, cost: 3100, refPx: 188 },
+    { id: "d3", tv: "NASDAQ:NVDA", name: "NVIDIA", account: "CTO", pocket: "growth", ccy: "USD", qty: 42, cost: 3400, refPx: 145 },
+    { id: "d4", tv: "NASDAQ:MSFT", name: "Microsoft", account: "CTO", pocket: "growth", ccy: "USD", qty: 3.5, cost: 1350, refPx: 440 },
+    { id: "d5", tv: "EURONEXT:TTE", name: "TotalEnergies", account: "PEA", pocket: "def", ccy: "EUR", qty: 18, cost: 1120, refPx: 75 },
+    { id: "d6", tv: "NASDAQ:MSTR", name: "Strategy (MicroStrategy)", account: "CTO", pocket: "spec", ccy: "USD", qty: 14, cost: 2200, refPx: 110 }
+  ];
+
+  var state = {
+    profile: "equilibre",
+    positions: [],
+    investAmt: 300,
+    buyAcc: "all",
+    portAcc: "all",
+    portSort: "val",
+    activeTab: "actions",
+    expandedId: null,
+    editingId: null,
+    pendingAddAsset: null,
+    fx: { EUR: 1, USD: 1.09, GBP: 0.85, CHF: 0.94, HKD: 8.50, AUD: 1.65, CAD: 1.50, JPY: 165 },
+    marketScore: 50,
+    marketSummary: "",
+    lastSyncStr: "",
+    isSyncing: false
+  };
+
+  function loadState() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        var parsed = JSON.parse(raw);
+        if (parsed && PROFILES[parsed.profile]) state.profile = parsed.profile;
+        if (parsed && Array.isArray(parsed.positions)) state.positions = parsed.positions;
+        if (parsed && typeof parsed.investAmt === "number" && parsed.investAmt >= 10) state.investAmt = parsed.investAmt;
+        if (parsed && parsed.buyAcc) state.buyAcc = parsed.buyAcc;
+      }
+    } catch (e) {}
+  }
+
+  function saveState() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        profile: state.profile,
+        positions: state.positions,
+        investAmt: state.investAmt,
+        buyAcc: state.buyAcc
+      }));
+    } catch (e) {}
+  }
+
+  function escHtml(s) {
+    return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function fmtEur(n) {
+    return (Number(n) || 0).toLocaleString("fr-FR", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  }
+
+  function fmtRoundEur(n) {
+    return Math.round(Number(n) || 0).toLocaleString("fr-FR") + " €";
+  }
+
+  function fmtSignedPct(n, dec) {
+    var d = typeof dec === "number" ? dec : 2;
+    var sign = n >= 0 ? "+" : "";
+    return sign + (Number(n) || 0).toFixed(d).replace(".", ",") + " %";
+  }
+
+  function showToast(msg, undoCb) {
+    var t = document.getElementById("toast");
+    window._v2Undo = typeof undoCb === "function" ? undoCb : null;
+    if (window._v2Undo) {
+      t.innerHTML = "<span>" + escHtml(msg) + "</span><button type='button' class='toast-undo' id='btnV2Undo'>Annuler</button>";
+    } else {
+      t.textContent = msg;
+    }
+    t.style.display = "block";
+    clearTimeout(window._v2ToastTimer);
+    window._v2ToastTimer = setTimeout(function() {
+      t.style.display = "none";
+      window._v2Undo = null;
+    }, window._v2Undo ? 5000 : 2600);
+  }
+
+  function toEur(price, ccy) {
+    if (typeof price !== "number" || !isFinite(price) || price <= 0) return 0;
+    var c = String(ccy || "EUR").toUpperCase();
+    if (c === "EUR") return price;
+    if (c === "GBX") return (price / 100) / (state.fx.GBP || 0.85);
+    var rate = state.fx[c];
+    return rate && rate > 0 ? (price / rate) : price;
+  }
+
+  function getPosMetrics(p) {
+    var px = (typeof p.livePxEur === "number" && p.livePxEur > 0) ? p.livePxEur : (p.refPx || 0);
+    var qty = Math.max(0, Number(p.qty) || 0);
+    var cost = Math.max(0, Number(p.cost) || 0);
+    var val = qty * px;
+    var gain = val - cost;
+    var pct = cost > 0 ? (gain / cost) * 100 : 0;
+    return { px: px, qty: qty, cost: cost, val: val, gain: gain, pct: pct };
+  }
+
+  function computeTotals() {
+    var totalVal = 0, totalCost = 0, dayGain = 0, hasDay = false;
+    var pockets = { etf: 0, def: 0, growth: 0, spec: 0 };
+    var liveCnt = 0;
+    for (var i = 0; i < state.positions.length; i++) {
+      var p = state.positions[i];
+      var m = getPosMetrics(p);
+      totalVal += m.val;
+      totalCost += m.cost;
+      pockets[p.pocket] = (pockets[p.pocket] || 0) + m.val;
+      if (p.isLive) liveCnt++;
+      if (p.isLive && typeof p.dayPct === "number" && isFinite(p.dayPct)) {
+        var denom = 1 + (p.dayPct / 100);
+        if (denom > 0.05) {
+          dayGain += m.val - (m.val / denom);
+          hasDay = true;
+        }
+      }
+    }
+    var totalGain = totalVal - totalCost;
+    var totalPct = totalCost > 0 ? (totalGain / totalCost) * 100 : 0;
+    var prevVal = totalVal - dayGain;
+    var dayPct = prevVal > 0 ? (dayGain / prevVal) * 100 : 0;
+    return {
+      totalVal: totalVal,
+      totalCost: totalCost,
+      totalGain: totalGain,
+      totalPct: totalPct,
+      dayGain: dayGain,
+      dayPct: dayPct,
+      hasDay: hasDay,
+      pockets: pockets,
+      liveCnt: liveCnt
+    };
+  }
+
+  function autoClassifyPocket(type, sector, name, volM, divYield) {
+    var nLow = String(name || "").toLowerCase();
+    var sLow = String(sector || "").toLowerCase();
+    var tLow = String(type || "").toLowerCase();
+    if (tLow === "fund" || /etf|ucits|msci|s&p 500|stoxx|nasdaq 100/.test(nLow)) {
+      if (/gold|or |physical gold/.test(nLow)) return "def";
+      return "etf";
+    }
+    if (typeof volM === "number" && volM >= 4.2) return "spec";
+    if (/bitcoin|crypto|microstrategy|strategy|tesla|quantum|drone|hydrogen/.test(nLow)) return "spec";
+    if (/technology|semiconductor|software|internet|electronic/.test(sLow)) return "growth";
+    if ((typeof divYield === "number" && divYield >= 2.2) || /consumer|health|energy|utilit|finance|industrial|process/.test(sLow)) return "def";
+    return "growth";
+  }
+
+  // Moteur universel "Quoi vendre / alléger" basé sur le Profil choisi
+  function computeSellSignals(tot) {
+    var prof = PROFILES[state.profile] || PROFILES.equilibre;
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var alerts = [];
+    var tvCounts = {};
+    for (var k = 0; k < state.positions.length; k++) {
+      var tvk = state.positions[k].tv;
+      tvCounts[tvk] = (tvCounts[tvk] || 0) + 1;
+    }
+
+    for (var i = 0; i < state.positions.length; i++) {
+      var p = state.positions[i];
+      var m = getPosMetrics(p);
+      if (m.val <= 1) continue;
+      var weight = m.val / totalVal;
+      var isEtf = p.pocket === "etf";
+      var maxW = isEtf ? Math.max(0.55, prof.targets.etf + 0.15) : prof.maxSingleWeight;
+      var rsi = typeof p.rsi === "number" ? p.rsi : null;
+      var reasons = [];
+      var severity = "warn";
+      var trimEur = 0;
+
+      if (!isEtf && weight > maxW + 0.025 && state.positions.length >= 3) {
+        var excess = m.val - (totalVal * maxW);
+        trimEur = Math.max(trimEur, excess);
+        reasons.push("Pèse " + (weight * 100).toFixed(1).replace(".", ",") + " % (plafond profil " + prof.name + " : " + Math.round(maxW * 100) + " %)");
+        severity = "sell";
+      }
+      if (!isEtf && m.pct >= prof.takeProfitPct && (weight > maxW * 0.75 || (rsi !== null && rsi >= prof.rsiOverbought))) {
+        var takeAmt = m.val * 0.20;
+        trimEur = Math.max(trimEur, takeAmt);
+        reasons.push("Forte plus-value (" + fmtSignedPct(m.pct, 0) + ")" + (rsi !== null && rsi >= prof.rsiOverbought ? (" + surachat RSI " + Math.round(rsi)) : ""));
+        severity = "sell";
+      }
+      if (p.pocket === "spec" && (tot.pockets.spec / totalVal) > prof.maxSpecShare + 0.02) {
+        var specExcess = Math.min(m.val, tot.pockets.spec - totalVal * prof.maxSpecShare);
+        trimEur = Math.max(trimEur, specExcess);
+        reasons.push("Poche spéculative à " + ((tot.pockets.spec / totalVal) * 100).toFixed(1).replace(".", ",") + " % (max " + Math.round(prof.maxSpecShare * 100) + " %)");
+        severity = "sell";
+      }
+      if (tvCounts[p.tv] > 1) {
+        reasons.push("Doublon détecté sur " + p.tv + " : regroupez vos lignes pour simplifier");
+      }
+
+      if (reasons.length > 0) {
+        alerts.push({
+          pos: p,
+          metrics: m,
+          severity: severity,
+          trimEur: Math.round(Math.min(m.val, trimEur)),
+          reasonText: reasons.join(" • ")
+        });
+      }
+    }
+    alerts.sort(function(a, b) {
+      if (a.severity !== b.severity) return a.severity === "sell" ? -1 : 1;
+      return b.trimEur - a.trimEur;
+    });
+    return alerts;
+  }
+
+  // Moteur universel "Où investir" basé sur le Profil choisi + technique live
+  function computeBuyPlan(tot) {
+    var prof = PROFILES[state.profile] || PROFILES.equilibre;
+    var amt = Math.max(10, Number(state.investAmt) || 300);
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var sellMap = {};
+    var sells = computeSellSignals(tot);
+    for (var s = 0; s < sells.length; s++) {
+      if (sells[s].severity === "sell") sellMap[sells[s].pos.id] = true;
+    }
+
+    var candidates = [];
+    for (var i = 0; i < state.positions.length; i++) {
+      var p = state.positions[i];
+      if (state.buyAcc !== "all" && p.account !== state.buyAcc) continue;
+      if (sellMap[p.id]) continue;
+      if (p.pocket === "spec" && (state.profile !== "dynamique" || ((tot.pockets.spec || 0) / totalVal) >= prof.targets.spec)) continue;
+
+      var m = getPosMetrics(p);
+      var curPocketShare = (tot.pockets[p.pocket] || 0) / totalVal;
+      var pocketGap = (prof.targets[p.pocket] || 0) - curPocketShare;
+      var posWeight = m.val / totalVal;
+      var maxW = p.pocket === "etf" ? 0.65 : prof.maxSingleWeight;
+      if (posWeight >= maxW && state.positions.length >= 2) continue;
+
+      var rsi = typeof p.rsi === "number" ? p.rsi : 50;
+      var rsiBonus = Math.max(-0.5, Math.min(1.5, (58 - rsi) / 20));
+      var dipBonus = (typeof p.perf1M === "number" && p.perf1M < 0) ? Math.min(1.0, Math.abs(p.perf1M) / 10) : 0;
+      var divBonus = (state.profile === "dividendes" && typeof p.divYield === "number") ? Math.min(1.8, p.divYield * 0.45) : 0;
+
+      var score = Math.max(0.2, (pocketGap * 14) + ((maxW - posWeight) * 6) + (rsiBonus * 1.4) + (dipBonus * 1.1) + divBonus);
+      var whyParts = [];
+      if (pocketGap > 0.03) whyParts.push("Poche en retard sur votre profil " + prof.name);
+      if (rsi <= 45) whyParts.push("Point d'entrée technique attractif (RSI " + Math.round(rsi) + ")");
+      else if (dipBonus >= 0.35) whyParts.push("Léger repli sur 30 j");
+      if (state.profile === "dividendes" && typeof p.divYield === "number" && p.divYield >= 2) {
+        whyParts.push("Rendement dividende ~" + p.divYield.toFixed(1).replace(".", ",") + " %");
+      }
+      if (whyParts.length === 0) whyParts.push("Équilibre sain pour renforcer progressivement");
+
+      candidates.push({
+        pos: p,
+        metrics: m,
+        score: score,
+        why: whyParts.join(" • ")
+      });
+    }
+
+    candidates.sort(function(a, b) { return b.score - a.score; });
+    var top = candidates.slice(0, amt < 80 ? 1 : 3);
+    if (top.length === 0) return [];
+
+    var sumS = 0;
+    for (var j = 0; j < top.length; j++) sumS += top[j].score;
+    var allocated = 0;
+    for (var k = 0; k < top.length; k++) {
+      if (k === top.length - 1) {
+        top[k].buyAmt = Math.max(0, Math.round(amt - allocated));
+      } else {
+        var part = Math.round(amt * (top[k].score / sumS));
+        top[k].buyAmt = part;
+        allocated += part;
+      }
+      top[k].pctShare = Math.round((top[k].buyAmt / amt) * 100);
+    }
+    return top.filter(function(x) { return x.buyAmt > 0; });
+  }
+
+  function getLineStatusBadge(p, tot, sellMap, buyMap) {
+    if (sellMap[p.id]) return { cls: "b-red", label: "🔴 Alléger", desc: sellMap[p.id].reasonText };
+    if (buyMap[p.id]) return { cls: "b-green", label: "🟢 À renforcer", desc: buyMap[p.id].why };
+    if (p.pocket === "spec") return { cls: "b-amber", label: "⚠️ Surveiller", desc: "Position volatile — respectez le plafond de votre profil." };
+    return { cls: "b-blue", label: "🔵 Conserver", desc: "Ligne bien proportionnée par rapport à votre profil actuel." };
+  }
+
+  function renderProfileCards() {
+    var keys = ["prudent", "equilibre", "dynamique", "dividendes"];
+    var html = "";
+    for (var i = 0; i < keys.length; i++) {
+      var pr = PROFILES[keys[i]];
+      var act = state.profile === pr.id ? " active" : "";
+      html += "<button type='button' class='prof-card" + act + "' data-prof='" + pr.id + "'>" +
+        "<div class='prof-title'>" + pr.icon + " " + pr.name + "</div>" +
+        "<div class='prof-desc'>" + pr.shortDesc + "</div>" +
+      "</button>";
+    }
+    document.getElementById("profileGrid").innerHTML = html;
+    document.getElementById("heroProfileGrid").innerHTML = html;
+
+    var cur = PROFILES[state.profile] || PROFILES.equilibre;
+    document.getElementById("headerProfileBtn").textContent = cur.icon + " Profil " + cur.name;
+    document.getElementById("profActiveBadge").textContent = cur.name;
+    document.getElementById("profileRulesBox").innerHTML =
+      "<strong>Règles actives (" + cur.name + ") :</strong><br>" +
+      "• Cibles : <strong>" + Math.round(cur.targets.etf * 100) + " % ETF</strong> • <strong>" + Math.round(cur.targets.def * 100) + " % Défensif</strong> • <strong>" + Math.round(cur.targets.growth * 100) + " % Croissance</strong> • <strong>" + Math.round(cur.targets.spec * 100) + " % Spéculatif</strong><br>" +
+      "• Alerte surpoids si une action dépasse <strong>" + Math.round(cur.maxSingleWeight * 100) + " %</strong> du portefeuille<br>" +
+      "• Alerte prise de profit partielle dès <strong>+" + cur.takeProfitPct + " %</strong> de gain en surchauffe";
+  }
+
+  function renderAll() {
+    var tot = computeTotals();
+    var prof = PROFILES[state.profile] || PROFILES.equilibre;
+    renderProfileCards();
+
+    // Header
+    document.getElementById("totalVal").textContent = fmtEur(tot.totalVal);
+    var gSign = tot.totalGain >= 0 ? "+" : "";
+    var gEl = document.getElementById("totalGain");
+    gEl.textContent = gSign + fmtEur(tot.totalGain) + " (" + fmtSignedPct(tot.totalPct, 2) + ")";
+    gEl.classList.toggle("neg", tot.totalGain < 0);
+
+    var dEl = document.getElementById("daySub");
+    if (tot.hasDay) {
+      dEl.textContent = "Aujourd'hui : " + (tot.dayGain >= 0 ? "+" : "") + fmtEur(tot.dayGain) + " (" + fmtSignedPct(tot.dayPct, 2) + ")";
+      dEl.className = "day-sub " + (tot.dayGain >= 0 ? "pos" : "neg");
+    } else {
+      dEl.textContent = state.positions.length > 0 ? "Aujourd'hui : synchronisation..." : "Aucune ligne";
+      dEl.className = "day-sub";
+    }
+    document.getElementById("statusLine").textContent = state.positions.length === 0
+      ? "Ajoutez vos valeurs pour démarrer"
+      : (state.lastSyncStr ? ("En direct • Maj " + state.lastSyncStr) : "Synchronisation des cours...");
+
+    // Onboarding vs Main
+    var isEmpty = state.positions.length === 0;
+    document.getElementById("onboardingHero").style.display = isEmpty ? "block" : "none";
+    document.getElementById("actionsMain").style.display = isEmpty ? "none" : "block";
+
+    var sells = computeSellSignals(tot);
+    var buys = computeBuyPlan(tot);
+    var sellMap = {};
+    for (var s = 0; s < sells.length; s++) sellMap[sells[s].pos.id] = sells[s];
+    var buyMap = {};
+    for (var b = 0; b < buys.length; b++) buyMap[buys[b].pos.id] = buys[b];
+
+    // Buy card
+    var amtInp = document.getElementById("investAmtInput");
+    if (amtInp && document.activeElement !== amtInp) amtInp.value = String(state.investAmt);
+    var chips = document.querySelectorAll("#amtChips .preset-chip");
+    for (var c = 0; c < chips.length; c++) {
+      chips[c].classList.toggle("active", Number(chips[c].getAttribute("data-amt")) === Number(state.investAmt));
+    }
+    var bAccBtns = document.querySelectorAll("#buyAccRow .btn[data-bacc]");
+    for (var ba = 0; ba < bAccBtns.length; ba++) {
+      bAccBtns[ba].classList.toggle("active", bAccBtns[ba].getAttribute("data-bacc") === state.buyAcc);
+    }
+
+    var buyBox = document.getElementById("buySignalsBox");
+    if (buys.length === 0) {
+      buyBox.innerHTML = "<div class='sig-item'><div class='sig-why'>Aucune ligne éligible trouvée sur ce compte. Ajoutez un ETF ou une action adaptée à votre profil <strong>" + prof.name + "</strong>.</div></div>";
+    } else {
+      var bHtml = "";
+      for (var bi = 0; bi < buys.length; bi++) {
+        var item = buys[bi];
+        bHtml += "<div class='sig-item buy'>" +
+          "<div class='sig-top'>" +
+            "<div class='sig-title'>" + escHtml(item.pos.name) + "</div>" +
+            "<span class='badge b-green'>" + fmtRoundEur(item.buyAmt) + " (" + item.pctShare + " %)</span>" +
+          "</div>" +
+          "<div class='sig-why'>" + escHtml(item.why) + "</div>" +
+          "<div class='sig-foot'>" +
+            "<span class='sig-meta'>" + escHtml(item.pos.account) + " • Cours : " + fmtEur(item.metrics.px) + "</span>" +
+            "<button type='button' class='btn compact green-outline btn-quick-buy' data-id='" + escHtml(item.pos.id) + "' data-amt='" + item.buyAmt + "'>✓ J'ai acheté</button>" +
+          "</div>" +
+        "</div>";
+      }
+      buyBox.innerHTML = bHtml;
+    }
+
+    // Sell card
+    var sellBadge = document.getElementById("sellCountBadge");
+    var sellBox = document.getElementById("sellSignalsBox");
+    if (sells.length === 0) {
+      sellBadge.textContent = "RAS";
+      sellBadge.className = "badge b-green";
+      sellBox.innerHTML = "<div class='sig-item' style='border-left:3px solid var(--green);'><div class='sig-title' style='color:var(--green);margin-bottom:2px;'>✅ Rien à vendre pour le moment</div><div class='sig-why'>Aucune ligne ne dépasse les limites de risque ou de prise de profit de votre profil <strong>" + prof.name + "</strong>.</div></div>";
+    } else {
+      sellBadge.textContent = sells.length + " alerte" + (sells.length > 1 ? "s" : "");
+      sellBadge.className = "badge b-red";
+      var sHtml = "";
+      for (var si = 0; si < sells.length; si++) {
+        var sl = sells[si];
+        var amtLabel = sl.trimEur >= 20 ? ("Alléger ~" + fmtRoundEur(sl.trimEur)) : "À vérifier";
+        sHtml += "<div class='sig-item " + sl.severity + "'>" +
+          "<div class='sig-top'>" +
+            "<div class='sig-title'>" + escHtml(sl.pos.name) + "</div>" +
+            "<span class='badge " + (sl.severity === "sell" ? "b-red" : "b-amber") + "'>" + amtLabel + "</span>" +
+          "</div>" +
+          "<div class='sig-why'>" + escHtml(sl.reasonText) + "</div>" +
+          "<div class='sig-foot'>" +
+            "<span class='sig-meta'>" + escHtml(sl.pos.account) + " • Valeur : " + fmtEur(sl.metrics.val) + " (" + fmtSignedPct(sl.metrics.pct, 1) + ")</span>" +
+            "<button type='button' class='btn compact red-outline btn-quick-sell' data-id='" + escHtml(sl.pos.id) + "' data-amt='" + sl.trimEur + "'>✓ J'ai allégé</button>" +
+          "</div>" +
+        "</div>";
+      }
+      sellBox.innerHTML = sHtml;
+    }
+
+    // Health & Pockets
+    var totalVal = tot.totalVal > 0 ? tot.totalVal : 1;
+    var imbalance = 0;
+    var barHtml = "";
+    var pListHtml = "";
+    for (var pi = 0; pi < POCKET_META.length; pi++) {
+      var pm = POCKET_META[pi];
+      var pVal = tot.pockets[pm.key] || 0;
+      var pShare = pVal / totalVal;
+      var tShare = prof.targets[pm.key] || 0;
+      imbalance += Math.abs(pShare - tShare);
+      barHtml += "<div style='width:" + (pShare * 100).toFixed(2) + "%;background:" + pm.color + ";'></div>";
+      pListHtml += "<div class='pocket-row'>" +
+        "<div class='pocket-left'><span class='pocket-dot' style='background:" + pm.color + ";'></span><span>" + pm.label + "</span></div>" +
+        "<div class='pocket-right'><span>" + (pShare * 100).toFixed(1).replace(".", ",") + " %</span><span class='target-tag'>(cible " + Math.round(tShare * 100) + " %)</span></div>" +
+      "</div>";
+    }
+    var healthScore = Math.round(Math.max(20, Math.min(99, 100 - (imbalance * 58) - (sells.length * 6))));
+    var hBadge = document.getElementById("healthScoreBadge");
+    hBadge.textContent = "Santé : " + healthScore + "/100";
+    hBadge.className = "badge " + (healthScore >= 75 ? "b-green" : (healthScore >= 55 ? "b-amber" : "b-red"));
+    document.getElementById("stackedBar").innerHTML = barHtml;
+    document.getElementById("pocketsList").innerHTML = pListHtml;
+    document.getElementById("climateLine").textContent = state.marketSummary
+      ? ("🌍 Climat marché : " + state.marketScore + "/100 — " + state.marketSummary)
+      : "🌍 Climat marché mondial : synchronisation...";
+
+    // Portfolio Tab
+    document.getElementById("portTitle").textContent = "📊 Mon Portefeuille (" + state.positions.length + ")";
+    var pAccBtns = document.querySelectorAll("#portFilterRow .btn[data-pacc]");
+    for (var pa = 0; pa < pAccBtns.length; pa++) {
+      pAccBtns[pa].classList.toggle("active", pAccBtns[pa].getAttribute("data-pacc") === state.portAcc);
+    }
+    var sortLbls = { val: "↕ Valeur", day: "↕ Jour %", gain: "↕ Gain %" };
+    document.getElementById("btnSortPort").textContent = sortLbls[state.portSort] || "↕ Valeur";
+
+    var list = state.positions.filter(function(p) {
+      return state.portAcc === "all" || p.account === state.portAcc;
+    }).slice().sort(function(a, b) {
+      var ma = getPosMetrics(a), mb = getPosMetrics(b);
+      if (state.portSort === "day") return (b.dayPct || -999) - (a.dayPct || -999);
+      if (state.portSort === "gain") return mb.pct - ma.pct;
+      return mb.val - ma.val;
+    });
+
+    var pHtml = "";
+    for (var li = 0; li < list.length; li++) {
+      var lp = list[li];
+      var lm = getPosMetrics(lp);
+      var wPct = totalVal > 0 ? ((lm.val / totalVal) * 100).toFixed(1).replace(".", ",") : "0,0";
+      var st = getLineStatusBadge(lp, tot, sellMap, buyMap);
+      var dayTxt = typeof lp.dayPct === "number"
+        ? (" • Jour : <span class='" + (lp.dayPct >= 0 ? "pos-txt" : "neg-txt") + "'>" + fmtSignedPct(lp.dayPct, 2) + "</span>")
+        : "";
+      var isOpen = state.expandedId === lp.id;
+      pHtml += "<div class='line-card" + (isOpen ? " open" : "") + "' data-lid='" + escHtml(lp.id) + "'>" +
+        "<div class='line-top'>" +
+          "<div class='line-name'>" + escHtml(lp.name) + " <span style='font-size:0.72rem;color:var(--muted);font-weight:600;'>• " + escHtml(lp.account) + "</span></div>" +
+          "<span class='badge " + st.cls + "'>" + st.label + "</span>" +
+        "</div>" +
+        "<div class='line-sub'>" +
+          "<span><strong>" + fmtEur(lm.val) + "</strong> (" + wPct + " %) • <span class='" + (lm.gain >= 0 ? "pos-txt" : "neg-txt") + "'>" + fmtSignedPct(lm.pct, 1) + "</span></span>" +
+          "<button type='button' class='btn compact btn-edit-line' data-eid='" + escHtml(lp.id) + "' style='min-height:26px;padding:3px 9px;'>✏️ Modifier</button>" +
+        "</div>" +
+        "<div class='line-sub' style='margin-top:4px;'>" +
+          "<span>Cours : " + fmtEur(lm.px) + dayTxt + " • " + (Number.isInteger(lm.qty) ? lm.qty : lm.qty.toFixed(3).replace(".", ",")) + " parts</span>" +
+        "</div>" +
+        "<div class='line-details'>" +
+          "<div style='color:var(--text);font-weight:700;margin-bottom:3px;'>" + escHtml(st.desc) + "</div>" +
+          "<div>Investi : " + fmtEur(lm.cost) + " • Gain : " + (lm.gain >= 0 ? "+" : "") + fmtEur(lm.gain) + (typeof lp.rsi === "number" ? (" • RSI : " + Math.round(lp.rsi)) : "") + "</div>" +
+        "</div>" +
+      "</div>";
+    }
+    document.getElementById("portfolioList").innerHTML = pHtml || "<div class='sig-item'><div class='sig-why'>Aucune valeur sur ce filtre. Cliquez sur <strong>➕ Ajouter</strong> pour rechercher une action ou un ETF.</div></div>";
+  }
+
+  // Recherche universelle (Catalogue populaire instantané + TradingView global live)
+  var searchTimer = null;
+  function renderSearchList(items, hintText) {
+    var box = document.getElementById("searchResultsBox");
+    var st = document.getElementById("searchStatus");
+    if (st && hintText) st.textContent = hintText;
+    if (!items || items.length === 0) {
+      box.innerHTML = "<div class='sr-row'><div class='sr-meta'>Aucun résultat trouvé. Essayez un autre nom ou ticker (ex : Apple, LVMH, CW8).</div></div>";
+      return;
+    }
+    var html = "";
+    for (var i = 0; i < items.length; i++) {
+      var it = items[i];
+      var pxStr = (typeof it.pxEur === "number" && it.pxEur > 0) ? fmtEur(it.pxEur) : (it.ccy || "EUR");
+      html += "<div class='sr-row' data-sr-idx='" + i + "'>" +
+        "<div class='sr-main'>" +
+          "<div class='sr-name'>" + escHtml(it.name) + "</div>" +
+          "<div class='sr-meta'>" + escHtml(it.tv) + (it.isin ? (" • " + escHtml(it.isin)) : "") + "</div>" +
+        "</div>" +
+        "<div class='sr-px'>" + escHtml(pxStr) + "</div>" +
+      "</div>";
+    }
+    window._v2SearchCache = items;
+    box.innerHTML = html;
+  }
+
+  function runAssetSearch(query) {
+    var q = String(query || "").trim();
+    var qLow = q.toLowerCase();
+    var localMatches = [];
+    for (var i = 0; i < POPULAR_CATALOG.length; i++) {
+      var item = POPULAR_CATALOG[i];
+      if (!qLow ||
+          item.name.toLowerCase().indexOf(qLow) >= 0 ||
+          item.ticker.toLowerCase().indexOf(qLow) >= 0 ||
+          item.tv.toLowerCase().indexOf(qLow) >= 0 ||
+          (item.isin && item.isin.toLowerCase().indexOf(qLow) >= 0)) {
+        localMatches.push(item);
+      }
+    }
+    if (q.length < 2) {
+      renderSearchList(localMatches.slice(0, 8), "Titres populaires (ou tapez n'importe quelle action/ETF mondial) :");
+      return;
+    }
+    if (localMatches.length > 0) {
+      renderSearchList(localMatches.slice(0, 6), "Résultats rapides • recherche mondiale en cours...");
+    } else {
+      document.getElementById("searchStatus").textContent = "🔎 Recherche mondiale en direct...";
+    }
+
+    fetch("https://scanner.tradingview.com/global/scan", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify({
+        filter: [
+          { left: "name,description", operation: "match", right: q },
+          { left: "exchange", operation: "in_range", right: ["EURONEXT", "XETR", "NASDAQ", "NYSE", "AMEX", "LSE", "HKEX", "ASX", "SIX", "BIT", "BME"] }
+        ],
+        options: { lang: "fr" },
+        columns: ["name", "description", "close", "currency", "type", "sector", "dividends_yield_current", "Volatility.M"],
+        sort: { sortBy: "Value.Traded", sortOrder: "desc" },
+        range: [0, 8]
+      })
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(json) {
+        var rows = (json && Array.isArray(json.data)) ? json.data : [];
+        var merged = localMatches.slice(0, 4);
+        var seen = {};
+        for (var m = 0; m < merged.length; m++) seen[merged[m].tv] = true;
+        for (var r = 0; r < rows.length; r++) {
+          var row = rows[r];
+          if (!row || !row.s || seen[row.s]) continue;
+          seen[row.s] = true;
+          var d = row.d || [];
+          var ccy = d[3] || "EUR";
+          var pxEur = toEur(d[2], ccy);
+          merged.push({
+            tv: row.s,
+            ticker: d[0] || row.s,
+            name: d[1] || d[0] || row.s,
+            ccy: ccy,
+            pxEur: pxEur,
+            pocket: autoClassifyPocket(d[4], d[5], d[1], d[7], d[6]),
+            pea: row.s.indexOf("EURONEXT:") === 0 || row.s.indexOf("XETR:") === 0
+          });
+        }
+        renderSearchList(merged.slice(0, 8), merged.length + " résultat(s) trouvés en direct :");
+      })
+      .catch(function() {
+        renderSearchList(localMatches.slice(0, 8), localMatches.length + " résultat(s) du catalogue rapide :");
+      });
+  }
+
+  function selectSearchAsset(asset) {
+    state.pendingAddAsset = asset;
+    document.getElementById("searchResultsBox").style.display = "none";
+    document.getElementById("searchStatus").style.display = "none";
+    document.getElementById("selectedAssetWrap").style.display = "block";
+    document.getElementById("btnConfirmAdd").style.display = "inline-flex";
+    document.getElementById("selAssetName").textContent = asset.name;
+    document.getElementById("selAssetMeta").textContent = asset.tv + " • Devise : " + (asset.ccy || "EUR") + (asset.pxEur > 0 ? (" • Cours : " + fmtEur(asset.pxEur)) : "");
+    document.getElementById("addAccountSel").value = asset.pea ? "PEA" : "CTO";
+    document.getElementById("addPocketSel").value = asset.pocket || "growth";
+    document.getElementById("addQtyInput").value = "";
+    document.getElementById("addCostInput").value = "";
+    document.getElementById("addPruHint").textContent = "";
+    document.getElementById("addQtyInput").focus();
+  }
+
+  function openAddModal() {
+    state.pendingAddAsset = null;
+    document.getElementById("searchAssetInput").value = "";
+    document.getElementById("searchResultsBox").style.display = "block";
+    document.getElementById("searchStatus").style.display = "block";
+    document.getElementById("selectedAssetWrap").style.display = "none";
+    document.getElementById("btnConfirmAdd").style.display = "none";
+    document.getElementById("addModal").classList.add("open");
+    runAssetSearch("");
+    setTimeout(function() { document.getElementById("searchAssetInput").focus(); }, 60);
+  }
+
+  function closeAddModal() {
+    document.getElementById("addModal").classList.remove("open");
+  }
+
+  function updatePruHint(qtyId, costId, hintId) {
+    var q = parseFloat(String(document.getElementById(qtyId).value || "").replace(",", "."));
+    var c = parseFloat(String(document.getElementById(costId).value || "").replace(",", "."));
+    var el = document.getElementById(hintId);
+    if (!el) return;
+    if (isFinite(q) && q > 0 && isFinite(c) && c > 0) {
+      el.textContent = "PRU moyen : " + fmtEur(c / q) + " / part";
+    } else {
+      el.textContent = "";
+    }
+  }
+
+  function confirmAddPosition() {
+    var a = state.pendingAddAsset;
+    if (!a) return;
+    var qty = parseFloat(String(document.getElementById("addQtyInput").value || "").replace(",", "."));
+    var cost = parseFloat(String(document.getElementById("addCostInput").value || "").replace(",", "."));
+    if (!isFinite(qty) || qty <= 0) {
+      showToast("Indiquez un nombre de parts supérieur à 0");
+      return;
+    }
+    if (!isFinite(cost) || cost < 0) cost = a.pxEur > 0 ? Math.round(qty * a.pxEur * 100) / 100 : 0;
+
+    state.positions.push({
+      id: "pos_" + Date.now() + "_" + Math.floor(Math.random() * 1000),
+      tv: a.tv,
+      name: a.name,
+      account: document.getElementById("addAccountSel").value || "CTO",
+      pocket: document.getElementById("addPocketSel").value || "growth",
+      ccy: a.ccy || "EUR",
+      qty: qty,
+      cost: cost,
+      refPx: a.pxEur > 0 ? a.pxEur : (qty > 0 ? cost / qty : 100),
+      livePxEur: a.pxEur > 0 ? a.pxEur : null
+    });
+    saveState();
+    closeAddModal();
+    renderAll();
+    syncLiveQuotes();
+    showToast("✅ " + a.name + " ajouté au portefeuille !");
+  }
+
+  function openEditModal(posId, deltaEur) {
+    var p = null;
+    for (var i = 0; i < state.positions.length; i++) {
+      if (state.positions[i].id === posId) { p = state.positions[i]; break; }
+    }
+    if (!p) return;
+    state.editingId = posId;
+    var m = getPosMetrics(p);
+    document.getElementById("editModalTitle").textContent = p.name;
+    document.getElementById("editAccountSel").value = p.account || "CTO";
+    document.getElementById("editPocketSel").value = p.pocket || "growth";
+
+    var nextQty = m.qty;
+    var nextCost = m.cost;
+    var subEl = document.getElementById("editModalSub");
+    if (typeof deltaEur === "number" && isFinite(deltaEur) && deltaEur !== 0 && m.px > 0) {
+      var dQty = deltaEur / m.px;
+      if (deltaEur > 0) {
+        nextQty = m.qty + dQty;
+        nextCost = m.cost + deltaEur;
+        subEl.textContent = "Achat pré-calculé (+" + fmtRoundEur(deltaEur) + " ≈ +" + dQty.toFixed(3).replace(".", ",") + " parts) : ajustez puis validez.";
+      } else {
+        var sellQty = Math.min(m.qty, Math.abs(dQty));
+        var ratio = m.qty > 0 ? (1 - sellQty / m.qty) : 0;
+        nextQty = Math.max(0, m.qty - sellQty);
+        nextCost = Math.max(0, m.cost * ratio);
+        subEl.textContent = "Allègement pré-calculé (-" + fmtRoundEur(Math.abs(deltaEur)) + " ≈ -" + sellQty.toFixed(3).replace(".", ",") + " parts) : ajustez puis validez.";
+      }
+    } else {
+      subEl.textContent = "Modifiez vos parts, votre compte ou votre catégorie :";
+    }
+
+    document.getElementById("editQtyInput").value = Number(nextQty.toFixed(5));
+    document.getElementById("editCostInput").value = Number(nextCost.toFixed(2));
+    updatePruHint("editQtyInput", "editCostInput", "editPruHint");
+    document.getElementById("editModal").classList.add("open");
+  }
+
+  function closeEditModal() {
+    state.editingId = null;
+    document.getElementById("editModal").classList.remove("open");
+  }
+
+  function saveEditModal() {
+    if (!state.editingId) return;
+    var qty = parseFloat(String(document.getElementById("editQtyInput").value || "").replace(",", "."));
+    var cost = parseFloat(String(document.getElementById("editCostInput").value || "").replace(",", "."));
+    if (!isFinite(qty) || qty < 0) { showToast("Quantité invalide"); return; }
+    if (!isFinite(cost) || cost < 0) cost = 0;
+
+    if (qty === 0) {
+      deleteEditingPosition();
+      return;
+    }
+    for (var i = 0; i < state.positions.length; i++) {
+      if (state.positions[i].id === state.editingId) {
+        state.positions[i].qty = qty;
+        state.positions[i].cost = cost;
+        state.positions[i].account = document.getElementById("editAccountSel").value;
+        state.positions[i].pocket = document.getElementById("editPocketSel").value;
+        break;
+      }
+    }
+    saveState();
+    closeEditModal();
+    renderAll();
+    showToast("✅ Ligne mise à jour !");
+  }
+
+  function deleteEditingPosition() {
+    if (!state.editingId) return;
+    var snap = null;
+    for (var i = 0; i < state.positions.length; i++) {
+      if (state.positions[i].id === state.editingId) {
+        snap = { pos: state.positions[i], idx: i };
+        state.positions.splice(i, 1);
+        break;
+      }
+    }
+    if (!snap) return;
+    saveState();
+    closeEditModal();
+    renderAll();
+    showToast("🗑️ Supprimé : " + snap.pos.name, function() {
+      state.positions.splice(Math.min(snap.idx, state.positions.length), 0, snap.pos);
+      saveState();
+      renderAll();
+      showToast("↩️ Restauré : " + snap.pos.name);
+    });
+  }
+
+  function syncLiveQuotes() {
+    if (state.isSyncing) return;
+    state.isSyncing = true;
+    document.getElementById("liveDot").classList.add("syncing");
+
+    var tickers = ["FX_IDC:EURUSD", "FX_IDC:EURGBP", "FX_IDC:EURCHF", "FX_IDC:EURHKD", "FX_IDC:EURAUD", "FX_IDC:EURCAD", "FX_IDC:EURJPY", "TVC:VIX", "AMEX:SPY", "XETR:EUNL"];
+    for (var i = 0; i < state.positions.length; i++) {
+      if (tickers.indexOf(state.positions[i].tv) === -1) tickers.push(state.positions[i].tv);
+    }
+
+    fetch("https://scanner.tradingview.com/global/scan", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify({
+        symbols: { tickers: tickers, query: { types: [] } },
+        columns: ["name", "close", "change", "currency", "RSI", "Perf.1M", "dividends_yield_current"]
+      })
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(json) {
+        var rows = (json && Array.isArray(json.data)) ? json.data : [];
+        var map = {};
+        for (var k = 0; k < rows.length; k++) {
+          if (rows[k] && rows[k].s && Array.isArray(rows[k].d)) map[rows[k].s] = rows[k].d;
+        }
+        var fxPairs = { USD: "FX_IDC:EURUSD", GBP: "FX_IDC:EURGBP", CHF: "FX_IDC:EURCHF", HKD: "FX_IDC:EURHKD", AUD: "FX_IDC:EURAUD", CAD: "FX_IDC:EURCAD", JPY: "FX_IDC:EURJPY" };
+        for (var c in fxPairs) {
+          var row = map[fxPairs[c]];
+          if (row && typeof row[1] === "number" && row[1] > 0) state.fx[c] = row[1];
+        }
+
+        for (var j = 0; j < state.positions.length; j++) {
+          var p = state.positions[j];
+          var d = map[p.tv];
+          if (!d || typeof d[1] !== "number" || d[1] <= 0) continue;
+          p.ccy = d[3] || p.ccy || "EUR";
+          p.livePxEur = toEur(d[1], p.ccy);
+          p.dayPct = typeof d[2] === "number" ? d[2] : 0;
+          p.rsi = typeof d[4] === "number" ? d[4] : null;
+          p.perf1M = typeof d[5] === "number" ? d[5] : null;
+          p.divYield = typeof d[6] === "number" ? d[6] : 0;
+          p.isLive = true;
+        }
+
+        var vix = map["TVC:VIX"] && map["TVC:VIX"][1];
+        var spyChg = map["AMEX:SPY"] && map["AMEX:SPY"][2];
+        var msciChg = map["XETR:EUNL"] && map["XETR:EUNL"][2];
+        var mScore = 50;
+        if (typeof vix === "number") mScore += (20 - vix) * 1.4;
+        if (typeof spyChg === "number") mScore += spyChg * 6;
+        if (typeof msciChg === "number") mScore += msciChg * 5;
+        state.marketScore = Math.round(Math.max(10, Math.min(90, mScore)));
+        state.marketSummary = state.marketScore <= 35
+          ? "Prudent / Repli (opportunité progressive)"
+          : (state.marketScore <= 65 ? "Équilibré" : "Optimiste (privilégier les ordres limites)");
+
+        var now = new Date();
+        state.lastSyncStr = String(now.getHours()).padStart(2, "0") + "h" + String(now.getMinutes()).padStart(2, "0");
+        state.isSyncing = false;
+        document.getElementById("liveDot").classList.remove("syncing");
+        renderAll();
+      })
+      .catch(function() {
+        state.isSyncing = false;
+        document.getElementById("liveDot").classList.remove("syncing");
+        renderAll();
+      });
+  }
+
+  function switchTab(tab) {
+    state.activeTab = tab;
+    var secs = document.querySelectorAll(".section");
+    for (var i = 0; i < secs.length; i++) secs[i].classList.toggle("active", secs[i].id === "tab-" + tab);
+    var navs = document.querySelectorAll("#bottomNav .nav-btn");
+    for (var j = 0; j < navs.length; j++) navs[j].classList.toggle("active", navs[j].getAttribute("data-tab") === tab);
+    window.scrollTo(0, 0);
+  }
+
+  function openIoModal(mode) {
+    var isExp = mode === "export";
+    document.getElementById("ioTitle").textContent = isExp ? "💾 Sauvegarder mon portefeuille" : "📥 Importer une sauvegarde";
+    document.getElementById("ioSub").textContent = isExp
+      ? "Copiez ce code ou téléchargez le fichier .json pour transférer vos données."
+      : "Collez votre code .json ou sélectionnez un fichier sauvegardé.";
+    document.getElementById("ioBox").value = isExp ? JSON.stringify({ v: 2, profile: state.profile, positions: state.positions }, null, 2) : "";
+    document.getElementById("ioExportRow").style.display = isExp ? "flex" : "none";
+    document.getElementById("ioImportRow").style.display = isExp ? "none" : "flex";
+    document.getElementById("ioModal").classList.add("open");
+  }
+
+  function applyIoImport(txt) {
+    try {
+      var parsed = JSON.parse(String(txt || "").trim());
+      if (!parsed || !Array.isArray(parsed.positions)) throw new Error("bad");
+      state.positions = parsed.positions;
+      if (PROFILES[parsed.profile]) state.profile = parsed.profile;
+      saveState();
+      document.getElementById("ioModal").classList.remove("open");
+      renderAll();
+      syncLiveQuotes();
+      showToast("✅ Sauvegarde importée !");
+    } catch (e) {
+      showToast("⚠️ Format JSON non reconnu");
+    }
+  }
+
+  // Events
+  document.addEventListener("click", function(e) {
+    if (e.target.closest("#btnV2Undo")) {
+      var cb = window._v2Undo;
+      window._v2Undo = null;
+      document.getElementById("toast").style.display = "none";
+      if (typeof cb === "function") cb();
+      return;
+    }
+    var nav = e.target.closest("#bottomNav .nav-btn");
+    if (nav) { switchTab(nav.getAttribute("data-tab")); return; }
+    if (e.target.closest("#headerProfileBtn")) { switchTab("profile"); return; }
+
+    var profBtn = e.target.closest(".prof-card[data-prof]");
+    if (profBtn) {
+      state.profile = profBtn.getAttribute("data-prof");
+      saveState();
+      renderAll();
+      showToast("Profil activé : " + PROFILES[state.profile].name);
+      return;
+    }
+    var amtChip = e.target.closest("#amtChips .preset-chip");
+    if (amtChip) {
+      state.investAmt = Number(amtChip.getAttribute("data-amt")) || 300;
+      saveState();
+      renderAll();
+      return;
+    }
+    var bAcc = e.target.closest("#buyAccRow .btn[data-bacc]");
+    if (bAcc) {
+      state.buyAcc = bAcc.getAttribute("data-bacc");
+      saveState();
+      renderAll();
+      return;
+    }
+    var pAcc = e.target.closest("#portFilterRow .btn[data-pacc]");
+    if (pAcc) {
+      state.portAcc = pAcc.getAttribute("data-pacc");
+      renderAll();
+      return;
+    }
+    if (e.target.closest("#btnSortPort")) {
+      var order = ["val", "day", "gain"];
+      state.portSort = order[(order.indexOf(state.portSort) + 1) % order.length];
+      renderAll();
+      return;
+    }
+    if (e.target.closest("#btnHeroAdd") || e.target.closest("#btnAddTop")) { openAddModal(); return; }
+    if (e.target.closest("#btnHeroDemo") || e.target.closest("#btnLoadDemo")) {
+      state.positions = DEMO_POSITIONS.map(function(x) { return Object.assign({}, x); });
+      saveState();
+      switchTab("actions");
+      renderAll();
+      syncLiveQuotes();
+      showToast("✨ Portefeuille démo chargé !");
+      return;
+    }
+    if (e.target.closest("#btnResetEmpty")) {
+      state.positions = [];
+      saveState();
+      switchTab("actions");
+      renderAll();
+      showToast("🧹 Portefeuille vidé");
+      return;
+    }
+    var srRow = e.target.closest(".sr-row[data-sr-idx]");
+    if (srRow && window._v2SearchCache) {
+      var idx = parseInt(srRow.getAttribute("data-sr-idx"), 10);
+      if (window._v2SearchCache[idx]) selectSearchAsset(window._v2SearchCache[idx]);
+      return;
+    }
+    if (e.target.closest("#btnChangeAsset")) { openAddModal(); return; }
+    if (e.target.closest("#btnCancelAdd") || e.target.id === "addModal") { closeAddModal(); return; }
+    if (e.target.closest("#btnConfirmAdd")) { confirmAddPosition(); return; }
+
+    var qBuy = e.target.closest(".btn-quick-buy");
+    if (qBuy) { openEditModal(qBuy.getAttribute("data-id"), Math.abs(parseFloat(qBuy.getAttribute("data-amt")) || 0)); return; }
+    var qSell = e.target.closest(".btn-quick-sell");
+    if (qSell) { openEditModal(qSell.getAttribute("data-id"), -Math.abs(parseFloat(qSell.getAttribute("data-amt")) || 0)); return; }
+    var edBtn = e.target.closest(".btn-edit-line");
+    if (edBtn) { openEditModal(edBtn.getAttribute("data-eid"), 0); return; }
+    var lCard = e.target.closest(".line-card[data-lid]");
+    if (lCard && !e.target.closest(".btn-edit-line")) {
+      var lid = lCard.getAttribute("data-lid");
+      state.expandedId = (state.expandedId === lid) ? null : lid;
+      renderAll();
+      return;
+    }
+    if (e.target.closest("#btnCancelEdit") || e.target.id === "editModal") { closeEditModal(); return; }
+    if (e.target.closest("#btnSaveEdit")) { saveEditModal(); return; }
+    if (e.target.closest("#btnDeleteEdit")) { deleteEditingPosition(); return; }
+
+    if (e.target.closest("#btnExport")) { openIoModal("export"); return; }
+    if (e.target.closest("#btnImport")) { openIoModal("import"); return; }
+    if (e.target.closest("#btnIoClose1") || e.target.closest("#btnIoClose2") || e.target.id === "ioModal") {
+      document.getElementById("ioModal").classList.remove("open");
+      return;
+    }
+    if (e.target.closest("#btnIoCopy")) {
+      try { navigator.clipboard.writeText(document.getElementById("ioBox").value); showToast("📋 Sauvegarde copiée !"); } catch (err) {}
+      return;
+    }
+    if (e.target.closest("#btnIoDownload")) {
+      var blob = new Blob([document.getElementById("ioBox").value], { type: "application/json" });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = "copilote-v2.json";
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
+      return;
+    }
+    if (e.target.closest("#btnIoPick")) { document.getElementById("ioFile").click(); return; }
+    if (e.target.closest("#btnIoApply")) { applyIoImport(document.getElementById("ioBox").value); return; }
+  });
+
+  document.getElementById("investAmtInput").addEventListener("input", function(e) {
+    var v = parseFloat(String(e.target.value || "").replace(",", "."));
+    if (isFinite(v) && v >= 10) {
+      state.investAmt = Math.round(v);
+      saveState();
+      renderAll();
+    }
+  });
+
+  document.getElementById("searchAssetInput").addEventListener("input", function(e) {
+    var q = e.target.value;
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(function() { runAssetSearch(q); }, 220);
+  });
+
+  ["addQtyInput", "addCostInput"].forEach(function(id) {
+    document.getElementById(id).addEventListener("input", function() { updatePruHint("addQtyInput", "addCostInput", "addPruHint"); });
+  });
+  ["editQtyInput", "editCostInput"].forEach(function(id) {
+    document.getElementById(id).addEventListener("input", function() { updatePruHint("editQtyInput", "editCostInput", "editPruHint"); });
+  });
+
+  document.getElementById("ioFile").addEventListener("change", function(e) {
+    var f = e.target.files && e.target.files[0];
+    if (!f) return;
+    var rd = new FileReader();
+    rd.onload = function(ev) { applyIoImport(ev.target.result); e.target.value = ""; };
+    rd.readAsText(f);
+  });
+
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      closeAddModal();
+      closeEditModal();
+      document.getElementById("ioModal").classList.remove("open");
+    }
+  });
+
+  loadState();
+  renderAll();
+  syncLiveQuotes();
+  setInterval(function() { if (!document.hidden && state.positions.length > 0) syncLiveQuotes(); }, 15000);
+})();
+</script>
+</body>
+</html>
