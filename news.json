@@ -1,15 +1,6 @@
 {
-  "updatedAt": "2026-11-24T11:43:01Z",
+  "updatedAt": "2026-11-24T12:46:31Z",
   "upcomingEarnings": [
-    {
-      "id": "earn_HKEX:1810_20261124",
-      "tv": "HKEX:1810",
-      "name": "Xiaomi",
-      "weight": "3,4 %",
-      "timestamp": 1795521600,
-      "dateStr": "24/11/2026",
-      "daysLeft": 0
-    },
     {
       "id": "earn_NYSE:BLK_20270121",
       "tv": "NYSE:BLK",
@@ -17,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 58
+      "daysLeft": 57
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 63
+      "daysLeft": 62
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 70
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 70
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 71
+      "daysLeft": 70
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 72
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 72
+      "daysLeft": 71
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 78
+      "daysLeft": 77
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +80,16 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 79
+      "daysLeft": 78
+    },
+    {
+      "id": "earn_NYSE:KO_20270216",
+      "tv": "NYSE:KO",
+      "name": "Coca-Cola",
+      "weight": "0,1 %",
+      "timestamp": 1802779200,
+      "dateStr": "16/02/2027",
+      "daysLeft": 83
     }
   ],
   "majorMoves": [
@@ -126,26 +126,37 @@
   ],
   "items": [
     {
-      "id": "992006a4a4d6a763",
+      "id": "a49172b76aecd4ec",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Anthropic passe sous la barre des 83 dollars, son prix d'introduction en bourse, alors que l'élan haussier de - Boursorama",
-      "excerpt": "L'action d'Anthropic ( ANT.O ) a chuté sous son prix d'introduction en bourse de 83 dollars lors des échanges avant l'ouverture mardi , un revirement spectaculaire quelques jours…",
-      "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 11:25:29 GMT",
-      "pubTs": 1795519529,
-      "link": "https://news.google.com/rss/articles/CBMivwJBVV95cUxPUHp4OFo3N1RaaWdtaGZwaGRzTzExcnk4TDYwdjNsZXdYMlNrRVlkRjdyTUNlN2dYYzZHdVR3a1p4eDdNRDNIMGhrQ1gxSmhNVnRHbGhydjgyMzJJT0FRb3J3c2NzOWxfZWxUc1AzOVdjcmVnX3BuRkhtNGlEOHotTFRYZWVkdDJ4UWhPRndCdkNaeExfYno3Q2tScGlyc0ZlSWJKZzFMbkFTY3ZDNy1FR01rbl9rRmZxN0w1RkJvWkNEdE85YXdnY1FjV3NWdXFvZk9zR29Ga0VsR0d2eGNoWnI5bGMzc1JTRFYyR3FuQkRGZkFKOTZjcmRDZ2ZpZlg0ZzNubWFxbmpUSkR6TThFb21nbXNVdnE2WWJ6alh3RmV4OUgwcVVnWWx3QTRNeEJQZXlJM3lfMjVzWjRqU3Fj0gHEAkFVX3lxTE1HdWdSVVRWd3pzRHI4WThpcVk2Z2dFMmMwOEZfZnBCd3h1Rk1xUHU1UmlCTnR3WHA4WXN5cVFkTXQ4OW1hb3c5bXFhdVY1bkN4QU5nTWlCWnlQTG14RnVhMDVPNHZxcXVPYXdnLUhRUmxhUE14SEh3SUlyUEc3NnpNM3Nfd1hIRHQ0SWV2UmxKVU9pRUlVSGFOdF9vU0ZDOEdxWHVvZVRkbHJiZFBmVk1FcGgxbmY1YUZDSlo2Q0VOUkR0ZVFrRzZMQmhteFRLWDVUcGRlTTZtV05vcUhtQXoxcUQ2VnZCc09pWnR1RXFrNzloenlQZ1dESFFjQ1ZULWVJNncyUmpGVzEwd041ekRoZmJ1SVo4ekx4endNTjk2dDhVQUxJUzg4ZndvazdlZ2xVbEVUUmZOWWI4a0xpdU5rbUtvMg?oc=5"
+      "title": "Anthropic passe brièvement sous son prix d’introduction en Bourse - Investing.com France",
+      "excerpt": "L'action d'Anthropic ANT.O a chuté sous son prix d'introduction en bourse de 83 dollars lors des échanges avant l'ouverture mardi , un revirement spectaculaire quelques jours…",
+      "source": "Investing.com France",
+      "pubDate": "Tue, 24 Nov 2026 11:59:00 GMT",
+      "pubTs": 1795521540,
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPQ1Q3SXNLeGpXUmtCcFJCREJmaFFEbTN6NmdQM1U0bGpvYjI1ekN2Z0hjLWw0QmZBNU5xTlpybV93SXdLNFlic1dheWZYb2s0QmNUVnQzV0c2XzdCNk41WlpaQ1lxTDk2RFF4MzJGSzB6eG9JSzJYR05KQXpUajYybUYwMHVKOGFaRFJRdkkzWnl0bnY3OVBoM2p5Yko2UGVLOW5lS0ZLeGRhMjdlZno3S3M0WmJGNzl6TzlvbA?oc=5"
     },
     {
-      "id": "b9a720be83f7de6c",
+      "id": "54532972aa15050d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 10:54:25 GMT",
+      "pubTs": 1795517665,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
+    },
+    {
+      "id": "86e05cee903e1b40",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "Le bénéfice de Xiaomi rate les prévisions du T3 avec des ventes en baisse - Investing.com France",
-      "excerpt": "Le chinois Xiaomi Corp a fait état mardi d’un recul de 57 % de son bénéfice net au troisième trimestre, inférieur aux prévisions des analystes. Le fabricant chinois de smartphones et…",
-      "source": "Investing.com France",
-      "pubDate": "Tue, 24 Nov 2026 10:50:00 GMT",
-      "pubTs": 1795517400,
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOX2UxLWh2a2psVDE3UzdHdmlRdHN2TlNLQVVOOF85aVZSX2ZSOGcyTUhRNDJnYS1fSXhfazI2X1dCUzFfNmpIV3BfMGp3NUhqLTE2QVhReFlqQ1dGNXdZRFdGNlhJUTgtQ082aXZ1WFRUNDVyZmYwMFBiQXlwQmxqa1lJZE9JbS1lVjZVdEhrQ2lNZjhMaVNCZHRWUVpqYThmNFJkQmZfMnQ1dkpTamNPdVdEUlZ1YkkxRGZ6cA?oc=5"
+      "title": "Xiaomi : numéro 1 des ventes de batteries externes en Chine en octobre 2026 - xiaomi-miui.gr",
+      "excerpt": "Se couper du monde et partir en pleine nature ou bien s’envoler au bout du monde sans prendre connaissance de la compatibilité matérielle, tout cela n’est plus incompatible avec vos…",
+      "source": "xiaomi-miui.gr",
+      "pubDate": "Tue, 24 Nov 2026 10:51:38 GMT",
+      "pubTs": 1795517498,
+      "link": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5GdThjZ18ycGxZT29pbDZ2d3dsc2pKSTZuSlJoOVg4a21zTkVMSXFPWlhHdDJrMXFQQzc3WHFQcnBFRUZ0ekhfZ0J2Q0ZpZjVnQ016TUxMREhiU1psQWs5MkVuY2toZFFaUENiVC1xendkNFhDTjh0ZA?oc=5"
     },
     {
       "id": "fc41d1f1fb3f2262",
@@ -170,26 +181,15 @@
       "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
     },
     {
-      "id": "54532972aa15050d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
-      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
-      "source": "L'Echo",
-      "pubDate": "Tue, 24 Nov 2026 10:09:43 GMT",
-      "pubTs": 1795514983,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
-    },
-    {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
+      "id": "1be6d0427e645001",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 09:08:43 GMT",
-      "pubTs": 1795511323,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+      "title": "Retour de Huang : Nvidia catapultée à Wall Street, le marché s'envole - Yahoo Finance France",
+      "excerpt": "Propulsée par le retour surprise de Jensen Huang à la tête de Nvidia, l'action du géant américain des puces bondissait lundi à Wall Street, entraînant dans son sillage l'ensemble du…",
+      "source": "Yahoo Finance France",
+      "pubDate": "Mon, 23 Nov 2026 16:34:35 GMT",
+      "pubTs": 1795451675,
+      "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxQbkVBVURkV1VISS0ydXVXZl9NbEMxNVVvN1lINTFPNUIxbWFfd1NfMGdUQkVsZlBXeEtWX3ozSy1KVlpaaGJfSGw3M05odm5kMnhEWTE3Q04wZG44elhoQzAtcGUxb2w5d1FIZ01qRWpYTTlSaHpNdmM1ODh5c0dGWE5BVllRM0pfcnh3Nkk0Yk9jTzEwblB4eDV3LVZNUQ?oc=5"
     },
     {
       "id": "e603a91a1e9c791c",
@@ -287,6 +287,9 @@
     "b9a720be83f7de6c",
     "fc41d1f1fb3f2262",
     "5bf3fd173184c964",
-    "54532972aa15050d"
+    "54532972aa15050d",
+    "a49172b76aecd4ec",
+    "86e05cee903e1b40",
+    "1be6d0427e645001"
   ]
 }
