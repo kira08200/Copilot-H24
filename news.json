@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T02:43:49Z",
+  "updatedAt": "2026-11-24T03:39:32Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -148,6 +148,17 @@
       "link": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNajhOTER1QTVOajE0dXVBbGw0Q1FqMkFNTDk0cjV5XzNhRVJHWVJ5YVBHS3daYThic2ZhUnkwZllHMmIxUXN3QWR3aWVyNy0yVzAxOUV2eVZuTmJQMGVDMWtiTE9neGlWWUNzZnQwMjJBQ3FlTU9BcVlneXAyMWtZRV80Z2ZMSE9JZkRFQg?oc=5"
     },
     {
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+    },
+    {
       "id": "fa3ffe13bc513ac8",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -157,17 +168,6 @@
       "pubDate": "Mon, 23 Nov 2026 20:06:02 GMT",
       "pubTs": 1795464362,
       "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxPTUJZOTU3NGoyZ2drekhkM05WSEdFaHZTN25KQTFLR0NZdHZVUWxtZVdoOTA1VTdBNVYwY19QSFVYUlJ5UDZ5cm5USE9VazdBaEhMTnhueTlDZDE0YVBOci1qMVhOZ2hhbXBxNm1ZSEUwbHpFQzdRYmhrVDhBeGxodTNHVDZEdVlCSzlvZzk3TE80YThNNWg0Q3VHU1pKOURzSjlTQnlOWHhaVlZqZndIR1BJTUY5UE5YZTliWkNkdENwVGRjWkIyN1ZDMlprMFBPRmxTb25fWWhJMjA0dGNmbkNORWpydlBadG9VN3FqaW51MXNhbGFsVGNmVGlOQkJwRVE?oc=5"
-    },
-    {
-      "id": "2b24c83cf07a96dc",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Résultats de NVIDIA : les prévisions sont rassurantes et l’action demeure sous-évaluée - Morningstar",
-      "excerpt": "par Ankur Banerjee Les prévisions solides de Nvidia ont apaisé pour l'instant les craintes des investisseurs quant à la pérennité de la demande en IA, mais la question de savoir qui…",
-      "source": "Morningstar",
-      "pubDate": "Mon, 23 Nov 2026 17:47:04 GMT",
-      "pubTs": 1795456024,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNT0IxSkdsU0JZdkRVWkI2LWxFdXdNOFZEeHZ6SEJndlZuM1d0UjBkSmNWdzJHbUUtVHdabGpjTnR4VzhpRFhoX0prUWZxNVRPcllWckozS2t1UF9DcXE0Qm91NTY3YnRobmpxT2NoZ2xGbDM2NTFkWnlLVG9LWEVKcUVLdXl0dTF0SkF1b1RnUEtLaXZURUk1TTFaVC11Qjl5TzhVMXdpc09PcHdPZFN5QVR5WjRZWElZUmVGRVdfdnJyQQ?oc=5"
     },
     {
       "id": "fa9294ccb8b6f37c",
