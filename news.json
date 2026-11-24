@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T14:58:23Z",
+  "updatedAt": "2026-11-24T15:58:25Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.7,
-      "price": 414,
+      "changePct": -10.73,
+      "price": 404.785,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,23 +108,76 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -5.9,
-      "price": 155.3101,
+      "changePct": -7.28,
+      "price": 153.0301,
       "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261124",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -5.83,
+      "price": 79.4777,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_XETR:ENR_20261124",
+      "tv": "XETR:ENR",
+      "name": "Siemens Energy",
+      "weight": "4,8 %",
+      "changePct": -5.8,
+      "price": 119.12,
+      "currency": "EUR",
       "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "7455375e84887c4a",
+      "id": "2175ce71d11e81c0",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Le cours d'Anthropic repasse sous son prix d'IPO moins d'une semaine après l'entrée en Bourse - Les Echos",
+      "excerpt": "Le cours d'Anthropic a reculé lors de chaque séance, y compris lundi, lorsque le Nasdaq s'est envolé après l'annonce du retour de Jensen Huang à la tête de Nvidia.",
+      "source": "Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 15:42:21 GMT",
+      "pubTs": 1795534941,
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPSTZ4ellBMWJVUk1QUEJUMzF4ZW9rcDZRMndqQjZ2WGdubTlQTl9DSXBma0RXYU5ENGpNQUQ3WXhwRHdEUWNyTGZzclJwMjJzNlVfTHloel94VGtXRlNGSVFyVlE0X3F4NlQyV1lhSmZmZTNXRHVjMFFEWGpaNkpUQ2Q0dTNNLXluM3FLNjJIdTBhWVU4SjdWQzVaRVNjT3IwOWJOZWdLd3pXTXZVejhvdVo2UDdQX0xvcHA1MHgwMFEzaWVkTDZBeHhia0hQNlU1YXBZNDZkNVRpNW9uZXpQYW5YS2E1NWlCMHRYRA?oc=5"
+    },
+    {
+      "id": "5f98037b4d62526d",
+      "theme": "Amazon",
+      "tagCls": "b-blue",
+      "title": "Amazon acquiert une technologie de Decart pour 7,5 milliards - Brief IA",
+      "excerpt": "L'intelligence artificielle est au cœur de toutes les stratégies. Amazon a annoncé une nouvelle acquisition afin d'améliorer l'utilisation des modèles d'IA. Elle vise la technologie…",
+      "source": "Brief IA",
+      "pubDate": "Tue, 24 Nov 2026 15:05:08 GMT",
+      "pubTs": 1795532708,
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOOEtPSGJUWFN1SnE1TW1SMlZJalpnUmlMcWlLYW5nUE11TlptM3RmZm9SNHVNTHEzSFNjdTZVZkZTejZNVFgxOXI3YWRFR3NQVENRc0s0eldpaU1yRHA5M3gzZHZMNmd1SHFuQTlub2YxTEpJVFZFdXpFcUVxSmo2ZjdTZzF0QVVsUGc4QVhiZ2UxTU5oQWc?oc=5"
+    },
+    {
+      "id": "9ef42602bb57d7d2",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "Résultats de Xiaomi T3 2026 : le bénéfice chute de 68 % en raison des coûts des puces mémoire - Quartz en Français",
-      "excerpt": "Le chiffre d'affaires a chuté de 5,2 % à 107,2 milliards de yuans, car les expéditions de smartphones ont diminué de 29,1 %, et l'unité automobile et IA a perdu 3,4 milliards de yuans.",
-      "source": "Quartz en Français",
-      "pubDate": "Tue, 24 Nov 2026 14:24:43 GMT",
-      "pubTs": 1795530283,
-      "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9vMVV4ZDlXQUdtdHdDQ2RuT1MxMHJQa2E5TlFYaXZzMFg5M2YzZ2FLT21CX1k3YkVjNXBlcjdHWVUta0dvZ0E5ZExTWFRzTU5QRnRVT2FvNENvQWc5ZDJLNHoyNDUzaTZ6TG8zU0dNaDJqdjA?oc=5"
+      "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - www.edcom.fr",
+      "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
+      "source": "www.edcom.fr",
+      "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
+      "pubTs": 1795532400,
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVEhqZHVFb2RxNUdhRDR0clhtRHI5eFJPdm5vQkRTVzlJWHlZRHp0aVpEQWxFX2ExVkRGTW9sdDIwbFcwR19Zek5zRHlYNV92SnhsdnJHMjc0emlzaTBZQU16ZE4wM3A4Q05qLXdsNm01b3dWd0Nzanp0T1dnZUhTUVgydnNidnlqdTUxU25NZHB0eEJQaXJpd2tNZUtOT3BETTI0NEROeld2ejhubHJuYWc4OA?oc=5"
+    },
+    {
+      "id": "880211cf3ac3c617",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
+      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
+      "pubTs": 1795532157,
+      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
     },
     {
       "id": "314c26fe3667a6ee",
@@ -138,28 +191,6 @@
       "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPWXhZc2twZEVsYjRWbnc4Y19KZTFjamphd2JjZlRhX0NHTnZEU090R3NGSEFqSFhGcC1LTGR6dGNwVHk2aVNPc2VvY1lYcVg5UFhySEZBeFVQMGdlbjlhNXJMR2NES3VuYll4NFI0czNLcElxRUlrUUUwSUFjTHo2ZGtRRzFVb0VaNGhxSlFtMU40MlFBdUtOdWNyMVZDeUtCSlNhVg?oc=5"
     },
     {
-      "id": "079abd111048b2e6",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Anthropic passe sous la barre des 83 dollars, son prix d'introduction en bourse, dans un revirement rapide apr - Boursorama",
-      "excerpt": "par Medha Singh Les actions d'Anthropic ANT.O ont chuté sous leur prix d'introduction en bourse de 83 dollars lors des premières transactions de mardi, un recul spectaculaire…",
-      "source": "Boursorama",
-      "pubDate": "Tue, 24 Nov 2026 12:55:26 GMT",
-      "pubTs": 1795524926,
-      "link": "https://news.google.com/rss/articles/CBMivAJBVV95cUxNVVpZby10SERvYkIwUV9LZUZObnNJU1VYUFdEZC14ZU44S0tBa25QdTc1QUM4TzZZOW0xS0duSUN0bDdFUno0NkxwRjhBcjFhT0hVUnhTZ3BjX0NnYkpUWW5uMzlIYmYwa0lYN1NMWlBOaGxlelVrVURYRDUyT3JfY2Z3Y1ZOa1g5ODdZYUNQUjlVN2VsODVZcWp1a29rWU5FUVhKVkhUaGUzcHd2UExJVUFWeDNmNUlRaDBGR1VlS05PSFkzV09WcEZkVFhyZGNVTTFoRjY4djRpU1N6R0R6dlFud3plN1BWTHRKa0I2bmR4VUZWOUJjaFJibUdjc3IyeGJSQV9wdUxSNGZYdVh4b2pteW1SekF6aXl6Q0Q5c0FPTWhBa1dreVU4STBtckctWkhTbjZnRUNjV3dy0gHCAkFVX3lxTE1ZdHFEbzFtcWJqZXUyWk9hWEowcWtUY0M4eDhULVRsSU9LMUx4N0RPSnlQejhPbEFEcVpyNE9oQ1A5ZkNhTG9WRW9xSnR3Nnp3LTAwY0hmdDU0eHJuTGRDVG5qRzlwZk9rTFZoSU5KcVJudkFGVXhsNUtuY2JHM3lYdDhjS2tJTmh1Q0k2cWdWb0tacUlOajYzOE1fZXpSc1FwX0FVS1ZneEVSRXJyOEYzdUVCWE5QcmdZbWhDZXdkaWFuMzlVS1d5MDg0ZWhnN0xIdlJGMGtYX3hYUjRBczZqRXBSb0QyQXpqSUpsNnZQd19wWnBOeDBUcVd5b0FuT1ZReWQwTjNBaHVvb18yZWgwS3d1RERrYks2WXN0dVNYMWZoNTdLbGpMVTl6ZFJLd0gwR3FpdVJpMy0zR0l2UEozdFE?oc=5"
-    },
-    {
-      "id": "54532972aa15050d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
-      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
-      "source": "L'Echo",
-      "pubDate": "Tue, 24 Nov 2026 12:54:40 GMT",
-      "pubTs": 1795524880,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
-    },
-    {
       "id": "5bf3fd173184c964",
       "theme": "Microsoft",
       "tagCls": "b-blue",
@@ -169,17 +200,6 @@
       "pubDate": "Tue, 24 Nov 2026 10:35:01 GMT",
       "pubTs": 1795516501,
       "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaEI0VnN0b19Zd05vck9NM1VNXzl3TjllS29wWEstTWRaMWlOV2dOZGtQbjhWdmJld1pGX2ZqcV9xRFFleFFZMEF1R0Fsd2ZiOFpjUjlGaGVEWHd5NElJWGpsWmlSWDZyR1dmbVQyZDZKMUk3MTUwUW9ZMC1lYmlpQUdKdWNsYVh2cHVWa2lZYmtBbXZzckMwUXZTNjc1NWhITVQxS0xsQ1pZeHJwZXlfT1dQaW01RnZkRGtLOUoxWktrRkhlR0F0WQ?oc=5"
-    },
-    {
-      "id": "885f3195058b5457",
-      "theme": "BYD",
-      "tagCls": "b-green",
-      "title": "Un tribunal néerlandais bloque les ventes du BYD Ti7 dans l’UE en raison de sa ressemblance avec le Defender - Notebookcheck.fr",
-      "excerpt": "Un tribunal de première instance de La Haye a rendu une ordonnance provisoire interdisant à BYD de vendre ou de fabriquer son SUV Ti7 à sept places dans toute l’Union européenne. La…",
-      "source": "Notebookcheck.fr",
-      "pubDate": "Mon, 23 Nov 2026 23:30:00 GMT",
-      "pubTs": 1795476600,
-      "link": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPdnB6Sy1INjVpLTNNd2xYUllDeDJkY3YxNTdmS0YtajloeHRBV2xmVnZJYWw2cjI3VmgxX04yaTJQNkRyZkY4QV9XVnpXc3FJcElqRmhvTmJSOW00VkNDYnViRDVWY1RCVjdOYlBlN005TTZFdHlTTkhPRkJNR1NrcHp3c3gtNFZRNlFmNDd3ODR2WVNEa1oxTXpfaVlSMUhybkRvdDlNTVNXTXN2X0tGdVVEMHRZMkVpOHNESTAtMWEwTU1kdXF0TGEzaVdWZXd4eGRYc3FjMzJhR1lEeTBiZU0xTTE2U2JH?oc=5"
     },
     {
       "id": "e62a9fb8b84862e4",
@@ -288,6 +308,12 @@
     "move_drop_NASDAQ:AMD_20261124",
     "move_drop_NASDAQ:NVDA_20261124",
     "7455375e84887c4a",
-    "079abd111048b2e6"
+    "079abd111048b2e6",
+    "move_drop_NASDAQ:MSTR_20261124",
+    "move_drop_XETR:ENR_20261124",
+    "2175ce71d11e81c0",
+    "5f98037b4d62526d",
+    "9ef42602bb57d7d2",
+    "880211cf3ac3c617"
   ]
 }
