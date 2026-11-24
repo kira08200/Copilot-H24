@@ -1278,10 +1278,10 @@
 
   // Vos 22 positions personnelles conservées intégralement (base + migration automatique v5 -> v6)
   var PERSONAL_DEFAULTS = [
-    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", name: "Air Liquide (PEA)", ccy: "EUR", refPx: 190.14, baseVal: 21266.26, cost: 18132.00, qty: 111.845272, pocket: "def", isCore: true },
+    { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", name: "Air Liquide (PEA)", ccy: "EUR", refPx: 190.14, baseVal: 21266.26, cost: 18132.00, qty: null, pocket: "def", isCore: true },
     { id: "amd", account: "TR", tv: "NASDAQ:AMD", name: "AMD", ccy: "USD", refPx: 462.55, baseVal: 9336.23, cost: 2360.09, qty: 20.184252, pocket: "growth" },
     { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", name: "NVIDIA", ccy: "USD", refPx: 138.54, baseVal: 6613.90, cost: 4725.52, qty: 47.740036, pocket: "growth" },
-    { id: "sp500", account: "TR", tv: "XETR:SXR8", name: "S&P 500 EUR (Acc)", ccy: "EUR", refPx: 133.36, baseVal: 3138.06, cost: 2337.98, qty: 23.530744, pocket: "etf" },
+    { id: "sp500", account: "TR", tv: "XETR:SXR8", name: "S&P 500 EUR (Acc)", ccy: "EUR", refPx: 133.36, baseVal: 3138.06, cost: 2337.98, qty: null, pocket: "etf" },
     { id: "enr", account: "TR", tv: "XETR:ENR", name: "Siemens Energy", ccy: "EUR", refPx: 126.46, baseVal: 2449.13, cost: 1510.93, qty: 19.366807, pocket: "def" },
     { id: "blk", account: "TR", tv: "NYSE:BLK", name: "BlackRock", ccy: "USD", refPx: 1070.00, baseVal: 1979.74, cost: 1630.19, qty: 1.85022, pocket: "etf" },
     { id: "xiaomi", account: "TR", tv: "HKEX:1810", name: "Xiaomi", ccy: "HKD", refPx: 3.38, baseVal: 1717.48, cost: 2095.18, qty: 507.530309, pocket: "growth" },
@@ -1295,7 +1295,7 @@
     { id: "amzn", account: "TR", tv: "NASDAQ:AMZN", name: "Amazon.com", ccy: "USD", refPx: 240.29, baseVal: 150.45, cost: 109.99, qty: 0.626113, pocket: "growth" },
     { id: "qcom", account: "TR", tv: "NASDAQ:QCOM", name: "Qualcomm", ccy: "USD", refPx: 147.64, baseVal: 147.64, cost: 145.98, qty: 1, pocket: "growth" },
     { id: "ai_tr", account: "TR", tv: "EURONEXT:AI", name: "Air Liquide (TR)", ccy: "EUR", refPx: 189.48, baseVal: 49.01, cost: 41.07, qty: 0.258649, pocket: "def" },
-    { id: "msci1", account: "TR", tv: "XETR:EUNL", name: "Core MSCI World (Acc) #1", ccy: "EUR", refPx: 159.50, baseVal: 46.29, cost: 26.22, qty: 0.290219, pocket: "etf" },
+    { id: "msci1", account: "TR", tv: "XETR:EUNL", name: "Core MSCI World (Acc) #1", ccy: "EUR", refPx: 159.50, baseVal: 46.29, cost: 26.22, qty: null, pocket: "etf" },
     { id: "msci2", account: "TR", tv: "XETR:EUNL", name: "Core MSCI World (Acc) #2", ccy: "EUR", refPx: 127.01, baseVal: 36.30, cost: 20.00, qty: 0.2858, pocket: "etf" },
     { id: "ko", account: "TR", tv: "NYSE:KO", name: "Coca-Cola", ccy: "USD", refPx: 89.47, baseVal: 29.07, cost: 19.98, qty: 0.3249, pocket: "def" },
     { id: "googl", account: "TR", tv: "NASDAQ:GOOGL", name: "Alphabet (A)", ccy: "USD", refPx: 255.62, baseVal: 22.98, cost: 9.99, qty: 0.0899, pocket: "growth" },
@@ -1375,6 +1375,26 @@
     return PERSONAL_DEFAULTS.map(function(p) { return Object.assign({}, p); });
   }
 
+  function repairBuggyPrecomputedQtys(list) {
+    if (!Array.isArray(list)) return false;
+    var fixed = false;
+    var fixes = {
+      sp500: { badQty: 23.530744, baseVal: 3138.06 },
+      ai_pea: { badQty: 111.845272, baseVal: 21266.26 },
+      msci1: { badQty: 0.290219, baseVal: 46.29 }
+    };
+    for (var i = 0; i < list.length; i++) {
+      var p = list[i];
+      var f = p && fixes[p.id];
+      if (f && typeof p.qty === "number" && Math.abs(p.qty - f.badQty) < 0.001) {
+        p.baseVal = f.baseVal;
+        p.qty = (typeof p.livePxEur === "number" && p.livePxEur > 0) ? (f.baseVal / p.livePxEur) : null;
+        fixed = true;
+      }
+    }
+    return fixed;
+  }
+
   function loadAndMigrateState() {
     try {
       var rawV6 = localStorage.getItem(STORAGE_KEY_V6);
@@ -1390,6 +1410,7 @@
         if (d6 && d6.notifiedNews && typeof d6.notifiedNews === "object") state.notifiedNews = d6.notifiedNews;
         state.notifsEnabled = d6.notifsEnabled === true;
         state.hasUnreadAlerts = d6.hasUnreadAlerts === true;
+        if (repairBuggyPrecomputedQtys(state.positions)) saveState();
         return;
       }
     } catch (e) {}
@@ -1417,6 +1438,7 @@
             name: defP.name,
             ccy: defP.ccy,
             refPx: defP.refPx,
+            baseVal: defP.baseVal,
             livePxEur: livePx,
             dayPct: typeof sp.dayPct === "number" ? sp.dayPct : null,
             isLive: !!sp.isLive,
@@ -1467,6 +1489,7 @@
         if (dp2 && Array.isArray(dp2.positions) && dp2.positions.length > 0) {
           if (PROFILES[dp2.profile]) state.profile = dp2.profile;
           state.positions = dp2.positions;
+          repairBuggyPrecomputedQtys(state.positions);
           if (typeof dp2.investAmt === "number" && dp2.investAmt >= 10) state.investAmt = dp2.investAmt;
           saveState();
           return;
@@ -1542,8 +1565,15 @@
 
   function getPosMetrics(p) {
     var px = (typeof p.livePxEur === "number" && p.livePxEur > 0) ? p.livePxEur : (p.refPx || 0);
-    var qty = Math.max(0, Number(p.qty) || 0);
     var cost = Math.max(0, Number(p.cost) || 0);
+    if (p.qty === null || typeof p.qty === "undefined") {
+      var bVal = Math.max(0, Number(p.baseVal) || 0);
+      var estQty = px > 0 ? (bVal / px) : 0;
+      var bGain = bVal - cost;
+      var bPct = cost > 0 ? (bGain / cost) * 100 : 0;
+      return { px: px, qty: estQty, cost: cost, val: bVal, gain: bGain, pct: bPct, isSold: bVal <= 0.01 };
+    }
+    var qty = Math.max(0, Number(p.qty) || 0);
     var val = qty * px;
     var gain = val - cost;
     var pct = cost > 0 ? (gain / cost) * 100 : 0;
@@ -1551,7 +1581,9 @@
   }
 
   function isPositionActive(p) {
-    return p && Number(p.qty) > 0;
+    if (!p) return false;
+    if (p.qty === null || typeof p.qty === "undefined") return Number(p.baseVal) > 0.01;
+    return Number(p.qty) > 0;
   }
 
   function isTvActive(tvSym) {
@@ -2650,7 +2682,11 @@
           var d = map[p.tv];
           if (!d || typeof d[1] !== "number" || d[1] <= 0) continue;
           p.ccy = d[3] || p.ccy || "EUR";
-          p.livePxEur = toEur(d[1], p.ccy);
+          var pxEur = toEur(d[1], p.ccy);
+          if ((p.qty === null || typeof p.qty === "undefined") && p.baseVal > 0 && pxEur > 0) {
+            p.qty = p.baseVal / pxEur;
+          }
+          p.livePxEur = pxEur;
           p.dayPct = typeof d[2] === "number" ? d[2] : 0;
           p.rsi = typeof d[4] === "number" ? d[4] : null;
           p.perf1M = typeof d[5] === "number" ? d[5] : null;
