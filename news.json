@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T16:16:04Z",
+  "updatedAt": "2026-11-25T17:16:34Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -98,8 +98,8 @@
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.81,
-      "price": 376.86,
+      "changePct": -8.87,
+      "price": 376.6,
       "currency": "USD",
       "kind": "drop"
     },
@@ -108,8 +108,8 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -8.28,
-      "price": 142.51,
+      "changePct": -8.52,
+      "price": 142.1399,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,28 +118,8 @@
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -7.94,
-      "price": 71.39,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:AMZN_20261125",
-      "tv": "NASDAQ:AMZN",
-      "name": "Amazon",
-      "weight": "0,3 %",
-      "changePct": -6.05,
-      "price": 237.03,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
-      "id": "move_drop_NASDAQ:GOOGL_20261125",
-      "tv": "NASDAQ:GOOGL",
-      "name": "Alphabet (A)",
-      "weight": "0,1 %",
-      "changePct": -5.14,
-      "price": 264.71,
+      "changePct": -7.32,
+      "price": 71.875,
       "currency": "USD",
       "kind": "drop"
     }
@@ -150,22 +130,33 @@
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
       "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
-      "excerpt": "Siemens Energy AG a publié ses résultats pour l’exercice clos le 30 septembre 2026. Sur l’ensemble de l’exercice, le chiffre d’affaires s’est établi à 44 243 millions d’euros…",
+      "excerpt": "Siemens Energy publie un carnet de commandes record, un dividende plus que triplé et vise une marge plus élevée pour l'exercice prochain.",
       "source": "Zonebourse",
       "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
       "pubTs": 1795622726,
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
+      "id": "f33a549fe577ad65",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "SpaceX : l'action plonge après la revente d'Anthropic et la réévaluation de l'IA - TradingView",
+      "excerpt": "La maison-mère du chatbot Claud signe ce jeudi la plus grosses introduction en bourse de l’histoire, avec plus de 100 milliards de dollars levés auprès d’investisseurs…",
+      "source": "TradingView",
+      "pubDate": "Wed, 25 Nov 2026 15:19:06 GMT",
+      "pubTs": 1795619946,
+      "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE95VVo4bHNBYmhlOTVCYWlxX0UxaHhodVRrRUdmai1sMGRWS1VmMDVkcDhKX3BMcmFoSEV0SFBfMmE2UmlodXZtaDJ0N3doV2lacnR6TXcwTFV4WWZ1WVhoVkZSVzdHdw?oc=5"
+    },
+    {
       "id": "dd25183048086152",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Etats-Unis: L'inflation PCE accélère comme prévu en octobre - Boursorama",
+      "title": "Etats-Unis: L'inflation PCE accélère comme prévu en octobre - Zonebourse Suisse",
       "excerpt": "25 novembre (Reuters) - L'inflation aux États-Unis a encore accéléré en octobre, comme prévu, renforçant les anticipations d'une poursuite du relèvement des taux d'intérêt par la…",
-      "source": "Boursorama",
-      "pubDate": "Wed, 25 Nov 2026 15:13:03 GMT",
-      "pubTs": 1795619583,
-      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxORnJWRkFYVTFPWGJJVDBkRE9PU2tvcUNSWVh0dmFsZjVCX2gyT293UW9GTlVHOHM1a0RSd1dVWWNNamh3TmwzRG1BNkNsd05hWW1YTlJLcU5rS2o3OUxBbnVMX0xiNVp5UmhfSjVKcHg1d1hZXzFXYTlRQmIwbk1PbGNGLTF3cFN0Y1VqWEx6MVVZdjI2d2xKa25XN25kY2lpVENsQU16VlpUcVFvb1piVlZSQllDQ3ZvOTFMaXFPc19XWkJ3R2wyOC14ZlVJZk9lSFk5Y1lCZ9IB1wFBVV95cUxORnJWRkFYVTFPWGJJVDBkRE9PU2tvcUNSWVh0dmFsZjVCX2gyT293UW9GTlVHOHM1a0RSd1dVWWNNamh3TmwzRG1BNkNsd05hWW1YTlJLcU5rS2o3OUxBbnVMX0xiNVp5UmhfSjVKcHg1d1hZXzFXYTlRQmIwbk1PbGNGLTF3cFN0Y1VqWEx6MVVZdjI2d2xKa25XN25kY2lpVENsQU16VlpUcVFvb1piVlZSQllDQ3ZvOTFMaXFPc19XWkJ3R2wyOC14ZlVJZk9lSFk5Y1lCZw?oc=5"
+      "source": "Zonebourse Suisse",
+      "pubDate": "Wed, 25 Nov 2026 15:13:52 GMT",
+      "pubTs": 1795619632,
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQYmNIR2dNeU5tdDBrbDNWOWlmRW5iRjdNVl9MY0lNT0lWVXc5MERhTmNLLXBEUkxpTnVSU2pjS2VPblJaRHJTQXpRRHVkaTYtU1h2YmRKQndtOG1HZl9OZ3hwYTRrQmstUzRxT21lRkx4OWd5Q0tYREhBY1M4TkFkcmw3eXpkMngtbWNfSGh4MEhBUjJWc0R0c3FxbWJTZEt5WVlqaThFX3lMNVhQRkd3QXhWZmpSMDJsa2c?oc=5"
     },
     {
       "id": "f4899e1e8464f842",
@@ -190,22 +181,11 @@
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNY1pHdlV2MXBFTHhCMkhvRVdwcExTdl9zYngtaUFyQWJTNC1sczJJSU8zNzlYdFhkR18wVnNVQzVkc19JYzVLdUdWc25wRUttZkFkbUVNOVY2NEY3b3p1Vmo5cU1vdldON0FGUGE5ZEZ0MVktWVFFdEx6S3Iyb3hycjdFSDVKTjdiZWdVRDFtYmw4THBVdFk4UW02S2FyMjVIbDVIc0haLU1ZYWNEVHRXOWJpNTFudGNFU0w4QzFkZnhCR1FBcHNhMms3V1VWM1Y2WnJXVkM2bUNLdzJaenEwenVzYTVZOWVxeHlOSQ?oc=5"
     },
     {
-      "id": "cd481529b7b2e865",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
-      "excerpt": "SpaceX et Tesla ont désigné cinq administrateurs pour négocier les conditions d'une éventuelle fusion qui pourrait valoriser l'ensemble à 3 500 milliards de dollars. Selon le…",
-      "source": "Le Monde Informatique",
-      "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
-      "pubTs": 1795593600,
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODZickxySmVLTjFUTUozSTRmY2EtaE5sLXRCcGZKMUZRVmNPSWYtOW80eXl2X1NJWkJYYzJySS1aeC1YVG1vWGdnVXVoQUVPRE5QSWtXaFZaQ29kUkg2Y2xTZG9fdzdnUjZPaGtEY0lCMGpmNTd2SG1qeFR3MnEwdk1wWTdwVTJ1ZGd3SkNUQXZQdnhvUU1wejU0UnZVZ1VWSWFGQXdOa3pNU29mX1dZMHAzV2RNWmtvZ3RTTHp3ZnRfU0RqV1JBSlpyNWpTTTR0Q0JqNjdhSWY3dkk?oc=5"
-    },
-    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "",
+      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
@@ -367,6 +347,7 @@
     "move_drop_NASDAQ:GOOGL_20261125",
     "c320de58bef2dfe4",
     "dd25183048086152",
-    "f4899e1e8464f842"
+    "f4899e1e8464f842",
+    "f33a549fe577ad65"
   ]
 }
