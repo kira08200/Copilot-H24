@@ -2071,6 +2071,8 @@
         ? (" • Jour : <span class='" + (lp.dayPct >= 0 ? "pos-txt" : "neg-txt") + "'>" + fmtSignedPct(lp.dayPct, 2) + "</span>")
         : "";
       var isOpen = state.expandedId === lp.id;
+      var sessTag = (lp.sessionLabel && lp.sessionLabel !== "Live") ? (" <span style='color:var(--amber);font-size:0.68rem;'>(" + escHtml(lp.sessionLabel) + ")</span>") : "";
+      var pruTxt = lm.qty > 0 ? ("PRU : " + fmtEur(lm.cost / lm.qty) + " • ") : "";
       pHtml += "<div class='line-card" + (lm.isSold ? " sold-line" : "") + (isOpen ? " open" : "") + "' data-lid='" + escHtml(lp.id) + "'>" +
         "<div class='line-top'>" +
           "<div class='line-name'>" + escHtml(lp.name) + " <span style='font-size:0.71rem;color:var(--muted);font-weight:600;'>• " + escHtml(lp.account) + "</span></div>" +
@@ -2081,11 +2083,11 @@
           "<button type='button' class='btn compact btn-edit-line' data-eid='" + escHtml(lp.id) + "' style='min-height:26px;padding:3px 9px;'>✏️ Parts</button>" +
         "</div>" +
         "<div class='line-sub' style='margin-top:4px;'>" +
-          "<span>Cours : " + fmtEur(lm.px) + dayTxt + " • " + (Number.isInteger(lm.qty) ? lm.qty : lm.qty.toFixed(3).replace(".", ",")) + " parts</span>" +
+          "<span>Cours : " + fmtEur(lm.px) + sessTag + dayTxt + " • " + (Number.isInteger(lm.qty) ? lm.qty : lm.qty.toFixed(3).replace(".", ",")) + " parts</span>" +
         "</div>" +
         "<div class='line-details'>" +
           "<div style='color:var(--text);font-weight:700;margin-bottom:3px;'>" + escHtml(st.desc) + "</div>" +
-          "<div>Investi : " + fmtEur(lm.cost) + " • Gain : " + (lm.gain >= 0 ? "+" : "") + fmtEur(lm.gain) + (typeof lp.rsi === "number" ? (" • RSI : " + Math.round(lp.rsi)) : "") + "</div>" +
+          "<div>" + pruTxt + "Investi : " + fmtEur(lm.cost) + " • Gain : " + (lm.gain >= 0 ? "+" : "") + fmtEur(lm.gain) + (typeof lp.rsi === "number" ? (" • RSI : " + Math.round(lp.rsi)) : "") + "</div>" +
         "</div>" +
       "</div>";
     }
@@ -2749,7 +2751,32 @@
     }
   }
 
-  // Synchronisation cours live TradingView H24
+  function getExchangePhase(tvSymbol) {
+    if (!tvSymbol) return "regular";
+    if (tvSymbol.indexOf("NASDAQ:") === 0 || tvSymbol.indexOf("NYSE:") === 0 || tvSymbol.indexOf("AMEX:") === 0) {
+      var ny = getZoneClock("America/New_York");
+      if (ny.wd && ny.mins >= 240 && ny.mins < 570) return "pre";
+      if (ny.wd && ny.mins >= 570 && ny.mins < 960) return "regular";
+      return "post";
+    }
+    if (tvSymbol.indexOf("EURONEXT:") === 0 || tvSymbol.indexOf("XETR:") === 0) {
+      var eu = getZoneClock("Europe/Berlin");
+      if (eu.wd && eu.mins >= 480 && eu.mins < 540) return "pre";
+      if (eu.wd && eu.mins >= 540 && eu.mins < 1055) return "regular";
+      return "post";
+    }
+    if (tvSymbol.indexOf("HKEX:") === 0) {
+      var hk = getZoneClock("Asia/Hong_Kong");
+      return (hk.wd && hk.mins >= 570 && hk.mins < 960) ? "regular" : "post";
+    }
+    if (tvSymbol.indexOf("ASX:") === 0) {
+      var au = getZoneClock("Australia/Sydney");
+      return (au.wd && au.mins >= 600 && au.mins < 960) ? "regular" : "post";
+    }
+    return "regular";
+  }
+
+  // Synchronisation cours live TradingView H24 (inclut Pré-marché & Après-bourse)
   function syncLiveQuotes() {
     if (state.isSyncing) return;
     state.isSyncing = true;
@@ -2763,9 +2790,10 @@
     fetch("https://scanner.tradingview.com/global/scan", {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      cache: "no-store",
       body: JSON.stringify({
         symbols: { tickers: tickers, query: { types: [] } },
-        columns: ["name", "close", "change", "currency", "RSI", "Perf.1M", "dividends_yield_current"]
+        columns: ["name", "close", "change", "currency", "premarket_close", "premarket_change", "postmarket_close", "postmarket_change", "RSI", "Perf.1M", "dividends_yield_current"]
       })
     })
       .then(function(r) { return r.json(); })
@@ -2784,25 +2812,54 @@
         for (var j = 0; j < state.positions.length; j++) {
           var p = state.positions[j];
           var d = map[p.tv];
-          if (!d || typeof d[1] !== "number" || d[1] <= 0) continue;
+          if (!d) continue;
+          var closePx = typeof d[1] === "number" && d[1] > 0 ? d[1] : null;
+          var closeChg = typeof d[2] === "number" ? d[2] : 0;
+          var prePx = typeof d[4] === "number" && d[4] > 0 ? d[4] : null;
+          var preChg = typeof d[5] === "number" ? d[5] : null;
+          var postPx = typeof d[6] === "number" && d[6] > 0 ? d[6] : null;
+          var postChg = typeof d[7] === "number" ? d[7] : null;
+
+          var phase = getExchangePhase(p.tv);
+          var chosenPx = closePx;
+          var chosenChg = closeChg;
+          var sessLbl = "Live";
+          if (phase === "pre" && prePx !== null) {
+            chosenPx = prePx;
+            chosenChg = preChg !== null ? preChg : (closePx ? ((prePx / closePx) - 1) * 100 : 0);
+            sessLbl = "Pré-marché";
+          } else if (phase === "post" && postPx !== null) {
+            chosenPx = postPx;
+            if (closePx && (1 + closeChg / 100) > 0.05) {
+              var prevClose = closePx / (1 + closeChg / 100);
+              chosenChg = ((postPx / prevClose) - 1) * 100;
+            } else if (postChg !== null) {
+              chosenChg = postChg;
+            }
+            sessLbl = "Après-bourse";
+          }
+          if (!chosenPx || chosenPx <= 0) continue;
+
           p.ccy = d[3] || p.ccy || "EUR";
-          var pxEur = toEur(d[1], p.ccy);
+          var pxEur = toEur(chosenPx, p.ccy);
           if ((p.qty === null || typeof p.qty === "undefined") && p.baseVal > 0 && pxEur > 0) {
             p.qty = p.baseVal / pxEur;
           }
           p.livePxEur = pxEur;
-          p.dayPct = typeof d[2] === "number" ? d[2] : 0;
-          p.rsi = typeof d[4] === "number" ? d[4] : null;
-          p.perf1M = typeof d[5] === "number" ? d[5] : null;
-          p.divYield = typeof d[6] === "number" ? d[6] : 0;
+          p.dayPct = chosenChg;
+          p.sessionLabel = sessLbl;
+          p.rsi = typeof d[8] === "number" ? d[8] : null;
+          p.perf1M = typeof d[9] === "number" ? d[9] : null;
+          p.divYield = typeof d[10] === "number" ? d[10] : 0;
           p.isLive = true;
         }
 
         var vix = map["TVC:VIX"] && map["TVC:VIX"][1];
-        var spyChg = map["AMEX:SPY"] && map["AMEX:SPY"][2];
+        var spyRow = map["AMEX:SPY"];
+        var spyChg = spyRow ? (getExchangePhase("AMEX:SPY") === "pre" && typeof spyRow[5] === "number" ? spyRow[5] : spyRow[2]) : null;
         var msciRow = map["XETR:EUNL"];
         if (msciRow && typeof msciRow[2] === "number") {
-          state.msciBench = { chg: msciRow[2], perf1M: typeof msciRow[5] === "number" ? msciRow[5] : null };
+          state.msciBench = { chg: msciRow[2], perf1M: typeof msciRow[9] === "number" ? msciRow[9] : null };
         }
         var mScore = 50;
         if (typeof vix === "number") mScore += (20 - vix) * 1.4;
