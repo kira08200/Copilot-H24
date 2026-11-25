@@ -2751,6 +2751,26 @@
     }
   }
 
+  // Flux temps réel LS Exchange (bourse officielle Trade Republic en EUR, 07h30-23h00)
+  var TR_LSX_MAP = {
+    amd: "LSX:863186",
+    nvda: "LSX:918422",
+    enr: "LSX:ENER6Y",
+    blk: "LSX:A40PW4",
+    xiaomi: "LSX:A2JNY1",
+    msft: "LSX:870747",
+    mstr: "LSX:722713",
+    dro: "LSX:A2DMAA",
+    aapl: "LSX:865985",
+    byd: "LSX:A0M4W9",
+    amzn: "LSX:906866",
+    qcom: "LSX:883121",
+    ai_tr: "LSX:850133",
+    ko: "LSX:850663",
+    googl: "LSX:A14Y6F",
+    sfc: "LSX:756857"
+  };
+
   function getExchangePhase(tvSymbol) {
     if (!tvSymbol) return "regular";
     if (tvSymbol.indexOf("NASDAQ:") === 0 || tvSymbol.indexOf("NYSE:") === 0 || tvSymbol.indexOf("AMEX:") === 0) {
@@ -2784,7 +2804,10 @@
 
     var tickers = ["FX_IDC:EURUSD", "FX_IDC:EURGBP", "FX_IDC:EURCHF", "FX_IDC:EURHKD", "FX_IDC:EURAUD", "FX_IDC:EURCAD", "FX_IDC:EURJPY", "TVC:VIX", "AMEX:SPY", "XETR:EUNL"];
     for (var i = 0; i < state.positions.length; i++) {
-      if (tickers.indexOf(state.positions[i].tv) === -1) tickers.push(state.positions[i].tv);
+      var posItem = state.positions[i];
+      if (tickers.indexOf(posItem.tv) === -1) tickers.push(posItem.tv);
+      var lsxSym = posItem.account === "TR" ? (posItem.liveTv || TR_LSX_MAP[posItem.id]) : null;
+      if (lsxSym && tickers.indexOf(lsxSym) === -1) tickers.push(lsxSym);
     }
 
     fetch("https://scanner.tradingview.com/global/scan", {
@@ -2812,6 +2835,26 @@
         for (var j = 0; j < state.positions.length; j++) {
           var p = state.positions[j];
           var d = map[p.tv];
+          var lsxSym = p.account === "TR" ? (p.liveTv || TR_LSX_MAP[p.id]) : null;
+          var dLsx = lsxSym ? map[lsxSym] : null;
+          var lsxPx = (dLsx && typeof dLsx[1] === "number" && dLsx[1] > 0) ? dLsx[1] : null;
+
+          if (lsxPx !== null) {
+            // Cours temps réel LS Exchange (Trade Republic en EUR, 07h30-23h00)
+            p.ccy = "EUR";
+            if ((p.qty === null || typeof p.qty === "undefined") && p.baseVal > 0) {
+              p.qty = p.baseVal / lsxPx;
+            }
+            p.livePxEur = lsxPx;
+            p.dayPct = typeof dLsx[2] === "number" ? dLsx[2] : (d && typeof d[2] === "number" ? d[2] : 0);
+            p.sessionLabel = "Live";
+            p.rsi = (d && typeof d[8] === "number") ? d[8] : (typeof dLsx[8] === "number" ? dLsx[8] : null);
+            p.perf1M = (d && typeof d[9] === "number") ? d[9] : (typeof dLsx[9] === "number" ? dLsx[9] : null);
+            p.divYield = (d && typeof d[10] === "number") ? d[10] : 0;
+            p.isLive = true;
+            continue;
+          }
+
           if (!d) continue;
           var closePx = typeof d[1] === "number" && d[1] > 0 ? d[1] : null;
           var closeChg = typeof d[2] === "number" ? d[2] : 0;
