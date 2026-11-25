@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T07:57:28Z",
+  "updatedAt": "2026-11-25T08:57:15Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -114,16 +114,6 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_XETR:ENR_20261125",
-      "tv": "XETR:ENR",
-      "name": "Siemens Energy",
-      "weight": "4,8 %",
-      "changePct": -6.78,
-      "price": 117.88,
-      "currency": "EUR",
-      "kind": "drop"
-    },
-    {
       "id": "move_drop_NASDAQ:NVDA_20261125",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
@@ -136,26 +126,48 @@
   ],
   "items": [
     {
-      "id": "c3f219b71985a4af",
+      "id": "9ea4dae519338065",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "CAC 40 : La Bourse de Paris attendue en petite hausse avant l'inflation PCE aux Etats-Unis - Zonebourse",
-      "excerpt": "PARIS --La Bourse de Paris devrait ouvrir en légère hausse mercredi, avant la publication d'un indicateur clé d'inflation aux Etats-Unis. Vers 8h35, le contrat à terme sur le CAC 40…",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 25 Nov 2026 07:42:40 GMT",
-      "pubTs": 1795592560,
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNZWVadDN2eXg2UkFXdXVrMnBwcTNvTXJhaVROQVJkUW1MVmVSR2xiTGtBSlBabVlZR0tVU0ZrWC1WVFh2VE4yWXRscUJ4cTlZaFh4Ti1yc1VTVlRoRWh1N0hvQjVSRVdOUi1TX1E3ak1sWllHem9UZGNSanRmZ3REUlNXby1Hd0w5SGVGOHZ0MVo4dk5mYVZucWdpRDU3ZTB2RG54N1diQXl2Y2V1MXpvbktnd241amhLTzNzcVotQUxoWHNTQVFpRWNhaGE0M0FwQmNPdTVRaHUwWm9zNmlzbFBJSQ?oc=5"
+      "title": "Les Bourses européennes progressent avant l'inflation PCE aux Etats-Unis - ABC Bourse",
+      "excerpt": "PARIS (Agefi-Dow Jones)--La Bourse de Paris devrait ouvrir en légère hausse mercredi, avant la publication d'un indicateur clé d'inflation aux Etats-Unis. Vers 8h35, le contrat à…",
+      "source": "ABC Bourse",
+      "pubDate": "Wed, 25 Nov 2026 08:38:00 GMT",
+      "pubTs": 1795595880,
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUlA5Tm5kcUxEdzdzNWZWVl96a3FXUm5zWVJIY1FKdGlVWFhLaWJSc1J5Z3B4U1FHQXVMbjV5MXpMTVNfZzdsN01wZGJjcHJTNXNqdkxfRm5adWhNU1B3dU1zVVdCMEMyekRmRUVYTlY1V2N0cFFrLXlIWFBrR2E4NUFud2NseUJzSXVVZU1CeDlkRmNhU01tckkwOXRaYnNrU0Q4ZnMwUkRJTzJzWlBrMndlZw?oc=5"
     },
     {
-      "id": "56645cb97792f629",
+      "id": "dee9ffc62224aeca",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Le Cac 40 attendu stable à l'ouverture, les marchés attendent l'inflation américaine après une nouvelle baisse de la tech à Wall Street - Investir Les Echos",
+      "title": "L'inflation PCE d'octobre sous surveillance avant Thanksgiving, le Cac 40 dépasse les 8.100 points - Investir Les Echos",
       "excerpt": "L'inflation PCE d'octobre pourrait donner cet après-midi une indication sur les prochaines décisions de la Réserve fédérale. Le retour de Jensen Huang chez Nvidia n'aura offert…",
       "source": "Investir Les Echos",
-      "pubDate": "Wed, 25 Nov 2026 07:39:44 GMT",
-      "pubTs": 1795592384,
-      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOUXk0eTlYdjBPZl9FeU54ekhYS05yblZTc0R6czFGVnkwSEY1bmJjSXlNcVRDRklxZy1xM0FZQzBsd1RBSXptMTBzT3JwQkFHZ3lZbXFrUGlROU1pTDBoR1RjX0I2bmh6b0ZIaUNVQkhMR0FuaUNNV3hDdDVYVmE2emgtVzVXUG1YQ09SUFJnUFNDWnJKRHZOd2ZSc21qdF9LWnVCTHZ4R1VtMjY1ejNJQl9XSTMxZkJxODVqRkN6VW03MDM0TXpVU3VsM0Q1RVN5LXRGSk14N2hVaW5uUkV4dVUzRERISi03THhoTFZQYWhhQ0VWR2RnMC1FZVhLNzBwckhMVUxnMlVXVl9UVzAtMjZnNm9kRUxFYzVqNGtKYlY1dmhQY2l0S0J0dw?oc=5"
+      "pubDate": "Wed, 25 Nov 2026 08:24:48 GMT",
+      "pubTs": 1795595088,
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxQUU1SNTZLRzRoVWlCTDRQSVBNT29GTlpWNUROMmctV0ZjM082RnlBeWFVTkU4WGRHaGhSRHpQRk5NOWdVQUFEVndRa1ZHM2VqVzByMHVpeHdVeVNuc1VYY1FQdnVveWNDWkZaX2JhR0ZpV1BjdXhuMDdWZHVHS3AyWUVkOHhLNnl6QWVYRE00ZEFfWldfWnp1S3BpZ05ZaUpCVmU1ZDhodnFsZE5HU3lHZU80LXRDREN6QVZIRUotS3hkb3kyeEZMWmJBdFViMnpnVWZiZnpSM1U4SGNldW5tVDJRbC1pdV9QX1JCUThyS0dVTklOdFBXbw?oc=5"
+    },
+    {
+      "id": "cd481529b7b2e865",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
+      "excerpt": "Investing.com - Space Exploration Technologies (NASDAQ:SPCX) et Tesla Inc (NASDAQ:TSLA) travaillent à une potentielle fusion valorisée à 3.500 milliards$, avec cinq administrateurs…",
+      "source": "Le Monde Informatique",
+      "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
+      "pubTs": 1795593600,
+      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODZickxySmVLTjFUTUozSTRmY2EtaE5sLXRCcGZKMUZRVmNPSWYtOW80eXl2X1NJWkJYYzJySS1aeC1YVG1vWGdnVXVoQUVPRE5QSWtXaFZaQ29kUkg2Y2xTZG9fdzdnUjZPaGtEY0lCMGpmNTd2SG1qeFR3MnEwdk1wWTdwVTJ1ZGd3SkNUQXZQdnhvUU1wejU0UnZVZ1VWSWFGQXdOa3pNU29mX1dZMHAzV2RNWmtvZ3RTTHp3ZnRfU0RqV1JBSlpyNWpTTTR0Q0JqNjdhSWY3dkk?oc=5"
+    },
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Wed, 25 Nov 2026 06:36:35 GMT",
+      "pubTs": 1795588595,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
       "id": "b07f8c8a207b8f07",
@@ -167,17 +179,6 @@
       "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
       "pubTs": 1795586400,
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
-    },
-    {
-      "id": "6016dbc6b13081e5",
-      "theme": "BlackRock",
-      "tagCls": "b-blue",
-      "title": "\"On vend des pioches, mais ça ne prouve pas encore qu’il y a de l’or\" : les doutes du secteur IA décryptés par Jean Boivin (BlackRock) - L'Express",
-      "excerpt": "L'ancien sous-gouverneur de la Banque du Canada, Jean Boivin, estime que l'intelligence artificielle est devenue le grand sujet macroéconomique mondial.",
-      "source": "L'Express",
-      "pubDate": "Wed, 25 Nov 2026 04:30:00 GMT",
-      "pubTs": 1795581000,
-      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVnFxalpSVWR5ZkdFREl5cGR4cXpVM2M5MTZWTmlSYWZrSHVBc2xTcnNvMV9Tc09wZ2hLeTlMMl9WOHJkY1BmV2UwdDBtUk56ZlI4d1otZXBWT3FiYzlQWC1tVXplUXlabllQR256XzBFZG4xZ3pyRFZYbm9xa19QZElQNkU2bU1mdHJHRHFIYk44VFJxRm9FNmdCc2xVZU1ad1lCR1dlenN5Y2gxWlJKNElYZ1ZhRllsbndnLW15MGJPSDFWS1hTTVpaZUdlUFYyRXR0OUpfQ0RyOG1USTVPUG1xRnVleDMtNE4tcjZucUpEalgwcjU1VTJJVkhGbHM?oc=5"
     },
     {
       "id": "88427b0a0f939d63",
@@ -200,17 +201,6 @@
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
-    },
-    {
-      "id": "393ac12a62086dbf",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
-      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
-      "pubTs": 1795531580,
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -338,6 +328,9 @@
     "6ee5869cb58bc855",
     "b07f8c8a207b8f07",
     "c3f219b71985a4af",
-    "56645cb97792f629"
+    "56645cb97792f629",
+    "9ea4dae519338065",
+    "dee9ffc62224aeca",
+    "cd481529b7b2e865"
   ]
 }
