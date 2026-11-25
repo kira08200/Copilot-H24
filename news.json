@@ -1,15 +1,6 @@
 {
-  "updatedAt": "2026-11-25T11:51:02Z",
+  "updatedAt": "2026-11-25T12:53:01Z",
   "upcomingEarnings": [
-    {
-      "id": "earn_HKEX:1810_20261124",
-      "tv": "HKEX:1810",
-      "name": "Xiaomi",
-      "weight": "3,4 %",
-      "timestamp": 1795521600,
-      "dateStr": "24/11/2026",
-      "daysLeft": 0
-    },
     {
       "id": "earn_NYSE:BLK_20270121",
       "tv": "NYSE:BLK",
@@ -17,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 57
+      "daysLeft": 56
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -26,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 62
+      "daysLeft": 61
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -35,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 69
+      "daysLeft": 68
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -44,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 69
+      "daysLeft": 68
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -53,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 70
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -62,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 71
+      "daysLeft": 70
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -71,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 71
+      "daysLeft": 70
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -80,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 77
+      "daysLeft": 76
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -89,7 +80,16 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 78
+      "daysLeft": 77
+    },
+    {
+      "id": "earn_NYSE:KO_20270216",
+      "tv": "NYSE:KO",
+      "name": "Coca-Cola",
+      "weight": "0,1 %",
+      "timestamp": 1802779200,
+      "dateStr": "16/02/2027",
+      "daysLeft": 82
     }
   ],
   "majorMoves": [
@@ -126,6 +126,28 @@
   ],
   "items": [
     {
+      "id": "b36eb811e7c2a13c",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le Bitcoin chute sous les 59 000 dollars avant la publication de l’inflation américaine - Le Revenu",
+      "excerpt": "Le Bitcoin chute à 58 880 dollars avant l’inflation PCE américaine, tandis que les ETF enregistrent 2,6 milliards de dollars de retraits.",
+      "source": "Le Revenu",
+      "pubDate": "Wed, 25 Nov 2026 12:21:00 GMT",
+      "pubTs": 1795609260,
+      "link": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPaXJFaG14R09hdE04bkZlTFBGZERlWWdvSUdaMnlneC1tUnBmRnF0alN2MEhnM0UwLVQ4ODRlcnlZUW82am9XVTRGRFJlaFNZVnhGbk1DUUpKd09zcjkyVG4zMUVSRXVVRXBNWk9kWUV6dG1ES193VHZ1QUdZYldzYThPdVZZc0ZGenAxeVZoMExjemU0cVYtNlZ3NVBnR1FWeW5IMC1jNEtldFVnaXZhZndjR0ViQlBobWpwZlRPVHEyRWJ5WXljUTlZYmxqZTVfXzhpWHFB?oc=5"
+    },
+    {
+      "id": "e55b08b6a5696414",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Euro slips as US PCE inflation puts Fed tightening bets to the test - tmgm.com",
+      "excerpt": "EUR/USD declines by 0.21% on Wednesday, trading around 1.0940 at the time of writing. The US Dollar (USD) strengthens amid cautious market sentiment ahead of key inflation and…",
+      "source": "tmgm.com",
+      "pubDate": "Wed, 25 Nov 2026 12:09:30 GMT",
+      "pubTs": 1795608570,
+      "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOeUxPaGszRVFWLXN6clFuNVR2VFk0WU9uRVZMdHFrcnJTZUZYRk9zR2Y5RFA4TDBsMXFZRmZmc2h5VUk5TVExSnFCa3Y4b3JJUHRkMVhwTnJkS2pUQ2w0dGxudzBMbl9CLWZ5cDlTUWNwRUNPR1dZdVQwZlVCQnlxa1NFYW0zeWNQT2JOUXpqbWs1V2xQRWZFTFZGSVpRUHh4aDVUSnI1RElfQ2gwTjFYRkFBMXdUSmVyeVBLRUw5TGJGUEVQZngtclk2RUFadw?oc=5"
+    },
+    {
       "id": "86b3406762084dcb",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -137,33 +159,11 @@
       "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNY1pHdlV2MXBFTHhCMkhvRVdwcExTdl9zYngtaUFyQWJTNC1sczJJSU8zNzlYdFhkR18wVnNVQzVkc19JYzVLdUdWc25wRUttZkFkbUVNOVY2NEY3b3p1Vmo5cU1vdldON0FGUGE5ZEZ0MVktWVFFdEx6S3Iyb3hycjdFSDVKTjdiZWdVRDFtYmw4THBVdFk4UW02S2FyMjVIbDVIc0haLU1ZYWNEVHRXOWJpNTFudGNFU0w4QzFkZnhCR1FBcHNhMms3V1VWM1Y2WnJXVkM2bUNLdzJaenEwenVzYTVZOWVxeHlOSQ?oc=5"
     },
     {
-      "id": "084a213c83bd3aef",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Le bitcoin se replie sous les 59.000 dollars avant l'inflation PCE - ABC Bourse",
-      "excerpt": "Le bitcoin se replie mercredi matin dans lesillage des valeurs technologiques, alors que les investisseurs guettentun indicateur d'inflation aux E - 25/11/2026…",
-      "source": "ABC Bourse",
-      "pubDate": "Wed, 25 Nov 2026 10:45:45 GMT",
-      "pubTs": 1795603545,
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY0g0WjRCTml2R0IwX0VSMnNwbFVWWDIzd1o2enlZei1NbE5NMjlzaUdQSE1DQ2kzMk5OajQzV05PVW1UT29oYkVfd0lIWjVET2hPeFFBY1gzR0JyVmJhSTV2eE5Pa3g5MWpaVHQ0azR0OEJCX0EtbXZ5R3NHSTBXV1d5WEUwVDFZdWEwY2dwa2FZNWtKbXBNOEYzREJLbWFjNXBUOHBTOUFWdw?oc=5"
-    },
-    {
-      "id": "ddd6c57f1011ffff",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "US core PCE inflation set to heat up in October, prompting Federal Reserve rate hikes in 2027 - tmgm.com",
-      "excerpt": "Bureau of Economic Analysis (BEA) will publish the Personal Consumption Expenditures (PCE) Price Index data for October on Wednesday at 13:30 GMT.",
-      "source": "tmgm.com",
-      "pubDate": "Wed, 25 Nov 2026 10:09:59 GMT",
-      "pubTs": 1795601399,
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQMFEzN0hUY0FpdC1hd0NlWjE4RWZaNDUycy1LUVZ6ZVIyMVktQ2JoMDhJN044M3RSVTBiZDN2OFRzbHZFRVpwVnRsZlVxQlZJTGM1OFJsYmxoTTBwOXpuNmhrM1BVdjRPX09TVHdzMVREa3NmMHZ1YmxUako4MmxsbTBwWHRSTkhOWXlWdWhydVpiU0tHVEItbm1nNVBQNEl0Rkt5aHpiY2I5ZkV1Vmt2VWlJQVhBWXY5dUFQQXlTby1jVThSVmNpdV80MVdqTkJjbVZqVVItRGNoX242M2ExYk5KRDZCMW9WNWRpWG9Iaw?oc=5"
-    },
-    {
       "id": "cd481529b7b2e865",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
-      "excerpt": "Selon le Financial Times, SpaceX et Tesla négocieraient une fusion à 3 500 milliards de dollars. Cette information n’est pas confirmée officiellement. SpaceX et Tesla négocieraient…",
+      "excerpt": "Investing.com - Space Exploration Technologies (NASDAQ:SPCX) et Tesla Inc (NASDAQ:TSLA) travaillent à une potentielle fusion valorisée à 3.500 milliards$, avec cinq administrateurs…",
       "source": "Le Monde Informatique",
       "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
       "pubTs": 1795593600,
@@ -174,7 +174,7 @@
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Anthropic risque-t-il un krach en Bourse, alors que l'action tombe sous le prix d'introduction ? - Capital.fr",
-      "excerpt": "",
+      "excerpt": "Le faible flottant d’Anthropic en Bourse favorise une forte volatilité de l’action. Et l'expiration des périodes de lock-ups devrait peser sur le cours de Bourse. Alors que l’action…",
       "source": "Capital.fr",
       "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
       "pubTs": 1795586400,
@@ -192,15 +192,15 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "393ac12a62086dbf",
-      "theme": "NVIDIA",
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
       "tagCls": "b-purple",
-      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
-      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
-      "pubTs": 1795531580,
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Mon, 23 Nov 2026 08:00:00 GMT",
+      "pubTs": 1795420800,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     }
   ],
   "notifiedIds": [
@@ -336,6 +336,8 @@
     "602e918ec7d1630a",
     "ddd6c57f1011ffff",
     "86b3406762084dcb",
-    "084a213c83bd3aef"
+    "084a213c83bd3aef",
+    "b36eb811e7c2a13c",
+    "e55b08b6a5696414"
   ]
 }
