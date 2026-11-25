@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T15:09:09Z",
+  "updatedAt": "2026-11-25T16:16:04Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -94,22 +94,12 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:MSTR_20261125",
-      "tv": "NASDAQ:MSTR",
-      "name": "Strategy A",
-      "weight": "2,0 %",
-      "changePct": -8.32,
-      "price": 71.098564,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
       "id": "move_drop_NASDAQ:AMD_20261125",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
-      "changePct": -8.29,
-      "price": 379.025,
+      "changePct": -8.81,
+      "price": 376.86,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,8 +108,18 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -8.17,
-      "price": 142.68,
+      "changePct": -8.28,
+      "price": 142.51,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:MSTR_20261125",
+      "tv": "NASDAQ:MSTR",
+      "name": "Strategy A",
+      "weight": "2,0 %",
+      "changePct": -7.94,
+      "price": 71.39,
       "currency": "USD",
       "kind": "drop"
     },
@@ -128,34 +128,55 @@
       "tv": "NASDAQ:AMZN",
       "name": "Amazon",
       "weight": "0,3 %",
-      "changePct": -5.53,
-      "price": 238.35,
+      "changePct": -6.05,
+      "price": 237.03,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:GOOGL_20261125",
+      "tv": "NASDAQ:GOOGL",
+      "name": "Alphabet (A)",
+      "weight": "0,1 %",
+      "changePct": -5.14,
+      "price": 264.71,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "a68eb6f347d5bcec",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Inflation américaine à 3,8 % : la hausse des prix s'accélère, les taux d'intérêts vont continuer de grimper - FranceTransactions.com",
-      "excerpt": "Les dernières statistiques publiées par le Bureau of Economic Analysis (BEA), ce mercredi 25 novembre 2026, confirment les difficultés de la Réserve fédérale américaine à enrayer la…",
-      "source": "FranceTransactions.com",
-      "pubDate": "Wed, 25 Nov 2026 14:46:35 GMT",
-      "pubTs": 1795617995,
-      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcF9QeUZfZnZrWEJMOFQ5anZ2T3dHWEZUd2NCMHBiS1MxczRpeU1ORUI2R1BfYmdDVEhycmV5cFBycDUzdG9NdnQ3UnNCaEZiNmgyeDk3YWh2WmFIZmMyd0FzVGY1WVJjS0tfX01wNERsdENiMWgwWHpMdFVWVzhpVGVnSHQ3cmpZWG5RWE5DRlhueHRscjFaY2NVS19RanVYNUEwYVJiRjROLW1TbmJva25reEpfZw?oc=5"
+      "id": "c320de58bef2dfe4",
+      "theme": "Siemens Energy",
+      "tagCls": "b-purple",
+      "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
+      "excerpt": "Siemens Energy AG a publié ses résultats pour l’exercice clos le 30 septembre 2026. Sur l’ensemble de l’exercice, le chiffre d’affaires s’est établi à 44 243 millions d’euros…",
+      "source": "Zonebourse",
+      "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
+      "pubTs": 1795622726,
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
-      "id": "111d090300bc5698",
+      "id": "dd25183048086152",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "États-Unis : l’inflation PCE monte à 3,8 %, la croissance révisée à 4,3 % - Libnanews",
-      "excerpt": "L’indice des prix suivi par la Réserve fédérale progresse de 3,8 % sur un an en octobre. Le PIB du troisième trimestre est révisé à 4,3 % en rythme annualisé, mais la consommation…",
-      "source": "Libnanews",
-      "pubDate": "Wed, 25 Nov 2026 14:32:45 GMT",
-      "pubTs": 1795617165,
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOHM5UW1WSGRORmVjenNvM0d0QlhBUWVKcFFNM1pxbERDUWdPRGpNU0x2MWZaTTdpeXVqT3phRmJhWG9Wem91TjRmZmV3bTFWMXQ5YVdEazZvcnlBWUZIdW9taFEtU3JHS3BhekJOZzRldVd1am9acEl4dWU1WDBsbnFoUndwVWxiekM5T1VDRQ?oc=5"
+      "title": "Etats-Unis: L'inflation PCE accélère comme prévu en octobre - Boursorama",
+      "excerpt": "25 novembre (Reuters) - L'inflation aux États-Unis a encore accéléré en octobre, comme prévu, renforçant les anticipations d'une poursuite du relèvement des taux d'intérêt par la…",
+      "source": "Boursorama",
+      "pubDate": "Wed, 25 Nov 2026 15:13:03 GMT",
+      "pubTs": 1795619583,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxORnJWRkFYVTFPWGJJVDBkRE9PU2tvcUNSWVh0dmFsZjVCX2gyT293UW9GTlVHOHM1a0RSd1dVWWNNamh3TmwzRG1BNkNsd05hWW1YTlJLcU5rS2o3OUxBbnVMX0xiNVp5UmhfSjVKcHg1d1hZXzFXYTlRQmIwbk1PbGNGLTF3cFN0Y1VqWEx6MVVZdjI2d2xKa25XN25kY2lpVENsQU16VlpUcVFvb1piVlZSQllDQ3ZvOTFMaXFPc19XWkJ3R2wyOC14ZlVJZk9lSFk5Y1lCZ9IB1wFBVV95cUxORnJWRkFYVTFPWGJJVDBkRE9PU2tvcUNSWVh0dmFsZjVCX2gyT293UW9GTlVHOHM1a0RSd1dVWWNNamh3TmwzRG1BNkNsd05hWW1YTlJLcU5rS2o3OUxBbnVMX0xiNVp5UmhfSjVKcHg1d1hZXzFXYTlRQmIwbk1PbGNGLTF3cFN0Y1VqWEx6MVVZdjI2d2xKa25XN25kY2lpVENsQU16VlpUcVFvb1piVlZSQllDQ3ZvOTFMaXFPc19XWkJ3R2wyOC14ZlVJZk9lSFk5Y1lCZw?oc=5"
+    },
+    {
+      "id": "f4899e1e8464f842",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street prend son jeudi pour Thanksgiving, pas de répit pour les marchés européens - Investir Les Echos",
+      "excerpt": "La fête de Thanksgiving mettra les marchés américains en pause, mais pas la Bourse de Paris. Les regards se tourneront vers la BCE. Son compte rendu d'octobre permettra de revenir…",
+      "source": "Investir Les Echos",
+      "pubDate": "Wed, 25 Nov 2026 14:55:33 GMT",
+      "pubTs": 1795618533,
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOMnU1WTRpYU9XQmZudXJ3NlJuaXR0MGJhVzl4VEhnYW45NHZ3REFueEszMFE1QzEyZks4WDVNUlQxZ3JVallSSXFWSFp6TU42S2JjQldyVjhBa0UwOHFQN1lLMnp1cnVHMUMtcUNMM3d3LUMxOHk5ZEdFLTlneG55cWg2RkpHcUt2OUxXUHZ1RlR2ZURFVjYyQjBobmtwVVN1aFVCTEV5cUdFN3lKZDY2MFhoajluSmpiaDVvQUtudUd3Vk9GMXNWaDMwODJOZHk5TTBLcURkM3l4NldlSDdZaDhpNGFNWGFEWm1pcQ?oc=5"
     },
     {
       "id": "86b3406762084dcb",
@@ -173,44 +194,33 @@
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
-      "excerpt": "Investing.com - Space Exploration Technologies (NASDAQ:SPCX) et Tesla Inc (NASDAQ:TSLA) travaillent à une potentielle fusion valorisée à 3.500 milliards$, avec cinq administrateurs…",
+      "excerpt": "SpaceX et Tesla ont désigné cinq administrateurs pour négocier les conditions d'une éventuelle fusion qui pourrait valoriser l'ensemble à 3 500 milliards de dollars. Selon le…",
       "source": "Le Monde Informatique",
       "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
       "pubTs": 1795593600,
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODZickxySmVLTjFUTUozSTRmY2EtaE5sLXRCcGZKMUZRVmNPSWYtOW80eXl2X1NJWkJYYzJySS1aeC1YVG1vWGdnVXVoQUVPRE5QSWtXaFZaQ29kUkg2Y2xTZG9fdzdnUjZPaGtEY0lCMGpmNTd2SG1qeFR3MnEwdk1wWTdwVTJ1ZGd3SkNUQXZQdnhvUU1wejU0UnZVZ1VWSWFGQXdOa3pNU29mX1dZMHAzV2RNWmtvZ3RTTHp3ZnRfU0RqV1JBSlpyNWpTTTR0Q0JqNjdhSWY3dkk?oc=5"
     },
     {
-      "id": "b07f8c8a207b8f07",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Anthropic risque-t-il un krach en Bourse, alors que l'action tombe sous le prix d'introduction ? - Capital.fr",
-      "excerpt": "Le faible flottant d’Anthropic en Bourse favorise une forte volatilité de l’action. Et l'expiration des périodes de lock-ups devrait peser sur le cours de Bourse. Alors que l’action…",
-      "source": "Capital.fr",
-      "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
-      "pubTs": 1795586400,
-      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
-    },
-    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
+      "excerpt": "",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
+      "id": "393ac12a62086dbf",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
+      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
+      "pubTs": 1795531580,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -353,6 +363,10 @@
     "66a9140b35f5425d",
     "move_drop_NASDAQ:AMZN_20261125",
     "a68eb6f347d5bcec",
-    "111d090300bc5698"
+    "111d090300bc5698",
+    "move_drop_NASDAQ:GOOGL_20261125",
+    "c320de58bef2dfe4",
+    "dd25183048086152",
+    "f4899e1e8464f842"
   ]
 }
