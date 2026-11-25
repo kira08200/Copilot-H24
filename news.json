@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T10:00:12Z",
+  "updatedAt": "2026-11-25T10:56:24Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,37 +126,26 @@
   ],
   "items": [
     {
-      "id": "337c8122268f7923",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "PhonePe a repris les discussions avec les banquiers pour relancer son introduction en bourse et vise une valorisation comprise entre 12 et 14 milliards (XX,XX milliards d'euros) de dollars – ET - TradingView",
-      "excerpt": "",
-      "source": "TradingView",
-      "pubDate": "Wed, 25 Nov 2026 09:42:45 GMT",
-      "pubTs": 1795599765,
-      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE55WEJYV3poQVNJR3NrTV80VDNxdXdMUUVid1ZndDBudU5vQ01YSjhlTHl5NGVnV0tsNnptdDRtdFlObG9JZHJuaXJ1TjZhT2NxbVdjcndQSXByOUc4bVhrNDJlekNoQWNLV00zQzZsSFUyMzVqQUlJ?oc=5"
+      "id": "ddd6c57f1011ffff",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "US core PCE inflation set to heat up in October, prompting Federal Reserve rate hikes in 2027 - tmgm.com",
+      "excerpt": "Bureau of Economic Analysis (BEA) will publish the Personal Consumption Expenditures (PCE) Price Index data for October on Wednesday at 13:30 GMT.",
+      "source": "tmgm.com",
+      "pubDate": "Wed, 25 Nov 2026 10:09:59 GMT",
+      "pubTs": 1795601399,
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQMFEzN0hUY0FpdC1hd0NlWjE4RWZaNDUycy1LUVZ6ZVIyMVktQ2JoMDhJN044M3RSVTBiZDN2OFRzbHZFRVpwVnRsZlVxQlZJTGM1OFJsYmxoTTBwOXpuNmhrM1BVdjRPX09TVHdzMVREa3NmMHZ1YmxUako4MmxsbTBwWHRSTkhOWXlWdWhydVpiU0tHVEItbm1nNVBQNEl0Rkt5aHpiY2I5ZkV1Vmt2VWlJQVhBWXY5dUFQQXlTby1jVThSVmNpdV80MVdqTkJjbVZqVVItRGNoX242M2ExYk5KRDZCMW9WNWRpWG9Iaw?oc=5"
     },
     {
       "id": "602e918ec7d1630a",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Cours du bitcoin avant le PCE : 6e jour de sorties d’ETF - CryptoTicker.io",
-      "excerpt": "Les ETF Bitcoin perdent 2,37 Md$ en cinq séances. La survente technique, la Fed et l'expiration des options compliquent les prévisions.",
+      "excerpt": "Après 569,7 millions de dollars de retraits lundi, les ETF Bitcoin spot approchent 5 milliards de sorties sur novembre. Le BTC a effacé son rebond lié à Nvidia et repasse sous 60…",
       "source": "CryptoTicker.io",
       "pubDate": "Wed, 25 Nov 2026 09:24:29 GMT",
       "pubTs": 1795598669,
       "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5JY0t3SW1wcmEwNG1TRGJYcng2TEI1X3IzcmdXdWFqbXVuNDF6U3Z5UGM2b2FPV3JyNmJQSlMyck1qNHFSV1BjLVdKWnhXNmpsa0s2QzktRl9FeWdRS3V4R1lUamVDcFg1RnB3dGVEcWVBb3YxM0dTNW93?oc=5"
-    },
-    {
-      "id": "9ea4dae519338065",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Les Bourses européennes progressent avant l'inflation PCE aux Etats-Unis - ABC Bourse",
-      "excerpt": "PARIS (Agefi-Dow Jones)--La Bourse de Paris devrait ouvrir en légère hausse mercredi, avant la publication d'un indicateur clé d'inflation aux Etats-Unis. Vers 8h35, le contrat à…",
-      "source": "ABC Bourse",
-      "pubDate": "Wed, 25 Nov 2026 08:38:00 GMT",
-      "pubTs": 1795595880,
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUlA5Tm5kcUxEdzdzNWZWVl96a3FXUm5zWVJIY1FKdGlVWFhLaWJSc1J5Z3B4U1FHQXVMbjV5MXpMTVNfZzdsN01wZGJjcHJTNXNqdkxfRm5adWhNU1B3dU1zVVdCMEMyekRmRUVYTlY1V2N0cFFrLXlIWFBrR2E4NUFud2NseUJzSXVVZU1CeDlkRmNhU01tckkwOXRaYnNrU0Q4ZnMwUkRJTzJzWlBrMndlZw?oc=5"
     },
     {
       "id": "cd481529b7b2e865",
@@ -192,11 +181,22 @@
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
     },
     {
+      "id": "88427b0a0f939d63",
+      "theme": "Semi-conducteurs (TSMC / ASML)",
+      "tagCls": "b-blue",
+      "title": "ASML Holding cède 3,45% - Boursier.com",
+      "excerpt": "En une semaine, l'action ASML Holding a connu une forte baisse de 3,40%. Sur les douze derniers mois le titre a observé, à l'inverse, une forte hausse de 33,18%, l'action valant 1…",
+      "source": "Boursier.com",
+      "pubDate": "Tue, 24 Nov 2026 21:21:55 GMT",
+      "pubTs": 1795555315,
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQlR0Q2VVZWRQM3BUVDVZOHZTZ3pYdUdJRFowZlA1el9ZdEdSLVQ2MUZNNnE4eGpNMWlraHdxSHFiYkJ5bHBadC0yRElVdHBqU09iMl9QUzJWai1wY1Y2aGFqNmxUc0ZKRVRkNG05aGgzc0hMamQ5cmhTcFFPa3RIRWVLa09EU3lMck4w?oc=5"
+    },
+    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
+      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
@@ -333,6 +333,7 @@
     "dee9ffc62224aeca",
     "cd481529b7b2e865",
     "337c8122268f7923",
-    "602e918ec7d1630a"
+    "602e918ec7d1630a",
+    "ddd6c57f1011ffff"
   ]
 }
