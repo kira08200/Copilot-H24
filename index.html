@@ -1289,7 +1289,7 @@
     { id: "ai_pea", account: "PEA", tv: "EURONEXT:AI", name: "Air Liquide (PEA)", ccy: "EUR", refPx: 190.14, baseVal: 21266.26, cost: 18132.00, qty: null, pocket: "def", isCore: true },
     { id: "amd", account: "TR", tv: "NASDAQ:AMD", name: "AMD", ccy: "USD", refPx: 462.55, baseVal: 9336.23, cost: 2360.09, qty: 20.184252, pocket: "growth" },
     { id: "nvda", account: "TR", tv: "NASDAQ:NVDA", name: "NVIDIA", ccy: "USD", refPx: 138.54, baseVal: 6613.90, cost: 4725.52, qty: 47.740036, pocket: "growth" },
-    { id: "sp500", account: "TR", tv: "XETR:SXR8", name: "S&P 500 EUR (Acc)", ccy: "EUR", refPx: 133.36, baseVal: 3138.06, cost: 2337.98, qty: null, pocket: "etf" },
+    { id: "sp500", account: "TR", tv: "XETR:AUM5", name: "S&P 500 EUR (Acc)", ccy: "EUR", refPx: 129.93, baseVal: 3138.06, cost: 2337.98, qty: null, pocket: "etf" },
     { id: "enr", account: "TR", tv: "XETR:ENR", name: "Siemens Energy", ccy: "EUR", refPx: 126.46, baseVal: 2449.13, cost: 1510.93, qty: 19.366807, pocket: "def" },
     { id: "blk", account: "TR", tv: "NYSE:BLK", name: "BlackRock", ccy: "USD", refPx: 1070.00, baseVal: 1979.74, cost: 1630.19, qty: 1.85022, pocket: "etf" },
     { id: "xiaomi", account: "TR", tv: "HKEX:1810", name: "Xiaomi", ccy: "HKD", refPx: 3.38, baseVal: 1717.48, cost: 2095.18, qty: 507.530309, pocket: "growth" },
@@ -1323,6 +1323,7 @@
     { tv: "EURONEXT:CW8", name: "Amundi MSCI World (CW8)", ticker: "CW8", isin: "LU1681043599", ccy: "EUR", pocket: "etf", pea: true },
     { tv: "EURONEXT:WPEA", name: "iShares MSCI World PEA (WPEA)", ticker: "WPEA", isin: "IE0002XZSHO1", ccy: "EUR", pocket: "etf", pea: true },
     { tv: "XETR:EUNL", name: "iShares Core MSCI World (Acc)", ticker: "EUNL", isin: "IE00B4L5Y983", ccy: "EUR", pocket: "etf", pea: false },
+    { tv: "XETR:AUM5", name: "Amundi S&P 500 EUR (Acc)", ticker: "AUM5", isin: "LU1681048804", ccy: "EUR", pocket: "etf", pea: false },
     { tv: "XETR:SXR8", name: "iShares Core S&P 500 (Acc)", ticker: "SXR8", isin: "IE00B5BMR087", ccy: "EUR", pocket: "etf", pea: false },
     { tv: "EURONEXT:ESE", name: "BNP Paribas Easy S&P 500 PEA", ticker: "ESE", isin: "FR0011550185", ccy: "EUR", pocket: "etf", pea: true },
     { tv: "XETR:XDEW", name: "S&P 500 Equal Weight (Acc)", ticker: "XDEW", isin: "IE00BLNMYC90", ccy: "EUR", pocket: "etf", pea: false },
@@ -1393,7 +1394,20 @@
     };
     for (var i = 0; i < list.length; i++) {
       var p = list[i];
-      var f = p && fixes[p.id];
+      if (!p) continue;
+      if (p.id === "sp500" && p.tv === "XETR:SXR8") {
+        p.tv = "XETR:AUM5";
+        p.refPx = 129.93;
+        p.livePxEur = null;
+        p.isLive = false;
+        p.baseVal = (typeof p.baseVal === "number" && p.baseVal > 0) ? p.baseVal : 3138.06;
+        if (typeof p.qty !== "number" || p.qty < 10 || Math.abs(p.qty - 23.530744) < 0.001) {
+          p.qty = null;
+        }
+        fixed = true;
+        continue;
+      }
+      var f = fixes[p.id];
       if (f && typeof p.qty === "number" && Math.abs(p.qty - f.badQty) < 0.001) {
         p.baseVal = f.baseVal;
         p.qty = (typeof p.livePxEur === "number" && p.livePxEur > 0) ? (f.baseVal / p.livePxEur) : null;
