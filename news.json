@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T01:10:09Z",
+  "updatedAt": "2026-11-25T02:24:05Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -114,6 +114,16 @@
       "kind": "drop"
     },
     {
+      "id": "move_jump_HKEX:1810_20261125",
+      "tv": "HKEX:1810",
+      "name": "Xiaomi",
+      "weight": "3,4 %",
+      "changePct": 8.0,
+      "price": 28.62,
+      "currency": "HKD",
+      "kind": "jump"
+    },
+    {
       "id": "move_drop_XETR:ENR_20261125",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
@@ -158,6 +168,17 @@
       "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQT3JSRkJpV19lUF9iSGNrLU5JenRia3NyYktmVTFXTDVtNFkzbGgtU1hqTkxsRFJPcHZCakVqMnY0VXFPNmZnTUtjODE2TTZsaXFTdUtnU0xhYi04eWhmSFU0NDF3eF91UEU1QUNzTUh5QzBwMlVnYUw2M3Vqamt5WDd5YnV3SExfM3JtUnZkT0luekNsY2tuVFdR?oc=5"
     },
     {
+      "id": "88427b0a0f939d63",
+      "theme": "Semi-conducteurs (TSMC / ASML)",
+      "tagCls": "b-blue",
+      "title": "ASML Holding cède 3,45% - Boursier.com",
+      "excerpt": "En une semaine, l'action ASML Holding a connu une forte baisse de 3,40%. Sur les douze derniers mois le titre a observé, à l'inverse, une forte hausse de 33,18%, l'action valant 1…",
+      "source": "Boursier.com",
+      "pubDate": "Tue, 24 Nov 2026 21:21:55 GMT",
+      "pubTs": 1795555315,
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQlR0Q2VVZWRQM3BUVDVZOHZTZ3pYdUdJRFowZlA1el9ZdEdSLVQ2MUZNNnE4eGpNMWlraHdxSHFiYkJ5bHBadC0yRElVdHBqU09iMl9QUzJWai1wY1Y2aGFqNmxUc0ZKRVRkNG05aGgzc0hMamQ5cmhTcFFPa3RIRWVLa09EU3lMck4w?oc=5"
+    },
+    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
@@ -169,37 +190,15 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "863578b463b9b92f",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
-      "source": "L'Agefi",
-      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
-      "pubTs": 1795537144,
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
-    },
-    {
-      "id": "9ef42602bb57d7d2",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - Edcom",
-      "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
-      "source": "Edcom",
-      "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
-      "pubTs": 1795532400,
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVEhqZHVFb2RxNUdhRDR0clhtRHI5eFJPdm5vQkRTVzlJWHlZRHp0aVpEQWxFX2ExVkRGTW9sdDIwbFcwR19Zek5zRHlYNV92SnhsdnJHMjc0emlzaTBZQU16ZE4wM3A4Q05qLXdsNm01b3dWd0Nzanp0T1dnZUhTUVgydnNidnlqdTUxU25NZHB0eEJQaXJpd2tNZUtOT3BETTI0NEROeld2ejhubHJuYWc4OA?oc=5"
-    },
-    {
-      "id": "880211cf3ac3c617",
+      "id": "5469dc872833b753",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
-      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
-      "pubTs": 1795532157,
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
+      "title": "BOC’S MACKLEM: TOTAL CPI INFLATION (WAS +3.1% Y/Y IN OCT.B) IS OUR TARGET AND IT WILL BE FRONT AND CENTER IN ALL OUR COMMUNICATIONS - TradingView",
+      "excerpt": "",
+      "source": "TradingView",
+      "pubDate": "Tue, 24 Nov 2026 17:32:00 GMT",
+      "pubTs": 1795541520,
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOd2RqS0ZOOVJIRVhkQmMtWDQzb0ZoZUdPZHVvd2Z2YllUZm5zVkg5M3NKX3BzVzZoTHlMeXE3aWQ0ZFRIcXpfeF91TWFwZ2dQSk1lWWtqN0g0QVA3VFFQTXp1dnZhVkZUQUNKdkxYUHdYN2ZZcGw1dzM3ampfTjJTUFNNdExVVVd1c0h3R1d6MG81WDNJMGkyTzdNUUM5cC1kbkFkUVlpdkVaVG9JOG9DVjlmVmM0ZjVwYXVmQXZtZXZoaTBCSUZ6eE1XdU0td1hPSEkzWkhkVDJ3eW5BenA4SHRnN2x0anUwc0F2R05TSGJVZVc5WXQ4NldDWVhWRlAyajhrU0VoYWN1UjRQZHdaWW93?oc=5"
     },
     {
       "id": "393ac12a62086dbf",
@@ -211,6 +210,17 @@
       "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
       "pubTs": 1795531580,
       "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
+    },
+    {
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     }
   ],
   "notifiedIds": [
@@ -329,6 +339,9 @@
     "move_drop_NASDAQ:MSTR_20261125",
     "move_drop_XETR:ENR_20261125",
     "move_drop_NASDAQ:NVDA_20261125",
-    "0c81a6913027dc06"
+    "0c81a6913027dc06",
+    "move_jump_HKEX:1810_20261125",
+    "88427b0a0f939d63",
+    "5469dc872833b753"
   ]
 }
