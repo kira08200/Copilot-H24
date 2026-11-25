@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T14:05:50Z",
+  "updatedAt": "2026-11-25T15:09:09Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -94,22 +94,22 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:AMD_20261125",
-      "tv": "NASDAQ:AMD",
-      "name": "AMD",
-      "weight": "18,4 %",
-      "changePct": -8.86,
-      "price": 413.27,
-      "currency": "USD",
-      "kind": "drop"
-    },
-    {
       "id": "move_drop_NASDAQ:MSTR_20261125",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
-      "changePct": -8.12,
-      "price": 77.55,
+      "changePct": -8.32,
+      "price": 71.098564,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:AMD_20261125",
+      "tv": "NASDAQ:AMD",
+      "name": "AMD",
+      "weight": "18,4 %",
+      "changePct": -8.29,
+      "price": 379.025,
       "currency": "USD",
       "kind": "drop"
     },
@@ -118,34 +118,44 @@
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
-      "changePct": -5.86,
-      "price": 155.38,
+      "changePct": -8.17,
+      "price": 142.68,
+      "currency": "USD",
+      "kind": "drop"
+    },
+    {
+      "id": "move_drop_NASDAQ:AMZN_20261125",
+      "tv": "NASDAQ:AMZN",
+      "name": "Amazon",
+      "weight": "0,3 %",
+      "changePct": -5.53,
+      "price": 238.35,
       "currency": "USD",
       "kind": "drop"
     }
   ],
   "items": [
     {
-      "id": "2c52f2d67f422ff7",
+      "id": "a68eb6f347d5bcec",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Le Cac 40 réduit ses gains après les statistiques américaines, la perspective d'un resserrement monétaire se confirme pour la Fed - Investir Les Echos",
-      "excerpt": "L'inflation sous-jacente dépasse les attentes sur un an et la croissance américaine de cet été est nettement révisée en hausse. La consommation montre toutefois des signes de…",
-      "source": "Investir Les Echos",
-      "pubDate": "Wed, 25 Nov 2026 13:54:19 GMT",
-      "pubTs": 1795614859,
-      "link": "https://news.google.com/rss/articles/CBMipAJBVV95cUxPYW9HbU5pQThmc0R3LW1xQWRuNVR5WDNoRVM5MEl1LVplNjhFWjduSk4wSDFEdmx6aTNxWWdnZjRCRDc5WG9QVVNVSVJGOWZjcGRtQ29pSFZnVnRhaEpZLUtMSzNvMHJWY21uVHJsdlVqSUVJQ28ybW9WTTZDd3hIY3pGZHhlWjU2QlNBQWRlREg3V0tidzRWaHVENzNRbEFXZUg2a3Vud0dabmFmSThNczhvNmFnVkI1RlVQQUdZUXBOVDQxZFp4M0xva09KSUdGX1ZIeEZpSVYzZjZBTU1WUzRCYVFWUi1YNy1BOHNLQ1JSRVJ5N2Z5bF80SlV5UUVvWDRlVVN6YWh1YUx3eUE4Uk9NNW1Va3JXVC1rYkVoRXk5eTc1?oc=5"
+      "title": "Inflation américaine à 3,8 % : la hausse des prix s'accélère, les taux d'intérêts vont continuer de grimper - FranceTransactions.com",
+      "excerpt": "Les dernières statistiques publiées par le Bureau of Economic Analysis (BEA), ce mercredi 25 novembre 2026, confirment les difficultés de la Réserve fédérale américaine à enrayer la…",
+      "source": "FranceTransactions.com",
+      "pubDate": "Wed, 25 Nov 2026 14:46:35 GMT",
+      "pubTs": 1795617995,
+      "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPcF9QeUZfZnZrWEJMOFQ5anZ2T3dHWEZUd2NCMHBiS1MxczRpeU1ORUI2R1BfYmdDVEhycmV5cFBycDUzdG9NdnQ3UnNCaEZiNmgyeDk3YWh2WmFIZmMyd0FzVGY1WVJjS0tfX01wNERsdENiMWgwWHpMdFVWVzhpVGVnSHQ3cmpZWG5RWE5DRlhueHRscjFaY2NVS19RanVYNUEwYVJiRjROLW1TbmJva25reEpfZw?oc=5"
     },
     {
-      "id": "66a9140b35f5425d",
+      "id": "111d090300bc5698",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Etats-Unis : l'inflation PCE a accéléré à 3,8% sur un an en octobre - Zonebourse Suisse",
-      "excerpt": "Les prix à la consommation aux États-Unis ont progressé conformément aux attentes sur un an en octobre, montrent les données publiées mercredi par le département du Commerce.…",
-      "source": "Zonebourse Suisse",
-      "pubDate": "Wed, 25 Nov 2026 13:44:19 GMT",
-      "pubTs": 1795614259,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQY013Q0VCNjA2NHVnOFluT253Y3hRVHE3cUlTeHdNWXZpb2ROSk5aR1VMWU0xZ2sxM2ZxcUVfNXc0UmVuR1dJWVdUd3hORWZQZUxGbFNHeDRUWXpXdU56MXlGeExMWUVFQXZYWFU4T2VqcmZuaXpjcHFMVURtaUxUalZzRlhmRC13TFpjeW9KNjFBZWZxRjJKcFp4NF9YNzdEbmZ1dXZwc2UwdVNDa1lTNlhudHYyc3pGMnFZREV1N251dw?oc=5"
+      "title": "États-Unis : l’inflation PCE monte à 3,8 %, la croissance révisée à 4,3 % - Libnanews",
+      "excerpt": "L’indice des prix suivi par la Réserve fédérale progresse de 3,8 % sur un an en octobre. Le PIB du troisième trimestre est révisé à 4,3 % en rythme annualisé, mais la consommation…",
+      "source": "Libnanews",
+      "pubDate": "Wed, 25 Nov 2026 14:32:45 GMT",
+      "pubTs": 1795617165,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPOHM5UW1WSGRORmVjenNvM0d0QlhBUWVKcFFNM1pxbERDUWdPRGpNU0x2MWZaTTdpeXVqT3phRmJhWG9Wem91TjRmZmV3bTFWMXQ5YVdEazZvcnlBWUZIdW9taFEtU3JHS3BhekJOZzRldVd1am9acEl4dWU1WDBsbnFoUndwVWxiekM5T1VDRQ?oc=5"
     },
     {
       "id": "86b3406762084dcb",
@@ -192,15 +202,15 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
       "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Mon, 23 Nov 2026 08:00:00 GMT",
-      "pubTs": 1795420800,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
@@ -340,6 +350,9 @@
     "b36eb811e7c2a13c",
     "e55b08b6a5696414",
     "2c52f2d67f422ff7",
-    "66a9140b35f5425d"
+    "66a9140b35f5425d",
+    "move_drop_NASDAQ:AMZN_20261125",
+    "a68eb6f347d5bcec",
+    "111d090300bc5698"
   ]
 }
