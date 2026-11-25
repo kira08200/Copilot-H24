@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T05:35:35Z",
+  "updatedAt": "2026-11-25T06:31:04Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -136,26 +136,15 @@
   ],
   "items": [
     {
-      "id": "6016dbc6b13081e5",
-      "theme": "BlackRock",
-      "tagCls": "b-blue",
-      "title": "\"On vend des pioches, mais ça ne prouve pas encore qu’il y a de l’or\" : les doutes du secteur IA décryptés par Jean Boivin (BlackRock) - L'Express",
-      "excerpt": "L'ancien sous-gouverneur de la Banque du Canada, Jean Boivin, estime que l'intelligence artificielle est devenue le grand sujet macroéconomique mondial.",
-      "source": "L'Express",
-      "pubDate": "Wed, 25 Nov 2026 04:30:00 GMT",
-      "pubTs": 1795581000,
-      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVnFxalpSVWR5ZkdFREl5cGR4cXpVM2M5MTZWTmlSYWZrSHVBc2xTcnNvMV9Tc09wZ2hLeTlMMl9WOHJkY1BmV2UwdDBtUk56ZlI4d1otZXBWT3FiYzlQWC1tVXplUXlabllQR256XzBFZG4xZ3pyRFZYbm9xa19QZElQNkU2bU1mdHJHRHFIYk44VFJxRm9FNmdCc2xVZU1ad1lCR1dlenN5Y2gxWlJKNElYZ1ZhRllsbndnLW15MGJPSDFWS1hTTVpaZUdlUFYyRXR0OUpfQ0RyOG1USTVPUG1xRnVleDMtNE4tcjZucUpEalgwcjU1VTJJVkhGbHM?oc=5"
-    },
-    {
-      "id": "969f6fddbcf8d697",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones premium - Investing.com France",
-      "excerpt": "",
-      "source": "Investing.com France",
-      "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
-      "pubTs": 1795580820,
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
+      "id": "b07f8c8a207b8f07",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Anthropic risque-t-il un krach en Bourse, alors que l'action tombe sous le prix d'introduction ? - Capital.fr",
+      "excerpt": "Le faible flottant d’Anthropic en Bourse favorise une forte volatilité de l’action. Et l'expiration des périodes de lock-ups devrait peser sur le cours de Bourse. Alors que l’action…",
+      "source": "Capital.fr",
+      "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
+      "pubTs": 1795586400,
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
     },
     {
       "id": "9fee1d0bf7ce3d63",
@@ -180,15 +169,15 @@
       "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSjlwOWVJTGhGMFN5Mmh0T3QwXzJTUDJpQ3V5bVlYZVRlb2xEUmVEdnFLazN4SVV2U3VCV29MelZ1MTRrU3BHLXEtTE5uUVM3WG9zVGtyMWlhNFBueVpybWx1UFN1bWtocmNtVGhuYmk0T0hiWEtJd1BJYkJTcVlkbXA4QkVtaDhndm44cmZwMElmY2Q0MWN1VmlRa0p1UGNsM0RZT01oYlJmWDM5aVc2SDVpZXhPaGJvZ3BKRlViR3pZRVE?oc=5"
     },
     {
-      "id": "53fe4a55a366a368",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "L’action Anthropic passe sous son prix d’introduction en Bourse - The Media Leader",
-      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
-      "source": "The Media Leader",
-      "pubDate": "Tue, 24 Nov 2026 22:10:00 GMT",
-      "pubTs": 1795558200,
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQT3JSRkJpV19lUF9iSGNrLU5JenRia3NyYktmVTFXTDVtNFkzbGgtU1hqTkxsRFJPcHZCakVqMnY0VXFPNmZnTUtjODE2TTZsaXFTdUtnU0xhYi04eWhmSFU0NDF3eF91UEU1QUNzTUh5QzBwMlVnYUw2M3Vqamt5WDd5YnV3SExfM3JtUnZkT0luekNsY2tuVFdR?oc=5"
+      "id": "88427b0a0f939d63",
+      "theme": "Semi-conducteurs (TSMC / ASML)",
+      "tagCls": "b-blue",
+      "title": "ASML Holding cède 3,45% - Boursier.com",
+      "excerpt": "En une semaine, l'action ASML Holding a connu une forte baisse de 3,40%. Sur les douze derniers mois le titre a observé, à l'inverse, une forte hausse de 33,18%, l'action valant 1…",
+      "source": "Boursier.com",
+      "pubDate": "Tue, 24 Nov 2026 21:21:55 GMT",
+      "pubTs": 1795555315,
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQlR0Q2VVZWRQM3BUVDVZOHZTZ3pYdUdJRFowZlA1el9ZdEdSLVQ2MUZNNnE4eGpNMWlraHdxSHFiYkJ5bHBadC0yRElVdHBqU09iMl9QUzJWai1wY1Y2aGFqNmxUc0ZKRVRkNG05aGgzc0hMamQ5cmhTcFFPa3RIRWVLa09EU3lMck4w?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
@@ -211,6 +200,17 @@
       "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
       "pubTs": 1795532157,
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
+    },
+    {
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     }
   ],
   "notifiedIds": [
@@ -335,6 +335,7 @@
     "5469dc872833b753",
     "969f6fddbcf8d697",
     "6016dbc6b13081e5",
-    "6ee5869cb58bc855"
+    "6ee5869cb58bc855",
+    "b07f8c8a207b8f07"
   ]
 }
