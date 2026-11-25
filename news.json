@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T20:33:20Z",
+  "updatedAt": "2026-11-25T21:32:14Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "e074f21415e4cbe0",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L’or chute malgré le recul des rendements américains, l’inflation PCE sous-jacente atteignant 3,3 % - www.tmgm.com",
+      "excerpt": "par Anjana Anil et Pablo Sinha L'or a chuté lundi à son plus bas niveau depuis un an, sous l'effet conjugué de la hausse des rendements des bons du Trésor, de la vigueur du dollar…",
+      "source": "www.tmgm.com",
+      "pubDate": "Wed, 25 Nov 2026 20:23:35 GMT",
+      "pubTs": 1795638215,
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZnpub1p0MzlQTTRyTU96MEtZa0ZObmNjcHZhZlB3THhEeWZ4UF85ZEktYnk0ZEFnb3htZXZiaHJWblJ3OTRDNUlwa1BmVDJTbmNsNXNHdW1NM0dxTTAxdGZXYmlJTVNyVVZoX05vNGNxZEx4SG5GWDhKX2liOGNBbnpPOUw0YWxUNUF6RTNYa0VjWWdjX2ZrMVpUVmc0RDR2WXY4b2dnOWltX0RIRklmdEhieDBTZTF0c1J5SnRMUQ?oc=5"
+    },
+    {
       "id": "318c6b71383a9eff",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -117,22 +128,11 @@
       "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNb2VValpkMHRvV0FVcWhVQV81a1JXOS1wWExHWFRtZ2RFYVhRd094VUhMSU91VjM3U2ZEbHZkRHkyMlJNUy1nWnJlZkJmUko4RFF3YTJNRlZvZlVNNWJUZWpIY2pVamJrbHNtTWVpd1dtRm9abHVPLUstNGstc05nWEl4Zk9DRWgzOEpUWmxublVCbHdxMjM2aDFlTlRnY3pQSUxSYi0yVUZ3T0VwWnZLblB5alJ2Ymc?oc=5"
     },
     {
-      "id": "e58f5c3ba11ecbc4",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "La Bourse de Paris termine en baisse, entraînée par le décrochage de Wall Street - tv5monde",
-      "excerpt": "",
-      "source": "tv5monde",
-      "pubDate": "Wed, 25 Nov 2026 16:11:00 GMT",
-      "pubTs": 1795623060,
-      "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeW1CQWhweWxPelZJYU9Ud3JkUGpucnJ5S1RCRS1zTkFvTkhCbFY2dXdWM0syb3hXc1l3eENCVzBZaEpYR0FMWHU0TXcza3VQV1dQUW5xdHJmb29kdUtCcUhZNjkydDR5b0VzOHRRaWlqSy0wM2ZyTjd0TEtndVVpaGhaa3cyenJ6MjVCTVZmUkM5V0VmT1Y1bHlQSTVaMHlORGpoRU9KMFRVSUJpZmxXamYtMjR0QUU4dlJ3djN1YzJtVGlVVXpLSg?oc=5"
-    },
-    {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
       "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
-      "excerpt": "Siemens Energy AG a publié ses résultats pour l’exercice clos le 30 septembre 2026. Sur l’ensemble de l’exercice, le chiffre d’affaires s’est établi à 44 243 millions d’euros…",
+      "excerpt": "Siemens Energy publie un carnet de commandes record, un dividende plus que triplé et vise une marge plus élevée pour l'exercice prochain.",
       "source": "Zonebourse",
       "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
       "pubTs": 1795622726,
@@ -143,7 +143,7 @@
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Soutenue par Walmart, PhonePe relance son processus d’introduction en Bourse (IPO) et vise une valorisation pouvant atteindre 15 milliards de dollars lors de son entrée en Bourse, selon une source - Zonebourse Suisse",
-      "excerpt": "par Jaspreet Kalra et Ashwin Manikandan La fintech indienne PhonePe a repris les préparatifs de son introduction en bourse et vise une cotation au cours du premier trimestre de…",
+      "excerpt": "",
       "source": "Zonebourse Suisse",
       "pubDate": "Wed, 25 Nov 2026 11:26:27 GMT",
       "pubTs": 1795605987,
@@ -321,6 +321,7 @@
     "318c6b71383a9eff",
     "13c3e74c8d6be447",
     "e58f5c3ba11ecbc4",
-    "7d9a7c44bbb25404"
+    "7d9a7c44bbb25404",
+    "e074f21415e4cbe0"
   ]
 }
