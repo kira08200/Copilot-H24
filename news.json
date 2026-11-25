@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T10:56:24Z",
+  "updatedAt": "2026-11-25T11:51:02Z",
   "upcomingEarnings": [
     {
       "id": "earn_HKEX:1810_20261124",
@@ -126,6 +126,28 @@
   ],
   "items": [
     {
+      "id": "86b3406762084dcb",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Soutenue par Walmart, PhonePe relance son processus d’introduction en Bourse (IPO) et vise une valorisation pouvant atteindre 15 milliards de dollars lors de son entrée en Bourse, selon une source - Zonebourse Suisse",
+      "excerpt": "par Jaspreet Kalra et Ashwin Manikandan La fintech indienne PhonePe a repris les préparatifs de son introduction en bourse et vise une cotation au cours du premier trimestre de…",
+      "source": "Zonebourse Suisse",
+      "pubDate": "Wed, 25 Nov 2026 11:26:27 GMT",
+      "pubTs": 1795605987,
+      "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxNY1pHdlV2MXBFTHhCMkhvRVdwcExTdl9zYngtaUFyQWJTNC1sczJJSU8zNzlYdFhkR18wVnNVQzVkc19JYzVLdUdWc25wRUttZkFkbUVNOVY2NEY3b3p1Vmo5cU1vdldON0FGUGE5ZEZ0MVktWVFFdEx6S3Iyb3hycjdFSDVKTjdiZWdVRDFtYmw4THBVdFk4UW02S2FyMjVIbDVIc0haLU1ZYWNEVHRXOWJpNTFudGNFU0w4QzFkZnhCR1FBcHNhMms3V1VWM1Y2WnJXVkM2bUNLdzJaenEwenVzYTVZOWVxeHlOSQ?oc=5"
+    },
+    {
+      "id": "084a213c83bd3aef",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le bitcoin se replie sous les 59.000 dollars avant l'inflation PCE - ABC Bourse",
+      "excerpt": "Le bitcoin se replie mercredi matin dans lesillage des valeurs technologiques, alors que les investisseurs guettentun indicateur d'inflation aux E - 25/11/2026…",
+      "source": "ABC Bourse",
+      "pubDate": "Wed, 25 Nov 2026 10:45:45 GMT",
+      "pubTs": 1795603545,
+      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQY0g0WjRCTml2R0IwX0VSMnNwbFVWWDIzd1o2enlZei1NbE5NMjlzaUdQSE1DQ2kzMk5OajQzV05PVW1UT29oYkVfd0lIWjVET2hPeFFBY1gzR0JyVmJhSTV2eE5Pa3g5MWpaVHQ0azR0OEJCX0EtbXZ5R3NHSTBXV1d5WEUwVDFZdWEwY2dwa2FZNWtKbXBNOEYzREJLbWFjNXBUOHBTOUFWdw?oc=5"
+    },
+    {
       "id": "ddd6c57f1011ffff",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -137,59 +159,26 @@
       "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQMFEzN0hUY0FpdC1hd0NlWjE4RWZaNDUycy1LUVZ6ZVIyMVktQ2JoMDhJN044M3RSVTBiZDN2OFRzbHZFRVpwVnRsZlVxQlZJTGM1OFJsYmxoTTBwOXpuNmhrM1BVdjRPX09TVHdzMVREa3NmMHZ1YmxUako4MmxsbTBwWHRSTkhOWXlWdWhydVpiU0tHVEItbm1nNVBQNEl0Rkt5aHpiY2I5ZkV1Vmt2VWlJQVhBWXY5dUFQQXlTby1jVThSVmNpdV80MVdqTkJjbVZqVVItRGNoX242M2ExYk5KRDZCMW9WNWRpWG9Iaw?oc=5"
     },
     {
-      "id": "602e918ec7d1630a",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Cours du bitcoin avant le PCE : 6e jour de sorties d’ETF - CryptoTicker.io",
-      "excerpt": "Après 569,7 millions de dollars de retraits lundi, les ETF Bitcoin spot approchent 5 milliards de sorties sur novembre. Le BTC a effacé son rebond lié à Nvidia et repasse sous 60…",
-      "source": "CryptoTicker.io",
-      "pubDate": "Wed, 25 Nov 2026 09:24:29 GMT",
-      "pubTs": 1795598669,
-      "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5JY0t3SW1wcmEwNG1TRGJYcng2TEI1X3IzcmdXdWFqbXVuNDF6U3Z5UGM2b2FPV3JyNmJQSlMyck1qNHFSV1BjLVdKWnhXNmpsa0s2QzktRl9FeWdRS3V4R1lUamVDcFg1RnB3dGVEcWVBb3YxM0dTNW93?oc=5"
-    },
-    {
       "id": "cd481529b7b2e865",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
-      "excerpt": "Investing.com - Space Exploration Technologies (NASDAQ:SPCX) et Tesla Inc (NASDAQ:TSLA) travaillent à une potentielle fusion valorisée à 3.500 milliards$, avec cinq administrateurs…",
+      "excerpt": "Selon le Financial Times, SpaceX et Tesla négocieraient une fusion à 3 500 milliards de dollars. Cette information n’est pas confirmée officiellement. SpaceX et Tesla négocieraient…",
       "source": "Le Monde Informatique",
       "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
       "pubTs": 1795593600,
       "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODZickxySmVLTjFUTUozSTRmY2EtaE5sLXRCcGZKMUZRVmNPSWYtOW80eXl2X1NJWkJYYzJySS1aeC1YVG1vWGdnVXVoQUVPRE5QSWtXaFZaQ29kUkg2Y2xTZG9fdzdnUjZPaGtEY0lCMGpmNTd2SG1qeFR3MnEwdk1wWTdwVTJ1ZGd3SkNUQXZQdnhvUU1wejU0UnZVZ1VWSWFGQXdOa3pNU29mX1dZMHAzV2RNWmtvZ3RTTHp3ZnRfU0RqV1JBSlpyNWpTTTR0Q0JqNjdhSWY3dkk?oc=5"
     },
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Wed, 25 Nov 2026 06:36:35 GMT",
-      "pubTs": 1795588595,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
-    },
-    {
       "id": "b07f8c8a207b8f07",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Anthropic risque-t-il un krach en Bourse, alors que l'action tombe sous le prix d'introduction ? - Capital.fr",
-      "excerpt": "Le faible flottant d’Anthropic en Bourse favorise une forte volatilité de l’action. Et l'expiration des périodes de lock-ups devrait peser sur le cours de Bourse. Alors que l’action…",
+      "excerpt": "",
       "source": "Capital.fr",
       "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
       "pubTs": 1795586400,
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
-    },
-    {
-      "id": "88427b0a0f939d63",
-      "theme": "Semi-conducteurs (TSMC / ASML)",
-      "tagCls": "b-blue",
-      "title": "ASML Holding cède 3,45% - Boursier.com",
-      "excerpt": "En une semaine, l'action ASML Holding a connu une forte baisse de 3,40%. Sur les douze derniers mois le titre a observé, à l'inverse, une forte hausse de 33,18%, l'action valant 1…",
-      "source": "Boursier.com",
-      "pubDate": "Tue, 24 Nov 2026 21:21:55 GMT",
-      "pubTs": 1795555315,
-      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOQlR0Q2VVZWRQM3BUVDVZOHZTZ3pYdUdJRFowZlA1el9ZdEdSLVQ2MUZNNnE4eGpNMWlraHdxSHFiYkJ5bHBadC0yRElVdHBqU09iMl9QUzJWai1wY1Y2aGFqNmxUc0ZKRVRkNG05aGgzc0hMamQ5cmhTcFFPa3RIRWVLa09EU3lMck4w?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
@@ -201,6 +190,17 @@
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+    },
+    {
+      "id": "393ac12a62086dbf",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
+      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
+      "pubTs": 1795531580,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -334,6 +334,8 @@
     "cd481529b7b2e865",
     "337c8122268f7923",
     "602e918ec7d1630a",
-    "ddd6c57f1011ffff"
+    "ddd6c57f1011ffff",
+    "86b3406762084dcb",
+    "084a213c83bd3aef"
   ]
 }
