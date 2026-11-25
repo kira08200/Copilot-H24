@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T04:35:29Z",
+  "updatedAt": "2026-11-25T05:35:35Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -136,6 +136,17 @@
   ],
   "items": [
     {
+      "id": "6016dbc6b13081e5",
+      "theme": "BlackRock",
+      "tagCls": "b-blue",
+      "title": "\"On vend des pioches, mais ça ne prouve pas encore qu’il y a de l’or\" : les doutes du secteur IA décryptés par Jean Boivin (BlackRock) - L'Express",
+      "excerpt": "L'ancien sous-gouverneur de la Banque du Canada, Jean Boivin, estime que l'intelligence artificielle est devenue le grand sujet macroéconomique mondial.",
+      "source": "L'Express",
+      "pubDate": "Wed, 25 Nov 2026 04:30:00 GMT",
+      "pubTs": 1795581000,
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVnFxalpSVWR5ZkdFREl5cGR4cXpVM2M5MTZWTmlSYWZrSHVBc2xTcnNvMV9Tc09wZ2hLeTlMMl9WOHJkY1BmV2UwdDBtUk56ZlI4d1otZXBWT3FiYzlQWC1tVXplUXlabllQR256XzBFZG4xZ3pyRFZYbm9xa19QZElQNkU2bU1mdHJHRHFIYk44VFJxRm9FNmdCc2xVZU1ad1lCR1dlenN5Y2gxWlJKNElYZ1ZhRllsbndnLW15MGJPSDFWS1hTTVpaZUdlUFYyRXR0OUpfQ0RyOG1USTVPUG1xRnVleDMtNE4tcjZucUpEalgwcjU1VTJJVkhGbHM?oc=5"
+    },
+    {
       "id": "969f6fddbcf8d697",
       "theme": "Xiaomi",
       "tagCls": "b-green",
@@ -158,15 +169,15 @@
       "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
-      "id": "0c81a6913027dc06",
+      "id": "6ee5869cb58bc855",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "L’or recule vers 3 550 $ avant la publication des données américaines sur l’inflation PCE - www.tmgm.com",
-      "excerpt": "par Ashitha Shivaprasad L'or a reculé mardi, les anticipations de nouvelles hausses des taux d'intérêt pesant sur les cours, tandis que l'attention du marché s'est tournée vers les…",
+      "title": "L’euro fléchit vers 1,0950 alors que les traders attendent les données américaines sur l’inflation PCE et le PIB - www.tmgm.com",
+      "excerpt": "",
       "source": "www.tmgm.com",
-      "pubDate": "Tue, 24 Nov 2026 23:30:50 GMT",
-      "pubTs": 1795563050,
-      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSkRFSjRFdU1EVTdGWkV0TDkzVjhBVjNLdHoxbGN2X3ZTdmxpSi1xbXlXdUxlUFJvVVg1WF9qZmN3WEFBdkU4c0R2SzZVTnNueHVfVWthTG1Wa2pNMy0yTG1vdXg1SHZKbXRSQ2g3aDI2OWo2czljbVF6SW1EVUNmdTdrU0lUMTZiTGF5VUNkc0RvclhOQnUxbnVIUTd4N0JMdGpJUzVUalp3ZVZUV0dQZGJvZkZTSXpPTHhUNDd3?oc=5"
+      "pubDate": "Wed, 25 Nov 2026 02:25:43 GMT",
+      "pubTs": 1795573543,
+      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSjlwOWVJTGhGMFN5Mmh0T3QwXzJTUDJpQ3V5bVlYZVRlb2xEUmVEdnFLazN4SVV2U3VCV29MelZ1MTRrU3BHLXEtTE5uUVM3WG9zVGtyMWlhNFBueVpybWx1UFN1bWtocmNtVGhuYmk0T0hiWEtJd1BJYkJTcVlkbXA4QkVtaDhndm44cmZwMElmY2Q0MWN1VmlRa0p1UGNsM0RZT01oYlJmWDM5aVc2SDVpZXhPaGJvZ3BKRlViR3pZRVE?oc=5"
     },
     {
       "id": "53fe4a55a366a368",
@@ -191,22 +202,11 @@
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "863578b463b9b92f",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "Amazon acquiert la technologie d'optimisation de puces pour l'IA de la start-up israélienne Decart. L'entreprise débourserait 7,5 milliards de dollars.",
-      "source": "L'Agefi",
-      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
-      "pubTs": 1795537144,
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
-    },
-    {
       "id": "880211cf3ac3c617",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
-      "excerpt": "",
+      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
       "pubTs": 1795532157,
@@ -333,6 +333,8 @@
     "move_jump_HKEX:1810_20261125",
     "88427b0a0f939d63",
     "5469dc872833b753",
-    "969f6fddbcf8d697"
+    "969f6fddbcf8d697",
+    "6016dbc6b13081e5",
+    "6ee5869cb58bc855"
   ]
 }
