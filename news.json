@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T06:31:04Z",
+  "updatedAt": "2026-11-25T07:57:28Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -136,6 +136,28 @@
   ],
   "items": [
     {
+      "id": "c3f219b71985a4af",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "CAC 40 : La Bourse de Paris attendue en petite hausse avant l'inflation PCE aux Etats-Unis - Zonebourse",
+      "excerpt": "PARIS --La Bourse de Paris devrait ouvrir en légère hausse mercredi, avant la publication d'un indicateur clé d'inflation aux Etats-Unis. Vers 8h35, le contrat à terme sur le CAC 40…",
+      "source": "Zonebourse",
+      "pubDate": "Wed, 25 Nov 2026 07:42:40 GMT",
+      "pubTs": 1795592560,
+      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxNZWVadDN2eXg2UkFXdXVrMnBwcTNvTXJhaVROQVJkUW1MVmVSR2xiTGtBSlBabVlZR0tVU0ZrWC1WVFh2VE4yWXRscUJ4cTlZaFh4Ti1yc1VTVlRoRWh1N0hvQjVSRVdOUi1TX1E3ak1sWllHem9UZGNSanRmZ3REUlNXby1Hd0w5SGVGOHZ0MVo4dk5mYVZucWdpRDU3ZTB2RG54N1diQXl2Y2V1MXpvbktnd241amhLTzNzcVotQUxoWHNTQVFpRWNhaGE0M0FwQmNPdTVRaHUwWm9zNmlzbFBJSQ?oc=5"
+    },
+    {
+      "id": "56645cb97792f629",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le Cac 40 attendu stable à l'ouverture, les marchés attendent l'inflation américaine après une nouvelle baisse de la tech à Wall Street - Investir Les Echos",
+      "excerpt": "L'inflation PCE d'octobre pourrait donner cet après-midi une indication sur les prochaines décisions de la Réserve fédérale. Le retour de Jensen Huang chez Nvidia n'aura offert…",
+      "source": "Investir Les Echos",
+      "pubDate": "Wed, 25 Nov 2026 07:39:44 GMT",
+      "pubTs": 1795592384,
+      "link": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxOUXk0eTlYdjBPZl9FeU54ekhYS05yblZTc0R6czFGVnkwSEY1bmJjSXlNcVRDRklxZy1xM0FZQzBsd1RBSXptMTBzT3JwQkFHZ3lZbXFrUGlROU1pTDBoR1RjX0I2bmh6b0ZIaUNVQkhMR0FuaUNNV3hDdDVYVmE2emgtVzVXUG1YQ09SUFJnUFNDWnJKRHZOd2ZSc21qdF9LWnVCTHZ4R1VtMjY1ejNJQl9XSTMxZkJxODVqRkN6VW03MDM0TXpVU3VsM0Q1RVN5LXRGSk14N2hVaW5uUkV4dVUzRERISi03THhoTFZQYWhhQ0VWR2RnMC1FZVhLNzBwckhMVUxnMlVXVl9UVzAtMjZnNm9kRUxFYzVqNGtKYlY1dmhQY2l0S0J0dw?oc=5"
+    },
+    {
       "id": "b07f8c8a207b8f07",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -147,26 +169,15 @@
       "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
     },
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Wed, 25 Nov 2026 03:39:46 GMT",
-      "pubTs": 1795577986,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
-    },
-    {
-      "id": "6ee5869cb58bc855",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L’euro fléchit vers 1,0950 alors que les traders attendent les données américaines sur l’inflation PCE et le PIB - www.tmgm.com",
-      "excerpt": "",
-      "source": "www.tmgm.com",
-      "pubDate": "Wed, 25 Nov 2026 02:25:43 GMT",
-      "pubTs": 1795573543,
-      "link": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPSjlwOWVJTGhGMFN5Mmh0T3QwXzJTUDJpQ3V5bVlYZVRlb2xEUmVEdnFLazN4SVV2U3VCV29MelZ1MTRrU3BHLXEtTE5uUVM3WG9zVGtyMWlhNFBueVpybWx1UFN1bWtocmNtVGhuYmk0T0hiWEtJd1BJYkJTcVlkbXA4QkVtaDhndm44cmZwMElmY2Q0MWN1VmlRa0p1UGNsM0RZT01oYlJmWDM5aVc2SDVpZXhPaGJvZ3BKRlViR3pZRVE?oc=5"
+      "id": "6016dbc6b13081e5",
+      "theme": "BlackRock",
+      "tagCls": "b-blue",
+      "title": "\"On vend des pioches, mais ça ne prouve pas encore qu’il y a de l’or\" : les doutes du secteur IA décryptés par Jean Boivin (BlackRock) - L'Express",
+      "excerpt": "L'ancien sous-gouverneur de la Banque du Canada, Jean Boivin, estime que l'intelligence artificielle est devenue le grand sujet macroéconomique mondial.",
+      "source": "L'Express",
+      "pubDate": "Wed, 25 Nov 2026 04:30:00 GMT",
+      "pubTs": 1795581000,
+      "link": "https://news.google.com/rss/articles/CBMi_wFBVV95cUxPVnFxalpSVWR5ZkdFREl5cGR4cXpVM2M5MTZWTmlSYWZrSHVBc2xTcnNvMV9Tc09wZ2hLeTlMMl9WOHJkY1BmV2UwdDBtUk56ZlI4d1otZXBWT3FiYzlQWC1tVXplUXlabllQR256XzBFZG4xZ3pyRFZYbm9xa19QZElQNkU2bU1mdHJHRHFIYk44VFJxRm9FNmdCc2xVZU1ad1lCR1dlenN5Y2gxWlJKNElYZ1ZhRllsbndnLW15MGJPSDFWS1hTTVpaZUdlUFYyRXR0OUpfQ0RyOG1USTVPUG1xRnVleDMtNE4tcjZucUpEalgwcjU1VTJJVkhGbHM?oc=5"
     },
     {
       "id": "88427b0a0f939d63",
@@ -184,33 +195,22 @@
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS (Agefi-Dow Jones)--Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son…",
+      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     },
     {
-      "id": "880211cf3ac3c617",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
-      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
-      "pubTs": 1795532157,
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
-    },
-    {
-      "id": "58f55cd1316381cb",
-      "theme": "IPO & IA Mondiale",
+      "id": "393ac12a62086dbf",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
-      "source": "Saxo",
-      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
-      "pubTs": 1795510800,
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
+      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
+      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
+      "pubTs": 1795531580,
+      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -336,6 +336,8 @@
     "969f6fddbcf8d697",
     "6016dbc6b13081e5",
     "6ee5869cb58bc855",
-    "b07f8c8a207b8f07"
+    "b07f8c8a207b8f07",
+    "c3f219b71985a4af",
+    "56645cb97792f629"
   ]
 }
