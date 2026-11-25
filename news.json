@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-24T23:17:01Z",
+  "updatedAt": "2026-11-25T00:01:57Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -94,7 +94,7 @@
   ],
   "majorMoves": [
     {
-      "id": "move_drop_NASDAQ:AMD_20261124",
+      "id": "move_drop_NASDAQ:AMD_20261125",
       "tv": "NASDAQ:AMD",
       "name": "AMD",
       "weight": "18,4 %",
@@ -104,7 +104,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:MSTR_20261124",
+      "id": "move_drop_NASDAQ:MSTR_20261125",
       "tv": "NASDAQ:MSTR",
       "name": "Strategy A",
       "weight": "2,0 %",
@@ -114,7 +114,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_XETR:ENR_20261124",
+      "id": "move_drop_XETR:ENR_20261125",
       "tv": "XETR:ENR",
       "name": "Siemens Energy",
       "weight": "4,8 %",
@@ -124,7 +124,7 @@
       "kind": "drop"
     },
     {
-      "id": "move_drop_NASDAQ:NVDA_20261124",
+      "id": "move_drop_NASDAQ:NVDA_20261125",
       "tv": "NASDAQ:NVDA",
       "name": "NVIDIA",
       "weight": "13,0 %",
@@ -136,81 +136,48 @@
   ],
   "items": [
     {
-      "id": "53fe4a55a366a368",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "L’action Anthropic passe sous son prix d’introduction en Bourse - The Media Leader",
-      "excerpt": "par Medha Singh L'action d’Anthropic ANT.O a chuté en dessous de son prix d’introduction en bourse de 83 dollars et était en passe de perdre près de 200 milliards de dollars de…",
-      "source": "The Media Leader",
-      "pubDate": "Tue, 24 Nov 2026 22:10:00 GMT",
-      "pubTs": 1795558200,
-      "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxQT3JSRkJpV19lUF9iSGNrLU5JenRia3NyYktmVTFXTDVtNFkzbGgtU1hqTkxsRFJPcHZCakVqMnY0VXFPNmZnTUtjODE2TTZsaXFTdUtnU0xhYi04eWhmSFU0NDF3eF91UEU1QUNzTUh5QzBwMlVnYUw2M3Vqamt5WDd5YnV3SExfM3JtUnZkT0luekNsY2tuVFdR?oc=5"
-    },
-    {
-      "id": "ca0b7e1ff1128517",
+      "id": "0c81a6913027dc06",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Wall Street clôture sans direction claire, nouvelles ventes sur l'IA - Bourse Direct",
-      "excerpt": "L’indice Nasdaq - à forte coloration technologique - a perdu 1,48 % et l’indice élargi S&P a reculé de 0,50 %. Mais le Dow Jones, composé de valeurs plus traditionnelles, a lui…",
-      "source": "Bourse Direct",
-      "pubDate": "Tue, 24 Nov 2026 21:48:00 GMT",
-      "pubTs": 1795556880,
-      "link": "https://news.google.com/rss/articles/CBMigwJBVV95cUxQYnV6ZmdJbDNCRmlaVF9wSXkwcjBGRFJrb2c0TkJxSGtaNmdXWkRKWjVLMVhBZ3dBS2VXNjVoczJFREd6MDdDOWxSMVA2RTBXUlAyc05mOF9FMXhSNHNFZVg2TnRHN2FtQmRwQjUzbW9ST0NGcExTazhoUUVQdjdNWm41VjZBaElEVFZsX0RURU5abnJCT0R4NlN5TVF0ZkpTOUJoOEoxNGtGQWxneVprU3RtMEstUVNaY0VBQ3pYYlBSQmFBOWQ2UXJIZV9jUEcyMHktZFN1UEVtanA4TGVuYTBWUFBjcmZyYnY4VVZQMHNUZ0x5ZUxXTG1LdG51MTl3V1Bj?oc=5"
+      "title": "L’or recule vers 3 550 $ avant la publication des données américaines sur l’inflation PCE - www.tmgm.com",
+      "excerpt": "par Ashitha Shivaprasad L'or a reculé mardi, les anticipations de nouvelles hausses des taux d'intérêt pesant sur les cours, tandis que l'attention du marché s'est tournée vers les…",
+      "source": "www.tmgm.com",
+      "pubDate": "Tue, 24 Nov 2026 23:30:50 GMT",
+      "pubTs": 1795563050,
+      "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNSkRFSjRFdU1EVTdGWkV0TDkzVjhBVjNLdHoxbGN2X3ZTdmxpSi1xbXlXdUxlUFJvVVg1WF9qZmN3WEFBdkU4c0R2SzZVTnNueHVfVWthTG1Wa2pNMy0yTG1vdXg1SHZKbXRSQ2g3aDI2OWo2czljbVF6SW1EVUNmdTdrU0lUMTZiTGF5VUNkc0RvclhOQnUxbnVIUTd4N0JMdGpJUzVUalp3ZVZUV0dQZGJvZkZTSXpPTHhUNDd3?oc=5"
     },
     {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
-      "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS (Agefi-Dow Jones)--Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+      "id": "337dd3fc3bdf305c",
+      "theme": "NVIDIA",
+      "tagCls": "b-amber",
+      "title": "Le Nasdaq et le S&P 500 reculent alors que la vague haussière liée à l'IA, portée par Nvidia, s'essouffle - Boursorama",
+      "excerpt": "par Ragini Mathur et Avinash P Le Nasdaq et le S&P 500 ont reculé mardi, les investisseurs se détournant des valeurs liées à l'IA après un rebond alimenté par Nvidia, l'attention se…",
+      "source": "Boursorama",
+      "pubDate": "Tue, 24 Nov 2026 17:15:17 GMT",
+      "pubTs": 1795540517,
+      "link": "https://news.google.com/rss/articles/CBMikwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZ9IBkwJBVV95cUxNVHBzaUVlS2tPdmx4eGJfcVNWNlNlMjMtU0xjVFhrT2x5ZHVXOC03ZkZVSW1BVUJ4eFA3anphV1lIOC12MGVxX0NSSzBMdXByM1hQSGhLbVZFQVpnRWdsM0I2X0xjcElnNjZsLUFPQUNyREdJTlI1eFhPa083ZTEyQUc1YmVJU0h1TVhGX1RuXzczZ2lzN3hCSU50UkVTWUptc2ZRLWV5TUxrQmdTVTBrdkV4a2NZVlhlUTNmdU9aakhkdC1rRW5GM0lqV1lQZDAzUVhKVl9DanNYVzBmTnRTaTJaVTZSTDJ4TUhOR2VjTlNFSmc5Q19CbUcwRFplNnVTaHpNNU04NVJqYk8tRXZubUVIZw?oc=5"
     },
     {
-      "id": "863578b463b9b92f",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon réalise une acquisition clé dans l’IA - L'Agefi",
-      "excerpt": "",
-      "source": "L'Agefi",
-      "pubDate": "Tue, 24 Nov 2026 16:19:04 GMT",
-      "pubTs": 1795537144,
-      "link": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNRlUxaEhiOEE4eVpiNXJsSXNGSmdiMDhRT0Q0bVZoY2lGZzZwc095UWU4YUpxVW1MX1E0Zm9nSzFzb1FRNGJGa2xVeWJGNWVpdDIwcmFkeDJFVmxTYUtIcU9iekpOMU5lSG5LMjBTbHhZQVhzRmlJa0lyMXl4alBEWm1RTm5zdHow?oc=5"
+      "id": "54532972aa15050d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation PCE, CFE, Prosus, Rémy Cointreau... Ce qu'il faut suivre ce mercredi 25 novembre - L'Echo",
+      "excerpt": "Les investisseurs vont se concentrer sur les résultats de CFE, Rémy Cointreau ou encore Prosus avant de prendre connaissance de l'inflation PCE en début d'après-midi.",
+      "source": "L'Echo",
+      "pubDate": "Tue, 24 Nov 2026 16:35:34 GMT",
+      "pubTs": 1795538134,
+      "link": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPOXQyYmNUNEl3WDlCd1pQdXdnOTA3VDhMTy1CbXAzOXRaRFJkS1RRVGk1WFczLTBrc2JWT1hIRkV4ZzU3U0tqLUE5Q01qYXdFdVNVaFNydXFzUE42Q1pRdm1aQm5qSE91VlByTzNSWTlMTEhLd2NvaF9uN0tDczNBOHRmanhJUnozbk9zc1QwSDRLNzZIQmhqazdLQ1Y4SmRjMG1RdlFELUduX2dEdm1wT0pSRUg1emtEbnpMWF9tQ21Ec09CMUZsUUIzeE5McWlSZ3BSbHduTQ?oc=5"
     },
     {
       "id": "9ef42602bb57d7d2",
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Déjà en tête des ventes, le Xiaomi Redmi Note 17 Pro perd 130 € pour le Black Friday - Edcom",
-      "excerpt": "bon Plan - Si vous avez envie de trouver le smartphone parfait pour le quotidien, le moment est venu de commander ce Xiaomi Redmi Note 17 Pro sur le site de Pixmania. Il ne sera pas…",
+      "excerpt": "Une journée entière sans passer par la prise rassure les utilisateurs intensifs. Le smartphone Xiaomi Redmi Note 17 Pro Max embarque une batterie de 9210 mAh qui tient facilement 48…",
       "source": "Edcom",
       "pubDate": "Tue, 24 Nov 2026 15:00:00 GMT",
       "pubTs": 1795532400,
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNVEhqZHVFb2RxNUdhRDR0clhtRHI5eFJPdm5vQkRTVzlJWHlZRHp0aVpEQWxFX2ExVkRGTW9sdDIwbFcwR19Zek5zRHlYNV92SnhsdnJHMjc0emlzaTBZQU16ZE4wM3A4Q05qLXdsNm01b3dWd0Nzanp0T1dnZUhTUVgydnNidnlqdTUxU25NZHB0eEJQaXJpd2tNZUtOT3BETTI0NEROeld2ejhubHJuYWc4OA?oc=5"
-    },
-    {
-      "id": "880211cf3ac3c617",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Inflation, croissance et consommation américaines au programme d'un mercredi chargé - Investir Les Echos",
-      "excerpt": "Pour la veille de Thanksgiving, les statisticiens américains ont prévu de tout servir sur la table ce mercredi. A partir de 14h30 arriveront les revenus et dépenses des ménages…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:55:57 GMT",
-      "pubTs": 1795532157,
-      "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPRVdXYTdhaGYtSkxyZVZNejJ3MHJTaExYTVR1QzBIZzExTW9pMlV4YUNPd0pXUjNUN21iU3FQcWkyY25ja19WY1NTMDBMM0pqeVllNmRZdVhkckRWdHNOWEtZbk9SLUNzbVlvRDJMQUxydmJkY01CbnJCZnZtS3VNd2dkU0lCWFFzeEg3YnpBSWNoTVNzT3puTl9yOGNUUEZSdEF4NHM4R01wbUVIT3dZYmdpM1VYWW9hRnVLcXdlLXROalZjREdhaF8xV2dDV25FdTcyc0RKSnp4bHE5Yk92cl9KeXVHZEE?oc=5"
-    },
-    {
-      "id": "393ac12a62086dbf",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Wall Street ouvre dans le rouge, retour à la réalité après le rebond de Nvidia - Investir Les Echos",
-      "excerpt": "24 novembre - La Bourse de New York a ouvert en baisse mardi, les actions liées à l'intelligence artificielle cédant du terrain après un rebond spectaculaire la veille en réaction à…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 14:46:20 GMT",
-      "pubTs": 1795531580,
-      "link": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxNTmpEZ05HRi1XU0h0UGV5RXRyZWNVS2NnR1hzRkMtRFJ1WE1nd2NLNXBleS1lU2NUV0dWRnA2azNJc1g2Q0lKSmhrQ2lsSHZxNjRlZHAwQmZrR1l2UnNBWVhrRmxhMWM2NDJNVUNGclpiOEFMZWRXbVExQnBKd0xlZ1dMUEJOMF9pTE9JTlB2OC1yUGN6Mi03QzE3cWZSRnBJZXpiQWxUbkFXd2FOZ29halNVMXRkTG84cDhUQ0JHRTNnS01RUHpvRGdLT1FiN1V1WDJPcGNWWTk1Mldja2ZTYWVEOXU?oc=5"
     }
   ],
   "notifiedIds": [
@@ -324,6 +291,11 @@
     "ca0b7e1ff1128517",
     "fb6dc7e20e76ad06",
     "53fe4a55a366a368",
-    "393ac12a62086dbf"
+    "393ac12a62086dbf",
+    "move_drop_NASDAQ:AMD_20261125",
+    "move_drop_NASDAQ:MSTR_20261125",
+    "move_drop_XETR:ENR_20261125",
+    "move_drop_NASDAQ:NVDA_20261125",
+    "0c81a6913027dc06"
   ]
 }
