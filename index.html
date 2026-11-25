@@ -894,11 +894,15 @@
           <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addQtyInput" placeholder="Ex : 10">
         </div>
         <div>
-          <label class="field-lbl" for="addCostInput">Montant investi (€)</label>
-          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addCostInput" placeholder="Ex : 1200">
+          <label class="field-lbl" for="addPruInput">PRU (€ / part)</label>
+          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addPruInput" placeholder="Ex : 120,00">
         </div>
       </div>
-      <div id="addPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:5px;"></div>
+      <div>
+        <label class="field-lbl" for="addCostInput">Montant total investi (€) <span style="font-weight:500;text-transform:none;">— auto (parts × PRU) ou libre</span></label>
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addCostInput" placeholder="Ex : 1200">
+      </div>
+      <div id="addPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:6px;line-height:1.4;"></div>
     </div>
 
     <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
@@ -939,11 +943,15 @@
         <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editQtyInput">
       </div>
       <div>
-        <label class="field-lbl" for="editCostInput">Montant investi (€)</label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editCostInput">
+        <label class="field-lbl" for="editPruInput">PRU (€ / part)</label>
+        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editPruInput">
       </div>
     </div>
-    <div id="editPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:5px;"></div>
+    <div>
+      <label class="field-lbl" for="editCostInput">Montant total investi (€) <span style="font-weight:500;text-transform:none;">— auto (parts × PRU) ou libre</span></label>
+      <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editCostInput">
+    </div>
+    <div id="editPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:6px;line-height:1.4;"></div>
     <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
       <button type="button" class="btn" id="btnCancelEdit">Annuler</button>
       <button type="button" class="btn" id="btnZeroEdit" title="Mettre à 0 part">0 part</button>
@@ -2392,6 +2400,7 @@
 
   function selectSearchAsset(asset) {
     state.pendingAddAsset = asset;
+    state.addCostMode = "pru";
     document.getElementById("searchResultsBox").style.display = "none";
     document.getElementById("searchStatus").style.display = "none";
     document.getElementById("selectedAssetWrap").style.display = "block";
@@ -2401,6 +2410,8 @@
     document.getElementById("addAccountSel").value = asset.pea ? "PEA" : "TR";
     document.getElementById("addPocketSel").value = asset.pocket || "growth";
     document.getElementById("addQtyInput").value = "";
+    document.getElementById("addPruInput").value = asset.pxEur > 0 ? Number(asset.pxEur.toFixed(2)) : "";
+    document.getElementById("addPruInput").placeholder = asset.pxEur > 0 ? ("Ex : " + asset.pxEur.toFixed(2).replace(".", ",")) : "Ex : 120,00";
     document.getElementById("addCostInput").value = "";
     document.getElementById("addPruHint").textContent = "";
     document.getElementById("addQtyInput").focus();
@@ -2419,23 +2430,93 @@
   }
   function closeAddModal() { document.getElementById("addModal").classList.remove("open"); }
 
-  function updatePruHint(qtyId, costId, hintId) {
-    var q = parseFloat(String(document.getElementById(qtyId).value || "").replace(",", "."));
-    var c = parseFloat(String(document.getElementById(costId).value || "").replace(",", "."));
-    var el = document.getElementById(hintId);
-    if (!el) return;
-    if (isFinite(q) && q > 0 && isFinite(c) && c > 0) el.textContent = "PRU moyen : " + fmtEur(c / q) + " / part";
-    else if (isFinite(q) && q === 0) el.textContent = "Position soldée (0 part)";
-    else el.textContent = "";
+  function getModalUnitPrice(prefix) {
+    if (prefix === "add") {
+      return (state.pendingAddAsset && state.pendingAddAsset.pxEur > 0) ? state.pendingAddAsset.pxEur : 0;
+    }
+    if (state.editingId) {
+      for (var i = 0; i < state.positions.length; i++) {
+        if (state.positions[i].id === state.editingId) return getPosMetrics(state.positions[i]).px;
+      }
+    }
+    return 0;
+  }
+
+  function syncModalFields(prefix, changedField) {
+    var qtyEl = document.getElementById(prefix + "QtyInput");
+    var pruEl = document.getElementById(prefix + "PruInput");
+    var costEl = document.getElementById(prefix + "CostInput");
+    var hintEl = document.getElementById(prefix + "PruHint");
+    var modeKey = prefix + "CostMode";
+
+    if (changedField === "pru") state[modeKey] = "pru";
+    else if (changedField === "cost") state[modeKey] = "cost";
+    var mode = state[modeKey] || "pru";
+
+    var q = parseFloat(String(qtyEl.value || "").replace(",", "."));
+    var pru = parseFloat(String(pruEl.value || "").replace(",", "."));
+    var c = parseFloat(String(costEl.value || "").replace(",", "."));
+
+    if (changedField === "pru") {
+      if (isFinite(q) && q > 0 && isFinite(pru) && pru >= 0) {
+        c = Math.round(q * pru * 100) / 100;
+        costEl.value = c;
+      }
+    } else if (changedField === "cost") {
+      if (isFinite(q) && q > 0 && isFinite(c) && c >= 0) {
+        pru = Math.round((c / q) * 10000) / 10000;
+        pruEl.value = pru;
+      }
+    } else if (changedField === "qty") {
+      if (isFinite(q) && q === 0) {
+        c = 0;
+        costEl.value = 0;
+      } else if (isFinite(q) && q > 0) {
+        if (mode === "pru" && isFinite(pru) && pru >= 0) {
+          c = Math.round(q * pru * 100) / 100;
+          costEl.value = c;
+        } else if (mode === "cost" && isFinite(c) && c >= 0) {
+          pru = Math.round((c / q) * 10000) / 10000;
+          pruEl.value = pru;
+        }
+      }
+    }
+
+    if (!hintEl) return;
+    if (isFinite(q) && q === 0) {
+      hintEl.innerHTML = "Position soldée (0 part)";
+      return;
+    }
+    var livePx = getModalUnitPrice(prefix);
+    var parts = [];
+    if (livePx > 0) parts.push("Cours live : <strong>" + fmtEur(livePx) + "</strong>");
+    if (isFinite(q) && q > 0 && livePx > 0) {
+      var estVal = q * livePx;
+      parts.push("Valeur : <strong>" + fmtEur(estVal) + "</strong>");
+      if (isFinite(c) && c > 0) {
+        var g = estVal - c;
+        var gPct = (g / c) * 100;
+        var cls = g >= 0 ? "pos-txt" : "neg-txt";
+        parts.push("PV : <span class='" + cls + "'>" + (g >= 0 ? "+" : "") + fmtEur(g) + " (" + fmtSignedPct(gPct, 1) + ")</span>");
+      }
+    } else if (isFinite(q) && q > 0 && isFinite(c) && c > 0) {
+      parts.push("PRU moyen : <strong>" + fmtEur(c / q) + "</strong>");
+    }
+    hintEl.innerHTML = parts.join(" • ");
   }
 
   function confirmAddPosition() {
     var a = state.pendingAddAsset;
     if (!a) return;
     var qty = parseFloat(String(document.getElementById("addQtyInput").value || "").replace(",", "."));
+    var pru = parseFloat(String(document.getElementById("addPruInput").value || "").replace(",", "."));
     var cost = parseFloat(String(document.getElementById("addCostInput").value || "").replace(",", "."));
     if (!isFinite(qty) || qty <= 0) { showToast("Indiquez un nombre de parts > 0"); return; }
-    if (!isFinite(cost) || cost < 0) cost = a.pxEur > 0 ? Math.round(qty * a.pxEur * 100) / 100 : 0;
+    if (state.addCostMode === "pru" && isFinite(pru) && pru >= 0) {
+      cost = Math.round(qty * pru * 100) / 100;
+    } else if (!isFinite(cost) || cost < 0) {
+      cost = (isFinite(pru) && pru >= 0) ? (Math.round(qty * pru * 100) / 100) : (a.pxEur > 0 ? Math.round(qty * a.pxEur * 100) / 100 : 0);
+    }
 
     state.positions.push({
       id: "pos_" + Date.now() + "_" + Math.floor(Math.random() * 1000),
@@ -2460,6 +2541,7 @@
     }
     if (!p) return;
     state.editingId = posId;
+    state.editCostMode = "pru";
     var m = getPosMetrics(p);
     document.getElementById("editModalTitle").textContent = p.name;
     document.getElementById("editAccountSel").value = p.account || "TR";
@@ -2481,11 +2563,13 @@
         subEl.textContent = "Allègement pré-calculé (-" + fmtRoundEur(Math.abs(deltaEur)) + " ≈ -" + sellQty.toFixed(3).replace(".", ",") + " parts) : ajustez puis validez.";
       }
     } else {
-      subEl.textContent = "Modifiez vos parts, mettez à 0 pour solder ou supprimez la ligne :";
+      subEl.textContent = "Saisissez vos parts et votre PRU (comme sur Trade Republic / PEA) :";
     }
-    document.getElementById("editQtyInput").value = Number(nextQty.toFixed(5));
+    var nextPru = nextQty > 0 ? (nextCost / nextQty) : 0;
+    document.getElementById("editQtyInput").value = Number(nextQty.toFixed(6));
+    document.getElementById("editPruInput").value = nextQty > 0 ? Number(nextPru.toFixed(4)) : "";
     document.getElementById("editCostInput").value = Number(nextCost.toFixed(2));
-    updatePruHint("editQtyInput", "editCostInput", "editPruHint");
+    syncModalFields("edit", null);
     document.getElementById("editModal").classList.add("open");
   }
   function closeEditModal() { state.editingId = null; document.getElementById("editModal").classList.remove("open"); }
@@ -2493,10 +2577,16 @@
   function saveEditModal() {
     if (!state.editingId) return;
     var qty = parseFloat(String(document.getElementById("editQtyInput").value || "").replace(",", "."));
+    var pru = parseFloat(String(document.getElementById("editPruInput").value || "").replace(",", "."));
     var cost = parseFloat(String(document.getElementById("editCostInput").value || "").replace(",", "."));
     if (!isFinite(qty) || qty < 0) { showToast("Quantité invalide"); return; }
-    if (qty === 0) cost = 0;
-    else if (!isFinite(cost) || cost < 0) cost = 0;
+    if (qty === 0) {
+      cost = 0;
+    } else if (state.editCostMode === "pru" && isFinite(pru) && pru >= 0) {
+      cost = Math.round(qty * pru * 100) / 100;
+    } else if (!isFinite(cost) || cost < 0) {
+      cost = (isFinite(pru) && pru >= 0) ? (Math.round(qty * pru * 100) / 100) : 0;
+    }
     for (var i = 0; i < state.positions.length; i++) {
       if (state.positions[i].id === state.editingId) {
         state.positions[i].qty = qty;
@@ -2840,6 +2930,7 @@
     if (e.target.closest("#btnCancelEdit") || e.target.id === "editModal") { closeEditModal(); return; }
     if (e.target.closest("#btnZeroEdit")) {
       document.getElementById("editQtyInput").value = "0";
+      document.getElementById("editPruInput").value = "0";
       document.getElementById("editCostInput").value = "0";
       saveEditModal();
       return;
@@ -2909,12 +3000,12 @@
     clearTimeout(searchTimer);
     searchTimer = setTimeout(function() { runAssetSearch(q); }, 220);
   });
-  ["addQtyInput", "addCostInput"].forEach(function(id) {
-    document.getElementById(id).addEventListener("input", function() { updatePruHint("addQtyInput", "addCostInput", "addPruHint"); });
-  });
-  ["editQtyInput", "editCostInput"].forEach(function(id) {
-    document.getElementById(id).addEventListener("input", function() { updatePruHint("editQtyInput", "editCostInput", "editPruHint"); });
-  });
+  document.getElementById("addQtyInput").addEventListener("input", function() { syncModalFields("add", "qty"); });
+  document.getElementById("addPruInput").addEventListener("input", function() { syncModalFields("add", "pru"); });
+  document.getElementById("addCostInput").addEventListener("input", function() { syncModalFields("add", "cost"); });
+  document.getElementById("editQtyInput").addEventListener("input", function() { syncModalFields("edit", "qty"); });
+  document.getElementById("editPruInput").addEventListener("input", function() { syncModalFields("edit", "pru"); });
+  document.getElementById("editCostInput").addEventListener("input", function() { syncModalFields("edit", "cost"); });
   document.getElementById("goalInput").addEventListener("input", function(e) {
     var v = parseFloat(String(e.target.value || "").replace(",", "."));
     if (isFinite(v) && v >= 100) { state.goal = Math.round(v); saveState(); renderProjections(computeTotals()); }
