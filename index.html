@@ -1217,6 +1217,7 @@
         <button type="button" class="range-chip" data-range="7">7j</button>
         <button type="button" class="range-chip active" data-range="30">1M</button>
         <button type="button" class="range-chip" data-range="90">3M</button>
+        <button type="button" class="range-chip" data-range="365">1A</button>
         <button type="button" class="range-chip" data-range="all">Tout</button>
       </div>
       <div class="chart-svg-wrap" id="wealthChartBox"></div>
@@ -2361,7 +2362,25 @@
       rBtns[ri].classList.toggle("active", rBtns[ri].getAttribute("data-range") === String(state.chartRange || "30"));
     }
 
-    // Construire la série de points
+    // Estimer les jalons historiques réels depuis les perfs TradingView des positions actives
+    function estimatePastVal(field) {
+      var sum = 0, used = 0;
+      for (var i = 0; i < state.positions.length; i++) {
+        var p = state.positions[i];
+        if (!isPositionActive(p)) continue;
+        var m = getPosMetrics(p);
+        var pct = field === "day" ? p.dayPct : p[field];
+        if (typeof pct === "number" && isFinite(pct) && (1 + pct / 100) > 0.1) {
+          sum += m.val / (1 + pct / 100);
+          used++;
+        } else {
+          sum += m.val;
+        }
+      }
+      return used > 0 ? sum : null;
+    }
+
+    // Construire la série de points (historique quotidien enregistré ou rétro-calcul boursier réel)
     var hist = Array.isArray(state.history) ? state.history.filter(function(h) { return h && h.d && typeof h.v === "number" && h.v > 0; }) : [];
     var today = todayIsoDate();
     if (hist.length === 0 || hist[hist.length - 1].d !== today) {
@@ -2370,29 +2389,72 @@
       hist = hist.slice(0, hist.length - 1).concat([{ d: today, v: tot.totalVal, c: tot.totalCost }]);
     }
 
-    var pts = hist;
-    if (state.chartRange !== "all") {
-      var days = parseInt(state.chartRange, 10) || 30;
+    var rng = String(state.chartRange || "30");
+    var minNeeded = rng === "7" ? 4 : (rng === "30" ? 10 : (rng === "90" ? 20 : (rng === "365" ? 60 : 12)));
+    var pts = [];
+    var isBackfilled = false;
+    var firstLabel = "";
+
+    var sliced = hist;
+    if (rng !== "all") {
+      var days = parseInt(rng, 10) || 30;
       var cutoff = new Date();
       cutoff.setDate(cutoff.getDate() - days);
       var cutIso = cutoff.getFullYear() + "-" + String(cutoff.getMonth() + 1).padStart(2, "0") + "-" + String(cutoff.getDate()).padStart(2, "0");
-      var sliced = hist.filter(function(h) { return h.d >= cutIso; });
-      if (sliced.length >= 1) pts = sliced;
+      sliced = hist.filter(function(h) { return h.d >= cutIso; });
     }
 
-    var isSyntheticDay1 = false;
-    var firstLabel = pts[0].d.slice(8, 10) + "/" + pts[0].d.slice(5, 7);
-    if (pts.length === 1) {
-      isSyntheticDay1 = true;
-      if (tot.hasDay && Math.abs(tot.dayGain) > 0.01) {
-        pts = [{ d: "Hier", v: Math.max(0, tot.totalVal - tot.dayGain), c: tot.totalCost }, pts[0]];
-        firstLabel = "Hier";
-      } else if (tot.totalCost > 0) {
-        pts = [{ d: "Investi", v: tot.totalCost, c: tot.totalCost }, pts[0]];
-        firstLabel = "Investi";
+    if (sliced.length >= minNeeded) {
+      pts = sliced;
+      firstLabel = pts[0].d.slice(8, 10) + "/" + pts[0].d.slice(5, 7);
+    } else {
+      isBackfilled = true;
+      var vDay = estimatePastVal("day");
+      var vW = estimatePastVal("perfW");
+      var v1M = estimatePastVal("perf1M");
+      var v3M = estimatePastVal("perf3M");
+      var v6M = estimatePastVal("perf6M");
+      var v1Y = estimatePastVal("perfY");
+      var pushPt = function(lbl, val) {
+        if (typeof val === "number" && isFinite(val) && val > 0) pts.push({ d: lbl, v: val, c: tot.totalCost });
+      };
+      if (rng === "7") {
+        pushPt("-7j", vW);
+        pushPt("Hier", vDay);
+        pushPt("Live", tot.totalVal);
+      } else if (rng === "30") {
+        pushPt("-1M", v1M);
+        pushPt("-7j", vW);
+        pushPt("Hier", vDay);
+        pushPt("Live", tot.totalVal);
+      } else if (rng === "90") {
+        pushPt("-3M", v3M);
+        pushPt("-1M", v1M);
+        pushPt("-7j", vW);
+        pushPt("Hier", vDay);
+        pushPt("Live", tot.totalVal);
+      } else if (rng === "365") {
+        pushPt("-1A", v1Y);
+        pushPt("-6M", v6M);
+        pushPt("-3M", v3M);
+        pushPt("-1M", v1M);
+        pushPt("-7j", vW);
+        pushPt("Live", tot.totalVal);
       } else {
-        pts = [pts[0], pts[0]];
+        if (tot.totalCost > 0) pushPt("Investi", tot.totalCost);
+        pushPt("-1A", v1Y);
+        pushPt("-6M", v6M);
+        pushPt("-3M", v3M);
+        pushPt("-1M", v1M);
+        pushPt("-7j", vW);
+        pushPt("Live", tot.totalVal);
       }
+      if (pts.length < 2) {
+        pts = tot.totalCost > 0
+          ? [{ d: "Investi", v: tot.totalCost, c: tot.totalCost }, { d: "Live", v: tot.totalVal, c: tot.totalCost }]
+          : [{ d: "Live", v: tot.totalVal, c: tot.totalCost }, { d: "Live", v: tot.totalVal, c: tot.totalCost }];
+      }
+      firstLabel = pts[0].d;
     }
 
     var firstV = pts[0].v;
@@ -2413,28 +2475,41 @@
       if (pts[pi].v < minV) minV = pts[pi].v;
       if (pts[pi].v > maxV) maxV = pts[pi].v;
     }
-    var padV = (maxV - minV) > 1 ? (maxV - minV) * 0.16 : Math.max(10, maxV * 0.02);
+    var padV = (maxV - minV) > 1 ? (maxV - minV) * 0.18 : Math.max(10, maxV * 0.02);
     var lo = Math.max(0, minV - padV), hi = maxV + padV;
     var span = (hi - lo) || 1;
-    var W = 340, H = 120, padX = 10, padTop = 14, padBot = 16;
+    var W = 340, H = 126, padX = 14, padTop = 14, padBot = 24;
     var plotW = W - padX * 2, plotH = H - padTop - padBot;
 
     var coords = [];
     for (var ci = 0; ci < pts.length; ci++) {
       var x = pts.length === 1 ? (W / 2) : (padX + (ci / (pts.length - 1)) * plotW);
       var y = padTop + (1 - (pts[ci].v - lo) / span) * plotH;
-      coords.push([x, y]);
+      coords.push([x, y, pts[ci].d]);
     }
     var lineD = coords.map(function(c, idx) { return (idx === 0 ? "M" : "L") + c[0].toFixed(1) + "," + c[1].toFixed(1); }).join(" ");
     var areaD = lineD + " L" + coords[coords.length - 1][0].toFixed(1) + "," + (H - padBot) + " L" + coords[0][0].toFixed(1) + "," + (H - padBot) + " Z";
 
     var costLineSvg = "";
-    if (!isSyntheticDay1 && tot.totalCost > lo && tot.totalCost < hi) {
+    if (tot.totalCost > lo && tot.totalCost < hi) {
       var cy = padTop + (1 - (tot.totalCost - lo) / span) * plotH;
       costLineSvg = "<line x1='" + padX + "' y1='" + cy.toFixed(1) + "' x2='" + (W - padX) + "' y2='" + cy.toFixed(1) + "' stroke='rgba(148,163,184,0.35)' stroke-dasharray='4,4' stroke-width='1'/>";
     }
 
-    var lastPt = coords[coords.length - 1];
+    var dotsSvg = "";
+    var labelsSvg = "";
+    for (var di2 = 0; di2 < coords.length; di2++) {
+      var pt = coords[di2];
+      var isLast = di2 === coords.length - 1;
+      if (isBackfilled || isLast) {
+        dotsSvg += "<circle cx='" + pt[0].toFixed(1) + "' cy='" + pt[1].toFixed(1) + "' r='" + (isLast ? "3.8" : "2.6") + "' fill='" + strokeCol + "' stroke='#0b0f17' stroke-width='1.4'/>";
+      }
+      if (isBackfilled) {
+        var anchor = di2 === 0 ? "start" : (isLast ? "end" : "middle");
+        labelsSvg += "<text x='" + pt[0].toFixed(1) + "' y='" + (H - 6) + "' text-anchor='" + anchor + "' fill='#94a3b8' font-size='9.5' font-weight='600'>" + escHtml(pt[2]) + "</text>";
+      }
+    }
+
     document.getElementById("wealthChartBox").innerHTML =
       "<svg viewBox='0 0 " + W + " " + H + "' preserveAspectRatio='none'>" +
         "<defs><linearGradient id='wealthGrad' x1='0' y1='0' x2='0' y2='1'>" +
@@ -2444,11 +2519,12 @@
         costLineSvg +
         "<path d='" + areaD + "' fill='url(#wealthGrad)'/>" +
         "<path d='" + lineD + "' fill='none' stroke='" + strokeCol + "' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/>" +
-        "<circle cx='" + lastPt[0].toFixed(1) + "' cy='" + lastPt[1].toFixed(1) + "' r='3.6' fill='" + strokeCol + "' stroke='#0b0f17' stroke-width='1.5'/>" +
+        dotsSvg +
+        labelsSvg +
       "</svg>";
 
-    var metaTxt = isSyntheticDay1
-      ? ("<span>" + escHtml(firstLabel) + " → Aujourd'hui</span><span>Suivi quotidien activé (1 point / jour)</span>")
+    var metaTxt = isBackfilled
+      ? ("<span>" + escHtml(firstLabel) + " → Live (perfs boursières réelles)</span><span>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>")
       : ("<span>" + escHtml(firstLabel) + " → Aujourd'hui (" + hist.length + " j)</span><span>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>");
     document.getElementById("chartMetaLine").innerHTML = metaTxt;
 
@@ -3347,7 +3423,7 @@
       cache: "no-store",
       body: JSON.stringify({
         symbols: { tickers: tickers, query: { types: [] } },
-        columns: ["name", "close", "change", "currency", "premarket_close", "premarket_change", "postmarket_close", "postmarket_change", "RSI", "Perf.1M", "dividends_yield_current"]
+        columns: ["name", "close", "change", "currency", "premarket_close", "premarket_change", "postmarket_close", "postmarket_change", "RSI", "Perf.1M", "dividends_yield_current", "Perf.W", "Perf.3M", "Perf.6M", "Perf.Y"]
       })
     })
       .then(function(r) { return r.json(); })
@@ -3382,6 +3458,10 @@
             p.rsi = (d && typeof d[8] === "number") ? d[8] : (typeof dLsx[8] === "number" ? dLsx[8] : null);
             p.perf1M = (d && typeof d[9] === "number") ? d[9] : (typeof dLsx[9] === "number" ? dLsx[9] : null);
             p.divYield = (d && typeof d[10] === "number") ? d[10] : 0;
+            p.perfW = (d && typeof d[11] === "number") ? d[11] : (typeof dLsx[11] === "number" ? dLsx[11] : null);
+            p.perf3M = (d && typeof d[12] === "number") ? d[12] : (typeof dLsx[12] === "number" ? dLsx[12] : null);
+            p.perf6M = (d && typeof d[13] === "number") ? d[13] : (typeof dLsx[13] === "number" ? dLsx[13] : null);
+            p.perfY = (d && typeof d[14] === "number") ? d[14] : (typeof dLsx[14] === "number" ? dLsx[14] : null);
             p.isLive = true;
             continue;
           }
@@ -3425,6 +3505,10 @@
           p.rsi = typeof d[8] === "number" ? d[8] : null;
           p.perf1M = typeof d[9] === "number" ? d[9] : null;
           p.divYield = typeof d[10] === "number" ? d[10] : 0;
+          p.perfW = typeof d[11] === "number" ? d[11] : null;
+          p.perf3M = typeof d[12] === "number" ? d[12] : null;
+          p.perf6M = typeof d[13] === "number" ? d[13] : null;
+          p.perfY = typeof d[14] === "number" ? d[14] : null;
           p.isLive = true;
         }
 
