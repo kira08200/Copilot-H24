@@ -1,5 +1,6 @@
-const CACHE_NAME = "copilote-bourse-pwa-v62";
+const CACHE_NAME = "copilote-bourse-pwa-v63";
 const STATE_CACHE_NAME = "copilote-sw-state";
+const USER_DATA_CACHE = "copilote-user-data-v1";
 const STATE_CACHE_REQ = "./__copilote_sw_state__";
 const ASSETS = [
   "./",
@@ -131,7 +132,7 @@ self.addEventListener("activate", function(event) {
   event.waitUntil(
     caches.keys().then(function(keys) {
       return Promise.all(
-        keys.filter(function(k) { return k !== CACHE_NAME && k !== STATE_CACHE_NAME; }).map(function(k) { return caches.delete(k); })
+        keys.filter(function(k) { return k !== CACHE_NAME && k !== STATE_CACHE_NAME && k !== USER_DATA_CACHE; }).map(function(k) { return caches.delete(k); })
       );
     })
   );

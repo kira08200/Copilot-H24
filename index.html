@@ -1008,16 +1008,16 @@
       <div class="grid-2">
         <div>
           <label class="field-lbl" for="addQtyInput">Nombre de parts</label>
-          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addQtyInput" placeholder="Ex : 10">
+          <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="addQtyInput" placeholder="Ex : 10">
         </div>
         <div>
           <label class="field-lbl" for="addPruInput">PRU (€ / part)</label>
-          <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addPruInput" placeholder="Ex : 120,00">
+          <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="addPruInput" placeholder="Ex : 120,00">
         </div>
       </div>
       <div>
         <label class="field-lbl" for="addCostInput">Montant total investi (€) <span style="font-weight:500;text-transform:none;">— auto (parts × PRU) ou libre</span></label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="addCostInput" placeholder="Ex : 1200">
+        <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="addCostInput" placeholder="Ex : 1200">
       </div>
       <div id="addPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:6px;line-height:1.4;"></div>
     </div>
@@ -1057,26 +1057,26 @@
     <div class="grid-2">
       <div>
         <label class="field-lbl" for="editQtyInput">Nombre de parts</label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editQtyInput">
+        <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="editQtyInput">
       </div>
       <div>
         <label class="field-lbl" for="editPruInput">PRU (€ / part)</label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editPruInput">
+        <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="editPruInput">
       </div>
     </div>
     <div>
       <label class="field-lbl" for="editCostInput">Montant total investi (€) <span style="font-weight:500;text-transform:none;">— auto (parts × PRU) ou libre</span></label>
-      <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editCostInput">
+      <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="editCostInput">
     </div>
     <div id="editPruHint" style="font-size:0.74rem;color:var(--muted);margin-top:6px;line-height:1.4;"></div>
     <div class="grid-2" style="margin-top:4px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.08);">
       <div>
         <label class="field-lbl" for="editAlertBuyInput">🎯 Alerte achat ≤ (€)</label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editAlertBuyInput" placeholder="Optionnel">
+        <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="editAlertBuyInput" placeholder="Optionnel">
       </div>
       <div>
         <label class="field-lbl" for="editAlertSellInput">🎯 Alerte vente ≥ (€)</label>
-        <input type="number" step="any" min="0" inputmode="decimal" class="field-input" id="editAlertSellInput" placeholder="Optionnel">
+        <input type="text" inputmode="decimal" autocomplete="off" class="field-input" id="editAlertSellInput" placeholder="Optionnel">
       </div>
     </div>
     <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
@@ -1183,7 +1183,7 @@
         </div>
         <div class="budget-box">
           <span class="budget-lbl">Montant à placer</span>
-          <input type="number" id="investAmtInput" class="budget-input" min="10" max="1000000" step="any" inputmode="decimal" value="300">
+          <input type="text" id="investAmtInput" class="budget-input" inputmode="decimal" autocomplete="off" value="300">
           <span class="budget-unit">€</span>
         </div>
         <div class="preset-chips" id="amtChips">
@@ -1300,15 +1300,15 @@
       <div class="grid-3">
         <div>
           <label class="field-lbl" for="goalInput" style="margin-top:0;">Objectif (€)</label>
-          <input type="number" id="goalInput" class="field-input" inputmode="decimal" style="padding:7px 8px;font-size:0.82rem;">
+          <input type="text" id="goalInput" class="field-input" inputmode="decimal" autocomplete="off" style="padding:7px 8px;font-size:0.82rem;">
         </div>
         <div>
           <label class="field-lbl" for="dcaInput" style="margin-top:0;">Épargne / m</label>
-          <input type="number" id="dcaInput" class="field-input" inputmode="decimal" style="padding:7px 8px;font-size:0.82rem;">
+          <input type="text" id="dcaInput" class="field-input" inputmode="decimal" autocomplete="off" style="padding:7px 8px;font-size:0.82rem;">
         </div>
         <div>
           <label class="field-lbl" for="rateInput" style="margin-top:0;">Taux % / an</label>
-          <input type="number" id="rateInput" step="0.1" class="field-input" inputmode="decimal" style="padding:7px 8px;font-size:0.82rem;">
+          <input type="text" id="rateInput" class="field-input" inputmode="decimal" autocomplete="off" style="padding:7px 8px;font-size:0.82rem;">
         </div>
       </div>
       <div class="proj-grid" id="projGrid"></div>
@@ -1395,7 +1395,7 @@
         if ("caches" in window) {
           caches.keys().then(function(keys) {
             for (var ki = 0; ki < keys.length; ki++) {
-              if (keys[ki] !== "copilote-sw-state") caches.delete(keys[ki]).catch(function() {});
+              if (keys[ki] !== "copilote-sw-state" && keys[ki] !== "copilote-user-data-v1") caches.delete(keys[ki]).catch(function() {});
             }
           }).catch(function() {});
         }
@@ -1603,19 +1603,8 @@
       var rawV6 = localStorage.getItem(ACTIVE_STORAGE_KEY);
       if (rawV6) {
         var d6 = JSON.parse(rawV6);
-        if (d6 && PROFILES[d6.profile]) state.profile = d6.profile;
-        if (d6 && Array.isArray(d6.positions)) state.positions = d6.positions;
-        if (d6 && Array.isArray(d6.history)) state.history = d6.history;
-        if (d6 && d6.chartRange) state.chartRange = d6.chartRange;
-        if (d6 && typeof d6.investAmt === "number" && d6.investAmt >= 10) state.investAmt = d6.investAmt;
-        if (d6 && d6.buyAcc) state.buyAcc = d6.buyAcc;
-        if (d6 && typeof d6.goal === "number" && d6.goal >= 100) state.goal = d6.goal;
-        if (d6 && typeof d6.dca === "number" && d6.dca >= 0) state.dca = d6.dca;
-        if (d6 && typeof d6.customRate === "number" && d6.customRate >= 0) state.customRate = d6.customRate;
-        if (d6 && d6.notifiedNews && typeof d6.notifiedNews === "object") state.notifiedNews = d6.notifiedNews;
-        state.notifsEnabled = d6.notifsEnabled === true;
-        state.hasUnreadAlerts = d6.hasUnreadAlerts === true;
-        if (repairBuggyPrecomputedQtys(state.positions)) saveState();
+        loadedFromStorage = true;
+        applyLoadedPayload(d6);
         return;
       }
     } catch (e) {}
@@ -1721,23 +1710,82 @@
     saveState();
   }
 
+  var USER_DATA_CACHE = "copilote-user-data-v1";
+  var loadedFromStorage = false;
+
+  function serializeStatePayload() {
+    return JSON.stringify({
+      savedAt: Date.now(),
+      profile: state.profile,
+      positions: state.positions,
+      history: state.history,
+      chartRange: state.chartRange,
+      investAmt: state.investAmt,
+      buyAcc: state.buyAcc,
+      goal: state.goal,
+      dca: state.dca,
+      customRate: state.customRate,
+      notifiedNews: state.notifiedNews,
+      notifsEnabled: state.notifsEnabled,
+      hasUnreadAlerts: state.hasUnreadAlerts
+    });
+  }
+
+  function applyLoadedPayload(d6) {
+    if (!d6 || typeof d6 !== "object") return false;
+    if (PROFILES[d6.profile]) state.profile = d6.profile;
+    if (Array.isArray(d6.positions)) state.positions = d6.positions;
+    if (Array.isArray(d6.history)) state.history = d6.history;
+    if (d6.chartRange) state.chartRange = d6.chartRange;
+    if (typeof d6.investAmt === "number" && d6.investAmt >= 10) state.investAmt = d6.investAmt;
+    if (d6.buyAcc) state.buyAcc = d6.buyAcc;
+    if (typeof d6.goal === "number" && d6.goal >= 100) state.goal = d6.goal;
+    if (typeof d6.dca === "number" && d6.dca >= 0) state.dca = d6.dca;
+    if (typeof d6.customRate === "number" && d6.customRate >= 0) state.customRate = d6.customRate;
+    if (d6.notifiedNews && typeof d6.notifiedNews === "object") state.notifiedNews = d6.notifiedNews;
+    state.notifsEnabled = d6.notifsEnabled === true;
+    state.hasUnreadAlerts = d6.hasUnreadAlerts === true;
+    if (repairBuggyPrecomputedQtys(state.positions)) saveState();
+    return true;
+  }
+
   function saveState() {
+    var payload = serializeStatePayload();
     try {
-      localStorage.setItem(ACTIVE_STORAGE_KEY, JSON.stringify({
-        profile: state.profile,
-        positions: state.positions,
-        history: state.history,
-        chartRange: state.chartRange,
-        investAmt: state.investAmt,
-        buyAcc: state.buyAcc,
-        goal: state.goal,
-        dca: state.dca,
-        customRate: state.customRate,
-        notifiedNews: state.notifiedNews,
-        notifsEnabled: state.notifsEnabled,
-        hasUnreadAlerts: state.hasUnreadAlerts
-      }));
+      localStorage.setItem(ACTIVE_STORAGE_KEY, payload);
+    } catch (e) {
+      try { showToast("⚠️ Stockage navigateur plein ou bloqué (mode privé ?)"); } catch (e2) {}
+    }
+    // Miroir durable dans CacheStorage (protège les sauvegardes PWA contre le nettoyage localStorage)
+    if ("caches" in window && !isClientPreview) {
+      try {
+        caches.open(USER_DATA_CACHE).then(function(cache) {
+          return cache.put("./__copilote_state__" + ACTIVE_STORAGE_KEY, new Response(payload, { headers: { "Content-Type": "application/json" } }));
+        }).catch(function() {});
+      } catch (e) {}
+    }
+  }
+
+  function tryRestoreFromDurableCache() {
+    if (loadedFromStorage || isClientPreview || !("caches" in window)) return;
+    try {
+      caches.open(USER_DATA_CACHE).then(function(cache) {
+        return cache.match("./__copilote_state__" + ACTIVE_STORAGE_KEY);
+      }).then(function(resp) {
+        return resp ? resp.json() : null;
+      }).then(function(d6) {
+        if (d6 && Array.isArray(d6.positions) && d6.positions.length > 0) {
+          applyLoadedPayload(d6);
+          try { localStorage.setItem(ACTIVE_STORAGE_KEY, JSON.stringify(d6)); } catch (e) {}
+          renderAll(false);
+          syncLiveQuotes();
+        }
+      }).catch(function() {});
     } catch (e) {}
+  }
+
+  if (navigator.storage && navigator.storage.persist) {
+    try { navigator.storage.persist().catch(function() {}); } catch (e) {}
   }
 
   function todayIsoDate() {
@@ -3185,9 +3233,9 @@
     else if (changedField === "cost") state[modeKey] = "cost";
     var mode = state[modeKey] || "pru";
 
-    var q = parseFloat(String(qtyEl.value || "").replace(",", "."));
-    var pru = parseFloat(String(pruEl.value || "").replace(",", "."));
-    var c = parseFloat(String(costEl.value || "").replace(",", "."));
+    var q = parseFlexNum(qtyEl.value);
+    var pru = parseFlexNum(pruEl.value);
+    var c = parseFlexNum(costEl.value);
 
     if (changedField === "pru") {
       if (isFinite(q) && q > 0 && isFinite(pru) && pru >= 0) {
@@ -3240,9 +3288,10 @@
   function confirmAddPosition() {
     var a = state.pendingAddAsset;
     if (!a) return;
-    var qty = parseFloat(String(document.getElementById("addQtyInput").value || "").replace(",", "."));
-    var pru = parseFloat(String(document.getElementById("addPruInput").value || "").replace(",", "."));
-    var cost = parseFloat(String(document.getElementById("addCostInput").value || "").replace(",", "."));
+    if (document.activeElement && document.activeElement.blur) { try { document.activeElement.blur(); } catch (e) {} }
+    var qty = parseFlexNum(document.getElementById("addQtyInput").value);
+    var pru = parseFlexNum(document.getElementById("addPruInput").value);
+    var cost = parseFlexNum(document.getElementById("addCostInput").value);
     if (!isFinite(qty) || qty <= 0) { showToast("Indiquez un nombre de parts > 0"); return; }
     if (state.addCostMode === "pru" && isFinite(pru) && pru >= 0) {
       cost = Math.round(qty * pru * 100) / 100;
@@ -3312,13 +3361,12 @@
 
   function saveEditModal() {
     if (!state.editingId) return;
-    var qty = parseFloat(String(document.getElementById("editQtyInput").value || "").replace(",", "."));
-    var pru = parseFloat(String(document.getElementById("editPruInput").value || "").replace(",", "."));
-    var cost = parseFloat(String(document.getElementById("editCostInput").value || "").replace(",", "."));
-    var aBuyRaw = String(document.getElementById("editAlertBuyInput").value || "").trim().replace(",", ".");
-    var aSellRaw = String(document.getElementById("editAlertSellInput").value || "").trim().replace(",", ".");
-    var alertBuy = aBuyRaw ? parseFloat(aBuyRaw) : null;
-    var alertSell = aSellRaw ? parseFloat(aSellRaw) : null;
+    if (document.activeElement && document.activeElement.blur) { try { document.activeElement.blur(); } catch (e) {} }
+    var qty = parseFlexNum(document.getElementById("editQtyInput").value);
+    var pru = parseFlexNum(document.getElementById("editPruInput").value);
+    var cost = parseFlexNum(document.getElementById("editCostInput").value);
+    var alertBuy = parseFlexNum(document.getElementById("editAlertBuyInput").value);
+    var alertSell = parseFlexNum(document.getElementById("editAlertSellInput").value);
     if (!isFinite(alertBuy) || alertBuy <= 0) alertBuy = null;
     if (!isFinite(alertSell) || alertSell <= 0) alertSell = null;
     if (!isFinite(qty) || qty < 0) { showToast("Quantité invalide"); return; }
@@ -4313,7 +4361,7 @@
   });
 
   document.getElementById("investAmtInput").addEventListener("input", function(e) {
-    var v = parseFloat(String(e.target.value || "").replace(",", "."));
+    var v = parseFlexNum(e.target.value);
     if (isFinite(v) && v >= 10) { state.investAmt = Math.round(v); saveState(); renderAll(false); }
   });
   document.getElementById("searchAssetInput").addEventListener("input", function(e) {
@@ -4328,15 +4376,15 @@
   document.getElementById("editPruInput").addEventListener("input", function() { syncModalFields("edit", "pru"); });
   document.getElementById("editCostInput").addEventListener("input", function() { syncModalFields("edit", "cost"); });
   document.getElementById("goalInput").addEventListener("input", function(e) {
-    var v = parseFloat(String(e.target.value || "").replace(",", "."));
+    var v = parseFlexNum(e.target.value);
     if (isFinite(v) && v >= 100) { state.goal = Math.round(v); saveState(); renderProjections(computeTotals()); }
   });
   document.getElementById("dcaInput").addEventListener("input", function(e) {
-    var v = parseFloat(String(e.target.value || "").replace(",", "."));
+    var v = parseFlexNum(e.target.value);
     if (isFinite(v) && v >= 0) { state.dca = Math.round(v); saveState(); renderProjections(computeTotals()); }
   });
   document.getElementById("rateInput").addEventListener("input", function(e) {
-    var v = parseFloat(String(e.target.value || "").replace(",", "."));
+    var v = parseFlexNum(e.target.value);
     if (isFinite(v) && v >= 0 && v <= 40) { state.customRate = v; saveState(); renderProjections(computeTotals()); }
   });
   document.getElementById("ioBox").addEventListener("input", function() { resetIoPreview(); });
@@ -4383,13 +4431,15 @@
       else if (document.getElementById("addModal").classList.contains("open") && state.pendingAddAsset) { e.preventDefault(); confirmAddPosition(); }
     }
   });
+  window.addEventListener("pagehide", function() { saveState(); });
   document.addEventListener("visibilitychange", function() {
     if (!document.hidden) { syncLiveQuotes(); fetchDeepNews(false); }
-    else { syncSwNotifState(); }
+    else { saveState(); syncSwNotifState(); }
   });
 
   // Initialisation
   loadAndMigrateState();
+  tryRestoreFromDurableCache();
   var startHash = (window.location.hash || "").replace("#", "");
   var savedTab = "";
   try { savedTab = localStorage.getItem(TAB_KEY) || ""; } catch (e) {}
