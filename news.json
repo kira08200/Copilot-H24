@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T04:39:04Z",
+  "updatedAt": "2026-11-26T05:37:43Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,15 +95,15 @@
   "majorMoves": [],
   "items": [
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Thu, 26 Nov 2026 04:03:47 GMT",
-      "pubTs": 1795665827,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+      "id": "e074f21415e4cbe0",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L’or chute malgré le recul des rendements américains, l’inflation PCE sous-jacente atteignant 3,3 % - www.tmgm.com",
+      "excerpt": "Investing.com - Les cours de l’or ont regagné du terrain mercredi, progressant légèrement alors que le dollar inversait sa tendance et reculait. Le métal précieux avait auparavant…",
+      "source": "www.tmgm.com",
+      "pubDate": "Wed, 25 Nov 2026 20:23:35 GMT",
+      "pubTs": 1795638215,
+      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZnpub1p0MzlQTTRyTU96MEtZa0ZObmNjcHZhZlB3THhEeWZ4UF85ZEktYnk0ZEFnb3htZXZiaHJWblJ3OTRDNUlwa1BmVDJTbmNsNXNHdW1NM0dxTTAxdGZXYmlJTVNyVVZoX05vNGNxZEx4SG5GWDhKX2liOGNBbnpPOUw0YWxUNUF6RTNYa0VjWWdjX2ZrMVpUVmc0RDR2WXY4b2dnOWltX0RIRklmdEhieDBTZTF0c1J5SnRMUQ?oc=5"
     },
     {
       "id": "75dddc61dcf54ed5",
@@ -117,28 +117,6 @@
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNFgtMGdKN3hLYkMzVE96MkpqLVB3OEVwbVVkWF94aUxiU2hlX1Q4MWtSbzZ2N0JEcmRRZ2Qwa05WZnlaMzFCUlhDVjJyRkdzME4wNWF0X25rSVR2MjhGUTJrdUFxRndvZkNyemhweVYwbFV1cnVDN0Z5Q3E4bEV4d2E3Sk5QbzJmcFJyTXVtNkZtcEM0VVE4TnQ2SnUyVGZfSVFFanp3X19MZmVwU2RBb1ZYTzV0b2dHOTV6RTFUWGI2TzlzbkE?oc=5"
     },
     {
-      "id": "318c6b71383a9eff",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Wall Street : le Nasdaq chute de 4,2 %, les tarifs inquiètent - Le Revenu",
-      "excerpt": "Wall Street, Nasdaq, tarifs douaniers : faut-il s’attendre à une simple secousse ou à une baisse boursière plus durable ? Le Nasdaq a plongé de 4,2 %…",
-      "source": "Le Revenu",
-      "pubDate": "Wed, 25 Nov 2026 17:43:00 GMT",
-      "pubTs": 1795628580,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQMGtBdFFZQ0ZoSUk2bnN6eVNfZHpyMUJqZ3BmV1F5N3psOGVqWmdwMXdYMk5hTnowUTk0d3F3VlZvb1lfQWJJMlhyQ0FZZXZvbmxYNjAxMmptc1BBcWFObE1LWmlfWlpUT09vX1Jrc0FqS291NG5QZmN1ZkdTcVhUZ0c4QzE0dTJKUkNRRkJSTmpvZmxvalhIdDMwX0RiMkgzUEJ1dlhNTE9ldUVPemh3dGFVZmxiT3h4cVRRdzBNQ3JBclB2NkFyMDBnd0QwVzhVdFlVOQ?oc=5"
-    },
-    {
-      "id": "13c3e74c8d6be447",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Anthropic: pourquoi le géant de l'IA agite la Bourse - rts.ch",
-      "excerpt": "Anthropic, l’entreprise qui a créé l’assistant IA Claude, a fait une entrée fracassante en Bourse le 19 novembre, levant plus de 81 milliards de dollars le premier jour. Malek…",
-      "source": "rts.ch",
-      "pubDate": "Wed, 25 Nov 2026 17:18:01 GMT",
-      "pubTs": 1795627081,
-      "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNb2VValpkMHRvV0FVcWhVQV81a1JXOS1wWExHWFRtZ2RFYVhRd094VUhMSU91VjM3U2ZEbHZkRHkyMlJNUy1nWnJlZkJmUko4RFF3YTJNRlZvZlVNNWJUZWpIY2pVamJrbHNtTWVpd1dtRm9abHVPLUstNGstc05nWEl4Zk9DRWgzOEpUWmxublVCbHdxMjM2aDFlTlRnY3pQSUxSYi0yVUZ3T0VwWnZLblB5alJ2Ymc?oc=5"
-    },
-    {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
@@ -150,26 +128,48 @@
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
-      "id": "cd481529b7b2e865",
+      "id": "b07f8c8a207b8f07",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "SpaceX-Tesla : cinq administrateurs négocient une fusion potentielle à 3 500 milliards de dollars - Le Monde Informatique",
-      "excerpt": "SpaceX et Tesla ont désigné cinq administrateurs pour négocier les conditions d'une éventuelle fusion qui pourrait valoriser l'ensemble à 3 500 milliards de dollars. Selon le…",
-      "source": "Le Monde Informatique",
-      "pubDate": "Wed, 25 Nov 2026 08:00:00 GMT",
-      "pubTs": 1795593600,
-      "link": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOODZickxySmVLTjFUTUozSTRmY2EtaE5sLXRCcGZKMUZRVmNPSWYtOW80eXl2X1NJWkJYYzJySS1aeC1YVG1vWGdnVXVoQUVPRE5QSWtXaFZaQ29kUkg2Y2xTZG9fdzdnUjZPaGtEY0lCMGpmNTd2SG1qeFR3MnEwdk1wWTdwVTJ1ZGd3SkNUQXZQdnhvUU1wejU0UnZVZ1VWSWFGQXdOa3pNU29mX1dZMHAzV2RNWmtvZ3RTTHp3ZnRfU0RqV1JBSlpyNWpTTTR0Q0JqNjdhSWY3dkk?oc=5"
+      "title": "Anthropic risque-t-il un krach en Bourse, alors que l'action tombe sous le prix d'introduction ? - Capital.fr",
+      "excerpt": "Le faible flottant d’Anthropic en Bourse favorise une forte volatilité de l’action. Et l'expiration des périodes de lock-ups devrait peser sur le cours de Bourse. Alors que l’action…",
+      "source": "Capital.fr",
+      "pubDate": "Wed, 25 Nov 2026 06:00:00 GMT",
+      "pubTs": 1795586400,
+      "link": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNWTNoV2RMV004U3JHdnJtRi1KaTBUaFY3TFctV3lMRWkxX0dmaHhBRkxqZi1qOXJlcUFFem9zYlZCZDMtRVo1VmxUcEdXb3ZFY1NkNUZ1akp5bTdhUDJZaWYwZFpwU0hKY3Z2M25aZmt6YnRUVHNTMmV1Smh4UlJ5SUgydUxTa2Q3UmluV0F5UG9rNDBMU1dEc09hakNtSk5KYjJ1aDV5alJBM0lTT1pPaXMxNTlMRDVETFdObGw5NE1pM2lzajdRZnVWM1lETldwVGwyOUNURnZTU2VR?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
+      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+    },
+    {
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
+    },
+    {
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
