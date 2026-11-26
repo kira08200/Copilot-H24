@@ -104,7 +104,7 @@
     white-space: nowrap;
   }
   .install-chip {
-    display: inline-flex;
+    display: none;
     align-items: center;
     gap: 4px;
     background: var(--blue);
@@ -495,10 +495,6 @@
     flex: 1 1 auto;
     min-width: 0;
     white-space: normal;
-  }
-  .notif-actions-row #btnNotif {
-    flex: 0 0 auto;
-    padding: 6px 12px;
   }
   .news-group {
     background: var(--card-alt);
@@ -1085,7 +1081,6 @@
     </div>
     <div class="btn-row" style="margin-top:14px;margin-bottom:0;">
       <button type="button" class="btn" id="btnCancelEdit">Annuler</button>
-      <button type="button" class="btn" id="btnZeroEdit" title="Mettre à 0 part">0 part</button>
       <button type="button" class="btn red-outline" id="btnDeleteEdit">🗑️ Supprimer</button>
       <button type="button" class="btn primary" id="btnSaveEdit">Enregistrer</button>
     </div>
@@ -1163,7 +1158,7 @@
           <div class="card-title">🧭 Équilibre vs votre Profil</div>
           <span class="badge b-blue" id="healthScoreBadge">--/100</span>
         </div>
-        <div class="sub" id="climateLine" style="margin-bottom:8px;">🌍 Climat marché : synchronisation...</div>
+        <div class="sub" id="climateLine" style="margin-bottom:8px;display:none;"></div>
         <div class="stacked-bar" id="stackedBar"></div>
         <div id="pocketsList"></div>
         <div class="env-grid" id="accountSplitGrid"></div>
@@ -1186,12 +1181,7 @@
           <button type="button" class="preset-chip" data-amt="500">500 €</button>
           <button type="button" class="preset-chip" data-amt="1000">1 000 €</button>
         </div>
-        <div class="btn-row" id="buyAccRow">
-          <button type="button" class="btn compact active" data-bacc="all" style="flex:1;">Tous</button>
-          <button type="button" class="btn compact" data-bacc="PEA" style="flex:1;">PEA</button>
-          <button type="button" class="btn compact" data-bacc="TR" style="flex:1;">Trade Rep.</button>
-          <button type="button" class="btn compact" data-bacc="CTO" style="flex:1;">CTO</button>
-        </div>
+        <div class="btn-row" id="buyAccRow"></div>
         <div id="buySignalsBox"></div>
       </div>
 
@@ -1228,18 +1218,9 @@
     <div class="card">
       <div class="card-head">
         <div class="card-title" id="portTitle">📊 Mon Portefeuille</div>
-        <div style="display:flex;gap:6px;">
-          <button type="button" class="btn compact green-outline" id="btnPortImport">📥 Importer</button>
-          <button type="button" class="btn compact primary" id="btnAddTop">➕ Ajouter</button>
-        </div>
+        <button type="button" class="btn compact primary" id="btnAddTop">➕ Ajouter</button>
       </div>
-      <div class="btn-row" id="portFilterRow">
-        <button type="button" class="btn compact active" data-pacc="all">Tous</button>
-        <button type="button" class="btn compact" data-pacc="PEA">PEA</button>
-        <button type="button" class="btn compact" data-pacc="TR">Trade Rep.</button>
-        <button type="button" class="btn compact" data-pacc="CTO">CTO</button>
-        <button type="button" class="btn compact" id="btnSortPort">↕ Valeur</button>
-      </div>
+      <div class="btn-row" id="portFilterRow"></div>
       <div id="portfolioList"></div>
     </div>
   </div>
@@ -1254,7 +1235,6 @@
       <div class="mkt-inline" id="marketSessionsLine">⚪ Paris -- • ⚪ Wall Street -- • ⚪ Hong Kong --</div>
       <div class="notif-actions-row">
         <button type="button" class="btn compact" id="btnEnablePush">🔔 Activer les notifications</button>
-        <button type="button" class="btn compact blue-outline" id="btnNotif" style="display:none;">⚡ Tester</button>
       </div>
     </div>
 
@@ -1275,10 +1255,10 @@
       <div id="liveNewsList"></div>
     </div>
 
-    <div class="card">
+    <div class="card" id="earningsCard" style="display:none;">
       <div class="card-head">
         <div class="card-title">📊 Prochains Résultats</div>
-        <span class="badge b-purple">Calendrier</span>
+        <span class="badge b-purple" id="earningsBadge">Calendrier</span>
       </div>
       <div id="earningsBox"></div>
     </div>
@@ -1424,19 +1404,19 @@
 
   var deferredPrompt = null;
   var installBtn = document.getElementById("btnInstall");
+  var isStandalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || isApkUa;
+  var isAndroidWeb = /Android/i.test(navigator.userAgent || "") && !isStandalone;
+  if (installBtn && isAndroidWeb) installBtn.style.display = "inline-flex";
   window.addEventListener("beforeinstallprompt", function(e) {
     e.preventDefault();
     deferredPrompt = e;
-    if (installBtn) installBtn.style.display = "inline-flex";
+    if (installBtn && !isStandalone) installBtn.style.display = "inline-flex";
   });
   window.addEventListener("appinstalled", function() {
     deferredPrompt = null;
     if (installBtn) installBtn.style.display = "none";
     showToast("✅ Application installée !");
   });
-  if ((window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || isApkUa) {
-    if (installBtn) installBtn.style.display = "none";
-  }
 
   var PROFILES = {
     prudent: {
@@ -2165,9 +2145,29 @@
     for (var c = 0; c < chips.length; c++) {
       chips[c].classList.toggle("active", Number(chips[c].getAttribute("data-amt")) === Number(state.investAmt));
     }
-    var bAccBtns = document.querySelectorAll("#buyAccRow .btn[data-bacc]");
-    for (var ba = 0; ba < bAccBtns.length; ba++) {
-      bAccBtns[ba].classList.toggle("active", bAccBtns[ba].getAttribute("data-bacc") === state.buyAcc);
+    // Filtres dynamiques sur les comptes réellement détenus
+    var accShortLabels = { PEA: "PEA", TR: "Trade Rep.", CTO: "CTO", AV: "AV" };
+    var activeAccs = [];
+    ["PEA", "TR", "CTO", "AV"].forEach(function(ak) {
+      if (tot.accs[ak] && tot.accs[ak].cnt > 0) activeAccs.push(ak);
+    });
+    if (state.buyAcc !== "all" && activeAccs.indexOf(state.buyAcc) === -1) state.buyAcc = "all";
+    if (state.portAcc !== "all" && activeAccs.indexOf(state.portAcc) === -1) state.portAcc = "all";
+
+    var buyAccRow = document.getElementById("buyAccRow");
+    if (buyAccRow) {
+      if (activeAccs.length <= 1) {
+        buyAccRow.style.display = "none";
+        buyAccRow.innerHTML = "";
+      } else {
+        buyAccRow.style.display = "flex";
+        var baHtml = "<button type='button' class='btn compact" + (state.buyAcc === "all" ? " active" : "") + "' data-bacc='all' style='flex:1;'>Tous</button>";
+        for (var ai = 0; ai < activeAccs.length; ai++) {
+          var ak = activeAccs[ai];
+          baHtml += "<button type='button' class='btn compact" + (state.buyAcc === ak ? " active" : "") + "' data-bacc='" + ak + "' style='flex:1;'>" + accShortLabels[ak] + "</button>";
+        }
+        buyAccRow.innerHTML = baHtml;
+      }
     }
 
     var buyBox = document.getElementById("buySignalsBox");
@@ -2245,16 +2245,17 @@
     document.getElementById("stackedBar").innerHTML = barHtml;
     document.getElementById("pocketsList").innerHTML = pListHtml;
 
-    var climateParts = [];
-    if (state.marketSummary) climateParts.push("🌍 Marché : " + state.marketScore + "/100 (" + state.marketSummary + ")");
+    var climEl = document.getElementById("climateLine");
     if (state.msciBench && typeof state.msciBench.chg === "number" && tot.hasDay) {
-      var mTxt = "vs MSCI World : " + fmtSignedPct(tot.dayPct - state.msciBench.chg, 1) + " (jour)";
+      var mTxt = "🌍 vs MSCI World : " + fmtSignedPct(tot.dayPct - state.msciBench.chg, 1) + " (jour)";
       if (typeof state.msciBench.perf1M === "number" && tot.portM1 !== null) {
         mTxt += " • " + fmtSignedPct(tot.portM1 - state.msciBench.perf1M, 1) + " (30 j)";
       }
-      climateParts.push(mTxt);
+      climEl.textContent = mTxt;
+      climEl.style.display = "block";
+    } else {
+      climEl.style.display = "none";
     }
-    document.getElementById("climateLine").textContent = climateParts.length > 0 ? climateParts.join(" • ") : "🌍 Climat marché mondial : synchronisation...";
 
     // Account split cards
     var accLabels = { PEA: "PEA", TR: "Trade Republic", CTO: "CTO", AV: "Assurance-Vie" };
@@ -2274,12 +2275,20 @@
 
     // Portfolio Tab
     document.getElementById("portTitle").textContent = "📊 Portefeuille (" + tot.activeCnt + " actifs)";
-    var pAccBtns = document.querySelectorAll("#portFilterRow .btn[data-pacc]");
-    for (var pa = 0; pa < pAccBtns.length; pa++) {
-      pAccBtns[pa].classList.toggle("active", pAccBtns[pa].getAttribute("data-pacc") === state.portAcc);
-    }
     var sortLbls = { val: "↕ Valeur", day: "↕ Jour %", gain: "↕ Gain %" };
-    document.getElementById("btnSortPort").textContent = sortLbls[state.portSort] || "↕ Valeur";
+    var pRowEl = document.getElementById("portFilterRow");
+    if (pRowEl) {
+      var pfHtml = "";
+      if (activeAccs.length > 1) {
+        pfHtml += "<button type='button' class='btn compact" + (state.portAcc === "all" ? " active" : "") + "' data-pacc='all'>Tous</button>";
+        for (var pi2 = 0; pi2 < activeAccs.length; pi2++) {
+          var pk = activeAccs[pi2];
+          pfHtml += "<button type='button' class='btn compact" + (state.portAcc === pk ? " active" : "") + "' data-pacc='" + pk + "'>" + accShortLabels[pk] + "</button>";
+        }
+      }
+      pfHtml += "<button type='button' class='btn compact' id='btnSortPort'>" + (sortLbls[state.portSort] || "↕ Valeur") + "</button>";
+      pRowEl.innerHTML = pfHtml;
+    }
 
     var list = state.positions.filter(function(p) {
       return state.portAcc === "all" || p.account === state.portAcc;
@@ -2344,7 +2353,64 @@
 
     renderWealthAndDividends(tot);
     renderPriceAlerts();
+    renderDynamicEarnings(tot);
     renderProjections(tot);
+  }
+
+  function renderDynamicEarnings(tot) {
+    var card = document.getElementById("earningsCard");
+    var box = document.getElementById("earningsBox");
+    var badge = document.getElementById("earningsBadge");
+    if (!card || !box) return;
+    var nowMs = Date.now();
+    var dayMs = 86400000;
+    var byTv = {};
+    var totalVal = tot && tot.totalVal > 0 ? tot.totalVal : 1;
+
+    for (var i = 0; i < state.positions.length; i++) {
+      var p = state.positions[i];
+      if (!isPositionActive(p) || p.pocket === "etf") continue;
+      if (typeof p.nextEarningsTs !== "number" || !isFinite(p.nextEarningsTs)) continue;
+      var ms = p.nextEarningsTs * 1000;
+      var diffDays = Math.ceil((ms - nowMs) / dayMs);
+      if (diffDays < 0 || diffDays > 120) continue;
+      var val = getPosMetrics(p).val;
+      if (!byTv[p.tv]) {
+        byTv[p.tv] = {
+          name: p.name.replace(/\s*\((PEA|TR|Trade Republic)\)\s*/gi, "").trim(),
+          ms: ms,
+          daysLeft: diffDays,
+          val: val
+        };
+      } else {
+        byTv[p.tv].val += val;
+      }
+    }
+
+    var list = Object.keys(byTv).map(function(k) { return byTv[k]; });
+    list.sort(function(a, b) { return a.ms - b.ms; });
+    list = list.slice(0, 6);
+
+    if (list.length === 0) {
+      card.style.display = "none";
+      return;
+    }
+    card.style.display = "block";
+    if (badge) badge.textContent = list.length + " à venir";
+
+    var eHtml = "";
+    for (var ei = 0; ei < list.length; ei++) {
+      var er = list[ei];
+      var dt = new Date(er.ms);
+      var cDate = String(dt.getDate()).padStart(2, "0") + "/" + String(dt.getMonth() + 1).padStart(2, "0") + "/" + String(dt.getFullYear()).slice(-2);
+      var dLbl = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("J-" + er.daysLeft));
+      var wStr = ((er.val / totalVal) * 100).toFixed(1).replace(".", ",") + " %";
+      eHtml += "<div class='earn-box" + (er.daysLeft <= 7 ? " soon" : "") + "'>" +
+        "<div class='earn-top'><span class='earn-name'>" + escHtml(er.name) + "</span><span class='earn-weight'>" + wStr + "</span></div>" +
+        "<div class='earn-btm'><span class='earn-date'>📅 " + cDate + "</span><span class='earn-days'>" + dLbl + "</span></div>" +
+      "</div>";
+    }
+    box.innerHTML = "<div class='earn-grid'>" + eHtml + "</div>";
   }
 
   function renderWealthAndDividends(tot) {
@@ -2662,13 +2728,11 @@
   }
   function updateNotifUi() {
     var btn = document.getElementById("btnEnablePush");
-    var testBtn = document.getElementById("btnNotif");
     var active = isNotifActive();
     if (btn) {
       btn.classList.toggle("active", active);
       btn.textContent = active ? (isAndroidBridge() ? "🔔 Alertes H24 actives" : "🔔 Alertes actives") : "🔔 Activer les notifications";
     }
-    if (testBtn) testBtn.style.display = active ? "inline-flex" : "none";
     syncSwNotifState();
   }
   function sendSystemAlert(title, desc) {
@@ -2714,15 +2778,6 @@
       showToast(perm === "granted" ? "🔔 Notifications activées !" : "⚠️ Autorisez les notifications dans le navigateur");
     });
   }
-  function testNotification() {
-    if (!isNotifActive()) { showToast("Activez d'abord les notifications"); return; }
-    var sample = (state.lastNewsData && Array.isArray(state.lastNewsData.items) && state.lastNewsData.items[0]) || null;
-    var title = sample ? ("🔔 Test • " + (sample.theme || "Marchés")) : "🔔 Test Copilote H24";
-    var body = sample ? (sample.title + (sample.excerpt ? ("\n" + sample.excerpt) : "")) : ("Alertes actives (" + formatDateTimeNow() + ").");
-    sendSystemAlert(title, body);
-    showToast("✅ Notification de test envoyée !");
-  }
-
   // Places boursières & Actus (news.json)
   function getZoneClock(tz) {
     try {
@@ -2819,26 +2874,6 @@
       }
     }
     document.getElementById("liveNewsList").innerHTML = nHtml ? ("<div class='news-group'>" + nHtml + "</div>") : "<div class='sub'>Aucune actualité récente.</div>";
-
-    // Résultats à venir (filtrés sur titres actifs)
-    var earns = (Array.isArray(data.upcomingEarnings) ? data.upcomingEarnings : []).filter(function(er) {
-      return !er || !er.tv || isTvActive(er.tv);
-    });
-    if (earns.length > 0) {
-      var eHtml = "";
-      for (var ei = 0; ei < earns.length; ei++) {
-        var er = earns[ei];
-        var dLbl = er.daysLeft === 0 ? "Aujourd'hui" : (er.daysLeft === 1 ? "Demain" : ("J-" + er.daysLeft));
-        var cDate = String(er.dateStr || "").replace(/^(\d{2}\/\d{2})\/20(\d{2})$/, "$1/$2");
-        eHtml += "<div class='earn-box" + (er.daysLeft <= 7 ? " soon" : "") + "'>" +
-          "<div class='earn-top'><span class='earn-name'>" + escHtml(er.name) + "</span><span class='earn-weight'>" + escHtml(String(er.weight || "").replace(" (PEA)", "")) + "</span></div>" +
-          "<div class='earn-btm'><span class='earn-date'>📅 " + escHtml(cDate) + "</span><span class='earn-days'>" + dLbl + "</span></div>" +
-        "</div>";
-      }
-      document.getElementById("earningsBox").innerHTML = "<div class='earn-grid'>" + eHtml + "</div>";
-    } else {
-      document.getElementById("earningsBox").innerHTML = "<div class='sub'>Aucune date de résultats proche.</div>";
-    }
 
     if (hadSeed && pending.length > 0) {
       if (state.activeTab !== "alerts") {
@@ -3409,7 +3444,7 @@
     state.isSyncing = true;
     document.getElementById("liveDot").classList.add("syncing");
 
-    var tickers = ["FX_IDC:EURUSD", "FX_IDC:EURGBP", "FX_IDC:EURCHF", "FX_IDC:EURHKD", "FX_IDC:EURAUD", "FX_IDC:EURCAD", "FX_IDC:EURJPY", "TVC:VIX", "AMEX:SPY", "XETR:EUNL"];
+    var tickers = ["FX_IDC:EURUSD", "FX_IDC:EURGBP", "FX_IDC:EURCHF", "FX_IDC:EURHKD", "FX_IDC:EURAUD", "FX_IDC:EURCAD", "FX_IDC:EURJPY", "XETR:EUNL"];
     for (var i = 0; i < state.positions.length; i++) {
       var posItem = state.positions[i];
       if (tickers.indexOf(posItem.tv) === -1) tickers.push(posItem.tv);
@@ -3423,7 +3458,7 @@
       cache: "no-store",
       body: JSON.stringify({
         symbols: { tickers: tickers, query: { types: [] } },
-        columns: ["name", "close", "change", "currency", "premarket_close", "premarket_change", "postmarket_close", "postmarket_change", "RSI", "Perf.1M", "dividends_yield_current", "Perf.W", "Perf.3M", "Perf.6M", "Perf.Y"]
+        columns: ["name", "close", "change", "currency", "premarket_close", "premarket_change", "postmarket_close", "postmarket_change", "RSI", "Perf.1M", "dividends_yield_current", "Perf.W", "Perf.3M", "Perf.6M", "Perf.Y", "earnings_release_next_date"]
       })
     })
       .then(function(r) { return r.json(); })
@@ -3462,6 +3497,7 @@
             p.perf3M = (d && typeof d[12] === "number") ? d[12] : (typeof dLsx[12] === "number" ? dLsx[12] : null);
             p.perf6M = (d && typeof d[13] === "number") ? d[13] : (typeof dLsx[13] === "number" ? dLsx[13] : null);
             p.perfY = (d && typeof d[14] === "number") ? d[14] : (typeof dLsx[14] === "number" ? dLsx[14] : null);
+            p.nextEarningsTs = (d && typeof d[15] === "number") ? d[15] : (typeof dLsx[15] === "number" ? dLsx[15] : null);
             p.isLive = true;
             continue;
           }
@@ -3509,22 +3545,14 @@
           p.perf3M = typeof d[12] === "number" ? d[12] : null;
           p.perf6M = typeof d[13] === "number" ? d[13] : null;
           p.perfY = typeof d[14] === "number" ? d[14] : null;
+          p.nextEarningsTs = typeof d[15] === "number" ? d[15] : null;
           p.isLive = true;
         }
 
-        var vix = map["TVC:VIX"] && map["TVC:VIX"][1];
-        var spyRow = map["AMEX:SPY"];
-        var spyChg = spyRow ? (getExchangePhase("AMEX:SPY") === "pre" && typeof spyRow[5] === "number" ? spyRow[5] : spyRow[2]) : null;
         var msciRow = map["XETR:EUNL"];
         if (msciRow && typeof msciRow[2] === "number") {
           state.msciBench = { chg: msciRow[2], perf1M: typeof msciRow[9] === "number" ? msciRow[9] : null };
         }
-        var mScore = 50;
-        if (typeof vix === "number") mScore += (20 - vix) * 1.4;
-        if (typeof spyChg === "number") mScore += spyChg * 6;
-        if (state.msciBench) mScore += state.msciBench.chg * 5;
-        state.marketScore = Math.round(Math.max(10, Math.min(90, mScore)));
-        state.marketSummary = state.marketScore <= 35 ? "Prudent" : (state.marketScore <= 65 ? "Neutre" : "Optimiste");
 
         var now = new Date();
         state.lastSyncStr = String(now.getHours()).padStart(2, "0") + "h" + String(now.getMinutes()).padStart(2, "0");
@@ -3682,22 +3710,14 @@
       return;
     }
     if (e.target.closest("#btnCancelEdit") || e.target.id === "editModal") { closeEditModal(); return; }
-    if (e.target.closest("#btnZeroEdit")) {
-      document.getElementById("editQtyInput").value = "0";
-      document.getElementById("editPruInput").value = "0";
-      document.getElementById("editCostInput").value = "0";
-      saveEditModal();
-      return;
-    }
     if (e.target.closest("#btnSaveEdit")) { saveEditModal(); return; }
     if (e.target.closest("#btnDeleteEdit")) { deleteEditingPosition(); return; }
 
     if (e.target.closest("#btnEnablePush")) { toggleNotifications(); return; }
-    if (e.target.closest("#btnNotif")) { testNotification(); return; }
     if (e.target.closest("#deepNewsBadge")) { fetchDeepNews(true); return; }
 
     if (e.target.closest("#btnExport")) { openIoModal("export"); return; }
-    if (e.target.closest("#btnImport") || e.target.closest("#btnPortImport")) { openIoModal("import"); return; }
+    if (e.target.closest("#btnImport")) { openIoModal("import"); return; }
     if (e.target.closest("#btnIoClose1") || e.target.closest("#btnIoClose2") || e.target.id === "ioModal") {
       document.getElementById("ioModal").classList.remove("open");
       return;
