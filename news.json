@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T11:44:32Z",
+  "updatedAt": "2026-11-26T12:47:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -8,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 56
+      "daysLeft": 55
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -17,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 61
+      "daysLeft": 60
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -26,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -35,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -44,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 69
+      "daysLeft": 68
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -53,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 70
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 70
+      "daysLeft": 69
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -71,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 76
+      "daysLeft": 75
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -80,7 +80,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 77
+      "daysLeft": 76
     },
     {
       "id": "earn_NYSE:KO_20270216",
@@ -89,11 +89,22 @@
       "weight": "0,1 %",
       "timestamp": 1802779200,
       "dateStr": "16/02/2027",
-      "daysLeft": 82
+      "daysLeft": 81
     }
   ],
   "majorMoves": [],
   "items": [
+    {
+      "id": "bab51a66ac22a64f",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street : les actions à surveiller en décembre 2026 - Le Revenu",
+      "excerpt": "par Ragini Mathur, Avinash P et Niket Nishant Les principaux indices de Wall Street s'apprêtaient à ouvrir en hausse lundi, les investisseurs se tournant à nouveau vers les valeurs…",
+      "source": "Le Revenu",
+      "pubDate": "Thu, 26 Nov 2026 11:59:00 GMT",
+      "pubTs": 1795694340,
+      "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPcGFuZWlrNWR5LVpRdXlfOVFIcVZrOEhmVUdINUZaSExral9Bb1Q0NVlUbUFsSkl6cFBxWHJEVmgtVkZjZVNWWEVIU2IzNS0zeHhHdGJFaWF4TmtqaUgzMlNBRGNnSklHam5xZmd4eUplWGVET2ZZY1F4ZlU3bzBaS2sxbGdmVHc3RU5xa0lYZW80NHNteWFKd2dRYmVCb0ZjV0JXaWFVdS1rRmtX?oc=5"
+    },
     {
       "id": "92f0a91ae98a328f",
       "theme": "Macro & Wall Street",
@@ -106,37 +117,15 @@
       "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNY2dmY3VUblR3aDQxN2QwTkJpRG02aTUybzZrZlpaYTlNS1ZkRURkVnVwTnRhTk5qaGV3NWEwTlV1cmNfdjM0RnRDYjNSRDZlT1JzZDBwLW9CdXkySnl6YnNNbGhPYWpYei1oVVBMS0pnb1hyWTRaWGVJZGphRHBPeEJHT2ZQZHpuTmEybVZuUFdManZjMmtuMWhwWnBvdVhpX1cxRW55eWhQNDZHQTVNU0dNYTRHaWViMlRpTXVJUFM1MERwUHVTSU1Td0JpdjJhYllodGZid212QlJkUHZfNGFjbko3QUk?oc=5"
     },
     {
-      "id": "716ae06c7c90b123",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Inflation PCE à 3,8 % : quelles conséquences ? - https://www.leconseilpatrimoine.fr/",
-      "excerpt": "",
-      "source": "https://www.leconseilpatrimoine.fr/",
-      "pubDate": "Thu, 26 Nov 2026 11:04:05 GMT",
-      "pubTs": 1795691045,
-      "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQYWVUM2l0WDZZSkJCMFV4cmV5ckxJRy1mek9WdUM2OHlGWGI4RmdRRjVTU29PMFZUUkkxUzZGWVg5V25nNGphQm10bzVfbmxVTlUxekxqNnJyTl9aM0tDNTdQSC0zdm9SMUNzTmVqeThHaFQtTXZJbTVjSlhTTGd1bnVNbklqSUVoYWFPTTNUdGsxaVhKSnE4?oc=5"
-    },
-    {
-      "id": "470d9c290b6e7c00",
+      "id": "13fa9ea61bec610a",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Elon Musk promet deux actions SpaceX à \"chaque enfant en Amérique\"... - Fortuneo",
-      "excerpt": "Le milliardaire Elon Musk a affirmé mercredi qu’il allait donner à chaque enfant aux États-Unis deux actions de son entreprise SpaceX, doublant ainsi une offre qu’il avait faite en…",
-      "source": "Fortuneo",
-      "pubDate": "Thu, 26 Nov 2026 10:15:00 GMT",
-      "pubTs": 1795688100,
-      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUS15MWY1SjExcjVJa19QVzJ3dVNSQXJqWGZWMnUwbnhCUmc4ajI2c1ExZEtVYkFmaXJNcU16M1dKT2RUTXFQMTRWWnhWVk9FSWo3dV9EUVFPWTJBdnR0SXB0NEo0Z1JqdFY0TjZBN0RWSjVsREFGUnJmVldCazhCekFVWTA0Vk5wQ3hWSENrX3pXVTM1cVFKR1p4U2haMkRxLTV2UDdmcEYtX2t2S19B0gG0AUFVX3lxTE56S1FNMTJTdkFXa2dFd3EteS01Wk9MNFUzV2Y0QXlDcEwxLThZOE5ScUJfRS1sRFhmTnZER1RvZ21tQm5HOGxwSjlXWXplT0ZJcGpoYTM3a0dZLU5yZXIwNzVKelhmQWprN2FMRVdQRWRLaG8zVGxGdnlzWUhlMXo1N05nSWhKa3FuMkJMV25TOWNXcXZNUEZRUlZoUzNuc3EwVWFaTUVCemlUNndoWWxhUFN3eg?oc=5"
-    },
-    {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Thu, 26 Nov 2026 08:55:35 GMT",
-      "pubTs": 1795683335,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+      "title": "Pour créer une base solide d'actionnaires particuliers de SpaceX, Musk a la solution… Offrir deux actions du groupe à chaque enfant américain - BFM Bourse",
+      "excerpt": "(BFM Bourse) - Le milliardaire américain a annoncé sur X que chaque enfant américain recevrait deux titres du groupe en juin prochain…",
+      "source": "BFM Bourse",
+      "pubDate": "Thu, 26 Nov 2026 08:33:33 GMT",
+      "pubTs": 1795682013,
+      "link": "https://news.google.com/rss/articles/CBMitwJBVV95cUxPaUdoSEhQLXFPcnNlRDRzQXMwUGpNbXJaa2RfckNmS2I2NjJLSjEwOEFqQ3NfMWlfWWhIRnIwSUFsNkdWYXJpamN2UkVmZUFsLVA0dUZ3ZkNHQWpLNUlFOUwxV2RiT1ZmeWl5amV2UzFBZk0tN1JIOVZHa2c3TFdyWjU2WmNIdWVVZ3FjYk54SUZOVVhlU0lmb0hpa3p3N1NJakdqZWxsS3hUMWZjNHUtelE4MHg3XzZGdU8wX1NScnIyb05MRXpfNE5LT1BvcE9HQkxQeVBHTTA2R1pDYmJfQjdPdHdma0ZxdURnUXdZVkh5LTBrUmwzS0VkNkc5Z1VhTHRLckR1NHV0eDNpVzJWSTUtdmlXeS1Td3dHWGhTN2p5a1MwbHh5X2k3QXRQM2dYTDJyZjV2NA?oc=5"
     },
     {
       "id": "49e388f1f26488bd",
@@ -150,30 +139,40 @@
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXp4ZkRxTWdQZ0JLUVN1VWlXQk5ncXR4MjRvVXl1Nmo3QWJJUGJyTXdsQ2I4S3JkUndRRlpwWEZLLW1ud3ZZTWVxOTlkX2FPcFkxQURjWWRHTzFhX3hEX2w2WEJUOWh2X0JlYlQ0ZTVXZ3EtY2RQRzlsVm93eWcwSTdESTBGZDdmcUg0X2FkVkVUWktsdmNMRjNOQl9nVThKQ0djeGE2UmlOMEVyaVJSemJLUnFHWkFUN0dyQXVDMm1KWW1rTXBLcFBNWEE?oc=5"
     },
     {
+      "id": "05c2b280ff66366b",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
+      "excerpt": "",
+      "source": "TradingView",
+      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
+      "pubTs": 1795629796,
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
+    },
+    {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
       "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
-      "excerpt": "Siemens Energy India Limited a publié ses résultats pour le quatrième trimestre clos le 30 septembre 2026. Sur le trimestre, l’entreprise a enregistré des ventes de 34 526 millions…",
+      "excerpt": "Le conseil d’administration de Siemens Energy India Limited, réuni le 25 novembre 2026, a recommandé un dividende de 12 roupies indiennes par action ordinaire d’une valeur nominale de…",
       "source": "Zonebourse",
       "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
       "pubTs": 1795622726,
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
+      "id": "3020c9547e4d9816",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+      "title": "Prévisions hebdomadaires de l’action Nvidia : difficultés près du support, les signaux de risque baissier persistent - Traders Union",
+      "excerpt": "Nvidia a dépassé les prévisions de bénéfices au troisième trimestre lors de son premier rapport sans Jensen Huang. Voici ce qui pourrait encore peser sur l'action.",
+      "source": "Traders Union",
+      "pubDate": "Wed, 25 Nov 2026 14:08:43 GMT",
+      "pubTs": 1795615723,
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORk1BS2laOUxqeXhkQTNZVzd2c3JVWTVQdHkxa25KMXRfY25PNm1OamVfREdaTU1MTjBhYWtOUFpEWnJlV2NwQ3g0MUtZMEZudUhlUkJOQVBTUEdkUTduVVhJVEdYZngxM1FJaHlPcDF1RGlIWVhPc2hYa3lBOGRDclowV0xheDJmQUhiZnVPcDJmelU?oc=5"
     }
   ],
   "notifiedIds": [
-    "move_drop_NASDAQ:AMD_20261123",
     "move_drop_NASDAQ:MSTR_20261123",
     "move_drop_NASDAQ:QCOM_20261123",
     "move_drop_XETR:ENR_20261123",
@@ -322,6 +321,7 @@
     "05c2b280ff66366b",
     "92f0a91ae98a328f",
     "716ae06c7c90b123",
-    "470d9c290b6e7c00"
+    "470d9c290b6e7c00",
+    "bab51a66ac22a64f"
   ]
 }
