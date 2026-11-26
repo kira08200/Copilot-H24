@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T16:52:17Z",
+  "updatedAt": "2026-11-26T17:41:50Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "18119041f60365d2",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Inflation, emploi, pêche, tourisme : les chiffres du troisième trimestre 2026 - Outre-mer La 1ère",
+      "excerpt": "Inflation, emploi, pêche, tourisme : le bilan du troisième trimestre 2026 à Saint-Pierre-et-Miquelon est clair. Les prix ont augmenté moins vite qu’au printemps, mais restent 3,6 %…",
+      "source": "Outre-mer La 1ère",
+      "pubDate": "Thu, 26 Nov 2026 17:00:01 GMT",
+      "pubTs": 1795712401,
+      "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNdmZoY3lSQW9yS3Iwc29xRTljTUZsc1diSm4tOWxDdTRVcEtJWlp2NGYwLTJnTmZSXzRnZVUwenp6TkVDcS1VQVppNWVZa0hJWUxHUi10OW9CbEk5ZW05S3Q5MGtQVEYzOFRrdDlFUlhfVmtHWlNfZzlRNDR3N1RxblV5a0hqWi1DM0hoX0RLalhvblkzM3RuOGpZU2VMT2xPU0JrYUp4b0hja2pFclhvbFJkWktqR3Y0bVo0b3lLWjQtaFExVVdQbUZvVHhIeHc?oc=5"
+    },
+    {
       "id": "958c075c04a7b187",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -117,17 +128,6 @@
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMWVXd0tJRGxzVV9qMkpuMlN0MjYzNlBZajNFeE0zOWtELXYzVXVHQXNPeGU5cTBlVkdBeUM4djh3WFh3RHRjZVBJVm8weTM1dmgzeExkSnlZU3JNZ0E1VXpsNGMwaVJaa0lDcTZEWi1na3VwbmNNNWw4clN2TDQ0TjlLdmR2NDZlSkgzSmh3dXdXd3ZBWjQ2cU5wT0tOSkhvd3ZIaWdCMHZUc1QxdzlxT2tSWGZaRmhZdzBpMEpRSWw?oc=5"
     },
     {
-      "id": "53714ebdce64bf41",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Bourses : l'Europe rebondit, Wall Street fermée - MoneyVox",
-      "excerpt": "",
-      "source": "MoneyVox",
-      "pubDate": "Thu, 26 Nov 2026 14:00:47 GMT",
-      "pubTs": 1795701647,
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaEloTVN6S1NWcDh3SVk0YjJ2SlBUTGZVaGxFaEtRMWpaWk1veFdRTm9tWHhFaWo3eTFpYXpZWVdRUlAxYl9sb1hmQ0VmRHRodW9FT2ZjSWZWcXJfem1UYkJ2VVZKaC1BYjBmZG1NblVCWld0emdtQnkzR3J6SS1IS3gzTjFDa01FRG1CWGk3czhCMnhackE?oc=5"
-    },
-    {
       "id": "d8e22f0bd38e5542",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -139,42 +139,40 @@
       "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQcGRkRFBKd3FSanl6aU44RmxRNExsRDFZMnZ5NWlmaXRscHVyZUZ2MUw0OXBzX0FaZkl2OF9jc3pVOC1UWUZGM0VVam16Q1RuTkk2a2VFbTJlRnk4bmlVamtkZVp3NFlHbExaTWliRURRSVYzTmN0UGJJSGJtMGVlX3R0TDJpY3JWZm9DYWVINXBxSzVWZFRDWWl6T3NkWk5iNHF1NWRzY1ZWTERwT3RVQV80RC1hNjkwSzJVbFloTnNmWnZOTno0cllBMlRDWmNZdnRxX0h6Z1hFc0thVEN0WXg4ajZISFVEalNDZFpBN0R0dw?oc=5"
     },
     {
-      "id": "c320de58bef2dfe4",
-      "theme": "Siemens Energy",
-      "tagCls": "b-purple",
-      "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
-      "excerpt": "Siemens Energy India Limited a publié ses résultats pour le quatrième trimestre clos le 30 septembre 2026. Sur le trimestre, l’entreprise a enregistré des ventes de 34 526 millions…",
-      "source": "Zonebourse",
-      "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
-      "pubTs": 1795622726,
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
+      "id": "5ebe59c5c5cfb7da",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft publie ses mesures sur les modèles à 1 bit - Brief IA",
+      "excerpt": "Après avoir dévoilé une nouvelle famille de modèles à l’occasion de sa conférence Ignite 2026, Microsoft pousse plus loin sa stratégie avec MAI Licensed Weights. L’entreprise veut…",
+      "source": "Brief IA",
+      "pubDate": "Thu, 26 Nov 2026 13:08:57 GMT",
+      "pubTs": 1795698537,
+      "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPTUZsRllGejg0RmtsWEVVaDNaQkNMV0I0SGhKRzRKM0dxX1UxNUdHT1plcl83RWhiRDZKbGI1TW1DRGNvMjN4XzNXT1ZJRmFJSFRWZ0M1Tng5QUtFMUlVOXN2QlFXekF2OEhLZGgxSDZMcTU0TDJCbWNYT203dThfSlBCbUt4ODJYRXFr?oc=5"
     },
     {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
+      "id": "e84d66f216e8030f",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+      "title": "Nvidia : «le retour de Jensen Huang rassure la Bourse, mais ne règle rien sur le fond», que surveiller - Capital.fr",
+      "excerpt": "Le géant des puces nécessaires à l'intelligence artificielle Nvidia a annoncé lundi 23 novembre avoir réintégré Jensen Huang à son poste de directeur général, moins de deux semaines…",
+      "source": "Capital.fr",
+      "pubDate": "Thu, 26 Nov 2026 06:00:00 GMT",
+      "pubTs": 1795672800,
+      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOS3Q4YjZrMy1PSmFlUmQ1WWdZNDNHbWFIOGhLWXVaMHZYbVUxbEpsc1dzOVRIa24tYVJkcDlrbUdZOExfOGxSM0xnbUVCYjlOMldjQWx5d3VoaXZpS0hBbTh6OFJGSm9tTUtGeUgwRjNOTDhBaGo4SlVmSlNrY0FiSGdGSC0wMWJfMWN2OHd6VjNzUXNSUUFkVll5VDROUjlrekY3ZWE4N1JxV0UtZkM5ZVNaYklleUdLeXBqNU9NdFBPeEluaWFDcWNLZVlwR01HNGpfRlVOeU1Rb2Q0TVlaQg?oc=5"
     },
     {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
+      "id": "05c2b280ff66366b",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
+      "excerpt": "",
+      "source": "TradingView",
+      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
+      "pubTs": 1795629796,
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
     }
   ],
   "notifiedIds": [
-    "a51e324f99253be9",
-    "9dc6a374c7a33f4b",
     "9a3ac680fbd3a2ed",
     "46992aad3a5167a9",
     "214d38137d111fe8",
@@ -322,6 +320,8 @@
     "2ca3b720b23607b3",
     "f4f07c8ebb8eb12f",
     "e84d66f216e8030f",
-    "958c075c04a7b187"
+    "958c075c04a7b187",
+    "18119041f60365d2",
+    "5ebe59c5c5cfb7da"
   ]
 }
