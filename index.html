@@ -1091,18 +1091,27 @@
 <div id="ioModal" class="modal-backdrop">
   <div class="modal-box">
     <div class="modal-title" id="ioTitle">Sauvegarder / Importer</div>
-    <div class="sub" id="ioSub" style="margin-bottom:8px;">Exportez votre portefeuille ou importez un CSV courtier / sauvegarde JSON.</div>
-    <textarea id="ioBox" class="field-input" style="min-height:110px;font-family:monospace;font-size:0.74rem;" placeholder="Collez ici un export CSV/Texte (ex : NVIDIA ; 47,74 ; 4725) ou une sauvegarde .json..."></textarea>
-    <div id="ioPreview" style="display:none;font-size:0.74rem;color:var(--green);margin-top:6px;font-weight:600;"></div>
-    <input type="file" id="ioFile" accept=".json,.csv,.tsv,.txt,text/csv,text/plain,application/json" style="display:none;">
+    <div class="sub" id="ioSub" style="margin-bottom:8px;">Exportez votre portefeuille ou importez un relevé PDF / CSV courtier ou une sauvegarde JSON.</div>
+    <div id="ioImportAccountWrap" style="display:none;margin-bottom:8px;">
+      <label class="field-lbl" for="ioAccountSel" style="margin-top:0;">Compte cible pour l'import PDF / CSV</label>
+      <select class="field-input" id="ioAccountSel">
+        <option value="TR">Trade Republic</option>
+        <option value="PEA">PEA</option>
+        <option value="CTO">CTO</option>
+        <option value="AV">Assurance-Vie</option>
+      </select>
+    </div>
+    <textarea id="ioBox" class="field-input" style="min-height:105px;font-family:monospace;font-size:0.74rem;" placeholder="Choisissez un relevé PDF/CSV courtier ci-dessous, ou collez des lignes (ex : US67066G1040 ; 10 ; 120) ou un .json..."></textarea>
+    <div id="ioPreview" style="display:none;font-size:0.74rem;color:var(--green);margin-top:7px;background:var(--card-alt);border:1px solid var(--border);border-radius:10px;padding:8px 10px;max-height:160px;overflow-y:auto;line-height:1.45;"></div>
+    <input type="file" id="ioFile" accept=".pdf,.json,.csv,.tsv,.txt,application/pdf,text/csv,text/plain,application/json" style="display:none;">
     <div class="btn-row" style="margin-top:10px;margin-bottom:0;" id="ioExportRow">
       <button type="button" class="btn primary" id="btnIoCopy">📋 Copier</button>
       <button type="button" class="btn" id="btnIoDownload">⬇️ .json</button>
       <button type="button" class="btn" id="btnIoClose1">Fermer</button>
     </div>
     <div class="btn-row" style="margin-top:10px;margin-bottom:0;display:none;" id="ioImportRow">
-      <button type="button" class="btn" id="btnIoPick">📂 Fichier</button>
-      <button type="button" class="btn primary" id="btnIoApply">✅ Importer</button>
+      <button type="button" class="btn green-outline" id="btnIoPick">📄 PDF / CSV</button>
+      <button type="button" class="btn primary" id="btnIoApply">🔎 Analyser</button>
       <button type="button" class="btn" id="btnIoClose2">Annuler</button>
     </div>
   </div>
@@ -1312,7 +1321,7 @@
       </div>
       <div class="btn-row">
         <button type="button" class="btn" id="btnExport">💾 Sauvegarder</button>
-        <button type="button" class="btn" id="btnImport">📥 Importer (CSV / JSON)</button>
+        <button type="button" class="btn" id="btnImport">📥 Importer (PDF / CSV / JSON)</button>
       </div>
       <div class="btn-row" id="persoModesRow" style="display:none;">
         <button type="button" class="btn green-outline" id="btnRestoreMine">↺ Mes 22 valeurs</button>
@@ -3073,17 +3082,25 @@
     if (localMatches.length > 0) renderSearchList(localMatches.slice(0, 5), "Résultats rapides • recherche mondiale en cours...");
     else document.getElementById("searchStatus").textContent = "🔎 Recherche mondiale en direct...";
 
+    var isIsinQuery = /^[A-Z]{2}[A-Z0-9]{9}[0-9]$/i.test(q);
+    var searchFilter = isIsinQuery
+      ? [
+          { left: "isin", operation: "equal", right: q.toUpperCase() },
+          { left: "exchange", operation: "in_range", right: ["EURONEXT", "XETR", "NASDAQ", "NYSE", "AMEX", "LSX", "LSE", "HKEX", "ASX", "SIX", "BIT", "BME"] }
+        ]
+      : [
+          { left: "name,description", operation: "match", right: q },
+          { left: "exchange", operation: "in_range", right: ["EURONEXT", "XETR", "NASDAQ", "NYSE", "AMEX", "LSE", "HKEX", "ASX", "SIX", "BIT", "BME"] }
+        ];
+
     fetch("https://scanner.tradingview.com/global/scan", {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=UTF-8" },
       body: JSON.stringify({
-        filter: [
-          { left: "name,description", operation: "match", right: q },
-          { left: "exchange", operation: "in_range", right: ["EURONEXT", "XETR", "NASDAQ", "NYSE", "AMEX", "LSE", "HKEX", "ASX", "SIX", "BIT", "BME"] }
-        ],
+        filter: searchFilter,
         options: { lang: "fr" },
         columns: ["name", "description", "close", "currency", "type", "sector", "dividends_yield_current", "Volatility.M"],
-        sort: { sortBy: "Value.Traded", sortOrder: "desc" },
+        sort: { sortBy: isIsinQuery ? "volume" : "Value.Traded", sortOrder: "desc" },
         range: [0, 8]
       })
     })
@@ -3362,30 +3379,356 @@
     });
   }
 
-  // Import CSV / Texte / JSON (compatible anciennes sauvegardes v1 & v6)
+  // Import PDF courtier (100 % local sur l'appareil), CSV / Texte par ISIN & JSON
+  var pdfJsPromise = null;
+  function ensurePdfJs() {
+    if (window.pdfjsLib) return Promise.resolve(window.pdfjsLib);
+    if (pdfJsPromise) return pdfJsPromise;
+    pdfJsPromise = new Promise(function(resolve, reject) {
+      var sc = document.createElement("script");
+      sc.src = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js";
+      sc.onload = function() {
+        if (window.pdfjsLib) {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
+          resolve(window.pdfjsLib);
+        } else {
+          reject(new Error("pdfjs unavailable"));
+        }
+      };
+      sc.onerror = function() { pdfJsPromise = null; reject(new Error("pdfjs load failed")); };
+      document.head.appendChild(sc);
+    });
+    return pdfJsPromise;
+  }
+
+  function extractPdfText(file) {
+    return ensurePdfJs().then(function(lib) {
+      return file.arrayBuffer().then(function(buf) {
+        return lib.getDocument({ data: new Uint8Array(buf) }).promise;
+      });
+    }).then(function(pdf) {
+      var pagePromises = [];
+      var maxPages = Math.min(pdf.numPages || 1, 25);
+      for (var pn = 1; pn <= maxPages; pn++) {
+        (function(pageNum) {
+          pagePromises.push(
+            pdf.getPage(pageNum).then(function(page) {
+              return page.getTextContent().then(function(tc) {
+                var items = (tc && Array.isArray(tc.items)) ? tc.items : [];
+                var rows = [];
+                for (var i = 0; i < items.length; i++) {
+                  var it = items[i];
+                  var txt = String(it.str || "").trim();
+                  if (!txt) continue;
+                  var y = it.transform ? it.transform[5] : 0;
+                  var x = it.transform ? it.transform[4] : 0;
+                  var placed = false;
+                  for (var r = 0; r < rows.length; r++) {
+                    if (Math.abs(rows[r].y - y) <= 3.5) {
+                      rows[r].cells.push({ x: x, s: txt });
+                      placed = true;
+                      break;
+                    }
+                  }
+                  if (!placed) rows.push({ y: y, cells: [{ x: x, s: txt }] });
+                }
+                rows.sort(function(a, b) { return b.y - a.y; });
+                return rows.map(function(r) {
+                  r.cells.sort(function(a, b) { return a.x - b.x; });
+                  return r.cells.map(function(c) { return c.s; }).join(" ; ");
+                }).join("\n");
+              });
+            })
+          );
+        })(pn);
+      }
+      return Promise.all(pagePromises).then(function(pages) { return pages.join("\n"); });
+    });
+  }
+
   function parseFlexNum(raw) {
-    var s = String(raw || "").replace(/[\u00a0\u202f\s€$£]/g, "").replace(/EUR|USD|HKD|AUD/gi, "").trim();
+    var s = String(raw || "").replace(/[\u00a0\u202f\s€$£]/g, "").replace(/EUR|USD|HKD|AUD|CHF|GBP|STK|SHS|PARTS?/gi, "").trim();
     if (!s || /%/.test(s)) return NaN;
     var lc = s.lastIndexOf(","), ld = s.lastIndexOf(".");
     if (lc !== -1 && ld !== -1) s = lc > ld ? s.replace(/\./g, "").replace(",", ".") : s.replace(/,/g, "");
     else if (lc !== -1) s = s.replace(",", ".");
     return /^-?\d+(\.\d+)?$/.test(s) ? parseFloat(s) : NaN;
   }
+
+  function extractCleanNumbers(str) {
+    var cleaned = String(str || "")
+      .replace(/\b[A-Z]{2}[A-Z0-9]{9}[0-9]\b/g, " ")
+      .replace(/\b\d{1,2}[\/\.\-]\d{1,2}[\/\.\-]\d{2,4}\b/g, " ")
+      .replace(/\b\d{4}[\/\.\-]\d{1,2}[\/\.\-]\d{1,2}\b/g, " ")
+      .replace(/\b\d{1,2}:\d{2}(:\d{2})?\b/g, " ")
+      .replace(/[+\-]?\d+(?:[.,]\d+)?\s*%/g, " ");
+    var tokens = cleaned.match(/\d{1,3}(?:[\s\u00a0\u202f]\d{3})*(?:[.,]\d+)?|\d+(?:[.,]\d+)?/g) || [];
+    var nums = [];
+    for (var i = 0; i < tokens.length; i++) {
+      var n = parseFlexNum(tokens[i]);
+      if (!isFinite(n) || n <= 0) continue;
+      // Exclure les années isolées (ex. 2025, 2026)
+      if (Number.isInteger(n) && n >= 2018 && n <= 2035 && tokens[i].indexOf(",") === -1 && tokens[i].indexOf(".") === -1) continue;
+      nums.push(n);
+    }
+    return nums;
+  }
+
+  function detectBrokerAccount(rawText) {
+    var up = String(rawText || "").toUpperCase();
+    if (/\bPLAN D['’]EPARGNE EN ACTIONS\b|\bPEA\b/.test(up) && !/TRADE REPUBLIC/.test(up)) return "PEA";
+    if (/TRADE REPUBLIC|LANG\s*&\s*SCHWARZ/.test(up)) return "TR";
+    if (/ASSURANCE[\s\-]VIE/.test(up)) return "AV";
+    return "CTO";
+  }
+
+  function extractIsinCandidates(rawText) {
+    var lines = String(rawText || "").split(/\r?\n/).map(function(l) { return l.trim(); }).filter(Boolean);
+    var map = {};
+    var order = [];
+    var isinRe = /\b([A-Z]{2}[A-Z0-9]{9}[0-9])\b/g;
+    var validPrefixes = /^(US|FR|IE|LU|DE|NL|BE|CH|GB|KY|AU|CA|JP|ES|IT|SE|DK|FI|NO|AT|PT|HK|JE|GG|BM|SG)/;
+
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i];
+      var m;
+      isinRe.lastIndex = 0;
+      while ((m = isinRe.exec(line)) !== null) {
+        var code = m[1];
+        if (!validPrefixes.test(code)) continue;
+        // Ignorer les IBAN (ex: FR76...) tout en acceptant les ISIN luxembourgeois (LU1681...)
+        if (/^FR76/i.test(code)) continue;
+        var afterChar = line.charAt(m.index + code.length);
+        var beforeChar = m.index > 0 ? line.charAt(m.index - 1) : "";
+        if (/[A-Z0-9]/i.test(beforeChar) || /[A-Z0-9]/i.test(afterChar)) continue;
+        // Contexte : ligne courante + 1 ligne avant/après si la ligne seule a peu de chiffres
+        var numsSame = extractCleanNumbers(line);
+        var numsCtx = numsSame.slice();
+        if (numsCtx.length < 2) {
+          var prevL = i > 0 ? lines[i - 1] : "";
+          var nextL = i + 1 < lines.length ? lines[i + 1] : "";
+          if (prevL && !/\b[A-Z]{2}[A-Z0-9]{9}[0-9]\b/.test(prevL)) numsCtx = extractCleanNumbers(prevL).concat(numsCtx);
+          if (nextL && !/\b[A-Z]{2}[A-Z0-9]{9}[0-9]\b/.test(nextL)) numsCtx = numsCtx.concat(extractCleanNumbers(nextL));
+        }
+        if (!map[code]) {
+          map[code] = { isin: code, nums: numsCtx, rawLine: line };
+          order.push(code);
+        } else if (numsCtx.length > map[code].nums.length) {
+          map[code].nums = numsCtx;
+        }
+      }
+    }
+    return order.map(function(k) { return map[k]; });
+  }
+
+  function resolveIsinBatch(isins) {
+    if (!isins || isins.length === 0) return Promise.resolve({});
+    var out = {};
+    // Catalogue rapide d'abord
+    for (var i = 0; i < POPULAR_CATALOG.length; i++) {
+      var cat = POPULAR_CATALOG[i];
+      if (cat.isin && isins.indexOf(cat.isin) >= 0) {
+        out[cat.isin] = {
+          tv: cat.tv, name: cat.name, ccy: cat.ccy, pxEur: 0,
+          pocket: cat.pocket, pea: !!cat.pea, isin: cat.isin
+        };
+      }
+    }
+    return fetch("https://scanner.tradingview.com/global/scan", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      cache: "no-store",
+      body: JSON.stringify({
+        filter: [
+          { left: "isin", operation: "in_range", right: isins },
+          { left: "exchange", operation: "in_range", right: ["EURONEXT", "XETR", "NASDAQ", "NYSE", "AMEX", "LSX", "LSE", "HKEX", "ASX", "SIX", "BIT", "BME"] }
+        ],
+        columns: ["isin", "name", "description", "close", "currency", "exchange", "type", "sector", "Volatility.M", "dividends_yield_current"],
+        sort: { sortBy: "volume", sortOrder: "desc" },
+        range: [0, Math.min(200, isins.length * 4)]
+      })
+    })
+      .then(function(r) { return r.json(); })
+      .then(function(json) {
+        var rows = (json && Array.isArray(json.data)) ? json.data : [];
+        var prio = { EURONEXT: 5, XETR: 5, NASDAQ: 4, NYSE: 4, AMEX: 3, LSX: 3, HKEX: 3, ASX: 3, LSE: 2, SIX: 2 };
+        var bestScore = {};
+        for (var r = 0; r < rows.length; r++) {
+          var row = rows[r];
+          if (!row || !row.s || !Array.isArray(row.d)) continue;
+          var d = row.d;
+          var code = String(d[0] || "").toUpperCase();
+          if (!code) continue;
+          var ex = d[5] || "";
+          var isUsIsin = code.indexOf("US") === 0;
+          var sc = (prio[ex] || 1) + (d[4] === "EUR" && !isUsIsin ? 1 : 0) + (isUsIsin && (ex === "NASDAQ" || ex === "NYSE") ? 4 : 0);
+          var pxEur = toEur(d[3], d[4] || "EUR");
+          if (!out[code] || !out[code].pxEur || sc > (bestScore[code] || 0)) {
+            bestScore[code] = sc;
+            out[code] = {
+              tv: row.s,
+              name: d[2] || d[1] || row.s,
+              ccy: d[4] || "EUR",
+              pxEur: pxEur,
+              pocket: autoClassifyPocket(d[6], d[7], d[2], d[8], d[9]),
+              pea: ex === "EURONEXT" || ex === "XETR",
+              isin: code
+            };
+          }
+        }
+        return out;
+      })
+      .catch(function() { return out; });
+  }
+
+  function inferQtyAndCost(nums, livePxEur, existingPos) {
+    if (!nums || nums.length === 0) return { qty: 0, cost: 0, pruEstimated: true };
+    // Cas 1 : 1 seul nombre -> quantité
+    if (nums.length === 1) {
+      var q1 = nums[0];
+      var c1 = existingPos && existingPos.qty > 0 ? Math.round((existingPos.cost / existingPos.qty) * q1 * 100) / 100 : (livePxEur > 0 ? Math.round(q1 * livePxEur * 100) / 100 : 0);
+      return { qty: q1, cost: c1, pruEstimated: true };
+    }
+    // Cas 2 : 2 nombres (ex: Parts ; PRU ou Parts ; Investi ou Parts ; Valeur)
+    if (nums.length === 2) {
+      var a = nums[0], b = nums[1];
+      if (livePxEur > 0) {
+        // Si b ≈ a * livePxEur -> b est un montant total (investi ou valeur)
+        var estTotal = a * livePxEur;
+        if (b >= estTotal * 0.35 && b <= estTotal * 2.8) return { qty: a, cost: Math.round(b * 100) / 100, pruEstimated: false };
+        // Si b ≈ livePxEur (PRU unitaire) -> cost = a * b
+        if (b >= livePxEur * 0.25 && b <= livePxEur * 2.6) return { qty: a, cost: Math.round(a * b * 100) / 100, pruEstimated: false };
+        // Si inversé (b est qty, a est montant)
+        var estRev = b * livePxEur;
+        if (a >= estRev * 0.35 && a <= estRev * 2.8) return { qty: b, cost: Math.round(a * 100) / 100, pruEstimated: false };
+      }
+      return { qty: a, cost: Math.round(b * 100) / 100, pruEstimated: false };
+    }
+    // Cas 3 : 3+ nombres (tableaux PDF courtier : Parts | Cours | Valeur, ou Parts | PRU | Cours | Valeur)
+    if (livePxEur > 0) {
+      var bestPair = null;
+      for (var i = 0; i < nums.length; i++) {
+        for (var j = 0; j < nums.length; j++) {
+          if (i === j) continue;
+          var qCand = nums[i], vCand = nums[j];
+          if (qCand <= 0 || vCand <= 0) continue;
+          var ratio = (qCand * livePxEur) / vCand;
+          if (ratio >= 0.55 && ratio <= 1.85) {
+            var err = Math.abs(1 - ratio);
+            if (!bestPair || err < bestPair.err) {
+              bestPair = { qIdx: i, vIdx: j, qty: qCand, val: vCand, err: err };
+            }
+          }
+        }
+      }
+      if (bestPair) {
+        // Chercher un PRU explicite parmi les autres chiffres de la ligne (différent du cours live)
+        var unitFromPdf = bestPair.val / bestPair.qty;
+        var foundPru = null;
+        for (var k = 0; k < nums.length; k++) {
+          if (k === bestPair.qIdx || k === bestPair.vIdx) continue;
+          var nk = nums[k];
+          if (Math.abs(nk - unitFromPdf) / Math.max(unitFromPdf, 0.01) < 0.006) continue; // c'est le cours unitaire du PDF
+          if (nk >= livePxEur * 0.2 && nk <= livePxEur * 2.5) {
+            foundPru = nk;
+            break;
+          }
+        }
+        if (foundPru !== null) {
+          return { qty: bestPair.qty, cost: Math.round(bestPair.qty * foundPru * 100) / 100, pruEstimated: false };
+        }
+        // Si la ligne existe déjà dans le portefeuille, préserver son PRU existant !
+        if (existingPos && existingPos.qty > 0 && existingPos.cost > 0) {
+          var keepPru = existingPos.cost / existingPos.qty;
+          return { qty: bestPair.qty, cost: Math.round(bestPair.qty * keepPru * 100) / 100, pruEstimated: false };
+        }
+        return { qty: bestPair.qty, cost: Math.round(bestPair.val * 100) / 100, pruEstimated: true };
+      }
+    }
+    return { qty: nums[0], cost: Math.round(nums[1] * 100) / 100, pruEstimated: true };
+  }
+
+  function resetIoPreview() {
+    window._v6PendingImport = null;
+    var pv = document.getElementById("ioPreview");
+    if (pv) { pv.style.display = "none"; pv.innerHTML = ""; }
+    var btn = document.getElementById("btnIoApply");
+    if (btn) btn.textContent = "🔎 Analyser";
+  }
+
   function openIoModal(mode) {
     var isExp = mode === "export";
-    document.getElementById("ioTitle").textContent = isExp ? "💾 Sauvegarder mon portefeuille" : "📥 Importer (CSV / Texte / JSON)";
+    resetIoPreview();
+    document.getElementById("ioTitle").textContent = isExp ? "💾 Sauvegarder mon portefeuille" : "📥 Importer (PDF / CSV / JSON)";
     document.getElementById("ioSub").textContent = isExp
       ? "Copiez ce code ou téléchargez .json pour transférer vos valeurs sur un autre appareil."
-      : "Collez une sauvegarde .json ou des lignes courtier (ex : NVIDIA ; 47,74 ; 4725).";
+      : "Sélectionnez un relevé PDF/CSV courtier (100 % privé sur votre appareil) ou collez un .json / liste (ISIN ou Nom ; Parts ; PRU).";
+    document.getElementById("ioImportAccountWrap").style.display = isExp ? "none" : "block";
     document.getElementById("ioBox").value = isExp ? JSON.stringify({ v: 2, profile: state.profile, goal: state.goal, dca: state.dca, customRate: state.customRate, history: state.history, positions: state.positions }, null, 2) : "";
-    document.getElementById("ioPreview").style.display = "none";
     document.getElementById("ioExportRow").style.display = isExp ? "flex" : "none";
     document.getElementById("ioImportRow").style.display = isExp ? "none" : "flex";
     document.getElementById("ioModal").classList.add("open");
   }
+
+  function commitPendingImport() {
+    var plan = window._v6PendingImport;
+    if (!plan || !Array.isArray(plan.items) || plan.items.length === 0) return;
+    var acc = document.getElementById("ioAccountSel").value || plan.account || "TR";
+    var added = 0, updated = 0;
+    var toResolveLsx = [];
+    for (var i = 0; i < plan.items.length; i++) {
+      var it = plan.items[i];
+      var existing = null;
+      for (var j = 0; j < state.positions.length; j++) {
+        var ep = state.positions[j];
+        if (ep.tv === it.tv && ep.account === acc) { existing = ep; break; }
+      }
+      if (!existing && it.existingId) {
+        for (var j2 = 0; j2 < state.positions.length; j2++) {
+          if (state.positions[j2].id === it.existingId) { existing = state.positions[j2]; break; }
+        }
+      }
+      if (existing) {
+        existing.qty = it.qty;
+        if (it.cost > 0 || it.qty === 0) existing.cost = it.cost;
+        updated++;
+      } else {
+        var np = {
+          id: "imp_" + Date.now() + "_" + i,
+          tv: it.tv,
+          name: it.name,
+          account: acc,
+          pocket: it.pocket || "growth",
+          ccy: it.ccy || "EUR",
+          qty: it.qty,
+          cost: it.cost,
+          refPx: it.pxEur > 0 ? it.pxEur : (it.qty > 0 && it.cost > 0 ? it.cost / it.qty : 100),
+          livePxEur: it.pxEur > 0 ? it.pxEur : null
+        };
+        state.positions.push(np);
+        if (acc === "TR" && np.pocket !== "etf") toResolveLsx.push(np);
+        added++;
+      }
+    }
+    resetIoPreview();
+    saveState();
+    document.getElementById("ioModal").classList.remove("open");
+    renderAll(true);
+    syncLiveQuotes();
+    for (var r = 0; r < toResolveLsx.length; r++) resolveLsxSymbol(toResolveLsx[r]);
+    showToast("✅ Import terminé : " + added + " ajoutée(s), " + updated + " mise(s) à jour !");
+  }
+
   function applyIoImport(txt) {
+    // Si un aperçu est déjà prêt, confirmer directement
+    if (window._v6PendingImport && window._v6PendingImport.raw === String(txt || "").trim()) {
+      commitPendingImport();
+      return;
+    }
     var raw = String(txt || "").trim();
-    if (!raw) { showToast("Collez des données à importer"); return; }
+    if (!raw) { showToast("Sélectionnez un PDF/CSV ou collez des données"); return; }
+
+    // 1. Sauvegarde JSON (v1 ou v2/v6)
     if (raw.charAt(0) === "{") {
       try {
         var parsed = JSON.parse(raw);
@@ -3397,7 +3740,6 @@
           if (typeof parsed.dca === "number") state.dca = parsed.dca;
           if (typeof parsed.customRate === "number") state.customRate = parsed.customRate;
         } else if (parsed.positions && typeof parsed.positions === "object") {
-          // Rétrocompatibilité complète avec vos anciennes sauvegardes v1
           var del = parsed.deletedIds || {};
           var next = [];
           for (var i = 0; i < PERSONAL_DEFAULTS.length; i++) {
@@ -3437,17 +3779,83 @@
         return;
       } catch (e) {}
     }
-    // Import CSV / lignes texte simple
+
+    var pv = document.getElementById("ioPreview");
+    var accSel = document.getElementById("ioAccountSel");
+    var detectedAcc = detectBrokerAccount(raw);
+    if (accSel && /TRADE REPUBLIC|PEA|ASSURANCE/i.test(raw)) accSel.value = detectedAcc;
+    var targetAcc = accSel ? accSel.value : detectedAcc;
+
+    // 2. Import intelligent par ISIN (relevés PDF / CSV Trade Republic, Fortuneo, Boursorama, Degiro...)
+    var isinEntries = extractIsinCandidates(raw);
+    if (isinEntries.length > 0) {
+      pv.style.display = "block";
+      pv.style.color = "#93c5fd";
+      pv.textContent = "🔎 " + isinEntries.length + " code(s) ISIN détecté(s) — résolution des titres sur les marchés...";
+      var codes = isinEntries.map(function(e) { return e.isin; });
+      resolveIsinBatch(codes).then(function(resolved) {
+        var items = [];
+        var newCnt = 0, updCnt = 0, estPruCnt = 0;
+        for (var k = 0; k < isinEntries.length; k++) {
+          var ent = isinEntries[k];
+          var info = resolved[ent.isin];
+          if (!info) continue;
+          var exist = null;
+          for (var ep = 0; ep < state.positions.length; ep++) {
+            if (state.positions[ep].tv === info.tv && state.positions[ep].account === targetAcc) { exist = state.positions[ep]; break; }
+          }
+          var inf = inferQtyAndCost(ent.nums, info.pxEur, exist);
+          if (!(inf.qty > 0)) continue;
+          if (exist) updCnt++; else newCnt++;
+          if (inf.pruEstimated) estPruCnt++;
+          items.push({
+            isin: ent.isin,
+            tv: info.tv,
+            name: info.name,
+            ccy: info.ccy,
+            pxEur: info.pxEur,
+            pocket: info.pocket,
+            qty: Number(inf.qty.toFixed(6)),
+            cost: inf.cost,
+            existingId: exist ? exist.id : null,
+            isUpdate: !!exist
+          });
+        }
+        if (items.length === 0) {
+          pv.style.color = "var(--amber)";
+          pv.textContent = "⚠️ ISIN détectés mais quantités non reconnues. Essayez le format : ISIN ; Parts ; PRU";
+          return;
+        }
+        window._v6PendingImport = { raw: raw, account: targetAcc, items: items };
+        var html = "<div style='color:var(--green);font-weight:800;margin-bottom:4px;'>✅ " + items.length + " titre(s) prêts (" + newCnt + " nouveau(x), " + updCnt + " MAJ) :</div>";
+        for (var pi = 0; pi < items.length; pi++) {
+          var it = items[pi];
+          var pruDisp = it.qty > 0 && it.cost > 0 ? (" • PRU " + fmtEur(it.cost / it.qty)) : "";
+          html += "<div style='color:var(--text);font-size:0.72rem;border-top:1px solid rgba(255,255,255,0.06);padding:3px 0;'>" +
+            (it.isUpdate ? "🔄 " : "➕ ") + "<strong>" + escHtml(it.name) + "</strong> — " + it.qty.toFixed(3).replace(".", ",") + " parts" + pruDisp +
+          "</div>";
+        }
+        if (estPruCnt > 0) {
+          html += "<div style='color:var(--muted);font-size:0.69rem;margin-top:4px;'>ℹ️ Si le relevé n'indique pas le PRU, vous pourrez l'ajuster ensuite via ✏️ Parts.</div>";
+        }
+        pv.style.color = "var(--text)";
+        pv.innerHTML = html;
+        document.getElementById("btnIoApply").textContent = "✅ Confirmer (" + items.length + ")";
+      });
+      return;
+    }
+
+    // 3. Import CSV / lignes texte simple (Nom ou Ticker ; Parts ; PRU ou Investi)
     var lines = raw.split(/\r?\n/).map(function(l) { return l.trim(); }).filter(Boolean);
     var updated = 0;
     for (var li = 0; li < lines.length; li++) {
       var parts = lines[li].split(/[;\t|]/);
       var low = lines[li].toLowerCase();
       var match = null;
-      for (var pi = 0; pi < state.positions.length; pi++) {
-        var nm = state.positions[pi].name.toLowerCase();
-        var tk = state.positions[pi].tv.split(":")[1].toLowerCase();
-        if (low.indexOf(nm) >= 0 || low.indexOf(tk) >= 0) { match = state.positions[pi]; break; }
+      for (var pi2 = 0; pi2 < state.positions.length; pi2++) {
+        var nm = state.positions[pi2].name.toLowerCase();
+        var tk = state.positions[pi2].tv.split(":")[1].toLowerCase();
+        if (low.indexOf(nm) >= 0 || low.indexOf(tk) >= 0) { match = state.positions[pi2]; break; }
       }
       if (!match) continue;
       var nums = [];
@@ -3456,8 +3864,10 @@
         if (isFinite(nv) && nv >= 0) nums.push(nv);
       }
       if (nums.length >= 1) {
+        var pxRef = getPosMetrics(match).px;
+        var infSimple = inferQtyAndCost(nums, pxRef, match);
         match.qty = nums[0];
-        if (nums.length >= 2) match.cost = nums[1];
+        if (nums.length >= 2) match.cost = infSimple.cost;
         else if (nums[0] === 0) match.cost = 0;
         updated++;
       }
@@ -3468,7 +3878,7 @@
       renderAll(true);
       showToast("✅ " + updated + " ligne(s) mise(s) à jour !");
     } else {
-      showToast("⚠️ Format non reconnu (utilisez JSON ou Nom ; Parts ; Investi)");
+      showToast("⚠️ Aucun ISIN ou titre reconnu (importez un PDF/CSV courtier ou collez ISIN ; Parts ; PRU)");
     }
   }
 
@@ -3929,11 +4339,38 @@
     var v = parseFloat(String(e.target.value || "").replace(",", "."));
     if (isFinite(v) && v >= 0 && v <= 40) { state.customRate = v; saveState(); renderProjections(computeTotals()); }
   });
+  document.getElementById("ioBox").addEventListener("input", function() { resetIoPreview(); });
+  document.getElementById("ioAccountSel").addEventListener("change", function() { resetIoPreview(); });
   document.getElementById("ioFile").addEventListener("change", function(e) {
     var f = e.target.files && e.target.files[0];
     if (!f) return;
+    resetIoPreview();
+    var isPdf = /\.pdf$/i.test(f.name || "") || f.type === "application/pdf";
+    if (isPdf) {
+      var pv = document.getElementById("ioPreview");
+      pv.style.display = "block";
+      pv.style.color = "#93c5fd";
+      pv.textContent = "📄 Lecture locale du PDF en cours (aucune donnée envoyée)...";
+      extractPdfText(f)
+        .then(function(txt) {
+          document.getElementById("ioBox").value = txt;
+          e.target.value = "";
+          applyIoImport(txt);
+        })
+        .catch(function() {
+          e.target.value = "";
+          pv.style.color = "var(--red)";
+          pv.textContent = "⚠️ Impossible de lire ce PDF (vérifiez la connexion pour charger le lecteur PDF local ou utilisez un CSV).";
+        });
+      return;
+    }
     var rd = new FileReader();
-    rd.onload = function(ev) { applyIoImport(ev.target.result); e.target.value = ""; };
+    rd.onload = function(ev) {
+      var txt = String(ev.target.result || "");
+      document.getElementById("ioBox").value = txt;
+      e.target.value = "";
+      applyIoImport(txt);
+    };
     rd.readAsText(f);
   });
   document.addEventListener("keydown", function(e) {
