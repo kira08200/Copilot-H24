@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T08:56:34Z",
+  "updatedAt": "2026-11-26T09:57:49Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,26 +95,48 @@
   "majorMoves": [],
   "items": [
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Thu, 26 Nov 2026 08:11:42 GMT",
-      "pubTs": 1795680702,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
-    },
-    {
-      "id": "61f5e87790ee54fe",
+      "id": "ee6d601f0e258e1b",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Le Cac 40 attendu en net rebond après le sursaut en fin de séance de Wall Street, fermé ce jeudi pour Thanksgiving - Investir Les Echos",
+      "title": "Bourses : l'Europe rebondit en l'absence de Wall Street - MoneyVox",
+      "excerpt": "Paris - Les Bourses mondiales évoluent en nette hausse jeudi, les investisseurs revenant notamment vers les valeurs technologiques en Europe après le redressement de Wall Street en…",
+      "source": "MoneyVox",
+      "pubDate": "Thu, 26 Nov 2026 09:02:50 GMT",
+      "pubTs": 1795683770,
+      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOFM4elVsakkzczVYWEVYTldOZFhQcGtvNy02WlYzVFVnUzNsZWU4cjFibTNWeDZ6dmJCUXEzdTVkWXJfLXZqYUQ0OVBIQm1iVVV4V3kyOXBla1Q4MjNoZUMtRzZNZzFGZTN1d2xQRlc2N0VOMm9sWUFaWElfZHV0amlITmFiS1BsR2dCTXZod25PZmFxbmYwQ1dxWERoems?oc=5"
+    },
+    {
+      "id": "54f1450f77dba7e5",
+      "theme": "NVIDIA",
+      "tagCls": "b-amber",
+      "title": "Wall Street : le Nasdaq recule, Nvidia reste sous pression - Le Revenu",
+      "excerpt": "Wall Street recule avant les résultats de Nvidia et l’IPO d’Anthropic. En Europe, les marchés évoluent dans des directions contrastées.",
+      "source": "Le Revenu",
+      "pubDate": "Thu, 26 Nov 2026 08:42:00 GMT",
+      "pubTs": 1795682520,
+      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObVRQcC1uRHg1MEFSaVc0N3o1QzB0aEdiR0hMVVBkemwxZ0dCcW5RZTBHQWo2LU1OOUxGMDFod0tGT1RiSG1hbF9XOFJjcFhRdG1oanpCSjZURmtNUXllaVRDMVk5Wjd1dkxXbTh2VkM1eEtFYktMcHR1SzRTeUt1SjlDbHZidE1TY1hQMzlIU1BPc1hTUlY4V01SdEdiQ1hoZDQ3NUI5cHJJS3k5VjVibnJPRHE?oc=5"
+    },
+    {
+      "id": "13fa9ea61bec610a",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Pour créer une base solide d'actionnaires particuliers de SpaceX, Musk a la solution… Offrir deux actions du groupe à chaque enfant américain - BFM Bourse",
+      "excerpt": "(BFM Bourse) - Le milliardaire américain a annoncé sur X que chaque enfant américain recevrait deux titres du groupe en juin prochain…",
+      "source": "BFM Bourse",
+      "pubDate": "Thu, 26 Nov 2026 08:33:33 GMT",
+      "pubTs": 1795682013,
+      "link": "https://news.google.com/rss/articles/CBMitwJBVV95cUxPaUdoSEhQLXFPcnNlRDRzQXMwUGpNbXJaa2RfckNmS2I2NjJLSjEwOEFqQ3NfMWlfWWhIRnIwSUFsNkdWYXJpamN2UkVmZUFsLVA0dUZ3ZkNHQWpLNUlFOUwxV2RiT1ZmeWl5amV2UzFBZk0tN1JIOVZHa2c3TFdyWjU2WmNIdWVVZ3FjYk54SUZOVVhlU0lmb0hpa3p3N1NJakdqZWxsS3hUMWZjNHUtelE4MHg3XzZGdU8wX1NScnIyb05MRXpfNE5LT1BvcE9HQkxQeVBHTTA2R1pDYmJfQjdPdHdma0ZxdURnUXdZVkh5LTBrUmwzS0VkNkc5Z1VhTHRLckR1NHV0eDNpVzJWSTUtdmlXeS1Td3dHWGhTN2p5a1MwbHh5X2k3QXRQM2dYTDJyZjV2NA?oc=5"
+    },
+    {
+      "id": "6ef78ca38293cd6e",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le Cac 40 veut aussi sa part du gâteau et gagne plus de 1,5% pendant que Wall Street célèbre Thanksgiving - Investir Les Echos",
       "excerpt": "Les investisseurs se sont empressés de revenir sur les actions américaines en fin de séance aux Etats-Unis mercredi, avant une clôture exceptionnelle pour la fête de Thanksgiving…",
       "source": "Investir Les Echos",
-      "pubDate": "Thu, 26 Nov 2026 07:38:42 GMT",
-      "pubTs": 1795678722,
-      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNekc1Q3U0UnVsRjlTdGllMGNCendLWWI0d21OeGkxdU9qTXFWTGJTZnYyR1BtMjVFZjNNOG03SXdYRkEycFB2enVIeTBlRXB5MXY1RHpQb1FzSFhhQk45em01UmRkcEE4NHVLU1lRM200cWdXUWJwTFR6elZIMjhWZDJ2dGE2cnQzTEdIUEdLMG0wS1BZdURfRHpPVEd4MmhoMHVMQnZHVWwyMHB1Y0Ewd1o2TFVBZENmWVEyTjlUM2dGQWpoTzhGT2ltanB6TmpXazlydzZCODlyelJyUWN6Q2lQcmJEcFJhQ0FoX2E1ejdnb1YzcE5sOHZiUG90MDhXb18zeVRYRGZJdFJmNjA3WFBR?oc=5"
+      "pubDate": "Thu, 26 Nov 2026 08:13:38 GMT",
+      "pubTs": 1795680818,
+      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxObFhhRWlCdlg2NF8xMmNxTXIyUkJCVEtDb0pvLUYyOExNS0Ezb0x0N3Ewc1J4U0hjVlo1S3VwRHpFMFZaandSZVVGa2VTelQ5eE9xaUdrNVZtMmdrUFFWdmJUMV9mZTF6S0pFR29BYklxYmVtWWstVVQxcXJ5Zlh4NEtyUkVMQW53ZVVGTTRxeHZQa2NJbzNiVndhOTdVeUplTTVkN0NVNjZSTjYwVXY2UUJtVjJla1dHRGhuU3luUUl0WUtSdWtrSXNTSjVURnZOSjNwaGp4dUI4bS1YNzNHWmRSdnVQcUUwWHY0TTRpaFBydUZ1RTFaLWFIVXlCMmI5U1UtQw?oc=5"
     },
     {
       "id": "49e388f1f26488bd",
@@ -128,17 +150,6 @@
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXp4ZkRxTWdQZ0JLUVN1VWlXQk5ncXR4MjRvVXl1Nmo3QWJJUGJyTXdsQ2I4S3JkUndRRlpwWEZLLW1ud3ZZTWVxOTlkX2FPcFkxQURjWWRHTzFhX3hEX2w2WEJUOWh2X0JlYlQ0ZTVXZ3EtY2RQRzlsVm93eWcwSTdESTBGZDdmcUg0X2FkVkVUWktsdmNMRjNOQl9nVThKQ0djeGE2UmlOMEVyaVJSemJLUnFHWkFUN0dyQXVDMm1KWW1rTXBLcFBNWEE?oc=5"
     },
     {
-      "id": "e074f21415e4cbe0",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L’or chute malgré le recul des rendements américains, l’inflation PCE sous-jacente atteignant 3,3 % - www.tmgm.com",
-      "excerpt": "Investing.com - Les cours de l’or ont regagné du terrain mercredi, progressant légèrement alors que le dollar inversait sa tendance et reculait. Le métal précieux avait auparavant…",
-      "source": "www.tmgm.com",
-      "pubDate": "Wed, 25 Nov 2026 20:23:35 GMT",
-      "pubTs": 1795638215,
-      "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZnpub1p0MzlQTTRyTU96MEtZa0ZObmNjcHZhZlB3THhEeWZ4UF85ZEktYnk0ZEFnb3htZXZiaHJWblJ3OTRDNUlwa1BmVDJTbmNsNXNHdW1NM0dxTTAxdGZXYmlJTVNyVVZoX05vNGNxZEx4SG5GWDhKX2liOGNBbnpPOUw0YWxUNUF6RTNYa0VjWWdjX2ZrMVpUVmc0RDR2WXY4b2dnOWltX0RIRklmdEhieDBTZTF0c1J5SnRMUQ?oc=5"
-    },
-    {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
@@ -150,33 +161,18 @@
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
-      "id": "7d9a7c44bbb25404",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones haut de gamme - Investing.com France",
-      "excerpt": "",
-      "source": "Investing.com France",
-      "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
-      "pubTs": 1795580820,
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
-    },
-    {
-      "id": "58f55cd1316381cb",
-      "theme": "IPO & IA Mondiale",
+      "id": "e4651a17d8e6e94e",
+      "theme": "Air Liquide",
       "tagCls": "b-purple",
-      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
-      "source": "Saxo",
-      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
-      "pubTs": 1795510800,
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
+      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
+      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
+      "source": "Investir Les Echos",
+      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
+      "pubTs": 1795542420,
+      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     }
   ],
   "notifiedIds": [
-    "earn_HKEX:1810_20261124",
-    "2397244539e0b8f2",
-    "1d22e71d1c113bad",
-    "e4b8de0fce7442bf",
     "8a756c2ab21f5391",
     "eb8f07f8e9a09d1a",
     "7a90e2589083751d",
@@ -322,6 +318,10 @@
     "75dddc61dcf54ed5",
     "7acea9574c120914",
     "49e388f1f26488bd",
-    "61f5e87790ee54fe"
+    "61f5e87790ee54fe",
+    "ee6d601f0e258e1b",
+    "54f1450f77dba7e5",
+    "13fa9ea61bec610a",
+    "6ef78ca38293cd6e"
   ]
 }
