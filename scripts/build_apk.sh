@@ -469,6 +469,8 @@ package fr.copilote.h24;
 import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -476,8 +478,12 @@ import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.PowerManager;
+import android.provider.MediaStore;
 import android.provider.Settings;
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import android.view.Window;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
@@ -562,6 +568,33 @@ public class MainActivity extends Activity {
                 }
             } catch (Exception ignored) {}
             return false;
+        }
+
+        @JavascriptInterface
+        public String saveJsonFile(final String filename, final String content) {
+            final String safeName = (filename != null && filename.trim().length() > 0) ? filename.trim() : "copilote-sauvegarde.json";
+            final byte[] data = (content != null ? content : "").getBytes(StandardCharsets.UTF_8);
+            try {
+                if (Build.VERSION.SDK_INT >= 29) {
+                    ContentValues values = new ContentValues();
+                    values.put(MediaStore.Downloads.DISPLAY_NAME, safeName);
+                    values.put(MediaStore.Downloads.MIME_TYPE, "application/json");
+                    values.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+                    ContentResolver resolver = getContentResolver();
+                    Uri uri = resolver.insert(MediaStore.Downloads.EXTERNAL_CONTENT_URI, values);
+                    if (uri != null) {
+                        OutputStream os = resolver.openOutputStream(uri);
+                        if (os != null) {
+                            os.write(data);
+                            os.flush();
+                            os.close();
+                            return "Téléchargements/" + safeName;
+                        }
+                    }
+                }
+            } catch (Exception ignored) {}
+            shareText(safeName, content);
+            return "";
         }
 
         @JavascriptInterface
