@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T09:57:49Z",
+  "updatedAt": "2026-11-26T10:53:18Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "ffd58b4a1c2ac02d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "CAC 40 : la Bourse retrouve des couleurs après le rebond de Wall Street - Yahoo Finance France",
+      "excerpt": "La Bourse de Paris a nettement rebondi ce jeudi 26 novembre, le CAC 40 gagnant près de 1,8% en début de séance. Le marché parisien profite du redressement de Wall Street, intervenu…",
+      "source": "Yahoo Finance France",
+      "pubDate": "Thu, 26 Nov 2026 09:19:04 GMT",
+      "pubTs": 1795684744,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOekdUaWpqbktaQng0aUVMWERVeDVfUkxyNlF3Y3NaVVpQN0duT09vSXB3U1pQOGlKVjVBNC1JaVVTOVBUTkNFLTZSMGFhYUswUE1Ndk1tcFlmS3JqVWYtamdmOXJ6dmJLZWZzVlBNcVlwRFJpTWROcEowZWJKQlE3Z1BZeDY4R0FiUlczdko3NA?oc=5"
+    },
+    {
       "id": "ee6d601f0e258e1b",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -104,17 +115,6 @@
       "pubDate": "Thu, 26 Nov 2026 09:02:50 GMT",
       "pubTs": 1795683770,
       "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxOOFM4elVsakkzczVYWEVYTldOZFhQcGtvNy02WlYzVFVnUzNsZWU4cjFibTNWeDZ6dmJCUXEzdTVkWXJfLXZqYUQ0OVBIQm1iVVV4V3kyOXBla1Q4MjNoZUMtRzZNZzFGZTN1d2xQRlc2N0VOMm9sWUFaWElfZHV0amlITmFiS1BsR2dCTXZod25PZmFxbmYwQ1dxWERoems?oc=5"
-    },
-    {
-      "id": "54f1450f77dba7e5",
-      "theme": "NVIDIA",
-      "tagCls": "b-amber",
-      "title": "Wall Street : le Nasdaq recule, Nvidia reste sous pression - Le Revenu",
-      "excerpt": "Wall Street recule avant les résultats de Nvidia et l’IPO d’Anthropic. En Europe, les marchés évoluent dans des directions contrastées.",
-      "source": "Le Revenu",
-      "pubDate": "Thu, 26 Nov 2026 08:42:00 GMT",
-      "pubTs": 1795682520,
-      "link": "https://news.google.com/rss/articles/CBMitAFBVV95cUxObVRQcC1uRHg1MEFSaVc0N3o1QzB0aEdiR0hMVVBkemwxZ0dCcW5RZTBHQWo2LU1OOUxGMDFod0tGT1RiSG1hbF9XOFJjcFhRdG1oanpCSjZURmtNUXllaVRDMVk5Wjd1dkxXbTh2VkM1eEtFYktMcHR1SzRTeUt1SjlDbHZidE1TY1hQMzlIU1BPc1hTUlY4V01SdEdiQ1hoZDQ3NUI5cHJJS3k5VjVibnJPRHE?oc=5"
     },
     {
       "id": "13fa9ea61bec610a",
@@ -128,15 +128,15 @@
       "link": "https://news.google.com/rss/articles/CBMitwJBVV95cUxPaUdoSEhQLXFPcnNlRDRzQXMwUGpNbXJaa2RfckNmS2I2NjJLSjEwOEFqQ3NfMWlfWWhIRnIwSUFsNkdWYXJpamN2UkVmZUFsLVA0dUZ3ZkNHQWpLNUlFOUwxV2RiT1ZmeWl5amV2UzFBZk0tN1JIOVZHa2c3TFdyWjU2WmNIdWVVZ3FjYk54SUZOVVhlU0lmb0hpa3p3N1NJakdqZWxsS3hUMWZjNHUtelE4MHg3XzZGdU8wX1NScnIyb05MRXpfNE5LT1BvcE9HQkxQeVBHTTA2R1pDYmJfQjdPdHdma0ZxdURnUXdZVkh5LTBrUmwzS0VkNkc5Z1VhTHRLckR1NHV0eDNpVzJWSTUtdmlXeS1Td3dHWGhTN2p5a1MwbHh5X2k3QXRQM2dYTDJyZjV2NA?oc=5"
     },
     {
-      "id": "6ef78ca38293cd6e",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Le Cac 40 veut aussi sa part du gâteau et gagne plus de 1,5% pendant que Wall Street célèbre Thanksgiving - Investir Les Echos",
-      "excerpt": "Les investisseurs se sont empressés de revenir sur les actions américaines en fin de séance aux Etats-Unis mercredi, avant une clôture exceptionnelle pour la fête de Thanksgiving…",
-      "source": "Investir Les Echos",
-      "pubDate": "Thu, 26 Nov 2026 08:13:38 GMT",
-      "pubTs": 1795680818,
-      "link": "https://news.google.com/rss/articles/CBMihAJBVV95cUxObFhhRWlCdlg2NF8xMmNxTXIyUkJCVEtDb0pvLUYyOExNS0Ezb0x0N3Ewc1J4U0hjVlo1S3VwRHpFMFZaandSZVVGa2VTelQ5eE9xaUdrNVZtMmdrUFFWdmJUMV9mZTF6S0pFR29BYklxYmVtWWstVVQxcXJ5Zlh4NEtyUkVMQW53ZVVGTTRxeHZQa2NJbzNiVndhOTdVeUplTTVkN0NVNjZSTjYwVXY2UUJtVjJla1dHRGhuU3luUUl0WUtSdWtrSXNTSjVURnZOSjNwaGp4dUI4bS1YNzNHWmRSdnVQcUUwWHY0TTRpaFBydUZ1RTFaLWFIVXlCMmI5U1UtQw?oc=5"
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Thu, 26 Nov 2026 08:11:42 GMT",
+      "pubTs": 1795680702,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
       "id": "49e388f1f26488bd",
@@ -150,6 +150,17 @@
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXp4ZkRxTWdQZ0JLUVN1VWlXQk5ncXR4MjRvVXl1Nmo3QWJJUGJyTXdsQ2I4S3JkUndRRlpwWEZLLW1ud3ZZTWVxOTlkX2FPcFkxQURjWWRHTzFhX3hEX2w2WEJUOWh2X0JlYlQ0ZTVXZ3EtY2RQRzlsVm93eWcwSTdESTBGZDdmcUg0X2FkVkVUWktsdmNMRjNOQl9nVThKQ0djeGE2UmlOMEVyaVJSemJLUnFHWkFUN0dyQXVDMm1KWW1rTXBLcFBNWEE?oc=5"
     },
     {
+      "id": "05c2b280ff66366b",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
+      "excerpt": "",
+      "source": "TradingView",
+      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
+      "pubTs": 1795629796,
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
+    },
+    {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
@@ -159,22 +170,9 @@
       "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
       "pubTs": 1795622726,
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
-    },
-    {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
-      "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     }
   ],
   "notifiedIds": [
-    "8a756c2ab21f5391",
-    "eb8f07f8e9a09d1a",
     "7a90e2589083751d",
     "57753768ba4101b9",
     "move_drop_NASDAQ:NVDA_20261123",
@@ -322,6 +320,8 @@
     "ee6d601f0e258e1b",
     "54f1450f77dba7e5",
     "13fa9ea61bec610a",
-    "6ef78ca38293cd6e"
+    "6ef78ca38293cd6e",
+    "ffd58b4a1c2ac02d",
+    "05c2b280ff66366b"
   ]
 }
