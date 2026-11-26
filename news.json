@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T18:31:56Z",
+  "updatedAt": "2026-11-26T19:38:10Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "10fd15edeb013725",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les nouveaux millionnaires d’Anthropic enflamment le marché immobilier déjà en surchauffe de San Francisco - l'Opinion",
+      "excerpt": "Ils peuvent emprunter en utilisant leurs actions issues d'une introduction en Bourse comme garantie pour acheter une maison à San Francisco dont le prix s'élève à plusieurs…",
+      "source": "l'Opinion",
+      "pubDate": "Thu, 26 Nov 2026 19:00:00 GMT",
+      "pubTs": 1795719600,
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRXVtSUk2QktBdGlDcXllTFZ6UTRfQzhyR2pGTHlvVDhpWndReTZERExSVHQ4UnRwNHNOUzdRalUxOFVOM0V3ZzZRaDJ2ZWoxekwyVzlmZkRFQkRTOElqVGNyQUpYSkoxdzVJbjBGampoTnBUVHVKZmRYRndaenhJTlZyZ0x1NmNnczlORGpFcXhpQ3U2V2JDV1hRQVNaY3duR3NINEZSQzJBWGNUaDhlM2RpdFQ1aktWbjBQUVhuM29IdG9haERFM21vQnR1T2NYeUF0NQ?oc=5"
+    },
+    {
       "id": "18119041f60365d2",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -117,15 +128,15 @@
       "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPN3dhbjI1QkdMYTVhY01xSmMzNWhZR1EtR1VXUldVSmQ3aDFoazFvQ0NmVDFVbktBSzFvd25IUmg4MGpXb2UyOFE5TnVJcC1mc2lwUVc4TzlPVVRYaDRJc3NSNUVzZTF3bERSZjMxVnM4a2gwM3kzRFFWWjlTTlNzamltUTlDQ3MxdHNnb2R0NkhCS0dGWUtkeW1nSnFzTzhJR1Y2X1UxZ3YxdlhIdGt3ZFVVYlRzZDNUMllOTkRrMlR2djNKb29tS3JSbnQtWjFzNUx1MVM2V2pTODRVRUkxYWxndFNWa2ItLWZBR2hHNDAyNm55ZDZZaQ?oc=5"
     },
     {
-      "id": "8d7a21857bb353e2",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Le patron d'Anthropic Dario Amodei nie vouloir que l'humanité cède son libre arbitre à l'IA - Euronews.com",
-      "excerpt": "Les commentaires de Dario Amodei surviennent alors que s'intensifie le débat sur la manière de préserver l'autonomie humaine face aux systèmes d'IA superintelligents. View on euronews…",
-      "source": "Euronews.com",
-      "pubDate": "Thu, 26 Nov 2026 15:26:48 GMT",
-      "pubTs": 1795706808,
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPMWVXd0tJRGxzVV9qMkpuMlN0MjYzNlBZajNFeE0zOWtELXYzVXVHQXNPeGU5cTBlVkdBeUM4djh3WFh3RHRjZVBJVm8weTM1dmgzeExkSnlZU3JNZ0E1VXpsNGMwaVJaa0lDcTZEWi1na3VwbmNNNWw4clN2TDQ0TjlLdmR2NDZlSkgzSmh3dXdXd3ZBWjQ2cU5wT0tOSkhvd3ZIaWdCMHZUc1QxdzlxT2tSWGZaRmhZdzBpMEpRSWw?oc=5"
+      "id": "d792afce04cd26fe",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "IA : Microsoft alerte sur une vague de pannes à venir dans la tech - Clubic.com",
+      "excerpt": "L'explosion de la puissance de l'IA oblige les systèmes à une mise à jour très rapide. Ce qui, selon le président de Microsoft, va entraîner nécessairement un certain nombre de…",
+      "source": "Clubic.com",
+      "pubDate": "Thu, 26 Nov 2026 16:28:00 GMT",
+      "pubTs": 1795710480,
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQW5UakhJWG9aUk1kRVhvM1VSVVAwamVwZ2NyOTFqVlZkelMxRkFQTF9oUkNMbzdpSmxhaVRnTEFKOFgyR3FyNlRNMm1XSm1CbEhOdzNXSmd4U1BzX3NjRTZqMjR5OVotZW42cUJDTU5tZ1YzaGcwM3prYWxncE1BaUVINUdONG1iZ2Qyb1Jwa2VTSHFLYi15Z2FGM1NMM2lOa2Vj?oc=5"
     },
     {
       "id": "f4f07c8ebb8eb12f",
@@ -150,22 +161,11 @@
       "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxOQ1VkVFZXSXJtd0dQN3ZIQkFkNi15VndaZlJJcjVuVW5iaFBVUU9EVFZTVVI4UFpvYVdnNUl4elhnYXNQTUR4OHE1V2pwbm5zNEJjeEtaUnB3Ml9rTHYwRzNBNXI3U2NCWTRmOG5GOWdxRlhLNDR0RkcwYjVFYTd6YXBFNDZhdVFSclEyMkFPbXJ3aTNrblluY3VxYmt5Q1IyVHdudFlLelh2bDYzb0tfUzdfTDRSY2YxbEFxVWRVVWFNSkpBc1NISmhOdm56MmY1VE02RWJrbkhzYUJnX1ppSGg2VG41bEtoZHZOUUpyblNnVXc?oc=5"
     },
     {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
-      "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
-    },
-    {
       "id": "e62a9fb8b84862e4",
       "theme": "AMD, NVIDIA",
       "tagCls": "b-purple",
       "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
       "source": "TIKR.com",
       "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
       "pubTs": 1795466287,
@@ -173,8 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "9a3ac680fbd3a2ed",
-    "46992aad3a5167a9",
     "214d38137d111fe8",
     "6fb0a17263bd41d6",
     "ea4449b61d6ee8fd",
@@ -322,6 +320,8 @@
     "e84d66f216e8030f",
     "958c075c04a7b187",
     "18119041f60365d2",
-    "5ebe59c5c5cfb7da"
+    "5ebe59c5c5cfb7da",
+    "10fd15edeb013725",
+    "d792afce04cd26fe"
   ]
 }
