@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T06:34:08Z",
+  "updatedAt": "2026-11-26T07:58:11Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "61f5e87790ee54fe",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Le Cac 40 attendu en net rebond après le sursaut en fin de séance de Wall Street, fermé ce jeudi pour Thanksgiving - Investir Les Echos",
+      "excerpt": "Les investisseurs se sont empressés de revenir sur les actions américaines en fin de séance aux Etats-Unis mercredi, avant une clôture exceptionnelle pour la fête de Thanksgiving…",
+      "source": "Investir Les Echos",
+      "pubDate": "Thu, 26 Nov 2026 07:38:42 GMT",
+      "pubTs": 1795678722,
+      "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxNekc1Q3U0UnVsRjlTdGllMGNCendLWWI0d21OeGkxdU9qTXFWTGJTZnYyR1BtMjVFZjNNOG03SXdYRkEycFB2enVIeTBlRXB5MXY1RHpQb1FzSFhhQk45em01UmRkcEE4NHVLU1lRM200cWdXUWJwTFR6elZIMjhWZDJ2dGE2cnQzTEdIUEdLMG0wS1BZdURfRHpPVEd4MmhoMHVMQnZHVWwyMHB1Y0Ewd1o2TFVBZENmWVEyTjlUM2dGQWpoTzhGT2ltanB6TmpXazlydzZCODlyelJyUWN6Q2lQcmJEcFJhQ0FoX2E1ejdnb1YzcE5sOHZiUG90MDhXb18zeVRYRGZJdFJmNjA3WFBR?oc=5"
+    },
+    {
       "id": "49e388f1f26488bd",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -106,6 +117,17 @@
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXp4ZkRxTWdQZ0JLUVN1VWlXQk5ncXR4MjRvVXl1Nmo3QWJJUGJyTXdsQ2I4S3JkUndRRlpwWEZLLW1ud3ZZTWVxOTlkX2FPcFkxQURjWWRHTzFhX3hEX2w2WEJUOWh2X0JlYlQ0ZTVXZ3EtY2RQRzlsVm93eWcwSTdESTBGZDdmcUg0X2FkVkVUWktsdmNMRjNOQl9nVThKQ0djeGE2UmlOMEVyaVJSemJLUnFHWkFUN0dyQXVDMm1KWW1rTXBLcFBNWEE?oc=5"
     },
     {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Thu, 26 Nov 2026 04:03:47 GMT",
+      "pubTs": 1795665827,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
+    {
       "id": "e074f21415e4cbe0",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -115,17 +137,6 @@
       "pubDate": "Wed, 25 Nov 2026 20:23:35 GMT",
       "pubTs": 1795638215,
       "link": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZnpub1p0MzlQTTRyTU96MEtZa0ZObmNjcHZhZlB3THhEeWZ4UF85ZEktYnk0ZEFnb3htZXZiaHJWblJ3OTRDNUlwa1BmVDJTbmNsNXNHdW1NM0dxTTAxdGZXYmlJTVNyVVZoX05vNGNxZEx4SG5GWDhKX2liOGNBbnpPOUw0YWxUNUF6RTNYa0VjWWdjX2ZrMVpUVmc0RDR2WXY4b2dnOWltX0RIRklmdEhieDBTZTF0c1J5SnRMUQ?oc=5"
-    },
-    {
-      "id": "75dddc61dcf54ed5",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Wall Street termine sans direction claire, la tech parvient à limiter ses pertes - tv5monde",
-      "excerpt": "L’indice Nasdaq a cédé 0,62 % et l’indice élargi S&P 500 a perdu 0,25 %. Seul le Dow Jones est parvenu à terminer en territoire positif, gagnant 0,33 %.",
-      "source": "tv5monde",
-      "pubDate": "Wed, 25 Nov 2026 20:13:00 GMT",
-      "pubTs": 1795637580,
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQNFgtMGdKN3hLYkMzVE96MkpqLVB3OEVwbVVkWF94aUxiU2hlX1Q4MWtSbzZ2N0JEcmRRZ2Qwa05WZnlaMzFCUlhDVjJyRkdzME4wNWF0X25rSVR2MjhGUTJrdUFxRndvZkNyemhweVYwbFV1cnVDN0Z5Q3E4bEV4d2E3Sk5QbzJmcFJyTXVtNkZtcEM0VVE4TnQ2SnUyVGZfSVFFanp3X19MZmVwU2RBb1ZYTzV0b2dHOTV6RTFUWGI2TzlzbkE?oc=5"
     },
     {
       "id": "c320de58bef2dfe4",
@@ -159,21 +170,9 @@
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
-    },
-    {
-      "id": "e62a9fb8b84862e4",
-      "theme": "AMD, NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
-      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
-      "source": "TIKR.com",
-      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
-      "pubTs": 1795466287,
-      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
-    "move_drop_XETR:ENR_20261122",
     "earn_HKEX:1810_20261124",
     "2397244539e0b8f2",
     "1d22e71d1c113bad",
@@ -322,6 +321,7 @@
     "3020c9547e4d9816",
     "75dddc61dcf54ed5",
     "7acea9574c120914",
-    "49e388f1f26488bd"
+    "49e388f1f26488bd",
+    "61f5e87790ee54fe"
   ]
 }
