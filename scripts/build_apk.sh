@@ -44,7 +44,7 @@ cat > "$WORK/AndroidManifest.xml" << EOF
     <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
 
     <application
-        android:label="Copilote H24"
+        android:label="Copilote"
         android:icon="@drawable/ic_launcher"
         android:usesCleartextTraffic="true"
         android:allowBackup="true"
@@ -110,7 +110,7 @@ public class NotificationHelper {
             if (nm != null && nm.getNotificationChannel(CHANNEL_ID) == null) {
                 NotificationChannel ch = new NotificationChannel(
                     CHANNEL_ID,
-                    "Alertes Copilote H24",
+                    "Alertes Copilote",
                     NotificationManager.IMPORTANCE_HIGH
                 );
                 ch.setDescription("Actualités essentielles, IPO mondiales, résultats et mouvements majeurs H24");
@@ -143,7 +143,7 @@ public class NotificationHelper {
             : new Notification.Builder(ctx);
 
         b.setSmallIcon(R.drawable.ic_launcher)
-            .setContentTitle(title != null ? title : "Copilote H24")
+            .setContentTitle(title != null ? title : "Copilote")
             .setContentText(body != null ? body : "")
             .setStyle(new Notification.BigTextStyle().bigText(body != null ? body : ""))
             .setVisibility(Notification.VISIBILITY_PUBLIC)
@@ -442,7 +442,7 @@ public class AlertJobService extends JobService {
             }
             NotificationHelper.show(
                 ctx,
-                "🔔 Copilote H24 • " + alertTitles.size() + " nouveautés",
+                "🔔 Copilote • " + alertTitles.size() + " nouveautés",
                 digest.toString()
             );
         }
@@ -553,7 +553,7 @@ public class MainActivity extends Activity {
             try {
                 ClipboardManager cm = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 if (cm != null) {
-                    cm.setPrimaryClip(ClipData.newPlainText("Copilote H24", text != null ? text : ""));
+                    cm.setPrimaryClip(ClipData.newPlainText("Copilote", text != null ? text : ""));
                     return true;
                 }
             } catch (Exception ignored) {}
@@ -568,7 +568,7 @@ public class MainActivity extends Activity {
                     public void run() {
                         Intent send = new Intent(Intent.ACTION_SEND);
                         send.setType("text/plain");
-                        send.putExtra(Intent.EXTRA_SUBJECT, title != null ? title : "Sauvegarde Copilote H24");
+                        send.putExtra(Intent.EXTRA_SUBJECT, title != null ? title : "Sauvegarde Copilote");
                         send.putExtra(Intent.EXTRA_TEXT, text != null ? text : "");
                         startActivity(Intent.createChooser(send, "Partager / Enregistrer la sauvegarde"));
                     }

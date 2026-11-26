@@ -7,11 +7,11 @@
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="Copilote H24">
-<link rel="manifest" href="./manifest.json?v=2">
-<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=2">
-<link rel="apple-touch-icon" href="./icon-192.png?v=2">
-<title>Copilote H24 — Assistant Achat &amp; Vente</title>
+<meta name="apple-mobile-web-app-title" content="Copilote">
+<link rel="manifest" href="./manifest.json?v=3">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png?v=3">
+<link rel="apple-touch-icon" href="./icon-192.png?v=3">
+<title>Copilote — Assistant Bourse</title>
 <style>
   :root {
     --bg: #0a0f18;
@@ -1112,8 +1112,8 @@
   <div class="header-inner">
     <div class="top-row">
       <div class="brand">
-        <img src="./icon-192.png?v=2" alt="Copilote H24" style="width:24px;height:24px;border-radius:6px;display:block;flex-shrink:0;border:1px solid rgba(255,255,255,0.12);">
-        <span>Copilote H24</span>
+        <img src="./icon-192.png?v=3" alt="Copilote" style="width:24px;height:24px;border-radius:6px;display:block;flex-shrink:0;border:1px solid rgba(255,255,255,0.12);">
+        <span>Copilote</span>
         <span class="pulse-dot" id="liveDot"></span>
       </div>
       <div class="header-right">
@@ -1142,7 +1142,7 @@
   <!-- ONGLET 1 : ACTIONS (ACHETER / VENDRE / SANTE) -->
   <div id="tab-actions" class="section active">
     <div id="onboardingHero" class="hero-box" style="display:none;">
-      <div style="font-size:1.05rem;font-weight:800;margin-bottom:6px;">👋 Bienvenue sur Copilote H24</div>
+      <div style="font-size:1.05rem;font-weight:800;margin-bottom:6px;">👋 Bienvenue sur Copilote</div>
       <div class="sub">Choisissez votre profil investisseur puis ajoutez vos actions ou ETF en 1 clic : l'application vous indique clairement <strong>où investir</strong> et <strong>quoi alléger</strong> en direct.</div>
       <div class="profile-grid" id="heroProfileGrid"></div>
       <div class="btn-row" style="margin-bottom:0;">
@@ -1326,7 +1326,7 @@
     </div>
 
     <div class="disclaimer">
-      ℹ️ <strong>Avertissement :</strong> Copilote H24 est un outil d'aide à l'équilibrage mathématique basé sur vos paramètres de profil et les cours boursiers publics. Il ne constitue pas un conseil en investissement personnalisé au sens AMF.
+      ℹ️ <strong>Avertissement :</strong> Copilote est un outil d'aide à l'équilibrage mathématique basé sur vos paramètres de profil et les cours boursiers publics. Il ne constitue pas un conseil en investissement personnalisé au sens AMF.
     </div>
   </div>
 </div>
@@ -3010,7 +3010,7 @@
           var sEx = p.excerpt ? ("\n  " + (p.excerpt.length > 110 ? p.excerpt.slice(0, 107).trim() + "…" : p.excerpt)) : "";
           return "• " + p.title + " : " + p.body + sEx;
         });
-        sendSystemAlert("🔔 Copilote H24 • " + pending.length + " nouveautés", lines.join("\n"));
+        sendSystemAlert("🔔 Copilote • " + pending.length + " nouveautés", lines.join("\n"));
       }
     }
     if (changed) saveState();

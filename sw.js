@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v60";
+const CACHE_NAME = "copilote-bourse-pwa-v61";
 const STATE_CACHE_NAME = "copilote-sw-state";
 const STATE_CACHE_REQ = "./__copilote_sw_state__";
 const ASSETS = [
@@ -98,7 +98,7 @@ function checkNewsInBackground() {
           if (!hadSeed || pending.length === 0 || !self.registration || !self.registration.showNotification) return;
           var nTitle = pending.length === 1
             ? pending[0].title
-            : ("🔔 Copilote H24 • " + pending.length + " nouveautés");
+            : ("🔔 Copilote • " + pending.length + " nouveautés");
           var nBody = pending.length === 1
             ? (pending[0].body + (pending[0].excerpt ? ("\n" + pending[0].excerpt) : ""))
             : pending.slice(0, 4).map(function(p) {
