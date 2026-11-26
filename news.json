@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T07:58:11Z",
+  "updatedAt": "2026-11-26T08:56:34Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Thu, 26 Nov 2026 08:11:42 GMT",
+      "pubTs": 1795680702,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
+    {
       "id": "61f5e87790ee54fe",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -110,22 +121,11 @@
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "ZD Tech : Anthropic bat le record de Space X en Bourse avec 1 500 milliards de valorisation - ZDNET",
-      "excerpt": "Anthropic entre en Bourse jeudi 19 novembre à New York avec une levée record de 79,4 milliards de dollars, surpassant SpaceX. La start-up de Dario Amodei, valorisée à 1 500…",
+      "excerpt": "Le créateur de l'IA Claude a levé 81 milliards de dollars et pulvérisé le record de Space X avec une valorisation de 1 500 milliards. Mais l'action a chuté de 8,5 % sur le Nasdaq…",
       "source": "ZDNET",
       "pubDate": "Thu, 26 Nov 2026 06:30:25 GMT",
       "pubTs": 1795674625,
       "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNMXp4ZkRxTWdQZ0JLUVN1VWlXQk5ncXR4MjRvVXl1Nmo3QWJJUGJyTXdsQ2I4S3JkUndRRlpwWEZLLW1ud3ZZTWVxOTlkX2FPcFkxQURjWWRHTzFhX3hEX2w2WEJUOWh2X0JlYlQ0ZTVXZ3EtY2RQRzlsVm93eWcwSTdESTBGZDdmcUg0X2FkVkVUWktsdmNMRjNOQl9nVThKQ0djeGE2UmlOMEVyaVJSemJLUnFHWkFUN0dyQXVDMm1KWW1rTXBLcFBNWEE?oc=5"
-    },
-    {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
-      "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Thu, 26 Nov 2026 04:03:47 GMT",
-      "pubTs": 1795665827,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
       "id": "e074f21415e4cbe0",
@@ -154,22 +154,22 @@
       "theme": "Xiaomi",
       "tagCls": "b-green",
       "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones haut de gamme - Investing.com France",
-      "excerpt": "Selon l'Agence fédérale de l'automobile (KBA), les immatriculations de voitures électriques ont progressé de plus de 61% en juillet et représentent désormais près du tiers du marché…",
+      "excerpt": "",
       "source": "Investing.com France",
       "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
       "pubTs": 1795580820,
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
     },
     {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
+      "id": "58f55cd1316381cb",
+      "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
+      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
+      "source": "Saxo",
+      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
+      "pubTs": 1795510800,
+      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     }
   ],
   "notifiedIds": [
