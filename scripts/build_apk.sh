@@ -33,7 +33,7 @@ cat > "$WORK/AndroidManifest.xml" << EOF
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.copilote.h24"
     android:versionCode="$VERSION_CODE"
-    android:versionName="2.0">
+    android:versionName="2.1">
 
     <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -657,7 +657,7 @@ public class MainActivity extends Activity {
         s.setAllowUniversalAccessFromFileURLs(true);
         s.setAllowFileAccessFromFileURLs(true);
         s.setCacheMode(WebSettings.LOAD_NO_CACHE);
-        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/2.0");
+        s.setUserAgentString(s.getUserAgentString() + " CopiloteH24APK/2.1");
         webView.clearCache(true);
 
         webView.addJavascriptInterface(new AndroidBridge(), "CopiloteAndroid");
