@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-26T15:51:58Z",
+  "updatedAt": "2026-11-26T16:52:17Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "958c075c04a7b187",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Alors que Wall Street célèbre Thanksgiving, retour en grâce du Cac 40 au-dessus des 8.100 points - Investir Les Echos",
+      "excerpt": "Sans Wall Street et les secousses sur l'industrie technologique américaine, la vie est plus calme à la Bourse de Paris. Et, surtout, plus belle. Le Cac 40 s'est adjugé 1,61 %, pour…",
+      "source": "Investir Les Echos",
+      "pubDate": "Thu, 26 Nov 2026 16:42:54 GMT",
+      "pubTs": 1795711374,
+      "link": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPN3dhbjI1QkdMYTVhY01xSmMzNWhZR1EtR1VXUldVSmQ3aDFoazFvQ0NmVDFVbktBSzFvd25IUmg4MGpXb2UyOFE5TnVJcC1mc2lwUVc4TzlPVVRYaDRJc3NSNUVzZTF3bERSZjMxVnM4a2gwM3kzRFFWWjlTTlNzamltUTlDQ3MxdHNnb2R0NkhCS0dGWUtkeW1nSnFzTzhJR1Y2X1UxZ3YxdlhIdGt3ZFVVYlRzZDNUMllOTkRrMlR2djNKb29tS3JSbnQtWjFzNUx1MVM2V2pTODRVRUkxYWxndFNWa2ItLWZBR2hHNDAyNm55ZDZZaQ?oc=5"
+    },
+    {
       "id": "8d7a21857bb353e2",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -110,51 +121,29 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Bourses : l'Europe rebondit, Wall Street fermée - MoneyVox",
-      "excerpt": "Les Bourses mondiales évoluent largement dans le vert jeudi, dopés par les valeurs minières, l'industrie automobile ou les banques, particulièrement recherchées en Europe, dans une…",
+      "excerpt": "",
       "source": "MoneyVox",
       "pubDate": "Thu, 26 Nov 2026 14:00:47 GMT",
       "pubTs": 1795701647,
       "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOaEloTVN6S1NWcDh3SVk0YjJ2SlBUTGZVaGxFaEtRMWpaWk1veFdRTm9tWHhFaWo3eTFpYXpZWVdRUlAxYl9sb1hmQ0VmRHRodW9FT2ZjSWZWcXJfem1UYkJ2VVZKaC1BYjBmZG1NblVCWld0emdtQnkzR3J6SS1IS3gzTjFDa01FRG1CWGk3czhCMnhackE?oc=5"
     },
     {
-      "id": "2ca3b720b23607b3",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "La BCE était prête à relever ses taux en octobre, mais elle a reporté sa décision - compte-rendu - Boursier.com",
-      "excerpt": "FRANCFORT, 26 novembre (Reuters) - Les responsables de la Banque centrale européenne (BCE) étaient prêts à relever les taux d'intérêt en octobre, mais ils ont finalement décidé de…",
-      "source": "Boursier.com",
-      "pubDate": "Thu, 26 Nov 2026 13:27:14 GMT",
-      "pubTs": 1795699634,
-      "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPVnVkeGVqbW9wODUyaEtKdjlERGNTaHF6bkN3b3E3X2dwUUFlUXNOVk5tc2NXaEJDTmJJY1huSmRfX0ZCMmxTcHNEcy1yd2l3NFo2bENqWTlLQ2NycG9uTHN1dFBwQlU2YWROUEIzRkVMUnFGc25ZZ0xYaDF2ZEJZWTRQbEZhYU1ETjktQTNXMmhuazZDTXAtVzg3TFNkdmRQT2dtc0Q2ZWF0Vk9TRU5oa0R4MnV5b0phcWh1NTY3cncwRGRnWFZsRUVTeVBQQnB0c0NYV2ZBT29yZ2dPWDJZLVlIUQ?oc=5"
-    },
-    {
-      "id": "f4f07c8ebb8eb12f",
+      "id": "d8e22f0bd38e5542",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Elon Musk offre deux actions SpaceX à chaque enfant américain - Le Revenu",
-      "excerpt": "Transformer des dizaines de millions d'écoliers en actionnaires d'une armada de fusées : l'idée semblait sortie d'un roman de science-fiction avant de surgir sur les réseaux sociaux.",
-      "source": "Le Revenu",
-      "pubDate": "Thu, 26 Nov 2026 09:48:00 GMT",
-      "pubTs": 1795686480,
-      "link": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxNb1R2bW1uRWNHZnRXU2pfOVJ2Q04yYm1mdkZ0QW1MSUlLdXYzekNlLTRBZGJnQWZEaENxMW4teGltdW1nNmFLMm90VzZybnNOUThoSVpEbFNuUXFEa0Fxa05xbjRweHF2Wlc0U1hrQ0lmY1gxczZHa0RoLVhnSmFjTmM4Sk5HdEFYZGp0TGdUNHNjdHBHTXhPLXlOa1QxSG5QQjFTSGp5cmdFN3VCUWYtdlN1Wks4dF8wMkhQVnRNX296MDBRcldKN216Q0EwUkVtNHM1Yzc2UWFFZDVDdTE2UVVrNmlVTEFMOWln?oc=5"
-    },
-    {
-      "id": "e84d66f216e8030f",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia : «le retour de Jensen Huang rassure la Bourse, mais ne règle rien sur le fond», que surveiller - Capital.fr",
-      "excerpt": "Le géant des puces nécessaires à l'intelligence artificielle Nvidia a annoncé lundi 23 novembre avoir réintégré Jensen Huang à son poste de directeur général, moins de deux semaines…",
-      "source": "Capital.fr",
-      "pubDate": "Thu, 26 Nov 2026 06:00:00 GMT",
-      "pubTs": 1795672800,
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOS3Q4YjZrMy1PSmFlUmQ1WWdZNDNHbWFIOGhLWXVaMHZYbVUxbEpsc1dzOVRIa24tYVJkcDlrbUdZOExfOGxSM0xnbUVCYjlOMldjQWx5d3VoaXZpS0hBbTh6OFJGSm9tTUtGeUgwRjNOTDhBaGo4SlVmSlNrY0FiSGdGSC0wMWJfMWN2OHd6VjNzUXNSUUFkVll5VDROUjlrekY3ZWE4N1JxV0UtZkM5ZVNaYklleUdLeXBqNU9NdFBPeEluaWFDcWNLZVlwR01HNGpfRlVOeU1Rb2Q0TVlaQg?oc=5"
+      "title": "Un cadeau à 18 milliards de dollars : Elon Musk s'engage à offrir deux actions SpaceX à chaque enfant américain - L'Indépendant",
+      "excerpt": "Elon Musk annonce que chaque enfant américain recevra deux actions SpaceX, l'une offerte par l'entreprise, l'autre par son patron. Un geste à plusieurs milliards de dollars, dont le…",
+      "source": "L'Indépendant",
+      "pubDate": "Thu, 26 Nov 2026 13:10:00 GMT",
+      "pubTs": 1795698600,
+      "link": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxQcGRkRFBKd3FSanl6aU44RmxRNExsRDFZMnZ5NWlmaXRscHVyZUZ2MUw0OXBzX0FaZkl2OF9jc3pVOC1UWUZGM0VVam16Q1RuTkk2a2VFbTJlRnk4bmlVamtkZVp3NFlHbExaTWliRURRSVYzTmN0UGJJSGJtMGVlX3R0TDJpY3JWZm9DYWVINXBxSzVWZFRDWWl6T3NkWk5iNHF1NWRzY1ZWTERwT3RVQV80RC1hNjkwSzJVbFloTnNmWnZOTno0cllBMlRDWmNZdnRxX0h6Z1hFc0thVEN0WXg4ajZISFVEalNDZFpBN0R0dw?oc=5"
     },
     {
       "id": "c320de58bef2dfe4",
       "theme": "Siemens Energy",
       "tagCls": "b-purple",
       "title": "Siemens Energy India Limited publie ses résultats pour le quatrième trimestre clos le 30 septembre 2026 - Zonebourse",
-      "excerpt": "Le conseil d’administration de Siemens Energy India Limited, réuni le 25 novembre 2026, a recommandé un dividende de 12 roupies indiennes par action ordinaire d’une valeur nominale de…",
+      "excerpt": "Siemens Energy India Limited a publié ses résultats pour le quatrième trimestre clos le 30 septembre 2026. Sur le trimestre, l’entreprise a enregistré des ventes de 34 526 millions…",
       "source": "Zonebourse",
       "pubDate": "Wed, 25 Nov 2026 16:05:26 GMT",
       "pubTs": 1795622726,
@@ -170,10 +159,20 @@
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
+    },
+    {
+      "id": "e62a9fb8b84862e4",
+      "theme": "AMD, NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Why Does AMD Trade at 30x When Nvidia Is at 10x Forward Earnings? AMD’s China Exposure Is Bigger - TIKR.com",
+      "excerpt": "Key TakeawaysNvidia stock jumped 31% today after its board reinstated Jensen Huang as CEO, lifting its forward P/E off a three-year low of 8. 7x.",
+      "source": "TIKR.com",
+      "pubDate": "Mon, 23 Nov 2026 20:38:07 GMT",
+      "pubTs": 1795466287,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPMEJiTHFLNmdNU3FDVlJZRVB2R2oyNnpQVmtGakY3di03SXhYV1JDelMtOHI2UTFnci1nQzZoQXJ5dWZnRXFCOVo4aERac3h3eVVEUjZHQXZCRG41LUplVjQ5NGNhdGRodTI4NlRLYXg1NVdIZ2U2THBTc2pjUzV1MTQ3NlZRdm02aDBYVmpCNlk5QkwyM2FreHNVSkNweGh4a1QzWERZMUpQdDA4QTJSdTkySDNmRGtjd3VuXzI3VFpBUQ?oc=5"
     }
   ],
   "notifiedIds": [
-    "c8bb9bfa2a432f4d",
     "a51e324f99253be9",
     "9dc6a374c7a33f4b",
     "9a3ac680fbd3a2ed",
@@ -322,6 +321,7 @@
     "53714ebdce64bf41",
     "2ca3b720b23607b3",
     "f4f07c8ebb8eb12f",
-    "e84d66f216e8030f"
+    "e84d66f216e8030f",
+    "958c075c04a7b187"
   ]
 }
