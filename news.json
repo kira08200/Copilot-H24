@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T06:40:35Z",
+  "updatedAt": "2026-11-27T08:04:11Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,15 +95,26 @@
   "majorMoves": [],
   "items": [
     {
-      "id": "ffbcececf7bc3144",
-      "theme": "NVIDIA",
+      "id": "0c37572a91f5190c",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street prépare son retour après Thanksgiving, S&P sa note sur la dette de la France, Pékin sort les grands moyens pour réveiller sa Bourse - Investir Les Echos",
+      "excerpt": "La France gardera-t-elle son « A+ » et sa perspective stable chez S&P ? L'agence se prononce ce soir. Les investisseurs américains reviennent de Thanksgiving et les futures…",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 27 Nov 2026 07:37:20 GMT",
+      "pubTs": 1795765040,
+      "link": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOcHg0TUh4QVZ6MDU4VERoTFctbEVVdGR6RU93TjdNWnhwWEh1UThISmFCeXhwNUdGUlRQaGpxcFJGWDQ4N3k1eDE3OUIzcTYtd210ZEZmcm9Cc3BTQU1rbjlTR2gtMEEzVW1yam9HVmZ3enZwY1lXdm42TXowd3dhMFptVDZKQ1FuM2k5cElJaThKRTNiNHRabE45NThJd0dsOFNqWmpNZmRpdTQtYTNJMnBlUDZsaHNGbVlXQW8wT2RVZ3RyTmlqeFgzb3ZzMXJUYnhUVjV3NXByUmMySlgxZUZWVVRUTVk0X2ZfczRpT0NUNnpHT19ybzNVMG1vZnViTVFva01DVFBXckJUTV9EQ3ZCd0o0RXcwWVZ2d2VueFQxVmtXMzhkUVpQXzBPYXBOdm5MZEtn?oc=5"
+    },
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
       "tagCls": "b-purple",
-      "title": "Nvidia illustre les chiffres de ses pertes - Investing.com France",
-      "excerpt": "",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 27 Nov 2026 04:14:00 GMT",
-      "pubTs": 1795752840,
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Fri, 27 Nov 2026 05:34:12 GMT",
+      "pubTs": 1795757652,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
     },
     {
       "id": "1287f49aea28b342",
@@ -115,17 +126,6 @@
       "pubDate": "Fri, 27 Nov 2026 01:23:20 GMT",
       "pubTs": 1795742600,
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOeHIxTHpsQlNxdjd3eWUzaTk2d21hSHJFa2wwTDdDWXpIZ2RkZDZ4S3VoZkFXbkk3eWVXQ3hISEJ6MHhIb2djY0dnc0ZhdW4wUnc5QU1TclRINFEwM3dYTTBidWplZTFZRkpLZ2hIUktoN0RhYmxTd0s2U2ptNmRUczZ4YUcwR19JdGEwNzRUMjhkWnhOZ2tIWTl2XzcyVUhPNDZnZFlLbmd4cGRoTUVod3hUb01KdGVrZkJwbzMyLUdycEtkSnc?oc=5"
-    },
-    {
-      "id": "834a049f934fd862",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Breaking: Japan’s Tokyo CPI inflation climbs 2.8% in November - tmgm.com",
-      "excerpt": "The headline Tokyo Consumer Price Index (CPI) for November rose 2.8% YoY as compared to 2.8% in the previous month, the Statistics Bureau of Japan showed on Friday.",
-      "source": "tmgm.com",
-      "pubDate": "Fri, 27 Nov 2026 00:21:14 GMT",
-      "pubTs": 1795738874,
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdmV5dWEzVUlrbDZvNDlBRTU0dml4U2NEWFhmcmF5ZnlqbnNIMjRfR2ZZMmFwZHZRVkp1SVBZVG5xZk14WEFBTi0wQWxoOTMzazkyVTNtbC0yemFib2FHMkVvVmJ0NzVZTUMxVWc5cnJDTnhmeXc0elZFM0d6YWhMWWNtaUlEUXltbGhrMXF3R3lMdXFPWFp4ODZiem12RjZWN3NneVViNlh4WUlBcklMNjJ4NzEySG9DeWRKR1N1cXE?oc=5"
     },
     {
       "id": "10fd15edeb013725",
@@ -150,30 +150,29 @@
       "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQW5UakhJWG9aUk1kRVhvM1VSVVAwamVwZ2NyOTFqVlZkelMxRkFQTF9oUkNMbzdpSmxhaVRnTEFKOFgyR3FyNlRNMm1XSm1CbEhOdzNXSmd4U1BzX3NjRTZqMjR5OVotZW42cUJDTU5tZ1YzaGcwM3prYWxncE1BaUVINUdONG1iZ2Qyb1Jwa2VTSHFLYi15Z2FGM1NMM2lOa2Vj?oc=5"
     },
     {
+      "id": "05c2b280ff66366b",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
+      "excerpt": "",
+      "source": "TradingView",
+      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
+      "pubTs": 1795629796,
+      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
+    },
+    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
       "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir plus de 100 millions de dollars aux Etats-Unis afin d'y accélérer sa croissance. Cette…",
+      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
       "source": "Investir Les Echos",
       "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
       "pubTs": 1795542420,
       "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
-    },
-    {
-      "id": "58f55cd1316381cb",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Les montagnes russes des IPO : ce que l'histoire nous apprend - Saxo",
-      "excerpt": "L'inquiétude suscitée par un incident dans un laboratoire de peste en Russie fait les gros titres dans le monde entier. Des experts allemands de la peste expliquent à Euronews ce…",
-      "source": "Saxo",
-      "pubDate": "Tue, 24 Nov 2026 09:00:00 GMT",
-      "pubTs": 1795510800,
-      "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOdDRETnRaT29oZFNYQWF4WDVjazRHY2VWQS04WFkwWDRDSjE2TXlxQXcwTzBnWjRNS24xcTgydDlyWkpndm90Rkl5VWpZV0lsQXJBNUFkLVpCbDBDQTBhcUxRaWpVSlpFVFN1NXNhbWhRSlJ4aUV1Qm1fQm5COXRlaTNKUWFqdHM?oc=5"
     }
   ],
   "notifiedIds": [
-    "35ce6a76b9d58ace",
     "9d44e26fa4d77c63",
     "4f59efab9c4e6fcb",
     "2528de4cba3dfaae",
@@ -322,6 +321,7 @@
     "1287f49aea28b342",
     "e7efcc7170d8660b",
     "ffbcececf7bc3144",
-    "3b325f9f140e82c6"
+    "3b325f9f140e82c6",
+    "0c37572a91f5190c"
   ]
 }
