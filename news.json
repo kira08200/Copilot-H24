@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T11:56:42Z",
+  "updatedAt": "2026-11-27T12:57:36Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -8,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 55
+      "daysLeft": 54
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -17,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 60
+      "daysLeft": 59
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -26,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 67
+      "daysLeft": 66
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -35,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 67
+      "daysLeft": 66
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -44,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -53,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 69
+      "daysLeft": 68
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 69
+      "daysLeft": 68
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -71,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -80,7 +80,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 76
+      "daysLeft": 75
     },
     {
       "id": "earn_NYSE:KO_20270216",
@@ -89,39 +89,28 @@
       "weight": "0,1 %",
       "timestamp": 1802779200,
       "dateStr": "16/02/2027",
-      "daysLeft": 81
+      "daysLeft": 80
     }
   ],
   "majorMoves": [],
   "items": [
     {
-      "id": "e089c382d4fa8979",
+      "id": "1fea5b6f91191a1f",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Anthropic clôture sous son prix d’introduction en Bourse, un signal inquiétant pour les start-up d’IA - BlogNT",
-      "excerpt": "L’action Anthropic a clôturé à environ 81,90 dollars mardi, sous son prix d’introduction de 83 dollars. Analystes, causes et analyse.",
-      "source": "BlogNT",
-      "pubDate": "Fri, 27 Nov 2026 10:45:00 GMT",
-      "pubTs": 1795776300,
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPY3hiX25ZOU51MnkweHU5SEFDZmhlRGlrUVdLSE9TY1hISlg1MEtkZnVneXBqbzd3VzhubmJyN3VzWE50OVlJcDV3ZEMxazFCYk9mbmxHUFM0WkhjakhXZE14LXhNOEVfZzZrU3RqbFdmaGUxNDhPLXhrRVBZYzVlTEhuRnNQbVRVVE5xM2xSbnVoQQ?oc=5"
-    },
-    {
-      "id": "fd54e36a26003909",
-      "theme": "Apple, Amazon",
-      "tagCls": "b-blue",
-      "title": "Black Friday Apple : 160€ de moins sur le Mac mini M6 chez Amazon - Clubic.com",
-      "excerpt": "Le Mac mini M6 permet de profiter d’une configuration solide, adaptée au travail et à l’utilisation des IA, le tout dans un boîtier très compact. Amazon le propose à 889 € pour le…",
-      "source": "Clubic.com",
-      "pubDate": "Fri, 27 Nov 2026 10:33:00 GMT",
-      "pubTs": 1795775580,
-      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZDVUSC16RmFWVkFmY1ZQbF9OUXhGRm44a2pRWDN2eGlIN1ZQbFI2UE5KdGlWNm05T2o1Mmc0ZWh3SE1hSHBtQUFpUlRsZUpELVUwcHNnNEVNZ2YzOVduNV9uSDJSUHZZNFR4eFJoajBqX2ZRSkU1cGw0eEZzbDFTaDZQRDVwWU9USDA4MF96bXY3Tzk0aXExYUxobWxqRk9fS3V1MEMzNFBKR2REVXBmRVFqdkN0VGcxTkowQW56VE9RcWJaZFFFYW56MURmV3RvcDFpY1Vtd3FMY0FDNnVRQjRDalIzUQ?oc=5"
+      "title": "« Anthropalypse financière » : les salariés d’Anthropic vont bien dépenser leur fortune de 470 milliards de dollars, mais pas comme tout le monde - Challenges",
+      "excerpt": "",
+      "source": "Challenges",
+      "pubDate": "Fri, 27 Nov 2026 12:30:00 GMT",
+      "pubTs": 1795782600,
+      "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNTXpJcTNlUlNIWXF4YnVFNnZDTXlrTzFkRWN3a0dkV0lnV3ROX1c4cjkxZ21mWEE1VHRncWY0YzNwSDl3Z29WbERXVTF4VzRXekJfSU80TzFOcWVFcS1tQ0VGYmRDN3NhSF9sRHBfOGZDeVlUbXFkanJGODAyMTRLSkxkelZsd3FmdDc0RnlRS0FRSkZtZk9nSUVLODM4cEtfbHFGYUxHeE03UEN4V2VwX3pXdVRReThKTTEzUFpFS2VKN2xXa0ZhdkFMUTNMQ2MwNnVKWGRscDhtMGVGRTllVUJXcWNzZUpUbXdoUGgxMUc4Yk1VbGd4ZGRlb2d6MFBFQ1lNSFluWDBRdEJ3TzRHX0xuSG9vODJOSFRMWVBtMjVaUQ?oc=5"
     },
     {
       "id": "a37509be64e5e2e5",
       "theme": "Microsoft",
       "tagCls": "b-blue",
       "title": "Microsoft annonce Agent 365 pour gérer les agents IA tiers - Brief IA",
-      "excerpt": "Analyse stratégique du Microsoft Ignite 2026 : comment les agents IA et Microsoft IQ transforment la gouvernance IT et la productivité en entreprise.",
+      "excerpt": "",
       "source": "Brief IA",
       "pubDate": "Fri, 27 Nov 2026 10:15:15 GMT",
       "pubTs": 1795774515,
@@ -139,6 +128,17 @@
       "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOFljRmlNYWY3MmpoUTRfdThwem91VnlRaWs4V05TbEZEdmQ3NFQ5RHItcTFnS2NjRGVoU1dWUnRPNDZhLXk0U01vMUFJc1pNdEU0Q3pCcXVERnR6aVdZZmJmOFh0VGhYU2YwR1Z5Q1NNdFlQNkRJUVdOMHlQNGlOamc2aHlHMFZ6cHBtOHpUM0hEdmhXR1RjNURlYWl5LVlsV3dSNXNYNjJHRW1LOWRMZExCUQ?oc=5"
     },
     {
+      "id": "479391475e74cad7",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "L'inflation ralentit à 2,9 % sur un an en novembre, selon l'Insee - CNews",
+      "excerpt": "L'inflation a ralenti à 2,9 % sur un an en novembre, après 3,4 % en octobre, selon les chiffres provisoires publiés vendredi par l'Insee.L'inflation…",
+      "source": "CNews",
+      "pubDate": "Fri, 27 Nov 2026 08:11:06 GMT",
+      "pubTs": 1795767066,
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTC02Y2RDemVPOTJ4U0RzOWU5RGZLWTN0VFFuYTZqVkdVRjA2TDRuclQyMzVhZmVuRkZfd3d1cEttYXR1dGhmam45NnVpdHFfS0xRODNlMm1melZNeHZCZDI1cEFURC1xcGJ4RGJBa05DRzZrUlU1aG9xaXdMbTVDMUp4bUJWZk1sd010ZmM0cktKMFhBSVE4d1RhMk8wRkxRbVQw0gGoAUFVX3lxTE9RbUdCLXRmeFhXQ2ZRdnFlZ2tSSnNPLUZBaEx6dVRRRjVZZXd2ZFAwMkJzS2FmWUtkZWZTQmdEVGxjandab0NpUVpub0NWbThIcnp0ODBNZWdVbGdKQk1uLUhVYVJKRXUxam1IejNSNHN3UWNnR0dlbGM1NHl2Ukxad0hnZHBmZlZORXBOOXNpN1F1czluR2JJZi1sNTVxU3VJOTdNaFJWVw?oc=5"
+    },
+    {
       "id": "ffbcececf7bc3144",
       "theme": "NVIDIA",
       "tagCls": "b-purple",
@@ -150,15 +150,15 @@
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
     },
     {
-      "id": "834a049f934fd862",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Breaking: Japan’s Tokyo CPI inflation climbs 2.8% in November - tmgm.com",
-      "excerpt": "The headline Tokyo Consumer Price Index (CPI) for November rose 2.8% YoY as compared to 2.8% in the previous month, the Statistics Bureau of Japan showed on Friday.",
-      "source": "tmgm.com",
-      "pubDate": "Fri, 27 Nov 2026 00:21:14 GMT",
-      "pubTs": 1795738874,
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdmV5dWEzVUlrbDZvNDlBRTU0dml4U2NEWFhmcmF5ZnlqbnNIMjRfR2ZZMmFwZHZRVkp1SVBZVG5xZk14WEFBTi0wQWxoOTMzazkyVTNtbC0yemFib2FHMkVvVmJ0NzVZTUMxVWc5cnJDTnhmeXc0elZFM0d6YWhMWWNtaUlEUXltbGhrMXF3R3lMdXFPWFp4ODZiem12RjZWN3NneVViNlh4WUlBcklMNjJ4NzEySG9DeWRKR1N1cXE?oc=5"
+      "id": "7d9a7c44bbb25404",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones haut de gamme - Investing.com France",
+      "excerpt": "Selon l'Agence fédérale de l'automobile (KBA), les immatriculations de voitures électriques ont progressé de plus de 61% en juillet et représentent désormais près du tiers du marché…",
+      "source": "Investing.com France",
+      "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
+      "pubTs": 1795580820,
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
@@ -173,8 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "move_jump_NASDAQ:QCOM_20261123",
-    "e603a91a1e9c791c",
     "move_jump_NASDAQ:AMD_20261123",
     "move_jump_XETR:ENR_20261123",
     "60288b4d603df5db",
@@ -322,6 +320,8 @@
     "ec59c0a6347ccc19",
     "e089c382d4fa8979",
     "fd54e36a26003909",
-    "a37509be64e5e2e5"
+    "a37509be64e5e2e5",
+    "1fea5b6f91191a1f",
+    "479391475e74cad7"
   ]
 }
