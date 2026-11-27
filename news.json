@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T18:13:43Z",
+  "updatedAt": "2026-11-27T19:11:36Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "4983955e9202d767",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street : les hedge funds réduisent le risque et réorientent leurs paris sur l’IA - Le Revenu",
+      "excerpt": "Les hedge funds ont augmenté leurs paris à la baisse sur les actions liées à l'intelligence artificielle (IA) en juillet, selon un rapport publié mercredi par la plateforme de…",
+      "source": "Le Revenu",
+      "pubDate": "Fri, 27 Nov 2026 17:43:00 GMT",
+      "pubTs": 1795801380,
+      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdXJTa2hodE5Kam9uTmhJdGQ0S2s4dUJXTDlwdmd5RDRFMVE4Z2N4NWgtVXJWYzVNczRwTWZVNDlrWmdoZ1hlY01lWnRjV1FaZ1JER0ZmSjFTUXo1eXBmZjJQTldSLWVoaWxzT21yVGhyMFZjMHlyTElKVkVIdVRtSzh6bjk4cDNuSW1GLWtxTjFzd1l2LXVJdl9nZHJTTUtvc0QwYW1pUnVNYU1YV2hSeUFmYU5vSkduZEFlN0JCRXczOWh3OGNDVXlGaW4zWmJIaXF2TA?oc=5"
+    },
+    {
       "id": "eb487511f4aa59ee",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -104,17 +115,6 @@
       "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
       "pubTs": 1795799790,
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
-    },
-    {
-      "id": "d7396a68741c09eb",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Wall Street : le S&P 500 peut-il rebondir de 45 % après sa correction ? - Le Revenu",
-      "excerpt": "par Ragini Mathur, Avinash P et Niket Nishant Les principaux indices de Wall Street s'apprêtaient à ouvrir en hausse lundi, les investisseurs se tournant à nouveau vers les valeurs…",
-      "source": "Le Revenu",
-      "pubDate": "Fri, 27 Nov 2026 17:10:00 GMT",
-      "pubTs": 1795799400,
-      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQeVUtZWFidVVJdHlKaW0xNTNNdkxDTHhGdGktMWwwZUlxRHQwU01qdkQtME5pOFJOSHExX1BlMy15aHc5TmNaWFB6ZTlRVHY0Zl9GcE82UHZKN1gxNG5Sc1pycDRjV0VpUEtTbmUzSVFOUWZ3OG80X2hwM3NKd2hIM011aFllY1I2NG1VRmV5ZERhUnRMamZvRXdtczRpT1lmQ2xoZzN1VC1aLUFjWmtHRzJFX0cyQVUtNTJBSg?oc=5"
     },
     {
       "id": "7004557d8223bc83",
@@ -143,7 +143,7 @@
       "theme": "NVIDIA",
       "tagCls": "b-amber",
       "title": "Wall Street rebondit à l'ouverture, Nvidia hésite - Les Echos",
-      "excerpt": "27 novembre (Reuters) - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les…",
+      "excerpt": "27 novembre - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les titres liés…",
       "source": "Les Echos",
       "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
       "pubTs": 1795791164,
@@ -173,7 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "7813f16b38341fe0",
     "e62a9fb8b84862e4",
     "83dc6300c4b49f2a",
     "493f08d43f2d0342",
@@ -322,6 +321,7 @@
     "40463622bc6e93cb",
     "f4b3649e74d53b20",
     "eb487511f4aa59ee",
-    "d7396a68741c09eb"
+    "d7396a68741c09eb",
+    "4983955e9202d767"
   ]
 }
