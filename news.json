@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T14:15:45Z",
+  "updatedAt": "2026-11-27T15:14:24Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -99,10 +99,10 @@
       "theme": "Microsoft",
       "tagCls": "b-blue",
       "title": "Votre code PIN Windows 11 à quatre chiffres ne suffit plus, Microsoft le reconnaît lui-même - PhonAndroid",
-      "excerpt": "Avec la build 26340.9882, une nouvelle version préliminaire de Windows 11 disponible sur le canal Expérimental du programme Windows Insider, Microsoft supprime cette attente : le…",
+      "excerpt": "Microsoft revoit sa recommandation sur la longueur du code PIN de Windows après la découverte de failles dans plusieurs puces de PC.",
       "source": "PhonAndroid",
-      "pubDate": "Fri, 27 Nov 2026 14:12:14 GMT",
-      "pubTs": 1795788734,
+      "pubDate": "Fri, 27 Nov 2026 14:24:24 GMT",
+      "pubTs": 1795789464,
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
     },
     {
@@ -154,7 +154,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "USA: Wall Street attendue en forte hausse, portée par les technologiques - ABC Bourse",
-      "excerpt": "La Bourse de New York devrait ouvrir en fortehausse vendredi, grâce à un rebond des valeurs technologiquesà l'issue d'une semai - 27/11/2026…",
+      "excerpt": "(Correction: les ventes de détail aux Etats-Unis pour le moisd'octobre ont été publiées le 17 novembre, contrairementà ce - 27/11/2026…",
       "source": "ABC Bourse",
       "pubDate": "Fri, 27 Nov 2026 12:19:21 GMT",
       "pubTs": 1795781961,
