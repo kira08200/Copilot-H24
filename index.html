@@ -2393,21 +2393,33 @@
     document.getElementById("stackedBar").innerHTML = barHtml;
     document.getElementById("pocketsList").innerHTML = pListHtml;
 
-    // Garde-fou Risque réel : Bêta pondéré & Exposition US/USD
+    // Garde-fou Risque réel : Volatilité (Bêta) + infobulle pédagogique & Exposition US/USD
     var riskEl = document.getElementById("riskMetaLine");
     if (riskEl) {
       if (tot.activeCnt > 0 && tot.totalVal > 0) {
         var bVal = tot.portBeta || 1.0;
         var bStr = bVal.toFixed(2).replace(".", ",");
-        var drop10 = (bVal * 10).toFixed(1).replace(".", ",");
+        var move10 = (bVal * 10).toFixed(1).replace(".", ",");
+        var bLevel = bVal < 0.85 ? "Calme" : (bVal <= 1.15 ? "Équilibrée" : (bVal <= 1.45 ? "Dynamique" : "Élevée"));
         var highBeta = (state.profile === "prudent" && bVal > 1.10) || (state.profile === "equilibre" && bVal > 1.35);
-        var bCol = highBeta ? "var(--amber)" : "var(--text)";
+        var bCol = highBeta ? "var(--amber)" : (bVal <= 1.15 ? "var(--green)" : "var(--text)");
         var usPct = Math.round(tot.usExposurePct || 0);
         var usCol = usPct >= 70 ? "var(--amber)" : "var(--text)";
+        var openTip = !!state.betaInfoOpen;
         riskEl.innerHTML =
-          "⚖️ <strong>Risque (Bêta) : <span style='color:" + bCol + ";'>" + bStr + "×</span></strong> <span style='opacity:0.85;'>(si marché -10 % → ~-" + drop10 + " %)</span>" +
-          "<br>🇺🇸 <strong>Expo US/USD : <span style='color:" + usCol + ";'>~" + usPct + " %</span></strong>" +
-          (usPct >= 70 ? " <span style='color:var(--amber);'>(concentration dollar élevée)</span>" : "");
+          "<div style='display:flex;align-items:center;justify-content:space-between;gap:6px;'>" +
+            "<span>⚖️ <strong>Sensibilité marché : <span style='color:" + bCol + ";'>" + bLevel + " (" + bStr + "×)</span></strong></span>" +
+            "<button type='button' id='btnBetaInfo' aria-label='Explication' style='width:20px;height:20px;border-radius:50%;border:1px solid rgba(148,163,184,0.45);background:rgba(59,130,246,0.14);color:#93c5fd;font-size:0.72rem;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;padding:0;'>?</button>" +
+          "</div>" +
+          "<div id='betaInfoBox' style='display:" + (openTip ? "block" : "none") + ";margin:6px 0;padding:7px 9px;border-radius:8px;background:rgba(11,15,23,0.72);border:1px solid rgba(59,130,246,0.28);color:#cbd5e1;font-size:0.71rem;line-height:1.45;'>" +
+            "<strong>C'est quoi (" + bStr + "×) ?</strong> C'est le « niveau de secousse » (Bêta) par rapport à la bourse globale (1,00×) :<br>" +
+            "• <strong>&lt; 1×</strong> : plus calme que le marché (défensif)<br>" +
+            "• <strong>= 1×</strong> : bouge comme le marché<br>" +
+            "• <strong>&gt; 1×</strong> : amplifie les hausses comme les baisses<br>" +
+            "👉 Avec <strong>" + bStr + "×</strong>, si la bourse varie de <strong>±10 %</strong>, votre portefeuille varie d'environ <strong>±" + move10 + " %</strong>." +
+          "</div>" +
+          "<div style='margin-top:2px;'>🇺🇸 <strong>Expo US/USD : <span style='color:" + usCol + ";'>~" + usPct + " %</span></strong>" +
+          (usPct >= 70 ? " <span style='color:var(--amber);'>(concentration dollar élevée)</span>" : "") + "</div>";
         riskEl.style.display = "block";
       } else {
         riskEl.style.display = "none";
@@ -4215,6 +4227,12 @@
     }
     var rChip = e.target.closest("#chartRangeRow .range-chip");
     if (rChip) { state.chartRange = rChip.getAttribute("data-range") || "30"; saveState(); renderWealthAndDividends(computeTotals()); return; }
+    if (e.target.closest("#btnBetaInfo")) {
+      state.betaInfoOpen = !state.betaInfoOpen;
+      var tip = document.getElementById("betaInfoBox");
+      if (tip) tip.style.display = state.betaInfoOpen ? "block" : "none";
+      return;
+    }
     if (e.target.closest("#btnHeroAdd") || e.target.closest("#btnAddTop")) { openAddModal(); return; }
     if (e.target.closest("#btnHeroImport")) { openIoModal("import"); return; }
     if (e.target.closest("#btnResetEmpty")) {

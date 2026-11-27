@@ -1,4 +1,4 @@
-const CACHE_NAME = "copilote-bourse-pwa-v64";
+const CACHE_NAME = "copilote-bourse-pwa-v65";
 const STATE_CACHE_NAME = "copilote-sw-state";
 const USER_DATA_CACHE = "copilote-user-data-v1";
 const STATE_CACHE_REQ = "./__copilote_sw_state__";
