@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T16:19:30Z",
+  "updatedAt": "2026-11-27T17:26:54Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,28 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "eb487511f4aa59ee",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
+      "excerpt": "Zurich - La Bourse suisse a fini la séance de vendredi dans le vert, parvenant à raccrocher temporairement la barre des 14'900 points grâce au rebond de Wall Street. Alors que les…",
+      "source": "Zonebourse",
+      "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
+      "pubTs": 1795799790,
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
+    },
+    {
+      "id": "d7396a68741c09eb",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Wall Street : le S&P 500 peut-il rebondir de 45 % après sa correction ? - Le Revenu",
+      "excerpt": "par Ragini Mathur, Avinash P et Niket Nishant Les principaux indices de Wall Street s'apprêtaient à ouvrir en hausse lundi, les investisseurs se tournant à nouveau vers les valeurs…",
+      "source": "Le Revenu",
+      "pubDate": "Fri, 27 Nov 2026 17:10:00 GMT",
+      "pubTs": 1795799400,
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQeVUtZWFidVVJdHlKaW0xNTNNdkxDTHhGdGktMWwwZUlxRHQwU01qdkQtME5pOFJOSHExX1BlMy15aHc5TmNaWFB6ZTlRVHY0Zl9GcE82UHZKN1gxNG5Sc1pycDRjV0VpUEtTbmUzSVFOUWZ3OG80X2hwM3NKd2hIM011aFllY1I2NG1VRmV5ZERhUnRMamZvRXdtczRpT1lmQ2xoZzN1VC1aLUFjWmtHRzJFX0cyQVUtNTJBSg?oc=5"
+    },
+    {
       "id": "7004557d8223bc83",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
@@ -106,22 +128,11 @@
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNR0lSYWhRZXZHQzl2LWNyazJ4X1NRdUlvYzV6UGJwa1JNaVN3dm90MmMzRVZFS1QyNDdhRzFfbWhjNlVyb0FUZ19ncnM4clZDWmtFenlnTm5ZR2IyUWY5VExmZXEzTzE3SDZYdXFZUnRDYTlrNlhJTU00bG1HaFJlMGpHVWhvaEM0VUczNFpseHVBVW4yWnhMUGlRbVd5RWx3aEFwQ3pYdG5Xa3NBOFQ2Um5Ta0Rvc3BaNW1rZ0hpajltU0VpNnc?oc=5"
     },
     {
-      "id": "c93052c45221908e",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Bourse: Wall Street ouvre en hausse pour terminer une semaine agitée - Les Affaires",
-      "excerpt": "La Bourse de New York a ouvert en nette progression vendredi, profitant de la bonne forme des valeurs technologiques comme les puces électroniques, à l'issue d'une semaine…",
-      "source": "Les Affaires",
-      "pubDate": "Fri, 27 Nov 2026 15:49:15 GMT",
-      "pubTs": 1795794555,
-      "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNLWV6RlBjVTlmRnBVcVVjdS0xcU92X0dnRmxoRjh3Y0g0TmZ5em9RZlZySjdVbzBNN3lVOU5iR0U5TUhJOFc2VHhaWS1SLWVwVlYtS1ZfS3Y5cDdYNkp4bWdPcnZrX1AtMTA4aUZXT2Z6RGZiek9KdkN2U05NNFoyajRDVkh4Tzl4VC1fYUllelVSczBNb0g5ZzFLZFBtcFU?oc=5"
-    },
-    {
       "id": "40463622bc6e93cb",
       "theme": "NVIDIA",
       "tagCls": "b-amber",
       "title": "Wall Street rebondit à l'ouverture, Nvidia hésite - Les Echos",
-      "excerpt": "27 novembre - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les titres liés…",
+      "excerpt": "27 novembre (Reuters) - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les…",
       "source": "Les Echos",
       "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
       "pubTs": 1795791164,
@@ -137,17 +148,6 @@
       "pubDate": "Fri, 27 Nov 2026 14:24:24 GMT",
       "pubTs": 1795789464,
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
-    },
-    {
-      "id": "74cb0142c7a8ff2d",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "PIB en recul, inflation qui ralentit, récession : ce que révèlent vraiment les derniers chiffres de l’économie française - Le Télégramme",
-      "excerpt": "Selon les chiffres publiés vendredi par l’Insee, le produit intérieur brut français a reculé de 0,2 % au troisième trimestre, après un léger repli au deuxième. Le pays est ainsi…",
-      "source": "Le Télégramme",
-      "pubDate": "Fri, 27 Nov 2026 13:25:55 GMT",
-      "pubTs": 1795785955,
-      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQQUlidnBQRFJORWpIcnFTQnNXSWg4eE9ySks5a3NwSTV5RFY1Wmp6N0dCTDlhUkhpVnRXMm1aMndpV1UxOVRTeElzOGs0WGwzcDZlcVhmRUx2WHZaNk54TmZ1Y0QzWkV0QV80RmVFanJXVjc2Q0ZPRTY1UkVBdlVIaFBLd1U5bmpudEl1MFVPc01nWW0wYk5SQUlvX2hwVWdXTjlENDFPUnF3WVNMdVlGeHVSdGVtblhiVlJWd1YwZ2dUa05JY0lDMk1nUjYxbTg4cmMwOVFvc3dDT2FubWhoZFFHNVdxUXdaSVdfSlZrUHlWV1FNSEpSbmEyRVVZNzhINEE?oc=5"
     },
     {
       "id": "b0eb128bc26fd3be",
@@ -173,8 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "fa3ffe13bc513ac8",
-    "fa9294ccb8b6f37c",
     "7813f16b38341fe0",
     "e62a9fb8b84862e4",
     "83dc6300c4b49f2a",
@@ -322,6 +320,8 @@
     "7004557d8223bc83",
     "c93052c45221908e",
     "40463622bc6e93cb",
-    "f4b3649e74d53b20"
+    "f4b3649e74d53b20",
+    "eb487511f4aa59ee",
+    "d7396a68741c09eb"
   ]
 }
