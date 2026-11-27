@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGlow" cx="38%" cy="30%" r="74%">
+      <stop offset="0%" stop-color="#141e30"/>
+      <stop offset="52%" stop-color="#0b0f18"/>
+      <stop offset="100%" stop-color="#07090d"/>
+    </radialGradient>
+    <radialGradient id="markAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.13"/>
+      <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#07090d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cGrad" x1="16%" y1="78%" x2="88%" y2="16%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="38%" stop-color="#14d09b"/>
+      <stop offset="72%" stop-color="#1ea7eb"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="dotGrad" x1="15%" y1="15%" x2="85%" y2="85%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="55%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <radialGradient id="dotHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.34"/>
+      <stop offset="62%" stop-color="#10b981" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bgGlow)"/>
+  <circle cx="250" cy="256" r="196" fill="url(#markAura)"/>
+  <circle cx="370.0" cy="256.0" r="58" fill="url(#dotHalo)"/>
+  <path d="M 386.00 106.00 L 258.00 106.00 A 150.00 150.00 0 1 0 364.07 362.07 L 317.40 315.40 A 84.00 84.00 0 1 1 305.37 186.63 Z" fill="url(#cGrad)"/>
+  <circle cx="370.0" cy="256.0" r="31.5" fill="url(#dotGrad)"/>
+</svg>
