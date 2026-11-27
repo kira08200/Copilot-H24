@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T17:26:54Z",
+  "updatedAt": "2026-11-27T18:13:43Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -99,7 +99,7 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
-      "excerpt": "Zurich - La Bourse suisse a fini la séance de vendredi dans le vert, parvenant à raccrocher temporairement la barre des 14'900 points grâce au rebond de Wall Street. Alors que les…",
+      "excerpt": "Le SMI a pris 0,42% à 14.879,90 points. Sur la semaine, il a progressé de 2,11%. L'indice SLI a gagné 0,43% à 2386,66 points et le SPI est monté de 0,43% à 20.894,62 points.",
       "source": "Zonebourse",
       "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
       "pubTs": 1795799790,
@@ -128,6 +128,17 @@
       "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNR0lSYWhRZXZHQzl2LWNyazJ4X1NRdUlvYzV6UGJwa1JNaVN3dm90MmMzRVZFS1QyNDdhRzFfbWhjNlVyb0FUZ19ncnM4clZDWmtFenlnTm5ZR2IyUWY5VExmZXEzTzE3SDZYdXFZUnRDYTlrNlhJTU00bG1HaFJlMGpHVWhvaEM0VUczNFpseHVBVW4yWnhMUGlRbVd5RWx3aEFwQ3pYdG5Xa3NBOFQ2Um5Ta0Rvc3BaNW1rZ0hpajltU0VpNnc?oc=5"
     },
     {
+      "id": "1dad80215b8db908",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Votre code PIN Windows 11 à quatre chiffres ne suffit plus, Microsoft le reconnaît lui-même - PhonAndroid",
+      "excerpt": "Microsoft revoit sa recommandation sur la longueur du code PIN de Windows après la découverte de failles dans plusieurs puces de PC.",
+      "source": "PhonAndroid",
+      "pubDate": "Fri, 27 Nov 2026 15:10:00 GMT",
+      "pubTs": 1795792200,
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
+    },
+    {
       "id": "40463622bc6e93cb",
       "theme": "NVIDIA",
       "tagCls": "b-amber",
@@ -137,17 +148,6 @@
       "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
       "pubTs": 1795791164,
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbUhBaUwxVW9EZkZxREd4VmwySExyOWhSSDdwR3BIVjVxajFBcjZxaFctREVuRHMzR05DSThNcWI2bnBaWmp5Vl95Wlp0M0I4cURmRFR0YzlHc1l0X0MxbG5EN285dWNqRHcwbjIzaDJZT1FYNTl5X0wxSjl2MFdvOUppVDB5OVZiTURNLTl6azZzSVdJb21HblRZc3E0eHpueDFYa3h4T3BpS1RwSHJNZHd3T3dRSlJYSGc?oc=5"
-    },
-    {
-      "id": "1dad80215b8db908",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Votre code PIN Windows 11 à quatre chiffres ne suffit plus, Microsoft le reconnaît lui-même - PhonAndroid",
-      "excerpt": "Microsoft revoit sa recommandation sur la longueur du code PIN de Windows après la découverte de failles dans plusieurs puces de PC.",
-      "source": "PhonAndroid",
-      "pubDate": "Fri, 27 Nov 2026 14:24:24 GMT",
-      "pubTs": 1795789464,
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
     },
     {
       "id": "b0eb128bc26fd3be",
