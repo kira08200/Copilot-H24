@@ -590,6 +590,44 @@
   .line-row:last-child { border-bottom: none; }
   .line-row:active { background: var(--card-alt); transform: scale(0.99); }
   .line-row.sold-line { opacity: 0.5; }
+  .asset-av {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    flex-shrink: 0;
+    position: relative;
+    user-select: none;
+  }
+  .asset-av.lg {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 0.68rem;
+  }
+  .asset-av.p-etf { background: var(--purple-bg); color: var(--purple); }
+  .asset-av.p-def { background: var(--green-bg); color: var(--green); }
+  .asset-av.p-growth { background: var(--blue-bg); color: var(--blue-soft); }
+  .asset-av.p-spec { background: var(--amber-bg); color: var(--amber); }
+  .av-dot {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid var(--card);
+    background: var(--blue);
+  }
+  .av-dot.d-green { background: var(--green); }
+  .av-dot.d-red { background: var(--red); }
+  .av-dot.d-amber { background: var(--amber); }
+  .av-dot.d-blue { background: var(--blue); }
   .line-left { min-width: 0; flex: 1; }
   .line-name-row {
     display: flex;
@@ -934,6 +972,7 @@
     border-radius: 99px;
     background: var(--border-strong);
     margin: 2px auto 14px;
+    cursor: grab;
   }
   @media (min-width: 640px) {
     .modal-backdrop { align-items: center; padding: 18px; }
@@ -1136,14 +1175,37 @@
   }
   .chart-svg-wrap {
     width: 100%;
-    height: 130px;
+    height: 132px;
     border-radius: 14px;
     background: var(--chart-bg);
     border: 1px solid var(--border);
     overflow: hidden;
     position: relative;
+    touch-action: none;
+    cursor: crosshair;
+    user-select: none;
+    -webkit-user-select: none;
   }
   .chart-svg-wrap svg { width: 100%; height: 100%; display: block; }
+  .chart-tip {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    background: var(--toast-bg);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 0.69rem;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 99px;
+    pointer-events: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.28);
+    opacity: 0;
+    transition: opacity 0.12s ease;
+    z-index: 3;
+  }
+  .chart-tip.show { opacity: 1; }
   .chart-meta {
     display: flex;
     justify-content: space-between;
@@ -1339,9 +1401,12 @@
   <div class="modal-box">
     <div class="sheet-handle"></div>
     <div class="detail-hero">
-      <div style="min-width:0;">
-        <div class="modal-title" id="detailTitle" style="margin-bottom:2px;">Valeur</div>
-        <div id="detailSub" style="font-size:0.74rem;color:var(--muted);font-weight:500;"></div>
+      <div style="display:flex;align-items:center;gap:11px;min-width:0;">
+        <div class="asset-av lg p-growth" id="detailAvatar"></div>
+        <div style="min-width:0;">
+          <div class="modal-title" id="detailTitle" style="margin-bottom:2px;">Valeur</div>
+          <div id="detailSub" style="font-size:0.74rem;color:var(--muted);font-weight:500;"></div>
+        </div>
       </div>
       <span class="badge b-blue" id="detailStatusBadge">Conserver</span>
     </div>
@@ -1585,7 +1650,7 @@
     <div class="card">
       <div class="card-head">
         <div class="card-title t-blue"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Sauvegarde &amp; Import</span></div>
-        <span class="badge b-blue">v3.0</span>
+        <span class="badge b-blue">v3.1</span>
       </div>
       <div class="btn-row">
         <button type="button" class="btn primary" id="btnExport"><svg class="ico ico-sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Sauvegarder</button>
@@ -1717,6 +1782,21 @@
 
   function svgIcon(name, cls) {
     return "<svg class='ico" + (cls ? (" " + cls) : "") + "' viewBox='0 0 24 24' aria-hidden='true'>" + (ICONS[name] || "") + "</svg>";
+  }
+
+  function haptic(ms) {
+    try { if (navigator.vibrate) navigator.vibrate(ms || 7); } catch (e) {}
+  }
+
+  function getAssetMonogram(p) {
+    var raw = String((p && p.tv) || "").split(":")[1] || "";
+    raw = raw.replace(/[^A-Za-z0-9]/g, "").toUpperCase();
+    if (/^[A-Z][A-Z0-9]{1,3}$/.test(raw)) return raw;
+    if (/^[A-Z]{4,}$/.test(raw)) return raw.slice(0, 4);
+    var cleanName = String((p && p.name) || "").replace(/\([^)]*\)/g, "").replace(/[^A-Za-z0-9\s]/g, "").trim();
+    var words = cleanName.split(/\s+/).filter(Boolean);
+    if (words.length >= 2) return (words[0].slice(0, 2) + words[1].slice(0, 1)).toUpperCase();
+    return (cleanName.slice(0, 3) || "ACT").toUpperCase();
   }
 
   function getCurrentTheme() {
@@ -2825,9 +2905,12 @@
         targetPills += "<span class='target-pill" + (hitS ? " hit-sell" : "") + "'>Vente ≥ " + fmtEur(lp.alertSell) + (hitS ? " ✓" : "") + "</span>";
       }
       pHtml += "<div class='line-row" + (lm.isSold ? " sold-line" : "") + "' data-lid='" + escHtml(lp.id) + "'>" +
+        "<div class='asset-av p-" + escHtml(lp.pocket || "growth") + "' title='" + escHtml(st.label) + "'>" +
+          escHtml(getAssetMonogram(lp)) +
+          "<span class='av-dot " + st.dot + "'></span>" +
+        "</div>" +
         "<div class='line-left'>" +
           "<div class='line-name-row'>" +
-            "<span class='status-dot " + st.dot + "' title='" + escHtml(st.label) + "'></span>" +
             "<span class='line-name'>" + escHtml(lp.name) + "</span>" +
             "<span class='acc-pill'>" + escHtml(lp.account) + "</span>" +
           "</div>" +
@@ -2872,6 +2955,11 @@
     var pocketNames = { etf: "ETF / Socle", def: "Défensif", growth: "Croissance", spec: "Spéculatif" };
     var qtyDisp = Number.isInteger(m.qty) ? String(m.qty) : m.qty.toFixed(4).replace(/\.?0+$/, "").replace(".", ",");
 
+    var avEl = document.getElementById("detailAvatar");
+    if (avEl) {
+      avEl.className = "asset-av lg p-" + (p.pocket || "growth");
+      avEl.innerHTML = escHtml(getAssetMonogram(p)) + "<span class='av-dot " + st.dot + "'></span>";
+    }
     document.getElementById("detailTitle").textContent = p.name;
     document.getElementById("detailSub").textContent = p.account + " • " + p.tv + " • " + qtyDisp + " parts";
     var badge = document.getElementById("detailStatusBadge");
@@ -3105,10 +3193,12 @@
     var isPos = dEur >= 0;
     var strokeCol = isPos ? "#10b981" : "#f43f5e";
 
+    var baseBadgeTxt = (isPos ? "+" : "") + fmtRoundEur(dEur) + " (" + fmtSignedPct(dPct, 1) + ")";
+    var baseBadgeCls = "badge " + (isPos ? "b-green" : "b-red");
     var badge = document.getElementById("chartDeltaBadge");
     if (badge) {
-      badge.textContent = (isPos ? "+" : "") + fmtRoundEur(dEur) + " (" + fmtSignedPct(dPct, 1) + ")";
-      badge.className = "badge " + (isPos ? "b-green" : "b-red");
+      badge.textContent = baseBadgeTxt;
+      badge.className = baseBadgeCls;
     }
 
     var minV = pts[0].v, maxV = pts[0].v;
@@ -3119,14 +3209,14 @@
     var padV = (maxV - minV) > 1 ? (maxV - minV) * 0.18 : Math.max(10, maxV * 0.02);
     var lo = Math.max(0, minV - padV), hi = maxV + padV;
     var span = (hi - lo) || 1;
-    var W = 340, H = 126, padX = 14, padTop = 14, padBot = 24;
+    var W = 340, H = 126, padX = 14, padTop = 18, padBot = 24;
     var plotW = W - padX * 2, plotH = H - padTop - padBot;
 
     var coords = [];
     for (var ci = 0; ci < pts.length; ci++) {
       var x = pts.length === 1 ? (W / 2) : (padX + (ci / (pts.length - 1)) * plotW);
       var y = padTop + (1 - (pts[ci].v - lo) / span) * plotH;
-      coords.push([x, y, pts[ci].d]);
+      coords.push([x, y, pts[ci].d, pts[ci].v]);
     }
     var lineD = coords.map(function(c, idx) { return (idx === 0 ? "M" : "L") + c[0].toFixed(1) + "," + c[1].toFixed(1); }).join(" ");
     var areaD = lineD + " L" + coords[coords.length - 1][0].toFixed(1) + "," + (H - padBot) + " L" + coords[0][0].toFixed(1) + "," + (H - padBot) + " Z";
@@ -3151,6 +3241,12 @@
       }
     }
 
+    state._chartMeta = {
+      W: W, H: H, padTop: padTop, padBot: padBot, coords: coords,
+      firstV: firstV, strokeCol: strokeCol,
+      baseBadgeTxt: baseBadgeTxt, baseBadgeCls: baseBadgeCls, lastHoverIdx: -1
+    };
+
     document.getElementById("wealthChartBox").innerHTML =
       "<svg viewBox='0 0 " + W + " " + H + "' preserveAspectRatio='none'>" +
         "<defs><linearGradient id='wealthGrad' x1='0' y1='0' x2='0' y2='1'>" +
@@ -3162,11 +3258,17 @@
         "<path d='" + lineD + "' fill='none' stroke='" + strokeCol + "' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/>" +
         dotsSvg +
         labelsSvg +
-      "</svg>";
+        "<g id='chartCrosshair' style='display:none;'>" +
+          "<line id='chartCrossLine' x1='0' y1='" + (padTop - 2) + "' x2='0' y2='" + (H - padBot) + "' stroke='var(--border-strong)' stroke-width='1.3' stroke-dasharray='3,3'/>" +
+          "<circle id='chartCrossGlow' cx='0' cy='0' r='8.5' fill='" + strokeCol + "' fill-opacity='0.22'/>" +
+          "<circle id='chartCrossDot' cx='0' cy='0' r='4.2' fill='" + strokeCol + "' stroke='var(--card)' stroke-width='2'/>" +
+        "</g>" +
+      "</svg>" +
+      "<div class='chart-tip num' id='chartTip'></div>";
 
     var metaTxt = isBackfilled
-      ? ("<span>" + escHtml(firstLabel) + " → Live (perfs boursières réelles)</span><span class='num'>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>")
-      : ("<span>" + escHtml(firstLabel) + " → Aujourd'hui (" + hist.length + " j)</span><span class='num'>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>");
+      ? ("<span>Glissez sur la courbe • " + escHtml(firstLabel) + " → Live</span><span class='num'>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>")
+      : ("<span>Glissez sur la courbe • " + escHtml(firstLabel) + " → Auj. (" + hist.length + " j)</span><span class='num'>Min " + fmtRoundEur(minV) + " • Max " + fmtRoundEur(maxV) + "</span>");
     document.getElementById("chartMetaLine").innerHTML = metaTxt;
 
     // Dividendes annuels & mensuels estimés (depuis les rendements live TradingView)
@@ -4604,8 +4706,9 @@
       return;
     }
     var nav = e.target.closest("#bottomNav .nav-btn");
-    if (nav) { switchTab(nav.getAttribute("data-tab")); return; }
+    if (nav) { haptic(6); switchTab(nav.getAttribute("data-tab")); return; }
     if (e.target.closest("#btnThemeToggle")) {
+      haptic(8);
       applyTheme(getCurrentTheme() === "light" ? "dark" : "light", true);
       return;
     }
@@ -4836,8 +4939,194 @@
     else { saveState(); syncSwNotifState(); }
   });
 
+  function initInteractiveChart() {
+    var box = document.getElementById("wealthChartBox");
+    if (!box) return;
+    var activePointer = false;
+
+    function fmtPointDate(lbl) {
+      if (/^\d{4}-\d{2}-\d{2}$/.test(lbl)) return lbl.slice(8, 10) + "/" + lbl.slice(5, 7);
+      return lbl;
+    }
+
+    function updateScrub(clientX) {
+      var meta = state._chartMeta;
+      if (!meta || !meta.coords || meta.coords.length === 0) return;
+      var rect = box.getBoundingClientRect();
+      if (!(rect.width > 0)) return;
+      var relX = Math.max(0, Math.min(rect.width, clientX - rect.left));
+      var svgX = (relX / rect.width) * meta.W;
+
+      var bestIdx = 0;
+      var bestDist = Math.abs(meta.coords[0][0] - svgX);
+      for (var i = 1; i < meta.coords.length; i++) {
+        var d = Math.abs(meta.coords[i][0] - svgX);
+        if (d < bestDist) { bestDist = d; bestIdx = i; }
+      }
+      var c = meta.coords[bestIdx];
+      var cross = document.getElementById("chartCrosshair");
+      var line = document.getElementById("chartCrossLine");
+      var glow = document.getElementById("chartCrossGlow");
+      var dot = document.getElementById("chartCrossDot");
+      var tip = document.getElementById("chartTip");
+      if (!cross || !line || !dot || !tip) return;
+
+      cross.style.display = "block";
+      line.setAttribute("x1", c[0].toFixed(1));
+      line.setAttribute("x2", c[0].toFixed(1));
+      if (glow) { glow.setAttribute("cx", c[0].toFixed(1)); glow.setAttribute("cy", c[1].toFixed(1)); }
+      dot.setAttribute("cx", c[0].toFixed(1));
+      dot.setAttribute("cy", c[1].toFixed(1));
+
+      tip.textContent = fmtPointDate(c[2]) + " • " + fmtEur(c[3]);
+      tip.classList.add("show");
+      var pxX = (c[0] / meta.W) * rect.width;
+      var tipW = tip.offsetWidth || 110;
+      var clampedLeft = Math.max(8, Math.min(rect.width - tipW - 8, pxX - tipW / 2));
+      tip.style.left = clampedLeft.toFixed(1) + "px";
+
+      var badge = document.getElementById("chartDeltaBadge");
+      if (badge && meta.firstV > 0) {
+        var diffE = c[3] - meta.firstV;
+        var diffP = (diffE / meta.firstV) * 100;
+        badge.textContent = (diffE >= 0 ? "+" : "") + fmtRoundEur(diffE) + " (" + fmtSignedPct(diffP, 1) + ")";
+        badge.className = "badge " + (diffE >= 0 ? "b-green" : "b-red");
+      }
+
+      if (meta.lastHoverIdx !== bestIdx) {
+        if (meta.lastHoverIdx !== -1) haptic(5);
+        meta.lastHoverIdx = bestIdx;
+      }
+    }
+
+    function clearScrub() {
+      activePointer = false;
+      var meta = state._chartMeta;
+      var cross = document.getElementById("chartCrosshair");
+      var tip = document.getElementById("chartTip");
+      if (cross) cross.style.display = "none";
+      if (tip) tip.classList.remove("show");
+      if (meta) {
+        meta.lastHoverIdx = -1;
+        var badge = document.getElementById("chartDeltaBadge");
+        if (badge) {
+          badge.textContent = meta.baseBadgeTxt;
+          badge.className = meta.baseBadgeCls;
+        }
+      }
+    }
+
+    box.addEventListener("pointerdown", function(e) {
+      activePointer = true;
+      try { if (box.setPointerCapture) box.setPointerCapture(e.pointerId); } catch (err) {}
+      updateScrub(e.clientX);
+    });
+    box.addEventListener("pointermove", function(e) {
+      if (activePointer || e.pointerType === "mouse") updateScrub(e.clientX);
+    });
+    box.addEventListener("pointerup", clearScrub);
+    box.addEventListener("pointercancel", clearScrub);
+    box.addEventListener("pointerleave", clearScrub);
+  }
+
+  function initBottomSheetGestures() {
+    var configs = [
+      { id: "addModal", close: closeAddModal },
+      { id: "editModal", close: closeEditModal },
+      { id: "detailModal", close: closeDetailModal },
+      { id: "ioModal", close: function() { document.getElementById("ioModal").classList.remove("open"); } }
+    ];
+    configs.forEach(function(cfg) {
+      var backdrop = document.getElementById(cfg.id);
+      if (!backdrop) return;
+      var box = backdrop.querySelector(".modal-box");
+      if (!box) return;
+      var startY = 0, startTime = 0, dy = 0, dragging = false;
+
+      function onStart(clientY, target) {
+        if (!backdrop.classList.contains("open")) return;
+        var onHandle = target && target.closest && !!target.closest(".sheet-handle");
+        if (!onHandle && box.scrollTop > 2) return;
+        var tag = target && target.tagName ? target.tagName.toUpperCase() : "";
+        if (!onHandle && (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT")) return;
+        startY = clientY;
+        startTime = Date.now();
+        dy = 0;
+        dragging = true;
+      }
+
+      function onMove(clientY, preventFn) {
+        if (!dragging) return;
+        var delta = clientY - startY;
+        if (delta <= 0) {
+          if (dy > 0) {
+            dy = 0;
+            box.style.transform = "";
+            backdrop.style.background = "";
+          }
+          return;
+        }
+        if (box.scrollTop > 2) { dragging = false; return; }
+        dy = delta;
+        if (dy > 8) {
+          if (preventFn) preventFn();
+          box.style.transition = "none";
+          box.style.transform = "translateY(" + dy + "px)";
+          var fade = Math.max(0.15, 1 - dy / 340);
+          backdrop.style.opacity = String(fade);
+        }
+      }
+
+      function onEnd() {
+        if (!dragging) return;
+        dragging = false;
+        var dt = Math.max(1, Date.now() - startTime);
+        var velocity = dy / dt;
+        box.style.transition = "";
+        backdrop.style.opacity = "";
+        if (dy > 90 || (dy > 38 && velocity > 0.42)) {
+          haptic(10);
+          box.style.transform = "";
+          cfg.close();
+        } else {
+          box.style.transform = "";
+        }
+        dy = 0;
+      }
+
+      box.addEventListener("touchstart", function(e) {
+        if (e.touches && e.touches.length === 1) onStart(e.touches[0].clientY, e.target);
+      }, { passive: true });
+      box.addEventListener("touchmove", function(e) {
+        if (e.touches && e.touches.length === 1) {
+          onMove(e.touches[0].clientY, function() { if (e.cancelable) e.preventDefault(); });
+        }
+      }, { passive: false });
+      box.addEventListener("touchend", onEnd);
+      box.addEventListener("touchcancel", onEnd);
+
+      var handle = box.querySelector(".sheet-handle");
+      if (handle) {
+        handle.addEventListener("pointerdown", function(e) {
+          if (e.pointerType === "touch") return;
+          onStart(e.clientY, handle);
+          var onPMove = function(ev) { onMove(ev.clientY); };
+          var onPUp = function() {
+            window.removeEventListener("pointermove", onPMove);
+            window.removeEventListener("pointerup", onPUp);
+            onEnd();
+          };
+          window.addEventListener("pointermove", onPMove);
+          window.addEventListener("pointerup", onPUp);
+        });
+      }
+    });
+  }
+
   // Initialisation
   applyTheme(getCurrentTheme(), false);
+  initInteractiveChart();
+  initBottomSheetGestures();
   loadAndMigrateState();
   tryRestoreFromDurableCache();
   var startHash = (window.location.hash || "").replace("#", "");
