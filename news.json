@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T08:04:11Z",
+  "updatedAt": "2026-11-27T09:06:47Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -106,59 +106,59 @@
       "link": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOcHg0TUh4QVZ6MDU4VERoTFctbEVVdGR6RU93TjdNWnhwWEh1UThISmFCeXhwNUdGUlRQaGpxcFJGWDQ4N3k1eDE3OUIzcTYtd210ZEZmcm9Cc3BTQU1rbjlTR2gtMEEzVW1yam9HVmZ3enZwY1lXdm42TXowd3dhMFptVDZKQ1FuM2k5cElJaThKRTNiNHRabE45NThJd0dsOFNqWmpNZmRpdTQtYTNJMnBlUDZsaHNGbVlXQW8wT2RVZ3RyTmlqeFgzb3ZzMXJUYnhUVjV3NXByUmMySlgxZUZWVVRUTVk0X2ZfczRpT0NUNnpHT19ybzNVMG1vZnViTVFva01DVFBXckJUTV9EQ3ZCd0o0RXcwWVZ2d2VueFQxVmtXMzhkUVpQXzBPYXBOdm5MZEtn?oc=5"
     },
     {
-      "id": "9fee1d0bf7ce3d63",
-      "theme": "NVIDIA • IPO & IA",
+      "id": "ffbcececf7bc3144",
+      "theme": "NVIDIA",
       "tagCls": "b-purple",
-      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
-      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
-      "source": "Boursorama",
-      "pubDate": "Fri, 27 Nov 2026 05:34:12 GMT",
-      "pubTs": 1795757652,
-      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+      "title": "Nvidia illustre les chiffres de ses pertes - Investing.com France",
+      "excerpt": "",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 27 Nov 2026 04:14:00 GMT",
+      "pubTs": 1795752840,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
     },
     {
-      "id": "1287f49aea28b342",
+      "id": "834a049f934fd862",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Japanese Yen softens after soft Tokyo core CPI inflation data - tmgm.com",
-      "excerpt": "The USD/JPY pair posts modest gains near 159.35 during the early Asian trading hours on Friday. The Japanese Yen (JPY) weakens against the US Dollar (USD) following the Tokyo…",
+      "title": "Breaking: Japan’s Tokyo CPI inflation climbs 2.8% in November - tmgm.com",
+      "excerpt": "",
       "source": "tmgm.com",
-      "pubDate": "Fri, 27 Nov 2026 01:23:20 GMT",
-      "pubTs": 1795742600,
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOeHIxTHpsQlNxdjd3eWUzaTk2d21hSHJFa2wwTDdDWXpIZ2RkZDZ4S3VoZkFXbkk3eWVXQ3hISEJ6MHhIb2djY0dnc0ZhdW4wUnc5QU1TclRINFEwM3dYTTBidWplZTFZRkpLZ2hIUktoN0RhYmxTd0s2U2ptNmRUczZ4YUcwR19JdGEwNzRUMjhkWnhOZ2tIWTl2XzcyVUhPNDZnZFlLbmd4cGRoTUVod3hUb01KdGVrZkJwbzMyLUdycEtkSnc?oc=5"
+      "pubDate": "Fri, 27 Nov 2026 00:21:14 GMT",
+      "pubTs": 1795738874,
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdmV5dWEzVUlrbDZvNDlBRTU0dml4U2NEWFhmcmF5ZnlqbnNIMjRfR2ZZMmFwZHZRVkp1SVBZVG5xZk14WEFBTi0wQWxoOTMzazkyVTNtbC0yemFib2FHMkVvVmJ0NzVZTUMxVWc5cnJDTnhmeXc0elZFM0d6YWhMWWNtaUlEUXltbGhrMXF3R3lMdXFPWFp4ODZiem12RjZWN3NneVViNlh4WUlBcklMNjJ4NzEySG9DeWRKR1N1cXE?oc=5"
+    },
+    {
+      "id": "202d7daeec1b98bc",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "IA sur site : Microsoft Azure s’associe à Dell - Le Mag IT",
+      "excerpt": "Les deux acteurs élargissent leur partenariat autour des solutions physiques Azure Local pour que les machines censées déporter localement les fonctions du cloud de Microsoft…",
+      "source": "Le Mag IT",
+      "pubDate": "Thu, 26 Nov 2026 22:22:44 GMT",
+      "pubTs": 1795731764,
+      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNY3J6MzBJWi1VaWZaaU5MNWotQ0hRTWFibmdaQ1YteWg2UDFWYUsyQl82MjVfdU9IdHZLTk5nRjl1ZFl6RmRQdmFWcV9WblZDOVRLR1NPU1B2bEJZVHhKT2lISTExeUxKdVFHMEs4ejRXN1o5Y1hIRlR1WG5ucGNGR01hOFJ5Q0xNbWxzUmJuZmg?oc=5"
     },
     {
       "id": "10fd15edeb013725",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "Les nouveaux millionnaires d’Anthropic enflamment le marché immobilier déjà en surchauffe de San Francisco - l'Opinion",
-      "excerpt": "Ils peuvent emprunter en utilisant leurs actions issues d'une introduction en Bourse comme garantie pour acheter une maison à San Francisco dont le prix s'élève à plusieurs…",
+      "excerpt": "",
       "source": "l'Opinion",
       "pubDate": "Thu, 26 Nov 2026 19:00:00 GMT",
       "pubTs": 1795719600,
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRXVtSUk2QktBdGlDcXllTFZ6UTRfQzhyR2pGTHlvVDhpWndReTZERExSVHQ4UnRwNHNOUzdRalUxOFVOM0V3ZzZRaDJ2ZWoxekwyVzlmZkRFQkRTOElqVGNyQUpYSkoxdzVJbjBGampoTnBUVHVKZmRYRndaenhJTlZyZ0x1NmNnczlORGpFcXhpQ3U2V2JDV1hRQVNaY3duR3NINEZSQzJBWGNUaDhlM2RpdFQ1aktWbjBQUVhuM29IdG9haERFM21vQnR1T2NYeUF0NQ?oc=5"
     },
     {
-      "id": "d792afce04cd26fe",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "IA : Microsoft alerte sur une vague de pannes à venir dans la tech - Clubic.com",
-      "excerpt": "L'explosion de la puissance de l'IA oblige les systèmes à une mise à jour très rapide. Ce qui, selon le président de Microsoft, va entraîner nécessairement un certain nombre de…",
-      "source": "Clubic.com",
-      "pubDate": "Thu, 26 Nov 2026 16:28:00 GMT",
-      "pubTs": 1795710480,
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQQW5UakhJWG9aUk1kRVhvM1VSVVAwamVwZ2NyOTFqVlZkelMxRkFQTF9oUkNMbzdpSmxhaVRnTEFKOFgyR3FyNlRNMm1XSm1CbEhOdzNXSmd4U1BzX3NjRTZqMjR5OVotZW42cUJDTU5tZ1YzaGcwM3prYWxncE1BaUVINUdONG1iZ2Qyb1Jwa2VTSHFLYi15Z2FGM1NMM2lOa2Vj?oc=5"
-    },
-    {
-      "id": "05c2b280ff66366b",
+      "id": "7d9a7c44bbb25404",
       "theme": "Xiaomi",
       "tagCls": "b-green",
-      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
-      "excerpt": "",
-      "source": "TradingView",
-      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
-      "pubTs": 1795629796,
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
+      "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones haut de gamme - Investing.com France",
+      "excerpt": "Selon l'Agence fédérale de l'automobile (KBA), les immatriculations de voitures électriques ont progressé de plus de 61% en juillet et représentent désormais près du tiers du marché…",
+      "source": "Investing.com France",
+      "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
+      "pubTs": 1795580820,
+      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
     },
     {
       "id": "e4651a17d8e6e94e",
@@ -173,7 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "9d44e26fa4d77c63",
     "4f59efab9c4e6fcb",
     "2528de4cba3dfaae",
     "move_jump_NASDAQ:NVDA_20261123",
@@ -322,6 +321,7 @@
     "e7efcc7170d8660b",
     "ffbcececf7bc3144",
     "3b325f9f140e82c6",
-    "0c37572a91f5190c"
+    "0c37572a91f5190c",
+    "202d7daeec1b98bc"
   ]
 }
