@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T22:42:48Z",
+  "updatedAt": "2026-11-27T23:34:16Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -139,17 +139,6 @@
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
     },
     {
-      "id": "40463622bc6e93cb",
-      "theme": "NVIDIA",
-      "tagCls": "b-amber",
-      "title": "Wall Street rebondit à l'ouverture, Nvidia hésite - Investir Les Echos",
-      "excerpt": "27 novembre (Reuters) - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les…",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
-      "pubTs": 1795791164,
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbUhBaUwxVW9EZkZxREd4VmwySExyOWhSSDdwR3BIVjVxajFBcjZxaFctREVuRHMzR05DSThNcWI2bnBaWmp5Vl95Wlp0M0I4cURmRFR0YzlHc1l0X0MxbG5EN285dWNqRHcwbjIzaDJZT1FYNTl5X0wxSjl2MFdvOUppVDB5OVZiTURNLTl6azZzSVdJb21HblRZc3E0eHpueDFYa3h4T3BpS1RwSHJNZHd3T3dRSlJYSGc?oc=5"
-    },
-    {
       "id": "b0eb128bc26fd3be",
       "theme": "AMD",
       "tagCls": "b-purple",
@@ -170,6 +159,17 @@
       "pubDate": "Fri, 27 Nov 2026 10:15:27 GMT",
       "pubTs": 1795774527,
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQV19kdzhEYnRfSzNOWkk2dVVmNk9DcFJ4UEI0YkdwMkJERE5IWEhINzZ4bkdIc1NwQ0tELTNWN0Z0SDh6SWlhSHZlbmZ3dkJDMXUtVFNseUdSWTNkam9qTWJzNExEMEpmajNRUkdfalFmdVZPVUg0T3didkhPMHY2bjJ4QkJCb19VcU1LajVQY2ozTzBqNlR3RUxmTGhpdVp1SzJ4VEZMNF92Zw?oc=5"
+    },
+    {
+      "id": "ffbcececf7bc3144",
+      "theme": "NVIDIA",
+      "tagCls": "b-purple",
+      "title": "Nvidia illustre les chiffres de ses pertes - Investing.com France",
+      "excerpt": "",
+      "source": "Investing.com France",
+      "pubDate": "Fri, 27 Nov 2026 04:14:00 GMT",
+      "pubTs": 1795752840,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
     }
   ],
   "notifiedIds": [
