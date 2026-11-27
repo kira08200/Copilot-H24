@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T00:13:04Z",
+  "updatedAt": "2026-11-27T01:31:51Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,26 +95,37 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "834a049f934fd862",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Breaking: Japan’s Tokyo CPI inflation climbs 2.8% in November - tmgm.com",
+      "excerpt": "The headline Tokyo Consumer Price Index (CPI) for November rose 2.8% YoY as compared to 2.8% in the previous month, the Statistics Bureau of Japan showed on Friday.",
+      "source": "tmgm.com",
+      "pubDate": "Fri, 27 Nov 2026 00:21:14 GMT",
+      "pubTs": 1795738874,
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdmV5dWEzVUlrbDZvNDlBRTU0dml4U2NEWFhmcmF5ZnlqbnNIMjRfR2ZZMmFwZHZRVkp1SVBZVG5xZk14WEFBTi0wQWxoOTMzazkyVTNtbC0yemFib2FHMkVvVmJ0NzVZTUMxVWc5cnJDTnhmeXc0elZFM0d6YWhMWWNtaUlEUXltbGhrMXF3R3lMdXFPWFp4ODZiem12RjZWN3NneVViNlh4WUlBcklMNjJ4NzEySG9DeWRKR1N1cXE?oc=5"
+    },
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Thu, 26 Nov 2026 23:33:20 GMT",
+      "pubTs": 1795736000,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
+    {
       "id": "d67669c2f142308d",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Inflation américaine: Trump dénonce de «faux» chiffres - Les Affaires",
       "excerpt": "Donald Trump a réclamé l'ouverture d'une enquête sur la révision des chiffres de la croissance américaine, «faux» selon lui.",
       "source": "Les Affaires",
-      "pubDate": "Thu, 26 Nov 2026 22:48:40 GMT",
-      "pubTs": 1795733320,
+      "pubDate": "Thu, 26 Nov 2026 22:44:43 GMT",
+      "pubTs": 1795733083,
       "link": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxQZkJzUnF5QTZhb1pNcmctZWpwaVlEczYzaHdKd29EdFJLeVFTYjM0ZzQ0YnNFWnUtQ1VWUGI1bzd6Y2x0MFhUTWxiRnZQQl8yZ2xMT3JVRDVIbzVyOXpuOXItS0ktVDVmZlZlWDVtNXhfaGNsTndCRDh2MHVMYVhyZEljSFJiX2hQU0NLaGpLeEo0eVFvTmNqTXZZU2YtVDRIQ2JzWmxJSl9YQTRKclg2QUFVNFNhZGtlWDd1SExJYk5uRUR2MTV0cl9ieGZEWGNT?oc=5"
-    },
-    {
-      "id": "2a0b32ac89b2a754",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Les actifs d’Amérique latine progressent, portés par le Brésil après des chiffres d’inflation inférieurs aux attentes - Zonebourse",
-      "excerpt": "Les actions brésiliennes ont bondi jeudi et s’acheminaient vers leur plus forte progression en plus de sept semaines après la publication de chiffres montrant un ralentissement de…",
-      "source": "Zonebourse",
-      "pubDate": "Thu, 26 Nov 2026 20:39:18 GMT",
-      "pubTs": 1795725558,
-      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxPVFc4d1FzWTh5R2dnRHdrdkFLYzVrNE9mN1VJckNlMnRhRG4yVWpQSUVUNnpXcWxXZ2x5Mm81eHNRODlmb0NEWE03dEF3ZlpOalVaeFdUU3FIUXRzY2ZJMGhSbU82VlFQZTN3WHM2b1piRVg5VEVFeXhHMjIxNjBSZm9XVU5JLVd4cEdEZU1BNnl5eDdENGlvbGxHMGs2VGdWdkU5MlAzNGN4cTJwczdjckk2RXg0LWFRX0FFTGd0VWRMNGx3RVp0YmlCYWktcFJKU093dHJTOGkyMURwblQtLVV5OE1rdTNBZnllRWVnZw?oc=5"
     },
     {
       "id": "10fd15edeb013725",
@@ -159,21 +170,9 @@
       "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
       "pubTs": 1795580820,
       "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
-    },
-    {
-      "id": "0da6d0525d5153f2",
-      "theme": "Amazon",
-      "tagCls": "b-blue",
-      "title": "Amazon mise 7,5 milliards de dollars sur une technologie qui rend les modèles d'IA moins gourmands en ressources - Siècle Digital",
-      "excerpt": "L'intelligence artificielle est au cœur de toutes les stratégies. Amazon a annoncé une nouvelle acquisition afin d'améliorer l'utilisation des modèles d'IA. Elle vise la technologie…",
-      "source": "Siècle Digital",
-      "pubDate": "Tue, 24 Nov 2026 13:32:19 GMT",
-      "pubTs": 1795527139,
-      "link": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxOOU51VzBNRFdQU1NTZVJHOEozTXY4TGUzYXFkUkVWVGtLQnoyZWp2eV8xRGdGZVlCOG5DXzVMd0F4UXVpTE5lcGhJSGloV3lRUkx1bXRjOEVSdGFUTzJyOHBZWmVmSEJMS1ZSY254T1c3VTdiVWZNWVNnelpXUnpCVVZzVzUtRHFlR1JkU1hEdmt3cDQ1RjBSbWlneXdqNm9xUXdoZlR3S09pTGI0YzZzeHlOMlZsRHQ0VUVTSk1DRW1kaFNQdHlNUzViLVBDNXZoQ2RiZzBCM0Z6M0VkQWFDNw?oc=5"
     }
   ],
   "notifiedIds": [
-    "0f2b25ec58d75744",
     "ee4f139ce48569d4",
     "0d3fe6abc80189f6",
     "901b94bdeb5a4d3e",
@@ -322,6 +321,7 @@
     "d792afce04cd26fe",
     "d67669c2f142308d",
     "2a0b32ac89b2a754",
-    "0da6d0525d5153f2"
+    "0da6d0525d5153f2",
+    "834a049f934fd862"
   ]
 }
