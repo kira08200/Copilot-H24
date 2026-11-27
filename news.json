@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T12:57:36Z",
+  "updatedAt": "2026-11-27T14:15:45Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,48 +95,70 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "1dad80215b8db908",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Votre code PIN Windows 11 à quatre chiffres ne suffit plus, Microsoft le reconnaît lui-même - PhonAndroid",
+      "excerpt": "Avec la build 26340.9882, une nouvelle version préliminaire de Windows 11 disponible sur le canal Expérimental du programme Windows Insider, Microsoft supprime cette attente : le…",
+      "source": "PhonAndroid",
+      "pubDate": "Fri, 27 Nov 2026 14:12:14 GMT",
+      "pubTs": 1795788734,
+      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
+    },
+    {
+      "id": "74cb0142c7a8ff2d",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "PIB en recul, inflation qui ralentit, récession : ce que révèlent vraiment les derniers chiffres de l’économie française - Le Télégramme",
+      "excerpt": "Selon les chiffres publiés vendredi par l’Insee, le produit intérieur brut français a reculé de 0,2 % au troisième trimestre, après un léger repli au deuxième. Le pays est ainsi…",
+      "source": "Le Télégramme",
+      "pubDate": "Fri, 27 Nov 2026 13:25:55 GMT",
+      "pubTs": 1795785955,
+      "link": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQQUlidnBQRFJORWpIcnFTQnNXSWg4eE9ySks5a3NwSTV5RFY1Wmp6N0dCTDlhUkhpVnRXMm1aMndpV1UxOVRTeElzOGs0WGwzcDZlcVhmRUx2WHZaNk54TmZ1Y0QzWkV0QV80RmVFanJXVjc2Q0ZPRTY1UkVBdlVIaFBLd1U5bmpudEl1MFVPc01nWW0wYk5SQUlvX2hwVWdXTjlENDFPUnF3WVNMdVlGeHVSdGVtblhiVlJWd1YwZ2dUa05JY0lDMk1nUjYxbTg4cmMwOVFvc3dDT2FubWhoZFFHNVdxUXdaSVdfSlZrUHlWV1FNSEpSbmEyRVVZNzhINEE?oc=5"
+    },
+    {
+      "id": "87711cd98481ae1b",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Note de recherche JPMorgan : Les résultats T3 de Xiaomi ont légèrement dépassé les attentes, mais il manque encore un c… - 深潮TechFlow",
+      "excerpt": "JPMorgan maintient une note « Neutre » sur Xiaomi et conserve son objectif de cours à 32 HK$. La banque précise que les résultats du troisième trimestre ont légèrement…",
+      "source": "深潮TechFlow",
+      "pubDate": "Fri, 27 Nov 2026 13:13:37 GMT",
+      "pubTs": 1795785217,
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPMHRQZGxtT2tXcHhQaDVzRTUwbVd2clU5MVFwbldwbWU1aE1IYTZfOEtVcENocU01WWhlc2pLNlZHZmF4SE9EdUh5ZW9VN3J3R0EycDFJS00wVTN4TnU5OHQ4Rm1sSHdoUXU2OXNpTU5tNTRCbzRTUExybWdNNFNqdjZmZTVpVDlaaW1Ka1lKZw?oc=5"
+    },
+    {
+      "id": "b0eb128bc26fd3be",
+      "theme": "AMD",
+      "tagCls": "b-purple",
+      "title": "Failles AMD Ryzen et Winbond : BitLocker craqué en 20 jours - pro-gamer.fr",
+      "excerpt": "",
+      "source": "pro-gamer.fr",
+      "pubDate": "Fri, 27 Nov 2026 13:01:15 GMT",
+      "pubTs": 1795784475,
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNck9GU3p1Q1U5dHl1cmx3X082SkdHTGhrS19DMmZDZnZzbUo0OUFJT0dSS2pGdldmOFg1R1BWckZQNG05OS0xdzU1bXZHZEIxSnlnWUFYVENoRVVRSjAyLWVYUmE3VmtreGdvUzFCaTY1MXVuSk0xWVBlTzNWQnJ6Q01UYUQyanprWTIwS2J6VTlzUQ?oc=5"
+    },
+    {
       "id": "1fea5b6f91191a1f",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
       "title": "« Anthropalypse financière » : les salariés d’Anthropic vont bien dépenser leur fortune de 470 milliards de dollars, mais pas comme tout le monde - Challenges",
-      "excerpt": "",
+      "excerpt": "Selon les calculs de The Economist, la valeur cumulée de leurs participations atteint la coquette somme de 470 milliards de dollars. Alors une question se pose : que vont-ils faire…",
       "source": "Challenges",
       "pubDate": "Fri, 27 Nov 2026 12:30:00 GMT",
       "pubTs": 1795782600,
       "link": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNTXpJcTNlUlNIWXF4YnVFNnZDTXlrTzFkRWN3a0dkV0lnV3ROX1c4cjkxZ21mWEE1VHRncWY0YzNwSDl3Z29WbERXVTF4VzRXekJfSU80TzFOcWVFcS1tQ0VGYmRDN3NhSF9sRHBfOGZDeVlUbXFkanJGODAyMTRLSkxkelZsd3FmdDc0RnlRS0FRSkZtZk9nSUVLODM4cEtfbHFGYUxHeE03UEN4V2VwX3pXdVRReThKTTEzUFpFS2VKN2xXa0ZhdkFMUTNMQ2MwNnVKWGRscDhtMGVGRTllVUJXcWNzZUpUbXdoUGgxMUc4Yk1VbGd4ZGRlb2d6MFBFQ1lNSFluWDBRdEJ3TzRHX0xuSG9vODJOSFRMWVBtMjVaUQ?oc=5"
     },
     {
-      "id": "a37509be64e5e2e5",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Microsoft annonce Agent 365 pour gérer les agents IA tiers - Brief IA",
-      "excerpt": "",
-      "source": "Brief IA",
-      "pubDate": "Fri, 27 Nov 2026 10:15:15 GMT",
-      "pubTs": 1795774515,
-      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZ2ZhbV9NRWFleDdIcTgzNFZwWF9QN3g5OVBhRHRJNTJYV090RUlCVGRlREszS2dIWTlGSDlWMHB2QTU2UF9pOEg4VTg1c3E2U0VZQk0tdWRhcnZSU3kxVXo4LUUzOUUyeUtvQWxidld3eFRqYVdCQTdfSl9rXzdPOF9wd2tSazdCVGlGUnpqQWxLWk0?oc=5"
-    },
-    {
-      "id": "ec59c0a6347ccc19",
+      "id": "153b047c71c3204d",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Bourse de Paris: hausse timide avant le retour de Wall Street - France 24",
-      "excerpt": "Thales est entré en négociations exclusives en vue de l'acquisition d'une participation majoritaire dans Lumibird.",
-      "source": "France 24",
-      "pubDate": "Fri, 27 Nov 2026 09:29:29 GMT",
-      "pubTs": 1795771769,
-      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOOFljRmlNYWY3MmpoUTRfdThwem91VnlRaWs4V05TbEZEdmQ3NFQ5RHItcTFnS2NjRGVoU1dWUnRPNDZhLXk0U01vMUFJc1pNdEU0Q3pCcXVERnR6aVdZZmJmOFh0VGhYU2YwR1Z5Q1NNdFlQNkRJUVdOMHlQNGlOamc2aHlHMFZ6cHBtOHpUM0hEdmhXR1RjNURlYWl5LVlsV3dSNXNYNjJHRW1LOWRMZExCUQ?oc=5"
-    },
-    {
-      "id": "479391475e74cad7",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "L'inflation ralentit à 2,9 % sur un an en novembre, selon l'Insee - CNews",
-      "excerpt": "L'inflation a ralenti à 2,9 % sur un an en novembre, après 3,4 % en octobre, selon les chiffres provisoires publiés vendredi par l'Insee.L'inflation…",
-      "source": "CNews",
-      "pubDate": "Fri, 27 Nov 2026 08:11:06 GMT",
-      "pubTs": 1795767066,
-      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQTC02Y2RDemVPOTJ4U0RzOWU5RGZLWTN0VFFuYTZqVkdVRjA2TDRuclQyMzVhZmVuRkZfd3d1cEttYXR1dGhmam45NnVpdHFfS0xRODNlMm1melZNeHZCZDI1cEFURC1xcGJ4RGJBa05DRzZrUlU1aG9xaXdMbTVDMUp4bUJWZk1sd010ZmM0cktKMFhBSVE4d1RhMk8wRkxRbVQw0gGoAUFVX3lxTE9RbUdCLXRmeFhXQ2ZRdnFlZ2tSSnNPLUZBaEx6dVRRRjVZZXd2ZFAwMkJzS2FmWUtkZWZTQmdEVGxjandab0NpUVpub0NWbThIcnp0ODBNZWdVbGdKQk1uLUhVYVJKRXUxam1IejNSNHN3UWNnR0dlbGM1NHl2Ukxad0hnZHBmZlZORXBOOXNpN1F1czluR2JJZi1sNTVxU3VJOTdNaFJWVw?oc=5"
+      "title": "USA: Wall Street attendue en forte hausse, portée par les technologiques - ABC Bourse",
+      "excerpt": "La Bourse de New York devrait ouvrir en fortehausse vendredi, grâce à un rebond des valeurs technologiquesà l'issue d'une semai - 27/11/2026…",
+      "source": "ABC Bourse",
+      "pubDate": "Fri, 27 Nov 2026 12:19:21 GMT",
+      "pubTs": 1795781961,
+      "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNdXRLWUtNekF4SmUzMlVrTkdEVk50MU4yclA2VWYyaG1kUE1FMGYwN3VPbkZ3QjJXNndwdlYxQnphbnZyaHgyR0xDV0FiaGpLVXhHdWFhRThjM1h3b015a3ZGRTJHcVpzYUJySnhpUUkyUnRxdXFtM25sNGY5OUEzTm96Q2RpMUxRZnM2TlBkWmd4YTRQNGZKdVFxaDBOYlh5T0NpaUxLT0E3M2Y2LXVZRA?oc=5"
     },
     {
       "id": "ffbcececf7bc3144",
@@ -148,36 +170,9 @@
       "pubDate": "Fri, 27 Nov 2026 04:14:00 GMT",
       "pubTs": 1795752840,
       "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
-    },
-    {
-      "id": "7d9a7c44bbb25404",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "Les actions Xiaomi bondissent de 8% grâce aux ventes de smartphones haut de gamme - Investing.com France",
-      "excerpt": "Selon l'Agence fédérale de l'automobile (KBA), les immatriculations de voitures électriques ont progressé de plus de 61% en juillet et représentent désormais près du tiers du marché…",
-      "source": "Investing.com France",
-      "pubDate": "Wed, 25 Nov 2026 04:27:00 GMT",
-      "pubTs": 1795580820,
-      "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQQk1Ma3A0Ymx6ZVhtdWY4MU1MOWdGaWZrVEU2ZnlNVUx0RFItMmpwSXh0OHhfMkdrd2FPV19mWkFuT2dIUjE3LUV4blh4N3FXSUMzTk1jRm9WaTkyNm1wSHlMSVh5OXAzeHNONnI5cUdaZzMyVjc4VlZvNHI0aGp4R1l0YXFYTE4wR0hVM2xaWkJfSFR5Y2lubHJobUVLTk04V3hKRl9aNHlpWTRCNFlDYzM4bTJQZVpCMElqQndmM2NweEdKTktPRlVB?oc=5"
-    },
-    {
-      "id": "e4651a17d8e6e94e",
-      "theme": "Air Liquide",
-      "tagCls": "b-purple",
-      "title": "SBF 120 - Les actions à suivre mercredi: Air Liquide, Trigano, Rémy Cointreau - Investir Les Echos",
-      "excerpt": "PARIS --Voici un tour d'horizon des valeurs à suivre mercredi à la Bourse de Paris. -AIR LIQUIDE: le spécialiste des gaz industriels a annoncé mardi soir son intention d'investir…",
-      "source": "Investir Les Echos",
-      "pubDate": "Tue, 24 Nov 2026 17:47:00 GMT",
-      "pubTs": 1795542420,
-      "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxQZUg4Ti1VUElNNWRrOU5ucF9Fb2VqcWhnX1dxMFgtcmwxMW1lOXZBRFVub3AzWVFsLW44MFAtRjZkNFFBbTJCRDFfakh6RTlYV0ZrV05xMWFvSnZSNHFwdE1RVzJPOVE2ZWxQRTRSZFVzU3NLWlMtdWxvQmlaZWg0Mk85MHE0ZUF0RFdVckdBeVJIUGhZUWpXSi1TclUzMVlHUFZObXI0MjNwVFNkNTlwRHhOVjBkT1Z2RmZrY1pUczhTVWRtaW11bEN6aHpScmg0clZidlBJTEEwQUE4NGc?oc=5"
     }
   ],
   "notifiedIds": [
-    "move_jump_NASDAQ:AMD_20261123",
-    "move_jump_XETR:ENR_20261123",
-    "60288b4d603df5db",
-    "57bcc6f15b2e628a",
-    "bc7fe17c207ec4a3",
     "ae734faed996698f",
     "move_jump_NASDAQ:GOOGL_20261123",
     "59099ab8c72321bf",
@@ -322,6 +317,11 @@
     "fd54e36a26003909",
     "a37509be64e5e2e5",
     "1fea5b6f91191a1f",
-    "479391475e74cad7"
+    "479391475e74cad7",
+    "1dad80215b8db908",
+    "74cb0142c7a8ff2d",
+    "87711cd98481ae1b",
+    "b0eb128bc26fd3be",
+    "153b047c71c3204d"
   ]
 }
