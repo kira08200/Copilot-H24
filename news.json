@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T10:11:43Z",
+  "updatedAt": "2026-11-27T11:01:43Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,11 +95,44 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "e089c382d4fa8979",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Anthropic clôture sous son prix d’introduction en Bourse, un signal inquiétant pour les start-up d’IA - BlogNT",
+      "excerpt": "L’action Anthropic a clôturé à environ 81,90 dollars mardi, sous son prix d’introduction de 83 dollars. Analystes, causes et analyse.",
+      "source": "BlogNT",
+      "pubDate": "Fri, 27 Nov 2026 10:45:00 GMT",
+      "pubTs": 1795776300,
+      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPY3hiX25ZOU51MnkweHU5SEFDZmhlRGlrUVdLSE9TY1hISlg1MEtkZnVneXBqbzd3VzhubmJyN3VzWE50OVlJcDV3ZEMxazFCYk9mbmxHUFM0WkhjakhXZE14LXhNOEVfZzZrU3RqbFdmaGUxNDhPLXhrRVBZYzVlTEhuRnNQbVRVVE5xM2xSbnVoQQ?oc=5"
+    },
+    {
+      "id": "fd54e36a26003909",
+      "theme": "Apple, Amazon",
+      "tagCls": "b-blue",
+      "title": "Black Friday Apple : 160€ de moins sur le Mac mini M6 chez Amazon - Clubic.com",
+      "excerpt": "Le Mac mini M6 permet de profiter d’une configuration solide, adaptée au travail et à l’utilisation des IA, le tout dans un boîtier très compact. Amazon le propose à 889 € pour le…",
+      "source": "Clubic.com",
+      "pubDate": "Fri, 27 Nov 2026 10:33:00 GMT",
+      "pubTs": 1795775580,
+      "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxQZDVUSC16RmFWVkFmY1ZQbF9OUXhGRm44a2pRWDN2eGlIN1ZQbFI2UE5KdGlWNm05T2o1Mmc0ZWh3SE1hSHBtQUFpUlRsZUpELVUwcHNnNEVNZ2YzOVduNV9uSDJSUHZZNFR4eFJoajBqX2ZRSkU1cGw0eEZzbDFTaDZQRDVwWU9USDA4MF96bXY3Tzk0aXExYUxobWxqRk9fS3V1MEMzNFBKR2REVXBmRVFqdkN0VGcxTkowQW56VE9RcWJaZFFFYW56MURmV3RvcDFpY1Vtd3FMY0FDNnVRQjRDalIzUQ?oc=5"
+    },
+    {
+      "id": "a37509be64e5e2e5",
+      "theme": "Microsoft",
+      "tagCls": "b-blue",
+      "title": "Microsoft annonce Agent 365 pour gérer les agents IA tiers - Brief IA",
+      "excerpt": "Analyse stratégique du Microsoft Ignite 2026 : comment les agents IA et Microsoft IQ transforment la gouvernance IT et la productivité en entreprise.",
+      "source": "Brief IA",
+      "pubDate": "Fri, 27 Nov 2026 10:15:15 GMT",
+      "pubTs": 1795774515,
+      "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOZ2ZhbV9NRWFleDdIcTgzNFZwWF9QN3g5OVBhRHRJNTJYV090RUlCVGRlREszS2dIWTlGSDlWMHB2QTU2UF9pOEg4VTg1c3E2U0VZQk0tdWRhcnZSU3kxVXo4LUUzOUUyeUtvQWxidld3eFRqYVdCQTdfSl9rXzdPOF9wd2tSazdCVGlGUnpqQWxLWk0?oc=5"
+    },
+    {
       "id": "ec59c0a6347ccc19",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Bourse de Paris: hausse timide avant le retour de Wall Street - France 24",
-      "excerpt": "PARIS (Agefi-Dow Jones)--La Bourse de Paris progresse vendredi dans les premiers échanges, soutenue par le rebond des marchés asiatiques, tandis que les investisseurs attendent le…",
+      "excerpt": "(BFM Bourse) - L'indice parisien a terminé en nette hausse, bénéficiant d'un retour de l'appétit pour le risque. Mais cette hausse apparaît fragile…",
       "source": "France 24",
       "pubDate": "Fri, 27 Nov 2026 09:29:29 GMT",
       "pubTs": 1795771769,
@@ -128,39 +161,6 @@
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPdmV5dWEzVUlrbDZvNDlBRTU0dml4U2NEWFhmcmF5ZnlqbnNIMjRfR2ZZMmFwZHZRVkp1SVBZVG5xZk14WEFBTi0wQWxoOTMzazkyVTNtbC0yemFib2FHMkVvVmJ0NzVZTUMxVWc5cnJDTnhmeXc0elZFM0d6YWhMWWNtaUlEUXltbGhrMXF3R3lMdXFPWFp4ODZiem12RjZWN3NneVViNlh4WUlBcklMNjJ4NzEySG9DeWRKR1N1cXE?oc=5"
     },
     {
-      "id": "202d7daeec1b98bc",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "IA sur site : Microsoft Azure s’associe à Dell - Le Mag IT",
-      "excerpt": "Les deux acteurs élargissent leur partenariat autour des solutions physiques Azure Local pour que les machines censées déporter localement les fonctions du cloud de Microsoft…",
-      "source": "Le Mag IT",
-      "pubDate": "Thu, 26 Nov 2026 22:22:44 GMT",
-      "pubTs": 1795731764,
-      "link": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNY3J6MzBJWi1VaWZaaU5MNWotQ0hRTWFibmdaQ1YteWg2UDFWYUsyQl82MjVfdU9IdHZLTk5nRjl1ZFl6RmRQdmFWcV9WblZDOVRLR1NPU1B2bEJZVHhKT2lISTExeUxKdVFHMEs4ejRXN1o5Y1hIRlR1WG5ucGNGR01hOFJ5Q0xNbWxzUmJuZmg?oc=5"
-    },
-    {
-      "id": "10fd15edeb013725",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "Les nouveaux millionnaires d’Anthropic enflamment le marché immobilier déjà en surchauffe de San Francisco - l'Opinion",
-      "excerpt": "Ils peuvent emprunter en utilisant leurs actions issues d'une introduction en Bourse comme garantie pour acheter une maison à San Francisco dont le prix s'élève à plusieurs…",
-      "source": "l'Opinion",
-      "pubDate": "Thu, 26 Nov 2026 19:00:00 GMT",
-      "pubTs": 1795719600,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNRXVtSUk2QktBdGlDcXllTFZ6UTRfQzhyR2pGTHlvVDhpWndReTZERExSVHQ4UnRwNHNOUzdRalUxOFVOM0V3ZzZRaDJ2ZWoxekwyVzlmZkRFQkRTOElqVGNyQUpYSkoxdzVJbjBGampoTnBUVHVKZmRYRndaenhJTlZyZ0x1NmNnczlORGpFcXhpQ3U2V2JDV1hRQVNaY3duR3NINEZSQzJBWGNUaDhlM2RpdFQ1aktWbjBQUVhuM29IdG9haERFM21vQnR1T2NYeUF0NQ?oc=5"
-    },
-    {
-      "id": "05c2b280ff66366b",
-      "theme": "Xiaomi",
-      "tagCls": "b-green",
-      "title": "M Stanley Notes Xiaomi EV Shipment Growth Forecast to Drive 4Q Earnings, Reiterates Overweight on XIAOMI-W - TradingView",
-      "excerpt": "",
-      "source": "TradingView",
-      "pubDate": "Wed, 25 Nov 2026 18:03:16 GMT",
-      "pubTs": 1795629796,
-      "link": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPTmZwcG9lMzUxVVRBUC1lTjZraXRIdFZZNTgxeEVDM1lEUGw3OWxSeEJWX25EdXZlVmhiMXZOcFJ6b0FKUkF1cFV1T1p3cjVDcl8zdVoyY3FWZjJkaGt1cGVFdDcwTERNcV8ya0YtUnNRWjBySEF3TzdZaGZfaDlwSWNfZVluQWF3S2NYNzItUGlkc0IzSkY5V214azVqUUJUckQ2bHJUbW42cVZCb1JSd3NGa1VTNk03VWZ0VXlKeWFvRk0xRHhWS216WUVjOFJZS3BnMG1RMU9TZ05EcGFzNTNMX1psdkhXZDVacWNEZnAzV1k?oc=5"
-    },
-    {
       "id": "e4651a17d8e6e94e",
       "theme": "Air Liquide",
       "tagCls": "b-purple",
@@ -173,9 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "2528de4cba3dfaae",
-    "move_jump_NASDAQ:NVDA_20261123",
-    "move_jump_NASDAQ:MSTR_20261123",
     "move_jump_NASDAQ:QCOM_20261123",
     "e603a91a1e9c791c",
     "move_jump_NASDAQ:AMD_20261123",
@@ -322,6 +319,9 @@
     "3b325f9f140e82c6",
     "0c37572a91f5190c",
     "202d7daeec1b98bc",
-    "ec59c0a6347ccc19"
+    "ec59c0a6347ccc19",
+    "e089c382d4fa8979",
+    "fd54e36a26003909",
+    "a37509be64e5e2e5"
   ]
 }
