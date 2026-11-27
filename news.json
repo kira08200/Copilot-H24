@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T19:11:36Z",
+  "updatedAt": "2026-11-27T20:07:28Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,17 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "ebe9297065a979c0",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "USA: Wall Street confirme son rebond à l'issue d'une semaine mouvementée - ABC Bourse",
+      "excerpt": "",
+      "source": "ABC Bourse",
+      "pubDate": "Fri, 27 Nov 2026 18:31:42 GMT",
+      "pubTs": 1795804302,
+      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNzFrb3lDcDdLazRBcjl4QmwyUUFiVnhYQWp0V255amVLdFpHU3RXRjN0OWhyMmtOT0RFdWZhWlNhSFdNdjNZVzFEN3N5MGUyTnpGOGhHVGtwM1ppSnRETk5fZ3VmZnBOdXM4RXpza1Rjc090emRsZkk5OG54VVdqcWdtWFdHNG5EenM5SUNINnc0MVZJTnFHeHBEdmVBNGdxU0V5NWx0aDd5OTBhckJEcE13?oc=5"
+    },
+    {
       "id": "4983955e9202d767",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -106,26 +117,15 @@
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdXJTa2hodE5Kam9uTmhJdGQ0S2s4dUJXTDlwdmd5RDRFMVE4Z2N4NWgtVXJWYzVNczRwTWZVNDlrWmdoZ1hlY01lWnRjV1FaZ1JER0ZmSjFTUXo1eXBmZjJQTldSLWVoaWxzT21yVGhyMFZjMHlyTElKVkVIdVRtSzh6bjk4cDNuSW1GLWtxTjFzd1l2LXVJdl9nZHJTTUtvc0QwYW1pUnVNYU1YV2hSeUFmYU5vSkduZEFlN0JCRXczOWh3OGNDVXlGaW4zWmJIaXF2TA?oc=5"
     },
     {
-      "id": "eb487511f4aa59ee",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
-      "excerpt": "Le SMI a pris 0,42% à 14.879,90 points. Sur la semaine, il a progressé de 2,11%. L'indice SLI a gagné 0,43% à 2386,66 points et le SPI est monté de 0,43% à 20.894,62 points.",
-      "source": "Zonebourse",
-      "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
-      "pubTs": 1795799790,
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
-    },
-    {
-      "id": "7004557d8223bc83",
+      "id": "d36be958648c05aa",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Musk promet deux actions SpaceX à chaque enfant américain, un pari à 18 milliards de dollars - TIME France",
-      "excerpt": "Elon Musk promet désormais d’offrir deux actions SpaceX à chaque enfant américain, doublant sa promesse du mois dernier. Un cadeau astronomique estimé à plus de 18 milliards de dollars.",
-      "source": "TIME France",
-      "pubDate": "Fri, 27 Nov 2026 16:12:58 GMT",
-      "pubTs": 1795795978,
-      "link": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNR0lSYWhRZXZHQzl2LWNyazJ4X1NRdUlvYzV6UGJwa1JNaVN3dm90MmMzRVZFS1QyNDdhRzFfbWhjNlVyb0FUZ19ncnM4clZDWmtFenlnTm5ZR2IyUWY5VExmZXEzTzE3SDZYdXFZUnRDYTlrNlhJTU00bG1HaFJlMGpHVWhvaEM0VUczNFpseHVBVW4yWnhMUGlRbVd5RWx3aEFwQ3pYdG5Xa3NBOFQ2Um5Ta0Rvc3BaNW1rZ0hpajltU0VpNnc?oc=5"
+      "title": "Equipondération, or, alimentation, médicaments : le plan B des portefeuilles quand l'IA s'essouffle - Investir Les Echos",
+      "excerpt": "",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 27 Nov 2026 16:15:51 GMT",
+      "pubTs": 1795796151,
+      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQYnJwdmxKN0lWU19NSXpqRkpaeGpRTHhBSm1FTE84dzdydUM0cWc5c1ZBdXFoZmFOVWF1YzBSVDJ6X0lNV1lzSDA3VElyYy1xUnpoR0JTTENkRVgwWk9MRWJsSmZFVDBGU0JpV095bFZBVF8ydEJoS21kdlVBWjh4X2RUemo1M2JhMTUwdmYwR0pSR3d0WWU1eGxMZjlMNWdueHBJelZzRjk3LVNMWXdXOG9PQXhWQkhUeG94QkVaMWFMSWZyeGR3cmVqcUVncE9FaTdXUlZUR0ZFRlFtcXpTRlRUa29ZVENUSnc?oc=5"
     },
     {
       "id": "1dad80215b8db908",
@@ -173,8 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "e62a9fb8b84862e4",
-    "83dc6300c4b49f2a",
     "493f08d43f2d0342",
     "2b24c83cf07a96dc",
     "move_jump_NASDAQ:NVDA_20261124",
@@ -322,6 +320,8 @@
     "f4b3649e74d53b20",
     "eb487511f4aa59ee",
     "d7396a68741c09eb",
-    "4983955e9202d767"
+    "4983955e9202d767",
+    "ebe9297065a979c0",
+    "d36be958648c05aa"
   ]
 }
