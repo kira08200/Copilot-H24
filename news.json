@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T21:00:11Z",
+  "updatedAt": "2026-11-27T21:52:22Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,17 +95,6 @@
   "majorMoves": [],
   "items": [
     {
-      "id": "ebe9297065a979c0",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "USA: Wall Street confirme son rebond à l'issue d'une semaine mouvementée - ABC Bourse",
-      "excerpt": "La Bourse de New York a clôturé enhausse vendredi grâce à la confirmation du rebond des valeurstechnologiques, même si la vol - 27/11/2026…",
-      "source": "ABC Bourse",
-      "pubDate": "Fri, 27 Nov 2026 18:31:42 GMT",
-      "pubTs": 1795804302,
-      "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNNzFrb3lDcDdLazRBcjl4QmwyUUFiVnhYQWp0V255amVLdFpHU3RXRjN0OWhyMmtOT0RFdWZhWlNhSFdNdjNZVzFEN3N5MGUyTnpGOGhHVGtwM1ppSnRETk5fZ3VmZnBOdXM4RXpza1Rjc090emRsZkk5OG54VVdqcWdtWFdHNG5EenM5SUNINnc0MVZJTnFHeHBEdmVBNGdxU0V5NWx0aDd5OTBhckJEcE13?oc=5"
-    },
-    {
       "id": "4983955e9202d767",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -117,15 +106,26 @@
       "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdXJTa2hodE5Kam9uTmhJdGQ0S2s4dUJXTDlwdmd5RDRFMVE4Z2N4NWgtVXJWYzVNczRwTWZVNDlrWmdoZ1hlY01lWnRjV1FaZ1JER0ZmSjFTUXo1eXBmZjJQTldSLWVoaWxzT21yVGhyMFZjMHlyTElKVkVIdVRtSzh6bjk4cDNuSW1GLWtxTjFzd1l2LXVJdl9nZHJTTUtvc0QwYW1pUnVNYU1YV2hSeUFmYU5vSkduZEFlN0JCRXczOWh3OGNDVXlGaW4zWmJIaXF2TA?oc=5"
     },
     {
-      "id": "d36be958648c05aa",
+      "id": "eb487511f4aa59ee",
+      "theme": "Macro & Wall Street",
+      "tagCls": "b-amber",
+      "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
+      "excerpt": "Le SMI a pris 0,42% à 14.879,90 points. Sur la semaine, il a progressé de 2,11%. L'indice SLI a gagné 0,43% à 2386,66 points et le SPI est monté de 0,43% à 20.894,62 points.",
+      "source": "Zonebourse",
+      "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
+      "pubTs": 1795799790,
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
+    },
+    {
+      "id": "10258a2f3b714474",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Equipondération, or, alimentation, médicaments : le plan B des portefeuilles quand l'IA s'essouffle - Investir Les Echos",
-      "excerpt": "BlackRock passe à « neutre » sur l'intelligence artificielle, Amundi et la Société Générale appellent à la prudence : le flux acheteur sur la tech pourrait se tarir. Nos pistes pour…",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 27 Nov 2026 16:15:51 GMT",
-      "pubTs": 1795796151,
-      "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQYnJwdmxKN0lWU19NSXpqRkpaeGpRTHhBSm1FTE84dzdydUM0cWc5c1ZBdXFoZmFOVWF1YzBSVDJ6X0lNV1lzSDA3VElyYy1xUnpoR0JTTENkRVgwWk9MRWJsSmZFVDBGU0JpV095bFZBVF8ydEJoS21kdlVBWjh4X2RUemo1M2JhMTUwdmYwR0pSR3d0WWU1eGxMZjlMNWdueHBJelZzRjk3LVNMWXdXOG9PQXhWQkhUeG94QkVaMWFMSWZyeGR3cmVqcUVncE9FaTdXUlZUR0ZFRlFtcXpTRlRUa29ZVENUSnc?oc=5"
+      "title": "L'analyste le plus optimiste sur Anthropic vise... 300 USD !... - Fortuneo",
+      "excerpt": "Après une IPO réussie, le titre Anthropic peine à décoller. Pour rappel, le laboratoire d'intelligence artificielle est le premier du secteur à s'introduire en bourse, et ce, dans…",
+      "source": "Fortuneo",
+      "pubDate": "Fri, 27 Nov 2026 16:40:00 GMT",
+      "pubTs": 1795797600,
+      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdS12QWRUZUNKeWMxQXlhR1ljbDh4bkEtZVN5RE1EaW1fT1lhblJseVE1WEt1dktsdzA3cUtYVElPN0FnRTRiOWloRHkyRXoxcEtGaktscFBubFk1ZDFNZlREWnltSk4taGJwakJUeHlfVFdSWUhWS2lRWGwyX3g4WE01YWdpNXJVY1hSYmZZU1FpVjh2R2ViY3AybEtCUm5S0gGmAUFVX3lxTFA3YXoxRFJiOHVNWHZJd09DR0UyemRPb3dVOUl4Umc5RVczUHBobTVpYlhUU1ZEWkFmUmZUVExYc3hCTEttYTZsN1pjRk9TWXQtbUFseWVLR2IxM1lNMmxuX3MxRjRsVTVDa1d5UjE4QjhkeUIwWmNobWxXY21aQzFBWFJ0Wm5mTFdua2EweGtuQ2RFT2VpTXZvMHUzTVR3MTdhMWlOLVE?oc=5"
     },
     {
       "id": "1dad80215b8db908",
@@ -173,7 +173,6 @@
     }
   ],
   "notifiedIds": [
-    "493f08d43f2d0342",
     "2b24c83cf07a96dc",
     "move_jump_NASDAQ:NVDA_20261124",
     "move_jump_NASDAQ:QCOM_20261124",
@@ -322,6 +321,7 @@
     "d7396a68741c09eb",
     "4983955e9202d767",
     "ebe9297065a979c0",
-    "d36be958648c05aa"
+    "d36be958648c05aa",
+    "10258a2f3b714474"
   ]
 }
