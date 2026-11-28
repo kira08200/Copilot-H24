@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-27T23:34:16Z",
+  "updatedAt": "2026-11-28T04:55:48Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -95,6 +95,28 @@
   "majorMoves": [],
   "items": [
     {
+      "id": "db2a2233174e0993",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Les actions d’Anthropic clôturent au-dessus du prix d’introduction en Bourse après deux séances en dessous - Unite.AI",
+      "excerpt": "Les actions de catégorie A d’Anthropic ont clôturé à 91,88 $ le 27 novembre 2026, en hausse de 10,98 %, repassant ainsi au-dessus du prix de 83 $ fixé par l’entreprise pour son…",
+      "source": "Unite.AI",
+      "pubDate": "Sat, 28 Nov 2026 03:36:04 GMT",
+      "pubTs": 1795836964,
+      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbWliM2hJSUpJQU5lSUdENjlNZjBWdXpFN3lPVm9OU3psaFB6eWd5ZHJHM1pDTWhiQkNqaWE0dHgwS2xLajZWUFozZ1JpcGw1THp6YldNR3RuendTS2dFdVZ0OVRCS0E3SVJYcVdDdFVXRGRQaUNzOHBObHFnTDJid0l0czVqMnc3QUppNlNweHllM3pRZ2c?oc=5"
+    },
+    {
+      "id": "7ed7ec3bfef721d3",
+      "theme": "Apple",
+      "tagCls": "b-blue",
+      "title": "Apple et OpenAI s’accusent mutuellement de vol de secrets - Le Devoir",
+      "excerpt": "OpenAI, le créateur de ChatGPT, a contre-attaqué vendredi 27 novembre 2026 en justice face à Apple, l’accusant à son tour de lui avoir dérobé des secrets industriels et de faire…",
+      "source": "Le Devoir",
+      "pubDate": "Sat, 28 Nov 2026 00:30:57 GMT",
+      "pubTs": 1795825857,
+      "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUTNFSTRwNWVRN2xPNzF0ZmRBV3pDRUl5Wmp6QWRsc2Q4RDY3TXBWS3pKTmY1ZjBZZzhfY0RubWxXUG5razZlWVJHWHlvLWNoU1NOdTNEZXVkRUI1T0pjai1IZm41V29BdloxcHRoWlN2LXQ4UU1YYzdkZEk1djcweE4yY0hjM2J1YUZrdkNWcGVhWktw?oc=5"
+    },
+    {
       "id": "4983955e9202d767",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
@@ -110,22 +132,11 @@
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
       "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
-      "excerpt": "Le SMI a pris 0,42% à 14.879,90 points. Sur la semaine, il a progressé de 2,11%. L'indice SLI a gagné 0,43% à 2386,66 points et le SPI est monté de 0,43% à 20.894,62 points.",
+      "excerpt": "Zurich - La Bourse suisse a fini la séance de vendredi dans le vert, parvenant à raccrocher temporairement la barre des 14'900 points grâce au rebond de Wall Street. Alors que les…",
       "source": "Zonebourse",
       "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
       "pubTs": 1795799790,
       "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
-    },
-    {
-      "id": "10258a2f3b714474",
-      "theme": "IPO & IA Mondiale",
-      "tagCls": "b-purple",
-      "title": "L'analyste le plus optimiste sur Anthropic vise... 300 USD !... - Fortuneo",
-      "excerpt": "Après une IPO réussie, le titre Anthropic peine à décoller. Pour rappel, le laboratoire d'intelligence artificielle est le premier du secteur à s'introduire en bourse, et ce, dans…",
-      "source": "Fortuneo",
-      "pubDate": "Fri, 27 Nov 2026 16:40:00 GMT",
-      "pubTs": 1795797600,
-      "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOdS12QWRUZUNKeWMxQXlhR1ljbDh4bkEtZVN5RE1EaW1fT1lhblJseVE1WEt1dktsdzA3cUtYVElPN0FnRTRiOWloRHkyRXoxcEtGaktscFBubFk1ZDFNZlREWnltSk4taGJwakJUeHlfVFdSWUhWS2lRWGwyX3g4WE01YWdpNXJVY1hSYmZZU1FpVjh2R2ViY3AybEtCUm5S0gGmAUFVX3lxTFA3YXoxRFJiOHVNWHZJd09DR0UyemRPb3dVOUl4Umc5RVczUHBobTVpYlhUU1ZEWkFmUmZUVExYc3hCTEttYTZsN1pjRk9TWXQtbUFseWVLR2IxM1lNMmxuX3MxRjRsVTVDa1d5UjE4QjhkeUIwWmNobWxXY21aQzFBWFJ0Wm5mTFdua2EweGtuQ2RFT2VpTXZvMHUzTVR3MTdhMWlOLVE?oc=5"
     },
     {
       "id": "1dad80215b8db908",
@@ -139,15 +150,15 @@
       "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
     },
     {
-      "id": "b0eb128bc26fd3be",
-      "theme": "AMD",
-      "tagCls": "b-purple",
-      "title": "Failles AMD Ryzen et Winbond : BitLocker craqué en 20 jours - pro-gamer.fr",
-      "excerpt": "",
-      "source": "pro-gamer.fr",
-      "pubDate": "Fri, 27 Nov 2026 13:01:15 GMT",
-      "pubTs": 1795784475,
-      "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNck9GU3p1Q1U5dHl1cmx3X082SkdHTGhrS19DMmZDZnZzbUo0OUFJT0dSS2pGdldmOFg1R1BWckZQNG05OS0xdzU1bXZHZEIxSnlnWUFYVENoRVVRSjAyLWVYUmE3VmtreGdvUzFCaTY1MXVuSk0xWVBlTzNWQnJ6Q01UYUQyanprWTIwS2J6VTlzUQ?oc=5"
+      "id": "40463622bc6e93cb",
+      "theme": "NVIDIA",
+      "tagCls": "b-amber",
+      "title": "Wall Street rebondit à l'ouverture, Nvidia hésite - Investir Les Echos",
+      "excerpt": "27 novembre - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les titres liés…",
+      "source": "Investir Les Echos",
+      "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
+      "pubTs": 1795791164,
+      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbUhBaUwxVW9EZkZxREd4VmwySExyOWhSSDdwR3BIVjVxajFBcjZxaFctREVuRHMzR05DSThNcWI2bnBaWmp5Vl95Wlp0M0I4cURmRFR0YzlHc1l0X0MxbG5EN285dWNqRHcwbjIzaDJZT1FYNTl5X0wxSjl2MFdvOUppVDB5OVZiTURNLTl6azZzSVdJb21HblRZc3E0eHpueDFYa3h4T3BpS1RwSHJNZHd3T3dRSlJYSGc?oc=5"
     },
     {
       "id": "f4b3649e74d53b20",
@@ -159,22 +170,9 @@
       "pubDate": "Fri, 27 Nov 2026 10:15:27 GMT",
       "pubTs": 1795774527,
       "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQV19kdzhEYnRfSzNOWkk2dVVmNk9DcFJ4UEI0YkdwMkJERE5IWEhINzZ4bkdIc1NwQ0tELTNWN0Z0SDh6SWlhSHZlbmZ3dkJDMXUtVFNseUdSWTNkam9qTWJzNExEMEpmajNRUkdfalFmdVZPVUg0T3didkhPMHY2bjJ4QkJCb19VcU1LajVQY2ozTzBqNlR3RUxmTGhpdVp1SzJ4VEZMNF92Zw?oc=5"
-    },
-    {
-      "id": "ffbcececf7bc3144",
-      "theme": "NVIDIA",
-      "tagCls": "b-purple",
-      "title": "Nvidia illustre les chiffres de ses pertes - Investing.com France",
-      "excerpt": "",
-      "source": "Investing.com France",
-      "pubDate": "Fri, 27 Nov 2026 04:14:00 GMT",
-      "pubTs": 1795752840,
-      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxOQlhBQ2FKU1NfVVBfQnJ2Qkl5OGZyVnBOa1BSUGVVSDFyM2VIaTc1OWVERmdYRi1adk9TdUUyTE1hMWhYQ2MzVHkxb1czYUtiVXo4ZlRDQVE1blEwWWpjdVczckJtWjhSUEx0RWRMNFZOWkZIMzBVUS15dVZTdVFwV05xMFdaX3YtVUFvX3pkNA?oc=5"
     }
   ],
   "notifiedIds": [
-    "2b24c83cf07a96dc",
-    "move_jump_NASDAQ:NVDA_20261124",
     "move_jump_NASDAQ:QCOM_20261124",
     "move_jump_NASDAQ:MSTR_20261124",
     "45f4779a6e1a3ecf",
@@ -322,6 +320,8 @@
     "4983955e9202d767",
     "ebe9297065a979c0",
     "d36be958648c05aa",
-    "10258a2f3b714474"
+    "10258a2f3b714474",
+    "db2a2233174e0993",
+    "7ed7ec3bfef721d3"
   ]
 }
