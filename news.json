@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-28T04:55:48Z",
+  "updatedAt": "2026-11-28T13:48:47Z",
   "upcomingEarnings": [
     {
       "id": "earn_NYSE:BLK_20270121",
@@ -8,7 +8,7 @@
       "weight": "3,9 %",
       "timestamp": 1800532800,
       "dateStr": "21/01/2027",
-      "daysLeft": 54
+      "daysLeft": 53
     },
     {
       "id": "earn_NASDAQ:MSFT_20270126",
@@ -17,7 +17,7 @@
       "weight": "2,7 %",
       "timestamp": 1800964800,
       "dateStr": "26/01/2027",
-      "daysLeft": 59
+      "daysLeft": 58
     },
     {
       "id": "earn_NASDAQ:AMD_20270202",
@@ -26,7 +26,7 @@
       "weight": "18,4 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 66
+      "daysLeft": 65
     },
     {
       "id": "earn_NASDAQ:GOOGL_20270202",
@@ -35,7 +35,7 @@
       "weight": "0,1 %",
       "timestamp": 1801569600,
       "dateStr": "02/02/2027",
-      "daysLeft": 66
+      "daysLeft": 65
     },
     {
       "id": "earn_NASDAQ:QCOM_20270203",
@@ -44,7 +44,7 @@
       "weight": "0,3 %",
       "timestamp": 1801656000,
       "dateStr": "03/02/2027",
-      "daysLeft": 67
+      "daysLeft": 66
     },
     {
       "id": "earn_NASDAQ:AAPL_20270204",
@@ -53,7 +53,7 @@
       "weight": "0,4 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:AMZN_20270204",
@@ -62,7 +62,7 @@
       "weight": "0,3 %",
       "timestamp": 1801742400,
       "dateStr": "04/02/2027",
-      "daysLeft": 68
+      "daysLeft": 67
     },
     {
       "id": "earn_NASDAQ:MSTR_20270210",
@@ -71,7 +71,7 @@
       "weight": "2,0 %",
       "timestamp": 1802260800,
       "dateStr": "10/02/2027",
-      "daysLeft": 74
+      "daysLeft": 73
     },
     {
       "id": "earn_XETR:ENR_20270211",
@@ -80,7 +80,7 @@
       "weight": "4,8 %",
       "timestamp": 1802347200,
       "dateStr": "11/02/2027",
-      "daysLeft": 75
+      "daysLeft": 74
     },
     {
       "id": "earn_NYSE:KO_20270216",
@@ -89,95 +89,90 @@
       "weight": "0,1 %",
       "timestamp": 1802779200,
       "dateStr": "16/02/2027",
-      "daysLeft": 80
+      "daysLeft": 79
     }
   ],
   "majorMoves": [],
   "items": [
     {
-      "id": "db2a2233174e0993",
+      "id": "f62208298cd41a6c",
       "theme": "IPO & IA Mondiale",
       "tagCls": "b-purple",
-      "title": "Les actions d’Anthropic clôturent au-dessus du prix d’introduction en Bourse après deux séances en dessous - Unite.AI",
-      "excerpt": "Les actions de catégorie A d’Anthropic ont clôturé à 91,88 $ le 27 novembre 2026, en hausse de 10,98 %, repassant ainsi au-dessus du prix de 83 $ fixé par l’entreprise pour son…",
-      "source": "Unite.AI",
-      "pubDate": "Sat, 28 Nov 2026 03:36:04 GMT",
-      "pubTs": 1795836964,
-      "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQbWliM2hJSUpJQU5lSUdENjlNZjBWdXpFN3lPVm9OU3psaFB6eWd5ZHJHM1pDTWhiQkNqaWE0dHgwS2xLajZWUFozZ1JpcGw1THp6YldNR3RuendTS2dFdVZ0OVRCS0E3SVJYcVdDdFVXRGRQaUNzOHBObHFnTDJid0l0czVqMnc3QUppNlNweHllM3pRZ2c?oc=5"
+      "title": "La SEBI envisage une plateforme d’échange pour les actions pré-IPO - Investing.com France",
+      "excerpt": "La plateforme d'échange de cryptomonnaies Bitget a subi un piratage et le vol de plusieurs centaines de millions de dollars. Les soupçons se tournent vers des attaquants liés à la…",
+      "source": "Investing.com France",
+      "pubDate": "Sat, 28 Nov 2026 13:29:00 GMT",
+      "pubTs": 1795872540,
+      "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVWVETGZ4N01xcTc5alo1cHJyWEVOaXpSVkJZb2xNU3VmMnpIeENDVUYwSENuV2dxOHNyUTMydDJ5bV83SlkyWWV2VzBGNllpTnZEX1RQcjFFTzhESEhzWkRvM2hNc182NFotanVoRUdiS0JsZ3N5aEJuR1d2cGFnTVpJREdDam8ya2xYdjNQelZiOFpWVjhPRFNsN2Zob2ZNTEhSa1lja2N1LW9LVFpyN1h5MGp6Y2hDdHIwVQ?oc=5"
+    },
+    {
+      "id": "93ffd7e91d348493",
+      "theme": "Xiaomi",
+      "tagCls": "b-green",
+      "title": "Xiaomi enregistre une perte de 750 millions de dollars australiens au troisième trimestre de cette année - IDNFinancials",
+      "excerpt": "Le chinois Xiaomi Corp a fait état mardi d’un recul de 57 % de son bénéfice net au troisième trimestre, inférieur aux prévisions des analystes. Le fabricant chinois de smartphones et…",
+      "source": "IDNFinancials",
+      "pubDate": "Sat, 28 Nov 2026 13:00:00 GMT",
+      "pubTs": 1795870800,
+      "link": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxOaUtzMDEtRkdNN3NRYTZSRlhHMnVEdlo2MGlrcEVmYUM3dl9SYTVFWGtyLTF2Sm9FN0dLVEVTdkJsY1Zvc1JrU0puZWlOZDU2bldrYlJ3R1N6Z0VXUzdUNkc4YWVzaDdyNEpzWWVNbzFMeFdjM1lTRXloSjV5c2hMS29sc2lqYzJtaTRUeUZQM2p5RktkYWhwbW1NTFBJTnZtVkZoQkpOU1BtcU5wODhxbFRJZ1lhY1ZwWjFDM05PUWhHZkkyYldFLVZ3UHNKQzhiMWVKby1jMEpWRjFTLXJpMnUyTDRLLWFubk5SeUtFdw?oc=5"
+    },
+    {
+      "id": "9fee1d0bf7ce3d63",
+      "theme": "NVIDIA • IPO & IA",
+      "tagCls": "b-purple",
+      "title": "NVIDIA Cours Action NVDA, Cotation Bourse NASDAQ - Boursorama",
+      "excerpt": "(Boursier.com) — Wall Street accélère et s'offre un rebond historique en début de séance ce lundi, sur la nouvelle d'un retour de Jensen Huang à la tête de Nvidia. Le Dow Jones…",
+      "source": "Boursorama",
+      "pubDate": "Sat, 28 Nov 2026 10:36:56 GMT",
+      "pubTs": 1795862216,
+      "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1FY3p6cDdaTUwxUFkxZjNJcjdVd1YtTnJocUg0eEJhYjBhTUNsemQtbWVaMFh3TVVKRFBuQ203c2ZyNzdDMVpoOXU2YXpTNjg?oc=5"
+    },
+    {
+      "id": "c8d5ef8aa7bc2cc0",
+      "theme": "Alphabet (A)",
+      "tagCls": "b-amber",
+      "title": "Google souhaite louer davantage de capacité de calcul auprès de SpaceX, selon Musk - Zonebourse",
+      "excerpt": "",
+      "source": "Zonebourse",
+      "pubDate": "Sat, 28 Nov 2026 09:14:20 GMT",
+      "pubTs": 1795857260,
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNenM4LWc4ZWUzZHIxaFVQZURUNGRoeVBrVFNPMzNFSkE3czBaUFRONF8yc3ZmeTNGMWNIWkxBYmVNcVRWTktFV0xPM1FJX09LdENmNHh2YU9FT0pOUUZzR1ZKTV92dGVBZ2hlRmNyQnN3THRpczNNaHBrZzNHT0NQN2pxWDVpZHhpVzc4VG80bldJc1dkeFMyeHZEV29uRk5FZ3A2c2JadDc3QnhFcS1CMmhpUUVJUEk2MzZIYUpLNDFYQThWU2NlTDd1V2lTZXF1cHpUMHJpYmxtQQ?oc=5"
+    },
+    {
+      "id": "4f659097f779a48e",
+      "theme": "IPO & IA Mondiale",
+      "tagCls": "b-purple",
+      "title": "Bourse : qui a acheté Anthropic le jour de son introduction, et qui a tenu ? - Les Echos",
+      "excerpt": "Convaincus, pragmatiques ou opportunistes : qui sont les particuliers qui ont acheté Anthropic le jour de son introduction, et ont-ils tenu leur position ? Des données exclusives de…",
+      "source": "Les Echos",
+      "pubDate": "Sat, 28 Nov 2026 07:15:11 GMT",
+      "pubTs": 1795850111,
+      "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQM3BrZkNObjg5TVVoT1ZlYVRwcXdjOWx3X1JwQThLVThvazhIM0hJSlBHS2dWc2VGa1RpakpiMk1Dc1R1THhIQWF4MDN1Sy1nZFNEaDY4dkhDODF4a01mWHlKRlNhNWxTX3VWd3NLdjEyaW15TjhsQktXelQ4SlB6WDk3azNaeFIwMjJTeXVFcVAzdGxvVGwxYkw1M0pkdlZqX2FNUlZoWXpiQ2xvVURkNGVSa3U1R2RsR25pbW54OVktUQ?oc=5"
     },
     {
       "id": "7ed7ec3bfef721d3",
       "theme": "Apple",
       "tagCls": "b-blue",
       "title": "Apple et OpenAI s’accusent mutuellement de vol de secrets - Le Devoir",
-      "excerpt": "OpenAI, le créateur de ChatGPT, a contre-attaqué vendredi 27 novembre 2026 en justice face à Apple, l’accusant à son tour de lui avoir dérobé des secrets industriels et de faire…",
+      "excerpt": "Le créateur de ChatGPT accuse son rival de lui avoir dérobé des secrets industriels et d'avoir fait pression sur des fournisseurs communs. Apple avait de son côté porté plainte en…",
       "source": "Le Devoir",
       "pubDate": "Sat, 28 Nov 2026 00:30:57 GMT",
       "pubTs": 1795825857,
       "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQUTNFSTRwNWVRN2xPNzF0ZmRBV3pDRUl5Wmp6QWRsc2Q4RDY3TXBWS3pKTmY1ZjBZZzhfY0RubWxXUG5razZlWVJHWHlvLWNoU1NOdTNEZXVkRUI1T0pjai1IZm41V29BdloxcHRoWlN2LXQ4UU1YYzdkZEk1djcweE4yY0hjM2J1YUZrdkNWcGVhWktw?oc=5"
     },
     {
-      "id": "4983955e9202d767",
+      "id": "cbd6e563a6705da0",
       "theme": "Macro & Wall Street",
       "tagCls": "b-amber",
-      "title": "Wall Street : les hedge funds réduisent le risque et réorientent leurs paris sur l’IA - Le Revenu",
-      "excerpt": "Les hedge funds ont augmenté leurs paris à la baisse sur les actions liées à l'intelligence artificielle (IA) en juillet, selon un rapport publié mercredi par la plateforme de…",
-      "source": "Le Revenu",
-      "pubDate": "Fri, 27 Nov 2026 17:43:00 GMT",
-      "pubTs": 1795801380,
-      "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxNdXJTa2hodE5Kam9uTmhJdGQ0S2s4dUJXTDlwdmd5RDRFMVE4Z2N4NWgtVXJWYzVNczRwTWZVNDlrWmdoZ1hlY01lWnRjV1FaZ1JER0ZmSjFTUXo1eXBmZjJQTldSLWVoaWxzT21yVGhyMFZjMHlyTElKVkVIdVRtSzh6bjk4cDNuSW1GLWtxTjFzd1l2LXVJdl9nZHJTTUtvc0QwYW1pUnVNYU1YV2hSeUFmYU5vSkduZEFlN0JCRXczOWh3OGNDVXlGaW4zWmJIaXF2TA?oc=5"
-    },
-    {
-      "id": "eb487511f4aa59ee",
-      "theme": "Macro & Wall Street",
-      "tagCls": "b-amber",
-      "title": "Bourse Zurich: le SMI dans le vert, soutenu par Wall Street - Zonebourse",
-      "excerpt": "Zurich - La Bourse suisse a fini la séance de vendredi dans le vert, parvenant à raccrocher temporairement la barre des 14'900 points grâce au rebond de Wall Street. Alors que les…",
-      "source": "Zonebourse",
-      "pubDate": "Fri, 27 Nov 2026 17:16:30 GMT",
-      "pubTs": 1795799790,
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOS1U1ekZ6bmV3ektoV24yX1lHbm13RkZfdDhfd1lQeU5yLVFjN0w5ZWdDWlFlZDM0bm1USF90dHlaZklXYWU5X3FEX0IzeWJkNE16QnpUYml0R21LVTJWdXpvUWFEV3R6M0pjU29sX1V3RTBrQ255RUc3VnhDN3dHMHdGSDNJcVE5WFhUa0V3akZ0M1o4SmV5RzVPLU5KeG1TYzdtanhMVzA0Z05OVkl4LUctRWNORmpIWkE?oc=5"
-    },
-    {
-      "id": "1dad80215b8db908",
-      "theme": "Microsoft",
-      "tagCls": "b-blue",
-      "title": "Votre code PIN Windows 11 à quatre chiffres ne suffit plus, Microsoft le reconnaît lui-même - PhonAndroid",
-      "excerpt": "Microsoft revoit sa recommandation sur la longueur du code PIN de Windows après la découverte de failles dans plusieurs puces de PC.",
-      "source": "PhonAndroid",
-      "pubDate": "Fri, 27 Nov 2026 15:10:00 GMT",
-      "pubTs": 1795792200,
-      "link": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNdi1neVQ3Yy1IYkJCUF94NXFSRHVSYmJXczlNSUJuSjZOcW45bFZBRUQteDhfbXlqUlFpYWNmajYxSkRHSzRQTnpOc2Rld2VMbVowQmlFRkpsTUwyU0hMcXhNcTR2REtDeE5vZjRLUWN4VlRBZDVNZUpfaXBReVpWLVJtMS1xcE1wOU56NjZEX0tLVUQ2ZkNXY095bVctQXBTc3FCYWlvUmFLdjlRb1hFd3VXdG9rdzNLTGxFX3ExNmw?oc=5"
-    },
-    {
-      "id": "40463622bc6e93cb",
-      "theme": "NVIDIA",
-      "tagCls": "b-amber",
-      "title": "Wall Street rebondit à l'ouverture, Nvidia hésite - Investir Les Echos",
-      "excerpt": "27 novembre - La Bourse de New York rebondit vendredi en début de séance, les investisseurs revenant après un jour férié qui a écourté une semaine mouvementée pour les titres liés…",
-      "source": "Investir Les Echos",
-      "pubDate": "Fri, 27 Nov 2026 14:52:44 GMT",
-      "pubTs": 1795791164,
-      "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQbUhBaUwxVW9EZkZxREd4VmwySExyOWhSSDdwR3BIVjVxajFBcjZxaFctREVuRHMzR05DSThNcWI2bnBaWmp5Vl95Wlp0M0I4cURmRFR0YzlHc1l0X0MxbG5EN285dWNqRHcwbjIzaDJZT1FYNTl5X0wxSjl2MFdvOUppVDB5OVZiTURNLTl6azZzSVdJb21HblRZc3E0eHpueDFYa3h4T3BpS1RwSHJNZHd3T3dRSlJYSGc?oc=5"
-    },
-    {
-      "id": "f4b3649e74d53b20",
-      "theme": "Siemens Energy",
-      "tagCls": "b-purple",
-      "title": "Siemens Energy signe avec le Venezuela pour restaurer le réseau électrique de PDVSA - energynews.pro",
-      "excerpt": "Siemens Energy signe un accord avec le Venezuela pour rétablir le réseau électrique de PDVSA et le réseau national, sans montant communiqué.",
-      "source": "energynews.pro",
-      "pubDate": "Fri, 27 Nov 2026 10:15:27 GMT",
-      "pubTs": 1795774527,
-      "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQV19kdzhEYnRfSzNOWkk2dVVmNk9DcFJ4UEI0YkdwMkJERE5IWEhINzZ4bkdIc1NwQ0tELTNWN0Z0SDh6SWlhSHZlbmZ3dkJDMXUtVFNseUdSWTNkam9qTWJzNExEMEpmajNRUkdfalFmdVZPVUg0T3didkhPMHY2bjJ4QkJCb19VcU1LajVQY2ozTzBqNlR3RUxmTGhpdVp1SzJ4VEZMNF92Zw?oc=5"
+      "title": "Le Bitcoin tient bon face à la tech et à une Fed restrictive - Boursorama",
+      "excerpt": "Le Bitcoin peine à rebondir malgré l’envolée de Nvidia. Huit actions technologiques affichent un potentiel de hausse important.",
+      "source": "Boursorama",
+      "pubDate": "Fri, 27 Nov 2026 16:54:00 GMT",
+      "pubTs": 1795798440,
+      "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxNY1JpejFER3l2LW1UdDM5azdlamVOWHBjelVqS2JqMmJoY012X2dEVjB5RlFlWjJWTHQ0LTlNTzJPM19JTnRJa3d3aUdRMUVUV3BfMUU1SmxmdjdjVjJmbExxQjZqa1pHaTdBUmpEOGZqbjlNYVVmSlNRQ3QtQjkxbmNTRWZLRGpCNm11OVFlWFZQVXczZGF6aVdRMURkMXBCRXhzTndCR0c3STlkbzBWc3BMSnRQblE3ZG5XUm9pX3N0U1FwMFZuejQ4eGl6V3JLN3JPbVNWYnd2d9IB2gFBVV95cUxNY1JpejFER3l2LW1UdDM5azdlamVOWHBjelVqS2JqMmJoY012X2dEVjB5RlFlWjJWTHQ0LTlNTzJPM19JTnRJa3d3aUdRMUVUV3BfMUU1SmxmdjdjVjJmbExxQjZqa1pHaTdBUmpEOGZqbjlNYVVmSlNRQ3QtQjkxbmNTRWZLRGpCNm11OVFlWFZQVXczZGF6aVdRMURkMXBCRXhzTndCR0c3STlkbzBWc3BMSnRQblE3ZG5XUm9pX3N0U1FwMFZuejQ4eGl6V3JLN3JPbVNWYnd2dw?oc=5"
     }
   ],
   "notifiedIds": [
-    "move_jump_NASDAQ:QCOM_20261124",
-    "move_jump_NASDAQ:MSTR_20261124",
-    "45f4779a6e1a3ecf",
-    "d288e5e2138c5f54",
-    "25c81f26fa42eb62",
     "0a3624c93e9d5df6",
     "3d84fe6cc36e0349",
     "move_drop_HKEX:1810_20261124",
@@ -322,6 +317,11 @@
     "d36be958648c05aa",
     "10258a2f3b714474",
     "db2a2233174e0993",
-    "7ed7ec3bfef721d3"
+    "7ed7ec3bfef721d3",
+    "f62208298cd41a6c",
+    "93ffd7e91d348493",
+    "c8d5ef8aa7bc2cc0",
+    "4f659097f779a48e",
+    "cbd6e563a6705da0"
   ]
 }
